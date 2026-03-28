@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سلة المشتريات | Habib Store</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background: #f4f4f4; text-align: center; }
+        .cart-container { background: white; padding: 20px; border-radius: 10px; max-width: 600px; margin: auto; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        th, td { border-bottom: 1px solid #ddd; padding: 10px; text-align: right; }
+        .total { font-size: 20px; font-weight: bold; color: #e67e22; }
+        input { width: 90%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
+        .btn-order { background: #25d366; color: white; border: none; padding: 15px; width: 100%; border-radius: 5px; cursor: pointer; font-size: 18px; font-weight: bold; }
+        .empty-msg { color: #888; padding: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="cart-container">
+    <h1>🛒 سلة مشترياتك</h1>
+    
+    <div id="cart-content">
+        <table id="cart-table">
+            <thead>
+                <tr>
+                    <th>المنتج</th>
+                    <th>السعر</th>
+                    <th>حذف</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items"></tbody>
+        </table>
+        
+        <div class="total">الإجمالي المبدئي: <span id="grand-total">0</span> ج.م</div>
+        
+        <hr>
+        <h3>بيانات التوصيل والمعاينة</h3>
+        <input type="text" id="cust-name" placeholder="الاسم بالكامل" required>
+        <input type="text" id="cust-address" placeholder="العنوان (مثلاً: التجمع الخامس - النرجس)" required>
+        <input type="tel" id="cust-phone" placeholder="رقم الموبايل" required>
+        
+        <button class="btn-order" onclick="sendToWhatsApp()">✅ تأكيد الطلب وحجز المعاينة</button>
+    </div>
+    
+    <div id="empty-cart" class="empty-msg" style="display:none;">
+        السلة فاضية يا حوت.. ارجع اختار رخامك! <br><br>
+        <a href="index.html">العودة للمتجر</a>
+    </div>
+</div>
+
+<script>
+    function loadCart() {
+        let cart = JSON.parse(localStorage.getItem('habibCart')) || [];
+        let itemsContainer = document.getElementById('cart-items');
+        let grandTotal = 0;
+
+        if (cart.length === 0) {
+            document.getElementById('cart-content').style.display = 'none';
+            document.getElementById('empty-cart').style.display = 'block';
+            return;
+        }
+
+        itemsContainer.innerHTML = '';
+        cart.forEach((item, index) => {
+            grandTotal += item.price;
+            itemsContainer.innerHTML += `
+                <tr>
+                    <td>${item.name}</td>
+                    <td>${item.price} ج.م</td>
+                    <td><button onclick="removeItem(${index})">❌</button></td>
+                </tr>
+            `;
+        });
+        document.getElementById('grand-total').innerText = grandTotal;
+    }
+
+    function removeItem(index) {
+        let cart = JSON.parse(localStorage.getItem('habibCart')) || [];
+        cart.splice(index, 1);
+        localStorage.setItem('habibCart', JSON.stringify(cart));
+        loadCart();
+    }
+
+    function sendToWhatsApp() {
+        let name = document.getElementById('cust-name').value;
+        let address = document.getElementById('cust-address').value;
+        let phone = document.getElementById('cust-phone').value;
+        let cart = JSON.parse(localStorage.getItem('habibCart')) || [];
+
+        if (!name || !address || !phone) {
+            alert('يا حوت، كمل بياناتك عشان نعرف نجيلك!');
+            return;
+        }
+
+        let message = `*طلب شراء جديد - Habib Store* 🛒\n\n`;
+        message += `*العميل:* ${name}\n`;
+        message += `*العنوان:* ${address}\n`;
+        message += `*الموبايل:* ${phone}\n\n`;
+        message += `*الطلبات:*\n`;
+        
+        cart.forEach((item, i) => {
+            message += `${i+1}. ${item.name} (${item.price} ج.م)\n`;
+        });
+
+        message += `\n*الإجمالي:* ${document.getElementById('grand-total').innerText} ج.م\n`;
+        message += `--- \nبرجاء إفادتي بتكلفة الشحن وموعد التوريد.`;
+
+        let waUrl = `https://wa.me/201016961497?text=${encodeURIComponent(message)}`;
+        window.open(waUrl, '_blank');
+        
+        // مسح السلة بعد الطلب (اختياري)
+        // localStorage.removeItem('habibCart');
+    }
+
+    window.onload = loadCart;
+</script>
+
+</body>
+</html>
