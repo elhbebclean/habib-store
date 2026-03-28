@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خردة رخام أبيض كريستال | Habib Store</title>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "خردة رخام أبيض كريستال نخب أول",
+      "image": ["https://elhbebclean.github.io/habib-store/images/white-marble.jpg"],
+      "description": "أفضل أنواع كسر الرخام الأبيض لتنسيق حدائق الفيلات واللاندسكيب. لون ناصع وصلابة ممتازة.",
+      "brand": { "@type": "Brand", "name": "Habib Store" },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "EGP",
+        "price": "150",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+    </script>
+
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; text-align: center; background: #f9f9f9; }
+        .product-card { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 500px; margin: auto; }
+        img { width: 100%; border-radius: 10px; }
+        h1 { color: #333; }
+        .price { font-size: 24px; color: #2ecc71; font-weight: bold; margin: 10px 0; }
+        .btn-add { background: #e67e22; color: white; border: none; padding: 15px 30px; border-radius: 5px; cursor: pointer; font-size: 18px; width: 100%; }
+        .btn-add:hover { background: #d35400; }
+        .related { margin-top: 30px; border-top: 2px solid #eee; padding-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <div class="product-card">
+        <img src="../images/white-marble.jpg" alt="رخام أبيض كريستال">
+        <h1>خردة رخام أبيض كريستال</h1>
+        <p>مثالي للممرات والديكورات الخارجية.</p>
+        <div class="price">150 ج.م / شكارة</div>
+        
+        <div style="margin: 15px 0;">
+            <label>المساحة بالمتر:</label>
+            <input type="number" id="area" placeholder="أدخل المساحة" style="padding: 5px; width: 60px;">
+            <button onclick="calculate()">احسب</button>
+            <p id="result" style="font-weight: bold; color: #555;"></p>
+        </div>
+
+        <button class="btn-add" onclick="addToCart('رخام أبيض كريستال', 150)">🛒 أضف للسلة</button>
+    </div>
+
+    <div class="related">
+        <h3>منتجات تليق مع الرخام الأبيض:</h3>
+        <p><a href="green-marble.html">خردة رخام أخضر هندي</a></p>
+        <p><a href="black-pebbles.html">زلط أسود طبيعي</a></p>
+    </div>
+
+    <script>
+        function calculate() {
+            let area = document.getElementById('area').value;
+            let bags = Math.ceil(area * 1.5); // فرضية: المتر بيحتاج شكارة ونص
+            document.getElementById('result').innerText = `أنت محتاج حوالي ${bags} شكارة.`;
+        }
+
+        function addToCart(name, price) {
+            let cart = JSON.parse(localStorage.getItem('habibCart')) || [];
+            cart.push({name, price});
+            localStorage.setItem('habibCart', JSON.stringify(cart));
+            alert('تمت الإضافة للسلة يا حوت! كمل تسوق أو ادخل على السلة.');
+        }
+    </script>
+</body>
+</html>
