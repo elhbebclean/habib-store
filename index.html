@@ -3,81 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Habib Store | حبيب ستور - خردة رخام ولاندسكيب</title>
-    <meta name="description" content="متجر حبيب ستور للاندسكيب: توريد وتركيب خردة رخام، زلط ديكور، ونجيل صناعي بأفضل الأسعار في مصر. متخصصون في فيلات التجمع والشيخ زايد.">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
-    
+    <title>Habib Store | حبيب ستور للرخام واللاندسكيب</title>
     <style>
-        :root { --gold: #d4af37; --dark: #1a1a1a; --light: #f9f9f9; }
-        body { font-family: 'Cairo', sans-serif; background-color: var(--light); margin: 0; color: var(--dark); }
-        header { background: var(--dark); color: white; padding: 20px; text-align: center; border-bottom: 4px solid var(--gold); }
-        .hero { padding: 50px 20px; text-align: center; background: white; }
-        .hero h1 { font-size: 35px; margin: 0; color: var(--dark); font-weight: 900; }
-        .hero p { font-size: 18px; color: #666; }
+        :root { --primary: #e67e22; --secondary: #2c3e50; --success: #25d366; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f4f7f6; color: #333; }
+        header { background: var(--secondary); color: white; padding: 20px; text-align: center; position: sticky; top: 0; z-index: 100; }
+        .hero { background: #fff; padding: 40px 20px; text-align: center; border-bottom: 3px solid var(--primary); }
+        .container { max-width: 1200px; margin: auto; padding: 20px; }
         
-        /* حاسبة الكميات الذكية */
-        .calculator { background: #eee; padding: 25px; margin: 20px; border-radius: 10px; border: 1px solid #ddd; text-align: center; }
-        .calculator input { padding: 10px; width: 80px; margin: 5px; border-radius: 5px; border: 1px solid #ccc; text-align: center; }
-        .calc-btn { background: var(--dark); color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px; font-weight: bold; }
-
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 20px; }
-        .card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; transition: 0.3s; position: relative; }
-        .card:hover { transform: translateY(-10px); }
-        .card img { width: 100%; height: 250px; object-fit: cover; background: #ddd; }
-        .price-tag { color: #b12704; font-size: 22px; font-weight: bold; margin: 10px 0; }
-        .whatsapp-btn { background: #25d366; color: white; display: block; padding: 12px; text-decoration: none; font-weight: bold; margin-top: 10px; }
+        /* شبكة المنتجات - دي اللي هتشيل الـ 20 منتج */
+        .products-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+            gap: 25px; 
+            margin-top: 30px; 
+        }
         
-        footer { background: var(--dark); color: white; padding: 30px; text-align: center; font-size: 14px; }
+        .product-card { 
+            background: white; border-radius: 15px; overflow: hidden; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: 0.3s; 
+            display: flex; flex-direction: column;
+        }
+        .product-card:hover { transform: translateY(-5px); }
+        .product-card img { width: 100%; height: 200px; object-fit: cover; background: #eee; }
+        .product-info { padding: 15px; text-align: center; flex-grow: 1; }
+        .price { color: var(--primary); font-size: 20px; font-weight: bold; margin: 10px 0; }
+        
+        .btn-view { display: block; background: var(--secondary); color: white; text-decoration: none; padding: 10px; border-radius: 5px; margin-bottom: 5px; }
+        .btn-add { width: 100%; background: var(--primary); color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        
+        /* زر السلة العائم */
+        .floating-cart { 
+            position: fixed; bottom: 20px; left: 20px; 
+            background: var(--success); color: white; padding: 15px 25px; 
+            border-radius: 50px; text-decoration: none; font-weight: bold; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1000;
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <div style="font-size: 28px; font-weight: 900; letter-spacing: 2px;">HABIB STORE</div>
-    <div style="font-size: 14px; color: var(--gold);">للاندسكيب وتنسيق الحدائق</div>
+    <h1>Habib Store 🛒</h1>
+    <p>أكبر تشكيلة رخام ولاندسكيب في مصر</p>
 </header>
 
-<section class="hero">
-    <h1>فخامة الرخام الطبيعي في حديقتك</h1>
-    <p>مباشر من البساتين لأرقى أحياء مصر (تجمع - زايد - ساحل)</p>
-</section>
-
-<div class="calculator">
-    <h3>🧮 حاسبة الكميات التقريبية</h3>
-    <p>دخل مساحة جنينتك بالمتر المربع ونقولك محتاج كام شكارة خردة:</p>
-    <input type="number" id="area" placeholder="المساحة"> متر مربع 
-    <button class="calc-btn" onclick="calculate()">احسب الآن</button>
-    <div id="result" style="margin-top: 15px; font-weight: bold; color: #b12704;"></div>
+<div class="hero">
+    <h2>حول جنينتك لتحفة فنية</h2>
+    <p>احسب كميتك، أضف لسلتك، واستلم فاتورتك فوراً</p>
 </div>
 
-<div class="product-grid">
-    <div class="card">
-        <div style="height:250px; background:#f0f0f0; display:flex; align-items:center; justify-content:center; color:#999;">[صورة خردة رخام أبيض كريستال]</div>
-        <h3>خردة رخام أبيض كريستال</h3>
-        <p>نخب أول - مثالي للممرات والديكور</p>
-        <div class="price-tag">150 ج.م <span style="font-size:12px; color:#666;">/ للشكارة</span></div>
-        <a href="https://wa.me/201016961497" class="whatsapp-btn">اطلب عبر واتساب 💬</a>
-    </div>
+<div class="container">
+    <div class="products-grid" id="main-grid">
+        
+        <div class="product-card">
+            <img src="images/white-marble.jpg" alt="رخام أبيض كريستال">
+            <div class="product-info">
+                <h3>خردة رخام أبيض كريستال</h3>
+                <div class="price">150 ج.م / شكارة</div>
+                <a href="products/white-marble.html" class="btn-view">عرض التفاصيل والحساب 📐</a>
+                <button class="btn-add" onclick="quickAdd('رخام أبيض كريستال', 150)">🛒 أضف للسلة</button>
+            </div>
+        </div>
+
+        </div>
 </div>
 
-<footer>
-    <p>جميع الحقوق محفوظة © 2026 حبيب ستور - Habib Store</p>
-    <p>المعادي، القاهرة | توصيل وتركيب بجميع المحافظات</p>
-</footer>
+<a href="cart.html" class="floating-cart">
+   🛒 السلة (<span id="cart-count">0</span>)
+</a>
 
 <script>
-    function calculate() {
-        let area = document.getElementById('area').value;
-        if(area > 0) {
-            // الشكارة بتفرد حوالي 0.5 متر (حسب السمك) - دي معادلة تقريبية
-            let bags = Math.ceil(area / 0.5);
-            document.getElementById('result').innerText = "أنت محتاج تقريباً " + bags + " شكارة (بناءً على فرد 2 سم سمك).";
-        } else {
-            document.getElementById('result').innerText = "من فضلك دخل مساحة صحيحة.";
-        }
+    function updateCartCount() {
+        let cart = JSON.parse(localStorage.getItem('habibCart')) || [];
+        document.getElementById('cart-count').innerText = cart.length;
     }
+    
+    function quickAdd(name, price) {
+        let cart = JSON.parse(localStorage.getItem('habibCart')) || [];
+        cart.push({name, price});
+        localStorage.setItem('habibCart', JSON.stringify(cart));
+        updateCartCount();
+        alert('تمت الإضافة للسلة يا حوت! 🛒');
+    }
+
+    window.onload = updateCartCount;
 </script>
+
+<footer style="text-align: center; padding: 40px; color: #888;">
+    <p>© 2026 Habib Store - جميع الحقوق محفوظة</p>
+    <a href="policy.html" style="color: #3498db; text-decoration: none;">سياسات المتجر والقوانين</a>
+</footer>
 
 </body>
 </html>
