@@ -42,14 +42,24 @@
         
         .info { padding: 20px 0; text-align: right; }
         .info h3 { font-size: 18px; margin: 10px 0; font-weight: 600; }
-        .info p { font-size: 13px; color: #666; margin-bottom: 15px; line-height: 1.6; }
+        .info p { font-size: 13px; color: #666; margin-bottom: 20px; line-height: 1.6; height: 40px; overflow: hidden; }
         
-        .btn-luxury { 
-            display: block; width: 100%; background: var(--black); color: #fff; 
-            text-align: center; text-decoration: none; padding: 12px; font-size: 14px; font-weight: 600;
-            transition: 0.3s;
+        /* تنسيق الزراير الجديدة */
+        .btn-actions { display: flex; flex-direction: column; gap: 10px; }
+
+        .btn-add-cart { 
+            width: 100%; background: #fff; color: var(--black); 
+            border: 1px solid var(--black); text-align: center; text-decoration: none; 
+            padding: 12px; font-size: 13px; font-weight: 600; cursor: pointer; transition: 0.3s;
         }
-        .btn-luxury:hover { background: var(--gold); }
+        .btn-add-cart:hover { background: #f5f5f5; border-color: var(--gold); color: var(--gold); }
+
+        .btn-confirm-now { 
+            width: 100%; background: var(--black); color: #fff; 
+            border: none; text-align: center; text-decoration: none; 
+            padding: 12px; font-size: 13px; font-weight: 600; cursor: pointer; transition: 0.3s;
+        }
+        .btn-confirm-now:hover { background: var(--gold); }
 
         footer { text-align: center; padding: 40px; color: #888; font-size: 12px; border-top: 1px solid #eee; }
     </style>
@@ -76,8 +86,11 @@
             <div class="info">
                 <span style="color: var(--gold); font-size: 11px; font-weight: 600;">TURKISH PREMIUM</span>
                 <h3>نجيل صناعي تركي 4سم</h3>
-                <p>كثافة عالية وملمس طبيعي تماماً، الخيار الأول للحدائق المنزلية.</p>
-                <a href="grass.html" class="btn-luxury">احسب أمتارك واطلب ➜</a>
+                <p>كثافة عالية وملمس طبيعي تماماً للحدائق.</p>
+                <div class="btn-actions">
+                    <button class="btn-add-cart" onclick="quickAdd('نجيل تركي 4سم', 140)">إضافة إلى السلة <i class="fas fa-cart-plus"></i></button>
+                    <button class="btn-confirm-now" onclick="quickBuy('نجيل تركي 4سم', 140)">تأكيد الحجز والطلب <i class="fas fa-check-circle"></i></button>
+                </div>
             </div>
         </div>
 
@@ -88,8 +101,11 @@
             <div class="info">
                 <span style="color: var(--gold); font-size: 11px; font-weight: 600;">HIGH DENSITY</span>
                 <h3>نجيل كثافة 5سم إكسترا</h3>
-                <p>مخصص للمساحات الواسعة التي تتطلب فخامة في الشكل وقوة في التحمل.</p>
-                <a href="grass.html" class="btn-luxury">احسب أمتارك واطلب ➜</a>
+                <p>فخامة في الشكل وقوة في التحمل للمساحات الواسعة.</p>
+                <div class="btn-actions">
+                    <button class="btn-add-cart" onclick="quickAdd('نجيل 5سم إكسترا', 180)">إضافة إلى السلة <i class="fas fa-cart-plus"></i></button>
+                    <button class="btn-confirm-now" onclick="quickBuy('نجيل 5سم إكسترا', 180)">تأكيد الحجز والطلب <i class="fas fa-check-circle"></i></button>
+                </div>
             </div>
         </div>
 
@@ -100,8 +116,11 @@
             <div class="info">
                 <span style="color: var(--gold); font-size: 11px; font-weight: 600;">GARDEN SPECIAL</span>
                 <h3>نجيل ميكس (طبيعي/صناعي)</h3>
-                <p>يجمع بين جمال النجيل الطبيعي وسهولة صيانة الصناعي.</p>
-                <a href="grass.html" class="btn-luxury">احسب أمتارك واطلب ➜</a>
+                <p>يجمع بين جمال الطبيعة وسهولة الصيانة.</p>
+                <div class="btn-actions">
+                    <button class="btn-add-cart" onclick="quickAdd('نجيل ميكس', 160)">إضافة إلى السلة <i class="fas fa-cart-plus"></i></button>
+                    <button class="btn-confirm-now" onclick="quickBuy('نجيل ميكس', 160)">تأكيد الحجز والطلب <i class="fas fa-check-circle"></i></button>
+                </div>
             </div>
         </div>
 
@@ -110,9 +129,13 @@
                 <img src="../assets/images/assets/images/nageel/modern-landscape-white-stones-habib-store.jpg.jpg" alt="نجيل 4">
             </div>
             <div class="info">
-                <h3>نجيل صناعي مخصص للملاعب</h3>
-                <p>بمواد مقاومة لآشعة الشمس والاحتكاك الشديد.</p>
-                <a href="grass.html" class="btn-luxury">احسب أمتارك واطلب ➜</a>
+                <span style="color: var(--gold); font-size: 11px; font-weight: 600;">SPORT EDITION</span>
+                <h3>نجيل صناعي للملاعب</h3>
+                <p>مقاوم لآشعة الشمس والاحتكاك الشديد.</p>
+                <div class="btn-actions">
+                    <button class="btn-add-cart" onclick="quickAdd('نجيل ملاعب', 220)">إضافة إلى السلة <i class="fas fa-cart-plus"></i></button>
+                    <button class="btn-confirm-now" onclick="quickBuy('نجيل ملاعب', 220)">تأكيد الحجز والطلب <i class="fas fa-check-circle"></i></button>
+                </div>
             </div>
         </div>
 
@@ -121,9 +144,13 @@
                 <img src="../assets/images/assets/images/nageel/modern-landscape-white-stones-habib-store.jpg.jpg" alt="نجيل 5">
             </div>
             <div class="info">
+                <span style="color: var(--gold); font-size: 11px; font-weight: 600;">ECONOMY CHOICE</span>
                 <h3>نجيل 3سم اقتصادي</h3>
-                <p>أفضل قيمة مقابل سعر، مناسب للبلكونات والمساحات الصغيرة.</p>
-                <a href="grass.html" class="btn-luxury">احسب أمتارك واطلب ➜</a>
+                <p>مناسب للبلكونات والمساحات الصغيرة بقيمة ممتازة.</p>
+                <div class="btn-actions">
+                    <button class="btn-add-cart" onclick="quickAdd('نجيل 3سم اقتصادي', 120)">إضافة إلى السلة <i class="fas fa-cart-plus"></i></button>
+                    <button class="btn-confirm-now" onclick="quickBuy('نجيل 3سم اقتصادي', 120)">تأكيد الحجز والطلب <i class="fas fa-check-circle"></i></button>
+                </div>
             </div>
         </div>
 
@@ -132,75 +159,13 @@
                 <img src="../assets/images/assets/images/nageel/modern-landscape-white-stones-habib-store.jpg.jpg" alt="نجيل 6">
             </div>
             <div class="info">
+                <span style="color: var(--gold); font-size: 11px; font-weight: 600;">SOFT TOUCH</span>
                 <h3>نجيل صناعي ناعم (أطفال)</h3>
-                <p>مصمم خصيصاً بملمس فائق النعومة لمناطق ألعاب الأطفال.</p>
-                <a href="grass.html" class="btn-luxury">احسب أمتارك واطلب ➜</a>
-            </div>
-        </div>
-
-        <div class="product-card" data-aos="fade-up">
-            <div class="img-container">
-                <img src="../assets/images/assets/images/nageel/modern-landscape-white-stones-habib-store.jpg.jpg" alt="نجيل 7">
-            </div>
-            <div class="info">
-                <h3>نجيل جداري ديكور</h3>
-                <p>لتزيين الحوائط والأسوار بلمسة خضراء دائمة.</p>
-                <a href="grass.html" class="btn-luxury">احسب أمتارك واطلب ➜</a>
-            </div>
-        </div>
-
-        <div class="product-card" data-aos="fade-up">
-            <div class="img-container">
-                <img src="../assets/images/assets/images/nageel/modern-landscape-white-stones-habib-store.jpg.jpg" alt="نجيل 8">
-            </div>
-            <div class="info">
-                <h3>نجيل صناعي فاخر 6سم</h3>
-                <p>أعلى كثافة متاحة في السوق المصري لنخبة العملاء.</p>
-                <a href="grass.html" class="btn-luxury">احسب أمتارك واطلب ➜</a>
-            </div>
-        </div>
-
-        <div class="product-card" data-aos="fade-up">
-            <div class="img-container">
-                <img src="../assets/images/assets/images/nageel/modern-landscape-white-stones-habib-store.jpg.jpg" alt="نجيل 9">
-            </div>
-            <div class="info">
-                <h3>نجيل مقاوم للمياه (شلالات)</h3>
-                <p>مخصص للمناطق المحيطة بالحمامات والمسابح.</p>
-                <a href="grass.html" class="btn-luxury">احسب أمتارك واطلب ➜</a>
-            </div>
-        </div>
-
-        <div class="product-card" data-aos="fade-up">
-            <div class="img-container">
-                <img src="../assets/images/assets/images/nageel/modern-landscape-white-stones-habib-store.jpg.jpg" alt="نجيل 10">
-            </div>
-            <div class="info">
-                <h3>نجيل هولندي فائق الجودة</h3>
-                <p>استيراد خاص بتكنولوجيا متطورة للحفاظ على اللون.</p>
-                <a href="grass.html" class="btn-luxury">احسب أمتارك واطلب ➜</a>
-            </div>
-        </div>
-
-        <div class="product-card" data-aos="fade-up">
-            <div class="img-container">
-                <img src="../assets/images/assets/images/nageel/modern-landscape-white-stones-habib-store.jpg.jpg" alt="نجيل 11">
-            </div>
-            <div class="info">
-                <h3>نجيل صناعي ملون (ديكور)</h3>
-                <p>لإضافة لمسات فنية غير تقليدية في اللاندسكيب.</p>
-                <a href="grass.html" class="btn-luxury">احسب أمتارك واطلب ➜</a>
-            </div>
-        </div>
-
-        <div class="product-card" data-aos="fade-up">
-            <div class="img-container">
-                <img src="../assets/images/assets/images/nageel/modern-landscape-white-stones-habib-store.jpg.jpg" alt="نجيل 12">
-            </div>
-            <div class="info">
-                <h3>نجيل "حبيب" إكسكلوسيف</h3>
-                <p>أفضل تشكيلة مختارة من Shark لضمان أقصى درجات الفخامة.</p>
-                <a href="grass.html" class="btn-luxury">احسب أمتارك واطلب ➜</a>
+                <p>ملمس فائق النعومة لمناطق ألعاب الأطفال.</p>
+                <div class="btn-actions">
+                    <button class="btn-add-cart" onclick="quickAdd('نجيل أطفال ناعم', 155)">إضافة إلى السلة <i class="fas fa-cart-plus"></i></button>
+                    <button class="btn-confirm-now" onclick="quickBuy('نجيل أطفال ناعم', 155)">تأكيد الحجز والطلب <i class="fas fa-check-circle"></i></button>
+                </div>
             </div>
         </div>
 
@@ -212,7 +177,34 @@
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>AOS.init({ duration: 1000, once: true });</script>
+<script>
+    AOS.init({ duration: 1000, once: true });
+
+    // وظيفة الإضافة للسلة والبقاء في الصفحة
+    function quickAdd(name, price) {
+        let cart = JSON.parse(localStorage.getItem('habibCart')) || [];
+        // نفترض كمية افتراضية 1 متر في المعرض السريع
+        cart.push({
+            name: name,
+            area: 1, 
+            price: price
+        });
+        localStorage.setItem('habibCart', JSON.stringify(cart));
+        alert('تمت إضافة ' + name + ' للسلة بنجاح يا حوت! 🦈');
+    }
+
+    // وظيفة تأكيد الحجز والتحويل لصفحة السلة فوراً
+    function quickBuy(name, price) {
+        let cart = JSON.parse(localStorage.getItem('habibCart')) || [];
+        cart.push({
+            name: name,
+            area: 1,
+            price: price
+        });
+        localStorage.setItem('habibCart', JSON.stringify(cart));
+        window.location.href = '../cart.html';
+    }
+</script>
 
 </body>
 </html>
