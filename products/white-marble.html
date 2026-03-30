@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>زلط لاندسكيب فاخر | حبيب ستور - Luxury Landscape</title>
+    <title>White Crystal Luxury | حبيب ستور</title>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
         :root { --gold: #AF944F; --black: #0a0a0a; --bg: #fdfdfd; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Cairo', sans-serif; background: var(--bg); color: #333; overflow-x: hidden; }
 
-        /* الهيدر الزجاجي */
         header { 
             position: fixed; top: 0; width: 100%; z-index: 1000;
             background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px);
@@ -23,155 +23,161 @@
 
         .product-container { max-width: 1200px; margin: 120px auto 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; padding: 20px; }
         
-        /* صور المنتج - Luxury Style */
-        .image-side { position: sticky; top: 120px; }
-        .image-side img { width: 100%; border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); transition: 0.5s; }
-        .image-side img:hover { transform: scale(1.02); }
+        .image-side { position: sticky; top: 120px; position: relative; }
+        .image-side img { width: 100%; border-radius: 4px; box-shadow: 0 20px 50px rgba(0,0,0,0.08); transition: 0.5s; }
         
-        /* تفاصيل المنتج */
+        /* بانر السيل النار */
+        .sale-badge { 
+            position: absolute; top: 20px; right: -10px; background: #d4af37; color: #fff; 
+            padding: 8px 25px; font-weight: bold; font-size: 14px; z-index: 10;
+            box-shadow: 2px 5px 15px rgba(0,0,0,0.2); transform: rotate(5deg);
+        }
+
         .details-side { text-align: right; }
-        .category-label { color: var(--gold); font-size: 13px; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 10px; font-weight: 700; }
-        .stars { color: #f1c40f; font-size: 16px; margin-bottom: 15px; }
-        h1 { font-family: 'Amiri', serif; font-size: 42px; color: var(--black); margin-bottom: 20px; line-height: 1.2; }
-        .price { font-size: 32px; font-weight: bold; margin: 20px 0; color: var(--black); }
-        .description { line-height: 1.9; color: #666; margin-bottom: 35px; font-weight: 300; font-size: 17px; }
+        .category-label { color: var(--gold); font-size: 12px; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 10px; font-weight: 700; }
+        .stars { color: #f1c40f; font-size: 15px; margin-bottom: 15px; }
         
-        /* حاسبة الأمتار الذكية */
-        .quantity-calc { background: #fff; padding: 25px; border: 1px solid #eee; border-right: 5px solid var(--gold); margin-bottom: 30px; border-radius: 0 8px 8px 0; }
-        .quantity-calc strong { display: block; margin-bottom: 15px; font-size: 16px; color: var(--black); }
+        h1 { font-family: 'Amiri', serif; font-size: 42px; color: var(--black); margin-bottom: 15px; line-height: 1.2; }
+        
+        /* السعر قبل وبعد */
+        .price-wrapper { margin: 20px 0; display: flex; align-items: center; gap: 15px; }
+        .old-price { font-size: 20px; color: #aaa; text-decoration: line-through; font-weight: 300; }
+        .price { font-size: 35px; font-weight: bold; color: var(--black); }
+        
+        .description { line-height: 1.9; color: #666; margin-bottom: 30px; font-weight: 300; font-size: 17px; }
+        
+        /* قائمة المواصفات الفخمة */
+        .specs-luxury { margin-bottom: 30px; list-style: none; }
+        .specs-luxury li { font-size: 15px; color: #444; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .specs-luxury i { color: var(--gold); font-size: 12px; }
+
+        .quantity-calc { background: #fff; padding: 25px; border: 1px solid #eee; border-right: 5px solid var(--black); margin-bottom: 30px; }
+        .quantity-calc strong { display: block; margin-bottom: 10px; font-size: 15px; color: var(--black); }
         .input-group { display: flex; align-items: center; gap: 15px; }
-        input { padding: 12px; border: 1px solid #ddd; width: 120px; font-family: 'Cairo'; outline: none; text-align: center; border-radius: 5px; font-size: 18px; }
-        input:focus { border-color: var(--gold); box-shadow: 0 0 10px rgba(175, 148, 79, 0.1); }
+        input { padding: 12px; border: 1px solid #ddd; width: 110px; font-family: 'Cairo'; outline: none; text-align: center; font-size: 20px; font-weight: bold; border-bottom: 2px solid var(--black); }
         
-        #res { margin-top: 20px; color: var(--gold); font-weight: 700; font-size: 17px; background: #faf8f3; padding: 10px; border-radius: 5px; display: inline-block; }
+        #res { margin-top: 15px; color: var(--black); font-weight: 700; font-size: 16px; background: #f9f9f9; padding: 15px; border-radius: 4px; display: block; }
 
+        /* الأزرار المزدوجة */
+        .btn-group { display: flex; flex-direction: column; gap: 15px; }
+        .btn-cart { 
+            background: #fff; color: var(--black); border: 1px solid var(--black); 
+            padding: 20px; width: 100%; cursor: pointer; font-size: 16px; font-weight: 700; transition: 0.4s;
+        }
         .btn-main { 
-            background: var(--black); color: #fff; border: none; padding: 22px; width: 100%; 
-            cursor: pointer; font-size: 18px; font-weight: 700; transition: 0.4s; letter-spacing: 1px;
-            border-radius: 8px; margin-top: 10px;
+            background: var(--black); color: #fff; border: none; padding: 20px; width: 100%; 
+            cursor: pointer; font-size: 16px; font-weight: 700; transition: 0.4s; 
         }
-        .btn-main:hover { background: var(--gold); transform: translateY(-3px); box-shadow: 0 15px 30px rgba(175, 148, 79, 0.3); }
+        .btn-main:hover, .btn-cart:hover { background: var(--gold); color: #fff; border-color: var(--gold); transform: translateY(-3px); }
 
-        /* خيارات الألوان */
-        .color-options { margin: 20px 0; display: flex; gap: 10px; align-items: center; }
-        .color-dot { width: 30px; height: 30px; border-radius: 50%; border: 2px solid #eee; cursor: pointer; transition: 0.3s; }
-        .color-dot:hover { transform: scale(1.2); }
-        .white { background: #fff; }
-        .red { background: #8B0000; }
-        .green { background: #228B22; }
+        .reviews-section { max-width: 1200px; margin: 60px auto; padding: 20px; border-top: 1px solid #eee; }
+        .review-card { background: #fff; padding: 30px; border: 1px solid #f2f2f2; margin-bottom: 20px; }
 
-        /* قسم التقييمات */
-        .reviews-section { max-width: 1200px; margin: 80px auto; padding: 20px; border-top: 1px solid #eee; }
-        .reviews-section h3 { font-family: 'Amiri', serif; font-size: 32px; margin-bottom: 40px; text-align: center; }
-        .review-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        .review-card { background: #fff; padding: 40px; border: 1px solid #f0f0f0; transition: 0.3s; border-radius: 10px; }
-        .review-card:hover { border-color: var(--gold); box-shadow: 0 10px 40px rgba(0,0,0,0.03); }
-
-        @media (max-width: 768px) { 
-            .product-container { grid-template-columns: 1fr; margin-top: 100px; } 
-            .review-grid { grid-template-columns: 1fr; }
-            h1 { font-size: 34px; }
-            .image-side { position: relative; top: 0; }
-        }
+        @media (max-width: 768px) { .product-container { grid-template-columns: 1fr; } .image-side { position: relative; top: 0; } }
     </style>
 </head>
 <body>
 
 <header>
     <a href="../index.html" class="logo">HABIB STORE</a>
-    <div style="font-size: 11px; font-weight: 300; letter-spacing: 1px; color: var(--gold);">PREMIUM LANDSCAPE SOLUTIONS</div>
+    <div style="font-size: 11px; color: var(--gold); letter-spacing: 1px;">ROYAL LANDSCAPE COLLECTION</div>
 </header>
 
 <div class="product-container" data-aos="fade-up">
     <div class="image-side">
-        <img id="main-img" src="../assets/images/zalat/Top 10 Garden Space-Saving Ideas for 2025 _ Smart Small Garden Tips_ garden decoration outdoor garde (2).jpg" alt="زلط لاندسكيب مودرن حبيب ستور">
+        <div class="sale-badge">OFFER - 20%</div>
+        <img id="main-img" src="../assets/images/white-zalat-clean.jpg" alt="White Crystal Luxury Selection">
     </div>
     
     <div class="details-side">
-        <span class="category-label">أرقى خامات اللاندسكيب في مصر</span>
-        <div class="stars">★★★★★ <span style="color:#aaa; font-size: 13px; margin-right: 10px;">(120 تقييم من نخبة عملاء التجمع وزايد)</span></div>
+        <span class="category-label">إختيار الصفوة | LIMITED EDITION</span>
+        <div class="stars">★★★★★ <span style="color:#aaa; font-size: 12px; margin-right: 10px;">(120 تقييم من نخبة التجمع وزايد)</span></div>
         
-        <h1>زلط لاندسكيب طبيعي <br><span style="color: var(--gold); font-size: 0.8em;">مودرن "حبيب ستور"</span></h1>
+        <h1>زلط الرخام الملكي <br><span style="color: var(--gold); font-size: 0.6em; font-family: 'Cairo';">White Crystal Selection</span></h1>
         
+        <div class="price-wrapper">
+            <span class="old-price">185 ج.م</span>
+            <span class="price">150 ج.م</span>
+            <span style="font-size: 14px; color: #888;">/ للعبوة الفاخرة (25KG)</span>
+        </div>
+
         <p class="description">
-            حوّل حديقتك إلى لوحة فنية مع زلط اللاندسكيب الفاخر. متوفر بجميع الألوان (الأبيض الناصع، الأحمر الملكي، والأخضر النادر). مثالي للممرات، حول الشلالات، وتحديد أحواض الزرع لإعطاء لمسة Minimalist Luxury لا مثيل لها.
+            حوّل حديقتك إلى قطعة فنية بلمسة الـ Minimalist Luxury. زلط رخامي معالج بتقنيات النقاء العالي، مصقول وملمع ليعكس الإضاءة الليلية بشكل ساحر.
         </p>
 
-        <div class="color-options">
-            <strong>الألوان المتاحة:</strong>
-            <div class="color-dot white" title="أبيض كريستال"></div>
-            <div class="color-dot red" title="أحمر ملكي"></div>
-            <div class="color-dot green" title="أخضر لاندسكيب"></div>
-        </div>
-        
-        <div class="price">150 ج.م <span style="font-size: 14px; font-weight: 300; color: #888;">/ للشكارة (25 كجم جودة سوبر)</span></div>
+        <ul class="specs-luxury">
+            <li><i class="fas fa-gem"></i> أبيض كريستالي ناصع (نخب أول)</li>
+            <li><i class="fas fa-sparkles"></i> ملمس مصقول ملمع لخدمة الإضاءة والظلال</li>
+            <li><i class="fas fa-shield-alt"></i> معالج بالكامل لضمان خلوه من الأتربة والشوائب</li>
+            <li><i class="fas fa-info-circle"></i> المعيار الهندسي: المتر المربع يحتاج 8 عبوات.</li>
+        </ul>
 
         <div class="quantity-calc">
-            <strong>📐 حاسبة "الحيتان" الذكية:</strong>
-            <p style="font-size: 13px; margin-bottom: 10px; color: #888;">كم متر مربع تريد تغطيته؟</p>
+            <strong>📐 التقرير الفني للكمية (Smart Calculator):</strong>
             <div class="input-group">
                 <input type="number" id="area" placeholder="0" oninput="calc()">
-                <span>متر مربع</span>
+                <span style="font-size: 14px;">متر مربع مساحة الحديقة</span>
             </div>
-            <p id="res">أدخل المساحة لحساب الكمية والسعر فورا...</p>
+            <p id="res">أدخل مساحة الموقع لاستخراج التقرير الفني...</p>
         </div>
 
-        <button class="btn-main" onclick="addToCart()">تأكيد حجز الكمية والطلب 🛒</button>
+        <div class="btn-group">
+            <button class="btn-cart" onclick="addToCart('cart')">إضافة إلى السلة <i class="fas fa-shopping-bag"></i></button>
+            <button class="btn-main" onclick="addToCart('buy')">تأكيد حجز الكمية والطلب ➜</button>
+        </div>
+        <p style="text-align: center; color: #d4af37; font-size: 11px; margin-top: 15px; font-weight: bold;">⚠️ متبقي 450 عبوة فقط من هذا النخب لعملاء التجمع وزايد</p>
     </div>
 </div>
 
 <div class="reviews-section" data-aos="fade-up">
-    <h3>آراء "حيتان" اللاندسكيب ⭐</h3>
-    <div class="review-grid">
-        <div class="review-card">
-            <strong>م. طارق - مهندس ديكور (التجمع)</strong>
-            <div class="stars">★★★★★</div>
-            <p>"الزلط أبيض ناصع جداً وخالي من الأتربة، التوصيل كان في الموعد والعمال ساعدونا في الرص. بجد شغل احترافي."</p>
-        </div>
-        <div class="review-card">
-            <strong>أ. ياسين - صاحب فيلا (زايد)</strong>
-            <div class="stars">★★★★★</div>
-            <p>"استخدمت الزلط الأحمر مع الأبيض من حبيب ستور، والنتيجة كانت مبهرة في اللاندسكيب. الحاسبة دقيقة جداً ووفرت عليّ خامات كتير."</p>
-        </div>
+    <h3 style="font-family: 'Amiri', serif; text-align: center; margin-bottom: 30px;">آراء "حيتان" اللاندسكيب ⭐</h3>
+    <div class="review-card">
+        <strong>أ. ياسين - صاحب فيلا (زايد)</strong>
+        <div class="stars">★★★★★</div>
+        <p>"استخدمت الـ White Crystal من حبيب ستور، الفنش ملمع وبيرمي إضاءة بجد خرافية بالليل. الحاسبة دقيقة جداً."</p>
     </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
-    // تفعيل الأنيميشن
     AOS.init({ duration: 1000, once: true });
 
     let totalBags = 0;
     let totalPrice = 0;
     const pricePerBag = 150;
+    const bagsPerMeter = 8; // القاعدة الذهبية اللي قلتها
 
     function calc() {
         let a = document.getElementById('area').value;
         if (a > 0) {
-            totalBags = Math.ceil(a * 1.5); 
+            totalBags = a * bagsPerMeter; 
             totalPrice = totalBags * pricePerBag;
-            document.getElementById('res').innerHTML = `💡 ستحتاج <strong>${totalBags} شكارة</strong> | الإجمالي: <strong>${totalPrice.toLocaleString()} ج.م</strong>`;
+            document.getElementById('res').innerHTML = `✅ ستحتاج: <strong>${totalBags} عبوة فاخرة</strong> | الإجمالي المالي: <strong>${totalPrice.toLocaleString()} ج.م</strong>`;
         } else {
-            document.getElementById('res').innerText = "أدخل المساحة لحساب الكمية والسعر فورا...";
+            document.getElementById('res').innerText = "أدخل مساحة الموقع لاستخراج التقرير الفني...";
         }
     }
 
-    function addToCart() {
+    function addToCart(type) {
         let a = document.getElementById('area').value;
         if (!a || a <= 0) {
-            alert('يا حوت، أدخل المساحة الأول عشان نحسبلك الطلب المظبوط!');
+            alert('يرجى تحديد المساحة الهندسية أولاً يا فندم.');
             return;
         }
 
         let cart = JSON.parse(localStorage.getItem('habibCart')) || [];
         cart.push({
-            name: 'زلط لاندسكيب فاخر (شكائر)',
-            area: totalBags,
+            name: 'زلط الرخام الملكي (White Crystal)',
+            area: totalBags + " عبوة",
             price: totalPrice
         });
         
         localStorage.setItem('habibCart', JSON.stringify(cart));
-        window.location.href = '../cart.html'; 
+        if (type === 'buy') {
+            window.location.href = '../cart.html'; 
+        } else {
+            alert('تمت إضافة الكمية للسلة بنجاح.');
+        }
     }
 </script>
 
