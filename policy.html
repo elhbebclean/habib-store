@@ -4,41 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>السياسات والأحكام | HABIB STORE</title>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
         :root { --gold: #AF944F; --black: #0a0a0a; --bg: #fdfdfd; }
-        body { font-family: 'Cairo', sans-serif; line-height: 1.8; background: var(--bg); color: var(--black); padding: 50px 10%; }
-        h1, h2 { font-family: 'Amiri', serif; color: var(--gold); margin-bottom: 20px; }
-        .section { background: #fff; padding: 30px; margin-bottom: 20px; border: 1px solid #eee; }
-        .back-link { display: inline-block; margin-bottom: 30px; color: var(--black); text-decoration: none; font-weight: 600; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Cairo', sans-serif; background: var(--bg); color: var(--black); line-height: 1.8; overflow-x: hidden; }
+
+        /* الهيدر الزجاجي الموحد */
+        header { 
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05); padding: 15px 5%;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo { font-family: 'Amiri', serif; font-size: 28px; letter-spacing: 2px; color: var(--black); text-decoration: none; }
+
+        /* حاوية المحتوى */
+        .policy-container { max-width: 900px; margin: 120px auto 60px; padding: 0 5%; }
+        
+        .back-btn { 
+            display: inline-flex; align-items: center; gap: 10px; 
+            color: var(--gold); text-decoration: none; font-weight: 600; 
+            margin-bottom: 40px; font-size: 14px; transition: 0.3s;
+        }
+        .back-btn:hover { transform: translateX(5px); }
+
+        h1 { font-family: 'Amiri', serif; font-size: 42px; margin-bottom: 15px; color: var(--black); border-right: 5px solid var(--gold); padding-right: 20px; }
+        .intro-text { color: #888; font-weight: 300; font-size: 18px; margin-bottom: 50px; }
+
+        /* الأقسام */
+        .section { 
+            background: #fff; padding: 40px; margin-bottom: 30px; 
+            border: 1px solid #f0f0f0; transition: 0.4s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+        .section:hover { box-shadow: 0 15px 30px rgba(0,0,0,0.05); border-color: var(--gold); }
+        
+        h2 { font-family: 'Amiri', serif; color: var(--gold); font-size: 24px; margin-bottom: 20px; display: flex; align-items: center; gap: 15px; }
+        h2 i { font-size: 18px; opacity: 0.7; }
+        
+        p { color: #555; font-size: 16px; font-weight: 400; text-align: justify; }
+
+        /* معلومات الاتصال السريعة */
+        .contact-box { background: var(--black); color: #fff; padding: 30px; margin-top: 50px; text-align: center; }
+        .contact-box a { color: var(--gold); text-decoration: none; font-weight: 700; font-size: 20px; }
+
+        footer { text-align: center; padding: 40px; color: #aaa; font-size: 12px; border-top: 1px solid #eee; margin-top: 40px; }
     </style>
 </head>
 <body>
 
-    <a href="index.html" class="back-link"> ➜ العودة للمتجر</a>
+<header>
+    <a href="index.html" class="logo">HABIB STORE</a>
+    <div style="font-size: 11px; font-weight: 300; letter-spacing: 1px; color: var(--gold);">LEGAL & POLICIES</div>
+</header>
 
-    <h1>السياسات والأحكام - حبيب ستور</h1>
-    <p>نلتزم في حبيب ستور بتقديم أعلى معايير الجودة لعملائنا في التجمع، الشيخ زايد، وكافة أنحاء مصر.</p>
+<div class="policy-container" data-aos="fade-up">
+    <a href="index.html" class="back-btn"><i class="fas fa-arrow-right"></i> العودة للمتجر الرئيسي</a>
 
-    <div class="section">
-        <h2>1. سياسة التوريد والتركيب</h2>
-        <p>يتم تنفيذ الطلبات "الفورية" بناءً على المقاسات المقدمة من العميل. في حالة طلب "معاينة"، يتم إرسال فني متخصص لرفع المقاسات بدقة لضمان أفضل جودة للفنش النهائي.</p>
+    <h1>السياسات والأحكام</h1>
+    <p class="intro-text">نلتزم في "حبيب ستور" بتقديم أرقى خامات اللاندسكيب لعملائنا في التجمع، الشيخ زايد، وكافة أنحاء مصر وفق معايير شفافة.</p>
+
+    <div class="section" data-aos="fade-up">
+        <h2><i class="fas fa-truck-loading"></i> 1. سياسة التوريد والتركيب</h2>
+        <p>يتم تنفيذ الطلبات "الفورية" بناءً على المقاسات المقدمة من العميل عبر حاسبة الموقع الذكية. في حالة طلب "معاينة"، يتم إرسال فني متخصص لرفع المقاسات بدقة لضمان أفضل جودة للفنش النهائي، وتعتبر مقاسات الفني هي المرجعية النهائية للتوريد.</p>
     </div>
 
-    <div class="section">
-        <h2>2. سياسة الاسترجاع والاستبدال</h2>
-        <p>بسبب طبيعة المنتجات (نجيل، رخام، زلط)، يمكن الاسترجاع فقط في حالة وجود عيب صناعة واضح أو اختلاف في الخامة المتعاقد عليها قبل بدء عملية التركيب. بمجرد قص النجيل أو فرش الرخام، لا يمكن الاسترجاع.</p>
+    <div class="section" data-aos="fade-up">
+        <h2><i class="fas fa-undo-alt"></i> 2. سياسة الاسترجاع والاستبدال</h2>
+        <p>بسبب طبيعة المنتجات (نجيل، رخام، زلط)، يمكن الاسترجاع فقط في حالة وجود عيب صناعة واضح أو اختلاف في الخامة المتعاقد عليها قبل بدء عملية التنفيذ. بمجرد قص النجيل ليناسب مساحتك أو فرش وتنسيق الرخام والزلط، لا يمكن الاسترجاع نهائياً نظراً لخصوصية القطع والتجهيز.</p>
     </div>
 
-    <div class="section">
-        <h2>3. الدفع والتعاقد</h2>
-        <p>يتم دفع عربون جدية حجز للمعاينة، ويتم تحصيل إجمالي قيمة الأوردر عند التوريد أو التركيب حسب الاتفاق مع إدارة المتجر عبر الواتساب.</p>
+    <div class="section" data-aos="fade-up">
+        <h2><i class="fas fa-hand-holding-usd"></i> 3. الدفع والتعاقد</h2>
+        <p>يتم دفع عربون جدية حجز في حالة طلب المعاينة الفنية. ويتم تحصيل إجمالي قيمة الأوردر عند التوريد للموقع أو بعد انتهاء التركيب مباشرة حسب الاتفاق المبرم مع إدارة المتجر عبر الواتساب الرسمي.</p>
     </div>
 
-    <div class="section">
-        <h2>4. معلومات الاتصال</h2>
-        <p>للتواصل المباشر مع الإدارة: 201016961497+ <br> الموقع: القاهرة، مصر.</p>
+    <div class="contact-box" data-aos="zoom-in">
+        <p style="margin-bottom: 10px; color: #ccc;">لأي استفسارات قانونية أو إدارية مباشرة:</p>
+        <a href="https://wa.me/201016961497"><i class="fab fa-whatsapp"></i> +201016961497</a>
+        <p style="margin-top: 10px; font-size: 13px; opacity: 0.7;">المقر الرسمي: القاهرة، مصر.</p>
     </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 HABIB STORE - ALL RIGHTS RESERVED FOR SHARK SELECTION</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init({ duration: 1000, once: true });
+</script>
 
 </body>
 </html>
