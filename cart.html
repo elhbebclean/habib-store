@@ -3,157 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إنهاء الطلب | HABIB STORE</title>
+    <title>مراجعة الطلب | HABIB STORE</title>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --gold: #AF944F; --black: #0a0a0a; --gray: #f8f8f8; --text-light: #888; }
+        :root { --gold: #AF944F; --black: #0a0a0a; --gray: #f8f8f8; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Cairo', sans-serif; background: #fff; color: var(--black); padding-bottom: 50px; }
-
-        header { padding: 30px 5%; text-align: center; border-bottom: 1px solid #eee; margin-bottom: 40px; }
+        body { font-family: 'Cairo', sans-serif; background: #fff; color: var(--black); line-height: 1.6; }
+        
+        header { padding: 30px 5%; text-align: center; border-bottom: 1px solid #eee; margin-bottom: 30px; }
         .logo { font-family: 'Amiri', serif; font-size: 28px; color: var(--black); text-decoration: none; letter-spacing: 2px; }
 
-        .container { max-width: 1100px; margin: auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; padding: 0 5%; }
-        h2 { font-family: 'Amiri', serif; font-size: 24px; margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+        .container { max-width: 1100px; margin: auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; padding: 0 5%; }
+        h2 { font-family: 'Amiri', serif; font-size: 22px; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
 
-        .item-row { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid #f5f5f5; }
-        .item-info h4 { font-size: 16px; font-weight: 600; margin-bottom: 5px; }
-        .item-info p { font-size: 13px; color: var(--text-light); }
-        .item-price { font-weight: 600; color: var(--gold); }
-        .remove-btn { background: none; border: none; color: #ddd; cursor: pointer; transition: 0.3s; padding: 10px; }
+        .item-row { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #f9f9f9; }
+        .item-info h4 { font-size: 15px; font-weight: 600; color: var(--black); }
+        .item-info p { font-size: 12px; color: #888; }
+        .item-price { font-weight: 600; color: var(--gold); font-size: 14px; }
+        .remove-btn { background: none; border: none; color: #ccc; cursor: pointer; transition: 0.3s; padding: 5px 10px; }
         .remove-btn:hover { color: #ff4d4d; }
 
-        .checkout-form { background: var(--gray); padding: 35px; border-radius: 0px; position: sticky; top: 100px; }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-light); margin-bottom: 8px; }
+        .checkout-form { background: var(--gray); padding: 30px; position: sticky; top: 100px; border: 1px solid #eee; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-size: 11px; text-transform: uppercase; color: #888; margin-bottom: 5px; font-weight: 600; }
         .form-group input, .form-group select { 
-            width: 100%; padding: 12px; border: none; border-bottom: 1px solid #ddd; background: transparent; 
-            font-family: 'Cairo'; font-size: 14px; outline: none; transition: 0.3s;
+            width: 100%; padding: 10px; border: none; border-bottom: 1px solid #ccc; background: transparent; 
+            font-family: 'Cairo'; font-size: 14px; outline: none;
         }
         .form-group input:focus { border-bottom-color: var(--gold); }
 
-        .summary-row { display: flex; justify-content: space-between; margin: 10px 0; font-size: 14px; }
-        .grand-total { border-top: 1px solid #ddd; margin-top: 20px; padding-top: 20px; display: flex; justify-content: space-between; font-weight: 700; font-size: 20px; color: var(--black); }
+        .summary-box { margin-top: 20px; border-top: 1px solid #ddd; padding-top: 15px; }
+        .summary-row { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 5px; }
+        .grand-total { display: flex; justify-content: space-between; font-weight: 700; font-size: 18px; color: var(--black); margin-top: 10px; }
 
         .btn-confirm { 
-            background: var(--black); color: #fff; border: none; width: 100%; padding: 20px; 
-            margin-top: 30px; cursor: pointer; font-size: 15px; font-weight: 600; transition: 0.4s;
+            background: var(--black); color: #fff; border: none; width: 100%; padding: 18px; 
+            margin-top: 25px; cursor: pointer; font-size: 14px; font-weight: 600; transition: 0.3s;
             display: flex; align-items: center; justify-content: center; gap: 10px;
         }
         .btn-confirm:hover { background: var(--gold); }
 
-        .empty-cart-msg { text-align: center; padding: 100px 0; grid-column: span 2; }
         @media (max-width: 850px) { .container { grid-template-columns: 1fr; } .checkout-form { position: static; } }
     </style>
 </head>
 <body>
 
-<header><a href="../index.html" class="logo">HABIB STORE</a></header>
+<header><a href="index.html" class="logo">HABIB STORE</a></header>
 
-<div class="container" id="cart-wrapper">
+<div class="container" id="cart-content">
     <div class="cart-section">
-        <h2>مراجعة طلبك الفخم</h2>
-        <div id="items-list"></div>
+        <h2>أصناف المختارة</h2>
+        <div id="items-list">
+            </div>
     </div>
 
     <div class="checkout-form">
-        <h2>تفاصيل الحجز</h2>
+        <h2>تأكيد الحجز</h2>
         <div class="form-group">
-            <label>الاسم بالكامل</label>
-            <input type="text" id="cust-name" placeholder="الاسم الكريم">
+            <label>الاسم</label>
+            <input type="text" id="name" placeholder="اكتب اسمك هنا">
         </div>
         <div class="form-group">
-            <label>المنطقة بالتفصيل</label>
-            <input type="text" id="cust-loc" placeholder="التجمع، زايد، الساحل...">
+            <label>موقع التنفيذ</label>
+            <input type="text" id="location" placeholder="التجمع، زايد، الساحل...">
         </div>
         <div class="form-group">
-            <label>رقم الواتساب</label>
-            <input type="tel" id="cust-phone" placeholder="01xxxxxxxxx">
-        </div>
-        <div class="form-group">
-            <label>نوع الخدمة المطلوبة</label>
-            <select id="exec-status">
-                <option value="توريد وتركيب فوري">توريد وتركيب فوري (المقاسات جاهزة) 🏎️</option>
-                <option value="معاينة فنية ورفع مقاسات">طلب فني للمعاينة ورفع المقاسات 🔍</option>
-                <option value="توريد الخامات فقط">توريد الخامات فقط (بدون تركيب) 🚛</option>
+            <label>نوع الخدمة</label>
+            <select id="service">
+                <option value="توريد وتركيب فوري">توريد وتركيب فوري 🏎️</option>
+                <option value="معاينة ورفع مقاسات">طلب فني للمعاينة 🔍</option>
+                <option value="توريد خامات فقط">توريد خامات فقط 🚛</option>
             </select>
         </div>
 
         <div class="summary-box">
-            <div class="summary-row"><span>عدد الأصناف:</span> <span id="items-count">0</span></div>
-            <div class="grand-total"><span>الإجمالي المبدئي:</span> <span id="total-amount">0</span> ج.م</div>
+            <div class="summary-row"><span>عدد العناصر:</span> <span id="count">0</span></div>
+            <div class="grand-total"><span>الإجمالي:</span> <span id="total">0</span> ج.م</div>
         </div>
 
-        <button class="btn-confirm" onclick="sendWhatsApp()">إرسال الطلب لـ HABIB STORE <i class="fab fa-whatsapp"></i></button>
+        <button class="btn-confirm" onclick="sendOrder()">إرسال الطلب عبر واتساب <i class="fab fa-whatsapp"></i></button>
     </div>
 </div>
 
-<div id="empty-msg" class="empty-cart-msg" style="display:none;">
-    <i class="fas fa-shopping-bag" style="font-size: 50px; color: #eee; margin-bottom: 20px;"></i>
-    <h2>السلة فارغة حالياً يا حوت</h2>
-    <a href="../index.html" style="color:var(--gold); text-decoration:none; display:block; margin-top:20px;">العودة للمتجر ➜</a>
+<div id="empty-cart" style="display:none; text-align:center; padding:100px 5%;">
+    <i class="fas fa-shopping-bag" style="font-size:40px; color:#eee; margin-bottom:20px;"></i>
+    <h3>السلة خالية يا حوت</h3>
+    <a href="index.html" style="color:var(--gold); text-decoration:none; display:block; margin-top:15px;">العودة للمتجر ➜</a>
 </div>
 
 <script>
-    function renderCart() {
+    function loadCart() {
+        // سحب البيانات من الذاكرة ومنع التكرار التلقائي
         const cart = JSON.parse(localStorage.getItem('habibCart')) || [];
-        const list = document.getElementById('items-list');
-        const empty = document.getElementById('empty-msg');
-        const wrapper = document.getElementById('cart-wrapper');
+        const listDiv = document.getElementById('items-list');
+        const totalSpan = document.getElementById('total');
+        const countSpan = document.getElementById('count');
         
-        if (cart.length === 0) { wrapper.style.display = 'none'; empty.style.display = 'block'; return; }
+        if (cart.length === 0) {
+            document.getElementById('cart-content').style.display = 'none';
+            document.getElementById('empty-cart').style.display = 'block';
+            return;
+        }
 
-        list.innerHTML = '';
-        let total = 0;
+        listDiv.innerHTML = '';
+        let totalAmount = 0;
+
         cart.forEach((item, index) => {
-            total += parseFloat(item.price);
-            list.innerHTML += `
+            totalAmount += parseFloat(item.price || 0);
+            listDiv.innerHTML += `
                 <div class="item-row">
                     <div class="item-info">
                         <h4>${item.name}</h4>
-                        <p>الكمية: ${item.area} وحدة</p>
+                        <p>${item.area} (متر/قطعة)</p>
                     </div>
-                    <div style="display:flex; align-items:center; gap:20px;">
+                    <div style="display:flex; align-items:center; gap:15px;">
                         <span class="item-price">${parseFloat(item.price).toLocaleString()} ج.م</span>
-                        <button class="remove-btn" onclick="removeItem(${index})"><i class="fas fa-times"></i></button>
+                        <button class="remove-btn" onclick="deleteItem(${index})"><i class="fas fa-times"></i></button>
                     </div>
                 </div>`;
         });
-        document.getElementById('total-amount').innerText = total.toLocaleString();
-        document.getElementById('items-count').innerText = cart.length;
+
+        totalSpan.innerText = totalAmount.toLocaleString();
+        countSpan.innerText = cart.length;
     }
 
-    function removeItem(index) {
+    function deleteItem(index) {
         let cart = JSON.parse(localStorage.getItem('habibCart')) || [];
-        cart.splice(index, 1);
+        cart.splice(index, 1); // حذف المنتج المحدد فقط
         localStorage.setItem('habibCart', JSON.stringify(cart));
-        renderCart();
+        loadCart(); // إعادة التحميل فوراً
     }
 
-    function sendWhatsApp() {
-        const name = document.getElementById('cust-name').value;
-        const loc = document.getElementById('cust-loc').value;
-        const phone = document.getElementById('cust-phone').value;
-        const status = document.getElementById('exec-status').value;
+    function sendOrder() {
+        const name = document.getElementById('name').value;
+        const loc = document.getElementById('location').value;
+        const service = document.getElementById('service').value;
         const cart = JSON.parse(localStorage.getItem('habibCart')) || [];
 
-        if (!name || !loc || !phone) { alert('برجاء ملء البيانات كاملة يا حوت!'); return; }
+        if (!name || !loc) { alert('يا حوت، كمل بياناتك الأول!'); return; }
 
-        let msg = `*طلب جديد | HABIB STORE* 🦈\n`;
-        msg += `--------------------------\n`;
-        msg += `*العميل:* ${name}\n`;
-        msg += `*المنطقة:* ${loc}\n`;
-        msg += `*الموبايل:* ${phone}\n`;
-        msg += `*نوع الخدمة:* ${status}\n\n`;
-        msg += `*الطلبات:*\n`;
-        cart.forEach((item, i) => { msg += `${i+1}. ${item.name} | ${item.area} (متر/شكارة) \n`; });
-        msg += `\n*الإجمالي:* ${document.getElementById('total-amount').innerText} ج.م\n`;
-        msg += `--------------------------\n`;
+        let message = `*طلب جديد من Habib Store* 🦈\n`;
+        message += `--------------------------\n`;
+        message += `*العميل:* ${name}\n`;
+        message += `*الموقع:* ${loc}\n`;
+        message += `*الخدمة:* ${service}\n\n`;
+        message += `*الطلبات:*\n`;
         
-        window.open(`https://wa.me/201016961497?text=${encodeURIComponent(msg)}`, '_blank');
+        cart.forEach((item, i) => {
+            message += `${i+1}. ${item.name} (${item.area} متر/قطعة)\n`;
+        });
+
+        message += `\n*الإجمالي:* ${document.getElementById('total').innerText} ج.م\n`;
+        message += `--------------------------`;
+
+        // فتح واتساب
+        window.open(`https://wa.me/201016961497?text=${encodeURIComponent(message)}`, '_blank');
+        
+        // اختيارياً: تنظيف السلة بعد الطلب
+        // localStorage.removeItem('habibCart');
     }
-    window.onload = renderCart;
+
+    window.onload = loadCart;
 </script>
 </body>
 </html>
