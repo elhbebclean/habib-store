@@ -24,10 +24,10 @@
 
         /* الـ Hero Section */
         .hero { 
-            height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
             text-align: center; background: #fff; margin-top: 60px;
         }
-        .hero h1 { font-family: 'Amiri', serif; font-size: 55px; margin-bottom: 10px; color: var(--black); }
+        .hero h1 { font-family: 'Amiri', serif; font-size: clamp(35px, 8vw, 55px); margin-bottom: 10px; color: var(--black); }
         .hero p { font-weight: 300; letter-spacing: 2px; color: #888; text-transform: uppercase; }
 
         /* شبكة المنتجات */
@@ -40,52 +40,47 @@
         }
         .product-card:hover { transform: translateY(-10px); }
         
-        .img-container { width: 100%; height: 400px; overflow: hidden; position: relative; }
+        .img-container { width: 100%; height: 400px; overflow: hidden; position: relative; background: #f9f9f9; }
         .img-container img { width: 100%; height: 100%; object-fit: cover; transition: 1.2s; }
         .product-card:hover img { transform: scale(1.1); }
 
-        .badge { position: absolute; top: 20px; left: 20px; background: var(--gold); color: white; padding: 5px 15px; font-size: 12px; font-weight: bold; z-index: 10; }
+        .badge { position: absolute; top: 20px; left: 20px; background: var(--gold); color: white; padding: 5px 15px; font-size: 11px; font-weight: bold; z-index: 10; }
 
         .info { padding: 25px 0; text-align: right; }
         .info h3 { font-size: 20px; margin-bottom: 8px; font-weight: 600; }
-        .info .category { font-size: 12px; color: var(--gold); text-transform: uppercase; margin-bottom: 10px; display: block; }
-        
-        /* الحاسبة المدمجة */
-        .calc-area { margin-top: 15px; background: #f9f9f9; padding: 15px; border-radius: 4px; }
-        .calc-area select, .calc-area input { 
-            width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; 
-            font-family: 'Cairo'; outline: none;
-        }
-        .price-display { font-size: 18px; color: var(--gold); font-weight: 600; margin-bottom: 10px; display: block; }
+        .info .category { font-size: 11px; color: var(--gold); text-transform: uppercase; margin-bottom: 10px; display: block; letter-spacing: 1px; }
+        .info p { font-size: 14px; color: #666; line-height: 1.6; margin-bottom: 15px; }
+
+        .price-display { font-size: 18px; color: var(--gold); font-weight: 600; margin-bottom: 15px; display: block; }
 
         .btn-luxury { 
             display: block; width: 100%; background: var(--black); color: #fff; 
             text-align: center; text-decoration: none; padding: 15px; font-size: 14px;
-            transition: 0.3s; cursor: pointer; border: none;
+            transition: 0.3s; cursor: pointer; border: none; font-weight: 600;
         }
         .btn-luxury:hover { background: var(--gold); }
 
-        /* أيقونة السلة العائمة */
+        /* السلة العائمة */
         .cart-trigger { 
-            position: fixed; bottom: 40px; left: 40px; background: var(--black); color: #fff;
-            padding: 20px; border-radius: 50%; box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            text-decoration: none; z-index: 2000; transition: 0.3s;
+            position: fixed; bottom: 30px; left: 30px; background: var(--black); color: #fff;
+            width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2); z-index: 2000; cursor: pointer; transition: 0.3s;
+            text-decoration: none; font-size: 24px;
         }
-        .cart-trigger:hover { background: var(--gold); transform: scale(1.1); }
-
+        .cart-trigger:hover { transform: scale(1.1); background: var(--gold); }
     </style>
 </head>
 <body>
 
 <header>
     <a href="#" class="logo">HABIB STORE</a>
-    <div style="font-size: 13px; font-weight: 300;">LUXURY LANDSCAPE SOLUTIONS</div>
+    <div style="font-size: 11px; font-weight: 300; letter-spacing: 1px;">LUXURY LANDSCAPE SOLUTIONS</div>
 </header>
 
 <section class="hero" data-aos="fade-up">
-    <p>مرحباً بك في عالم الفخامة</p>
+    <p>Shark Selection</p>
     <h1>تشكيلة 2026 الحصرية</h1>
-    <div style="width: 50px; height: 1px; background: var(--gold); margin-top: 20px;"></div>
+    <div style="width: 40px; height: 1px; background: var(--gold); margin-top: 20px;"></div>
 </section>
 
 <div class="container">
@@ -94,106 +89,60 @@
         <div class="product-card" data-aos="fade-up">
             <div class="badge">الأكثر طلباً</div>
             <div class="img-container">
-                <img src="images/grass-main.jpg" id="main-grass-img" alt="Premium Grass">
+                <img src="images/grass-main.jpg" alt="نجيل صناعي">
             </div>
             <div class="info">
                 <span class="category">النجيل الصناعي الفاخر</span>
                 <h3>نجيل لاندسكيب (كثافات متعددة)</h3>
-                
-                <div class="calc-area">
-                    <select id="grass-select" onchange="updatePrice()">
-                        <option value="180" data-name="نجيل تركي فاخر - 40 ملم">نجيل تركي فاخر - 40 ملم</option>
-                        <option value="220" data-name="نجيل ميكس (شبه الطبيعي) - 50 ملم">نجيل ميكس (شبه الطبيعي) - 50 ملم</option>
-                        <option value="160" data-name="نجيل أخضر زاهي (ملاعب)">نجيل أخضر زاهي (ملاعب)</option>
-                        <option value="140" data-name="نجيل اقتصادي - 30 ملم">نجيل اقتصادي - 30 ملم</option>
-                    </select>
-                    <input type="number" id="grass-size" placeholder="أدخل المساحة بالمتر المربع" oninput="updatePrice()">
-                    <span class="price-display" id="total-display">الإجمالي: 0 ج.م</span>
-                    <button class="btn-luxury" onclick="addToCart()">احجز الآن وانتقل للسلة ➜</button>
-                </div>
+                <p>تشكيلة من أفضل أنواع النجيل التركي والميكس الطبيعي، تناسب كافة الأذواق والاحتياجات.</p>
+                <span class="price-display">يبدأ من 140 ج.م / للمتر</span>
+                <a href="products/grass.html" class="btn-luxury">عرض الأنواع واحسب أمتارك ➜</a>
             </div>
         </div>
 
-        <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="badge">SALE</div>
             <div class="img-container">
                 <img src="images/white-marble.jpg" alt="White Marble">
             </div>
             <div class="info">
                 <span class="category">أحجار ديكور</span>
-                <h3>زلط أبيض كريستال ناصع</h3>
-                <div class="calc-area">
-                    <input type="number" id="pebble-size" placeholder="أدخل الكمية (بالمتر/الشكارة)" oninput="updatePricePebble()">
-                    <span class="price-display" id="pebble-total">الإجمالي: 0 ج.م</span>
-                    <button class="btn-luxury" onclick="addToCartPebble()">احجز الآن ➜</button>
-                </div>
+                <h3>رخام أبيض كريستال ناصع</h3>
+                <p>خامة ملكية تمنح حديقتك اتساعاً وفخامة، الخيار الأول لنخبة المجتمع في التجمع وزايد.</p>
+                <span class="price-display">150 ج.م / للشكارة</span>
+                <a href="products/white-marble.html" class="btn-luxury">عرض التفاصيل والتقييمات ➜</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="img-container">
+                <img src="images/pebbles.jpg" alt="Pebbles">
+            </div>
+            <div class="info">
+                <span class="category">لاندسكيب مودرن</span>
+                <h3>زلط ديكور ملون</h3>
+                <p>تشكيلة متنوعة من الزلط المستورد والمحلي لتزيين الممرات وحول الأشجار.</p>
+                <span class="price-display">حسب النوع والكمية</span>
+                <a href="#" class="btn-luxury">قريباً في المتجر ➜</a>
             </div>
         </div>
         
-    </div>
-</div>
+    </div> </div> <a href="cart.html" class="cart-trigger">
+    <i class="fas fa-shopping-bag"></i>
+</a>
 
-<a href="cart.html" class="cart-trigger">🛒</a>
+<footer style="text-align: center; padding: 40px; color: #888; font-size: 12px; border-top: 1px solid #eee;">
+    <p>&copy; 2026 HABIB STORE - ALL RIGHTS RESERVED FOR SHARK SELECTION</p>
+</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
+    // تفعيل الأنيميشن
     AOS.init({ duration: 1000, once: true });
 
-    // وظيفة حساب سعر النجيل
-    function updatePrice() {
-        const pricePerMeter = document.getElementById('grass-select').value;
-        const area = document.getElementById('grass-size').value || 0;
-        const total = pricePerMeter * area;
-        document.getElementById('total-display').innerText = `الإجمالي: ${total.toLocaleString()} ج.م`;
-    }
-
-    // وظيفة حساب سعر الزلط
-    function updatePricePebble() {
-        const area = document.getElementById('pebble-size').value || 0;
-        const total = area * 150; // سعر افتراضي للزلط
-        document.getElementById('pebble-total').innerText = `الإجمالي: ${total.toLocaleString()} ج.م`;
-    }
-
-    // إضافة النجيل للسلة والانتقال
-    function addToCart() {
-        const select = document.getElementById('grass-select');
-        const area = document.getElementById('grass-size').value;
-        const pricePerMeter = select.value;
-
-        if (!area || area <= 0) {
-            alert('يا حوت، أدخل المساحة الأول!');
-            return;
-        }
-
-        const product = {
-            name: select.options[select.selectedIndex].getAttribute('data-name'),
-            area: area,
-            price: pricePerMeter * area
-        };
-
-        let cart = JSON.parse(localStorage.getItem('habibCart')) || [];
-        cart.push(product);
-        localStorage.setItem('habibCart', JSON.stringify(cart));
-
-        // الانتقال لصفحة السلة
-        window.location.href = 'cart.html';
-    }
-
-    // إضافة الزلط للسلة
-    function addToCartPebble() {
-        const area = document.getElementById('pebble-size').value;
-        if (!area || area <= 0) { alert('أدخل الكمية!'); return; }
-
-        const product = {
-            name: 'زلط أبيض كريستال ناصع',
-            area: area,
-            price: area * 150
-        };
-
-        let cart = JSON.parse(localStorage.getItem('habibCart')) || [];
-        cart.push(product);
-        localStorage.setItem('habibCart', JSON.stringify(cart));
-        window.location.href = 'cart.html';
-    }
+    // ملاحظة للـ Shark: 
+    // الآن الإضافة للسلة تتم من داخل صفحات المنتجات (مثل صفحة الرخام)
+    // والبيانات تظهر أوتوماتيكياً في صفحة cart.html بفضل الـ LocalStorage الموحد.
 </script>
 
 </body>
