@@ -73,7 +73,7 @@
     </div>
 
     <div class="checkout-form">
-        <h2>تأكيد الحجز</h2>
+        <h2>بيانات التنفيذ</h2>
         <div class="form-group">
             <label>الاسم بالكامل</label>
             <input type="text" id="name" placeholder="مثال: محمود المصري">
@@ -109,7 +109,6 @@
 </div>
 
 <script>
-    // وظيفة تحميل السلة وعرضها
     function loadCart() {
         const cart = JSON.parse(localStorage.getItem('habibCart')) || [];
         const listDiv = document.getElementById('items-list');
@@ -152,7 +151,6 @@
         countSpan.innerText = cart.length;
     }
 
-    // حذف عنصر من السلة
     function deleteItem(index) {
         let cart = JSON.parse(localStorage.getItem('habibCart')) || [];
         cart.splice(index, 1);
@@ -160,7 +158,6 @@
         loadCart();
     }
 
-    // إرسال الطلب للواتساب
     function sendOrder() {
         const name = document.getElementById('name').value.trim();
         const loc = document.getElementById('location').value.trim();
@@ -172,7 +169,6 @@
             return; 
         }
 
-        // بناء الرسالة بشكل احترافي
         let message = `*طلب جديد من متجر HABIB STORE* 🦈\n`;
         message += `--------------------------------\n`;
         message += `👤 *العميل:* ${name}\n`;
@@ -182,23 +178,3 @@
         message += `📦 *المنتجات المطلوبة:*\n\n`;
         
         cart.forEach((item, i) => {
-            message += `${i+1}. *${item.name}*\n`;
-            message += `   - الكمية: ${item.area}\n`;
-            message += `   - السعر: ${item.price.toLocaleString()} ج.م\n\n`;
-        });
-
-        message += `--------------------------------\n`;
-        message += `💰 *الإجمالي النهائي: ${document.getElementById('total').innerText} ج.م*\n`;
-        message += `--------------------------------\n`;
-        message += `_تم إرسال الطلب من نظام Shark Selection_`;
-
-        // فتح واتساب (استخدمت الرقم اللي في بياناتك)
-        const whatsappNumber = "201016961497";
-        window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
-    }
-
-    // التحميل عند فتح الصفحة
-    window.onload = loadCart;
-</script>
-</body>
-</html>
