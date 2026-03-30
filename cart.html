@@ -3,117 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سلة المشتريات | Habib Store</title>
+    <title>إنهاء الطلب | HABIB STORE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: sans-serif; padding: 20px; background: #f4f4f4; text-align: center; }
-        .cart-container { background: white; padding: 20px; border-radius: 10px; max-width: 600px; margin: auto; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
-        th, td { border-bottom: 1px solid #ddd; padding: 10px; text-align: right; }
-        .total { font-size: 20px; font-weight: bold; color: #e67e22; }
-        input { width: 90%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
-        .btn-order { background: #25d366; color: white; border: none; padding: 15px; width: 100%; border-radius: 5px; cursor: pointer; font-size: 18px; font-weight: bold; }
-        .empty-msg { color: #888; padding: 20px; }
+        :root { --gold: #AF944F; --black: #0a0a0a; --gray: #f8f8f8; --text-light: #888; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Cairo', sans-serif; background: #fff; color: var(--black); padding-bottom: 50px; }
+
+        /* الهيدر البسيط */
+        header { padding: 30px 5%; text-align: center; border-bottom: 1px solid #eee; margin-bottom: 40px; }
+        .logo { font-family: 'Amiri', serif; font-size: 28px; color: var(--black); text-decoration: none; letter-spacing: 2px; }
+
+        .container { max-width: 1100px; margin: auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; padding: 0 5%; }
+
+        h2 { font-family: 'Amiri', serif; font-size: 24px; margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+
+        /* قائمة المنتجات */
+        .cart-items-wrap { background: #fff; }
+        .item-row { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid #f5f5f5; }
+        .item-info h4 { font-size: 16px; font-weight: 600; margin-bottom: 5px; }
+        .item-info p { font-size: 13px; color: var(--text-light); }
+        .item-price { font-weight: 600; color: var(--gold); }
+        .remove-btn { background: none; border: none; color: #ddd; cursor: pointer; transition: 0.3s; padding: 10px; }
+        .remove-btn:hover { color: #ff4d4d; }
+
+        /* فورم البيانات */
+        .checkout-form { background: var(--gray); padding: 35px; border-radius: 0px; position: sticky; top: 100px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-light); margin-bottom: 8px; }
+        .form-group input, .form-group select { 
+            width: 100%; padding: 12px; border: none; border-bottom: 1px solid #ddd; background: transparent; 
+            font-family: 'Cairo'; font-size: 14px; outline: none; transition: 0.3s;
+        }
+        .form-group input:focus { border-bottom-color: var(--gold); }
+
+        /* ملخص الحساب */
+        .summary-row { display: flex; justify-content: space-between; margin: 10px 0; font-size: 14px; }
+        .grand-total { border-top: 1px solid #ddd; margin-top: 20px; padding-top: 20px; display: flex; justify-content: space-between; font-weight: 700; font-size: 20px; color: var(--black); }
+
+        .btn-confirm { 
+            background: var(--black); color: #fff; border: none; width: 100%; padding: 20px; 
+            margin-top: 30px; cursor: pointer; font-size: 15px; font-weight: 600; transition: 0.4s;
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+        }
+        .btn-confirm:hover { background: var(--gold); }
+
+        .empty-cart-msg { text-align: center; padding: 100px 0; grid-column: span 2; }
+        .empty-cart-msg i { font-size: 50px; color: #eee; margin-bottom: 20px; }
+
+        @media (max-width: 850px) {
+            .container { grid-template-columns: 1fr; }
+            .checkout-form { position: static; }
+        }
     </style>
 </head>
 <body>
 
-<div class="cart-container">
-    <h1>🛒 سلة مشترياتك</h1>
-    
-    <div id="cart-content">
-        <table id="cart-table">
-            <thead>
-                <tr>
-                    <th>المنتج</th>
-                    <th>السعر</th>
-                    <th>حذف</th>
-                </tr>
-            </thead>
-            <tbody id="cart-items"></tbody>
-        </table>
-        
-        <div class="total">الإجمالي المبدئي: <span id="grand-total">0</span> ج.م</div>
-        
-        <hr>
-        <h3>بيانات التوصيل والمعاينة</h3>
-        <input type="text" id="cust-name" placeholder="الاسم بالكامل" required>
-        <input type="text" id="cust-address" placeholder="العنوان (مثلاً: التجمع الخامس - النرجس)" required>
-        <input type="tel" id="cust-phone" placeholder="رقم الموبايل" required>
-        
-        <button class="btn-order" onclick="sendToWhatsApp()">✅ تأكيد الطلب وحجز المعاينة</button>
+<header>
+    <a href="index.html" class="logo">HABIB STORE</a>
+</header>
+
+<div class="container" id="cart-wrapper">
+    <div class="cart-section">
+        <h2>مراجعة الطلب</h2>
+        <div id="items-list">
+            </div>
     </div>
-    
-    <div id="empty-cart" class="empty-msg" style="display:none;">
-        السلة فاضية يا حوت.. ارجع اختار رخامك! <br><br>
-        <a href="index.html">العودة للمتجر</a>
+
+    <div class="checkout-form">
+        <h2>بيانات التوصيل</h2>
+        <div class="form-group">
+            <label>الاسم بالكامل</label>
+            <input type="text" id="cust-name" placeholder="مثلاً: محمد السيد">
+        </div>
+        <div class="form-group">
+            <label>المنطقة</label>
+            <input type="text" id="cust-loc" placeholder="مثلاً: التجمع الخامس - الياسمين">
+        </div>
+        <div class="form-group">
+            <label>رقم الموبايل</label>
+            <input type="tel" id="cust-phone" placeholder="01xxxxxxxxx">
+        </div>
+        <div class="form-group">
+            <label>حالة الموقع</label>
+            <select id="exec-status">
+                <option value="فوري">تنفيذ وشحن فوري 🏎️</option>
+                <option value="معاينة">حجز معاينة فنية 🔍</option>
+            </select>
+        </div>
+
+        <div class="summary-box">
+            <div class="summary-row"><span>عدد الأصناف:</span> <span id="items-count">0</span></div>
+            <div class="grand-total"><span>الإجمالي:</span> <span id="total-amount">0</span> ج.م</div>
+        </div>
+
+        <button class="btn-confirm" onclick="sendWhatsApp()">
+            إرسال الطلب للمدير <i class="fab fa-whatsapp"></i>
+        </button>
     </div>
 </div>
 
-<script>
-    function loadCart() {
-        let cart = JSON.parse(localStorage.getItem('habibCart')) || [];
-        let itemsContainer = document.getElementById('cart-items');
-        let grandTotal = 0;
+<div id="empty-msg" class="empty-cart-msg" style="display:none;">
+    <i class="fas fa-shopping-bag"></i>
+    <h2>السلة فارغة حالياً</h2>
+    <p style="color:#888; margin: 15px 0 30px;">ابدأ بإضافة منتجاتك المفضلة للممرات واللاندسكيب</p>
+    <a href="index.html" style="color:var(--gold); text-decoration:none; font-weight:600;">العودة للمتجر ➜</a>
+</div>
 
+<script>
+    function renderCart() {
+        const cart = JSON.parse(localStorage.getItem('habibCart')) || [];
+        const list = document.getElementById('items-list');
+        const empty = document.getElementById('empty-msg');
+        const wrapper = document.getElementById('cart-wrapper');
+        
         if (cart.length === 0) {
-            document.getElementById('cart-content').style.display = 'none';
-            document.getElementById('empty-cart').style.display = 'block';
+            wrapper.style.display = 'none';
+            empty.style.display = 'block';
             return;
         }
 
-        itemsContainer.innerHTML = '';
+        list.innerHTML = '';
+        let total = 0;
         cart.forEach((item, index) => {
-            grandTotal += item.price;
-            itemsContainer.innerHTML += `
-                <tr>
-                    <td>${item.name}</td>
-                    <td>${item.price} ج.م</td>
-                    <td><button onclick="removeItem(${index})">❌</button></td>
-                </tr>
+            total += parseFloat(item.price);
+            list.innerHTML += `
+                <div class="item-row">
+                    <div class="item-info">
+                        <h4>${item.name}</h4>
+                        <p>الكمية/المساحة: ${item.area} متر/شكارة</p>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:20px;">
+                        <span class="item-price">${parseFloat(item.price).toLocaleString()} ج.م</span>
+                        <button class="remove-btn" onclick="removeItem(${index})"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
             `;
         });
-        document.getElementById('grand-total').innerText = grandTotal;
+
+        document.getElementById('total-amount').innerText = total.toLocaleString();
+        document.getElementById('items-count').innerText = cart.length;
     }
 
     function removeItem(index) {
         let cart = JSON.parse(localStorage.getItem('habibCart')) || [];
         cart.splice(index, 1);
         localStorage.setItem('habibCart', JSON.stringify(cart));
-        loadCart();
+        renderCart();
     }
 
-    function sendToWhatsApp() {
-        let name = document.getElementById('cust-name').value;
-        let address = document.getElementById('cust-address').value;
-        let phone = document.getElementById('cust-phone').value;
-        let cart = JSON.parse(localStorage.getItem('habibCart')) || [];
+    function sendWhatsApp() {
+        const name = document.getElementById('cust-name').value;
+        const loc = document.getElementById('cust-loc').value;
+        const phone = document.getElementById('cust-phone').value;
+        const status = document.getElementById('exec-status').value;
+        const cart = JSON.parse(localStorage.getItem('habibCart')) || [];
 
-        if (!name || !address || !phone) {
-            alert('يا حوت، كمل بياناتك عشان نعرف نجيلك!');
-            return;
-        }
+        if (!name || !loc || !phone) { alert('برجاء ملء بيانات التواصل يا حوت!'); return; }
 
-        let message = `*طلب شراء جديد - Habib Store* 🛒\n\n`;
-        message += `*العميل:* ${name}\n`;
-        message += `*العنوان:* ${address}\n`;
-        message += `*الموبايل:* ${phone}\n\n`;
-        message += `*الطلبات:*\n`;
+        let msg = `*طلب جديد | HABIB STORE* 🦈\n`;
+        msg += `--------------------------\n`;
+        msg += `*العميل:* ${name}\n`;
+        msg += `*المنطقة:* ${loc}\n`;
+        msg += `*الموبايل:* ${phone}\n`;
+        msg += `*الحالة:* ${status === 'فوري' ? 'تنفيذ فوري 🏎️' : 'طلب معاينة 🔍'}\n\n`;
+        msg += `*الطلبات:*\n`;
         
         cart.forEach((item, i) => {
-            message += `${i+1}. ${item.name} (${item.price} ج.م)\n`;
+            msg += `${i+1}. ${item.name} | ${item.area} (متر/شكارة) \n`;
         });
 
-        message += `\n*الإجمالي:* ${document.getElementById('grand-total').innerText} ج.م\n`;
-        message += `--- \nبرجاء إفادتي بتكلفة الشحن وموعد التوريد.`;
-
-        let waUrl = `https://wa.me/201016961497?text=${encodeURIComponent(message)}`;
-        window.open(waUrl, '_blank');
+        msg += `\n*الإجمالي:* ${document.getElementById('total-amount').innerText} ج.م\n`;
+        msg += `--------------------------\n`;
         
-        // مسح السلة بعد الطلب (اختياري)
-        // localStorage.removeItem('habibCart');
+        window.open(`https://wa.me/201016961497?text=${encodeURIComponent(msg)}`, '_blank');
     }
 
-    window.onload = loadCart;
+    window.onload = renderCart;
 </script>
 
 </body>
