@@ -11,16 +11,12 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Cairo', sans-serif; background: #fff; color: var(--black); padding-bottom: 50px; }
 
-        /* الهيدر البسيط */
         header { padding: 30px 5%; text-align: center; border-bottom: 1px solid #eee; margin-bottom: 40px; }
         .logo { font-family: 'Amiri', serif; font-size: 28px; color: var(--black); text-decoration: none; letter-spacing: 2px; }
 
         .container { max-width: 1100px; margin: auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; padding: 0 5%; }
-
         h2 { font-family: 'Amiri', serif; font-size: 24px; margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
 
-        /* قائمة المنتجات */
-        .cart-items-wrap { background: #fff; }
         .item-row { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid #f5f5f5; }
         .item-info h4 { font-size: 16px; font-weight: 600; margin-bottom: 5px; }
         .item-info p { font-size: 13px; color: var(--text-light); }
@@ -28,7 +24,6 @@
         .remove-btn { background: none; border: none; color: #ddd; cursor: pointer; transition: 0.3s; padding: 10px; }
         .remove-btn:hover { color: #ff4d4d; }
 
-        /* فورم البيانات */
         .checkout-form { background: var(--gray); padding: 35px; border-radius: 0px; position: sticky; top: 100px; }
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-light); margin-bottom: 8px; }
@@ -38,7 +33,6 @@
         }
         .form-group input:focus { border-bottom-color: var(--gold); }
 
-        /* ملخص الحساب */
         .summary-row { display: flex; justify-content: space-between; margin: 10px 0; font-size: 14px; }
         .grand-total { border-top: 1px solid #ddd; margin-top: 20px; padding-top: 20px; display: flex; justify-content: space-between; font-weight: 700; font-size: 20px; color: var(--black); }
 
@@ -50,65 +44,55 @@
         .btn-confirm:hover { background: var(--gold); }
 
         .empty-cart-msg { text-align: center; padding: 100px 0; grid-column: span 2; }
-        .empty-cart-msg i { font-size: 50px; color: #eee; margin-bottom: 20px; }
-
-        @media (max-width: 850px) {
-            .container { grid-template-columns: 1fr; }
-            .checkout-form { position: static; }
-        }
+        @media (max-width: 850px) { .container { grid-template-columns: 1fr; } .checkout-form { position: static; } }
     </style>
 </head>
 <body>
 
-<header>
-    <a href="index.html" class="logo">HABIB STORE</a>
-</header>
+<header><a href="../index.html" class="logo">HABIB STORE</a></header>
 
 <div class="container" id="cart-wrapper">
     <div class="cart-section">
-        <h2>مراجعة الطلب</h2>
-        <div id="items-list">
-            </div>
+        <h2>مراجعة طلبك الفخم</h2>
+        <div id="items-list"></div>
     </div>
 
     <div class="checkout-form">
-        <h2>بيانات التوصيل</h2>
+        <h2>تفاصيل الحجز</h2>
         <div class="form-group">
             <label>الاسم بالكامل</label>
-            <input type="text" id="cust-name" placeholder="مثلاً: محمد السيد">
+            <input type="text" id="cust-name" placeholder="الاسم الكريم">
         </div>
         <div class="form-group">
-            <label>المنطقة</label>
-            <input type="text" id="cust-loc" placeholder="مثلاً: التجمع الخامس - الياسمين">
+            <label>المنطقة بالتفصيل</label>
+            <input type="text" id="cust-loc" placeholder="التجمع، زايد، الساحل...">
         </div>
         <div class="form-group">
-            <label>رقم الموبايل</label>
+            <label>رقم الواتساب</label>
             <input type="tel" id="cust-phone" placeholder="01xxxxxxxxx">
         </div>
         <div class="form-group">
-            <label>حالة الموقع</label>
+            <label>نوع الخدمة المطلوبة</label>
             <select id="exec-status">
-                <option value="فوري">تنفيذ وشحن فوري 🏎️</option>
-                <option value="معاينة">حجز معاينة فنية 🔍</option>
+                <option value="توريد وتركيب فوري">توريد وتركيب فوري (المقاسات جاهزة) 🏎️</option>
+                <option value="معاينة فنية ورفع مقاسات">طلب فني للمعاينة ورفع المقاسات 🔍</option>
+                <option value="توريد الخامات فقط">توريد الخامات فقط (بدون تركيب) 🚛</option>
             </select>
         </div>
 
         <div class="summary-box">
             <div class="summary-row"><span>عدد الأصناف:</span> <span id="items-count">0</span></div>
-            <div class="grand-total"><span>الإجمالي:</span> <span id="total-amount">0</span> ج.م</div>
+            <div class="grand-total"><span>الإجمالي المبدئي:</span> <span id="total-amount">0</span> ج.م</div>
         </div>
 
-        <button class="btn-confirm" onclick="sendWhatsApp()">
-            إرسال الطلب للمدير <i class="fab fa-whatsapp"></i>
-        </button>
+        <button class="btn-confirm" onclick="sendWhatsApp()">إرسال الطلب لـ HABIB STORE <i class="fab fa-whatsapp"></i></button>
     </div>
 </div>
 
 <div id="empty-msg" class="empty-cart-msg" style="display:none;">
-    <i class="fas fa-shopping-bag"></i>
-    <h2>السلة فارغة حالياً</h2>
-    <p style="color:#888; margin: 15px 0 30px;">ابدأ بإضافة منتجاتك المفضلة للممرات واللاندسكيب</p>
-    <a href="index.html" style="color:var(--gold); text-decoration:none; font-weight:600;">العودة للمتجر ➜</a>
+    <i class="fas fa-shopping-bag" style="font-size: 50px; color: #eee; margin-bottom: 20px;"></i>
+    <h2>السلة فارغة حالياً يا حوت</h2>
+    <a href="../index.html" style="color:var(--gold); text-decoration:none; display:block; margin-top:20px;">العودة للمتجر ➜</a>
 </div>
 
 <script>
@@ -118,11 +102,7 @@
         const empty = document.getElementById('empty-msg');
         const wrapper = document.getElementById('cart-wrapper');
         
-        if (cart.length === 0) {
-            wrapper.style.display = 'none';
-            empty.style.display = 'block';
-            return;
-        }
+        if (cart.length === 0) { wrapper.style.display = 'none'; empty.style.display = 'block'; return; }
 
         list.innerHTML = '';
         let total = 0;
@@ -132,16 +112,14 @@
                 <div class="item-row">
                     <div class="item-info">
                         <h4>${item.name}</h4>
-                        <p>الكمية/المساحة: ${item.area} متر/شكارة</p>
+                        <p>الكمية: ${item.area} وحدة</p>
                     </div>
                     <div style="display:flex; align-items:center; gap:20px;">
                         <span class="item-price">${parseFloat(item.price).toLocaleString()} ج.م</span>
                         <button class="remove-btn" onclick="removeItem(${index})"><i class="fas fa-times"></i></button>
                     </div>
-                </div>
-            `;
+                </div>`;
         });
-
         document.getElementById('total-amount').innerText = total.toLocaleString();
         document.getElementById('items-count').innerText = cart.length;
     }
@@ -160,28 +138,22 @@
         const status = document.getElementById('exec-status').value;
         const cart = JSON.parse(localStorage.getItem('habibCart')) || [];
 
-        if (!name || !loc || !phone) { alert('برجاء ملء بيانات التواصل يا حوت!'); return; }
+        if (!name || !loc || !phone) { alert('برجاء ملء البيانات كاملة يا حوت!'); return; }
 
         let msg = `*طلب جديد | HABIB STORE* 🦈\n`;
         msg += `--------------------------\n`;
         msg += `*العميل:* ${name}\n`;
         msg += `*المنطقة:* ${loc}\n`;
         msg += `*الموبايل:* ${phone}\n`;
-        msg += `*الحالة:* ${status === 'فوري' ? 'تنفيذ فوري 🏎️' : 'طلب معاينة 🔍'}\n\n`;
+        msg += `*نوع الخدمة:* ${status}\n\n`;
         msg += `*الطلبات:*\n`;
-        
-        cart.forEach((item, i) => {
-            msg += `${i+1}. ${item.name} | ${item.area} (متر/شكارة) \n`;
-        });
-
+        cart.forEach((item, i) => { msg += `${i+1}. ${item.name} | ${item.area} (متر/شكارة) \n`; });
         msg += `\n*الإجمالي:* ${document.getElementById('total-amount').innerText} ج.م\n`;
         msg += `--------------------------\n`;
         
         window.open(`https://wa.me/201016961497?text=${encodeURIComponent(msg)}`, '_blank');
     }
-
     window.onload = renderCart;
 </script>
-
 </body>
 </html>
