@@ -34,6 +34,9 @@
         .container { max-width: 1400px; margin: auto; padding: 50px 5%; }
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 40px; }
 
+        /* رابط الكارت بالكامل */
+        .product-link { text-decoration: none; color: inherit; display: block; }
+
         .product-card { 
             background: #fff; position: relative; transition: 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
             overflow: hidden; border-radius: 0px; border-bottom: 1px solid #eee;
@@ -58,7 +61,7 @@
             text-align: center; text-decoration: none; padding: 15px; font-size: 14px;
             transition: 0.3s; cursor: pointer; border: none; font-weight: 600;
         }
-        .btn-luxury:hover { background: var(--gold); }
+        .product-card:hover .btn-luxury { background: var(--gold); }
 
         /* السلة العائمة */
         .cart-trigger { 
@@ -68,13 +71,16 @@
             text-decoration: none; font-size: 24px;
         }
         .cart-trigger:hover { transform: scale(1.1); background: var(--gold); }
+
+        /* الفوتر */
+        footer { text-align: center; padding: 40px; color: #888; font-size: 12px; border-top: 1px solid #eee; margin-top: 50px; }
     </style>
 </head>
 <body>
 
 <header>
     <a href="#" class="logo">HABIB STORE</a>
-    <div style="font-size: 11px; font-weight: 300; letter-spacing: 1px;">LUXURY LANDSCAPE SOLUTIONS</div>
+    <div style="font-size: 11px; font-weight: 300; letter-spacing: 1px; color: var(--gold);">LUXURY LANDSCAPE SOLUTIONS</div>
 </header>
 
 <section class="hero" data-aos="fade-up">
@@ -86,33 +92,37 @@
 <div class="container">
     <div class="grid">
         
-        <div class="product-card" data-aos="fade-up">
-            <div class="badge">الأكثر طلباً</div>
-            <div class="img-container">
-                <img src="assets/images/nageel/modern-landscape-white-stones-habib-store.jpg.jpg" alt="نجيل صناعي">
+        <a href="products/grass.html" class="product-link">
+            <div class="product-card" data-aos="fade-up">
+                <div class="badge">الأكثر طلباً</div>
+                <div class="img-container">
+                    <img src="assets/images/assets/images/nageel/modern-landscape-white-stones-habib-store.jpg.jpg" alt="نجيل صناعي">
+                </div>
+                <div class="info">
+                    <span class="category">النجيل الصناعي الفاخر</span>
+                    <h3>نجيل لاندسكيب (كثافات متعددة)</h3>
+                    <p>تشكيلة من أفضل أنواع النجيل التركي والميكس الطبيعي، تناسب كافة الأذواق والاحتياجات.</p>
+                    <span class="price-display">يبدأ من 140 ج.م / للمتر</span>
+                    <div class="btn-luxury">دخول القسم والحساب ➜</div>
+                </div>
             </div>
-            <div class="info">
-                <span class="category">النجيل الصناعي الفاخر</span>
-                <h3>نجيل لاندسكيب (كثافات متعددة)</h3>
-                <p>تشكيلة من أفضل أنواع النجيل التركي والميكس الطبيعي، تناسب كافة الأذواق والاحتياجات.</p>
-                <span class="price-display">يبدأ من 140 ج.م / للمتر</span>
-                <a href="products/grass.html" class="btn-luxury">عرض الأنواع واحسب أمتارك ➜</a>
-            </div>
-        </div>
+        </a>
 
+        <a href="products/white-marble.html" class="product-link">
             <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="badge">SALE</div>
-            <div class="img-container">
-                <img src="assets/images/zalat/Top 10 Garden Space-Saving Ideas for 2025 _ Smart Small Garden Tips_ garden decoration outdoor garde (2).jpg" alt="White Marble">
+                <div class="badge">SALE</div>
+                <div class="img-container">
+                    <img src="assets/images/zalat/Top 10 Garden Space-Saving Ideas for 2025 _ Smart Small Garden Tips_ garden decoration outdoor garde (2).jpg" alt="White Marble">
+                </div>
+                <div class="info">
+                    <span class="category">أحجار ديكور</span>
+                    <h3>رخام أبيض كريستال ناصع</h3>
+                    <p>خامة ملكية تمنح حديقتك اتساعاً وفخامة، الخيار الأول لنخبة المجتمع في التجمع وزايد.</p>
+                    <span class="price-display">150 ج.م / للشكارة</span>
+                    <div class="btn-luxury">دخول القسم والحساب ➜</div>
+                </div>
             </div>
-            <div class="info">
-                <span class="category">أحجار ديكور</span>
-                <h3>رخام أبيض كريستال ناصع</h3>
-                <p>خامة ملكية تمنح حديقتك اتساعاً وفخامة، الخيار الأول لنخبة المجتمع في التجمع وزايد.</p>
-                <span class="price-display">150 ج.م / للشكارة</span>
-                <a href="products/white-marble.html" class="btn-luxury">عرض التفاصيل والتقييمات ➜</a>
-            </div>
-        </div>
+        </a>
 
         <div class="product-card" data-aos="fade-up" data-aos-delay="200">
             <div class="img-container">
@@ -123,20 +133,24 @@
                 <h3>زلط ديكور ملون</h3>
                 <p>تشكيلة متنوعة من الزلط المستورد والمحلي لتزيين الممرات وحول الأشجار.</p>
                 <span class="price-display">حسب النوع والكمية</span>
-                <a href="#" class="btn-luxury">قريباً في المتجر ➜</a>
+                <div class="btn-luxury">قريباً في المتجر ➜</div>
             </div>
         </div>
         
-    </div> </div> <a href="cart.html" class="cart-trigger">
+    </div>
+</div>
+
+<a href="cart.html" class="cart-trigger">
     <i class="fas fa-shopping-bag"></i>
 </a>
 
-<footer style="text-align: center; padding: 40px; color: #888; font-size: 12px; border-top: 1px solid #eee;">
+<footer>
     <p>&copy; 2026 HABIB STORE - ALL RIGHTS RESERVED FOR SHARK SELECTION</p>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
+    // تفعيل الأنيميشن
     AOS.init({ duration: 1000, once: true });
 </script>
 
