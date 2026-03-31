@@ -3,149 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>معرض النجيل الملكي | HABIB STORE</title>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@300;600&display=swap" rel="stylesheet">
+    <title>معرض النجيل الفاخر | HABIB STORE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        :root { --gold: #AF944F; --black: #0a0a0a; --bg: #fdfdfd; }
+        :root { --gold: #AF944F; --black: #111; --light-bg: #f9f9f9; --white: #ffffff; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Cairo', sans-serif; background: var(--bg); color: var(--black); overflow-x: hidden; }
+        body { font-family: 'Cairo', sans-serif; background: var(--light-bg); color: var(--black); line-height: 1.6; overflow-x: hidden; }
 
         header { 
             position: fixed; top: 0; width: 100%; z-index: 1000;
-            background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(0,0,0,0.05); padding: 15px 5%;
             display: flex; justify-content: space-between; align-items: center;
         }
-        .logo { font-family: 'Amiri', serif; font-size: 32px; color: var(--black); text-decoration: none; }
+        .logo { font-family: 'Amiri', serif; font-size: 28px; color: var(--black); text-decoration: none; font-weight: 700; }
 
         .hero { 
             height: 35vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
-            text-align: center; background: #fff; margin-top: 60px;
+            text-align: center; background: var(--white); margin-top: 60px; padding: 20px;
         }
-        .hero h1 { font-family: 'Amiri', serif; font-size: clamp(30px, 8vw, 45px); color: var(--black); }
+        .hero h1 { font-family: 'Amiri', serif; font-size: clamp(32px, 7vw, 45px); color: var(--black); }
+        .hero p { color: var(--gold); letter-spacing: 2px; font-size: 12px; font-weight: 700; margin-top: 10px; text-transform: uppercase; }
 
-        .container { max-width: 1400px; margin: auto; padding: 30px 5%; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 40px; }
+        .container { max-width: 1400px; margin: auto; padding: 40px 5%; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
 
         .product-card { 
-            background: #fff; position: relative; transition: 0.5s;
-            border: 1px solid #f2f2f2; overflow: hidden;
+            background: var(--white); border: 1px solid #eee; transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative; overflow: hidden; display: flex; flex-direction: column;
         }
-        .product-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(0,0,0,0.08); border-color: var(--gold); }
         
-        .sale-badge {
-            position: absolute; top: 15px; left: 15px; background: #d4af37; color: #fff;
-            padding: 5px 15px; font-size: 11px; font-weight: 700; z-index: 10; border-radius: 2px;
+        .badge {
+            position: absolute; top: 15px; left: 15px; background: var(--black); color: #fff;
+            padding: 4px 12px; font-size: 10px; font-weight: 700; z-index: 10; border-radius: 2px;
         }
 
-        .img-container { width: 100%; height: 350px; overflow: hidden; background: #fff; position: relative; }
-        .img-container img { width: 100%; height: 100%; object-fit: contain; transition: 1.2s; padding: 20px; }
-        .product-card:hover img { transform: scale(1.05); }
+        .img-box { width: 100%; aspect-ratio: 1/1; overflow: hidden; background: #fff; }
+        .img-box img { width: 100%; height: 100%; object-fit: cover; transition: 1.5s ease; }
+        .product-card:hover .img-box img { transform: scale(1.1); }
         
-        .info { padding: 25px; text-align: right; }
-        .info span.tag { color: var(--gold); font-size: 10px; font-weight: 700; letter-spacing: 2px; }
-        .info h3 { font-size: 20px; margin: 10px 0; font-family: 'Amiri', serif; }
-        .info .price-row { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
-        .info .current-price { font-weight: 700; font-size: 18px; color: var(--black); }
-        .info .old-price { color: #aaa; text-decoration: line-through; font-size: 14px; }
+        .info { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; text-align: right; }
+        .info .tag { color: var(--gold); font-size: 11px; font-weight: 700; margin-bottom: 8px; display: block; letter-spacing: 1px; }
+        .info h3 { font-size: 20px; margin-bottom: 20px; font-family: 'Amiri', serif; min-height: 55px; color: #222; line-height: 1.4; }
         
-        .btn-actions { display: flex; flex-direction: column; gap: 10px; }
-        .btn-add-cart { 
-            width: 100%; background: #fff; color: var(--black); 
-            border: 1px solid var(--black); padding: 14px; font-size: 13px; font-weight: 700; cursor: pointer; transition: 0.3s;
+        .btn-view { 
+            text-align: center; background: var(--black); color: var(--white); 
+            padding: 15px; text-decoration: none; font-size: 13px; font-weight: 700; transition: 0.3s;
+            margin-top: auto; border: 1px solid var(--black); cursor: pointer;
         }
-        .btn-confirm-now { 
-            width: 100%; background: var(--black); color: #fff; 
-            border: none; padding: 14px; font-size: 13px; font-weight: 700; cursor: pointer; transition: 0.3s;
-        }
-        .btn-confirm-now:hover { background: var(--gold); }
-        .btn-add-cart:hover { border-color: var(--gold); color: var(--gold); }
+        .btn-view:hover { background: transparent; color: var(--black); }
 
-        .view-details { display: block; text-align: center; margin-top: 15px; font-size: 11px; color: #888; text-decoration: none; border-top: 1px solid #eee; padding-top: 10px; }
-        .view-details:hover { color: var(--gold); }
-
-        footer { text-align: center; padding: 60px; color: #aaa; font-size: 11px; border-top: 1px solid #eee; }
+        footer { text-align: center; padding: 50px; color: #999; font-size: 12px; background: #fff; border-top: 1px solid #eee; margin-top: 40px; }
     </style>
-</head>
-<body>
+</head><body>
 
 <header>
     <a href="../index.html" class="logo">HABIB STORE</a>
-    <div style="font-size: 11px; font-weight: 600; color: var(--gold);">ROYAL EXTERIOR SELECTION</div>
+    <div style="font-size: 10px; font-weight: 700; color: var(--gold); letter-spacing: 1px; border: 1px solid var(--gold); padding: 4px 10px;">PREMIUM EXTERIOR</div>
 </header>
 
-<section class="hero" data-aos="fade-up">
-    <h1>مجموعة النجيل الملكي</h1>
-    <p style="color: var(--gold); letter-spacing: 3px; font-size: 11px; margin-top: 10px; font-weight: 700;">PREMIUM SELECTION FOR VILLA OWNERS</p>
+<section class="hero" data-aos="fade-down">
+    <h1>مجموعة النجيل الطبيعي الفاخر</h1>
+    <p>THE ULTIMATE LANDSCAPE EXPERIENCE FOR SHARKS</p>
 </section>
 
 <div class="container">
     <div class="grid">
         
         <div class="product-card" data-aos="fade-up">
-            <div class="sale-badge">OFFER - 20%</div>
-            <div class="img-container">
-                <img src="../assets/images/nageel/grass-11-white.jpg" alt="النجيل الملكي 11 مللي - حبيب ستور">
-            </div>
+            <div class="badge">القمة</div>
+            <div class="img-box"><img src="../assets/images/nageel/grass-50mm-natural.jpeg" alt="نجيل 50 ملم"></div>
             <div class="info">
-                <span class="tag">TURKISH EMERALD</span>
-                <h3>النجيل الملكي 11 مللي</h3>
-                <div class="price-row">
-                    <span class="current-price">220 ج.م</span>
-                    <span class="old-price">270 ج.م</span>
-                </div>
-                <div class="btn-actions">
-                    <button class="btn-add-cart" onclick="quickAdd('نجيل ملكي 11 مللي', 220)">إضافة إلى السلة <i class="fas fa-shopping-bag"></i></button>
-                    <button class="btn-confirm-now" onclick="quickBuy('نجيل ملكي 11 مللي', 220)">تأكيد الحجز فوراً ➜</button>
-                </div>
-                <a href="grass-11mm.html" class="view-details">فتح الحاسبة الذكية والمواصفات الكاملة</a>
+                <span class="tag">SUPER ROYAL - 50MM</span>
+                <h3>نجيل سوبر رويال - الطول الأقصى والكثافة الفائقة</h3>
+                <a href="grass-50mm.html" class="btn-view">المواصفات والحاسبة الذكية</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-aos="fade-up" data-aos-delay="50">
+            <div class="badge">أسطوري</div>
+            <div class="img-box"><img src="../assets/images/nageel/grass-40mm-natural-28.jpeg" alt="نجيل 40 ملم 28 غرزة"></div>
+            <div class="info">
+                <span class="tag">ULTRA DENSITY - 28 STITCH</span>
+                <h3>نجيل أسطوري 40 ملم - سقف الكثافة العالمي</h3>
+                <a href="grass-40mm-28.html" class="btn-view">المواصفات والحاسبة الذكية</a>
             </div>
         </div>
 
         <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="img-container">
-                <img src="../assets/images/nageel/modern-landscape-white-.jpg" alt="نجيل تركي فخامة">
-            </div>
+            <div class="badge">الأكثر طلباً</div>
+            <div class="img-box"><img src="../assets/images/nageel/grass-40mm-natural-24.jpeg" alt="نجيل 40 ملم 24 غرزة"></div>
             <div class="info">
-                <span class="tag">HIGH DENSITY</span>
-                <h3>نجيل تركي 4سم إكسترا</h3>
-                <div class="price-row">
-                    <span class="current-price">320 ج.م</span>
-                </div>
-                <div class="btn-actions">
-                    <button class="btn-add-cart" onclick="quickAdd('نجيل تركي 4سم', 320)">إضافة إلى السلة <i class="fas fa-shopping-bag"></i></button>
-                    <button class="btn-confirm-now" onclick="quickBuy('نجيل تركي 4سم', 320)">تأكيد الحجز فوراً ➜</button>
-                </div>
-                <a href="#" class="view-details">قريباً: الحاسبة والمواصفات</a>
+                <span class="tag">ROYAL PLUS - 24 STITCH</span>
+                <h3>نجيل ملكي 40 ملم - اختيار القصور المفضل</h3>
+                <a href="grass-40mm-24.html" class="btn-view">المواصفات والحاسبة الذكية</a>
             </div>
         </div>
 
-    </div>
-</div>
+        <div class="product-card" data-aos="fade-up">
+            <div class="img-box"><img src="../assets/images/nageel/grass-40mm-natural.jpeg" alt="نجيل 40 ملم"></div>
+            <div class="info">
+                <span class="tag">HOTEL GRADE - 16 STITCH</span>
+                <h3>نجيل فندقي 40 ملم - المظهر الطبيعي المتوازن</h3>
+                <a href="grass-40mm.html" class="btn-view">المواصفات والحاسبة الذكية</a>
+            </div>
+        </div>
 
-<footer>
-    <p>&copy; 2026 HABIB STORE | THE ULTIMATE LANDSCAPE EXPERIENCE</p>
-</footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
-    AOS.init({ duration: 1000, once: true });
-
-    function quickAdd(name, price) {
-        let cart = JSON.parse(localStorage.getItem('habibCart')) || [];
-        cart.push({ name: name, area: "1 متر (مبدئي)", price: price });
-        localStorage.setItem('habibCart', JSON.stringify(cart));
-        alert('تمت إضافة ' + name + ' للسلة بنجاح يا حوت! 🦈');
-    }
-
-    function quickBuy(name, price) {
-        quickAdd(name, price);
-        window.location.href = '../cart.html';
-    }
-</script>
-
-</body>
-</html>
+        <div class="product-card" data-aos="fade-up" data-aos-delay="50">
+            <div class="img-box"><img src="../assets/images/nageel/grass-40mm-natural-12.jpeg" alt="نجيل 40 ملم 12 غرزة"></div>
+            <div class="info">
+                <span class="tag">COMMERCIAL 40 - 12 STITCH</span>
+                <h3>نجيل 40 ملم الفئة العملية - للمساحات الواسعة</h3>
+                <a href="grass-40mm-12.html" class="btn
