@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ديكورات الرخام والميكا الملكية | Habib Store</title>
+    <title>ديكورات الرخام والحجر الفاخرة | حبيب ستور</title>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -11,7 +11,7 @@
     <style>
         :root { --gold: #AF944F; --black: #0a0a0a; --bg: #fdfdfd; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Cairo', sans-serif; background: var(--bg); color: #333; }
+        body { font-family: 'Cairo', sans-serif; background: var(--bg); color: #333; overflow-x: hidden; }
 
         header { 
             position: fixed; top: 0; width: 100%; z-index: 1000;
@@ -21,131 +21,153 @@
         }
         .logo { font-family: 'Amiri', serif; font-size: 28px; color: var(--black); text-decoration: none; }
 
-        .hero-marble { 
-            height: 400px; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/images/zalat/marble-carrara-milli-brown.jpeg');
-            background-size: cover; background-position: center;
+        .page-header { 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../assets/images/marble/marble-carrara-milli-brown.jpg');
+            background-size: cover; background-position: center; height: 350px;
             display: flex; flex-direction: column; justify-content: center; align-items: center;
-            color: #fff; text-align: center; margin-top: 60px;
+            text-align: center; color: #fff; margin-top: 60px;
         }
 
-        .grid-marble { 
-            max-width: 1200px; margin: 60px auto; 
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+        .section-title { text-align: center; margin: 60px auto 30px; }
+        .section-title h2 { font-family: 'Amiri', serif; font-size: 35px; color: var(--black); position: relative; display: inline-block; padding-bottom: 10px; }
+        .section-title h2::after { content: ''; width: 50px; height: 2px; background: var(--gold); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+
+        .grid-container { 
+            max-width: 1300px; margin: 0 auto 60px; 
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
             gap: 30px; padding: 20px; 
         }
 
-        .marble-card { 
-            background: #fff; border: 1px solid #eee; overflow: hidden; 
-            transition: 0.4s; position: relative;
+        .product-card { 
+            background: #fff; border-radius: 0; overflow: hidden; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.5s;
+            border: 1px solid #eee; display: flex; flex-direction: column;
         }
-        .marble-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-color: var(--gold); }
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-color: var(--gold); }
         
-        .img-container { height: 250px; overflow: hidden; }
-        .img-container img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .marble-card:hover img { transform: scale(1.1); }
+        .img-box { height: 280px; overflow: hidden; position: relative; background: #eee; }
+        .img-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
+        .product-card:hover .img-box img { transform: scale(1.1); }
 
-        .card-body { padding: 20px; text-align: right; }
-        .card-tag { color: var(--gold); font-size: 11px; font-weight: bold; }
-        .card-title { font-size: 19px; color: var(--black); margin: 10px 0; font-family: 'Amiri', serif; }
-
-        .btn-whatsapp { 
-            display: block; background: var(--black); color: #fff; text-decoration: none;
-            text-align: center; padding: 12px; font-weight: bold; transition: 0.3s;
+        .card-content { padding: 25px; text-align: right; flex-grow: 1; }
+        .tag { color: var(--gold); font-size: 11px; font-weight: bold; letter-spacing: 1px; margin-bottom: 8px; display: block; }
+        .title { font-size: 19px; color: var(--black); font-weight: 700; margin-bottom: 20px; min-height: 50px; display: flex; align-items: center; }
+        
+        .quote-btn { 
+            background: var(--black); color: #fff; text-decoration: none; display: block; 
+            text-align: center; padding: 15px; font-size: 14px; font-weight: bold; transition: 0.3s;
         }
-        .btn-whatsapp:hover { background: var(--gold); }
+        .quote-btn:hover { background: var(--gold); }
 
-        @media (max-width: 768px) { .hero-marble h1 { font-size: 30px; } }
+        footer { text-align: center; padding: 40px; background: #fff; border-top: 1px solid #eee; font-size: 12px; color: #999; }
     </style>
 </head>
 <body>
 
 <header>
-    <a href="index.html" class="logo">HABIB STORE</a>
-    <div style="font-size: 11px; color: var(--gold); font-weight: bold;">LUXURY MARBLE DECOR</div>
+    <a href="../index.html" class="logo">HABIB STORE</a>
+    <div style="font-size: 11px; color: var(--gold); font-weight: bold;">PREMIUM MARBLE & STONE</div>
 </header>
 
-<div class="hero-marble">
-    <p style="letter-spacing: 4px;">EXCLUSIVE COLLECTION</p>
-    <h1 style="font-family: 'Amiri', serif; font-size: 45px;">عالم الرخام والحجر الفاخر</h1>
+<div class="page-header" data-aos="fade-in">
+    <p style="letter-spacing: 3px; font-weight: bold; text-transform: uppercase; font-size: 12px;">The Art of Stone</p>
+    <h1 style="font-family: 'Amiri', serif; font-size: 50px;">تشكيلة الرخام والميكا</h1>
 </div>
 
-<div class="grid-marble" data-aos="fade-up">
-    <div class="marble-card">
-        <div class="img-container"><img src="assets/images/zalat/marble-carrara-milli-brown.jpeg" alt="رخام كرارة ملي براون"></div>
-        <div class="card-body">
-            <span class="card-tag">Carrara Mix</span>
-            <h3 class="card-title">مزيج الكرارة والملي براون</h3>
-            <a href="https://wa.me/201016961497" class="btn-whatsapp">اطلب عرض سعر</a>
+<div class="section-title" data-aos="fade-up">
+    <h2>الديكورات الحجرية الفاخرة</h2>
+</div>
+
+<div class="grid-container" data-aos="fade-up">
+    <div class="product-card">
+        <div class="img-box"><img src="../assets/images/marble/marble-carrara-milli-brown.jpg" alt="رخام كرارة ملي براون"></div>
+        <div class="card-content">
+            <span class="tag">LUXURY MARBLE</span>
+            <h3 class="title">رخام كرارة x ملي براون فاخر</h3>
+            <a href="https://wa.me/201016961497?text=استفسار عن كرارة ملي براون" class="quote-btn">طلب عرض سعر <i class="fab fa-whatsapp"></i></a>
         </div>
     </div>
 
-    <div class="marble-card">
-        <div class="img-container"><img src="assets/images/zalat/marble-crystal-white.jpeg" alt="رخام كريستال وايت"></div>
-        <div class="card-body">
-            <span class="card-tag">Pure White</span>
-            <h3 class="card-title">رخام كريستال وايت نخب أول</h3>
-            <a href="https://wa.me/201016961497" class="btn-whatsapp">اطلب عرض سعر</a>
+    <div class="product-card">
+        <div class="img-box"><img src="../assets/images/marble/marble-crystal-white.jpg" alt="رخام كريستال وايت"></div>
+        <div class="card-content">
+            <span class="tag">CRYSTAL COLLECTION</span>
+            <h3 class="title">رخام كريستال وايت ناصع</h3>
+            <a href="https://wa.me/201016961497?text=استفسار عن كريستال وايت" class="quote-btn">طلب عرض سعر <i class="fab fa-whatsapp"></i></a>
         </div>
     </div>
 
-    <div class="marble-card">
-        <div class="img-container"><img src="assets/images/zalat/marble-emperador.jpeg" alt="رخام إمبلادور"></div>
-        <div class="card-body">
-            <span class="card-tag">Emperador Classic</span>
-            <h3 class="card-title">رخام إمبلادور فخامة كلاسيك</h3>
-            <a href="https://wa.me/201016961497" class="btn-whatsapp">اطلب عرض سعر</a>
+    <div class="product-card">
+        <div class="img-box"><img src="../assets/images/marble/marble-emperador.jpg" alt="رخام إمبلادور"></div>
+        <div class="card-content">
+            <span class="tag">CLASSIC SELECTION</span>
+            <h3 class="title">رخام إمبلادور كلاسيك فخم</h3>
+            <a href="https://wa.me/201016961497?text=استفسار عن إمبلادور" class="quote-btn">طلب عرض سعر <i class="fab fa-whatsapp"></i></a>
         </div>
     </div>
 
-    <div class="marble-card">
-        <div class="img-container"><img src="assets/images/zalat/marble-spanish-black.jpeg" alt="رخام أسود إسباني"></div>
-        <div class="card-body">
-            <span class="card-tag">Spanish Luxury</span>
-            <h3 class="card-title">رخام أسود إسباني ملكي</h3>
-            <a href="https://wa.me/201016961497" class="btn-whatsapp">اطلب عرض سعر</a>
+    <div class="product-card">
+        <div class="img-box"><img src="../assets/images/marble/marble-spanish-black.jpg" alt="رخام أسود إسباني"></div>
+        <div class="card-content">
+            <span class="tag">ROYAL BLACK</span>
+            <h3 class="title">رخام أسود إسباني ملكي</h3>
+            <a href="https://wa.me/201016961497?text=استفسار عن أسود إسباني" class="quote-btn">طلب عرض سعر <i class="fab fa-whatsapp"></i></a>
         </div>
     </div>
 
-    <div class="marble-card">
-        <div class="img-container"><img src="assets/images/zalat/stone-mica-grey.jpeg" alt="حجر ميكا رمادي"></div>
-        <div class="card-body">
-            <span class="card-tag">Mica Stone</span>
-            <h3 class="card-title">حجر ميكا رمادي مودرن</h3>
-            <a href="https://wa.me/201016961497" class="btn-whatsapp">اطلب عرض سعر</a>
+    <div class="product-card">
+        <div class="img-box"><img src="../assets/images/marble/marble-galala.jpg" alt="رخام جلالة"></div>
+        <div class="card-content">
+            <span class="tag">LOCAL LUXURY</span>
+            <h3 class="title">رخام جلالة فص نخب أول</h3>
+            <a href="https://wa.me/201016961497?text=استفسار عن رخام جلالة" class="quote-btn">طلب عرض سعر <i class="fab fa-whatsapp"></i></a>
         </div>
     </div>
 
-    <div class="marble-card">
-        <div class="img-container"><img src="assets/images/zalat/stone-mica-red.jpeg" alt="حجر ميكا حمراء"></div>
-        <div class="card-body">
-            <span class="card-tag">Natural Stone</span>
-            <h3 class="card-title">حجر ميكا أحمر حراري</h3>
-            <a href="https://wa.me/201016961497" class="btn-whatsapp">اطلب عرض سعر</a>
+    <div class="product-card">
+        <div class="img-box"><img src="../assets/images/marble/stone-basalt-black.jpg" alt="حجر بازلت أسود"></div>
+        <div class="card-content">
+            <span class="tag">DURABLE STONE</span>
+            <h3 class="title">حجر بازلت أسود طبيعي</h3>
+            <a href="https://wa.me/201016961497?text=استفسار عن بازلت أسود" class="quote-btn">طلب عرض سعر <i class="fab fa-whatsapp"></i></a>
         </div>
     </div>
 
-    <div class="marble-card">
-        <div class="img-box"><img src="assets/images/zalat/marble-red-carrara-spanish-black.jpeg" alt="كوكتيل رخام" style="width:100%"></div>
-        <div class="card-body">
-            <span class="card-tag">Limited Edition</span>
-            <h3 class="card-title">كوكتيل (أحمر x كرارة x أسود)</h3>
-            <a href="https://wa.me/201016961497" class="btn-whatsapp">اطلب عرض سعر</a>
+    <div class="product-card">
+        <div class="img-box"><img src="../assets/images/marble/stone-mica-grey.jpg" alt="حجر ميكا رمادي"></div>
+        <div class="card-content">
+            <span class="tag">MODERN WALLS</span>
+            <h3 class="title">حجر ميكا رمادي (تجليد واجهات)</h3>
+            <a href="https://wa.me/201016961497?text=استفسار عن ميكا رمادي" class="quote-btn">طلب عرض سعر <i class="fab fa-whatsapp"></i></a>
         </div>
     </div>
 
-    <div class="marble-card">
-        <div class="img-container"><img src="assets/images/zalat/marble-galala.jpeg" alt="رخام جلالة"></div>
-        <div class="card-body">
-            <span class="card-tag">Local Luxury</span>
-            <h3 class="card-title">رخام جلالة فص نخب أول</h3>
-            <a href="https://wa.me/201016961497" class="btn-whatsapp">اطلب عرض سعر</a>
+    <div class="product-card">
+        <div class="img-box"><img src="../assets/images/marble/stone-mica-red.jpg" alt="حجر ميكا أحمر"></div>
+        <div class="card-content">
+            <span class="tag">THERMAL STONE</span>
+            <h3 class="title">حجر ميكا أحمر حراري</h3>
+            <a href="https://wa.me/201016961497?text=استفسار عن ميكا أحمر" class="quote-btn">طلب عرض سعر <i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="img-box"><img src="../assets/images/marble/marble-sandstone.jpg" alt="حجر ساند ستون"></div>
+        <div class="card-content">
+            <span class="tag">NATURAL SANDSTONE</span>
+            <h3 class="title">حجر ساند ستون (الرملي) الفخم</h3>
+            <a href="https://wa.me/201016961497?text=استفسار عن ساند ستون" class="quote-btn">طلب عرض سعر <i class="fab fa-whatsapp"></i></a>
         </div>
     </div>
 </div>
+
+<footer>
+    <p>&copy; 2026 HABIB STORE - MARBLE DIVISION | SHARK SELECTION</p>
+</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
-    AOS.init({ duration: 1000 });
+    AOS.init({ duration: 1000, once: true });
 </script>
 
 </body>
