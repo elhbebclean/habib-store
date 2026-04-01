@@ -14,31 +14,19 @@
 
     <style>
 
-        /* ألوان براند حبيب الأصلية */
-
-        :root { --main-green: #1a5d1a; --text-dark: #333; --bg-light: #fdfdfd; --white: #ffffff; }
-
-        
+        :root { --main-green: #1a5d1a; --gold: #AF944F; --text-dark: #333; --bg-light: #fdfdfd; --white: #ffffff; }
 
         body { font-family: 'Cairo', sans-serif; background: var(--bg-light); color: var(--text-dark); margin: 0; padding: 0; }
 
-        
-
         .container { max-width: 900px; margin: 40px auto; background: var(--white); padding: 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); border-top: 6px solid var(--main-green); }
-
-        
 
         .product-header { text-align: center; margin-bottom: 30px; }
 
         .product-name { font-family: 'Amiri', serif; font-size: 36px; color: var(--main-green); margin-bottom: 5px; font-weight: 700; }
 
-        .product-sub { color: #888; font-size: 16px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+        .product-sub { color: #888; font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
 
-        
-
-        .product-image { width: 100%; max-height: 500px; object-fit: cover; border-radius: 15px; margin-bottom: 30px; border: 1px solid #eee; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-
-        
+        .product-image { width: 100%; max-height: 500px; object-fit: cover; border-radius: 15px; margin-bottom: 30px; border: 1px solid #eee; }
 
         .spec-table { width: 100%; border-collapse: collapse; margin-bottom: 30px; background: #fafafa; border-radius: 12px; overflow: hidden; }
 
@@ -46,23 +34,37 @@
 
         .spec-label { font-weight: bold; color: var(--main-green); width: 35%; background: #f0f4f0; }
 
-
-
         .description { line-height: 2.2; font-size: 22px; color: #444; margin-bottom: 40px; text-align: justify; padding: 0 20px; border-right: 5px solid var(--main-green); font-family: 'Amiri', serif; }
-
-        
-
-        /* زرار الواتساب بنبرة VIP */
 
         .whatsapp-btn { display: block; text-align: center; background: #25D366; color: white; padding: 22px; text-decoration: none; border-radius: 50px; font-size: 22px; font-weight: bold; transition: 0.4s; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2); }
 
         .whatsapp-btn:hover { background: #128C7E; transform: translateY(-3px); }
 
-        
+        .back-link { display: block; text-align: center; margin-top: 30px; color: var(--main-green); text-decoration: none; font-weight: bold; font-size: 16px; }
 
-        .back-link { display: block; text-align: center; margin-top: 30px; color: var(--main-green); text-decoration: none; font-weight: bold; font-size: 16px; transition: 0.3s; }
 
-        .back-link:hover { text-decoration: underline; opacity: 0.8; }
+
+        /* ستايل قسم الاقتراحات (الربط الذكي) */
+
+        .cross-selling-box { margin-top: 60px; padding-top: 40px; border-top: 2px solid #f0f0f0; }
+
+        .cross-selling-box h3 { font-family: 'Amiri', serif; text-align: center; color: var(--main-green); margin-bottom: 25px; font-size: 24px; }
+
+        .sugg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+        .sugg-item { text-align: center; border: 1px solid #eee; padding: 15px; background: #fff; border-radius: 10px; transition: 0.3s; text-decoration: none; color: inherit; }
+
+        .sugg-item:hover { border-color: var(--gold); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+
+        .sugg-item img { width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin-bottom: 10px; }
+
+        .sugg-item h4 { font-size: 16px; margin: 0 0 10px; color: var(--text-dark); }
+
+        .sugg-item span { color: var(--gold); font-weight: bold; font-size: 13px; }
+
+
+
+        @media (max-width: 600px) { .sugg-grid { grid-template-columns: 1fr; } }
 
     </style>
 
@@ -84,19 +86,19 @@
 
 
 
-    <img id="p-img" src="" alt="Habib Luxury Turf" class="product-image">
+    <img id="p-img" src="" alt="Habib Luxury" class="product-image">
 
 
 
     <table class="spec-table">
 
-        <tr><td class="spec-label">بلد المنشأ:</td><td>تركيا (نخب أول) 🇹🇷</td></tr>
+        <tr><td class="spec-label">المنشأ:</td><td id="p-origin">تركيا (نخب أول) 🇹🇷</td></tr>
 
-        <tr><td class="spec-label">الارتفاع المعتمد:</td><td id="p-size">--</td></tr>
+        <tr><td class="spec-label">المواصفة:</td><td id="p-size">--</td></tr>
 
-        <tr><td class="spec-label">كثافة النسيج:</td><td id="p-density">--</td></tr>
+        <tr><td class="spec-label">الفئة:</td><td id="p-density">--</td></tr>
 
-        <tr><td class="spec-label">فئة الجودة:</td><td>Premium Elite Grade 🛡️</td></tr>
+        <tr><td class="spec-label">الضمان:</td><td>Habib Signature 🛡️</td></tr>
 
     </table>
 
@@ -108,29 +110,49 @@
 
     <a id="p-whatsapp" href="#" class="whatsapp-btn">حجز معاينة | اطلب السعر الآن</a>
 
-    <a href="grass-gallery.html" class="back-link">← العودة لمعرض النجيل الفاخر</a>
+    <a href="grass-gallery.html" class="back-link">← العودة للمعرض الرئيسي</a>
+
+
+
+    <div id="suggestions-area"></div>
 
 </div><script>
 
+    // قاعدة بيانات بلاتفورم حبيب ستون الشاملة
+
     const products = {
 
-        1: { name: "Habib Royal Izmir Spring", size: "50 ملم (5 سم)", density: "16 غرزة", img: "Habib Izmir Spring.jpg", desc: "بساطٌ ملكي صُمم ليتجاوز حدود العشب التقليدي. بارتفاعه الشامخ ونعومته الحريرية، يمنح 'رويال إزمير' قصوركم هيبة الطبيعة الخالدة في أزهى عصوره. ليس مجرد نجيل، بل هو استثمار في الراحة التي تليق بنخبة المجتمع." },
+        // --- قسم النجيل (Category: nageel) ---
 
-        2: { name: "Habib Istanbul Lush Elite", size: "40 ملم (4 سم)", density: "28 غرزة", img: "Habib Istanbul Lush (40mm).jpg", desc: "عندما تلتقي الكثافة الفائقة بالرفاهية المطلقة. يمنحكم 'إسطنبول لَش إيليت' كثافة لا تُضاهى، مما يخلق طبقة من الرفاهية تحت أقدامكم. عشب صُمم ليدوم طويلاً محافظاً على رونقه الممتلئ ولونه الربيعي الساحر." },
+        1: { cat: "nageel", name: "Habib Royal Izmir Spring", size: "50 ملم", density: "16 غرزة", origin: "تركيا 🇹🇷", img: "nageel/Habib Izmir Spring.jpg", desc: "بساطٌ ملكي صُمم ليتجاوز حدود العشب التقليدي. بارتفاعه الشامخ ونعومته الحريرية، يمنح 'رويال إزمير' قصوركم هيبة الطبيعة الخالدة. استثمار في الراحة التي تليق بنخبة المجتمع." },
 
-        3: { name: "Habib Istanbul Prime Edition", size: "40 ملم (4 سم)", density: "24 غرزة", img: "Habib Istanbul Lush (40mm).jpg", desc: "التوازن الذهبي بين الكثافة العالية والمظهر الطبيعي المتناسق. 'برايم إيديشن' هو الاختيار المفضل للمساحات الواسعة التي تطلب الأناقة والصلابة معاً. صُمم لمن يقدر الجودة التي تفرض نفسها دون ضجيج." },
+        2: { cat: "nageel", name: "Habib Istanbul Lush Elite", size: "40 ملم", density: "28 غرزة", origin: "تركيا 🇹🇷", img: "nageel/Habib Istanbul Lush (40mm).jpg", desc: "عندما تلتقي الكثافة الفائقة بالرفاهية المطلقة. يمنحكم 'إسطنبول لَش إيليت' كثافة لا تُضاهى، مما يخلق طبقة من الرفاهية تحت أقدامكم، محافظاً على رونقه الممتلئ دائماً." },
 
-        4: { name: "Habib Istanbul Classic", size: "40 ملم (4 سم)", density: "16 غرزة", img: "Habib Istanbul Lush (40mm).jpg", desc: "كلاسيكية الفخامة التركية في صورتها الأنقى. يمنحكم المظهر النظيف والمريح للعين، ببارتفاع يضمن سهولة الحركة والاستمتاع بمساحاتكم الخارجية مع جودة النخب الأول المعتمدة." },
+        
 
-        5: { name: "Habib Istanbul Smart", size: "40 ملم (4 سم)", density: "12 غرزة", img: "Habib Istanbul Lush (40mm).jpg", desc: "الأناقة العملية للمساحات الواسعة. 'إسطنبول سمارت' هو الحل الذكي الذي يجمع بين مظهر النجيل الطبيعي وبين قوة التحمل الفائقة، مثالي لممرات الحدائق والرووف المودرن." },
+        // --- قسم الرخام (Category: marble) ---
 
-        6: { name: "Habib Antalya Breeze Ultra", size: "30 ملم (3 سم)", density: "24 غرزة", img: "Habib Antalya Breeze (30mm).jpg", desc: "كثافة استثنائية في قوامٍ رشيق. يمنحكم 'أنطاليا بريز ألترا' إحساس النسيم التركي المنعش في واحتكم الخاصة. كثافة غرز فائقة في ارتفاع مودرن يسهل الاعتناء به." },
+        101: { cat: "marble", name: "خردة رخام أبيض ملكي", size: "مقاسات متنوعة", density: "نخب أول", origin: "مصر 🇪🇬", img: "marble/marble-sample.jpg", desc: "لمسة الفخامة المصرية الأصيلة. خردة الرخام الأبيض تمنح ممرات حدائقكم طابعاً أرستقراطياً فريداً، وتعتبر الخلفية المثالية لإبراز جمال النجيل الصناعي." },
 
-        7: { name: "Habib Antalya Breeze Pro", size: "30 ملم (3 سم)", density: "18 غرزة", img: "Habib Antalya Breeze (30mm).jpg", desc: "البساطة الراقية والشكل المنظم دائماً. نجيل تركي نخب أول صُمم للمساحات المفتوحة التي تتطلب مظهر طبيعي مريح للنظر وسهل التنظيف." },
+        
 
-        8: { name: "Habib Antalya Breeze Core", size: "30 ملم (3 سم)", density: "16 غرزة", img: "Habib Antalya Breeze (30mm).jpg", desc: "الحل العصري لتجديد مساحاتكم الخارجية. يتميز بلون ربيعي مبهج وارتفاع عملي، مما يجعله الاختيار الأمثل لإضافة لمسة حيوية وفخامة فورية بلمسة حبيب ستور." },
+        // --- قسم الزلط (Category: zalat) ---
 
-        9: { name: "Habib Anatolian Nature Smart", size: "20 ملم (2 سم)", density: "12 غرزة", img: "Habib Anatolian Nature.jpg", desc: "جوهر الطبيعة الأناضولية في تصميمٍ عمليٍ وأنيق. يوفر مظهر النجيل الطبيعي المقصوص بدقة فائقة، وهو مثالي للمساحات التي تنشد البساطة الفخمة." }
+        201: { cat: "zalat", name: "زلط ديكور أبيض يوناني", size: "جامبو ناعم", density: "مستورد", origin: "اليونان 🇬🇷", img: "zalat/white-pebbles.jpg", desc: "اللمسة النهائية التي تكتمل بها اللوحة. زلط الديكور الأبيض اليوناني يضيف تبايناً بصرياً مذهلاً مع المساحات الخضراء، ويحدد مسارات القصور بدقة وجمال." }
+
+    };
+
+
+
+    // بيانات الأقسام للربط التبادلي (Cross-Selling)
+
+    const sections = {
+
+        "nageel": { title: "تنسيق النجيل التركي", img: "nageel/grass-50mm-natural.jpeg", link: "grass-gallery.html" },
+
+        "marble": { title: "فخامة الرخام والستون", img: "marble/marble-sample.jpg", link: "marble.html" },
+
+        "zalat": { title: "ديكورات الزلط العالمي", img: "zalat/white-pebbles.jpg", link: "zalat-gallery.html" }
 
     };
 
@@ -146,31 +168,87 @@
 
     if (p) {
 
+        // تحديث بيانات الصفحة
+
         document.getElementById('p-name').innerText = p.name;
 
         document.getElementById('p-size').innerText = p.size;
 
         document.getElementById('p-density').innerText = p.density;
 
+        document.getElementById('p-origin').innerText = p.origin;
+
         document.getElementById('p-desc').innerText = p.desc;
 
-        
-
-        // جلب الصور من فولدر الأصول (Assets)
-
-        document.getElementById('p-img').src = "../assets/images/nageel/" + p.img; 
-
-        
+        document.getElementById('p-img').src = "../assets/images/" + p.img; 
 
         document.title = p.name + " | Habib Stone Platform";
 
-        const waMessage = `أهلاً Habib Stone، أود الاستفسار عن تفاصيل وحجز معاينة لمنتج: ${p.name} - ${p.size}`;
+
+
+        // إعداد رسالة الواتساب الاحترافية
+
+        const waMessage = `أهلاً Habib Stone، أود الاستفسار عن تفاصيل وحجز معاينة لـ: ${p.name}`;
 
         document.getElementById('p-whatsapp').href = `https://wa.me/201016961497?text=${encodeURIComponent(waMessage)}`;
+
+
+
+        // --- محرك الربط الذكي (حقن الاقتراحات التائهة) ---
+
+        const suggestionsArea = document.getElementById('suggestions-area');
+
+        let suggHTML = `
+
+            <div class="cross-selling-box">
+
+                <h3>إضافات تكتمل بها فخامة واحتك</h3>
+
+                <div class="sugg-grid">
+
+        `;
+
+
+
+        for (let key in sections) {
+
+            // لو القسم مش هو اللي العميل واقف فيه، اعرضه كاقتراح تكميلي
+
+            if (key !== p.cat) {
+
+                suggHTML += `
+
+                    <a href="${sections[key].link}" class="sugg-item">
+
+                        <img src="../assets/images/${sections[key].img}" alt="${sections[key].title}">
+
+                        <h4>${sections[key].title}</h4>
+
+                        <span>استكشف المجموعة الآن ←</span>
+
+                    </a>
+
+                `;
+
+            }
+
+        }
+
+
+
+        suggHTML += `</div></div>`;
+
+        suggestionsArea.innerHTML = suggHTML;
 
     }
 
 </script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<script>AOS.init({ duration: 1000, once: true });</script>
 
 
 
