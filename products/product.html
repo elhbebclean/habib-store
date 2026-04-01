@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">حبيب ستور - نجيل تركي نخب أول</title>
+    <title id="page-title">Habib Store - Premium Turkish Turf</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f7f6; color: #333; margin: 0; padding: 0; }
         .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); border-top: 5px solid #1a5d1a; }
@@ -24,36 +24,36 @@
 
 <div class="container">
     <div class="product-header">
-        <h1 id="p-name" class="product-name">جاري تحميل المنتج...</h1>
-        <p id="p-sub" class="product-sub">إمبراطورية حبيب - النجيل التركي الفاخر</p>
+        <h1 id="p-name" class="product-name">جاري التحميل...</h1>
+        <p id="p-sub" class="product-sub">Habib Store - Elite Selection</p>
     </div>
 
-    <img id="p-img" src="" alt="نجيل تركي حبيب ستور" class="product-image">
+    <img id="p-img" src="" alt="نجيل تركي حبيب" class="product-image">
 
     <table class="spec-table">
-        <tr><td class="spec-label">بلد المنشأ:</td><td>تركيا (نخب أول) 🇹🇷</td></tr>
+        <tr><td class="spec-label">المنشأ:</td><td>تركيا (نخب أول) 🇹🇷</td></tr>
         <tr><td class="spec-label">الارتفاع:</td><td id="p-size">--</td></tr>
         <tr><td class="spec-label">الكثافة:</td><td id="p-density">--</td></tr>
-        <tr><td class="spec-label">الجودة:</td><td>نخب أول معتمد 🛡️</td></tr>
+        <tr><td class="spec-label">الجودة:</td><td>Premium Elite Grade 🛡️</td></tr>
     </table>
 
     <div id="p-desc" class="description"></div>
 
-    <a id="p-whatsapp" href="#" class="whatsapp-btn">اطلب معاينة وسعر الآن (واتساب)</a>
-    <a href="../grass-gallery.html" class="back-link">← العودة لمعرض النجيل</a>
+    <a id="p-whatsapp" href="#" class="whatsapp-btn">تواصل مع خدمة الـ VIP (واتساب)</a>
+    <a href="../grass-gallery.html" class="back-link">← العودة لقسم النجيل</a>
 </div>
 
 <script>
     const products = {
-        1: { name: "Habib Royal Izmir - Elite Class", size: "50 ملم (5 سم)", density: "16 غرزة", img: "Habib Izmir Spring.jpg", desc: "ليس مجرد نجيل صناعي، بل هو بساط حريري يليق بأرقى القصور الملكية. صُمم هذا الإصدار التركي ببارتفاع 5 سم وكثافة 16 غرزة ليمنحك شعور النجيل الطبيعي في أزهى عصوره، مع لمسة نعومة فائقة وتدرج ألوان يخطف الأنظار." },
-        2: { name: "Habib Istanbul Ultra - High Dense", size: "40 ملم (4 سم)", density: "28 غرزة", img: "Habib Istanbul Lush (40mm).jpg", desc: "عندما تجتمع الكثافة الخرافية مع الملمس الانسيابي الفاخر. صُمم 'إسطنبول لَش' بتركيز فائق، حيث تمنحك الـ 28 غرزة شعوراً بالامتلاء والثبات لا يضاهى. الاختيار الأمثل لمن ينشد الكمال." },
-        3: { name: "Habib Istanbul Pro - High Dense", size: "40 ملم (4 سم)", density: "24 غرزة", img: "Habib Istanbul Lush (40mm).jpg", desc: "الدقة التركية في أبهى صورها العملية. صُمم 'إسطنبول برو' ببارتفاع 4 سم وكثافة 24 غرزة ليمنحك التوازن المثالي؛ مظهر غني، ملمس طبيعي، وقدرة تحمل فائقة للاستخدام اليومي الراقي." },
-        4: { name: "Habib Istanbul Core", size: "40 ملم (4 سم)", density: "16 غرزة", img: "Habib Istanbul Lush (40mm).jpg", desc: "بساطة التصميم التركي تلتقي مع فخامة النخب الأول. عشب صُمم ليكون الخيار الأذكى للمساحات التي تنشد فيها الهدوء والجمال الطبيعي، مع ارتفاع 4 سم يمنحك التوازن المثالي." },
-        5: { name: "Habib Istanbul Smart", size: "40 ملم (4 سم)", density: "12 غرزة", img: "Habib Istanbul Lush (40mm).jpg", desc: "الأناقة التركية بتكلفة ذكية. 'إسطنبول سمارت' يوفر لك المظهر النظيف والمنظم ببارتفاع 4 سم، مثالي للمساحات الواسعة التي تحتاج لمسة جمالية دائمة من حبيب ستور." },
-        6: { name: "Habib Antalya Breeze - Ultra", size: "30 ملم (3 سم)", density: "24 غرزة", img: "Habib Antalya Breeze (30mm).jpg", desc: "كثافة استثنائية لمظهر طبيعي ممتلئ، مثالي للروف الفخم والجلسات العصرية. 'أنطاليا بريز' يعطيك إحساس النسيم التركي المنعش في واحتك الخاصة بلمسة عصرية راقية." },
-        7: { name: "Habib Antalya Breeze - Pro", size: "30 ملم (3 سم)", density: "18 غرزة", img: "Habib Antalya Breeze (30mm).jpg", desc: "التوازن المثالي بين الليونة والشكل المنظم، مخصص للمساحات المفتوحة الهادئة. نجيل تركي نخب أول يتميز بسهولة العناية به ومظهره المبهج دائماً تحت الضوء." },
-        8: { name: "Habib Antalya Breeze - Core", size: "30 ملم (3 سم)", density: "16 غرزة", img: "Habib Antalya Breeze (30mm).jpg", desc: "أناقة التركي العملية، لون ربيعي مبهج وسهولة تامة في العناية والتنظيف. الخيار الأفضل لتجديد البلكونات والروف بمظهر عصري ومنظم يدوم طويلاً." },
-        9: { name: "Habib Anatolian Nature", size: "20 ملم (2 سم)", density: "12 غرزة", img: "Habib Anatolian Nature.jpg", desc: "البساطة التركية في أبهى صورها العملية. صُمم ليكون الحل الذكي والأنيق للمساحات التي تبحث فيها عن مظهر طبيعي وتكلفة مدروسة، مع سهولة فائقة في الصيانة والتركيب." }
+        1: { name: "Habib Royal Izmir Spring", size: "50 ملم (5 سم)", density: "16 غرزة", img: "Habib Izmir Spring.jpg", desc: "ليس مجرد نجيل صناعي، بل هو بساط حريري يليق بأرقى القصور الملكية. صُمم ببارتفاع 5 سم وكثافة 16 غرزة ليمنحك شعور النجيل الطبيعي في أزهى عصوره، مع لمسة نعومة فائقة وتدرج ألوان يخطف الأنظار." },
+        2: { name: "Habib Istanbul Lush Elite", size: "40 ملم (4 سم)", density: "28 غرزة", img: "Habib Istanbul Lush (40mm).jpg", desc: "عندما تجتمع الكثافة الخرافية مع الملمس الانسيابي الفاخر. صُمم 'إسطنبول لَش' بتركيز فائق، حيث تمنحك الـ 28 غرزة شعوراً بالامتلاء والثبات لا يضاهى. الاختيار الأمثل لمن ينشد الكمال." },
+        3: { name: "Habib Istanbul Prime Edition", size: "40 ملم (4 سم)", density: "24 غرزة", img: "Habib Istanbul Lush (40mm).jpg", desc: "الدقة التركية في أبهى صورها العملية. صُمم 'برايم إيديشن' ببارتفاع 4 سم وكثافة 24 غرزة ليمنحك التوازن المثالي؛ مظهر غني، ملمس طبيعي، وقدرة تحمل فائقة." },
+        4: { name: "Habib Istanbul Classic", size: "40 ملم (4 سم)", density: "16 غرزة", img: "Habib Istanbul Lush (40mm).jpg", desc: "بساطة التصميم التركي تلتقي مع فخامة النخب الأول. عشب صُمم ليكون الخيار الأذكى للمساحات التي تنشد فيها الهدوء والجمال الطبيعي." },
+        5: { name: "Habib Istanbul Smart", size: "40 ملم (4 سم)", density: "12 غرزة", img: "Habib Istanbul Lush (40mm).jpg", desc: "الأناقة التركية بتكلفة ذكية. 'إسطنبول سمارت' يوفر لك المظهر النظيف والمنظم ببارتفاع 4 سم، مثالي للمساحات الواسعة." },
+        6: { name: "Habib Antalya Breeze Ultra", size: "30 ملم (3 سم)", density: "24 غرزة", img: "Habib Antalya Breeze (30mm).jpg", desc: "كثافة استثنائية لمظهر طبيعي ممتلئ، مثالي للروف الفخم والجلسات العصرية. 'أنطاليا بريز' يعطيك إحساس النسيم التركي المنعش." },
+        7: { name: "Habib Antalya Breeze Pro", size: "30 ملم (3 سم)", density: "18 غرزة", img: "Habib Antalya Breeze (30mm).jpg", desc: "التوازن المثالي بين الليونة والشكل المنظم، مخصص للمساحات المفتوحة الهادئة. نجيل تركي نخب أول يتميز بسهولة العناية به." },
+        8: { name: "Habib Antalya Breeze Core", size: "30 ملم (3 سم)", density: "16 غرزة", img: "Habib Antalya Breeze (30mm).jpg", desc: "أناقة التركي العملية، لون ربيعي مبهج وسهولة تامة في العناية والتنظيف." },
+        9: { name: "Habib Anatolian Nature Smart", size: "20 ملم (2 سم)", density: "12 غرزة", img: "Habib Anatolian Nature.jpg", desc: "البساطة التركية في أبهى صورها العملية. صُمم ليكون الحل الذكي والأنيق للمساحات التي تبحث فيها عن مظهر طبيعي وتكلفة مدروسة." }
     };
 
     const urlParams = new URLSearchParams(window.location.search);
@@ -65,12 +65,9 @@
         document.getElementById('p-size').innerText = p.size;
         document.getElementById('p-density').innerText = p.density;
         document.getElementById('p-desc').innerText = p.desc;
-        
-        // المسار الجديد المعدل ليذهب لفولدر nageel
         document.getElementById('p-img').src = "../assets/images/nageel/" + p.img; 
-        
-        document.title = p.name + " | حبيب ستور";
-        const waMessage = `أهلاً حبيب ستور، استفسر عن سعر نجيل تركي: ${p.name} (${p.size} - ${p.density})`;
+        document.title = p.name + " | Habib Store";
+        const waMessage = `أهلاً Habib Store، استفسر عن سعر نجيل تركي: ${p.name} (${p.size} - ${p.density})`;
         document.getElementById('p-whatsapp').href = `https://wa.me/201016961497?text=${encodeURIComponent(waMessage)}`;
     }
 </script>
