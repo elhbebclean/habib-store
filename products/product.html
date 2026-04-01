@@ -8,25 +8,31 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title id="page-title">Habib Stone | Elite Selection</title>
+    <title id="page-title">Habib Stone | Luxury Selection</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
 
-        :root { --main-green: #1a5d1a; --gold: #AF944F; --text-dark: #333; --bg-light: #fdfdfd; --white: #ffffff; }
+        :root { --main-green: #1a5d1a; --gold: #AF944F; --text-dark: #333; --white: #ffffff; }
 
-        body { font-family: 'Cairo', sans-serif; background: var(--bg-light); color: var(--text-dark); margin: 0; padding: 0; overflow-x: hidden; }
+        body { font-family: 'Cairo', sans-serif; background: #fdfdfd; margin: 0; padding: 0; overflow-x: hidden; }
+
+        
 
         .container { max-width: 900px; margin: 40px auto; background: var(--white); padding: 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); border-top: 6px solid var(--main-green); }
 
-        .product-header { text-align: center; margin-bottom: 30px; }
+        
 
-        .product-name { font-family: 'Amiri', serif; font-size: 36px; color: var(--main-green); margin-bottom: 5px; font-weight: 700; }
+        .product-header { text-align: center; margin-bottom: 25px; }
 
-        .product-sub { color: #888; font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
+        .product-name { font-family: 'Amiri', serif; font-size: 36px; color: var(--main-green); font-weight: 700; margin: 0; }
 
-        .product-image { width: 100%; max-height: 500px; object-fit: cover; border-radius: 15px; margin-bottom: 30px; border: 1px solid #eee; }
+        
+
+        .product-image { width: 100%; max-height: 500px; object-fit: cover; border-radius: 15px; margin: 20px 0; border: 1px solid #eee; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+
+        
 
         .spec-table { width: 100%; border-collapse: collapse; margin-bottom: 30px; background: #fafafa; border-radius: 12px; overflow: hidden; }
 
@@ -34,75 +40,45 @@
 
         .spec-label { font-weight: bold; color: var(--main-green); width: 35%; background: #f0f4f0; }
 
+
+
         .description { line-height: 2.2; font-size: 22px; color: #444; margin-bottom: 40px; text-align: justify; padding: 0 20px; border-right: 5px solid var(--main-green); font-family: 'Amiri', serif; }
+
+        
 
         .whatsapp-btn { display: block; text-align: center; background: #25D366; color: white; padding: 22px; text-decoration: none; border-radius: 50px; font-size: 22px; font-weight: bold; transition: 0.4s; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2); }
 
         .whatsapp-btn:hover { background: #128C7E; transform: translateY(-3px); }
 
-        .back-link { display: block; text-align: center; margin-top: 30px; color: var(--main-green); text-decoration: none; font-weight: bold; font-size: 16px; margin-bottom: 30px; }
 
 
+        /* قسم الكروت التكميلية */
 
-        /* ستايل شريط المنتجات المقترحة (الجديد) */
+        .suggestions-box { margin-top: 60px; padding-top: 40px; border-top: 2px solid #f0f0f0; }
 
-        .cross-selling-box { margin-top: 60px; padding-top: 40px; border-top: 2px solid #f0f0f0; }
-
-        .cross-selling-box h3 { font-family: 'Amiri', serif; text-align: center; color: var(--main-green); margin-bottom: 25px; font-size: 24px; }
+        .suggestions-box h3 { font-family: 'Amiri', serif; text-align: center; color: var(--main-green); margin-bottom: 30px; font-size: 26px; }
 
         
 
-        .slider-container { 
+        .cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 
-            display: flex; 
+        
 
-            overflow-x: auto; 
+        .card { text-decoration: none; color: inherit; background: #fff; border: 1px solid #eee; border-radius: 15px; overflow: hidden; transition: 0.3s; text-align: center; }
 
-            gap: 15px; 
+        .card:hover { transform: translateY(-5px); border-color: var(--gold); box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
 
-            padding: 10px 5px; 
+        .card img { width: 100%; height: 160px; object-fit: cover; }
 
-            scroll-behavior: smooth;
+        .card-info { padding: 15px; }
 
-            -webkit-overflow-scrolling: touch;
+        .card-info h4 { margin: 0 0 8px; font-size: 16px; color: #333; }
 
-        }
-
-        .slider-container::-webkit-scrollbar { display: none; } /* شكل نظيف بدون سكرول بار */
+        .card-info span { color: var(--gold); font-weight: bold; font-size: 12px; }
 
 
 
-        .slider-item { 
-
-            min-width: 200px; 
-
-            background: #fff; 
-
-            border: 1px solid #eee; 
-
-            border-radius: 12px; 
-
-            text-align: center; 
-
-            text-decoration: none; 
-
-            color: inherit;
-
-            transition: 0.3s;
-
-        }
-
-        .slider-item:hover { transform: translateY(-5px); border-color: var(--gold); }
-
-        .slider-item img { width: 100%; height: 130px; object-fit: cover; border-radius: 12px 12px 0 0; }
-
-        .slider-item h4 { font-size: 14px; padding: 10px; margin: 0; color: var(--text-dark); }
-
-        .slider-item span { color: var(--gold); font-weight: bold; font-size: 12px; padding-bottom: 10px; display: block; }
-
-
-
-        @media (max-width: 600px) { .slider-item { min-width: 160px; } }
+        @media (max-width: 600px) { .cards-grid { grid-template-columns: 1fr; } }
 
     </style>
 
@@ -116,27 +92,23 @@
 
     <div class="product-header">
 
-        <h1 id="p-name" class="product-name">جاري التحميل...</h1>
-
-        <p id="p-sub" class="product-sub">Habib Stone Luxury Platform</p>
+        <h1 id="p-name" class="product-name">جاري تحميل الفخامة...</h1>
 
     </div>
 
 
 
-    <img id="p-img" src="" alt="Habib Luxury" class="product-image">
+    <img id="p-img" src="" alt="" class="product-image">
 
 
 
     <table class="spec-table">
 
-        <tr><td class="spec-label">المنشأ:</td><td id="p-origin">--</td></tr>
-
         <tr><td class="spec-label">المواصفة:</td><td id="p-size">--</td></tr>
 
-        <tr><td class="spec-label">الفئة:</td><td id="p-density">--</td></tr>
+        <tr><td class="spec-label">المنشأ:</td><td id="p-origin">--</td></tr>
 
-        <tr><td class="spec-label">الضمان:</td><td>Habib Signature 🛡️</td></tr>
+        <tr><td class="spec-label">الفئة:</td><td id="p-density">--</td></tr>
 
     </table>
 
@@ -148,51 +120,59 @@
 
     <a id="p-whatsapp" href="#" class="whatsapp-btn">حجز معاينة | اطلب السعر الآن</a>
 
-    <a href="grass-gallery.html" class="back-link">← العودة للمعرض الرئيسي</a>
 
 
+    <div class="suggestions-box">
 
-    <div id="suggestions-area"></div>
+        <h3>إضافات تكتمل بها فخامة واحتك</h3>
+
+        <div id="cards-area" class="cards-grid">
+
+            </div>
+
+    </div>
 
 </div><script>
 
-    // 🦈 الدفتر الموحد لبلاتفورم حبيب ستون (كل بضاعتك هنا)
+    // 🦈 الدفتر الموحد لبلاتفورم حبيب ستون (كل بضاعتك بأساميها اللي سميناها)
 
-    const products = {
+    const allProducts = {
 
         // --- قسم النجيل (Category: nageel) ---
 
         1: { cat: "nageel", name: "Habib Royal Izmir Spring", size: "50 ملم", density: "16 غرزة", origin: "تركيا 🇹🇷", img: "nageel/Habib Izmir Spring.jpg", desc: "بساطٌ ملكي صُمم ليتجاوز حدود العشب التقليدي. بارتفاعه الشامخ ونعومته الحريرية، يمنح 'رويال إزمير' قصوركم هيبة الطبيعة الخالدة." },
 
-        2: { cat: "nageel", name: "Habib Istanbul Lush Elite", size: "40 ملم", density: "28 غرزة", origin: "تركيا 🇹🇷", img: "nageel/Habib Istanbul Lush (40mm).jpg", desc: "عندما تلتقي الكثافة الفائقة بالرفاهية المطلقة. يمنحكم 'إسطنبول لَش إيليت' كثافة لا تُضاهى، مما يخلق طبقة من الرفاهية تحت أقدامكم." },
+        2: { cat: "nageel", name: "Habib Istanbul Lush Elite", size: "40 ملم", density: "28 غرزة", origin: "تركيا 🇹🇷", img: "nageel/Habib Istanbul Lush (40mm).jpg", desc: "عندما تلتقي الكثافة الفائقة بالرفاهية المطلقة. يمنحكم 'إسطنبول لَش إيليت' كثافة لا تُضاهى تحت أقدامكم، محافظاً على رونقه الممتلئ دائماً." },
 
         
 
         // --- قسم الرخام (Category: marble) ---
 
-        101: { cat: "marble", name: "خردة رخام أبيض ملكي", size: "مقاسات متنوعة", density: "نخب أول", origin: "مصر 🇪🇬", img: "marble/marble-sample.jpg", desc: "لمسة الفخامة المصرية الأصيلة. خردة الرخام الأبيض تمنح ممرات حدائقكم طابعاً أرستقراطياً فريداً." },
+        101: { cat: "marble", name: "خردة رخام أبيض ملكي", size: "مقاسات متنوعة", density: "نخب أول", origin: "مصر 🇪🇬", img: "marble/marble-sample.jpg", desc: "لمسة الفخامة المصرية الأصيلة. خردة الرخام الأبيض تمنح ممرات حدائقكم طابعاً أرستقراطياً فريداً، وتبرز جمال النجيل الصناعي." },
 
         
 
         // --- قسم الزلط (Category: zalat) ---
 
-        201: { cat: "zalat", name: "زلط ديكور أبيض يوناني", size: "جامبو ناعم", density: "مستورد", origin: "اليونان 🇬🇷", img: "zalat/white-pebbles.jpg", desc: "اللمسة النهائية التي تكتمل بها اللوحة. زلط الديكور الأبيض اليوناني يضيف تبايناً بصرياً مذهلاً مع المساحات الخضراء." }
+        201: { cat: "zalat", name: "زلط ديكور أبيض يوناني", size: "جامبو ناعم", density: "مستورد", origin: "اليونان 🇬🇷", img: "zalat/white-pebbles.jpg", desc: "اللمسة النهائية التي تكتمل بها اللوحة الجمالية. زلط الديكور الأبيض اليوناني يضيف تبايناً بصرياً مذهلاً مع المساحات الخضراء." }
 
     };
 
 
 
+    // التقاط الـ ID من الرابط (product.html?id=1)
+
     const urlParams = new URLSearchParams(window.location.search);
 
     const productId = urlParams.get('id') || 1; 
 
-    const p = products[productId];
+    const p = allProducts[productId];
 
 
 
     if (p) {
 
-        // 1. عرض بيانات المنتج الحالي (الأسماء والصور القديمة المظبوطة)
+        // 1. تحديث بيانات المنتج الأساسي اللي الزبون فتحه
 
         document.getElementById('p-name').innerText = p.name;
 
@@ -204,51 +184,55 @@
 
         document.getElementById('p-desc').innerText = p.desc;
 
-        document.getElementById('p-img').src = "../assets/images/" + p.img; 
+        
 
-        document.title = p.name + " | Habib Stone Platform";
+        // المسار المظبوط للصور جوه assets/images
+
+        document.getElementById('p-img').src = "../assets/images/" + p.img;
+
+        document.getElementById('p-img').alt = p.name;
+
+        document.title = p.name + " | Habib Stone";
 
 
 
-        // 2. رابط الواتساب (تعديل الرقم هنا مرة واحدة للكل)
+        // 2. تحديث رابط الواتساب بالرسالة المخصصة
 
-        const waMessage = `أهلاً Habib Stone، أود الاستفسار عن تفاصيل: ${p.name}`;
+        const waMessage = `أهلاً Habib Stone، أود الاستفسار عن تفاصيل وحجز معاينة لـ: ${p.name}`;
 
         document.getElementById('p-whatsapp').href = `https://wa.me/201016961497?text=${encodeURIComponent(waMessage)}`;
 
 
 
-        // 3. --- محرك الشريط المتحرك (Slider) ---
+        // 3. --- محرك "الكروت" الذكي (عرض الأقسام التكميلية) ---
 
-        const suggestionsArea = document.getElementById('suggestions-area');
+        const cardsArea = document.getElementById('cards-area');
 
-        let sliderHTML = `
-
-            <div class="cross-selling-box">
-
-                <h3>إضافات تكتمل بها فخامة واحتك</h3>
-
-                <div class="slider-container">
-
-        `;
+        let cardsHTML = '';
 
 
 
-        // نلف على الدفتر ونعرض "المنتجات التائهة" من الأقسام التانية
+        for (let id in allProducts) {
 
-        for (let id in products) {
+            // "طريقة التفكير": لو المنتج مش من نفس القسم اللي العميل فاتحه، اعرضه ككارت مقترح
 
-            if (products[id].cat !== p.cat) {
+            // (يعني لو نجيل، يعرض زلط ورخام)
 
-                sliderHTML += `
+            if (allProducts[id].cat !== p.cat) {
 
-                    <a href="product.html?id=${id}" class="slider-item">
+                cardsHTML += `
 
-                        <img src="../assets/images/${products[id].img}" alt="${products[id].name}">
+                    <a href="product.html?id=${id}" class="card">
 
-                        <h4>${products[id].name}</h4>
+                        <img src="../assets/images/${allProducts[id].img}" alt="${allProducts[id].name}">
 
-                        <span>استكشف ←</span>
+                        <div class="card-info">
+
+                            <h4>${allProducts[id].name}</h4>
+
+                            <span>استكشف المجموعة ←</span>
+
+                        </div>
 
                     </a>
 
@@ -258,11 +242,13 @@
 
         }
 
+        cardsArea.innerHTML = cardsHTML;
 
+    } else {
 
-        sliderHTML += `</div></div>`;
+        // لو مفيش منتج بالـ ID ده
 
-        suggestionsArea.innerHTML = sliderHTML;
+        document.querySelector('.container').innerHTML = '<h2 style="text-align:center; padding:50px;">عذراً، المنتج غير موجود حالياً.</h2>';
 
     }
 
@@ -272,15 +258,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
-<script>
-
-    window.addEventListener('load', function() {
-
-        AOS.init({ duration: 1000, once: true });
-
-    });
-
-</script>
+<script>AOS.init({ duration: 1000, once: true });</script>
 
 
 
