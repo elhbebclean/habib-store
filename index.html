@@ -30,11 +30,10 @@
 
         .container { max-width: 1400px; margin: auto; padding: 50px 5%; }
         
-        /* ضبط الشبكة لتظهر الأقسام بجانب بعضها */
         .grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
-            gap: 40px; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 30px; 
         }
 
         .product-link { text-decoration: none; color: inherit; display: block; }
@@ -45,7 +44,7 @@
         }
         .product-card:hover { transform: translateY(-10px); }
         
-        .img-container { width: 100%; height: 450px; overflow: hidden; position: relative; background: #f9f9f9; }
+        .img-container { width: 100%; height: 480px; overflow: hidden; position: relative; background: #f9f9f9; }
         .img-container img { width: 100%; height: 100%; object-fit: cover; transition: 1.2s; }
         .product-card:hover img { transform: scale(1.1); }
 
@@ -55,8 +54,6 @@
         .info h3 { font-size: 22px; margin-bottom: 8px; font-weight: 600; }
         .info .category { font-size: 11px; color: var(--gold); text-transform: uppercase; margin-bottom: 10px; display: block; letter-spacing: 1px; font-weight: bold; }
         .info p { font-size: 14px; color: #666; line-height: 1.7; margin-bottom: 20px; height: 50px; overflow: hidden; }
-
-        .price-display { font-size: 18px; color: var(--black); font-weight: 700; margin-bottom: 15px; display: block; }
 
         .btn-luxury { 
             display: block; width: 100%; background: var(--black); color: #fff; 
@@ -102,29 +99,43 @@
             <div class="product-card" data-aos="fade-up">
                 <div class="badge">الأكثر طلباً</div>
                 <div class="img-container">
-                    <img src="assets/images/nageel/modern-landscape-white-.jpg" alt="Habib Store Landscape Section">
-                </div> <div class="info">
-                    <span class="category">قسم النجيل الصناعي</span>
-                    <h3>نجيل لاندسكيب (كثافات متعددة)</h3>
-                    <p>اكتشف تشكيلتنا من النجيل التركي والهولندي الفاخر بجميع المقاسات والكثافات.</p>
-                    <span class="price-display">يبدأ من 140 ج.م / للمتر</span>
-                    <div class="btn-luxury">دخول المعرض واكتشاف الأنواع ➜</div>
+                    <img src="assets/images/nageel/modern-landscape-white-.jpg" alt="النجيل الصناعي الفاخر">
+                </div>
+                <div class="info">
+                    <span class="category">النجيل التركي والهولندي</span>
+                    <h3>قسم النجيل الصناعي</h3>
+                    <p>أعلى كثافات النجيل لاندسكيب بمواصفات أوروبية تتحمل عوامل الجو.</p>
+                    <div class="btn-luxury">دخول المعرض ➜</div>
                 </div>
             </div>
         </a>
 
         <a href="products/white-marble.html" class="product-link">
             <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="badge">SALE</div>
+                <div class="badge">OFFER</div>
                 <div class="img-container">
-                    <img src="assets/images/zalat/Top 10 Garden Space-Saving Ideas for 2025 _ Smart Small Garden Tips_ garden decoration outdoor garde (2).jpg" alt="زلط ديكور ملون">
+                    <img src="assets/images/zalat/zalat-garden-ideas-luxury.jpg" alt="زلط ديكور فخم">
                 </div>
                 <div class="info">
-                    <span class="category">قسم الأحجار والزلط</span>
-                    <h3>زلط ديكور ملون طبيعي</h3>
-                    <p>أرقى أنواع الزلط الملون والأبيض الكريستالي لتزيين الحدائق والممرات المودرن.</p>
-                    <span class="price-display">أسعار خاصة للكميات</span>
-                    <div class="btn-luxury">دخول القسم والحساب ➜</div>
+                    <span class="category">الأحجار والزلط الطبيعي</span>
+                    <h3>قسم الأحجار والزلط الملكي</h3>
+                    <p>تشكيلة من الزلط الأبيض والملون والبركاني لتزيين الممرات والحدائق.</p>
+                    <div class="btn-luxury">تصفح الأنواع والحساب ➜</div>
+                </div>
+            </div>
+        </a>
+
+        <a href="products/marble.html" class="product-link">
+            <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="badge">VIP</div>
+                <div class="img-container">
+                    <img src="assets/images/zalat/marble-carrara-milli-brown.jpeg" alt="ديكورات رخامية">
+                </div>
+                <div class="info">
+                    <span class="category">الديكورات الرخامية والميكا</span>
+                    <h3>قسم الرخام والديكور</h3>
+                    <p>أرقى أنواع الرخام والحجر الميكا لتجليد الحوائط والواجهات الفخمة.</p>
+                    <div class="btn-luxury">استعراض الفخامة ➜</div>
                 </div>
             </div>
         </a>
