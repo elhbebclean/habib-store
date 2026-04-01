@@ -1,173 +1,267 @@
 <!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title id="page-title">Habib Store - نجيل تركي نخب أول</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
+
         :root { --main-green: #1a5d1a; --gold: #AF944F; --text-dark: #333; --white: #ffffff; }
-        body { font-family: 'Cairo', 'Segoe UI', Tahoma, sans-serif; background: #f4f7f6; color: var(--text-dark); margin: 0; padding: 0; }
-        
-        .container { max-width: 900px; margin: 40px auto; background: var(--white); padding: 30px; border-radius: 25px; box-shadow: 0 20px 45px rgba(0,0,0,0.1); border-top: 6px solid var(--main-green); }
-        
-        .product-header { text-align: center; margin-bottom: 25px; }
-        .product-name { font-family: 'Amiri', serif; font-size: 38px; color: var(--main-green); margin-bottom: 5px; font-weight: 800; }
-        .product-sub { color: #888; font-size: 16px; margin-bottom: 20px; letter-spacing: 1px; }
-        
-        .product-image { width: 100%; max-height: 550px; object-fit: cover; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); margin-bottom: 30px; border: 1px solid #f0f0f0; transition: 0.3s; }
-        
-        .spec-table { width: 100%; border-collapse: collapse; margin-bottom: 35px; background: #fafafa; border-radius: 15px; overflow: hidden; border: 1px solid #eee; }
-        .spec-table td { padding: 18px 25px; border-bottom: 1px solid #eee; font-size: 19px; }
-        .spec-label { font-weight: bold; color: var(--main-green); width: 35%; background: #f9fdf9; }
 
-        .description { line-height: 2.2; font-size: 22px; color: #444; margin-bottom: 45px; text-align: justify; padding: 0 20px; border-right: 6px solid var(--main-green); font-family: 'Amiri', serif; background: #fffdf9; padding-block: 15px; }
-        
-        .whatsapp-btn { display: block; text-align: center; background: #25D366; color: white; padding: 22px; text-decoration: none; border-radius: 50px; font-size: 24px; font-weight: bold; box-shadow: 0 12px 24px rgba(37, 211, 102, 0.3); transition: 0.4s; border: none; cursor: pointer; }
-        .whatsapp-btn:hover { background: #128C7E; transform: translateY(-4px); box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4); }
+        body { font-family: 'Cairo', sans-serif; background: #f4f7f6; color: var(--text-dark); margin: 0; padding: 0; }
 
-        /* --- قسم "إضافات الفخامة" (العشوائي) --- */
-        .related-products { margin-top: 60px; border-top: 2px solid #eee; padding-top: 40px; }
-        .related-title { text-align: center; color: var(--main-green); font-family: 'Amiri', serif; font-size: 28px; margin-bottom: 30px; font-weight: bold; }
-        .cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
         
-        .card { text-decoration: none; color: inherit; border: 1px solid #eee; border-radius: 18px; overflow: hidden; background: #fff; transition: 0.3s; text-align: center; display: flex; flex-direction: column; }
-        .card:hover { transform: translateY(-8px); border-color: var(--gold); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-        .card img { width: 100%; height: 160px; object-fit: cover; border-bottom: 1px solid #f9f9f9; }
-        .card-body { padding: 15px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
-        .card h4 { font-size: 16px; margin: 0 0 10px; color: #333; font-weight: 700; }
-        .card span { color: var(--gold); font-size: 13px; font-weight: bold; border: 1px solid var(--gold); padding: 4px 10px; border-radius: 20px; align-self: center; }
+
+        .container { max-width: 900px; margin: 40px auto; background: var(--white); padding: 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); border-top: 5px solid var(--main-green); }
+
         
+
+        .product-header { text-align: center; margin-bottom: 30px; }
+
+        .product-name { font-family: 'Amiri', serif; font-size: 36px; color: var(--main-green); margin-bottom: 5px; font-weight: 800; }
+
+        .product-sub { color: #666; font-size: 18px; margin-bottom: 20px; }
+
+        
+
+        .product-image { width: 100%; max-height: 550px; object-fit: cover; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); margin-bottom: 30px; border: 1px solid #eee; }
+
+        
+
+        .spec-table { width: 100%; border-collapse: collapse; margin-bottom: 30px; background: #fafafa; border-radius: 10px; overflow: hidden; }
+
+        .spec-table td { padding: 15px 20px; border-bottom: 1px solid #eee; font-size: 19px; }
+
+        .spec-label { font-weight: bold; color: var(--main-green); width: 35%; background: #f0f4f0; }
+
+
+
+        .description { line-height: 2.2; font-size: 21px; color: #444; margin-bottom: 40px; text-align: justify; padding: 0 20px; border-right: 5px solid var(--main-green); font-family: 'Amiri', serif; }
+
+        
+
+        .whatsapp-btn { display: block; text-align: center; background: #25D366; color: white; padding: 22px; text-decoration: none; border-radius: 50px; font-size: 24px; font-weight: bold; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); transition: 0.4s; }
+
+        .whatsapp-btn:hover { background: #128C7E; transform: translateY(-3px); }
+
+
+
+        .related-products { margin-top: 50px; border-top: 2px solid #eee; padding-top: 30px; }
+
+        .related-title { text-align: right; color: var(--main-green); font-size: 22px; margin-bottom: 20px; font-weight: bold; }
+
+        .cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+        .card { text-decoration: none; color: inherit; border: 1px solid #eee; border-radius: 12px; overflow: hidden; background: #fff; transition: 0.3s; text-align: center; }
+
+        .card:hover { transform: translateY(-5px); border-color: var(--gold); }
+
+        .card img { width: 100%; height: 140px; object-fit: cover; }
+
+        .card h4 { font-size: 14px; margin: 10px; color: #333; font-weight: 700; }
+
+        
+
         @media (max-width: 600px) { .cards-grid { grid-template-columns: 1fr; } }
+
     </style>
+
 </head>
+
 <body>
 
 <div class="container">
+
     <div class="product-header">
+
         <h1 id="p-name" class="product-name">جاري تحميل الفخامة...</h1>
-        <p id="p-sub" class="product-sub">HABIB STONE | ELITE LANDSCAPE SOLUTIONS</p>
+
+        <p id="p-sub" class="product-sub">HABIB STONE - اختيار الصفوة</p>
+
     </div>
 
-    <img id="p-img" src="" alt="نجيل تركي حبيب ستون" class="product-image">
+
+
+    <img id="p-img" src="" alt="" class="product-image">
+
+
 
     <table class="spec-table">
-        <tr><td class="spec-label">الارتفاع (السم):</td><td id="p-size">--</td></tr>
-        <tr><td class="spec-label">كثافة النسيج:</td><td id="p-density">--</td></tr>
-        <tr><td class="spec-label">بلد المنشأ:</td><td>تركيا (نخب أول معتمد) 🇹🇷</td></tr>
+
+        <tr><td class="spec-label">بلد المنشأ:</td><td>تركيا (نخب أول) 🇹🇷</td></tr>
+
+        <tr><td class="spec-label">الارتفاع:</td><td id="p-size">--</td></tr>
+
+        <tr><td class="spec-label">الكثافة:</td><td id="p-density">--</td></tr>
+
     </table>
+
+
 
     <div id="p-desc" class="description"></div>
 
+
+
     <a id="p-whatsapp" href="#" class="whatsapp-btn">اطلب معاينة وسعر الآن (واتساب)</a>
 
-    <div class="related-products">
-        <h3 class="related-title">💡 لمسات تكتمل بها فخامة واحتك (زلط ورخام)</h3>
-        <div id="related-grid" class="cards-grid">
-            </div>
-    </div>
-</div><script>
-    // 🦈 مستودع بضاعة حبيب ستون (كل صنف بوصفه البشري الفخم)
-    const products = {
-        // --- قسم النجيل (nageel) ---
-        "1": { 
-            cat: "nageel", 
-            name: "Habib Royal Izmir - Elite Class", 
-            size: "50 ملم (5 سم)", 
-            density: "16 غرزة", 
-            img: "nageel/Habib Izmir Spring.jpg", 
-            desc: "هل تبحث عن بساطٍ حريري يليق بمداخل القصور الفارهة؟ 'رويال إزمير' ليس مجرد نجيل صناعي، بل هو قطعة فنية ببارتفاع 5 سم تمنحك إحساس النجيل الطبيعي في أزهى فصول الربيع. يتميز بنعومة فائقة وتدرج ألوان صُمم خصيصاً لأصحاب الذوق الرفيع الذين لا يرضون بغير الكمال بديلاً." 
-        },
-        "2": { 
-            cat: "nageel", 
-            name: "Habib Istanbul Ultra - High Dense", 
-            size: "40 ملم (4 سم)", 
-            density: "28 غرزة", 
-            img: "nageel/Habib Istanbul Lush (40mm).jpg", 
-            desc: "الكثافة التي تتحدث عن نفسها. مع 28 غرزة، 'إسطنبول ألترا' هو الخيار الأقوى للمساحات التي تجمع بين كثرة الاستخدام وفخامة المظهر. ملمس انسيابي وثبات مذهل يدوم لسنوات طويلة دون أن يتأثر جماله، مما يجعله الاستثمار الأذكى لواحتك الخاصة." 
-        },
-        "3": { 
-            cat: "nageel", 
-            name: "Habib Bosphorus Green (50mm)", 
-            size: "50 ملم (5 سم)", 
-            density: "نسيج مزدوج مقاوم", 
-            img: "nageel/Habib Bosphorus Green (50mm).jpg", 
-            desc: "فخامة البوسفور في قلب حديقتك. يتميز بلون أخضر زاهي يعكس حيوية الطبيعة، مع نسيج مزدوج مصمم خصيصاً ليتحمل أقسى درجات الحرارة مع الحفاظ على برودة الملمس وجمال المنظر." 
-        },
 
-        // --- قسم الرخام (marble) - (هنا رص الـ 30 صورة بتوعك) ---
-        "101": { 
-            cat: "marble", 
-            name: "خردة رخام أبيض جلالة ملكي", 
-            size: "فرز أول نقي", 
-            density: "نخب أول", 
-            img: "marble/marble-sample.jpg", 
-            desc: "اللمسة الأرستقراطية التي تبرز جمال اللون الأخضر. رخام أبيض ملكي يحدد مسارات حديقتك بدقة وفخامة." 
-        },
-        
-        // --- قسم الزلط (zalat) - (هنا رص الـ 30 صورة بتوعك) ---
-        "201": { 
-            cat: "zalat", 
-            name: "زلط ديكور أبيض يوناني مستورد", 
-            size: "جامبو ناعم", 
-            density: "ناصع البياض", 
-            img: "zalat/white-pebbles.jpg", 
-            desc: "الزلط اليوناني المستورد هو السر وراء الحدائق المودرن. ناصع البياض وناعم الملمس، يكتمل به سحر اللاندسكيب." 
-        }
+
+    <div class="related-products">
+
+        <h3 class="related-title">منتجات مقترحة لتكملة الديكور:</h3>
+
+        <div id="related-grid" class="cards-grid"></div>
+
+    </div>
+
+</div><script>
+
+    // 🦈 الدفتر المعتمد: مطابِق لأسماء الصور في معارضك (نجيل + زلط)
+
+    const products = {
+
+        // --- قسم النجيل (nageel) - الربط مع nageel-gallery ---
+
+        "1": { cat: "nageel", name: "نجيل سوبر رويال - 50 ملم", size: "50 ملم (5 سم)", density: "كثافة القصور", img: "nageel/grass-50mm-natural.jpeg", desc: "هل تبحث عن الفخامة المطلقة؟ 'سوبر رويال' ببارتفاع 5 سم هو الاختيار الأول للقصور والفيلات الفاخرة. ملمس طبيعي لا يُفرق عن العشب الحقيقي، يمنحك شعوراً بالرفاهية في كل خطوة." },
+
+        "2": { cat: "nageel", name: "نجيل أسطوري 40 ملم (28 غرزة)", size: "40 ملم (4 سم)", density: "28 غرزة (فائقة)", img: "nageel/grass-40mm-natural-28.jpeg", desc: "القوة والكثافة في منتج واحد. صُمم خصيصاً ليتحمل أقصى درجات الاستخدام مع الحفاظ على مظهره الغني، مثالي للمساحات التي تجمع بين الحركة والجمال." },
+
+        "3": { cat: "nageel", name: "نجيل ملكي 40 ملم (24 غرزة)", size: "40 ملم (4 سم)", density: "24 غرزة (كثيفة)", img: "nageel/grass-40mm-natural-24.jpeg", desc: "التوازن المثالي بين الكثافة والنعومة. يمنح حديقتك مظهراً ممتلئاً وحيوياً يدوم لسنوات، وهو المفضل دائماً لتنسيق الحدائق المنزلية الراقية." },
+
+        "4": { cat: "nageel", name: "نجيل فندقي 40 ملم", size: "40 ملم (4 سم)", density: "المظهر الطبيعي", img: "nageel/grass-40mm-natural.jpeg", desc: "أناقة الفنادق الكبرى الآن في منزلك. يتميز بتدرج ألوان رائع يجعله يبدو طبيعياً تماماً تحت ضوء الشمس، مع سهولة تامة في التنظيف." },
+
+        "9": { cat: "nageel", name: "نجيل 20 ملم ستاندرد", size: "20 ملم (2 سم)", density: "12 غرزة", img: "nageel/grass-20mm-standard-12.jpeg", desc: "الحل الذكي والعملي للمساحات الواسعة. مظهر منظم وتكلفة اقتصادية مع جودة نخب أول تركية تضمن لك الاستدامة." },
+
+
+
+        // --- قسم الزلط (zalat) - الربط مع zalat-gallery ---
+
+        "101": { cat: "zalat", name: "زلط أبيض رخامي فاخر V1", size: "مقاسات متنوعة", density: "نخب أول", img: "zalat/zalat-white-marble-v1.jpeg", desc: "اللمسة الأرستقراطية التي تبرز جمال النجيل. زلط أبيض رخامي صافي، مثالي للممرات وتحديد المساحات الخضراء." },
+
+        "103": { cat: "zalat", name: "زلط أسود بركاني طبيعي", size: "طبيعي", density: "نخب أول", img: "zalat/zalat-black-volcanic.jpeg", desc: "عشاق المودرن يفضلون الزلط البركاني. لون أسود فخم يضيف تبايناً مذهلاً مع الأخضر، ويتحمل الظروف الجوية بامتياز." },
+
+        "105": { cat: "zalat", name: "زلط بركاني أحمر فخم", size: "نادر", density: "نخب أول", img: "zalat/zalat-red-volcanic.jpeg", desc: "إضافة لونية جريئة لحديقتك. الزلط الأحمر البركاني يعطي إحساساً بالطبيعة البكر ويجعل حديقتك فريدة من نوعها." },
+
+        "107": { cat: "zalat", name: "زلط أسيوطي فاخر نخب أول", size: "محلي ممتاز", density: "نخب أول", img: "zalat/zalat-asyuti-v2.jpeg", desc: "الأصالة والمتانة. الزلط الأسيوطي المختار بعناية هو الحل الأمثل للديكورات الخارجية التي تجمع بين القوة والشكل التقليدي الجميل." }
+
     };
 
-    // 🔗 محرك الربط الذكي: التقاط الرقم من الرابط
+
+
     const urlParams = new URLSearchParams(window.location.search);
+
     const productId = urlParams.get('id') || "1";
+
     const p = products[productId];
 
-    if (p) {
-        // 1. تحديث بيانات الصفحة الأساسية
-        document.getElementById('p-name').innerText = p.name;
-        document.getElementById('p-size').innerText = p.size;
-        document.getElementById('p-density').innerText = p.density;
-        document.getElementById('p-desc').innerText = p.desc;
-        
-        // ربط الصورة بالمسار الأصلي في GitHub
-        document.getElementById('p-img').src = "../assets/images/" + p.img;
-        document.getElementById('p-img').alt = p.name;
-        document.title = p.name + " | حبيب ستون";
 
-        // 2. تحديث الواتساب برسالة بياعة ومحترفة
-        const waMsg = `أهلاً حبيب ستون، أريد الاستفسار عن تفاصيل وحجز معاينة لمنتج: ${p.name} (${p.size})`;
+
+    if (p) {
+
+        // 1. تحديث بيانات الصفحة الأساسية (النصوص والصورة)
+
+        document.getElementById('p-name').innerText = p.name;
+
+        document.getElementById('p-size').innerText = p.size;
+
+        document.getElementById('p-density').innerText = p.density;
+
+        document.getElementById('p-desc').innerText = p.desc;
+
+        
+
+        // مسار الصور الموحد اللي شغال عندك
+
+        document.getElementById('p-img').src = "../assets/images/" + p.img;
+
+        document.getElementById('p-img').alt = p.name;
+
+        document.title = p.name + " | HABIB STORE";
+
+
+
+        // 2. تحديث رابط الواتساب برسالة مخصصة للمنتج
+
+        const waMsg = `أهلاً حبيب ستون، أريد استفسار عن: ${p.name} (${p.size})`;
+
         document.getElementById('p-whatsapp').href = `https://wa.me/201016961497?text=${encodeURIComponent(waMsg)}`;
 
-        // 3. --- 🎲 محرك العشوائية الذكي (البيع التكميلي) ---
-        // بنفلتر كل المنتجات اللي "مش نجيل" عشان نعرضها للزبون كديكورات
-        let decorItems = Object.keys(products).filter(id => products[id].cat !== "nageel");
-        
-        // لخبطة القائمة بشكل عشوائي (Shuffle)
-        decorItems.sort(() => Math.random() - 0.5);
 
-        let cardsHTML = '';
-        // اختيار أول 4 منتجات زلط ورخام عشوائية لعرضها
-        decorItems.slice(0, 4).forEach(id => {
-            cardsHTML += `
+
+        // 3. --- كروت منتجات ذات صلة (نظام Upselling) ---
+
+        let relatedHTML = '';
+
+        // المنطق: لو داخل يشوف نجيل، اعرض له زلط. لو داخل يشوف زلط، اعرض له نجيل.
+
+        let targetCat = (p.cat === "nageel") ? "zalat" : "nageel";
+
+        
+
+        let relatedItems = Object.keys(products).filter(id => products[id].cat === targetCat);
+
+        
+
+        // لخبطة عشوائية للاختيارات
+
+        relatedItems.sort(() => Math.random() - 0.5);
+
+
+
+        // عرض 4 كروت مقترحة
+
+        relatedItems.slice(0, 4).forEach(id => {
+
+            relatedHTML += `
+
                 <a href="product.html?id=${id}" class="card">
+
                     <img src="../assets/images/${products[id].img}" alt="${products[id].name}">
-                    <div class="card-body">
+
+                    <div style="padding: 15px;">
+
                         <h4>${products[id].name}</h4>
-                        <span>استكشف المزيد ←</span>
+
+                        <span style="color:#AF944F; font-size:12px; font-weight:bold;">استكشف المجموعة ←</span>
+
                     </div>
+
                 </a>
+
             `;
+
         });
-        document.getElementById('related-grid').innerHTML = cardsHTML;
+
+        document.getElementById('related-grid').innerHTML = relatedHTML;
+
+
 
     } else {
-        // لو الرابط فيه رقم غلط
+
+        // لو الـ ID مش موجود
+
         document.querySelector('.container').innerHTML = `
-            <div style="text-align:center; padding:100px 20px;">
-                <h2 style="color:var(--main-green); font-family:'Amiri';">نعتذر، هذا المنتج قيد التحديث..</h2>
+
+            <div style="text-align:center; padding:80px 20px;">
+
+                <h2 style="color:var(--main-green); font-family:'Amiri';">نعتذر، هذا المنتج غير متوفر حالياً.</h2>
+
                 <a href="../index.html" style="color:var(--gold); font-weight:bold; text-decoration:none;">العودة للرئيسية</a>
+
             </div>`;
+
     }
+
 </script>
 
 </body>
+
 </html>
