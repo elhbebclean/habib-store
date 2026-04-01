@@ -3,178 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>White Crystal Luxury | حبيب ستور</title>
+    <title>مجموعة الزلط والرخام الملكية | حبيب ستور</title>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        :root { --gold: #AF944F; --black: #0a0a0a; --bg: #fdfdfd; }
+        :root { --gold: #AF944F; --black: #0a0a0a; --bg: #fdfdfd; --gray: #f4f4f4; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Cairo', sans-serif; background: var(--bg); color: #333; overflow-x: hidden; }
 
         header { 
             position: fixed; top: 0; width: 100%; z-index: 1000;
-            background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(0,0,0,0.05); padding: 15px 5%;
             display: flex; justify-content: space-between; align-items: center;
         }
         .logo { font-family: 'Amiri', serif; font-size: 28px; letter-spacing: 2px; color: var(--black); text-decoration: none; }
 
-        .product-container { max-width: 1200px; margin: 120px auto 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; padding: 20px; }
-        
-        .image-side { position: sticky; top: 120px; }
-        .image-side img { width: 100%; border-radius: 4px; box-shadow: 0 20px 50px rgba(0,0,0,0.08); transition: 0.5s; }
-        
-        .sale-badge { 
-            position: absolute; top: 20px; right: -10px; background: #d4af37; color: #fff; 
-            padding: 8px 25px; font-weight: bold; font-size: 14px; z-index: 10;
-            box-shadow: 2px 5px 15px rgba(0,0,0,0.2); transform: rotate(5deg);
+        /* ترويسة الصفحة */
+        .page-header { 
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../assets/images/zalat/zalat-garden-ideas-luxury.jpg');
+            background-size: cover; background-position: center; height: 350px;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; color: #fff; margin-top: 60px;
+        }
+        .page-header h1 { font-family: 'Amiri', serif; font-size: 50px; margin-bottom: 10px; }
+
+        /* الأقسام */
+        .section-title { text-align: center; margin: 60px auto 30px; }
+        .section-title h2 { font-family: 'Amiri', serif; font-size: 35px; color: var(--black); position: relative; display: inline-block; padding-bottom: 10px; }
+        .section-title h2::after { content: ''; width: 50px; height: 2px; background: var(--gold); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+
+        .grid-container { 
+            max-width: 1300px; margin: 0 auto 40px; 
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+            gap: 25px; padding: 20px; 
         }
 
-        .details-side { text-align: right; }
-        .category-label { color: var(--gold); font-size: 12px; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 10px; font-weight: 700; }
-        .stars { color: #f1c40f; font-size: 15px; margin-bottom: 15px; }
-        
-        h1 { font-family: 'Amiri', serif; font-size: 42px; color: var(--black); margin-bottom: 15px; line-height: 1.2; }
-        
-        .price-wrapper { margin: 20px 0; display: flex; align-items: center; gap: 15px; }
-        .old-price { font-size: 20px; color: #aaa; text-decoration: line-through; font-weight: 300; }
-        .price { font-size: 35px; font-weight: bold; color: var(--black); }
-        
-        .description { line-height: 1.9; color: #666; margin-bottom: 30px; font-weight: 300; font-size: 17px; }
-        
-        .specs-luxury { margin-bottom: 30px; list-style: none; }
-        .specs-luxury li { font-size: 15px; color: #444; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
-        .specs-luxury i { color: var(--gold); font-size: 12px; }
-
-        .quantity-calc { background: #fff; padding: 25px; border: 1px solid #eee; border-right: 5px solid var(--black); margin-bottom: 30px; }
-        .quantity-calc strong { display: block; margin-bottom: 10px; font-size: 15px; color: var(--black); }
-        .input-group { display: flex; align-items: center; gap: 15px; }
-        input { padding: 12px; border: 1px solid #ddd; width: 110px; font-family: 'Cairo'; outline: none; text-align: center; font-size: 20px; font-weight: bold; border-bottom: 2px solid var(--black); }
-        
-        #res { margin-top: 15px; color: var(--black); font-weight: 700; font-size: 16px; background: #f9f9f9; padding: 15px; border-radius: 4px; display: block; }
-
-        .btn-group { display: flex; flex-direction: column; gap: 15px; }
-        .btn-cart { 
-            background: #fff; color: var(--black); border: 1px solid var(--black); 
-            padding: 20px; width: 100%; cursor: pointer; font-size: 16px; font-weight: 700; transition: 0.4s;
+        /* تصميم الكارت الفاخر */
+        .product-card { 
+            background: #fff; border-radius: 4px; overflow: hidden; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.4s;
+            border: 1px solid #eee; display: flex; flex-direction: column;
         }
-        .btn-main { 
-            background: var(--black); color: #fff; border: none; padding: 20px; width: 100%; 
-            cursor: pointer; font-size: 16px; font-weight: 700; transition: 0.4s; 
+        .product-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-color: var(--gold); }
+        
+        .img-box { position: relative; height: 220px; overflow: hidden; background: #f9f9f9; }
+        .img-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
+        .product-card:hover .img-box img { transform: scale(1.1); }
+
+        .card-content { padding: 20px; text-align: right; flex-grow: 1; }
+        .tag { color: var(--gold); font-size: 10px; font-weight: bold; text-transform: uppercase; margin-bottom: 5px; display: block; }
+        .title { font-size: 18px; color: var(--black); font-weight: 700; margin-bottom: 15px; height: 50px; display: flex; align-items: center; }
+        
+        .wa-btn { 
+            background: var(--black); color: #fff; text-decoration: none; display: block; 
+            text-align: center; padding: 12px; font-size: 14px; font-weight: bold; transition: 0.3s;
         }
-        .btn-main:hover, .btn-cart:hover { background: var(--gold); color: #fff; border-color: var(--gold); transform: translateY(-3px); }
+        .wa-btn:hover { background: var(--gold); color: #fff; }
 
-        .reviews-section { max-width: 1200px; margin: 60px auto; padding: 20px; border-top: 1px solid #eee; }
-        .review-card { background: #fff; padding: 30px; border: 1px solid #f2f2f2; margin-bottom: 20px; }
+        .divider-luxury { height: 1px; background: linear-gradient(to right, transparent, #ddd, transparent); margin: 40px auto; max-width: 80%; }
 
-        @media (max-width: 768px) { .product-container { grid-template-columns: 1fr; } .image-side { position: relative; top: 0; } }
+        @media (max-width: 768px) { .page-header h1 { font-size: 32px; } }
     </style>
 </head>
 <body>
 
 <header>
     <a href="../index.html" class="logo">HABIB STORE</a>
-    <div style="font-size: 11px; color: var(--gold); letter-spacing: 1px;">ROYAL LANDSCAPE COLLECTION</div>
+    <div style="font-size: 11px; color: var(--gold); letter-spacing: 1px;">PREMIUM LANDSCAPE</div>
 </header>
 
-<div class="product-container" data-aos="fade-up">
-    <div class="image-side">
-        <div class="sale-badge">OFFER - 20%</div>
-        <img id="main-img" src="../assets/images/zalat/white-zalat.jpg" alt="White Crystal Luxury Selection">
+<div class="page-header">
+    <p style="letter-spacing: 3px; font-weight: bold;">ROYAL SELECTION</p>
+    <h1>مجموعة الزلط والديكورات</h1>
+</div>
+
+<div class="section-title" data-aos="fade-up">
+    <h2>تشكيلة الزلط الفاخر</h2>
+</div>
+
+<div class="grid-container" data-aos="fade-up">
+    <div class="product-card">
+        <div class="img-box"><img src="../assets/images/zalat/zalat-white-marble-v1.jpeg" alt="زلط أبيض رخامي v1"></div>
+        <div class="card-content">
+            <span class="tag">White Marble | نخب أول</span>
+            <h3 class="title">زلط أبيض رخامي فاخر V1</h3>
+            <a href="https://wa.me/201016961497" class="wa-btn">اطلب عبر واتساب <i class="fab fa-whatsapp"></i></a>
+        </div>
     </div>
-    
-    <div class="details-side">
-        <span class="category-label">إختيار الصفوة | LIMITED EDITION</span>
-        <div class="stars">★★★★★ <span style="color:#aaa; font-size: 12px; margin-right: 10px;">(120 تقييم من نخبة التجمع وزايد)</span></div>
-        
-        <h1>زلط الرخام الملكي <br><span style="color: var(--gold); font-size: 0.6em; font-family: 'Cairo';">White Crystal Selection</span></h1>
-        
-        <div class="price-wrapper">
-            <span class="old-price">185 ج.م</span>
-            <span class="price">150 ج.م</span>
-            <span style="font-size: 14px; color: #888;">/ للعبوة الفاخرة (25KG)</span>
+
+    <div class="product-card">
+        <div class="img-box"><img src="../assets/images/zalat/zalat-white-marble-v2.jpeg" alt="زلط أبيض رخامي v2"></div>
+        <div class="card-content">
+            <span class="tag">Premium White</span>
+            <h3 class="title">زلط أبيض رخامي ملكي V2</h3>
+            <a href="https://wa.me/201016961497" class="wa-btn">اطلب عبر واتساب <i class="fab fa-whatsapp"></i></a>
         </div>
+    </div>
 
-        <p class="description">
-            حوّل حديقتك إلى قطعة فنية بلمسة الـ Minimalist Luxury. زلط رخامي معالج بتقنيات النقاء العالي، مصقول وملمع ليعكس الإضاءة الليلية بشكل ساحر.
-        </p>
-
-        <ul class="specs-luxury">
-            <li><i class="fas fa-gem"></i> أبيض كريستالي ناصع (نخب أول)</li>
-            <li><i class="fas fa-sparkles"></i> ملمس مصقول ملمع لخدمة الإضاءة والظلال</li>
-            <li><i class="fas fa-shield-alt"></i> معالج بالكامل لضمان خلوه من الأتربة والشوائب</li>
-            <li><i class="fas fa-info-circle"></i> المعيار الهندسي: المتر المربع يحتاج 8 عبوات.</li>
-        </ul>
-
-        <div class="quantity-calc">
-            <strong>📐 التقرير الفني للكمية (Smart Calculator):</strong>
-            <div class="input-group">
-                <input type="number" id="area" placeholder="0" oninput="calc()">
-                <span style="font-size: 14px;">متر مربع مساحة الحديقة</span>
-            </div>
-            <p id="res">أدخل مساحة الموقع لاستخراج التقرير الفني...</p>
+    <div class="product-card">
+        <div class="img-box"><img src="../assets/images/zalat/zalat-black-volcanic.jpeg" alt="زلط أسود بركاني"></div>
+        <div class="card-content">
+            <span class="tag">Volcanic Black | بركاني</span>
+            <h3 class="title">زلط أسود بركاني طبيعي</h3>
+            <a href="https://wa.me/201016961497" class="wa-btn">اطلب عبر واتساب <i class="fab fa-whatsapp"></i></a>
         </div>
+    </div>
 
-        <div class="btn-group">
-            <button class="btn-cart" onclick="addToCart('cart')">إضافة إلى السلة <i class="fas fa-shopping-bag"></i></button>
-            <button class="btn-main" onclick="addToCart('buy')">تأكيد حجز الكمية والطلب ➜</button>
+    <div class="product-card">
+        <div class="img-box"><img src="../assets/images/zalat/zalat-black-royal.jpg" alt="زلط أسود ملكي"></div>
+        <div class="card-content">
+            <span class="tag">Royal Black | أسود فحم</span>
+            <h3 class="title">زلط أسود ملكي ملمع</h3>
+            <a href="https://wa.me/201016961497" class="wa-btn">اطلب عبر واتساب <i class="fab fa-whatsapp"></i></a>
         </div>
-        <p style="text-align: center; color: #d4af37; font-size: 11px; margin-top: 15px; font-weight: bold;">⚠️ متبقي 450 عبوة فقط من هذا النخب لعملاء التجمع وزايد</p>
+    </div>
+
+    <div class="product-card">
+        <div class="img-box"><img src="../assets/images/zalat/zalat-red-volcanic.jpeg" alt="زلط أحمر بركاني"></div>
+        <div class="card-content">
+            <span class="tag">Red Volcanic | أحمر نادِر</span>
+            <h3 class="title">زلط بركاني أحمر فخم</h3>
+            <a href="https://wa.me/201016961497" class="wa-btn">اطلب عبر واتساب <i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="img-box"><img src="../assets/images/zalat/zalat-light-gray.jpg" alt="زلط رمادي فاتح"></div>
+        <div class="card-content">
+            <span class="tag">Light Gray | مودرن</span>
+            <h3 class="title">زلط رمادي فاتح (مودرن)</h3>
+            <a href="https://wa.me/201016961497" class="wa-btn">اطلب عبر واتساب <i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="img-box"><img src="../assets/images/zalat/zalat-asyuti-v2.jpeg" alt="زلط أسيوطي"></div>
+        <div class="card-content">
+            <span class="tag">Local Premium | أسيوطي</span>
+            <h3 class="title">زلط أسيوطي فاخر نخب ثانٍ</h3>
+            <a href="https://wa.me/201016961497" class="wa-btn">اطلب عبر واتساب <i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="img-box"><img src="../assets/images/zalat/zalat-mix-colors.jpeg" alt="زلط ميكس"></div>
+        <div class="card-content">
+            <span class="tag">Natural Mix | ميكس ألوان</span>
+            <h3 class="title">زلط ألوان طبيعية ميكس</h3>
+            <a href="https://wa.me/201016961497" class="wa-btn">اطلب عبر واتساب <i class="fab fa-whatsapp"></i></a>
+        </div>
     </div>
 </div>
 
-<div class="reviews-section" data-aos="fade-up">
-    <h3 style="font-family: 'Amiri', serif; text-align: center; margin-bottom: 30px;">آراء "حيتان" اللاندسكيب ⭐</h3>
-    <div class="review-card">
-        <strong>أ. ياسين - صاحب فيلا (زايد)</strong>
-        <div class="stars">★★★★★</div>
-        <p>"استخدمت الـ White Crystal من حبيب ستور، الفنش ملمع وبيرمي إضاءة بجد خرافية بالليل. الحاسبة دقيقة جداً."</p>
+<div class="divider-luxury"></div>
+
+<div class="section-title" data-aos="fade-up">
+    <h2>الديكورات الرخامية والحجرية</h2>
+</div>
+
+<div class="grid-container" data-aos="fade-up">
+    <div class="product-card">
+        <div class="img-box"><img src="../assets/images/zalat/marble-carrara-milli-brown.jpeg" alt="رخام كرارة ملي براون"></div>
+        <div class="card-content">
+            <span class="tag">Luxury Mix | كرارة</span>
+            <h3 class="title">رخام كرارة x ملي براون</h3>
+            <a href="https://wa.me/201016961497" class="wa-btn">طلب عرض سعر <i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="img-box"><img src="../assets/images/zalat/marble-crystal-white.jpeg" alt="رخام كريستال وايت"></div>
+        <div class="card-content">
+            <span class="tag">Crystal White | ناصع</span>
+            <h3 class="title">رخام كريستال وايت فاخر</h3>
+            <a href="https://wa.me/201016961497" class="wa-btn">طلب عرض سعر <i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="img-box"><img src="../assets/images/zalat/marble-emperador.jpeg" alt="رخام إمبلادور"></div>
+        <div class="card-content">
+            <span class="tag">Emperador | فخامة</span>
+            <h3 class="title">رخام إمبلادور كلاسيك</h3>
+            <a href="https://wa.me/201016961497" class="wa-btn">طلب عرض سعر <i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="img-box"><img src="../assets/images/zalat/marble-spanish-black.jpeg" alt="رخام أسود إسباني"></div>
+        <div class="card-content">
+            <span class="tag">Spanish Black | ملكي</span>
+            <h3 class="title">رخام أسود إسباني نخب أول</h3>
+            <a href="https://wa.me/201016961497" class="wa-btn">طلب عرض سعر <i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="img-box"><img src="../assets/images/zalat/stone-mica-grey.jpeg" alt="حجر ميكا رمادي"></div>
+        <div class="card-content">
+            <span class="tag">Modern Mica | ميكا</span>
+            <h3 class="title">حجر ميكا رمادي (تجليد)</h3>
+            <a href="https://wa.me/201016961497" class="wa-btn">طلب عرض سعر <i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="img-box"><img src="../assets/images/zalat/stone-mica-red.jpeg" alt="حجر ميكا حمراء"></div>
+        <div class="card-content">
+            <span class="tag">Red Mica | أحمر ميكا</span>
+            <h3 class="title">حجر ميكا أحمر حراري</h3>
+            <a href="https://wa.me/201016961497" class="wa-btn">طلب عرض سعر <i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="img-box"><img src="../assets/images/zalat/marble-red-carrara-spanish-black.jpeg" alt="كوكتيل رخام"></div>
+        <div class="card-content">
+            <span class="tag">Exclusive Mix | حصري</span>
+            <h3 class="title">كوكتيل (أحمر x كرارة x أسود)</h3>
+            <a href="https://wa.me/201016961497" class="wa-btn">طلب عرض سعر <i class="fab fa-whatsapp"></i></a>
+        </div>
     </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
     AOS.init({ duration: 1000, once: true });
-
-    let totalBags = 0;
-    let totalPrice = 0;
-    const pricePerBag = 150;
-    const bagsPerMeter = 8;
-
-    function calc() {
-        let a = document.getElementById('area').value;
-        if (a > 0) {
-            totalBags = a * bagsPerMeter; 
-            totalPrice = totalBags * pricePerBag;
-            document.getElementById('res').innerHTML = `✅ ستحتاج: <strong>${totalBags} عبوة فاخرة</strong> | الإجمالي المالي: <strong>${totalPrice.toLocaleString()} ج.م</strong>`;
-        } else {
-            document.getElementById('res').innerText = "أدخل مساحة الموقع لاستخراج التقرير الفني...";
-        }
-    }
-
-    function addToCart(type) {
-        let a = document.getElementById('area').value;
-        if (!a || a <= 0) {
-            alert('يرجى تحديد المساحة الهندسية أولاً يا فندم.');
-            return;
-        }
-
-        let cart = JSON.parse(localStorage.getItem('habibCart')) || [];
-        cart.push({
-            name: 'زلط الرخام الملكي (White Crystal)',
-            area: totalBags + " عبوة",
-            price: totalPrice
-        });
-        
-        localStorage.setItem('habibCart', JSON.stringify(cart));
-        if (type === 'buy') {
-            window.location.href = '../cart.html'; 
-        } else {
-            alert('تمت إضافة الكمية للسلة بنجاح يا حوت! 🦈');
-        }
-    }
 </script>
 
 </body>
