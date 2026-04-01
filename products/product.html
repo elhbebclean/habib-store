@@ -3,86 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">Habib Store - Elite Selection</title>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <title>Habib Stone | Luxury Turf Platform</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
     <style>
-        /* الألوان الأصلية بتاعتك: الأبيض، الأخضر الهادي، والأسود الشيك */
-        :root { --main-green: #1a5d1a; --text-dark: #333; --bg-light: #f4f7f6; --white: #ffffff; }
+        :root { --main-green: #1a5d1a; --gold: #AF944F; --black: #111; --white: #ffffff; --soft-gray: #f8f9fa; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        body { font-family: 'Cairo', sans-serif; background: var(--bg-light); color: var(--text-dark); margin: 0; padding: 0; }
-        
-        .container { max-width: 900px; margin: 40px auto; background: var(--white); padding: 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); border-top: 6px solid var(--main-green); }
-        
-        .product-header { text-align: center; margin-bottom: 30px; }
-        .product-name { font-family: 'Amiri', serif; font-size: 36px; color: var(--main-green); margin-bottom: 5px; font-weight: 700; }
-        .product-sub { color: #888; font-size: 16px; font-weight: 600; letter-spacing: 1px; }
-        
-        .product-image { width: 100%; max-height: 500px; object-fit: cover; border-radius: 15px; margin-bottom: 30px; border: 1px solid #eee; }
-        
-        .spec-table { width: 100%; border-collapse: collapse; margin-bottom: 30px; background: #fafafa; border-radius: 12px; overflow: hidden; }
-        .spec-table td { padding: 18px 25px; border-bottom: 1px solid #eee; font-size: 19px; }
-        .spec-label { font-weight: bold; color: var(--main-green); width: 35%; background: #f0f4f0; }
+        body { font-family: 'Cairo', sans-serif; background: var(--white); color: var(--black); line-height: 1.6; }
 
-        .description { line-height: 2; font-size: 22px; color: #444; margin-bottom: 40px; text-align: justify; padding: 0 15px; border-right: 5px solid var(--main-green); font-family: 'Amiri', serif; }
+        /* Header الفخم والهادي */
+        header { 
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
+            border-bottom: 1px solid #eee; padding: 12px 5%;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo { font-family: 'Amiri', serif; font-size: 24px; color: var(--black); text-decoration: none; font-weight: 700; letter-spacing: 1px; }
+        .platform-tag { font-size: 11px; font-weight: 700; color: var(--gold); border: 1px solid var(--gold); padding: 4px 10px; text-transform: uppercase; }
+
+        /* Hero Section - مخاطبة الملياردير بنبرة هادئة */
+        .hero { 
+            height: 40vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; background: var(--white); margin-top: 50px;
+        }
+        .hero h1 { font-family: 'Amiri', serif; font-size: clamp(30px, 6vw, 48px); color: var(--black); margin-bottom: 15px; }
+        .hero p { color: #888; font-size: 14px; font-weight: 400; letter-spacing: 4px; text-transform: uppercase; }
+
+        .container { max-width: 1400px; margin: auto; padding: 20px 5% 80px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 40px; }
+
+        /* كارت المنتج - Minimalist & Luxury */
+        .product-card { 
+            background: var(--white); transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative; overflow: hidden; display: flex; flex-direction: column;
+            border: 1px solid #f0f0f0;
+        }
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 40px 80px rgba(0,0,0,0.05); border-color: #ddd; }
         
-        .whatsapp-btn { display: block; text-align: center; background: #25D366; color: white; padding: 22px; text-decoration: none; border-radius: 50px; font-size: 24px; font-weight: bold; transition: 0.4s; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2); }
-        .whatsapp-btn:hover { background: #128C7E; transform: translateY(-3px); }
+        .img-box { width: 100%; aspect-ratio: 16/10; overflow: hidden; background: var(--soft-gray); }
+        .img-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s ease; }
+        .product-card:hover .img-box img { transform: scale(1.08); }
         
-        .back-link { display: block; text-align: center; margin-top: 30px; color: var(--main-green); text-decoration: none; font-weight: bold; font-size: 18px; }
-        .back-link:hover { text-decoration: underline; }
+        .info { padding: 30px; text-align: right; }
+        .info span { color: var(--gold); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        .info h3 { font-size: 22px; margin: 10px 0 25px; font-family: 'Amiri', serif; color: var(--black); font-weight: 700; }
+        
+        .btn-view { 
+            display: inline-block; width: 100%; text-align: center; 
+            background: var(--black); color: var(--white); 
+            padding: 18px; text-decoration: none; font-size: 14px; font-weight: 700; 
+            transition: 0.4s; border: 1px solid var(--black);
+        }
+        .btn-view:hover { background: transparent; color: var(--black); }
+
+        footer { text-align: center; padding: 60px; color: #bbb; font-size: 11px; letter-spacing: 2px; }
     </style>
 </head>
 <body>
 
+<header>
+    <a href="../index.html" class="logo">HABIB STONE</a>
+    <div class="platform-tag">Luxury Platform</div>
+</header>
+
+<section class="hero" data-aos="fade-up">
+    <p>Exclusive Turkish Collection</p>
+    <h1>نخبة العشب التركي للأرضيات الفاخرة</h1>
+</section>
+
 <div class="container">
-    <div class="product-header">
-        <h1 id="p-name" class="product-name">جاري التحميل...</h1>
-        <p id="p-sub" class="product-sub">Habib Store - Elite Selection</p>
+    <div class="grid">
+        
+        <div class="product-card" data-aos="fade-up">
+            <div class="img-box"><img src="../assets/images/nageel/grass-50mm-natural.jpeg" alt="Habib Royal Izmir"></div>
+            <div class="info">
+                <span>The Crown Jewel | 50mm</span>
+                <h3>Habib Royal Izmir Spring</h3>
+                <a href="product.html?id=1" class="btn-view">اكتشف المواصفات</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="img-box"><img src="../assets/images/nageel/grass-40mm-natural-28.jpeg" alt="Habib Istanbul Lush"></div>
+            <div class="info">
+                <span>Maximum Density | 40mm</span>
+                <h3>Habib Istanbul Lush Elite</h3>
+                <a href="product.html?id=2" class="btn-view">اكتشف المواصفات</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="img-box"><img src="../assets/images/nageel/grass-40mm-natural-24.jpeg" alt="Habib Istanbul Prime"></div>
+            <div class="info">
+                <span>The Gold Standard | 40mm</span>
+                <h3>Habib Istanbul Prime Edition</h3>
+                <a href="product.html?id=3" class="btn-view">اكتشف المواصفات</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-aos="fade-up">
+            <div class="img-box"><img src="../assets/images/nageel/grass-30mm-natural-24.jpeg" alt="Habib Antalya Breeze"></div>
+            <div class="info">
+                <span>Modern Elegance | 30mm</span>
+                <h3>Habib Antalya Breeze Ultra</h3>
+                <a href="product.html?id=6" class="btn-view">اكتشف المواصفات</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="img-box"><img src="../assets/images/nageel/grass-20mm-standard-12.jpeg" alt="Habib Anatolian Nature"></div>
+            <div class="info">
+                <span>Smart Luxury | 20mm</span>
+                <h3>Habib Anatolian Nature Smart</h3>
+                <a href="product.html?id=9" class="btn-view">اكتشف المواصفات</a>
+            </div>
+        </div>
+
     </div>
-
-    <img id="p-img" src="" alt="Habib Store" class="product-image">
-
-    <table class="spec-table">
-        <tr><td class="spec-label">بلد المنشأ</td><td>تركيا (نخب أول) 🇹🇷</td></tr>
-        <tr><td class="spec-label">الارتفاع المعتمد</td><td id="p-size">--</td></tr>
-        <tr><td class="spec-label">كثافة النسيج</td><td id="p-density">--</td></tr>
-        <tr><td class="spec-label">فئة الجودة</td><td>Premium Elite Grade 🛡️</td></tr>
-    </table>
-
-    <div id="p-desc" class="description"></div>
-
-    <a id="p-whatsapp" href="#" class="whatsapp-btn">حجز معاينة | اطلب السعر الآن</a>
-    <a href="grass-gallery.html" class="back-link">← العودة لمعرض النجيل الفاخر</a>
 </div>
 
+<footer>
+    <p>HABIB STONE LUXURY PLATFORM &copy; 2026 | ALL RIGHTS RESERVED</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
-    const products = {
-        1: { name: "Habib Royal Izmir Spring", size: "50 ملم", density: "16 غرزة", img: "Habib Izmir Spring.jpg", desc: "بساطٌ ملكي صُمم ليتجاوز حدود العشب التقليدي. بارتفاعه الشامخ ونعومته الحريرية، يمنح 'رويال إزمير' قصوركم هيبة الطبيعة الخالدة في أزهى عصوره. ليس مجرد نجيل، بل هو استثمار في الراحة التي تليق بنخبة المجتمع." },
-        2: { name: "Habib Istanbul Lush Elite", size: "40 ملم", density: "28 غرزة", img: "Habib Istanbul Lush (40mm).jpg", desc: "عندما تلتقي الكثافة الفائقة بالرفاهية المطلقة. يمنحكم 'إسطنبول لَش إيليت' كثافة لا تُضاهى، مما يخلق طبقة من الرفاهية تحت أقدامكم. عشب صُمم ليدوم طويلاً محافظاً على رونقه الممتلئ ولونه الربيعي الساحر." },
-        3: { name: "Habib Istanbul Prime Edition", size: "40 ملم", density: "24 غرزة", img: "Habib Istanbul Lush (40mm).jpg", desc: "التوازن الذهبي بين الكثافة العالية والمظهر الطبيعي المتناسق. 'برايم إيديشن' هو الاختيار المفضل للمساحات الواسعة التي تطلب الأناقة والصلابة معاً. صُمم لمن يقدر الجودة التي تفرض نفسها دون ضجيج." },
-        // ... باقي المنتجات مبرمجة بنفس الطريقة
-        4: { name: "Habib Istanbul Classic", size: "40 ملم", density: "16 غرزة", img: "Habib Istanbul Lush (40mm).jpg", desc: "كلاسيكية الفخامة التركية في صورتها الأنقى. يمنحكم المظهر النظيف والمريح للعين، ببارتفاع يضمن سهولة الحركة والاستمتاع بمساحاتكم الخارجية مع جودة النخب الأول المعتمدة." },
-        5: { name: "Habib Istanbul Smart", size: "40 ملم", density: "12 غرزة", img: "Habib Istanbul Lush (40mm).jpg", desc: "الأناقة العملية للمساحات الواسعة. 'إسطنبول سمارت' هو الحل الذكي الذي يجمع بين مظهر النجيل الطبيعي وبين قوة التحمل الفائقة، مثالي لممرات الحدائق والرووف المودرن." },
-        6: { name: "Habib Antalya Breeze Ultra", size: "30 ملم", density: "24 غرزة", img: "Habib Antalya Breeze (30mm).jpg", desc: "كثافة استثنائية في قوامٍ رشيق. يمنحكم 'أنطاليا بريز ألترا' إحساس النسيم التركي المنعش في واحتكم الخاصة. كثافة غرز فائقة في ارتفاع مودرن يسهل الاعتناء به." },
-        7: { name: "Habib Antalya Breeze Pro", size: "30 ملم", density: "18 غرزة", img: "Habib Antalya Breeze (30mm).jpg", desc: "البساطة الراقية والشكل المنظم دائماً. نجيل تركي نخب أول صُمم للمساحات المفتوحة التي تتطلب مظهر طبيعي مريح للنظر وسهل التنظيف." },
-        8: { name: "Habib Antalya Breeze Core", size: "30 ملم", density: "16 غرزة", img: "Habib Antalya Breeze (30mm).jpg", desc: "الحل العصري لتجديد مساحاتكم الخارجية. يتميز بلون ربيعي مبهج وارتفاع عملي، مما يجعله الاختيار الأمثل لإضافة لمسة حيوية وفخامة فورية بلمسة حبيب ستور." },
-        9: { name: "Habib Anatolian Nature Smart", size: "20 ملم", density: "12 غرزة", img: "Habib Anatolian Nature.jpg", desc: "جوهر الطبيعة الأناضولية في تصميمٍ عمليٍ وأنيق. يوفر مظهر النجيل الطبيعي المقصوص بدقة فائقة، وهو مثالي للمساحات التي تنشد البساطة الفخمة." }
-    };
-
-    const urlParams = new URLSearchParams(window.location.search);
-    const productId = urlParams.get('id') || 1; 
-    const p = products[productId];
-
-    if (p) {
-        document.getElementById('p-name').innerText = p.name;
-        document.getElementById('p-size').innerText = p.size;
-        document.getElementById('p-density').innerText = p.density;
-        document.getElementById('p-desc').innerText = p.desc;
-        document.getElementById('p-img').src = "../assets/images/nageel/" + p.img; 
-        document.title = p.name + " | Habib Store";
-        const waMessage = `أهلاً Habib Store، أود الاستفسار عن تفاصيل وحجز معاينة لمنتج: ${p.name} - ${p.size}`;
-        document.getElementById('p-whatsapp').href = `https://wa.me/201016961497?text=${encodeURIComponent(waMessage)}`;
-    }
+    window.addEventListener('load', function() {
+        AOS.init({ duration: 1200, once: true });
+    });
 </script>
 
 </body>
