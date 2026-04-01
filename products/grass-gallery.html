@@ -1,196 +1,217 @@
-لا طبعا مش هيفتح واظن السبب ان الكود ده لازم يتعدل.<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>معرض النجيل الفاخر | HABIB STORE</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
-        :root { --gold: #AF944F; --black: #111; --light-bg: #fdfdfd; --white: #ffffff; }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body { 
-            font-family: 'Cairo', sans-serif; 
-            background: var(--light-bg); 
-            color: var(--black); 
-            line-height: 1.6; 
-            overflow-x: hidden; 
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض النجيل الفاخر | HABIB STORE</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root { --gold: #AF944F; --black: #111; --light-bg: #fdfdfd; --white: #ffffff; }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Cairo', sans-serif; 
+            background: var(--light-bg); 
+            color: var(--black); 
+            line-height: 1.6; 
+            overflow-x: hidden; 
+        }
 
-        /* Luxury Header */
-        header { 
-            position: fixed; top: 0; width: 100%; z-index: 1000;
-            background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(0,0,0,0.05); padding: 15px 5%;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .logo { font-family: 'Amiri', serif; font-size: 28px; color: var(--black); text-decoration: none; font-weight: 700; }
+        /* Luxury Header */
+        header { 
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(0,0,0,0.05); padding: 15px 5%;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo { font-family: 'Amiri', serif; font-size: 28px; color: var(--black); text-decoration: none; font-weight: 700; }
 
-        /* Hero Section */
-        .hero { 
-            height: 35vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
-            text-align: center; background: var(--white); margin-top: 60px; padding: 20px;
-        }
-        .hero h1 { font-family: 'Amiri', serif; font-size: clamp(32px, 7vw, 45px); color: var(--black); }
-        .hero p { color: var(--gold); letter-spacing: 2px; font-size: 12px; font-weight: 700; margin-top: 10px; }
+        /* Hero Section */
+        .hero { 
+            height: 35vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; background: var(--white); margin-top: 60px; padding: 20px;
+        }
+        .hero h1 { font-family: 'Amiri', serif; font-size: clamp(32px, 7vw, 45px); color: var(--black); }
+        .hero p { color: var(--gold); letter-spacing: 2px; font-size: 12px; font-weight: 700; margin-top: 10px; }
 
-        /* Gallery Grid */
-        .container { max-width: 1400px; margin: auto; padding: 40px 5%; }
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
-            gap: 35px; 
-        }
+        /* Gallery Grid */
+        .container { max-width: 1400px; margin: auto; padding: 40px 5%; }
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+            gap: 35px; 
+        }
 
-        /* Product Card Fix (No Zoom) */
-        .product-card { 
-            background: var(--white); border: 1px solid #eee; transition: 0.4s ease-in-out;
-            position: relative; overflow: hidden; display: flex; flex-direction: column;
-        }
-        .product-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,0.08); border-color: var(--gold); }
-        
-        .img-box { 
-            width: 100%; 
-            aspect-ratio: 1/1; 
-            overflow: hidden; 
-            background: #fff; /* خلفية بيضاء عشان لو الصورة مش مربعة */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px; /* مساحة صغيرة عشان الصورة متنطش في الحواف */
-        }
-        
-        /* التعديل المهم: استخدام contain بدل cover لمنع الزوم */
-        .img-box img { 
-            max-width: 100%; 
-            max-height: 100%; 
-            object-fit: contain; 
-            transition: 0.5s ease; 
-        }
-        
-        .product-card:hover .img-box img { transform: scale(1.05); }
-        
-        .info { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; text-align: right; }
-        .info h3 { font-size: 20px; margin-bottom: 20px; font-family: 'Amiri', serif; min-height: 55px; color: #222; }
-        
-        .btn-view { 
-            text-align: center; background: var(--black); color: var(--white); 
-            padding: 16px; text-decoration: none; font-size: 14px; font-weight: 700; transition: 0.3s;
-            margin-top: auto; border: 1px solid var(--black);
-        }
-        .btn-view:hover { background: var(--gold); border-color: var(--gold); }
+        /* Product Card */
+        .product-card { 
+            background: var(--white); border: 1px solid #eee; transition: 0.4s ease-in-out;
+            position: relative; overflow: hidden; display: flex; flex-direction: column;
+            cursor: pointer;
+        }
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,0.08); border-color: var(--gold); }
+        
+        .img-box { 
+            width: 100%; 
+            aspect-ratio: 1/1; 
+            overflow: hidden; 
+            background: #fff; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px; 
+        }
+        
+        .img-box img { 
+            max-width: 100%; 
+            max-height: 100%; 
+            object-fit: contain; 
+            transition: 0.5s ease; 
+        }
+        
+        .product-card:hover .img-box img { transform: scale(1.05); }
+        
+        .info { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; text-align: right; }
+        .info h3 { font-size: 20px; margin-bottom: 20px; font-family: 'Amiri', serif; min-height: 55px; color: #222; }
+        
+        .btn-view { 
+            text-align: center; background: var(--black); color: var(--white); 
+            padding: 16px; text-decoration: none; font-size: 14px; font-weight: 700; transition: 0.3s;
+            margin-top: auto; border: 1px solid var(--black);
+        }
+        .btn-view:hover { background: var(--gold); border-color: var(--gold); }
 
-        footer { text-align: center; padding: 50px; color: #999; font-size: 12px; background: #fff; border-top: 1px solid #eee; margin-top: 40px; }
-    </style>
-</head>       <body>
+        footer { text-align: center; padding: 50px; color: #999; font-size: 12px; background: #fff; border-top: 1px solid #eee; margin-top: 40px; }
+        
+        /* جعل الكارت بالكامل قابل للضغط */
+        .product-link { text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%; }
+    </style>
+</head>
+<body>
 
 <header>
-    <a href="../index.html" class="logo">HABIB STORE</a>
-    <div style="font-size: 10px; font-weight: 700; color: var(--gold); border: 1px solid var(--gold); padding: 5px 12px; border-radius: 2px;">PREMIUM EXTERIOR</div>
+    <a href="../index.html" class="logo">HABIB STORE</a>
+    <div style="font-size: 10px; font-weight: 700; color: var(--gold); border: 1px solid var(--gold); padding: 5px 12px; border-radius: 2px;">PREMIUM EXTERIOR</div>
 </header>
 
 <section class="hero" data-aos="fade-down">
-    <h1>مجموعة النجيل الطبيعي الفاخر</h1>
-    <p>THE ULTIMATE LANDSCAPE EXPERIENCE | BY SHARKS FOR SHARKS</p>
+    <h1>مجموعة النجيل الطبيعي الفاخر</h1>
+    <p>THE ULTIMATE LANDSCAPE EXPERIENCE | BY SHARKS FOR SHARKS</p>
 </section>
 
 <div class="container">
-    <div class="grid">
-        
-        <div class="product-card" data-aos="fade-up">
-            <div class="img-box"><img src="../assets/images/nageel/grass-50mm-natural.jpeg" alt="نجيل 50 ملم"></div>
-            <div class="info">
-                <h3>نجيل سوبر رويال - 50 ملم (كثافة القصور)</h3>
-                <a href="grass-50mm.html" class="btn-view">المواصفات والحاسبة الذكية</a>
-            </div>
-        </div>
+    <div class="grid">
+        
+        <div class="product-card" data-aos="fade-up">
+            <a href="product.html?id=1" class="product-link">
+                <div class="img-box"><img src="../assets/images/nageel/Habib Izmir Spring.jpg" alt="نجيل 50 ملم"></div>
+                <div class="info">
+                    <h3>نجيل سوبر رويال - 50 ملم (كثافة القصور)</h3>
+                    <span class="btn-view">المواصفات والحاسبة الذكية</span>
+                </div>
+            </a>
+        </div>
 
-        <div class="product-card" data-aos="fade-up" data-aos-delay="50">
-            <div class="img-box"><img src="../assets/images/nageel/grass-40mm-natural-28.jpeg" alt="نجيل 40 ملم 28 غرزة"></div>
-            <div class="info">
-                <h3>نجيل أسطوري 40 ملم (28 غرزة فائقة)</h3>
-                <a href="grass-40mm-28.html" class="btn-view">المواصفات والحاسبة الذكية</a>
-            </div>
-        </div>
+        <div class="product-card" data-aos="fade-up" data-aos-delay="50">
+            <a href="product.html?id=2" class="product-link">
+                <div class="img-box"><img src="../assets/images/nageel/Habib Istanbul Lush (40mm).jpg" alt="نجيل 40 ملم 28 غرزة"></div>
+                <div class="info">
+                    <h3>نجيل أسطوري 40 ملم (28 غرزة فائقة)</h3>
+                    <span class="btn-view">المواصفات والحاسبة الذكية</span>
+                </div>
+            </a>
+        </div>
 
-        <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="img-box"><img src="../assets/images/nageel/grass-40mm-natural-24.jpeg" alt="نجيل 40 ملم 24 غرزة"></div>
-            <div class="info">
-                <h3>نجيل ملكي 40 ملم (24 غرزة كثيفة)</h3>
-                <a href="grass-40mm-24.html" class="btn-view">المواصفات والحاسبة الذكية</a>
-            </div>
-        </div>
+        <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+            <a href="product.html?id=3" class="product-link">
+                <div class="img-box"><img src="../assets/images/nageel/Habib Istanbul Lush (40mm).jpg" alt="نجيل 40 ملم 24 غرزة"></div>
+                <div class="info">
+                    <h3>نجيل ملكي 40 ملم (24 غرزة كثيفة)</h3>
+                    <span class="btn-view">المواصفات والحاسبة الذكية</span>
+                </div>
+            </a>
+        </div>
 
-        <div class="product-card" data-aos="fade-up">
-            <div class="img-box"><img src="../assets/images/nageel/grass-40mm-natural.jpeg" alt="نجيل 40 ملم"></div>
-            <div class="info">
-                <h3>نجيل فندقي 40 ملم (المظهر الطبيعي)</h3>
-                <a href="grass-40mm.html" class="btn-view">المواصفات والحاسبة الذكية</a>
-            </div>
-        </div>
+        <div class="product-card" data-aos="fade-up">
+            <a href="product.html?id=4" class="product-link">
+                <div class="img-box"><img src="../assets/images/nageel/Habib Istanbul Lush (40mm).jpg" alt="نجيل 40 ملم"></div>
+                <div class="info">
+                    <h3>نجيل فندقي 40 ملم (المظهر الطبيعي)</h3>
+                    <span class="btn-view">المواصفات والحاسبة الذكية</span>
+                </div>
+            </a>
+        </div>
 
-        <div class="product-card" data-aos="fade-up" data-aos-delay="50">
-            <div class="img-box"><img src="../assets/images/nageel/grass-40mm-natural-12.jpeg" alt="نجيل 40 ملم 12 غرزة"></div>
-            <div class="info">
-                <h3>نجيل 40 ملم - الفئة العملية للمساحات</h3>
-                <a href="grass-40mm-12.html" class="btn-view">المواصفات والحاسبة الذكية</a>
-            </div>
-        </div>
+        <div class="product-card" data-aos="fade-up" data-aos-delay="50">
+            <a href="product.html?id=5" class="product-link">
+                <div class="img-box"><img src="../assets/images/nageel/Habib Istanbul Lush (40mm).jpg" alt="نجيل 40 ملم 12 غرزة"></div>
+                <div class="info">
+                    <h3>نجيل 40 ملم - الفئة العملية للمساحات</h3>
+                    <span class="btn-view">المواصفات والحاسبة الذكية</span>
+                </div>
+            </a>
+        </div>
 
-        <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="img-box"><img src="../assets/images/nageel/grass-30mm-natural-24.jpeg" alt="نجيل 30 ملم 24 غرزة"></div>
-            <div class="info">
-                <h3>نجيل إليت 30 ملم (24 غرزة بريميوم)</h3>
-                <a href="grass-30mm-24.html" class="btn-view">المواصفات والحاسبة الذكية</a>
-            </div>
-        </div>
+        <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+            <a href="product.html?id=6" class="product-link">
+                <div class="img-box"><img src="../assets/images/nageel/Habib Antalya Breeze (30mm).jpg" alt="نجيل 30 ملم 24 غرزة"></div>
+                <div class="info">
+                    <h3>نجيل إليت 30 ملم (24 غرزة بريميوم)</h3>
+                    <span class="btn-view">المواصفات والحاسبة الذكية</span>
+                </div>
+            </a>
+        </div>
 
-        <div class="product-card" data-aos="fade-up">
-            <div class="img-box"><img src="../assets/images/nageel/grass-30mm-natural-18.jpeg" alt="نجيل 30 ملم 18 غرزة"></div>
-            <div class="info">
-                <h3>نجيل 30 ملم بريميوم (المظهر المتوازن)</h3>
-                <a href="grass-30mm-18.html" class="btn-view">المواصفات والحاسبة الذكية</a>
-            </div>
-        </div>
+        <div class="product-card" data-aos="fade-up">
+            <a href="product.html?id=7" class="product-link">
+                <div class="img-box"><img src="../assets/images/nageel/Habib Antalya Breeze (30mm).jpg" alt="نجيل 30 ملم 18 غرزة"></div>
+                <div class="info">
+                    <h3>نجيل 30 ملم بريميوم (المظهر المتوازن)</h3>
+                    <span class="btn-view">المواصفات والحاسبة الذكية</span>
+                </div>
+            </a>
+        </div>
 
-        <div class="product-card" data-aos="fade-up" data-aos-delay="50">
-            <div class="img-box"><img src="../assets/images/nageel/grass-30mm-natural-16.jpeg" alt="نجيل 30 ملم 16 غرزة"></div>
-            <div class="info">
-                <h3>نجيل 30 ملم الطبيعي (الناعم)</h3>
-                <a href="grass-30mm-16.html" class="btn-view">المواصفات والحاسبة الذكية</a>
-            </div>
-        </div>
+        <div class="product-card" data-aos="fade-up" data-aos-delay="50">
+            <a href="product.html?id=8" class="product-link">
+                <div class="img-box"><img src="../assets/images/nageel/Habib Antalya Breeze (30mm).jpg" alt="نجيل 30 ملم 16 غرزة"></div>
+                <div class="info">
+                    <h3>نجيل 30 ملم الطبيعي (الناعم)</h3>
+                    <span class="btn-view">المواصفات والحاسبة الذكية</span>
+                </div>
+            </a>
+        </div>
 
-        <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="img-box"><img src="../assets/images/nageel/grass-20mm-standard-12.jpeg" alt="نجيل 20 ملم"></div>
-            <div class="info">
-                <h3>نجيل الفئة الاقتصادية (20 ملم ستاندرد)</h3>
-                <a href="grass-20mm.html" class="btn-view">المواصفات والحاسبة الذكية</a>
-            </div>
-        </div>
+        <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+            <a href="product.html?id=9" class="product-link">
+                <div class="img-box"><img src="../assets/images/nageel/Habib Anatolian Nature.jpg" alt="نجيل 20 ملم"></div>
+                <div class="info">
+                    <h3>نجيل الفئة الاقتصادية (20 ملم ستاندرد)</h3>
+                    <span class="btn-view">المواصفات والحاسبة الذكية</span>
+                </div>
+            </a>
+        </div>
 
-    </div>
+    </div>
 </div>
 
 <footer>
-    <p>&copy; 2026 HABIB STORE | BUILT BY SHARKS FOR SHARKS 🦈</p>
+    <p>&copy; 2026 HABIB STORE | BUILT BY SHARKS FOR SHARKS 🦈</p>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
-    // التأكد من تحميل الصفحة بالكامل قبل تشغيل الانيميشن
-    window.addEventListener('load', function() {
-        AOS.init({ 
-            duration: 1000, 
-            once: true,
-            offset: 100
-        });
-    });
+    window.addEventListener('load', function() {
+        AOS.init({ 
+            duration: 1000, 
+            once: true,
+            offset: 100
+        });
+    });
 </script>
 
 </body>
