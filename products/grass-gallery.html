@@ -47,11 +47,10 @@
             gap: 35px; 
         }
 
-        /* Product Card */
+        /* Product Card Fix (No Zoom) */
         .product-card { 
             background: var(--white); border: 1px solid #eee; transition: 0.4s ease-in-out;
             position: relative; overflow: hidden; display: flex; flex-direction: column;
-            cursor: pointer;
         }
         .product-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,0.08); border-color: var(--gold); }
         
@@ -86,9 +85,6 @@
         .btn-view:hover { background: var(--gold); border-color: var(--gold); }
 
         footer { text-align: center; padding: 50px; color: #999; font-size: 12px; background: #fff; border-top: 1px solid #eee; margin-top: 40px; }
-        
-        /* جعل الكارت بالكامل قابل للضغط */
-        .product-link { text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%; }
     </style>
 </head>
 <body>
@@ -107,93 +103,75 @@
     <div class="grid">
         
         <div class="product-card" data-aos="fade-up">
-            <a href="product.html?id=1" class="product-link">
-                <div class="img-box"><img src="../assets/images/nageel/Habib Izmir Spring.jpg" alt="نجيل 50 ملم"></div>
-                <div class="info">
-                    <h3>نجيل سوبر رويال - 50 ملم (كثافة القصور)</h3>
-                    <span class="btn-view">المواصفات والحاسبة الذكية</span>
-                </div>
-            </a>
+            <div class="img-box"><img src="../assets/images/nageel/grass-50mm-natural.jpeg" alt="نجيل 50 ملم"></div>
+            <div class="info">
+                <h3>نجيل سوبر رويال - 50 ملم (كثافة القصور)</h3>
+                <a href="product.html?id=1" class="btn-view">المواصفات والحاسبة الذكية</a>
+            </div>
         </div>
 
         <div class="product-card" data-aos="fade-up" data-aos-delay="50">
-            <a href="product.html?id=2" class="product-link">
-                <div class="img-box"><img src="../assets/images/nageel/Habib Istanbul Lush (40mm).jpg" alt="نجيل 40 ملم 28 غرزة"></div>
-                <div class="info">
-                    <h3>نجيل أسطوري 40 ملم (28 غرزة فائقة)</h3>
-                    <span class="btn-view">المواصفات والحاسبة الذكية</span>
-                </div>
-            </a>
+            <div class="img-box"><img src="../assets/images/nageel/grass-40mm-natural-28.jpeg" alt="نجيل 40 ملم 28 غرزة"></div>
+            <div class="info">
+                <h3>نجيل أسطوري 40 ملم (28 غرزة فائقة)</h3>
+                <a href="product.html?id=2" class="btn-view">المواصفات والحاسبة الذكية</a>
+            </div>
         </div>
 
         <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-            <a href="product.html?id=3" class="product-link">
-                <div class="img-box"><img src="../assets/images/nageel/Habib Istanbul Lush (40mm).jpg" alt="نجيل 40 ملم 24 غرزة"></div>
-                <div class="info">
-                    <h3>نجيل ملكي 40 ملم (24 غرزة كثيفة)</h3>
-                    <span class="btn-view">المواصفات والحاسبة الذكية</span>
-                </div>
-            </a>
+            <div class="img-box"><img src="../assets/images/nageel/grass-40mm-natural-24.jpeg" alt="نجيل 40 ملم 24 غرزة"></div>
+            <div class="info">
+                <h3>نجيل ملكي 40 ملم (24 غرزة كثيفة)</h3>
+                <a href="product.html?id=3" class="btn-view">المواصفات والحاسبة الذكية</a>
+            </div>
         </div>
 
         <div class="product-card" data-aos="fade-up">
-            <a href="product.html?id=4" class="product-link">
-                <div class="img-box"><img src="../assets/images/nageel/Habib Istanbul Lush (40mm).jpg" alt="نجيل 40 ملم"></div>
-                <div class="info">
-                    <h3>نجيل فندقي 40 ملم (المظهر الطبيعي)</h3>
-                    <span class="btn-view">المواصفات والحاسبة الذكية</span>
-                </div>
-            </a>
+            <div class="img-box"><img src="../assets/images/nageel/grass-40mm-natural.jpeg" alt="نجيل 40 ملم"></div>
+            <div class="info">
+                <h3>نجيل فندقي 40 ملم (المظهر الطبيعي)</h3>
+                <a href="product.html?id=4" class="btn-view">المواصفات والحاسبة الذكية</a>
+            </div>
         </div>
 
         <div class="product-card" data-aos="fade-up" data-aos-delay="50">
-            <a href="product.html?id=5" class="product-link">
-                <div class="img-box"><img src="../assets/images/nageel/Habib Istanbul Lush (40mm).jpg" alt="نجيل 40 ملم 12 غرزة"></div>
-                <div class="info">
-                    <h3>نجيل 40 ملم - الفئة العملية للمساحات</h3>
-                    <span class="btn-view">المواصفات والحاسبة الذكية</span>
-                </div>
-            </a>
+            <div class="img-box"><img src="../assets/images/nageel/grass-40mm-natural-12.jpeg" alt="نجيل 40 ملم 12 غرزة"></div>
+            <div class="info">
+                <h3>نجيل 40 ملم - الفئة العملية للمساحات</h3>
+                <a href="product.html?id=5" class="btn-view">المواصفات والحاسبة الذكية</a>
+            </div>
         </div>
 
         <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-            <a href="product.html?id=6" class="product-link">
-                <div class="img-box"><img src="../assets/images/nageel/Habib Antalya Breeze (30mm).jpg" alt="نجيل 30 ملم 24 غرزة"></div>
-                <div class="info">
-                    <h3>نجيل إليت 30 ملم (24 غرزة بريميوم)</h3>
-                    <span class="btn-view">المواصفات والحاسبة الذكية</span>
-                </div>
-            </a>
+            <div class="img-box"><img src="../assets/images/nageel/grass-30mm-natural-24.jpeg" alt="نجيل 30 ملم 24 غرزة"></div>
+            <div class="info">
+                <h3>نجيل إليت 30 ملم (24 غرزة بريميوم)</h3>
+                <a href="product.html?id=6" class="btn-view">المواصفات والحاسبة الذكية</a>
+            </div>
         </div>
 
         <div class="product-card" data-aos="fade-up">
-            <a href="product.html?id=7" class="product-link">
-                <div class="img-box"><img src="../assets/images/nageel/Habib Antalya Breeze (30mm).jpg" alt="نجيل 30 ملم 18 غرزة"></div>
-                <div class="info">
-                    <h3>نجيل 30 ملم بريميوم (المظهر المتوازن)</h3>
-                    <span class="btn-view">المواصفات والحاسبة الذكية</span>
-                </div>
-            </a>
+            <div class="img-box"><img src="../assets/images/nageel/grass-30mm-natural-18.jpeg" alt="نجيل 30 ملم 18 غرزة"></div>
+            <div class="info">
+                <h3>نجيل 30 ملم بريميوم (المظهر المتوازن)</h3>
+                <a href="product.html?id=7" class="btn-view">المواصفات والحاسبة الذكية</a>
+            </div>
         </div>
 
         <div class="product-card" data-aos="fade-up" data-aos-delay="50">
-            <a href="product.html?id=8" class="product-link">
-                <div class="img-box"><img src="../assets/images/nageel/Habib Antalya Breeze (30mm).jpg" alt="نجيل 30 ملم 16 غرزة"></div>
-                <div class="info">
-                    <h3>نجيل 30 ملم الطبيعي (الناعم)</h3>
-                    <span class="btn-view">المواصفات والحاسبة الذكية</span>
-                </div>
-            </a>
+            <div class="img-box"><img src="../assets/images/nageel/grass-30mm-natural-16.jpeg" alt="نجيل 30 ملم 16 غرزة"></div>
+            <div class="info">
+                <h3>نجيل 30 ملم الطبيعي (الناعم)</h3>
+                <a href="product.html?id=8" class="btn-view">المواصفات والحاسبة الذكية</a>
+            </div>
         </div>
 
         <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-            <a href="product.html?id=9" class="product-link">
-                <div class="img-box"><img src="../assets/images/nageel/Habib Anatolian Nature.jpg" alt="نجيل 20 ملم"></div>
-                <div class="info">
-                    <h3>نجيل الفئة الاقتصادية (20 ملم ستاندرد)</h3>
-                    <span class="btn-view">المواصفات والحاسبة الذكية</span>
-                </div>
-            </a>
+            <div class="img-box"><img src="../assets/images/nageel/grass-20mm-standard-12.jpeg" alt="نجيل 20 ملم"></div>
+            <div class="info">
+                <h3>نجيل الفئة الاقتصادية (20 ملم ستاندرد)</h3>
+                <a href="product.html?id=9" class="btn-view">المواصفات والحاسبة الذكية</a>
+            </div>
         </div>
 
     </div>
