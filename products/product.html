@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">Habib Stone | Elite Selection</title>
+    <title id="page-title">Habib Stone | Luxury Selection</title>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root { --main-green: #1a5d1a; --gold: #AF944F; --text-dark: #333; --white: #ffffff; }
@@ -26,7 +26,7 @@
         .whatsapp-btn { display: block; text-align: center; background: #25D366; color: white; padding: 22px; text-decoration: none; border-radius: 50px; font-size: 22px; font-weight: bold; transition: 0.4s; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2); }
         .whatsapp-btn:hover { background: #128C7E; transform: translateY(-3px); }
 
-        /* قسم الكروت المقترحة من تحت */
+        /* قسم كروت "إضافات الفخامة" */
         .suggestions-box { margin-top: 60px; padding-top: 40px; border-top: 2px solid #f0f0f0; }
         .suggestions-box h3 { font-family: 'Amiri', serif; text-align: center; color: var(--main-green); margin-bottom: 30px; font-size: 26px; }
         
@@ -67,9 +67,9 @@
             </div>
     </div>
 </div><script>
-    // 🦈 الدفتر الموحد: المواصفات الكاملة (السم، الغرز، والوصف الفخم)
+    // 🦈 الدفتر الموحد: بضاعة حبيب ستون الأصلية بالمواصفات التقنية
     const allProducts = {
-        // --- قسم النجيل (Category: nageel) ---
+        // --- نجيل تركي (Category: nageel) ---
         1: { 
             cat: "nageel", 
             name: "Habib Izmir Spring", 
@@ -77,7 +77,7 @@
             density: "16 غرزة / نسيج ملكي", 
             origin: "تركيا (نخب أول) 🇹🇷", 
             img: "nageel/Habib Izmir Spring.jpg", 
-            desc: "بساطٌ ملكي صُمم ليتجاوز حدود العشب التقليدي. بارتفاعه الشامخ ونعومته الحريرية، يمنح 'رويال إزمير' قصوركم هيبة الطبيعة الخالدة. استثمار في الراحة التي تليق بنخبة المجتمع." 
+            desc: "بساطٌ ملكي يمنح قصوركم هيبة الطبيعة الخالدة. الارتفاع الشامخ (5 سم) يوفر ملمساً طبيعياً لا يُضاهى." 
         },
         2: { 
             cat: "nageel", 
@@ -86,78 +86,78 @@
             density: "28 غرزة / فائق الكثافة", 
             origin: "تركيا (نخب أول) 🇹🇷", 
             img: "nageel/Habib Istanbul Lush (40mm).jpg", 
-            desc: "عندما تلتقي الكثافة الفائقة بالرفاهية المطلقة. يمنحكم 'إسطنبول لَش إيليت' كثافة لا تُضاهى، مما يخلق طبقة من الرفاهية تحت أقدامكم، محافظاً على رونقه الممتلئ دائماً." 
+            desc: "كثافة الغرز (28 غرزة) تجعله الأكثر عمراً وتحملاً. فخامة إسطنبول تحت أقدامكم مباشرة." 
         },
         3: { 
             cat: "nageel", 
             name: "Habib Bosphorus Green (50mm)", 
             size: "50 ملم (5 سم)", 
-            density: "نسيج مزدوج مقاوم للشمس", 
+            density: "نسيج مزدوج / 18 غرزة", 
             origin: "تركيا (نخب أول) 🇹🇷", 
             img: "nageel/Habib Bosphorus Green (50mm).jpg", 
-            desc: "فخامة البوسفور في قلب حديقتك. يتميز بلون أخضر طبيعي زاهي ومتانة عالية جداً تناسب المساحات الكبيرة وقوة التحمل الشديدة." 
+            desc: "جمال البوسفور بلون أخضر زاهي ومتانة فائقة. نسيج مزدوج مصمم لمقاومة أقسى درجات الحرارة." 
         },
         4: { 
             cat: "nageel", 
             name: "Habib Antalya Breeze (30mm)", 
             size: "30 ملم (3 سم)", 
-            density: "كثافة متوسطة / ملمس ناعم", 
+            density: "24 غرزة / كثافة متوسطة", 
             origin: "تركيا (نخب أول) 🇹🇷", 
             img: "nageel/Habib Antalya Breeze (30mm).jpg", 
-            desc: "لمسة انتعاش طبيعية تناسب المساحات المفتوحة والروف. سهل التنظيف ويعطي شكلاً جذاباً بفضل ارتفاعه المتناسق." 
+            desc: "نسيم أنطاليا في حديقتك. ارتفاع (3 سم) مثالي للروف والمساحات التي تحتاج سهولة في التنظيف." 
         },
         
-        // --- قسم الرخام (Category: marble) ---
+        // --- رخام (Category: marble) ---
         101: { 
             cat: "marble", 
             name: "خردة رخام أبيض ملكي", 
-            size: "مقاسات متنوعة (Hand-cut)", 
-            density: "نخب أول (فرز سوبر)", 
-            origin: "مصر (جبال الجلالة) 🇪🇬", 
+            size: "مقاسات متنوعة", 
+            density: "فرز أول (نقي)", 
+            origin: "مصر (الجلالة) 🇪🇬", 
             img: "marble/marble-sample.jpg", 
-            desc: "لمسة الفخامة المصرية الأصيلة. خردة الرخام الأبيض تمنح ممرات حدائقكم طابعاً أرستقراطياً فريداً، وتعتبر الخلفية المثالية لإبراز جمال النجيل الصناعي." 
+            desc: "الرخام الأبيض الملكي يمنح الممرات طابعاً أرستقراطياً ويحدد المساحات الخضراء بدقة متناهية." 
         },
         
-        // --- قسم الزلط (Category: zalat) ---
+        // --- زلط (Category: zalat) ---
         201: { 
             cat: "zalat", 
             name: "زلط ديكور أبيض يوناني", 
-            size: "جامبو ناعم (ملمس رخامي)", 
-            density: "مستورد (Extra White)", 
+            size: "جامبو ناعم", 
+            density: "مستورد ناصع البياض", 
             origin: "اليونان (مستورد) 🇬🇷", 
             img: "zalat/white-pebbles.jpg", 
-            desc: "اللمسة النهائية التي تكتمل بها اللوحة الجمالية. زلط الديكور الأبيض اليوناني يضيف تبايناً بصرياً مذهلاً ويحدد مسارات القصور بدقة وجمال." 
+            desc: "اللمسة النهائية التي تكتمل بها اللوحة. زلط يوناني ناعم الملمس يعطي تبايناً بصرياً مذهلاً." 
         }
     };
 
-    // 🔗 محرك الربط: التقاط الـ ID من اللينك
+    // 🔗 التقاط الـ ID من الرابط (id=1)
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('id') || 1; 
     const p = allProducts[productId];
 
     if (p) {
-        // 1. تحديث بيانات الصفحة الأساسية (النصوص والوصف البياع)
+        // 1. تحديث بيانات الصفحة الأساسية (النصوص والوصف الفخم)
         document.getElementById('p-name').innerText = p.name;
         document.getElementById('p-size').innerText = p.size;
         document.getElementById('p-density').innerText = p.density;
         document.getElementById('p-origin').innerText = p.origin;
         document.getElementById('p-desc').innerText = p.desc;
-        document.title = p.name + " | Habib Stone";
+        document.title = p.name + " | حبيب ستون";
 
-        // 2. تحديث الصورة بالمسار اللي في الـ GitHub
+        // 2. تحديث الصورة (المسار المظبوط اللي في الـ GitHub)
         document.getElementById('p-img').src = "../assets/images/" + p.img;
         document.getElementById('p-img').alt = p.name;
 
-        // 3. تحديث رابط الواتساب برسالة فيها اسم المنتج
-        const waMessage = `أهلاً Habib Stone، أود الاستفسار عن تفاصيل وحجز معاينة لـ: ${p.name}`;
+        // 3. تحديث رابط الواتساب (رسالة ببيانات المنتج)
+        const waMessage = `أهلاً حبيب ستون، أود الاستفسار عن تفاصيل: ${p.name}`;
         document.getElementById('p-whatsapp').href = `https://wa.me/201016961497?text=${encodeURIComponent(waMessage)}`;
 
-        // 4. --- محرك الكروت (عرض الأقسام التكميلية) ---
+        // 4. --- محرك "الكروت التكميلية" (الذكاء في الربط) ---
         const cardsArea = document.getElementById('cards-area');
         let cardsHTML = '';
 
         for (let id in allProducts) {
-            // لو الزبون بيشوف نجيل، يعرض له الرخام والزلط (أقسام مختلفة)
+            // "طريقة التفكير": لو الزبون فاتح نجيل، اعرض له رخام وزلط (أقسام مختلفة)
             if (allProducts[id].cat !== p.cat) {
                 cardsHTML += `
                     <a href="product.html?id=${id}" class="card">
@@ -172,9 +172,12 @@
         }
         cardsArea.innerHTML = cardsHTML;
     } else {
-        document.querySelector('.container').innerHTML = '<h2 style="text-align:center; padding:50px;">عذراً، المنتج غير متاح حالياً في Habib Stone.</h2>';
+        document.querySelector('.container').innerHTML = '<h2 style="text-align:center; padding:50px;">عذراً، هذا المنتج غير متاح حالياً.</h2>';
     }
 </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>AOS.init({ duration: 1000, once: true });</script>
 
 </body>
 </html>
