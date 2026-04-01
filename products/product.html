@@ -1,139 +1,173 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Habib Stone | Luxury Turf Platform</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    
-    <style>
-        :root { --main-green: #1a5d1a; --gold: #AF944F; --black: #111; --white: #ffffff; --soft-gray: #f8f9fa; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body { font-family: 'Cairo', sans-serif; background: var(--white); color: var(--black); line-height: 1.6; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habib Stone | Luxury Turf Platform</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <style>
+        :root { --main-green: #1a5d1a; --gold: #AF944F; --black: #111; --white: #ffffff; --soft-gray: #f8f9fa; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { font-family: 'Cairo', sans-serif; background: var(--white); color: var(--black); line-height: 1.6; overflow-x: hidden; }
 
-        /* Header الفخم والهادي */
-        header { 
-            position: fixed; top: 0; width: 100%; z-index: 1000;
-            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
-            border-bottom: 1px solid #eee; padding: 12px 5%;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .logo { font-family: 'Amiri', serif; font-size: 24px; color: var(--black); text-decoration: none; font-weight: 700; letter-spacing: 1px; }
-        .platform-tag { font-size: 11px; font-weight: 700; color: var(--gold); border: 1px solid var(--gold); padding: 4px 10px; text-transform: uppercase; }
+        /* Header الفخم والهادي */
+        header { 
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
+            border-bottom: 1px solid #eee; padding: 15px 5%;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo { font-family: 'Amiri', serif; font-size: 28px; color: var(--black); text-decoration: none; font-weight: 700; letter-spacing: 1px; }
+        .platform-tag { font-size: 11px; font-weight: 700; color: var(--gold); border: 1px solid var(--gold); padding: 5px 12px; text-transform: uppercase; border-radius: 2px; }
 
-        /* Hero Section - مخاطبة الملياردير بنبرة هادئة */
-        .hero { 
-            height: 40vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
-            text-align: center; background: var(--white); margin-top: 50px;
-        }
-        .hero h1 { font-family: 'Amiri', serif; font-size: clamp(30px, 6vw, 48px); color: var(--black); margin-bottom: 15px; }
-        .hero p { color: #888; font-size: 14px; font-weight: 400; letter-spacing: 4px; text-transform: uppercase; }
+        /* Hero Section */
+        .hero { 
+            height: 45vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; background: var(--white); margin-top: 60px; padding: 20px;
+        }
+        .hero h1 { font-family: 'Amiri', serif; font-size: clamp(32px, 7vw, 52px); color: var(--black); margin-bottom: 15px; }
+        .hero p { color: #999; font-size: 14px; font-weight: 400; letter-spacing: 5px; text-transform: uppercase; }
 
-        .container { max-width: 1400px; margin: auto; padding: 20px 5% 80px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 40px; }
+        .container { max-width: 1400px; margin: auto; padding: 40px 5% 100px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 45px; }
 
-        /* كارت المنتج - Minimalist & Luxury */
-        .product-card { 
-            background: var(--white); transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative; overflow: hidden; display: flex; flex-direction: column;
-            border: 1px solid #f0f0f0;
-        }
-        .product-card:hover { transform: translateY(-10px); box-shadow: 0 40px 80px rgba(0,0,0,0.05); border-color: #ddd; }
-        
-        .img-box { width: 100%; aspect-ratio: 16/10; overflow: hidden; background: var(--soft-gray); }
-        .img-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s ease; }
-        .product-card:hover .img-box img { transform: scale(1.08); }
-        
-        .info { padding: 30px; text-align: right; }
-        .info span { color: var(--gold); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-        .info h3 { font-size: 22px; margin: 10px 0 25px; font-family: 'Amiri', serif; color: var(--black); font-weight: 700; }
-        
-        .btn-view { 
-            display: inline-block; width: 100%; text-align: center; 
-            background: var(--black); color: var(--white); 
-            padding: 18px; text-decoration: none; font-size: 14px; font-weight: 700; 
-            transition: 0.4s; border: 1px solid var(--black);
-        }
-        .btn-view:hover { background: transparent; color: var(--black); }
+        /* كارت المنتج - Quiet Luxury */
+        .product-card { 
+            background: var(--white); transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative; overflow: hidden; display: flex; flex-direction: column;
+            border: 1px solid #f0f0f0;
+        }
+        .product-card:hover { transform: translateY(-12px); box-shadow: 0 45px 90px rgba(0,0,0,0.06); border-color: #ddd; }
+        
+        .img-box { width: 100%; aspect-ratio: 1/1; overflow: hidden; background: var(--soft-gray); display: flex; align-items: center; justify-content: center; padding: 15px; }
+        .img-box img { max-width: 100%; max-height: 100%; object-fit: contain; transition: 0.8s ease; }
+        .product-card:hover .img-box img { transform: scale(1.05); }
+        
+        .info { padding: 30px; text-align: right; flex-grow: 1; display: flex; flex-direction: column; }
+        .info span { color: var(--gold); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; display: block; }
+        .info h3 { font-size: 20px; margin-bottom: 25px; font-family: 'Amiri', serif; color: var(--black); font-weight: 700; min-height: 50px; }
+        
+        .btn-view { 
+            display: inline-block; width: 100%; text-align: center; 
+            background: var(--black); color: var(--white); 
+            padding: 18px; text-decoration: none; font-size: 14px; font-weight: 700; 
+            transition: 0.4s; border: 1px solid var(--black); margin-top: auto;
+        }
+        .btn-view:hover { background: transparent; color: var(--black); }
 
-        footer { text-align: center; padding: 60px; color: #bbb; font-size: 11px; letter-spacing: 2px; }
-    </style>
+        footer { text-align: center; padding: 80px 20px; color: #bbb; font-size: 11px; letter-spacing: 2px; background: #fafafa; border-top: 1px solid #eee; }
+    </style>
 </head>
 <body>
 
 <header>
-    <a href="../index.html" class="logo">HABIB STONE</a>
-    <div class="platform-tag">Luxury Platform</div>
-</header>
-
-<section class="hero" data-aos="fade-up">
-    <p>Exclusive Turkish Collection</p>
-    <h1>نخبة العشب التركي للأرضيات الفاخرة</h1>
+    <a href="../index.html" class="logo">HABIB STONE</a>
+    <div class="platform-tag">Luxury Platform</div>
+</header><section class="hero" data-aos="fade-up">
+    <p>Premium Turkish Collection</p>
+    <h1>نخبة العشب التركي للأرضيات الفاخرة</h1>
 </section>
 
 <div class="container">
-    <div class="grid">
-        
-        <div class="product-card" data-aos="fade-up">
-            <div class="img-box"><img src="../assets/images/nageel/grass-50mm-natural.jpeg" alt="Habib Royal Izmir"></div>
-            <div class="info">
-                <span>The Crown Jewel | 50mm</span>
-                <h3>Habib Royal Izmir Spring</h3>
-                <a href="product.html?id=1" class="btn-view">اكتشف المواصفات</a>
-            </div>
-        </div>
+    <div class="grid">
+        
+        <div class="product-card" data-aos="fade-up">
+            <div class="img-box"><img src="../assets/images/nageel/grass-50mm-natural.jpeg" alt="Habib Royal Izmir"></div>
+            <div class="info">
+                <span>The Crown Jewel | 50mm</span>
+                <h3>Habib Royal Izmir Spring</h3>
+                <a href="product.html?id=1" class="btn-view">اكتشف المواصفات</a>
+            </div>
+        </div>
 
-        <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="img-box"><img src="../assets/images/nageel/grass-40mm-natural-28.jpeg" alt="Habib Istanbul Lush"></div>
-            <div class="info">
-                <span>Maximum Density | 40mm</span>
-                <h3>Habib Istanbul Lush Elite</h3>
-                <a href="product.html?id=2" class="btn-view">اكتشف المواصفات</a>
-            </div>
-        </div>
+        <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="img-box"><img src="../assets/images/nageel/grass-40mm-natural-28.jpeg" alt="Habib Istanbul Lush Elite"></div>
+            <div class="info">
+                <span>Maximum Density | 40mm</span>
+                <h3>Habib Istanbul Lush Elite</h3>
+                <a href="product.html?id=2" class="btn-view">اكتشف المواصفات</a>
+            </div>
+        </div>
 
-        <div class="product-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="img-box"><img src="../assets/images/nageel/grass-40mm-natural-24.jpeg" alt="Habib Istanbul Prime"></div>
-            <div class="info">
-                <span>The Gold Standard | 40mm</span>
-                <h3>Habib Istanbul Prime Edition</h3>
-                <a href="product.html?id=3" class="btn-view">اكتشف المواصفات</a>
-            </div>
-        </div>
+        <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="img-box"><img src="../assets/images/nageel/grass-40mm-natural-24.jpeg" alt="Habib Istanbul Prime"></div>
+            <div class="info">
+                <span>The Gold Standard | 40mm</span>
+                <h3>Habib Istanbul Prime Edition</h3>
+                <a href="product.html?id=3" class="btn-view">اكتشف المواصفات</a>
+            </div>
+        </div>
 
-        <div class="product-card" data-aos="fade-up">
-            <div class="img-box"><img src="../assets/images/nageel/grass-30mm-natural-24.jpeg" alt="Habib Antalya Breeze"></div>
-            <div class="info">
-                <span>Modern Elegance | 30mm</span>
-                <h3>Habib Antalya Breeze Ultra</h3>
-                <a href="product.html?id=6" class="btn-view">اكتشف المواصفات</a>
-            </div>
-        </div>
+        <div class="product-card" data-aos="fade-up">
+            <div class="img-box"><img src="../assets/images/nageel/grass-40mm-natural.jpeg" alt="Habib Istanbul Classic"></div>
+            <div class="info">
+                <span>Timeless Design | 40mm</span>
+                <h3>Habib Istanbul Classic</h3>
+                <a href="product.html?id=4" class="btn-view">اكتشف المواصفات</a>
+            </div>
+        </div>
 
-        <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="img-box"><img src="../assets/images/nageel/grass-20mm-standard-12.jpeg" alt="Habib Anatolian Nature"></div>
-            <div class="info">
-                <span>Smart Luxury | 20mm</span>
-                <h3>Habib Anatolian Nature Smart</h3>
-                <a href="product.html?id=9" class="btn-view">اكتشف المواصفات</a>
-            </div>
-        </div>
+        <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="img-box"><img src="../assets/images/nageel/grass-40mm-natural-12.jpeg" alt="Habib Istanbul Smart"></div>
+            <div class="info">
+                <span>Practical Luxury | 40mm</span>
+                <h3>Habib Istanbul Smart</h3>
+                <a href="product.html?id=5" class="btn-view">اكتشف المواصفات</a>
+            </div>
+        </div>
 
-    </div>
+        <div class="product-card" data-aos="fade-up">
+            <div class="img-box"><img src="../assets/images/nageel/grass-30mm-natural-24.jpeg" alt="Habib Antalya Breeze Ultra"></div>
+            <div class="info">
+                <span>Modern Elegance | 30mm</span>
+                <h3>Habib Antalya Breeze Ultra</h3>
+                <a href="product.html?id=6" class="btn-view">اكتشف المواصفات</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="img-box"><img src="../assets/images/nageel/grass-30mm-natural-18.jpeg" alt="Habib Antalya Breeze Pro"></div>
+            <div class="info">
+                <span>Balanced Choice | 30mm</span>
+                <h3>Habib Antalya Breeze Pro</h3>
+                <a href="product.html?id=7" class="btn-view">اكتشف المواصفات</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="img-box"><img src="../assets/images/nageel/grass-30mm-natural-16.jpeg" alt="Habib Antalya Breeze Core"></div>
+            <div class="info">
+                <span>Simple & Pure | 30mm</span>
+                <h3>Habib Antalya Breeze Core</h3>
+                <a href="product.html?id=8" class="btn-view">اكتشف المواصفات</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-aos="fade-up">
+            <div class="img-box"><img src="../assets/images/nageel/grass-20mm-standard-12.jpeg" alt="Habib Anatolian Nature"></div>
+            <div class="info">
+                <span>Minimalist Beauty | 20mm</span>
+                <h3>Habib Anatolian Nature Smart</h3>
+                <a href="product.html?id=9" class="btn-view">اكتشف المواصفات</a>
+            </div>
+        </div>
+
+    </div>
 </div>
 
 <footer>
-    <p>HABIB STONE LUXURY PLATFORM &copy; 2026 | ALL RIGHTS RESERVED</p>
+    <p>HABIB STONE LUXURY PLATFORM &copy; 2026 | ALL RIGHTS RESERVED</p>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
-    window.addEventListener('load', function() {
-        AOS.init({ duration: 1200, once: true });
-    });
+    window.addEventListener('load', function() {
+        AOS.init({ duration: 1200, once: true });
+    });
 </script>
 
 </body>
