@@ -13,7 +13,6 @@
         body { font-family: 'Cairo', sans-serif; background: #f0f2f5; margin: 0; padding: 0; color: #333; overflow-x: hidden; }
         
         .container { max-width: 950px; margin: 40px auto; background: var(--white); padding: 40px; border-radius: 30px; box-shadow: 0 25px 60px rgba(0,0,0,0.1); border-top: 8px solid var(--main-green); position: relative; }
-        
         .product-header { text-align: center; margin-bottom: 30px; }
         .product-name { font-family: 'Amiri', serif; font-size: clamp(30px, 6vw, 42px); color: var(--main-green); font-weight: 800; margin: 0; line-height: 1.2; }
         .product-sub { color: #666; font-size: 18px; margin-top: 10px; font-weight: 600; }
@@ -40,7 +39,7 @@
         .related-card:hover { transform: translateY(-7px); border-color: var(--gold); box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
         .related-card img { width: 100%; height: 150px; object-fit: cover; }
         .related-card-info { padding: 15px; }
-        .related-card-info h4 { font-size: 15px; margin: 0 0 10px; color: #333; font-weight: 700; }
+        .related-card-info h4 { font-size: 15px; margin: 0 0 10px; color: #333; font-weight: 700; height: 40px; overflow: hidden; }
         .related-card-info span { color: var(--gold); font-size: 12px; font-weight: bold; border: 1px solid var(--gold); padding: 2px 10px; border-radius: 20px; }
 
         .cta-gallery-btn { display: inline-block; padding: 18px 45px; background: var(--black); color: white; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 18px; transition: 0.3s; margin-top: 40px; }
@@ -50,6 +49,7 @@
     </style>
 </head>
 <body>
+
 <div class="container">
     <div class="product-header">
         <h1 id="p-name" class="product-name">جاري تحميل الفخامة...</h1>
@@ -80,51 +80,44 @@
         <div id="related-grid" class="related-grid"></div>
         <div id="gallery-cta-wrapper" style="text-align:center;"></div>
     </div>
-</div><script>
-    // 🦈 مخزن بضاعة حبيب ستون - نجيل + زلط + رخام + ميكا
-    // ملاحظة: الـ ID لازم يطابق الرقم اللي بعتناه في روابط المعارض (1, 101, 301...)
+</div>
+
+<script>
     const products = {
-        // --- [1] قسم النجيل التركي (IDs: 1 - 50) ---
-        "1": { cat: "nageel", name: "نجيل سوبر رويال - 50 ملم", size: "50 ملم (5 سم)", density: "كثافة القصور", img: "nageel/grass-50mm-natural.jpeg", desc: "هل تبحث عن الفخامة المطلقة؟ نجيل سوبر رويال بارتفاع 5 سم هو الاختيار الأول للفيلات والقصور الراقية. يتميز بملمس طبيعي فائق النعومة يحاكي العشب الطبيعي البكر، مع قدرة مذهلة على تحمل أشعة الشمس المباشرة لسنوات دون تغيير في زهوة ألوانه. بساط ملكي يحول حديقتك لواحة خضراء." },
-        "2": { cat: "nageel", name: "نجيل أسطوري 40 ملم (28 غرزة)", size: "40 ملم (4 سم)", density: "28 غرزة (فائقة)", img: "nageel/grass-40mm-natural-28.jpeg", desc: "القوة والجمال في منتج واحد. صُمم خصيصاً للمساحات التي تشهد حركة كثيفة ولعب أطفال، حيث تحافظ الغرز الـ 28 على مظهر النجيل ممتلئاً وحيوياً لسنوات دون أن يهبط، مع الحفاظ على ملمس ناعم وآمن تماماً." },
-        "3": { cat: "nageel", name: "نجيل ملكي 40 ملم (24 غرزة)", size: "40 ملم (4 سم)", density: "24 غرزة (كثيفة)", img: "nageel/grass-40mm-natural-24.jpeg", desc: "التوازن المثالي بين الفخامة والسعر. اختيار الصفوة لتنسيق الروف والحدائق المنزلية، يمنحك مظهراً طبيعياً جداً وراحة بصرية لا توصف. نخب أول تركي بضمان حبيب ستون، يتميز بمقاومة العوامل الجوية المتقلبة." },
-        "9": { cat: "nageel", name: "نجيل 20 ملم ستاندرد", size: "20 ملم (2 سم)", density: "12 غرزة (عملي)", img: "nageel/grass-20mm-standard-12.jpeg", desc: "الحل الذكي والعملي لتغطية المساحات الواسعة والممرات. بساط منظم بلمسة جمالية تركية، يوفر لك النظافة والأناقة بتكلفة اقتصادية جداً، مثالي للمحلات التجارية والمساحات المفتوحة." },
+        // --- [1] نجيل (1-50) ---
+        "1": { cat: "nageel", name: "نجيل سوبر رويال - 50 ملم", size: "50 ملم (5 سم)", density: "كثافة القصور", img: "nageel/grass-50mm-natural.jpeg", desc: "هل تبحث عن الفخامة المطلقة؟ نجيل سوبر رويال بارتفاع 5 سم هو الاختيار الأول للفيلات والقصور الراقية. يتميز بملمس طبيعي فائق النعومة يحاكي العشب الطبيعي البكر، مع قدرة مذهلة على تحمل أشعة الشمس المباشرة لسنوات." },
+        "2": { cat: "nageel", name: "نجيل أسطوري 40 ملم (28 غرزة)", size: "40 ملم (4 سم)", density: "28 غرزة (فائقة)", img: "nageel/grass-40mm-natural-28.jpeg", desc: "القوة والجمال في منتج واحد. صُمم خصيصاً للمساحات التي تشهد حركة كثيفة ولعب أطفال، حيث تحافظ الغرز الـ 28 على مظهر النجيل ممتلئاً وحيوياً لسنوات دون أن يهبط." },
+        "3": { cat: "nageel", name: "نجيل ملكي 40 ملم (24 غرزة)", size: "40 ملم (4 سم)", density: "24 غرزة (كثيفة)", img: "nageel/grass-40mm-natural-24.jpeg", desc: "التوازن المثالي بين الفخامة والسعر. اختيار الصفوة لتنسيق الروف والحدائق المنزلية، يمنحك مظهراً طبيعياً جداً وراحة بصرية لا توصف بضمان حبيب ستون." },
+        "9": { cat: "nageel", name: "نجيل 20 ملم ستاندرد", size: "20 ملم (2 سم)", density: "12 غرزة", img: "nageel/grass-20mm-standard-12.jpeg", desc: "الحل الذكي والعملي لتغطية المساحات الواسعة والممرات. بساط منظم بلمسة جمالية تركية، يوفر لك النظافة والأناقة بتكلفة اقتصادية جداً." },
 
-        // --- [2] قسم الزلط الديكوري (IDs: 101 - 150) ---
-        "101": { cat: "zalat", name: "زلط أبيض رخامي فاخر V1", size: "أحجام متنوعة", density: "نخب أول مستورد", img: "zalat/zalat-white-marble-v1.jpeg", desc: "اللمسة الأرستقراطية التي تبرز جمال النجيل الأخضر. زلط أبيض رخامي نقي يعمل كبرواز طبيعي لحديقتك، مما يعطي انطباعاً بالنظافة والاتساع الفوري للمكان، لونه ثابت ولا يتأثر بالماء." },
-        "103": { cat: "zalat", name: "زلط أسود بركاني طبيعي", size: "أسود فحم", density: "أصلي بركاني", img: "zalat/zalat-black-volcanic.jpeg", desc: "عشاق التصميمات المودرن يفضلون الزلط البركاني الأسود. لونه الفخم يخلق تبايناً مذهلاً مع النجيل، وهو حجر طبيعي صلب لا يتأثر بالعوامل الجوية، مما يضمن لك جمالاً باقياً لسنوات." },
+        // --- [2] زلط (101-150) ---
+        "101": { cat: "zalat", name: "زلط أبيض رخامي فاخر V1", size: "أحجام متنوعة", density: "نخب أول مستورد", img: "zalat/zalat-white-marble-v1.jpeg", desc: "اللمسة الأرستقراطية التي تبرز جمال النجيل الأخضر. زلط أبيض رخامي نقي يعمل كبرواز طبيعي لحديقتك، مما يعطي انطباعاً بالنظافة والاتساع الفوري للمكان." },
+        "103": { cat: "zalat", name: "زلط أسود بركاني طبيعي", size: "أسود فحم", density: "أصلي بركاني", img: "zalat/zalat-black-volcanic.jpeg", desc: "عشاق المودرن يفضلون اللون الأسود لتباين مذهل مع الأخضر. حجر طبيعي صلب لا يتأثر بالماء أو الشمس، ويمنح تصميمك هيبة وفخامة لا تنتهي." },
 
-        // --- [3] قسم الرخام والميكا (IDs: 301 - 350) ---
-        "301": { cat: "marble", name: "رخام كرارة ملي براون", size: "فاخر", density: "نخب أول", img: "marble/marble-carrara-milli-brown.jpg", desc: "سحر الرخام الإيطالي الممزوج بلمسات البراون الدافئة. اختيارك الأول لتجعل أركان منزلك تنطق بالفخامة، نسيج طبيعي فريد يزداد جمالاً مع الإضاءة، مثالي للحوائط الديكورية والتابلوهات." },
-        "302": { cat: "marble", name: "رخام كريستال وايت ناصع", size: "أبيض كريستال", density: "نخب أول", img: "marble/marble-crystal-white.jpg", desc: "بياض الكريستال الذي يمنح المكان إشراقاً واتساعاً. رخام عالي الجودة يعكس الرقي في كل تفصيلة، مثالي للتابلوهات الحجرية والديكورات الراقية التي تبحث عن الفخامة الهادئة." },
-        "303": { cat: "marble", name: "رخام إمبلادور كلاسيك فخم", size: "إسباني المنشأ", density: "نخب أول", img: "marble/marble-emperador.jpg", desc: "ملك الرخام البني. الإمبلادور يضيف لمسة دافئة وتاريخية لأي تصميم، معروف بعروقه الذهبية التي تعطي فخامة فورية للأرضيات والحوائط." },
-        "307": { cat: "marble", name: "حجر ميكا رمادي (واجهات)", size: "شرائح طبيعية", density: "طبيعي 100%", img: "marble/stone-mica-grey.jpg", desc: "الخيار العصري لواجهات الفيلات والتشطيبات المودرن. لون رمادي ثابت وشكل حجري فخم يعمل كعازل طبيعي للحرارة ويجمل واجهة منزلك بقوة تحمل جبارة ومظهر لا تنتهي موضته." },
-        "308": { cat: "marble", name: "حجر ميكا أحمر حراري", size: "شرائح خاصة", density: "طبيعي حراري", img: "marble/stone-mica-red.jpg", desc: "دفء الطبيعة في حجر الميكا الأحمر. يتميز بمتانته العالية ومقاومته للحرارة، مما يجعله مثالي للديكورات الخارجية الجريئة التي تعبر عن الشخصية القوية للمكان." },
-        "309": { cat: "marble", name: "حجر ساند ستون (الرملي)", size: "طبيعي", density: "نخب أول", img: "marble/marble-sandstone.jpg", desc: "الأناقة الكلاسيكية في الحجر الرملي الطبيعي. يمنح المكان ملمساً دافئاً وشكلاً لا تنتهي موضته أبداً، اختيار خبراء اللاندسكيب لإعطاء روح الطبيعة لكل زاوية." }
+        // --- [3] رخام وميكا (301-350) ---
+        "301": { cat: "marble", name: "رخام كرارة ملي براون", size: "فاخر", density: "نخب أول", img: "marble/marble-carrara-milli-brown.jpg", desc: "سحر الرخام الإيطالي الممزوج بلمسات البراون الدافئة. اختيارك الأول لتجعل أركان منزلك تنطق بالفخامة، نسيج طبيعي فريد يزداد جمالاً مع الإضاءة." },
+        "307": { cat: "marble", name: "حجر ميكا رمادي (واجهات)", size: "شرائح طبيعية", density: "طبيعي 100%", img: "marble/stone-mica-grey.jpg", desc: "الخيار العصري لواجهات الفيلات والتشطيبات المودرن. لون رمادي ثابت وشكل حجري فخم يعمل كعازل طبيعي للحرارة ويجمل واجهة منزلك." }
     };
 
-    // --- 🚀 محرك التشغيل الذكي ---
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('id') || "1";
     const p = products[productId];
 
     if (p) {
-        // تحديث البيانات
         document.getElementById('p-name').innerText = p.name;
         document.getElementById('p-size').innerText = p.size;
         document.getElementById('p-density').innerText = p.density;
         document.getElementById('p-desc').innerText = p.desc;
         
-        // حل مشكلة الصورة: المسار يبدأ من الفولدر الأب
+        // المسار المعتمد للصور
         document.getElementById('p-img').src = "../assets/images/" + p.img;
         document.getElementById('p-img').alt = p.name;
         document.title = p.name + " | حبيب ستون";
 
-        // الواتساب
-        const waMsg = `أهلاً حبيب ستون، أريد استفسار عن: ${p.name} (كود: ${productId})`;
+        const waMsg = `أهلاً حبيب ستون، أريد استفسار عن منتج: ${p.name} (كود: ${productId})`;
         document.getElementById('p-whatsapp').href = `https://wa.me/201016961497?text=${encodeURIComponent(waMsg)}`;
 
-        // محرك "الروح" (عشوائية ميكس)
+        // محرك الروح (Related)
         let others = Object.keys(products).filter(id => products[id].cat !== p.cat);
         others.sort(() => Math.random() - 0.5);
 
@@ -141,17 +134,10 @@
         });
         document.getElementById('related-grid').innerHTML = relatedHTML;
 
-        // زرار "تعالي يا باشا" الديناميكي
+        // زرار "تعالي يا باشا"
         let targetLink = (p.cat === "nageel") ? "zalat-gallery.html" : "nageel-gallery.html";
         let targetText = (p.cat === "nageel") ? "عالم الزلط والرخام" : "تشكيلة النجيل التركي";
-        document.getElementById('gallery-cta-wrapper').innerHTML = `
-            <a href="${targetLink}" class="cta-gallery-btn">
-                تعالى يا باشا خد فكرة في معرض ${targetText} ←
-            </a>`;
-
-    } else {
-        // لو مفيش منتج
-        document.querySelector('.container').innerHTML = `<div style="text-align:center; padding:100px 20px;"><h2>المنتج غير متوفر حالياً</h2><a href="../index.html">العودة للرئيسية</a></div>`;
+        document.getElementById('gallery-cta-wrapper').innerHTML = `<a href="${targetLink}" class="cta-gallery-btn">تعالى يا باشا خد فكرة في معرض ${targetText} ←</a>`;
     }
 </script>
 </body>
