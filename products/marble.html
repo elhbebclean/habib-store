@@ -3,200 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Habib Stone | Premium Selection</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <title>تفاصيل الرخام والأحجار الفاخرة | حبيب ستور</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
     <style>
-        :root { --gold: #AF944F; --black: #0a0a0a; --bg: #fdfdfd; --white: #ffffff; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --marble-dark: #1a1a1a; --gold-foil: #d4af37; --bg-silk: #fdfdfd; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg-silk); margin: 0; color: #333; line-height: 1.8; }
         
-        body { font-family: 'Cairo', sans-serif; background: var(--bg); color: #333; overflow-x: hidden; line-height: 1.6; }
-
-        /* Luxury Header */
-        header { 
-            position: fixed; top: 0; width: 100%; z-index: 1000;
-            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0,0,0,0.05); padding: 15px 5%;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .logo { font-family: 'Amiri', serif; font-size: 28px; color: var(--black); text-decoration: none; font-weight: bold; letter-spacing: 1px; }
-
-        /* Page Hero - تم تحديث الخلفية لرخام الجلالة فص فرز أول */
-        .page-header { 
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../assets/images/marble/marble-galala.jpg');
-            background-size: cover; 
-            background-position: center; 
-            background-attachment: fixed;
-            height: 450px;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            text-align: center; color: #fff; margin-top: 60px;
-        }
-        .page-header h1 { font-family: 'Amiri', serif; font-size: clamp(40px, 8vw, 65px); margin-bottom: 15px; text-shadow: 0 4px 15px rgba(0,0,0,0.3); }
-        .page-header p { font-size: 18px; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
-
-        .section-title { text-align: center; margin: 80px auto 40px; }
-        .section-title h2 { font-family: 'Amiri', serif; font-size: clamp(30px, 5vw, 42px); color: var(--black); position: relative; display: inline-block; padding-bottom: 15px; }
-        .section-title h2::after { content: ''; width: 60px; height: 3px; background: var(--gold); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
-
-        /* Grid System */
-        .grid-container { 
-            max-width: 1300px; margin: 0 auto 80px; 
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
-            gap: 35px; padding: 0 25px; 
-        }
-
-        .product-card { 
-            background: var(--white); border-radius: 15px; overflow: hidden; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03); transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid #f0f0f0; display: flex; flex-direction: column;
-        }
-        .product-card:hover { transform: translateY(-12px); box-shadow: 0 25px 50px rgba(0,0,0,0.1); border-color: var(--gold); }
+        .product-showcase { max-width: 1200px; margin: 80px auto; padding: 0 30px; display: flex; flex-wrap: wrap; gap: 60px; align-items: center; }
         
-        .img-box { height: 300px; overflow: hidden; position: relative; background: #f9f9f9; }
-        .img-box img { width: 100%; height: 100%; object-fit: cover; transition: 1s ease; }
-        .product-card:hover .img-box img { transform: scale(1.1); }
-        
-        .card-content { padding: 30px; text-align: right; flex-grow: 1; }
-        .tag { color: var(--gold); font-size: 12px; font-weight: bold; margin-bottom: 10px; display: block; border-right: 2px solid var(--gold); padding-right: 10px; }
-        .title { font-size: 21px; color: var(--black); font-weight: 700; margin-bottom: 25px; min-height: 55px; line-height: 1.4; }
-        
-        .view-btn { 
-            background: var(--black); color: #fff; text-decoration: none; display: flex; 
-            align-items: center; justify-content: center; gap: 10px;
-            padding: 18px; font-size: 15px; font-weight: bold; transition: 0.3s;
-            border-radius: 8px; border: 1px solid var(--black);
-        }
-        .view-btn:hover { background: transparent; color: var(--black); }
+        /* إطار الصورة الرخامي الفخم */
+        .stone-frame { flex: 1.2; min-width: 350px; position: relative; }
+        .stone-frame img { width: 100%; border-radius: 2px; box-shadow: 0 40px 80px rgba(0,0,0,0.15); border-right: 12px solid var(--marble-dark); transition: 0.6s; }
+        .stone-frame:hover img { transform: scale(1.02); }
 
-        footer { text-align: center; padding: 60px; background: var(--white); border-top: 1px solid #eee; font-size: 14px; color: #777; }
+        /* تفاصيل المحتوى الراقية */
+        .info-frame { flex: 1; min-width: 350px; }
+        .label-gold { color: var(--gold-foil); font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 4px; display: block; margin-bottom: 25px; }
+        .info-frame h1 { font-size: 3rem; color: var(--marble-dark); font-weight: 300; margin: 0 0 30px 0; letter-spacing: 1px; }
         
-        @media (max-width: 768px) { .page-header { height: 300px; } .grid-container { grid-template-columns: 1fr; } }
+        .luxury-desc { font-size: 1.25rem; color: #444; margin-bottom: 50px; text-align: justify; font-weight: 300; line-height: 2; border-left: 3px solid var(--gold-foil); padding-left: 25px; }
+        
+        .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 60px; }
+        .feature-box { font-size: 1rem; color: var(--marble-dark); display: flex; align-items: center; gap: 12px; font-weight: 500; }
+        .feature-box i { color: var(--gold-foil); font-size: 1.4rem; }
+
+        .back-nav { margin-top: 40px; }
+        .back-btn { text-decoration: none; color: #aaa; font-size: 0.95rem; transition: 0.3s; display: flex; align-items: center; gap: 10px; }
+        .back-btn:hover { color: var(--marble-dark); }
+
+        /* زر فريق الخبراء (هوية حبيب ستور الملكية) */
+        .expert-whatsapp { position: fixed; bottom: 40px; left: 40px; background: #25d366; color: white; padding: 20px 45px; border-radius: 2px; text-decoration: none; box-shadow: 0 20px 40px rgba(0,0,0,0.1); z-index: 1000; font-weight: 600; display: flex; align-items: center; gap: 15px; transition: 0.4s; }
+        .expert-whatsapp:hover { transform: translateY(-5px); background: #1ebe57; }
+
+        @media (max-width: 768px) { .info-frame h1 { font-size: 2.2rem; } .product-showcase { margin: 40px auto; } }
     </style>
-</head><body>
+</head>
+<body>
 
-<header>
-    <a href="../index.html" class="logo">HABIB STONE</a>
-    <div style="font-size: 11px; color: var(--gold); font-weight: bold; letter-spacing: 1px; text-transform: uppercase;">
-        Premium Selection
-    </div>
-</header>
-
-<div class="page-header" data-aos="fade-in">
-    <p data-aos="fade-up" data-aos-delay="200">Habib Stone | Premium Selection</p>
-    <h1 data-aos="fade-up" data-aos-delay="400">مجموعة الرخام والميكا</h1>
-    <div style="width: 80px; height: 2px; background: var(--gold); margin-top: 20px;" data-aos="zoom-in" data-aos-delay="600"></div>
-</div>
-
-<div class="section-title" data-aos="fade-up">
-    <h2>أرقى الخامات الطبيعية للواجهات والديكور</h2>
-</div>
-
-<div class="grid-container">
-    <div class="product-card" data-aos="fade-up">
-        <div class="img-box"><img src="../assets/images/marble/marble-carrara-milli-brown.jpg" alt="رخام كرارة ملي براون"></div>
-        <div class="card-content">
-            <span class="tag">LUXURY MARBLE</span>
-            <h3 class="title">رخام كرارة x ملي براون (نخب أول)</h3>
-            <a href="product.html?id=301" class="view-btn">تفاصيل القطعة والترشيحات <i class="fas fa-chevron-left"></i></a>
+    <div class="product-showcase">
+        <div class="stone-frame">
+            <img id="stoneImage" src="" alt="Habib Premium Marble" onerror="this.src='../assets/images/nageel-details/Habib-Istanbul-Lush-40mm.jpg'">
         </div>
-    </div>
 
-    <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="img-box"><img src="../assets/images/marble/marble-crystal-white.jpg" alt="رخام كريستال وايت"></div>
-        <div class="card-content">
-            <span class="tag">CRYSTAL SELECTION</span>
-            <h3 class="title">رخام كريستال وايت (بياض الثلج)</h3>
-            <a href="product.html?id=302" class="view-btn">تفاصيل القطعة والترشيحات <i class="fas fa-chevron-left"></i></a>
+        <div class="info-frame">
+            <span class="label-gold">Prestige Stone Collection</span>
+            <h1 id="stoneTitle">تحميل تفاصيل الرخام...</h1>
+            
+            <p class="luxury-desc" id="stoneDescription">
+                نحن في فريق "حبيب ستور" نؤمن بأن الرخام هو لغة الفخامة الخالدة. كل قطعة نختارها لكم تجسد عراقة الأحجار الطبيعية التي صُقلت بعناية لتمنح مساحتكم طابعاً من الرقي الذي لا يمحوه الزمن. مهندسونا يضمنون لك تركيباً فنياً يبرز عروق الجمال في كل زاوية.
+            </p>
+
+            <div class="features-grid">
+                <div class="feature-box"><i class="fas fa-gem"></i> جودة رخام عالمية</div>
+                <div class="feature-box"><i class="fas fa-certificate"></i> شهادة ضمان حبيب</div>
+                <div class="feature-box"><i class="fas fa-layer-group"></i> مقاومة للخدش والبقع</div>
+                <div class="feature-box"><i class="fas fa-vector-square"></i> قص هندسي دقيق</div>
+            </div>
+
+            <div class="back-nav">
+                <a href="stones-gallery.html" class="back-btn">
+                    <i class="fas fa-arrow-right"></i> العودة لجاليري الأحجار
+                </a>
+            </div>
         </div>
-    </div>
+    </div><a href="https://wa.me/201016961497" class="expert-whatsapp">
+        <i class="fab fa-whatsapp"></i>
+        <span>تواصل مع فريق الخبراء</span>
+    </a>
 
-    <div class="product-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="img-box"><img src="../assets/images/marble/marble-emperador.jpg" alt="رخام إمبلادور"></div>
-        <div class="card-content">
-            <span class="tag">CLASSIC MARBLE</span>
-            <h3 class="title">رخام إمبلادور كلاسيك (إسباني)</h3>
-            <a href="product.html?id=303" class="view-btn">تفاصيل القطعة والترشيحات <i class="fas fa-chevron-left"></i></a>
-        </div>
-    </div>
+    <script>
+        // مصفوفة الربط الذكي لكل أنواع الرخام والأحجار (الـ 11 نوع)
+        const stoneData = {
+            'stone-marble-white': { 
+                title: 'White Marble Stone', 
+                img: 'stone-marble-white.jpg' 
+            },
+            'stone-marble-mix': { 
+                title: 'Mix Marble Stone', 
+                img: 'stone-marble-mix.jpg' 
+            },
+            'stone-royal': { 
+                title: 'Habib Royal Stone', 
+                img: 'stone-royal.jpg' 
+            },
+            'stone-mica-v1': { 
+                title: 'Mica Stone V1', 
+                img: 'stone-mica-v1.jpg' 
+            },
+            'stone-mica-v2': { 
+                title: 'Mica Stone V2', 
+                img: 'stone-mica-v2.jpg' 
+            },
+            'stone-sand-yellow': { 
+                title: 'Yellow Sand Stone', 
+                img: 'stone-sand-yellow.jpg' 
+            },
+            'stone-sand-red': { 
+                title: 'Red Sand Stone', 
+                img: 'stone-sand-red.jpg' 
+            },
+            'stone-facade-v1': { 
+                title: 'Modern Facade Stone', 
+                img: 'stone-facade-v1.jpg' 
+            },
+            'stone-facade-v2': { 
+                title: 'Modern Facade Stone V2', 
+                img: 'stone-facade-v2.jpg' 
+            },
+            'stone-interior-v1': { 
+                title: 'Interior Decor Stone', 
+                img: 'stone-interior-v1.jpg' 
+            },
+            'stone-landscape-v1': { 
+                title: 'Luxury Stone Landscape', 
+                img: 'stone-landscape-v1.jpg' 
+            }
+        };
 
-    <div class="product-card" data-aos="fade-up">
-        <div class="img-box"><img src="../assets/images/marble/marble-spanish-black.jpg" alt="رخام أسود إسباني"></div>
-        <div class="card-content">
-            <span class="tag">ROYAL EDITION</span>
-            <h3 class="title">رخام أسود إسباني ملكي</h3>
-            <a href="product.html?id=304" class="view-btn">تفاصيل القطعة والترشيحات <i class="fas fa-chevron-left"></i></a>
-        </div>
-    </div>
+        // استخراج الـ ID من الرابط (e.g., marble.html?id=stone-royal)
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+        const product = stoneData[productId];
 
-    <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="img-box"><img src="../assets/images/marble/marble-galala.jpg" alt="رخام جلالة"></div>
-        <div class="card-content">
-            <span class="tag">EGYPTIAN LUXURY</span>
-            <h3 class="title">رخام جلالة فص (فرز أول)</h3>
-            <a href="product.html?id=305" class="view-btn">تفاصيل القطعة والترشيحات <i class="fas fa-chevron-left"></i></a>
-        </div>
-    </div>
+        const displayImg = document.getElementById('stoneImage');
+        const displayTitle = document.getElementById('stoneTitle');
 
-    <div class="product-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="img-box"><img src="../assets/images/marble/stone-basalt-black.jpg" alt="حجر بازلت أسود"></div>
-        <div class="card-content">
-            <span class="tag">DURABLE STONE</span>
-            <h3 class="title">حجر بازلت أسود طبيعي (واجهات)</h3>
-            <a href="product.html?id=306" class="view-btn">تفاصيل القطعة والترشيحات <i class="fas fa-chevron-left"></i></a>
-        </div>
-    </div>
+        // نظام الأمان: صورة حبيب إسطنبول لوش كـ Backup عالمي
+        const fallbackImg = '../assets/images/nageel-details/Habib-Istanbul-Lush-40mm.jpg';
 
-    <div class="product-card" data-aos="fade-up">
-        <div class="img-box"><img src="../assets/images/marble/stone-mica-grey.jpg" alt="حجر ميكا رمادي"></div>
-        <div class="card-content">
-            <span class="tag">MODERN MICA</span>
-            <h3 class="title">حجر ميكا رمادي (تجليد مودرن)</h3>
-            <a href="product.html?id=307" class="view-btn">تفاصيل القطعة والترشيحات <i class="fas fa-chevron-left"></i></a>
-        </div>
-    </div>
-
-    <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="img-box"><img src="../assets/images/marble/stone-mica-red.jpg" alt="حجر ميكا أحمر"></div>
-        <div class="card-content">
-            <span class="tag">THERMAL STONE</span>
-            <h3 class="title">حجر ميكا أحمر حراري طبيعي</h3>
-            <a href="product.html?id=308" class="view-btn">تفاصيل القطعة والترشيحات <i class="fas fa-chevron-left"></i></a>
-        </div>
-    </div>
-
-    <div class="product-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="img-box"><img src="../assets/images/marble/marble-sandstone.jpg" alt="حجر ساند ستون"></div>
-        <div class="card-content">
-            <span class="tag">NATURAL SANDSTONE</span>
-            <h3 class="title">حجر ساند ستين (الرملي) الفاخر</h3>
-            <a href="product.html?id=309" class="view-btn">تفاصيل القطعة والترشيحات <i class="fas fa-chevron-left"></i></a>
-        </div>
-    </div>
-</div>
-
-<footer>
-    <div style="margin-bottom: 20px;">
-        <i class="fab fa-facebook" style="margin: 0 10px; font-size: 20px; color: var(--gold);"></i>
-        <i class="fab fa-instagram" style="margin: 0 10px; font-size: 20px; color: var(--gold);"></i>
-        <i class="fab fa-whatsapp" style="margin: 0 10px; font-size: 20px; color: var(--gold);"></i>
-    </div>
-    <p>&copy; 2026 HABIB STONE - PREMIUM SELECTION | SHARK DESIGN 🦈</p>
-</footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
-    // تشغيل الأنيميشن عند تحميل الصفحة
-    window.addEventListener('load', function() {
-        AOS.init({
-            duration: 1200,
-            once: true,
-            offset: 100
-        });
-    });
-</script>
-
+        if (product) {
+            displayTitle.innerText = product.title;
+            // المسار للأحجار يصعد مستوى واحد للوصول لمجلد images/stone
+            displayImg.src = '../assets/images/stone/' + product.img;
+        } else {
+            // التفعيل الفوري لنظام الأمان عند أي خطأ في الـ ID أو المسار
+            displayTitle.innerText = 'Habib Prestige Stone Selection';
+            displayImg.src = fallbackImg;
+        }
+    </script>
 </body>
 </html>
