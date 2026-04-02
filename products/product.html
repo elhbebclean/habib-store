@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تفاصيل النجيل الفاخر | حبيب ستور</title>
+    <title>تفاصيل المنتج | حبيب ستور للاندسكيب</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { --royal-green: #1a3c34; --gold: #c5a059; --soft-gray: #f8fafa; }
@@ -11,32 +11,32 @@
         
         .product-wrapper { max-width: 1200px; margin: 80px auto; padding: 0 20px; display: flex; flex-wrap: wrap; gap: 60px; align-items: flex-start; }
         
-        /* تصميم معرض الصور المصغر */
-        .image-section { flex: 1; min-width: 320px; position: sticky; top: 40px; }
+        /* قسم الصورة الراقية */
+        .image-section { flex: 1.1; min-width: 350px; position: sticky; top: 40px; }
         .main-display { width: 100%; border-radius: 25px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.1); background: #fff; border: 1px solid rgba(0,0,0,0.05); }
-        .main-display img { width: 100%; display: block; transition: transform 0.5s ease; }
-        .main-display:hover img { transform: scale(1.03); }
+        .main-display img { width: 100%; display: block; transition: transform 0.6s ease; }
+        .main-display:hover img { transform: scale(1.05); }
 
-        /* محتوى الوصف الراقي */
+        /* محتوى الوصف الهادئ للمليارديرات */
         .content-section { flex: 1; min-width: 320px; padding-top: 20px; }
         .brand-tag { color: var(--gold); font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 15px; }
         .content-section h1 { font-size: 2.8rem; color: var(--royal-green); font-weight: 300; margin: 0 0 25px 0; line-height: 1.2; }
-        .luxury-line { width: 60px; height: 3px; background: var(--gold); margin-bottom: 30px; }
+        .luxury-line { width: 60px; height: 3px; background: var(--gold); margin-bottom: 35px; }
         
-        .description-text { font-size: 1.15rem; color: #555; margin-bottom: 40px; text-align: justify; font-weight: 300; }
-        .features-list { list-style: none; padding: 0; margin-bottom: 40px; }
-        .features-list li { margin-bottom: 15px; display: flex; align-items: center; gap: 12px; color: var(--royal-green); font-weight: 500; }
-        .features-list li i { color: var(--gold); font-size: 1.2rem; }
+        .description-text { font-size: 1.15rem; color: #555; margin-bottom: 45px; text-align: justify; font-weight: 300; }
+        .features-list { list-style: none; padding: 0; margin-bottom: 50px; }
+        .features-list li { margin-bottom: 18px; display: flex; align-items: center; gap: 15px; color: var(--royal-green); font-weight: 500; font-size: 1.05rem; }
+        .features-list li i { color: var(--gold); font-size: 1.3rem; }
 
-        .cta-box { display: flex; gap: 20px; align-items: center; margin-top: 50px; }
-        .back-gallery { text-decoration: none; color: #888; font-size: 0.9rem; transition: 0.3s; display: flex; align-items: center; gap: 8px; }
-        .back-gallery:hover { color: var(--royal-green); }
+        .cta-box { display: flex; gap: 20px; align-items: center; margin-top: 60px; }
+        .back-gallery { text-decoration: none; color: #999; font-size: 0.95rem; transition: 0.3s; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid transparent; }
+        .back-gallery:hover { color: var(--royal-green); border-color: var(--royal-green); }
 
-        /* زرار فريق الخبراء الهادئ */
-        .whatsapp-expert { position: fixed; bottom: 40px; left: 40px; background: #25d366; color: white; padding: 18px 35px; border-radius: 60px; text-decoration: none; box-shadow: 0 15px 30px rgba(37, 211, 102, 0.25); z-index: 1000; font-weight: 600; display: flex; align-items: center; gap: 15px; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .whatsapp-expert:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 20px 40px rgba(37, 211, 102, 0.3); }
+        /* زرار فريق الخبراء (تواصل هندسي) */
+        .expert-btn { position: fixed; bottom: 40px; left: 40px; background: #25d366; color: white; padding: 18px 35px; border-radius: 60px; text-decoration: none; box-shadow: 0 15px 35px rgba(37, 211, 102, 0.25); z-index: 1000; font-weight: 600; display: flex; align-items: center; gap: 15px; transition: 0.4s; }
+        .expert-btn:hover { transform: translateY(-5px); background: #1ebe57; }
 
-        @media (max-width: 768px) { .content-section h1 { font-size: 2rem; } .product-wrapper { margin: 40px auto; } }
+        @media (max-width: 768px) { .content-section h1 { font-size: 2.2rem; } .product-wrapper { margin: 40px auto; } }
     </style>
 </head>
 <body>
@@ -44,23 +44,24 @@
     <div class="product-wrapper">
         <div class="image-section">
             <div class="main-display">
-                <img id="productImage" src="" alt="Habib Luxury Grass" onerror="this.src='../assets/images/nageel-details/Habib-Istanbul-Lush-40mm.jpg'">
+                <img id="productImage" src="" alt="Habib Luxury Collection" onerror="this.src='../assets/images/nageel-details/Habib-Istanbul-Lush-40mm.jpg'">
             </div>
         </div>
 
         <div class="content-section">
-            <span class="brand-tag">Habib Store | Elite Collection</span>
+            <span class="brand-tag">Elite Landscape Collection</span>
             <h1 id="productTitle">جاري تحميل التفاصيل...</h1>
             <div class="luxury-line"></div>
             
             <p class="description-text" id="productDescription">
-                نحن في فريق "حبيب ستور" نؤمن أن الحديقة ليست مجرد مساحة خضراء، بل هي انعكاس لذوقكم الرفيع. هذا النوع المختار يجمع بين الكثافة المثالية والملمس الحريري ليوفر لكم بيئة هادئة ومستدامة تليق بنمط حياتكم الخاص.
+                نحن في فريق "حبيب ستور" نؤمن بأن الحديقة ليست مجرد مساحة خضراء، بل هي انعكاس لذوقكم الرفيع ومنظوركم للرفاهية. هذا المنتج المختار بعناية يجمع بين الكثافة الهندسية المثالية والملمس الحريري ليوفر لكم بيئة هادئة ومستدامة تليق بنمط حياتكم الخاص وتستحق ثقتكم.
             </p>
 
             <ul class="features-list">
-                <li><i class="fas fa-check-circle"></i> ضمان جودة حبيب ستور الاستثنائية</li>
-                <li><i class="fas fa-check-circle"></i> تصميم هندسي يقاوم كافة الظروف</li>
-                <li><i class="fas fa-check-circle"></i> مظهر طبيعي 100% بدون عناء الصيانة</li>
+                <li><i class="fas fa-check-double"></i> ضمان جودة حبيب ستور الهندسية</li>
+                <li><i class="fas fa-check-double"></i> تقنية مقاومة للأشعة البنفسجية والأمطار</li>
+                <li><i class="fas fa-check-double"></i> ملمس طبيعي ناعم (Habib Signature)</li>
+                <li><i class="fas fa-check-double"></i> استدامة بصرية تدوم لسنوات طوال</li>
             </ul>
 
             <div class="cta-box">
@@ -69,45 +70,75 @@
                 </a>
             </div>
         </div>
-    </div><a href="https://wa.me/201016961497" class="whatsapp-expert">
+    </div><a href="https://wa.me/201016961497" class="expert-btn">
         <i class="fab fa-whatsapp"></i>
         <span>تواصل مع فريق الخبراء</span>
     </a>
 
     <script>
-        // مصفوفة البيانات الضخمة - الربط الذكي لكل منتجات حبيب ستور
-        const products = {
-            // نجيل (Nageel Section)
-            '11': { title: 'Habib Practical Green (11mm)', img: 'Habib-Practical-Green-11mm.jpg' },
-            '20': { title: 'Habib Standard Turkish (20mm)', img: 'Habib-Standard-Turkish-20mm-12.jpg' },
-            '30-16': { title: 'Habib Antalya Breeze (30mm)', img: 'Habib-Antalya-Breeze-30mm-24.jpg' },
-            '30-18': { title: 'Habib Natural Soft (30mm)', img: 'Habib-Marmara-Turf-40mm-12.jpg' }, 
-            '30-24': { title: 'Habib Premium Turf (30mm)', img: 'Habib-Antalya-Breeze-30mm-24.jpg' },
-            '40-12': { title: 'Habib Istanbul Lush (40mm)', img: 'Habib-Istanbul-Lush-40mm.jpg' },
-            '40-24': { title: 'Habib Bosphorus Green (40mm)', img: 'Habib-Bosphorus-Green-40mm-24.jpg' },
-            '40-28': { title: 'Habib Legendary Silk (40mm)', img: 'Habib-Legendary-Silk-40mm-28.jpg' },
-            '40-natural': { title: 'Habib Nature Touch (40mm)', img: 'Habib-Anatolian-Nature-50mm.jpg' },
-            '50': { title: 'Habib Anatolian Nature (50mm)', img: 'Habib Bosphorus Green (50mm).jpg' },
-
-            // سيتم إضافة أقسام الزلط والرخام هنا بنفس النمط لضمان توحيد الأكواد
+        // مصفوفة الربط الذكي: تربط الـ ID من المعرض بصورة الوصف (Habib) بالاسم الدقيق
+        const nageelData = {
+            '11': { 
+                title: 'Habib Practical Green (11mm)', 
+                img: 'Habib-Practical-Green-11mm.jpg' 
+            },
+            '20': { 
+                title: 'Habib Standard Turkish (20mm)', 
+                img: 'Habib-Standard-Turkish-20mm-12.jpg' 
+            },
+            '30-16': { 
+                title: 'Habib Antalya Breeze (30mm-16)', 
+                img: 'Habib-Antalya-Breeze-30mm-24.jpg' 
+            },
+            '30-18': { 
+                title: 'Habib Natural Soft (30mm-18)', 
+                img: 'Habib-Marmara-Turf-40mm-12.jpg' 
+            },
+            '30-24': { 
+                title: 'Habib Premium Turf (30mm-24)', 
+                img: 'Habib-Antalya-Breeze-30mm-24.jpg' 
+            },
+            '40-12': { 
+                title: 'Habib Istanbul Lush (40mm-12)', 
+                img: 'Habib-Istanbul-Lush-40mm.jpg' 
+            },
+            '40-24': { 
+                title: 'Habib Bosphorus Green (40mm-24)', 
+                img: 'Habib-Bosphorus-Green-40mm-24.jpg' 
+            },
+            '40-28': { 
+                title: 'Habib Legendary Silk (40mm-28)', 
+                img: 'Habib-Legendary-Silk-40mm-28.jpg' 
+            },
+            '40-natural': { 
+                title: 'Habib Nature Touch (40mm)', 
+                img: 'Habib-Anatolian-Nature-50mm.jpg' 
+            },
+            '50': { 
+                title: 'Habib Anatolian Nature (50mm)', 
+                img: 'Habib Bosphorus Green (50mm).jpg' 
+            }
         };
 
-        // استخراج الـ ID من رابط الصفحة
+        // استخراج المعرف من الرابط (e.g., product.html?id=50)
         const urlParams = new URLSearchParams(window.location.search);
         const productId = urlParams.get('id');
-        const product = products[productId];
+        const product = nageelData[productId];
 
-        const mainImg = document.getElementById('productImage');
-        const mainTitle = document.getElementById('productTitle');
+        const displayImg = document.getElementById('productImage');
+        const displayTitle = document.getElementById('productTitle');
+
+        // الصورة الافتراضية (نظام الأمان) لو المنتج مش موجود أو الاسم غلط
+        const fallbackImg = '../assets/images/nageel-details/Habib-Istanbul-Lush-40mm.jpg';
 
         if (product) {
-            mainTitle.innerText = product.title;
-            // محاولة تحميل الصورة الخاصة بالمنتج
-            mainImg.src = '../assets/images/nageel-details/' + product.img;
+            displayTitle.innerText = product.title;
+            // محاولة تحميل الصورة المحددة
+            displayImg.src = '../assets/images/nageel-details/' + product.img;
         } else {
-            // نظام الأمان (Fallback) في حالة عدم وجود ID أو خطأ في الاسم
-            mainTitle.innerText = 'تصميم خاص من حبيب ستور';
-            mainImg.src = '../assets/images/nageel-details/Habib-Istanbul-Lush-40mm.jpg';
+            // تفعيل نظام الأمان فوراً للمليارديرات
+            displayTitle.innerText = 'Habib Elite Selection';
+            displayImg.src = fallbackImg;
         }
     </script>
 </body>
