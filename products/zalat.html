@@ -3,44 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>معرض الزلط الفاخر | حبيب ستور</title>
+    <title>تفاصيل الزلط الفاخر | حبيب ستور</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; }
-        .gallery-container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
-        .gallery-title { text-align: center; color: #333; font-size: 2.5rem; margin-bottom: 40px; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f9f9f9; margin: 0; padding: 0; }
+        .main-p-container { max-width: 900px; margin: 40px auto; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); text-align: center; }
         
-        /* تصميم الشبكة اللي كان فيه كل الصور */
-        .zalat-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
-            gap: 25px; 
-        }
+        /* الصورة الرئيسية للمنتج */
+        #productImage { width: 100%; max-height: 500px; object-fit: cover; border-radius: 15px; border: 1px solid #eee; }
+        .p-title { font-size: 2.5rem; color: #333; margin: 25px 0 15px 0; }
+        .p-desc { font-size: 1.2rem; color: #666; margin-bottom: 30px; line-height: 1.8; }
+        
+        /* زرار الواتساب الرسمي */
+        .btn-wa-order { display: inline-block; background: #25d366; color: white; padding: 15px 35px; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 1.2rem; transition: 0.3s; }
+        .btn-wa-order:hover { background: #1ebe57; transform: scale(1.05); }
 
-        .zalat-card { 
+        /* سكرول المنتجات ذات الصلة (Horizontal Scroll) */
+        .rel-section-title { text-align: center; margin-top: 60px; color: #444; }
+        .rel-scroll-box { 
+            display: flex; 
+            overflow-x: auto; 
+            gap: 20px; 
+            padding: 20px; 
+            scrollbar-width: none; /* إخفاء الشريط */
+            -ms-overflow-style: none;
+            scroll-snap-type: x mandatory;
+        }
+        .rel-scroll-box::-webkit-scrollbar { display: none; }
+        
+        .rel-item-card { 
+            min-width: 220px; 
             background: white; 
-            border-radius: 15px; 
-            overflow: hidden; 
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05); 
-            transition: 0.3s; 
+            border-radius: 12px; 
+            padding: 15px; 
+            text-align: center; 
             text-decoration: none; 
             color: inherit; 
-            display: block;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            scroll-snap-align: center;
         }
-        .zalat-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-        .zalat-card img { width: 100%; height: 220px; object-fit: cover; }
-        .zalat-info { padding: 20px; text-align: center; }
-        .zalat-info h3 { margin: 0; font-size: 1.2rem; color: #444; }
-        .btn-view { display: inline-block; margin-top: 15px; color: #007bff; font-weight: bold; }
+        .rel-item-card img { width: 100%; height: 140px; object-fit: cover; border-radius: 8px; }
+        .rel-item-card h4 { margin: 12px 0 0 0; font-size: 1rem; color: #333; }
     </style>
 </head>
 <body>
 
-    <div class="gallery-container">
-        <h1 class="gallery-title">مجموعة الزلط والأحجار الطبيعية</h1>
-        <div class="zalat-grid" id="zalatGallery">
-            </div>
+    <div class="main-p-container">
+        <img id="productImage" src="" alt="Habib Zalat Details">
+        <h1 id="productTitle" class="p-title">جاري التحميل...</h1>
+        <p class="p-desc">أجود أنواع الزلط والأحجار الطبيعية من حبيب ستور، نوفر لكم أفضل الخامات لتزيين اللاندسكيب والحدائق بأعلى جودة وأفضل سعر في مصر.</p>
+        <a href="https://wa.me/201016961497" class="btn-wa-order">
+            <i class="fab fa-whatsapp"></i> اطلب الآن عبر الواتساب
+        </a>
     </div>
+
+    <h3 class="rel-section-title">أنواع زلط أخرى قد تهمك</h3>
+    <div class="rel-scroll-box" id="relatedZalatItems">
+        </div>
     <script>
         // مصفوفة الزلط الرسمية المربوطة بفولدر assets/images/zalat/
         const zalatItems = {
@@ -57,20 +76,33 @@
             'zalat-luxury': { title: 'Luxury Garden Ideas', img: 'zalat-garden-ideas-luxury.jpg' }
         };
 
-        const gallery = document.getElementById('zalatGallery');
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+        const currentProduct = zalatItems[productId];
 
-        // بناء المعرض وربطه بصفحة الوصف white-marble.html
+        const mainImg = document.getElementById('productImage');
+        const mainTitle = document.getElementById('productTitle');
+
+        // الربط بالصورة الرئيسية من فولدر zalat
+        if (currentProduct) {
+            mainTitle.innerText = currentProduct.title;
+            mainImg.src = '../assets/images/zalat/' + currentProduct.img;
+        } else {
+            // صورة احتياطية (Fallback) لو الـ ID غلط
+            mainTitle.innerText = 'Habib Zalat Collection';
+            mainImg.src = '../assets/images/nageel-details/Habib-Istanbul-Lush-40mm.jpg';
+        }
+
+        // بناء السكرول العرضي للمنتجات ذات الصلة
+        const relatedDiv = document.getElementById('relatedZalatItems');
         Object.keys(zalatItems).forEach(key => {
-            gallery.innerHTML += `
-                <a href="white-marble.html?id=${key}" class="zalat-card">
-                    <img src="../assets/images/zalat/${zalatItems[key].img}" 
-                         alt="${zalatItems[key].title}" 
-                         onerror="this.src='../assets/images/nageel-details/Habib-Istanbul-Lush-40mm.jpg'">
-                    <div class="zalat-info">
-                        <h3>${zalatItems[key].title}</h3>
-                        <span class="btn-view">عرض التفاصيل <i class="fas fa-arrow-left"></i></span>
-                    </div>
-                </a>`;
+            if (key !== productId) {
+                relatedDiv.innerHTML += `
+                    <a href="zalat.html?id=${key}" class="rel-item-card">
+                        <img src="../assets/images/zalat/${zalatItems[key].img}" alt="${zalatItems[key].title}">
+                        <h4>${zalatItems[key].title}</h4>
+                    </a>`;
+            }
         });
     </script>
 </body>
