@@ -1,0 +1,75 @@
+/* --- SHARK SELECTIONS CSS --- */
+
+/* العمود الجانبي */
+.shark-sidebar {
+    position: fixed;
+    top: 0;
+    right: -280px; /* مستخبي في البداية */
+    width: 260px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95); /* أسود ملكي شفاف سنة */
+    border-left: 2px solid #d4af37; /* خط ذهبي رفيع */
+    transition: all 0.5s ease-in-out;
+    z-index: 9999;
+    padding: 20px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+}
+
+/* لما العمود يظهر (بعد 10 ثواني) */
+.shark-sidebar.visible {
+    right: -230px; /* بيظهر منه طرف بس عشان العميل يشدّه */
+    cursor: pointer;
+}
+
+.shark-sidebar.open {
+    right: 0; /* بيفتح بالكامل لما العميل يلمسه */
+}
+
+/* أيقونة المود الليلي (القمر) */
+.night-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #1a1a1a;
+    border: 1px solid #d4af37;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 10000;
+    transition: 0.3s;
+}
+
+/* تأثير المود الليلي على الموقع */
+body.night-mode {
+    filter: brightness(0.8) contrast(1.1);
+    background-color: #050505 !important;
+}
+
+/* تنسيق كروت المنتجات الصغيرة جوه العمود */
+.shark-item {
+    text-align: center;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.shark-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    object-fit: cover;
+}
+
+.shark-item p {
+    font-size: 12px;
+    margin-top: 5px;
+    color: #d4af37;
+}
