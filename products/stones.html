@@ -1,0 +1,35 @@
+// (الجزء البرمجي فقط لملف الرخام - الهيكل مشابه للزلط مع تغيير الألوان للذهبي)
+    <script>
+        const marbleData = {
+            "41": { name: "رخام كريستال وايت", img: "marble-crystal-white.jpg", specs: "رخام طبيعي", desc: "يستخدم في الأرضيات والديكورات الراقية." },
+            "42": { name: "رخام إمبردور فاخر", img: "marble-emperador.jpg", specs: "بني ملكي", desc: "رخام إمبردور مستورد بلمعة جذابة." },
+            "51": { name: "حجر مايكا رمادي", img: "stone-mica-grey.jpg", specs: "مايكا طبيعي", desc: "ديكورات حوائط خارجية وداخلية عصرية." },
+            "52": { name: "حجر مايكا أحمر", img: "stone-mica-red.jpg", specs: "مايكا ديكور", desc: "لمسة دافئة لتصاميم اللاندسكيب." }
+        };
+
+        const complements = [
+            { id: "1", name: "نجيل 50 ملم", img: "Habib-Anatolian-Nature-50mm.jpg", folder: "nageel-details", page: "product-nageel.html" },
+            { id: "21", name: "زلط أبيض", img: "white-zalat.jpg", folder: "zalat", page: "product-zalat.html" }
+        ];
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+        const product = marbleData[productId];
+
+        if (product) {
+            document.getElementById('p-name').innerText = product.name;
+            document.getElementById('p-img').src = "../assets/images/marble/" + product.img;
+            document.getElementById('p-specs').innerText = product.specs;
+            document.getElementById('p-desc').innerText = product.desc;
+            document.getElementById('p-whatsapp').href = "https://wa.me/201016961497?text=مهتم بـ " + product.name;
+
+            let sliderHTML = '';
+            complements.forEach(item => {
+                sliderHTML += `<a href="${item.page}?id=${item.id}" class="insta-card">
+                    <img src="../assets/images/${item.folder}/${item.img}">
+                    <div class="insta-card-info"><h4>${item.name}</h4></div>
+                </a>`;
+            });
+            document.getElementById('complementary-slider').innerHTML = sliderHTML;
+        }
+    </script>
