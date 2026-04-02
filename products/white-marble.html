@@ -3,87 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>وصف الزلط الطبيعي | حبيب ستور</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/all.min.css">
+    <title>تفاصيل الزلط الفاخر | حبيب ستور</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --green: #1a472a; --gold: #c5a059; --dark: #222; --light: #f9f9f9; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: #fff; color: var(--dark); line-height: 1.6; }
-        .container { max-width: 500px; margin: 0 auto; padding-bottom: 100px; }
-        .header { padding: 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; }
-        .logo { font-weight: bold; color: var(--green); font-size: 20px; text-decoration: none; }
-        .product-display { width: 100%; position: relative; background: #eee; height: 350px; }
-        #p-img { width: 100%; height: 100%; object-fit: cover; }
-        .category-tag { position: absolute; top: 15px; left: 15px; background: var(--gold); color: #fff; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; }
-        .content { padding: 20px; }
-        .p-title { font-size: 24px; margin: 0; color: var(--green); }
-        .p-specs-short { color: var(--gold); font-weight: bold; margin-top: 5px; font-size: 14px; }
-        .desc-box { background: var(--light); padding: 15px; border-radius: 12px; margin-top: 20px; border-right: 4px solid var(--gold); }
-        .insta-section { margin-top: 40px; }
-        .section-title { font-size: 18px; margin-bottom: 15px; padding: 0 5px; border-right: 3px solid var(--green); padding-right: 10px; }
-        .instagram-slider { display: flex; overflow-x: auto; gap: 12px; padding: 10px 5px 25px; scrollbar-width: none; scroll-snap-type: x mandatory; }
-        .instagram-slider::-webkit-scrollbar { display: none; }
-        .insta-card { flex: 0 0 150px; background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-decoration: none; color: inherit; scroll-snap-align: start; border: 1px solid #eee; }
-        .insta-card img { width: 100%; height: 110px; object-fit: cover; }
-        .insta-card-info { padding: 8px; text-align: center; }
-        .action-bar { position: fixed; bottom: 0; width: 100%; max-width: 500px; padding: 15px; background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); box-sizing: border-box; }
-        .btn-whatsapp { display: flex; align-items: center; justify-content: center; gap: 10px; background: #25d366; color: #fff; text-decoration: none; padding: 15px; border-radius: 12px; font-weight: bold; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f9f9f9; margin: 0; padding: 0; }
+        .main-p-container { max-width: 900px; margin: 40px auto; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); text-align: center; }
+        
+        /* الصورة الرئيسية للمنتج */
+        #productImage { width: 100%; max-height: 500px; object-fit: cover; border-radius: 15px; border: 1px solid #eee; }
+        .p-title { font-size: 2.5rem; color: #333; margin: 25px 0 15px 0; }
+        .p-desc { font-size: 1.2rem; color: #666; margin-bottom: 30px; line-height: 1.8; }
+        
+        /* زرار الواتساب الرسمي */
+        .btn-wa-order { display: inline-block; background: #25d366; color: white; padding: 15px 35px; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 1.2rem; transition: 0.3s; }
+        .btn-wa-order:hover { background: #1ebe57; transform: scale(1.05); }
+
+        /* سكرول المنتجات ذات الصلة (Horizontal Scroll) */
+        .rel-section-title { text-align: center; margin-top: 60px; color: #444; }
+        .rel-scroll-box { 
+            display: flex; 
+            overflow-x: auto; 
+            gap: 20px; 
+            padding: 20px; 
+            scrollbar-width: none; 
+            -ms-overflow-style: none;
+            scroll-snap-type: x mandatory;
+        }
+        .rel-scroll-box::-webkit-scrollbar { display: none; }
+        
+        .rel-item-card { 
+            min-width: 220px; 
+            background: white; 
+            border-radius: 12px; 
+            padding: 15px; 
+            text-align: center; 
+            text-decoration: none; 
+            color: inherit; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            scroll-snap-align: center;
+        }
+        .rel-item-card img { width: 100%; height: 140px; object-fit: cover; border-radius: 8px; }
+        .rel-item-card h4 { margin: 12px 0 0 0; font-size: 1rem; color: #333; }
     </style>
 </head>
 <body>
-    <div class="container" id="view-content">
-        <header class="header">
-            <a href="../index.html" class="logo"><i class="fas fa-chevron-right"></i> حبيب ستور</a>
-            <i class="fas fa-share-alt"></i>
-        </header>
-        <div class="product-display">
-            <span class="category-tag">أحجار طبيعية <i class="fas fa-gem"></i></span>
-            <img id="p-img" src="" alt="زلط حبيب ستور">
-        </div>
-        <div class="content">
-            <h1 class="p-title" id="p-name">...</h1>
-            <div class="p-specs-short" id="p-specs">...</div>
-            <div class="desc-box"><h3>التفاصيل:</h3><p id="p-desc" style="font-size: 14px; margin: 0; color: #555;"></p></div>
-            <div class="insta-section">
-                <h2 class="section-title">اكمل المظهر (نجيل ورخام)</h2>
-                <div class="instagram-slider" id="complementary-slider"></div>
-            </div>
-        </div>
-        <div class="action-bar"><a href="#" id="p-whatsapp" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> اطلب الآن</a></div>
+
+    <div class="main-p-container">
+        <img id="productImage" src="" alt="Habib Zalat Details">
+        <h1 id="productTitle" class="p-title">جاري التحميل...</h1>
+        <p class="p-desc">أجود أنواع الزلط والأحجار الطبيعية من حبيب ستور، نوفر لكم أفضل الخامات لتزيين اللاندسكيب والحدائق بأعلى جودة وأفضل سعر في مصر.</p>
+        <a href="https://wa.me/201016961497" class="btn-wa-order">
+            <i class="fab fa-whatsapp"></i> اطلب الآن عبر الواتساب
+        </a>
     </div>
 
+    <h3 class="rel-section-title">أنواع زلط أخرى قد تهمك</h3>
+    <div class="rel-scroll-box" id="relatedZalatItems">
+        </div>
     <script>
-        const zalatData = {
-            "21": { name: "زلط أبيض كريستال", img: "white-zalat.jpg", specs: "طبيعي - فرز أول", desc: "أنقى أنواع الزلط الأبيض لتحديد أحواض النجيل." },
-            "22": { name: "زلط أسود ملكي", img: "zalat-black-royal.jpg", specs: "أسود رويال", desc: "فخامة اللون الأسود اللامع وسط النجيل." },
-            "23": { name: "زلط أحمر بركاني", img: "zalat-red-volcanic.jpeg", specs: "أحمر طبيعي", desc: "يتحمل العوامل الجوية ويعطي مظهراً مودرن." },
-            "24": { name: "زلط أسيوطي مطور", img: "zalat-asyuti-v2.jpeg", specs: "ألوان متداخلة", desc: "متانة عالية وألوان طبيعية خلابة." }
+        // مصفوفة الزلط الرسمية مطابقة لمجلد assets/images/zalat/ في جيتها بتاعك
+        const zalatItems = {
+            'zalat-asyuti': { title: 'Zalat Asyuti V2', img: 'zalat-asyuti-v2.jpeg' },
+            'zalat-black-royal': { title: 'Zalat Black Royal', img: 'zalat-black-royal.jpg' },
+            'zalat-black-volcanic': { title: 'Zalat Black Volcanic', img: 'zalat-black-volcanic.jpeg' },
+            'zalat-white-v1': { title: 'White Marble V1', img: 'zalat-white-marble-v1.jpeg' },
+            'zalat-white-v2': { title: 'White Marble V2', img: 'zalat-white-marble-v2.jpeg' },
+            'zalat-light-gray': { title: 'Zalat Light Gray', img: 'zalat-light-gray.jpg' },
+            'zalat-mix-v1': { title: 'Zalat Mix Colors V1', img: 'zalat-mix-colors.jpeg' },
+            'zalat-mix-v2': { title: 'Zalat Mix Colors V2', img: 'zalat-mix-colors_.jpg' },
+            'zalat-red-volcanic': { title: 'Red Volcanic Stone', img: 'zalat-red-volcanic.jpeg' },
+            'white-zalat': { title: 'Pure White Zalat', img: 'white-zalat.jpg' },
+            'zalat-luxury': { title: 'Luxury Garden Ideas', img: 'zalat-garden-ideas-luxury.jpg' }
         };
-
-        const complements = [
-            { id: "1", name: "نجيل 50 ملم", img: "Habib-Anatolian-Nature-50mm.jpg", folder: "nageel-details", page: "product-nageel.html" },
-            { id: "41", name: "رخام كريستال", img: "marble-crystal-white.jpg", folder: "marble", page: "product-marble.html" }
-        ];
 
         const urlParams = new URLSearchParams(window.location.search);
         const productId = urlParams.get('id');
-        const product = zalatData[productId];
+        const currentProduct = zalatItems[productId];
 
-        if (product) {
-            document.getElementById('p-name').innerText = product.name;
-            document.getElementById('p-img').src = "../assets/images/zalat/" + product.img;
-            document.getElementById('p-specs').innerText = product.specs;
-            document.getElementById('p-desc').innerText = product.desc;
-            document.getElementById('p-whatsapp').href = "https://wa.me/201016961497?text=مهتم بـ " + product.name;
+        const mainImg = document.getElementById('productImage');
+        const mainTitle = document.getElementById('productTitle');
 
-            let sliderHTML = '';
-            complements.forEach(item => {
-                sliderHTML += `<a href="${item.page}?id=${item.id}" class="insta-card">
-                    <img src="../assets/images/${item.folder}/${item.img}">
-                    <div class="insta-card-info"><h4>${item.name}</h4></div>
-                </a>`;
-            });
-            document.getElementById('complementary-slider').innerHTML = sliderHTML;
+        // الربط بالصورة الرئيسية (الخروج من products والدخول لـ assets)
+        if (currentProduct) {
+            mainTitle.innerText = currentProduct.title;
+            mainImg.src = '../assets/images/zalat/' + currentProduct.img;
+        } else {
+            // حالة احتياطية لو الرابط فيه مشكلة
+            mainTitle.innerText = 'تشكيلة حبيب ستور للزلط';
+            mainImg.src = '../assets/images/zalat/white-zalat.jpg';
         }
+
+        // بناء السكرول العرضي (المنتجات ذات الصلة)
+        const relatedDiv = document.getElementById('relatedZalatItems');
+        Object.keys(zalatItems).forEach(key => {
+            if (key !== productId) {
+                relatedDiv.innerHTML += `
+                    <a href="white-marble.html?id=${key}" class="rel-item-card">
+                        <img src="../assets/images/zalat/${zalatItems[key].img}" 
+                             alt="${zalatItems[key].title}"
+                             onerror="this.src='../assets/images/nageel-details/Habib-Istanbul-Lush-40mm.jpg'">
+                        <h4>${zalatItems[key].title}</h4>
+                    </a>`;
+            }
+        });
     </script>
 </body>
 </html>
