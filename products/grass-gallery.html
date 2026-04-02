@@ -3,170 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>معرض النجيل الفاخر | HABIB STORE</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <title>معرض النجيل الصناعي | حبيب ستور</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
     <style>
-        :root { --gold: #AF944F; --black: #111; --light-bg: #fdfdfd; --white: #ffffff; --green: #1a5d1a; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Cairo', sans-serif; background: var(--light-bg); color: var(--black); line-height: 1.6; overflow-x: hidden; }
-
-        header { 
-            position: fixed; top: 0; width: 100%; z-index: 1000;
-            background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(0,0,0,0.05); padding: 15px 5%;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .logo { font-family: 'Amiri', serif; font-size: 28px; color: var(--black); text-decoration: none; font-weight: 700; }
-
-        .hero { 
-            height: 35vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
-            text-align: center; background: var(--white); margin-top: 60px; padding: 20px;
-        }
-        .hero h1 { font-family: 'Amiri', serif; font-size: clamp(32px, 7vw, 45px); color: var(--black); }
-        .hero p { color: var(--gold); letter-spacing: 2px; font-size: 12px; font-weight: 700; margin-top: 10px; }
-
-        .container { max-width: 1400px; margin: auto; padding: 40px 5%; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 35px; }
-
-        .product-card { 
-            background: var(--white); border: 1px solid #eee; transition: 0.4s ease-in-out;
-            position: relative; overflow: hidden; display: flex; flex-direction: column; border-radius: 8px;
-        }
-        .product-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,0.08); border-color: var(--gold); }
+        :root { --royal-green: #1a3c34; --gold: #c5a059; --light-bg: #f4f7f6; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--light-bg); margin: 0; padding: 0; color: #333; overflow-x: hidden; }
+        /* Smooth Scroll */
+        html { scroll-behavior: smooth; }
         
-        .img-box { 
-            width: 100%; aspect-ratio: 1/1; overflow: hidden; background: #fff; 
-            display: flex; align-items: center; justify-content: center; padding: 15px; 
-        }
-        .img-box img { max-width: 100%; max-height: 100%; object-fit: contain; transition: 0.5s ease; }
-        .product-card:hover .img-box img { transform: scale(1.08); }
-        
-        .info { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; text-align: right; }
-        .info h3 { font-size: 19px; margin-bottom: 15px; font-family: 'Amiri', serif; min-height: 50px; color: var(--green); font-weight: 800; }
-        .info p { font-size: 13px; color: #666; margin-bottom: 20px; border-right: 2px solid var(--gold); padding-right: 10px; }
-        
-        .btn-view { 
-            text-align: center; background: var(--black); color: var(--white); 
-            padding: 16px; text-decoration: none; font-size: 14px; font-weight: 700; transition: 0.3s;
-            margin-top: auto; border: 1px solid var(--black); border-radius: 4px;
-        }
-        .btn-view:hover { background: var(--gold); border-color: var(--gold); }
+        .hero-section { position: relative; width: 100%; height: 500px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .hero-section img { position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 1; filter: brightness(0.7); }
+        .hero-content { position: relative; z-index: 2; text-align: center; color: white; padding: 20px; }
+        .hero-content h1 { font-size: 3rem; font-weight: 300; margin-bottom: 10px; letter-spacing: 2px; }
+        .hero-content p { font-size: 1.2rem; font-weight: 300; opacity: 0.9; }
 
-        footer { text-align: center; padding: 50px; color: #999; font-size: 12px; background: #fff; border-top: 1px solid #eee; margin-top: 40px; }
+        .container { max-width: 1300px; margin: 60px auto; padding: 0 20px; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.2rem; color: var(--royal-green); font-weight: 400; position: relative; display: inline-block; padding-bottom: 15px; }
+        .section-title h2::after { content: ''; position: absolute; bottom: 0; left: 25%; width: 50%; height: 2px; background: var(--gold); }
+
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; }
+        .product-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: all 0.4s ease; text-decoration: none; border: 1px solid rgba(0,0,0,0.03); }
+        .product-card:hover { transform: translateY(-12px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-color: var(--gold); }
+        .image-holder { width: 100%; height: 280px; overflow: hidden; position: relative; }
+        .image-holder img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+        .product-card:hover .image-holder img { transform: scale(1.1); }
+        
+        .card-info { padding: 25px; text-align: center; }
+        .card-info span { color: var(--gold); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 8px; }
+        .card-info h3 { margin: 0; font-size: 1.25rem; color: var(--royal-green); font-weight: 500; }
+        .card-info p { color: #888; font-size: 0.95rem; margin-top: 10px; font-style: italic; }
+
+        .whatsapp-expert { position: fixed; bottom: 30px; left: 30px; background: #25d366; color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3); z-index: 1000; font-weight: 600; display: flex; align-items: center; gap: 12px; transition: 0.3s; }
+        .whatsapp-expert:hover { transform: scale(1.05); background: #20ba5a; }
     </style>
 </head>
 <body>
 
-<header>
-    <a href="../index.html" class="logo">HABIB STORE</a>
-    <div style="font-size: 10px; font-weight: 700; color: var(--gold); border: 1px solid var(--gold); padding: 5px 12px; border-radius: 2px;">PREMIUM EXTERIOR</div>
-</header>
+    <section class="hero-section">
+        <img src="assets/images/nageel/modern-landscape-design.jpg" alt="Habib Store Modern Landscape">
+        <div class="hero-content">
+            <h1>حبيب ستور</h1>
+            <p>حيث تلتقي الفخامة الهندسيّة بسحر الطبيعة المستدامة</p>
+        </div>
+    </section>
 
-<section class="hero" data-aos="fade-down">
-    <h1>مجموعة النجيل الطبيعي الفاخر</h1>
-    <p>THE ULTIMATE LANDSCAPE EXPERIENCE | BY SHARKS FOR SHARKS</p>
-</section>
-
-<div class="container">
-    <div class="grid">
-        
-        <div class="product-card" data-aos="fade-up">
-            <div class="img-box"><img src="../assets/images/nageel/grass-50mm-natural.jpeg" alt="نجيل 50 ملم"></div>
-            <div class="info">
-                <h3>نجيل سوبر رويال - 50 ملم (كثافة القصور)</h3>
-                <p>أعلى كثافة نجيل تركي متوفرة، ارتفاع 50 ملم لإعطاء مظهر وملمس العشب الطبيعي الفاخر.</p>
-                <a href="product.html?id=1" class="btn-view">المواصفات والحاسبة الذكية</a>
-            </div>
+    <div class="container">
+        <div class="section-title">
+            <h2>مجموعة النجيل الفاخرة</h2>
         </div>
 
-        <div class="product-card" data-aos="fade-up" data-aos-delay="50">
-            <div class="img-box"><img src="../assets/images/nageel/grass-40mm-natural-28.jpeg" alt="نجيل 40 ملم 28 غرزة"></div>
-            <div class="info">
-                <h3>نجيل أسطوري 40 ملم (28 غرزة فائقة)</h3>
-                <p>يتميز بكثافة غرز عالية جداً (28 غرزة) مما يجعله الأكثر تحملاً واستقامة في فئة الـ 40 ملم.</p>
-                <a href="product.html?id=2" class="btn-view">المواصفات والحاسبة الذكية</a>
-            </div>
-        </div>
+        <div class="product-grid">
+            <a href="nageel-details.html?id=11" class="product-card">
+                <div class="image-holder">
+                    <img src="assets/images/nageel/grass-11mm-standard-10.png" alt="Habib Practical Green 11mm">
+                </div>
+                <div class="card-info">
+                    <span>Standard Collection</span>
+                    <h3>Habib Practical Green (11mm)</h3>
+                    <p>حلول عملية بلمسة هندسية أنيقة</p>
+                </div>
+            </a>
 
-        <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="img-box"><img src="../assets/images/nageel/grass-40mm-natural-24.jpeg" alt="نجيل 40 ملم 24 غرزة"></div>
-            <div class="info">
-                <h3>نجيل ملكي 40 ملم (24 غرزة كثيفة)</h3>
-                <p>التوازن المثالي بين الكثافة والسعر، 40 ملم مع 24 غرزة لمظهر طبيعي جذاب للفلل.</p>
-                <a href="product.html?id=3" class="btn-view">المواصفات والحاسبة الذكية</a>
-            </div>
-        </div><div class="product-card" data-aos="fade-up">
-            <div class="img-box"><img src="../assets/images/nageel/grass-40mm-natural.jpeg" alt="نجيل 40 ملم"></div>
-            <div class="info">
-                <h3>نجيل فندقي 40 ملم (المظهر الطبيعي)</h3>
-                <p>ارتفاع 40 ملم كلاسيكي، يعطي مظهر العشب الفندقي المرتب والمثالي للحدائق المنزلية.</p>
-                <a href="product.html?id=4" class="btn-view">المواصفات والحاسبة الذكية</a>
-            </div>
-        </div>
+            <a href="nageel-details.html?id=20" class="product-card">
+                <div class="image-holder">
+                    <img src="assets/images/nageel/grass-20mm-standard-12.jpeg" alt="Habib Standard Turkish 20mm">
+                </div>
+                <div class="card-info">
+                    <span>Turkish Quality</span>
+                    <h3>Habib Standard Turkish (20mm)</h3>
+                    <p>توازن مثالي بين الكثافة والنعومة</p>
+                </div>
+            </a>
 
-        <div class="product-card" data-aos="fade-up" data-aos-delay="50">
-            <div class="img-box"><img src="../assets/images/nageel/grass-40mm-natural-12.jpeg" alt="نجيل 40 ملم 12 غرزة"></div>
-            <div class="info">
-                <h3>نجيل 40 ملم - الفئة العملية للمساحات</h3>
-                <p>خيار اقتصادي وعملي بارتفاع 40 ملم و12 غرزة، مناسب جداً للمساحات الواسعة.</p>
-                <a href="product.html?id=5" class="btn-view">المواصفات والحاسبة الذكية</a>
-            </div>
-        </div>
+            <a href="nageel-details.html?id=30-16" class="product-card">
+                <div class="image-holder">
+                    <img src="assets/images/nageel/grass-30mm-natural-16.jpeg" alt="Habib Antalya Breeze 30mm">
+                </div>
+                <div class="card-info">
+                    <span>Natural Look</span>
+                    <h3>Habib Antalya Breeze (30mm-16)</h3>
+                    <p>إطلالة طبيعية تعكس هدوء الطبيعة</p>
+                </div>
+            </a>
 
-        <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="img-box"><img src="../assets/images/nageel/grass-30mm-natural-24.jpeg" alt="نجيل 30 ملم 24 غرزة"></div>
-            <div class="info">
-                <h3>نجيل إليت 30 ملم (24 غرزة بريميوم)</h3>
-                <p>ارتفاع 30 ملم مع كثافة غرز عالية (24 غرزة) يجعله ناعماً جداً ومثالي لغرف الأطفال والروف.</p>
-                <a href="product.html?id=6" class="btn-view">المواصفات والحاسبة الذكية</a>
-            </div>
-        </div>
+            <a href="nageel-details.html?id=30-18" class="product-card">
+                <div class="image-holder">
+                    <img src="assets/images/nageel/grass-30mm-natural-18.jpeg" alt="Habib Natural Soft 30mm">
+                </div>
+                <div class="card-info">
+                    <span>Luxury Soft</span>
+                    <h3>Habib Natural Soft (30mm-18)</h3>
+                    <p>كثافة استثنائية لمساحاتكم الخاصة</p>
+                </div>
+            </a>
 
-        <div class="product-card" data-aos="fade-up">
-            <div class="img-box"><img src="../assets/images/nageel/grass-30mm-natural-18.jpeg" alt="نجيل 30 ملم 18 غرزة"></div>
-            <div class="info">
-                <h3>نجيل 30 ملم بريميوم (المظهر المتوازن)</h3>
-                <p>التوازن الأمثل بين الارتفاع والكثافة (18 غرزة)، يعطي حديقتك مظهراً متجدداً دائماً.</p>
-                <a href="product.html?id=7" class="btn-view">المواصفات والحاسبة الذكية</a>
-            </div>
-        </div>
+            <a href="nageel-details.html?id=30-24" class="product-card">
+                <div class="image-holder">
+                    <img src="assets/images/nageel/grass-30mm-natural-24.jpeg" alt="Habib Premium Turf 30mm">
+                </div>
+                <div class="card-info">
+                    <span>High Density</span>
+                    <h3>Habib Premium Turf (30mm-24)</h3>
+                    <p>اختيار النخبة للمسطحات الخضراء</p>
+                </div>
+            </a>
 
-        <div class="product-card" data-aos="fade-up" data-aos-delay="50">
-            <div class="img-box"><img src="../assets/images/nageel/grass-30mm-natural-16.jpeg" alt="نجيل 30 ملم 16 غرزة"></div>
-            <div class="info">
-                <h3>نجيل 30 ملم الطبيعي (الناعم)</h3>
-                <p>نجيل 30 ملم بـ 16 غرزة، ناعم جداً ومريح للعين والجلوس، مثالي للممرات المظللة.</p>
-                <a href="product.html?id=8" class="btn-view">المواصفات والحاسبة الذكية</a>
-            </div>
-        </div>
+            <a href="nageel-details.html?id=40-12" class="product-card">
+                <div class="image-holder">
+                    <img src="assets/images/nageel/grass-40mm-natural-12.jpeg" alt="Habib Istanbul Lush 40mm">
+                </div>
+                <div class="card-info">
+                    <span>Elite Design</span>
+                    <h3>Habib Istanbul Lush (40mm-12)</h3>
+                    <p>فخامة ملكية تليق بقصوركم</p>
+                </div>
+            </a><a href="nageel-details.html?id=40-24" class="product-card">
+                <div class="image-holder">
+                    <img src="assets/images/nageel/grass-40mm-natural-24.jpeg" alt="Habib Bosphorus Green 40mm">
+                </div>
+                <div class="card-info">
+                    <span>Royal Collection</span>
+                    <h3>Habib Bosphorus Green (40mm-24)</h3>
+                    <p>فخامة ملكية تليق بقصوركم</p>
+                </div>
+            </a>
 
-        <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="img-box"><img src="../assets/images/nageel/grass-20mm-standard-12.jpeg" alt="نجيل 20 ملم"></div>
-            <div class="info">
-                <h3>نجيل الفئة الاقتصادية (20 ملم ستاندرد)</h3>
-                <p>الحل العملي والاقتصادي للمداخل والممرات الخارجية، سهل التنظيف وشديد التحمل.</p>
-                <a href="product.html?id=9" class="btn-view">المواصفات والحاسبة الذكية</a>
-            </div>
-        </div>
+            <a href="nageel-details.html?id=40-28" class="product-card">
+                <div class="image-holder">
+                    <img src="assets/images/nageel/grass-40mm-natural-28.jpeg" alt="Habib Legendary Silk 40mm">
+                </div>
+                <div class="card-info">
+                    <span>Supreme Quality</span>
+                    <h3>Habib Legendary Silk (40mm-28)</h3>
+                    <p>نعومة الحرير بمتانة استثنائية</p>
+                </div>
+            </a>
 
-    </div> </div> <footer>
-    <p>&copy; 2026 HABIB STORE | BUILT BY SHARKS FOR SHARKS 🦈</p>
-</footer>
+            <a href="nageel-details.html?id=40-natural" class="product-card">
+                <div class="image-holder">
+                    <img src="assets/images/nageel/grass-40mm-natural.jpeg" alt="Habib Nature Touch 40mm">
+                </div>
+                <div class="card-info">
+                    <span>Nature Elite</span>
+                    <h3>Habib Nature Touch (40mm)</h3>
+                    <p>لمسة الطبيعة الساحرة في مساحتكم</p>
+                </div>
+            </a>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
-    window.addEventListener('load', function() {
-        AOS.init({ 
-            duration: 1000, 
-            once: true,
-            offset: 100
-        });
-    });
-</script>
+            <a href="nageel-details.html?id=50" class="product-card">
+                <div class="image-holder">
+                    <img src="assets/images/nageel/grass-50mm-natural.jpeg" alt="Habib Anatolian Nature 50mm">
+                </div>
+                <div class="card-info">
+                    <span>Imperial Grade</span>
+                    <h3>Habib Anatolian Nature (50mm)</h3>
+                    <p>أرقى أنواع النجيل في العالم</p>
+                </div>
+            </a>
+
+        </div> </div> <a href="https://wa.me/201016961497" class="whatsapp-expert">
+        <i class="fab fa-whatsapp"></i>
+        <span>تواصل مع فريق الخبراء</span>
+    </a>
+
+    <footer style="text-align: center; padding: 40px; color: #aaa; font-size: 0.8rem; background: #fff; margin-top: 50px;">
+        <p>&copy; 2026 حبيب ستور للاندسكيب - جميع الحقوق محفوظة لنخبة العملاء</p>
+    </footer>
 
 </body>
 </html>
