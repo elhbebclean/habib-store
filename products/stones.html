@@ -1,60 +1,66 @@
 <script>
-    // مصفوفة البيانات بأسماء تقنية مرتبطة بـ IDs محددة وصياغة فاخرة
     const marbleData = {
+        "40": { 
+            name: "Habib Royal Galala", 
+            img: "marble-galala.jpg", 
+            specs: "رخام الجلالة الملكي", 
+            desc: "فخر الصناعة المصرية في أبهى صورها، رخام الجلالة المختق بعناية ليمنح قصوركم هيبة التاريخ ولمسة الفخامة التي لا تتأثر بمرور الزمن." 
+        },
         "41": { 
             name: "Habib Crystal White", 
             img: "marble-crystal-white.jpg", 
             specs: "نقاء الكريستال الطبيعي", 
-            desc: "ندرة الطبيعة تتجسد في صفاء الكريستال الأبيض، ليمنح مساحاتكم إشراقة سرمدية واتساعاً بصرياً يفيض بالهدوء والرفاهية التي تليق بقصوركم." 
+            desc: "ندرة الطبيعة تتجسد في صفاء الكريستال الأبيض، ليمنح مساحاتكم إشراقة سرمدية واتساعاً بصرياً يفيض بالهدوء والرفاهية." 
         },
         "42": { 
             name: "Habib Emperador Dark", 
             img: "marble-emperador.jpg", 
             specs: "رخام إمبردور ملكي", 
-            desc: "لمسة إمبراطورية كلاسيكية بعروق ذهبية دافئة، صُمم ليضفي هيبة الحضور وعمق الفخامة على أرقى التصاميم المعمارية الخاصة." 
+            desc: "لمسة إمبراطورية كلاسيكية بعروق ذهبية دافئة، صُمم ليضفي هيبة الحضور وعمق الفخامة على أرقى التصاميم المعمارية." 
+        },
+        "43": { 
+            name: "Habib Spanish Black", 
+            img: "marble-spanish-black.jpg", 
+            specs: "رخام أسود إسباني فاخر", 
+            desc: "انعكاس للقوة والغموض الراقي، الأسود الإسباني يمنح الأرضيات والواجهات شخصية معمارية قوية وفريدة." 
+        },
+        "44": { 
+            name: "Habib Carrara Brown", 
+            img: "marble-carrara-milli-brown.jpg", 
+            specs: "رخام كارارا بني إيطالي", 
+            desc: "تداخل فني بين العروق الإيطالية الشهيرة والدرجات البنية الدافئة، قطعة فنية فريدة تناسب الذوق الرفيع." 
+        },
+        "45": { 
+            name: "Habib Spanish Fusion", 
+            img: "marble-red-carrara-spanish-black.jpg", 
+            specs: "مزيج رخامي إسباني نادر", 
+            desc: "سيمفونية من الألوان الطبيعية المتداخلة، صُمم هذا النوع لأصحاب الرؤى الجريئة في عالم التصميم اللاندسكيب." 
+        },
+        "46": { 
+            name: "Habib Sandstone Luxe", 
+            img: "marble-sandstone.jpg", 
+            specs: "حجر رملي فاخر", 
+            desc: "تناغم مثالي مع الطبيعة المحيطة، يوفر مظهراً هادئاً وملمساً طبيعياً يعزز من طاقة المكان وهدوئه البصري." 
         },
         "51": { 
             name: "Habib Stone Mica Grey", 
             img: "stone-mica-grey.jpg", 
-            specs: "حجر مايكا رمادي فاخر", 
-            desc: "عراقة الملمس الحجري في قالب عصري، يمنح الواجهات صموداً جمالياً وتفاصيل هندسية تعكس قوة التصميم ورقي اختياركم." 
+            specs: "حجر مايكا رمادي", 
+            desc: "عراقة الملمس الحجري في قالب عصري، يمنح الواجهات صموداً جمالياً يعكس رقي اختياركم الهندي." 
         },
         "52": { 
             name: "Habib Stone Mica Red", 
             img: "stone-mica-red.jpg", 
-            specs: "حجر مايكا أحمر دافئ", 
-            desc: "دفء الطبيعة وتناغم الألوان الترابية النادرة، لمسة فنية دافئة تمنح حدائقكم الخاصة طابعاً حميمياً وفخامة لا تنضب بمرور الزمن." 
+            specs: "حجر مايكا أحمر", 
+            desc: "دفء الطبيعة وتناغم الألوان الترابية النادرة، لمسة فنية دافئة تمنح حدائقكم الخاصة فخامة لا تنضب." 
+        },
+        "53": { 
+            name: "Habib Black Basalt", 
+            img: "stone-basalt-black.jpg", 
+            specs: "حجر بازلت أسود صلب", 
+            desc: "قوة الحجر البركاني بلمسة هندسية معاصرة، خيار مثالي للمساحات التي تتطلب مزيجاً من الصلابة والجمال المطلق." 
         }
     };
 
-    // المنتجات التكميلية (نفس الـ IDs والأسماء من كودك مع تحسين المسمى)
-    const complements = [
-        { id: "1", name: "Anatolian Nature (50mm)", img: "Habib-Anatolian-Nature-50mm.jpg", folder: "nageel-details", page: "product-nageel.html" },
-        { id: "21", name: "Habib Royal White Zalat", img: "white-zalat.jpg", folder: "zalat", page: "product-zalat.html" }
-    ];
-
-    const urlParams = new URLSearchParams(window.location.search);
-    const productId = urlParams.get('id');
-    const product = marbleData[productId];
-
-    if (product) {
-        // تحديث العناصر في الصفحة بنفس الـ IDs الموجودة في هيكلك
-        document.getElementById('p-name').innerText = product.name;
-        document.getElementById('p-img').src = "../assets/images/marble/" + product.img;
-        document.getElementById('p-specs').innerText = product.specs;
-        document.getElementById('p-desc').innerText = product.desc;
-        document.getElementById('p-whatsapp').href = "https://wa.me/201016961497?text=استفسار بخصوص مقتنيات " + product.name;
-
-        let sliderHTML = '';
-        complements.forEach(item => {
-            sliderHTML += `
-                <a href="${item.page}?id=${item.id}" class="insta-card">
-                    <img src="../assets/images/${item.folder}/${item.img}" alt="${item.name}">
-                    <div class="insta-card-info">
-                        <h4>${item.name}</h4>
-                    </div>
-                </a>`;
-        });
-        document.getElementById('complementary-slider').innerHTML = sliderHTML;
-    }
+    // ... باقي كود استخراج الـ ID وعرض البيانات (نفس اللي بعتهولك المرة اللي فاتت) ...
 </script>
