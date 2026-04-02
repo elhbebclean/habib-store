@@ -3,107 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تفاصيل الزلط الفاخر | حبيب ستور</title>
+    <title>تفاصيل الأحجار الفاخرة | حبيب ستور</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f9f9f9; margin: 0; padding: 0; }
-        .main-p-container { max-width: 900px; margin: 40px auto; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); text-align: center; }
+        :root { --royal-green: #1a3c34; --gold: #c5a059; --soft-gray: #f8fafa; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--soft-gray); margin: 0; color: #333; line-height: 1.8; }
         
-        /* الصورة الرئيسية للمنتج */
-        #productImage { width: 100%; max-height: 500px; object-fit: cover; border-radius: 15px; border: 1px solid #eee; }
-        .p-title { font-size: 2.5rem; color: #333; margin: 25px 0 15px 0; }
-        .p-desc { font-size: 1.2rem; color: #666; margin-bottom: 30px; line-height: 1.8; }
+        .product-wrapper { max-width: 1200px; margin: 80px auto; padding: 0 20px; display: flex; flex-wrap: wrap; gap: 60px; align-items: flex-start; }
         
-        /* زرار الواتساب الرسمي */
-        .btn-wa-order { display: inline-block; background: #25d366; color: white; padding: 15px 35px; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 1.2rem; transition: 0.3s; }
-        .btn-wa-order:hover { background: #1ebe57; transform: scale(1.05); }
+        /* قسم الصورة الراقية */
+        .image-section { flex: 1.1; min-width: 350px; position: sticky; top: 40px; }
+        .main-display { width: 100%; border-radius: 25px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.1); background: #fff; border: 1px solid rgba(0,0,0,0.05); }
+        .main-display img { width: 100%; display: block; transition: transform 0.6s ease; }
+        .main-display:hover img { transform: scale(1.05); }
 
-        /* سكرول المنتجات ذات الصلة (Horizontal Scroll) */
-        .rel-section-title { text-align: center; margin-top: 60px; color: #444; }
-        .rel-scroll-box { 
-            display: flex; 
-            overflow-x: auto; 
-            gap: 20px; 
-            padding: 20px; 
-            scrollbar-width: none; /* إخفاء الشريط */
-            -ms-overflow-style: none;
-            scroll-snap-type: x mandatory;
-        }
-        .rel-scroll-box::-webkit-scrollbar { display: none; }
+        /* محتوى الوصف الهادئ للمليارديرات */
+        .content-section { flex: 1; min-width: 320px; padding-top: 20px; }
+        .brand-tag { color: var(--gold); font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 15px; }
+        .content-section h1 { font-size: 2.5rem; color: var(--royal-green); font-weight: 300; margin: 0 0 25px 0; line-height: 1.3; }
+        .luxury-line { width: 60px; height: 3px; background: var(--gold); margin-bottom: 35px; }
         
-        .rel-item-card { 
-            min-width: 220px; 
-            background: white; 
-            border-radius: 12px; 
-            padding: 15px; 
-            text-align: center; 
-            text-decoration: none; 
-            color: inherit; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-            scroll-snap-align: center;
-        }
-        .rel-item-card img { width: 100%; height: 140px; object-fit: cover; border-radius: 8px; }
-        .rel-item-card h4 { margin: 12px 0 0 0; font-size: 1rem; color: #333; }
+        .description-text { font-size: 1.15rem; color: #555; margin-bottom: 45px; text-align: justify; font-weight: 300; }
+        .features-list { list-style: none; padding: 0; margin-bottom: 50px; }
+        .features-list li { margin-bottom: 18px; display: flex; align-items: center; gap: 15px; color: var(--royal-green); font-weight: 500; font-size: 1.05rem; }
+        .features-list li i { color: var(--gold); font-size: 1.3rem; }
+
+        .cta-box { display: flex; gap: 20px; align-items: center; margin-top: 60px; }
+        .back-gallery { text-decoration: none; color: #999; font-size: 0.95rem; transition: 0.3s; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid transparent; }
+        .back-gallery:hover { color: var(--royal-green); border-color: var(--royal-green); }
+
+        /* زرار فريق الخبراء (تواصل هندسي) */
+        .expert-btn { position: fixed; bottom: 40px; left: 40px; background: #25d366; color: white; padding: 18px 35px; border-radius: 60px; text-decoration: none; box-shadow: 0 15px 35px rgba(37, 211, 102, 0.25); z-index: 1000; font-weight: 600; display: flex; align-items: center; gap: 15px; transition: 0.4s; }
+        .expert-btn:hover { transform: translateY(-5px); background: #1ebe57; }
+
+        @media (max-width: 768px) { .content-section h1 { font-size: 2.1rem; } .product-wrapper { margin: 40px auto; } }
     </style>
 </head>
 <body>
 
-    <div class="main-p-container">
-        <img id="productImage" src="" alt="Habib Zalat Details">
-        <h1 id="productTitle" class="p-title">جاري التحميل...</h1>
-        <p class="p-desc">أجود أنواع الزلط والأحجار الطبيعية من حبيب ستور، نوفر لكم أفضل الخامات لتزيين اللاندسكيب والحدائق بأعلى جودة وأفضل سعر في مصر.</p>
-        <a href="https://wa.me/201016961497" class="btn-wa-order">
-            <i class="fab fa-whatsapp"></i> اطلب الآن عبر الواتساب
-        </a>
-    </div>
-
-    <h3 class="rel-section-title">أنواع زلط أخرى قد تهمك</h3>
-    <div class="rel-scroll-box" id="relatedZalatItems">
+    <div class="product-wrapper">
+        <div class="image-section">
+            <div class="main-display">
+                <img id="productImage" src="" alt="Habib Luxury Stones" onerror="this.src='../assets/images/zalat/zalat-black-royal.jpg'">
+            </div>
         </div>
+
+        <div class="content-section">
+            <span class="brand-tag">Elite Stones Collection</span>
+            <h1 id="productTitle">جاري تحميل التفاصيل...</h1>
+            <div class="luxury-line"></div>
+            
+            <p class="description-text" id="productDescription">
+                لأننا في "حبيب ستور" ندرك أن التفاصيل الدقيقة هي ما يصنع الفارق في العقارات والمشاريع الفاخرة، نقدم لكم هذا التكوين الطبيعي النادر. تم اختيار هذه الأحجار بعناية فائقة لتتكامل مع رؤيتكم الهندسية، مانحةً مساراتكم وواجهاتكم لمسة من الهدوء البصري والفخامة التي تليق بمكانتكم، وتضمن استدامة جمالية تتوارثها الأجيال.
+            </p>
+
+            <ul class="features-list">
+                <li><i class="fas fa-check-double"></i> انتقاء يدوي دقيق من أنقى المصادر الطبيعية</li>
+                <li><i class="fas fa-check-double"></i> ثبات لوني يقاوم العوامل الجوية لسنوات</li>
+                <li><i class="fas fa-check-double"></i> أبعاد متناسقة تخدم أرقى التصميمات الهندسية</li>
+                <li><i class="fas fa-check-double"></i> لمسة طبيعية تعزز من طاقة المكان وهدوئه</li>
+            </ul>
+
+            <div class="cta-box">
+                <a href="white-marble.html" class="back-gallery">
+                    <i class="fas fa-arrow-right"></i> العودة إلى معرض الأحجار
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <a href="https://wa.me/201016961497" class="expert-btn">
+        <i class="fab fa-whatsapp"></i>
+        <span>تواصل مع استشاري اللاندسكيب</span>
+    </a>
+
     <script>
-        // مصفوفة الزلط الرسمية المربوطة بفولدر assets/images/zalat/
-        const zalatItems = {
-            'zalat-asyuti': { title: 'Zalat Asyuti V2', img: 'zalat-asyuti-v2.jpeg' },
-            'zalat-black-royal': { title: 'Zalat Black Royal', img: 'zalat-black-royal.jpg' },
-            'zalat-black-volcanic': { title: 'Zalat Black Volcanic', img: 'zalat-black-volcanic.jpeg' },
-            'zalat-white-v1': { title: 'White Marble V1', img: 'zalat-white-marble-v1.jpeg' },
-            'zalat-white-v2': { title: 'White Marble V2', img: 'zalat-white-marble-v2.jpeg' },
-            'zalat-light-gray': { title: 'Zalat Light Gray', img: 'zalat-light-gray.jpg' },
-            'zalat-mix-v1': { title: 'Zalat Mix Colors V1', img: 'zalat-mix-colors.jpeg' },
-            'zalat-mix-v2': { title: 'Zalat Mix Colors V2', img: 'zalat-mix-colors_.jpg' },
-            'zalat-red-volcanic': { title: 'Red Volcanic Stone', img: 'zalat-red-volcanic.jpeg' },
-            'white-zalat': { title: 'Pure White Zalat', img: 'white-zalat.jpg' },
-            'zalat-luxury': { title: 'Luxury Garden Ideas', img: 'zalat-garden-ideas-luxury.jpg' }
+        // مصفوفة الربط الذكي: تربط الـ ID ببيانات الزلط والأحجار
+        const zalatData = {
+            'white-zalat': { title: 'Habib White Zalat', img: 'white-zalat.jpg' },
+            'asyuti-v2': { title: 'Habib Asyuti Zalat V2', img: 'zalat-asyuti-v2.jpeg' },
+            'black-royal': { title: 'Habib Black Royal Zalat', img: 'zalat-black-royal.jpg' },
+            'black-volcanic': { title: 'Habib Black Volcanic Zalat', img: 'zalat-black-volcanic.jpeg' },
+            'light-gray': { title: 'Habib Light Gray Zalat', img: 'zalat-light-gray.jpg' },
+            'mix-colors': { title: 'Habib Mix Colors Zalat', img: 'zalat-mix-colors.jpeg' },
+            'mix-colors-2': { title: 'Habib Elite Mix Colors', img: 'zalat-mix-colors_.jpg' },
+            'red-volcanic': { title: 'Habib Red Volcanic Zalat', img: 'zalat-red-volcanic.jpeg' },
+            'white-marble-v1': { title: 'Habib White Marble Zalat V1', img: 'zalat-white-marble-v1.jpeg' },
+            'white-marble-v2': { title: 'Habib White Marble Zalat V2', img: 'zalat-white-marble-v2.jpeg' },
+            'mica-grey': { title: 'Habib Stone Mica Grey', img: 'stone-mica-grey.jpeg' },
+            'mica-red': { title: 'Habib Stone Mica Red', img: 'stone-mica-red.jpeg' }
         };
 
         const urlParams = new URLSearchParams(window.location.search);
         const productId = urlParams.get('id');
-        const currentProduct = zalatItems[productId];
+        const product = zalatData[productId];
 
-        const mainImg = document.getElementById('productImage');
-        const mainTitle = document.getElementById('productTitle');
+        const displayImg = document.getElementById('productImage');
+        const displayTitle = document.getElementById('productTitle');
 
-        // الربط بالصورة الرئيسية من فولدر zalat
-        if (currentProduct) {
-            mainTitle.innerText = currentProduct.title;
-            mainImg.src = '../assets/images/zalat/' + currentProduct.img;
+        const fallbackImg = '../assets/images/zalat/zalat-black-royal.jpg';
+
+        if (product) {
+            displayTitle.innerText = product.title;
+            displayImg.src = '../assets/images/zalat/' + product.img;
         } else {
-            // صورة احتياطية (Fallback) لو الـ ID غلط
-            mainTitle.innerText = 'Habib Zalat Collection';
-            mainImg.src = '../assets/images/nageel-details/Habib-Istanbul-Lush-40mm.jpg';
+            // تفعيل نظام الأمان
+            displayTitle.innerText = 'Habib Premium Stones';
+            displayImg.src = fallbackImg;
         }
-
-        // بناء السكرول العرضي للمنتجات ذات الصلة
-        const relatedDiv = document.getElementById('relatedZalatItems');
-        Object.keys(zalatItems).forEach(key => {
-            if (key !== productId) {
-                relatedDiv.innerHTML += `
-                    <a href="zalat.html?id=${key}" class="rel-item-card">
-                        <img src="../assets/images/zalat/${zalatItems[key].img}" alt="${zalatItems[key].title}">
-                        <h4>${zalatItems[key].title}</h4>
-                    </a>`;
-            }
-        });
     </script>
 </body>
 </html>
