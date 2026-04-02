@@ -3,171 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">Habib Store | اختيار الصفوة</title>
+    <title id="page-title">حبيب ستون | تفاصيل المنتج</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        :root { --main-green: #1a5d1a; --gold: #AF944F; --black: #111; --white: #ffffff; --light-gray: #f8f9fa; }
+        :root { --main-green: #1a5d1a; --gold: #AF944F; --black: #111; --white: #ffffff; --light-gray: #f8f9fa; --text-muted: #666; }
         
-        body { font-family: 'Cairo', sans-serif; background: #f0f2f5; margin: 0; padding: 0; color: #333; overflow-x: hidden; }
+        body { font-family: 'Cairo', sans-serif; background: #f4f6f9; margin: 0; padding: 0; color: #333; line-height: 1.6; }
         
         /* الحاوية الرئيسية */
-        .container { max-width: 950px; margin: 40px auto; background: var(--white); padding: 40px; border-radius: 30px; box-shadow: 0 25px 60px rgba(0,0,0,0.1); border-top: 8px solid var(--main-green); position: relative; }
+        .container { max-width: 1000px; margin: 40px auto; background: var(--white); padding: 40px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); position: relative; border-top: 6px solid var(--main-green); }
         
-        /* العنوان */
-        .product-header { text-align: center; margin-bottom: 30px; }
-        .product-name { font-family: 'Amiri', serif; font-size: clamp(30px, 6vw, 42px); color: var(--main-green); font-weight: 800; margin: 0; line-height: 1.2; }
-        .product-sub { color: var(--gold); font-size: 14px; font-weight: 700; margin-top: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        .product-header { text-align: center; margin-bottom: 35px; }
+        .product-name { font-family: 'Amiri', serif; font-size: clamp(28px, 5vw, 40px); color: var(--main-green); font-weight: 800; margin: 0; }
+        .product-brand { color: var(--gold); font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-top: 10px; display: block; }
 
-        /* عرض الصورة */
-        .img-wrapper { width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.08); border: 1px solid #eee; margin-bottom: 35px; background: #fff; }
-        .product-image { width: 100%; max-height: 550px; object-fit: cover; display: block; transition: 0.5s ease; }
-        .img-wrapper:hover .product-image { transform: scale(1.03); }
+        /* منطقة العرض */
+        .img-wrapper { width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 35px; background: #eee; border: 1px solid #e0e0e0; }
+        .product-image { width: 100%; max-height: 500px; object-fit: cover; display: block; transition: 0.4s ease; }
 
-        /* جدول المواصفات */
-        .spec-table { width: 100%; border-collapse: collapse; margin-bottom: 35px; background: var(--light-gray); border-radius: 15px; overflow: hidden; border: 1px solid #eee; }
-        .spec-table td { padding: 18px 25px; border-bottom: 1px solid #eee; font-size: 19px; }
-        .spec-label { font-weight: bold; color: var(--main-green); background: #f0f4f0; width: 35%; }
+        /* تفاصيل البيانات */
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 35px; }
+        .info-item { background: var(--light-gray); padding: 20px; border-radius: 10px; border-right: 4px solid var(--gold); }
+        .info-label { font-size: 13px; color: var(--text-muted); font-weight: 700; display: block; margin-bottom: 5px; }
+        .info-value { font-size: 18px; color: var(--black); font-weight: 700; }
 
-        /* الوصف البياع */
-        .description-box { position: relative; padding: 30px; background: #fffdf9; border-radius: 20px; border: 1px dashed var(--gold); margin-bottom: 40px; }
-        .description-box i { position: absolute; top: -15px; right: 20px; background: var(--gold); color: white; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; }
-        .description-text { line-height: 2.2; font-size: 21px; color: #444; text-align: justify; font-family: 'Amiri', serif; margin: 0; }
+        /* الوصف */
+        .description-section { margin-bottom: 40px; padding: 25px; background: #fffdf9; border-radius: 12px; border: 1px solid #f1e6cc; }
+        .description-text { font-size: 19px; color: #444; text-align: justify; font-family: 'Amiri', serif; line-height: 2; margin: 0; }
 
-        /* زر الواتساب */
-        .whatsapp-btn { display: flex; align-items: center; justify-content: center; gap: 15px; background: #25D366; color: white; padding: 22px; text-decoration: none; border-radius: 50px; font-size: 24px; font-weight: 800; box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3); transition: 0.4s; }
-        .whatsapp-btn:hover { background: #128C7E; transform: translateY(-5px); }
+        /* أزرار التواصل */
+        .action-area { display: flex; flex-direction: column; gap: 15px; }
+        .btn { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 20px; text-decoration: none; border-radius: 10px; font-size: 20px; font-weight: 700; transition: 0.3s; cursor: pointer; }
+        .btn-whatsapp { background: #25D366; color: white; box-shadow: 0 8px 20px rgba(37, 211, 102, 0.2); }
+        .btn-whatsapp:hover { background: #128C7E; transform: translateY(-3px); }
 
-        /* المقترحات */
-        .related-section { margin-top: 60px; border-top: 2px solid #eee; padding-top: 40px; }
-        .related-title { font-family: 'Amiri', serif; font-size: 28px; color: var(--main-green); margin-bottom: 30px; text-align: right; }
+        /* المنتجات المقترحة */
+        .related-section { margin-top: 60px; border-top: 1px solid #eee; padding-top: 40px; }
+        .related-title { font-family: 'Amiri', serif; font-size: 26px; color: var(--main-green); margin-bottom: 25px; text-align: right; }
         .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-        .related-card { text-decoration: none; color: inherit; background: white; border: 1px solid #eee; border-radius: 15px; overflow: hidden; transition: 0.3s; display: flex; flex-direction: column; text-align: center; }
-        .related-card:hover { transform: translateY(-7px); border-color: var(--gold); }
+        .related-card { text-decoration: none; color: inherit; background: white; border: 1px solid #eee; border-radius: 12px; overflow: hidden; transition: 0.3s; display: flex; flex-direction: column; }
+        .related-card:hover { transform: translateY(-5px); border-color: var(--gold); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
         .related-card img { width: 100%; height: 150px; object-fit: cover; }
-        .related-card-info { padding: 15px; }
+        .related-body { padding: 15px; text-align: center; }
+        .related-body h4 { font-size: 15px; margin: 0 0 10px; font-weight: 700; }
+        .related-link { color: var(--gold); font-size: 13px; font-weight: bold; }
 
-        .cta-gallery-btn { display: inline-block; padding: 18px 45px; background: var(--black); color: white; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 18px; transition: 0.3s; margin-top: 40px; }
+        .btn-gallery { display: inline-block; padding: 15px 40px; background: var(--black); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; margin-top: 30px; transition: 0.3s; }
+        .btn-gallery:hover { background: var(--gold); }
 
-        /* رسالة الخطأ (لمنع الصفحة البيضاء) */
-        #error-content { display: none; text-align: center; padding: 100px 20px; }
+        #error-view { display: none; text-align: center; padding: 100px 20px; }
 
-        @media (max-width: 600px) { .related-grid { grid-template-columns: 1fr; } .container { padding: 20px; margin: 20px auto; } }
+        @media (max-width: 600px) { .info-grid { grid-template-columns: 1fr; } .container { padding: 20px; } }
     </style>
 </head>
 <body>
 
-<div id="main-content" class="container" style="display:none;">
+<div id="product-view" class="container" style="display:none;">
     <div class="product-header">
-        <h1 id="p-name" class="product-name">جاري تحميل الفخامة...</h1>
-        <p class="product-sub">HABIB STONE - اختيار الصفوة</p>
+        <h1 id="p-name" class="product-name">جاري تحميل البيانات...</h1>
+        <span class="product-brand">Habib Stone | Premium Selection</span>
     </div>
-    
+
     <div class="img-wrapper">
         <img id="p-img" src="" alt="" class="product-image" onerror="this.src='../assets/images/logo.png'">
     </div>
-    
-    <table class="spec-table">
-        <tr><td class="spec-label">المقاس / الارتفاع:</td><td id="p-size">--</td></tr>
-        <tr><td class="spec-label">الكثافة / النوع:</td><td id="p-density">--</td></tr>
-        <tr><td class="spec-label">المنشأ:</td><td>تركيا (نخب أول) 🇹🇷</td></tr>
-    </table>
 
-    <div class="description-box">
-        <i class="fas fa-quote-right"></i>
+    <div class="info-grid">
+        <div class="info-item">
+            <span class="info-label">الأبعاد / القياسات:</span>
+            <span id="p-size" class="info-value">--</span>
+        </div>
+        <div class="info-item">
+            <span class="info-label">المواصفات الفنية:</span>
+            <span id="p-density" class="info-value">--</span>
+        </div>
+    </div>
+
+    <div class="description-section">
         <p id="p-desc" class="description-text"></p>
     </div>
 
-    <a id="p-whatsapp" href="#" class="whatsapp-btn">
-        <i class="fab fa-whatsapp"></i> اطلب معاينة وسعر الآن (واتساب)
-    </a>
+    <div class="action-area">
+        <a id="p-whatsapp" href="#" class="btn btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> الاستفسار عن الأسعار وتحديد موعد معاينة
+        </a>
+    </div>
 
     <div class="related-section">
-        <h3 class="related-title"><i class="fas fa-magic"></i> لمسات تكتمل بها أناقة المكان:</h3>
+        <h3 class="related-title"><i class="fas fa-layer-group"></i> خيارات إضافية لتنسيق الحدائق:</h3>
         <div id="related-grid" class="related-grid"></div>
-        <div id="gallery-cta-wrapper" style="text-align:center;"></div>
+        <div id="gallery-nav" style="text-align:center;"></div>
     </div>
 </div>
 
-<div id="error-content" class="container">
-    <h2 style="color:var(--main-green); font-family:'Amiri';">عذراً.. هذا المنتج غير متوفر حالياً</h2>
-    <a href="../index.html" style="color:var(--gold); font-weight:bold; text-decoration:none;">العودة للرئيسية ←</a>
-</div><script>
-    // 🦈 مخزن بضاعة حبيب ستون الشامل (النجيل، الزلط، الرخام، الميكا)
-    // تنبيه: تأكد أن الـ ID هنا يطابق الرقم المرسل في رابط المعرض (id=101 مثلاً)
+<div id="error-view" class="container">
+    <h2 style="color:var(--main-green); font-family:'Amiri';">عذراً، المنتج المطلوب غير متوفر حالياً</h2>
+    <p>قد يكون الرابط غير صحيح أو جاري تحديث البيانات الفنية للصنف.</p>
+    <a href="../index.html" class="btn-gallery">العودة للصفحة الرئيسية</a>
+</div>
+
+<script>
+    // قاعدة البيانات الاحترافية
     const products = {
-        // --- [1] قسم النجيل التركي (1 - 50) ---
-        "1": { cat: "nageel", name: "نجيل سوبر رويال - 50 ملم", size: "50 ملم (5 سم)", density: "كثافة القصور الفاخرة", img: "nageel/grass-50mm-natural.jpeg", desc: "هل تبحث عن الرفاهية المطلقة؟ نجيل سوبر رويال بارتفاع 5 سم هو الاختيار الأول للفيلات والقصور الراقية. يتميز بملمس طبيعي فائق النعومة يحاكي العشب الطبيعي البكر، مع قدرة مذهلة على تحمل الشمس." },
-        "2": { cat: "nageel", name: "نجيل أسطوري 40 ملم (28 غرزة)", size: "40 ملم (4 سم)", density: "28 غرزة (فائقة)", img: "nageel/grass-40mm-natural-28.jpeg", desc: "القوة والجمال في منتج واحد. صُمم خصيصاً للمساحات التي تشهد حركة كثيفة ولعب أطفال، حيث تحافظ الغرز الـ 28 على مظهر النجيل ممتلئاً وحيوياً لسنوات." },
-        "3": { cat: "nageel", name: "نجيل ملكي 40 ملم (24 غرزة)", size: "40 ملم", density: "24 غرزة", img: "nageel/grass-40mm-natural-24.jpeg", desc: "التوازن المثالي بين الفخامة والسعر. اختيار الصفوة لتنسيق الروف والحدائق المنزلية، يمنحك مظهراً طبيعياً جداً وراحة بصرية لا توصف بضمان حبيب ستون." },
-        "4": { cat: "nageel", name: "نجيل فندقي 40 ملم بريميوم", size: "40 ملم", density: "مظهر طبيعي ناعم", img: "nageel/grass-40mm-natural.jpeg", desc: "أناقة الفنادق في منزلك، يتميز بتدرج ألوان رائع يجعله يبدو حقيقياً تماماً تحت ضوء الشمس." },
-
-        // --- [2] قسم الزلط الديكوري (101 - 150) ---
-        "101": { cat: "zalat", name: "زلط أبيض رخامي فاخر V1", size: "أحجام متنوعة", density: "نخب أول مستورد", img: "zalat/zalat-white-marble-v1.jpeg", desc: "اللمسة الأرستقراطية التي تبرز جمال النجيل الأخضر. زلط أبيض رخامي نقي يمنح المكان إشراقاً واتساعاً فورياً لجمال اللاندسكيب." },
-        "103": { cat: "zalat", name: "زلط أسود بركاني طبيعي", size: "أسود فحم", density: "أصلي بركاني", img: "zalat/zalat-black-volcanic.jpeg", desc: "تباين مذهل بين الأسود الفخيم والأخضر الزاهي، حجر طبيعي صلب لا يتأثر بالعوامل الجوية." },
-        "105": { cat: "zalat", name: "زلط أحمر ملكي مودرن", size: "أحجام متوسطة", density: "نخب أول", img: "zalat/zalat-red-royal.jpg", desc: "يضيف لمسة دافئة وحيوية لتصميمات الحدائق المودرن، مثالي لعمل فواصل ديكورية بين المساحات الخضراء." },
-
-        // --- [3] قسم الرخام والميكا (301 - 350) ---
-        "301": { cat: "marble", name: "رخام كرارة ملي براون", size: "شرائح فاخرة", density: "نخب أول", img: "marble/marble-carrara-milli-brown.jpg", desc: "سحر الرخام الإيطالي الممزوج بلمسات البراون الدافئة. اختيارك الأول لتجعل أركان منزلك تنطق بالفخامة." },
-        "302": { cat: "marble", name: "رخام كريستال وايت ناصع", size: "مقاسات خاصة", density: "نخب أول", img: "marble/marble-crystal-white.jpg", desc: "بياض الكريستال الذي يمنح المكان إشراقاً واتساعاً غير محدود، يعكس الرقي في كل تفصيلة." },
-        "307": { cat: "marble", name: "حجر ميكا رمادي (واجهات)", size: "شرائح طبيعية", density: "طبيعي 100%", img: "marble/stone-mica-grey.jpg", desc: "الخيار العصري لواجهات الفيلات والتشطيبات المودرن. لون رمادي ثابت وشكل حجري فخم يعمل كعازل طبيعي للحرارة." },
-        "308": { cat: "marble", name: "حجر ميكا أحمر حراري", size: "شرائح خاصة", density: "طبيعي حراري", img: "marble/stone-mica-red.jpg", desc: "دفء الطبيعة في حجر الميكا الأحمر. يتميز بمتانته العالية ومقاومته للحرارة، مثالي للديكورات الخارجية الجريئة." }
+        // نجيل
+        "1": { cat: "nageel", name: "نجيل سوبر رويال - 50 ملم", size: "ارتفاع 5 سم", density: "كثافة عالية (فئة القصور)", img: "nageel/grass-50mm-natural.jpeg", desc: "يمثل نجيل سوبر رويال قمة الفخامة في المسطحات الخضراء الصناعية. يتميز بنعومة فائقة وكثافة ألياف تحاكي العشب الطبيعي تماماً، مع مقاومة عالية للأشعة فوق البنفسجية لضمان ثبات اللون لسنوات طويلة." },
+        "2": { cat: "nageel", name: "نجيل أسطوري 40 ملم (28 غرزة)", size: "ارتفاع 4 سم", density: "28 غرزة (شديد التحمل)", img: "nageel/grass-40mm-natural-28.jpeg", desc: "صُمم هذا النوع للمساحات ذات الاستخدام الكثيف. بفضل كثافة الـ 28 غرزة، يوفر ملمساً ممتلئاً ومرونة عالية تمنع هبوط الألياف، مما يجعله مثالياً لمناطق اللعب والجلسات العائلية." },
+        "101": { cat: "zalat", name: "زلط أبيض رخامي ناصع V1", size: "أحجام منتقاة", density: "نخب أول مستورد", img: "zalat/zalat-white-marble-v1.jpeg", desc: "زلط أبيض رخامي طبيعي يتميز بنقاء اللون ونعومة الملمس. يعطي تبايناً بصرياً رائعاً عند دمجه مع المساحات الخضراء، ويمنح الحديقة طابعاً كلاسيكياً فاخراً." },
+        "301": { cat: "marble", name: "رخام كرارة ملي براون", size: "ألواح ديكورية", density: "جودة بريميوم", img: "marble/marble-carrara-milli-brown.jpg", desc: "يجمع بين عروق الكرارة الإيطالية واللمسات البنية الدافئة. يُعد اختياراً مثالياً لتكسية الحوائط الديكورية والواجهات التي تبحث عن الفخامة العصرية." },
+        "307": { cat: "marble", name: "حجر ميكا رمادي (واجهات)", size: "شرائح طبيعية", density: "طبيعي 100%", img: "marble/stone-mica-grey.jpg", desc: "حجر الميكا الطبيعي يتميز بمتانته الفائقة وعزله للحرارة. يعطي الواجهات مظهراً معمارياً حديثاً وثباتاً في الألوان يقاوم كافة العوامل الجوية." }
     };
 
-    // --- 🚀 محرك التشغيل والربط الذكي ---
     const urlParams = new URLSearchParams(window.location.search);
-    const productId = urlParams.get('id'); // الحصول على رقم المنتج من الرابط
+    const productId = urlParams.get('id');
     const p = products[productId];
 
     if (p) {
-        // 1. إظهار المحتوى الرئيسي وإخفاء رسالة الخطأ
-        document.getElementById('main-content').style.display = 'block';
-        document.getElementById('error-content').style.display = 'none';
-
-        // 2. تحديث البيانات الأساسية
+        document.getElementById('product-view').style.display = 'block';
         document.getElementById('p-name').innerText = p.name;
         document.getElementById('p-size').innerText = p.size;
         document.getElementById('p-density').innerText = p.density;
         document.getElementById('p-desc').innerText = p.desc;
         
-        // 3. المسار الصحيح للصور (GitHub Structure)
+        // مسار الصور المعتمد
         document.getElementById('p-img').src = "../assets/images/" + p.img;
-        document.getElementById('p-img').alt = p.name;
-        document.title = p.name + " | حبيب ستون";
+        document.title = `${p.name} | حبيب ستون`;
 
-        // 4. رابط الواتساب (رسالة بياعة)
-        const waMsg = `أهلاً حبيب ستون، أريد استفسار عن: ${p.name} (كود المنتج: ${productId})`;
-        document.getElementById('p-whatsapp').href = `https://wa.me/201016961497?text=${encodeURIComponent(waMsg)}`;
+        // رسالة الواتساب الرسمية
+        const waText = `السلام عليكم حبيب ستون، أود الاستفسار عن تفاصيل وأسعار المنتج التالي: ${p.name} (كود: ${productId})`;
+        document.getElementById('p-whatsapp').href = `https://wa.me/201016961497?text=${encodeURIComponent(waText)}`;
 
-        // 5. محرك "منتجات ذات صلة" (عرض عشوائي من فئة مختلفة)
-        let otherIds = Object.keys(products).filter(id => id !== productId);
-        otherIds.sort(() => Math.random() - 0.5); // لخبطة البضاعة
-
+        // المنتجات ذات الصلة
+        let others = Object.keys(products).filter(id => products[id].cat !== p.cat);
+        others.sort(() => Math.random() - 0.5);
         let relatedHTML = '';
-        otherIds.slice(0, 4).forEach(id => {
+        others.slice(0, 4).forEach(id => {
             relatedHTML += `
                 <a href="product.html?id=${id}" class="related-card">
                     <img src="../assets/images/${products[id].img}" onerror="this.src='../assets/images/logo.png'">
-                    <div class="related-card-info">
+                    <div class="related-body">
                         <h4>${products[id].name}</h4>
-                        <span>استكشف ←</span>
+                        <span class="related-link">عرض التفاصيل ←</span>
                     </div>
                 </a>`;
         });
         document.getElementById('related-grid').innerHTML = relatedHTML;
 
-        // 6. زرار "المعرض" الديناميكي
-        let targetLink = (p.cat === "nageel") ? "zalat-gallery.html" : "grass-gallery.html";
-        let targetText = (p.cat === "nageel") ? "عالم الزلط والرخام" : "تشكيلة النجيل التركي";
-        document.getElementById('gallery-cta-wrapper').innerHTML = `
-          
+        // روابط المعرض الاحترافية
+        let targetL = (p.cat === "nageel") ? "zalat-gallery.html" : "grass-gallery.html";
+        let targetT = (p.cat === "nageel") ? "معرض الأحجار والزلط الديكوري" : "مجموعة النجيل الصناعي الفاخر";
+        document.getElementById('gallery-nav').innerHTML = `<a href="${targetL}" class="btn-gallery">تصفح ${targetT}</a>`;
 
     } else {
-        // لو الـ ID مش موجود أو غلط (منع الصفحة البيضا)
-        document.getElementById('main-content').style.display = 'none';
-        document.getElementById('error-content').style.display = 'block';
+        document.getElementById('error-view').style.display = 'block';
     }
 </script>
 </body>
