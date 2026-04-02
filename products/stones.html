@@ -1,66 +1,203 @@
-<script>
-    const marbleData = {
-        "40": { 
-            name: "Habib Royal Galala", 
-            img: "marble-galala.jpg", 
-            specs: "رخام الجلالة الملكي", 
-            desc: "فخر الصناعة المصرية في أبهى صورها، رخام الجلالة المختق بعناية ليمنح قصوركم هيبة التاريخ ولمسة الفخامة التي لا تتأثر بمرور الزمن." 
-        },
-        "41": { 
-            name: "Habib Crystal White", 
-            img: "marble-crystal-white.jpg", 
-            specs: "نقاء الكريستال الطبيعي", 
-            desc: "ندرة الطبيعة تتجسد في صفاء الكريستال الأبيض، ليمنح مساحاتكم إشراقة سرمدية واتساعاً بصرياً يفيض بالهدوء والرفاهية." 
-        },
-        "42": { 
-            name: "Habib Emperador Dark", 
-            img: "marble-emperador.jpg", 
-            specs: "رخام إمبردور ملكي", 
-            desc: "لمسة إمبراطورية كلاسيكية بعروق ذهبية دافئة، صُمم ليضفي هيبة الحضور وعمق الفخامة على أرقى التصاميم المعمارية." 
-        },
-        "43": { 
-            name: "Habib Spanish Black", 
-            img: "marble-spanish-black.jpg", 
-            specs: "رخام أسود إسباني فاخر", 
-            desc: "انعكاس للقوة والغموض الراقي، الأسود الإسباني يمنح الأرضيات والواجهات شخصية معمارية قوية وفريدة." 
-        },
-        "44": { 
-            name: "Habib Carrara Brown", 
-            img: "marble-carrara-milli-brown.jpg", 
-            specs: "رخام كارارا بني إيطالي", 
-            desc: "تداخل فني بين العروق الإيطالية الشهيرة والدرجات البنية الدافئة، قطعة فنية فريدة تناسب الذوق الرفيع." 
-        },
-        "45": { 
-            name: "Habib Spanish Fusion", 
-            img: "marble-red-carrara-spanish-black.jpg", 
-            specs: "مزيج رخامي إسباني نادر", 
-            desc: "سيمفونية من الألوان الطبيعية المتداخلة، صُمم هذا النوع لأصحاب الرؤى الجريئة في عالم التصميم اللاندسكيب." 
-        },
-        "46": { 
-            name: "Habib Sandstone Luxe", 
-            img: "marble-sandstone.jpg", 
-            specs: "حجر رملي فاخر", 
-            desc: "تناغم مثالي مع الطبيعة المحيطة، يوفر مظهراً هادئاً وملمساً طبيعياً يعزز من طاقة المكان وهدوئه البصري." 
-        },
-        "51": { 
-            name: "Habib Stone Mica Grey", 
-            img: "stone-mica-grey.jpg", 
-            specs: "حجر مايكا رمادي", 
-            desc: "عراقة الملمس الحجري في قالب عصري، يمنح الواجهات صموداً جمالياً يعكس رقي اختياركم الهندي." 
-        },
-        "52": { 
-            name: "Habib Stone Mica Red", 
-            img: "stone-mica-red.jpg", 
-            specs: "حجر مايكا أحمر", 
-            desc: "دفء الطبيعة وتناغم الألوان الترابية النادرة، لمسة فنية دافئة تمنح حدائقكم الخاصة فخامة لا تنضب." 
-        },
-        "53": { 
-            name: "Habib Black Basalt", 
-            img: "stone-basalt-black.jpg", 
-            specs: "حجر بازلت أسود صلب", 
-            desc: "قوة الحجر البركاني بلمسة هندسية معاصرة، خيار مثالي للمساحات التي تتطلب مزيجاً من الصلابة والجمال المطلق." 
-        }
-    };
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل مقتنيات الرخام والأحجار | حبيب ستور</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --royal-green: #1a3c34; --gold: #c5a059; --soft-gray: #f8fafa; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--soft-gray); margin: 0; color: #333; line-height: 1.8; }
+        
+        .product-wrapper { max-width: 1200px; margin: 80px auto; padding: 0 20px; display: flex; flex-wrap: wrap; gap: 60px; align-items: flex-start; }
+        
+        /* قسم الصورة الراقية */
+        .image-section { flex: 1.1; min-width: 350px; position: sticky; top: 40px; }
+        .main-display { width: 100%; border-radius: 25px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.1); background: #fff; border: 1px solid rgba(0,0,0,0.05); }
+        .main-display img { width: 100%; display: block; transition: transform 0.6s ease; object-fit: cover; }
+        .main-display:hover img { transform: scale(1.05); }
 
-    // ... باقي كود استخراج الـ ID وعرض البيانات (نفس اللي بعتهولك المرة اللي فاتت) ...
-</script>
+        /* محتوى الوصف الهادئ للمليارديرات */
+        .content-section { flex: 1; min-width: 320px; padding-top: 20px; }
+        .brand-tag { color: var(--gold); font-size: 0.95rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 15px; }
+        .content-section h1 { font-size: 2.8rem; color: var(--royal-green); font-weight: 300; margin: 0 0 25px 0; line-height: 1.3; }
+        .luxury-line { width: 60px; height: 3px; background: var(--gold); margin-bottom: 35px; }
+        
+        .description-text { font-size: 1.15rem; color: #555; margin-bottom: 45px; text-align: justify; font-weight: 300; line-height: 2; }
+        
+        .features-list { list-style: none; padding: 0; margin-bottom: 50px; }
+        .features-list li { margin-bottom: 18px; display: flex; align-items: center; gap: 15px; color: var(--royal-green); font-weight: 500; font-size: 1.05rem; }
+        .features-list li i { color: var(--gold); font-size: 1.3rem; }
+
+        /* المنتجات التكميلية */
+        .complements-section { margin-top: 60px; border-top: 1px solid #eaeaea; padding-top: 40px; }
+        .complements-section h3 { color: var(--royal-green); font-weight: 400; font-size: 1.5rem; margin-bottom: 25px; }
+        .slider-container { display: flex; gap: 20px; overflow-x: auto; padding-bottom: 20px; scrollbar-width: thin; }
+        .insta-card { min-width: 200px; display: block; text-decoration: none; border-radius: 15px; overflow: hidden; background: #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.05); transition: 0.3s; }
+        .insta-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-color: var(--gold); border: 1px solid transparent; }
+        .insta-card img { width: 100%; height: 140px; object-fit: cover; }
+        .insta-card-info { padding: 15px; text-align: center; }
+        .insta-card-info h4 { margin: 0; color: #333; font-size: 0.95rem; font-weight: 500; }
+
+        .cta-box { display: flex; gap: 20px; align-items: center; margin-top: 40px; }
+        .back-gallery { text-decoration: none; color: #999; font-size: 0.95rem; transition: 0.3s; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid transparent; padding-bottom: 3px; }
+        .back-gallery:hover { color: var(--royal-green); border-color: var(--royal-green); }
+
+        /* زرار فريق الخبراء */
+        .expert-btn { position: fixed; bottom: 40px; left: 40px; background: #25d366; color: white; padding: 18px 35px; border-radius: 60px; text-decoration: none; box-shadow: 0 15px 35px rgba(37, 211, 102, 0.25); z-index: 1000; font-weight: 600; display: flex; align-items: center; gap: 15px; transition: 0.4s; }
+        .expert-btn:hover { transform: translateY(-5px); background: #1ebe57; }
+
+        @media (max-width: 768px) { .content-section h1 { font-size: 2.1rem; } .product-wrapper { margin: 40px auto; } }
+    </style>
+</head>
+<body>
+
+    <div class="product-wrapper">
+        <div class="image-section">
+            <div class="main-display">
+                <img id="p-img" src="" alt="Habib Exclusive Selection" onerror="this.src='../assets/images/marble/marble-galala.jpg'">
+            </div>
+        </div>
+
+        <div class="content-section">
+            <span class="brand-tag" id="p-specs">جاري التحميل...</span>
+            <h1 id="p-name">مقتنيات حبيب ستور</h1>
+            <div class="luxury-line"></div>
+            
+            <p class="description-text" id="p-desc">
+                التفاصيل المعمارية الدقيقة هي ما تصنع الفارق بين العادي والاستثنائي.
+            </p>
+
+            <ul class="features-list">
+                <li><i class="fas fa-check-double"></i> انتقاء يدوي من أنقى المحاجر الطبيعية</li>
+                <li><i class="fas fa-check-double"></i> استدامة جمالية تتوارثها الأجيال</li>
+                <li><i class="fas fa-check-double"></i> أبعاد هندسية دقيقة تلبي أرقى المعايير</li>
+                <li><i class="fas fa-check-double"></i> فخامة بصرية تضفي هيبة على المساحات الخاصة</li>
+            </ul>
+
+            <div class="complements-section">
+                <h3>يكتمل الرقي مع:</h3>
+                <div class="slider-container" id="complementary-slider">
+                    </div>
+            </div>
+
+            <div class="cta-box">
+                <a href="marble.html" class="back-gallery">
+                    <i class="fas fa-arrow-right"></i> العودة إلى المعرض الملكي
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <a id="p-whatsapp" href="https://wa.me/201016961497" class="expert-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span>الاستفسار عن هذه المقتنيات</span>
+    </a>
+
+    <script>
+        // مصفوفة البيانات بالوصف الهادئ والفاخر
+        const marbleData = {
+            "40": { 
+                name: "رخام جلالة | Galala Marble", 
+                img: "marble-galala.jpg", 
+                specs: "عراقة الرخام المصري", 
+                desc: "رخام الجلالة ليس مجرد حجر، بل هو امتداد لتاريخ من الفخامة. تم انتقاؤه من أنقى المحاجر ليمنح قصوركم ومشاريعكم طابعاً كلاسيكياً يتنفس بالأصالة، مع متانة تتحدى الزمن لتظل واجهتكم الأولى دائماً." 
+            },
+            "41": { 
+                name: "رخام كريستال وايت | Crystal White", 
+                img: "marble-crystal-white.jpg", 
+                specs: "نقاء الكريستال الأبيض", 
+                desc: "نقاء استثنائي يحاكي صفاء الكريستال. هذا الرخام مصمم خصيصاً للمساحات التي تتطلب اتساعاً بصرياً وهدوءاً مطلقاً، ليكون اللوحة البيضاء التي تبرز ذوقكم الرفيع ومقتنياتكم الفنية." 
+            },
+            "42": { 
+                name: "رخام إمبردور | Emperador", 
+                img: "marble-emperador.jpg", 
+                specs: "الدفء الإمبراطوري", 
+                desc: "دفء الألوان الترابية وعمق العروق الطبيعية يجتمعان في رخام الإمبردور الفاخر. خيار النخبة لإضفاء طابع من الهيبة والجاذبية الملكية على قاعاتكم ومساحاتكم الخاصة." 
+            },
+            "43": { 
+                name: "رخام أسود إسباني | Spanish Black", 
+                img: "marble-spanish-black.jpg", 
+                specs: "هيبة الأسود الملكي", 
+                desc: "للفخامة لغة، والأسود الإسباني هو أبلغ كلماتها. حضور معماري واثق وتناقض لوني جريء يجسد القوة والغموض الراقي في أبهى صوره الهندسية." 
+            },
+            "44": { 
+                name: "رخام كارارا ملي براون | Carrara Milli Brown", 
+                img: "marble-carrara-milli-brown.jpg", 
+                specs: "الفن الإيطالي الأصيل", 
+                desc: "حين تلتقي الفنون الإيطالية بعظمة الطبيعة. تداخل فريد بين العروق الناعمة والدرجات البنية، يصنع تفاصيل بصرية لا تتكرر، لتكون كل قطعة بمثابة عمل فني مستقل يليق بمكانتكم." 
+            },
+            "45": { 
+                name: "كارارا أحمر وأسود إسباني | Exotic Fusion", 
+                img: "marble-red-carrara-spanish-black.jpg", 
+                specs: "مزيج النخبة الحصري", 
+                desc: "مزيج حصري ونادر لأصحاب الذوق الجريء. تناغم لوني غير مسبوق يعكس شخصية استثنائية للمكان، مصمم ليكون محور الحديث والاهتمام في أي مساحة معمارية راقية." 
+            },
+            "46": { 
+                name: "حجر ساند ستون | Sandstone", 
+                img: "marble-sandstone.jpg", 
+                specs: "سحر الطبيعة الهادئ", 
+                desc: "العودة إلى سحر الطبيعة الهادئ. الحجر الرملي بلمسته الدافئة يوفر انسجاماً بصرياً يريح العين ويهدئ الحواس، ليكون الملاذ الأمثل في مساحاتكم الخارجية وحدائقكم الخاصة." 
+            },
+            "51": { 
+                name: "حجر مايكا رمادي | Mica Grey", 
+                img: "stone-mica-grey.jpg", 
+                specs: "رقي الواجهات العصرية", 
+                desc: "عراقة الماضي برؤية المستقبل. المايكا الرمادي يمنح الواجهات صموداً هندسياً ولمسة حداثة هادئة، ليعكس رقي اختياركم من النظرة الأولى ويعطي طابعاً متزناً للواجهات." 
+            },
+            "52": { 
+                name: "حجر مايكا أحمر | Mica Red", 
+                img: "stone-mica-red.jpg", 
+                specs: "الدفء الهندسي", 
+                desc: "نبض الطبيعة المتجسد في الحجر. درجات الأحمر الدافئة في المايكا تصنع واجهات تنبض بالحياة والفخامة، مع الحفاظ على طابع هندسي متزن ووقور يكمل جمال المعمار." 
+            },
+            "53": { 
+                name: "حجر بازلت أسود | Black Basalt", 
+                img: "stone-basalt-black.jpg", 
+                specs: "صلابة الحجر البركاني", 
+                desc: "صلابة بركانية وقوة حضور لا تُضاهى. البازلت الأسود هو الخيار الأمثل للمساحات التي تتطلب مزيجاً من المتانة المطلقة والجمال الهندسي الصارم، استثمار معماري يعيش للأبد." 
+            }
+        };
+
+        // المنتجات التكميلية
+        const complements = [
+            { id: "1", name: "نجيل النخبة 50 ملم", img: "Habib-Anatolian-Nature-50mm.jpg", folder: "nageel-details", page: "product-nageel.html" },
+            { id: "white-zalat", name: "زلط أبيض ملكي", img: "white-zalat.jpg", folder: "zalat", page: "zalat.html" }
+        ];
+
+        // قراءة الـ ID من الرابط
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+        const product = marbleData[productId];
+
+        // تعبئة البيانات في الصفحة
+        if (product) {
+            document.getElementById('p-name').innerHTML = product.name;
+            document.getElementById('p-img').src = "../assets/images/marble/" + product.img;
+            document.getElementById('p-specs').innerText = product.specs;
+            document.getElementById('p-desc').innerText = product.desc;
+            
+            // تخصيص رسالة الواتساب الفاخرة
+            const whatsappMsg = encodeURIComponent("تحياتي، مهتم بمعرفة تفاصيل أكثر عن مقتنيات " + product.name);
+            document.getElementById('p-whatsapp').href = "https://wa.me/201016961497?text=" + whatsappMsg;
+
+            // بناء المنتجات التكميلية
+            let sliderHTML = '';
+            complements.forEach(item => {
+                sliderHTML += `
+                    <a href="${item.page}?id=${item.id}" class="insta-card">
+                        <img src="../assets/images/${item.folder}/${item.img}" alt="${item.name}">
+                        <div class="insta-card-info">
+                            <h4>${item.name}</h4>
+                        </div>
+                    </a>`;
+            });
+            document.getElementById('complementary-slider').innerHTML = sliderHTML;
+        } else {
+            // نظام الأمان في حالة عدم وجود المنتج
+            document.getElementById('p-name').innerText = "مقتنيات حبيب ستور الخاصة";
+            document.getElementById('p-specs').innerText = "تواصل معنا للمزيد";
+        }
+    </script>
+</body>
+</html>
