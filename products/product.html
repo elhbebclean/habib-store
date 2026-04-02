@@ -9,137 +9,107 @@
         :root { --green: #1a472a; --gold: #c5a059; --dark: #222; --light: #f9f9f9; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: #fff; color: var(--dark); line-height: 1.6; }
         .container { max-width: 500px; margin: 0 auto; padding-bottom: 100px; }
-        
-        /* هيدر الصفحة */
         .header { padding: 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; }
         .logo { font-weight: bold; color: var(--green); font-size: 20px; text-decoration: none; }
-
-        /* منطقة الصورة والعرض */
         .product-display { width: 100%; position: relative; background: #eee; height: 350px; }
         #p-img { width: 100%; height: 100%; object-fit: cover; }
         .origin-tag { position: absolute; top: 15px; left: 15px; background: var(--green); color: #fff; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; }
-
-        /* تفاصيل المنتج */
         .content { padding: 20px; }
         .p-title { font-size: 24px; margin: 0; color: var(--green); }
         .p-specs-short { color: var(--gold); font-weight: bold; margin-top: 5px; font-size: 14px; }
         .desc-box { background: var(--light); padding: 15px; border-radius: 12px; margin-top: 20px; border-right: 4px solid var(--green); }
-        .desc-box h3 { margin: 0 0 10px 0; font-size: 16px; }
-
-        /* شريط الإنستجرام (المكملات) */
         .insta-section { margin-top: 40px; }
         .section-title { font-size: 18px; margin-bottom: 15px; padding: 0 5px; border-right: 3px solid var(--gold); padding-right: 10px; }
-        .instagram-slider { 
-            display: flex; overflow-x: auto; gap: 15px; padding: 10px 5px 25px;
-            scrollbar-width: none; -ms-overflow-style: none; scroll-snap-type: x mandatory;
-        }
+        .instagram-slider { display: flex; overflow-x: auto; gap: 12px; padding: 10px 5px 25px; scrollbar-width: none; scroll-snap-type: x mandatory; }
         .instagram-slider::-webkit-scrollbar { display: none; }
-        .insta-card { 
-            flex: 0 0 160px; background: #fff; border-radius: 15px; overflow: hidden; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08); text-decoration: none; color: inherit; scroll-snap-align: start;
-        }
-        .insta-card img { width: 100%; height: 130px; object-fit: cover; }
-        .insta-card-info { padding: 10px; text-align: center; }
-        .insta-card-info h4 { font-size: 12px; margin: 0; color: #333; height: 34px; overflow: hidden; }
-
-        /* زر الواتساب الثابت */
-        .action-bar { position: fixed; bottom: 0; width: 100%; max-width: 500px; padding: 15px; background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); box-sizing: border-box; }
-        .btn-whatsapp { 
-            display: flex; align-items: center; justify-content: center; gap: 10px;
-            background: #25d366; color: #fff; text-decoration: none; padding: 15px;
-            border-radius: 12px; font-weight: bold; font-size: 18px; box-shadow: 0 4px 15px rgba(37,211,102,0.3);
-        }
+        .insta-card { flex: 0 0 150px; background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-decoration: none; color: inherit; scroll-snap-align: start; border: 1px solid #eee; }
+        .insta-card img { width: 100%; height: 120px; object-fit: cover; }
+        .insta-card-info { padding: 8px; text-align: center; }
+        .insta-card-info h4 { font-size: 11px; margin: 0; color: #333; height: 32px; overflow: hidden; }
+        .action-bar { position: fixed; bottom: 0; width: 100%; max-width: 500px; padding: 15px; background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); box-sizing: border-box; z-index: 100; }
+        .btn-whatsapp { display: flex; align-items: center; justify-content: center; gap: 10px; background: #25d366; color: #fff; text-decoration: none; padding: 15px; border-radius: 12px; font-weight: bold; font-size: 18px; }
     </style>
 </head>
 <body>
     <div class="container" id="view-content">
         <header class="header">
-            <a href="index.html" class="logo"><i class="fas fa-chevron-right"></i> حبيب ستور</a>
+            <a href="../index.html" class="logo"><i class="fas fa-chevron-right"></i> حبيب ستور</a>
             <i class="fas fa-share-alt"></i>
         </header>
-
         <div class="product-display">
-            <span class="origin-tag">نخب أول - تركي <i class="fas fa-certificate"></i></span>
-            <img id="p-img" src="" alt="منتج حبيب ستور">
+            <span class="origin-tag" id="category-label">نخب أول <i class="fas fa-certificate"></i></span>
+            <img id="p-img" src="" alt="تحميل الصورة...">
         </div>
-
         <div class="content">
             <h1 class="p-title" id="p-name">...</h1>
             <div class="p-specs-short" id="p-specs">...</div>
-            
-            <div class="desc-box">
-                <h3>المواصفات الفنية:</h3>
-                <p id="p-desc" style="font-size: 14px; margin: 0; color: #555;"></p>
-            </div>
-
+            <div class="desc-box"><h3>المواصفات:</h3><p id="p-desc" style="font-size: 14px; margin: 0; color: #555;"></p></div>
             <div class="insta-section">
-                <h2 class="section-title">أكمل المظهر (زلط ورخام فاخر)</h2>
-                <div class="instagram-slider" id="complementary-slider">
-                    </div>
+                <h2 class="section-title">منتجات مكملة (Instagram Style)</h2>
+                <div class="instagram-slider" id="complementary-slider"></div>
             </div>
         </div>
-
-        <div class="action-bar">
-            <a href="#" id="p-whatsapp" class="btn-whatsapp">
-                <i class="fab fa-whatsapp"></i> اطلب المعاينة الآن
-            </a>
-        </div>
+        <div class="action-bar"><a href="#" id="p-whatsapp" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> اطلب عبر واتساب</a></div>
     </div>
-
     <script>
-        // 1. قاعدة بيانات النجيل (11 مقاس تركي) - مطابقة للفولدر: nageel-details
-        const nageelProducts = {
-            "1": { name: "نجيل سوبر رويال 50 ملم", img: "Habib-Anatolian-Nature-50mm.jpg", specs: "50 ملم - كثافة قصور", desc: "أجود أنواع النجيل التركي بارتفاع 50 ملم، ملمس طبيعي فائق وقدرة تحمل عالية جداً." },
-            "2": { name: "نجيل أسطوري 40 ملم (28 غرزة)", img: "Habib-Legendary-Silk-40mm-28.jpg", specs: "40 ملم - 28 غرزة", desc: "الخيار الأقوى للمساحات ذات الاستخدام الكثيف، يتميز بـ 28 غرزة لضمان استقامة الشعيرات." },
-            "3": { name: "نجيل ملكي 40 ملم (24 غرزة)", img: "Habib-Bosphorus-Green-40mm-24.jpg", specs: "40 ملم - 24 غرزة", desc: "توازن مثالي بين السعر والجودة الفاخرة، مثالي للحدائق المنزلية والمظهر الفندقي." },
-            "4": { name: "نجيل فندقي 40 ملم (طبيعي)", img: "Habib-Istanbul-Lush-40mm.jpg", specs: "40 ملم - مظهر طبيعي", desc: "يتميز بلونه الأخضر الزاهي وتوزيعه المريح للعين، يعطي انطباع النجيل الطبيعي." },
-            "5": { name: "نجيل 40 ملم - الفئة العملية", img: "Habib-Marmara-Turf-40mm-12.jpg", specs: "40 ملم - 12 غرزة", desc: "حل عملي للمساحات الواسعة والمشاريع الكبيرة، يوفر شكلاً جمالياً بأسعار تنافسية." },
-            "6": { name: "نجيل إليت 30 ملم (24 غرزة)", img: "Habib-Antalya-Breeze-30mm-24.jpg", specs: "30 ملم - 24 غرزة", desc: "نعومة فائقة وكثافة غرز عالية، اختيار ممتاز للروف وبلكونات الشقق الفاخرة." },
-            "7": { name: "نجيل 30 ملم - ستاندرد", img: "Habib-Standard-30mm.jpg", specs: "30 ملم - اقتصادي", desc: "منتج متوازن يصلح لكافة الاستخدامات الخارجية والداخلية بمتانة جيدة." },
-            "8": { name: "نجيل 25 ملم - متوسط", img: "Habib-Medium-25mm.jpg", specs: "25 ملم - ممرات", desc: "مثالي للممرات والمناطق التي تحتاج لارتفاع متوسط وسهولة في التنظيف." },
-            "9": { name: "نجيل 20 ملم - العملي", img: "Habib-Standard-Turkish-20mm-12.jpg", specs: "20 ملم - 12 غرزة", desc: "المنتج الأكثر طلباً للمداخل والممرات، سهل التنظيف وشديد التحمل." },
-            "10": { name: "نجيل 11 ملم - مسطحات", img: "Habib-Practical-Green-11mm.jpg", specs: "11 ملم - فلات", desc: "تصميم مخصص للمساحات التي تحتاج لفرش فلات وسهل الحركة، مثالي للمحلات والمعارض." },
-            "11": { name: "نجيل ألترا سليم 6 ملم", img: "Habib-Ultra-Slim-6mm..jpg", specs: "6 ملم - اقتصادي", desc: "أقل ارتفاع متاح، سهل التركيب جداً ويستخدم كبديل للسجاد في الأماكن الخارجية." }
+        // 1. قاعدة بيانات شاملة (النجيل، الزلط، الرخام)
+        const allProducts = {
+            // النجيل (ID: 1-11) - مجلد: nageel-details
+            "1": { name: "نجيل سوبر رويال 50 ملم", img: "Habib-Anatolian-Nature-50mm.jpg", folder: "nageel-details", specs: "50 ملم - تركي", desc: "أجود أنواع النجيل التركي للفلل والقصور." },
+            "2": { name: "نجيل أسطوري 40 ملم (28 غرزة)", img: "Habib-Legendary-Silk-40mm-28.jpg", folder: "nageel-details", specs: "40 ملم - 28 غرزة", desc: "الخيار الأقوى للاستخدام الكثيف والملاعب." },
+            "9": { name: "نجيل 20 ملم - العملي", img: "Habib-Standard-Turkish-20mm-12.jpg", folder: "nageel-details", specs: "20 ملم - 12 غرزة", desc: "المنتج الأكثر طلباً للمداخل والممرات." },
+            "11": { name: "نجيل ألترا سليم 6 ملم", img: "Habib-Ultra-Slim-6mm..jpg", folder: "nageel-details", specs: "6 ملم - اقتصادي", desc: "بديل السجاد للمساحات الخارجية." },
+
+            // الزلط (ID: 21-26) - مجلد: zalat
+            "21": { name: "زلط أبيض كريستال", img: "white-zalat.jpg", folder: "zalat", specs: "طبيعي - فرز أول", desc: "أنقى أنواع الزلط الأبيض لتحديد أحواض النجيل." },
+            "22": { name: "زلط أسود ملكي", img: "zalat-black-royal.jpg", folder: "zalat", specs: "أسود لامع", desc: "يعطي فخامة وتباين رائع مع النجيل الأخضر." },
+            "23": { name: "زلط أحمر بركاني", img: "zalat-red-volcanic.jpeg", folder: "zalat", specs: "أحمر طبيعي", desc: "يتحمل الحرارة وممتاز للديكورات المودرن." },
+
+            // الرخام والأحجار (ID: 41-46) - مجلد: marble
+            "41": { name: "رخام كريستال وايت", img: "marble-crystal-white.jpg", folder: "marble", specs: "رخام طبيعي نقي", desc: "يتميز بلمعانه وقوة تحمله للعوامل الجوية." },
+            "42": { name: "رخام إمبردور فاخر", img: "marble-emperador.jpg", folder: "marble", specs: "بني ملكي", desc: "رخام إمبردور بتموجات طبيعية خلابة." },
+            "51": { name: "حجر مايكا رمادي", img: "stone-mica-grey.jpg", folder: "marble", specs: "ديكور حوائط", desc: "أحجار المايكا الرمادية لإضافة لمسة عصرية." }
         };
 
-        // 2. بيانات شريط المكملات (الزلط والرخام) - مطابقة للصور التي أرسلتها
-        const complementary = [
-            { id: "21", name: "زلط أبيض كريستال", img: "white-zalat.jpg", folder: "zalat", page: "product-zalat.html" },
-            { id: "41", name: "رخام كريستال وايت", img: "marble-crystal-white.jpg", folder: "marble", page: "product-marble.html" },
-            { id: "51", name: "حجر مايكا رمادي", img: "stone-mica-grey.jpg", folder: "marble", page: "product-marble.html" },
-            { id: "22", name: "زلط أسود ملكي", img: "zalat-black-royal.jpg", folder: "zalat", page: "product-zalat.html" },
-            { id: "42", name: "رخام إمبردور فاخر", img: "marble-emperador.jpg", folder: "marble", page: "product-marble.html" }
+        // 2. كروت شريط المكملات (Instagram Slider)
+        const complements = [
+            { id: "21", name: "زلط أبيض", img: "white-zalat.jpg", folder: "zalat" },
+            { id: "41", name: "رخام كريستال", img: "marble-crystal-white.jpg", folder: "marble" },
+            { id: "1", name: "نجيل 50 ملم", img: "Habib-Anatolian-Nature-50mm.jpg", folder: "nageel-details" },
+            { id: "51", name: "مايكا رمادي", img: "stone-mica-grey.jpg", folder: "marble" }
         ];
 
-        // 3. كود تشغيل الصفحة وتوزيع البيانات
+        // 3. تشغيل المنطق البرمجي
         const urlParams = new URLSearchParams(window.location.search);
         const productId = urlParams.get('id');
-        const product = nageelProducts[productId];
+        const product = allProducts[productId];
 
         if (product) {
-            // تحديث بيانات النجيل الرئيسية
+            // تحديث البيانات الأساسية (لاحظ استخدام ../ للتحرك للخلف والدخول لـ assets)
             document.getElementById('page-title').innerText = product.name + " | حبيب ستور";
             document.getElementById('p-name').innerText = product.name;
-            document.getElementById('p-img').src = "assets/images/nageel-details/" + product.img;
+            document.getElementById('p-img').src = "../assets/images/" + product.folder + "/" + product.img;
             document.getElementById('p-specs').innerText = product.specs;
             document.getElementById('p-desc').innerText = product.desc;
             document.getElementById('p-whatsapp').href = "https://wa.me/201016961497?text=استفسار عن " + product.name;
 
-            // توليد شريط المكملات (Instagram Slider)
+            // بناء شريط المكملات
             let sliderHTML = '';
-            complementary.forEach(item => {
-                sliderHTML += `
-                    <a href="${item.page}?id=${item.id}" class="insta-card">
-                        <img src="assets/images/${item.folder}/${item.img}" alt="${item.name}">
-                        <div class="insta-card-info">
-                            <h4>${item.name}</h4>
-                            <span style="font-size:10px; color:#c5a059;">عرض التفاصيل <i class="fas fa-chevron-left"></i></span>
-                        </div>
-                    </a>`;
+            complements.forEach(item => {
+                if(item.id !== productId) { // لا تظهر المنتج الحالي في الشريط
+                    sliderHTML += `
+                        <a href="product.html?id=${item.id}" class="insta-card">
+                            <img src="../assets/images/${item.folder}/${item.img}" alt="${item.name}">
+                            <div class="insta-card-info">
+                                <h4>${item.name}</h4>
+                                <span style="font-size:10px; color:#c5a059;">عرض <i class="fas fa-arrow-left"></i></span>
+                            </div>
+                        </a>`;
+                }
             });
             document.getElementById('complementary-slider').innerHTML = sliderHTML;
         } else {
-            document.getElementById('view-content').innerHTML = "<div style='text-align:center; padding:50px;'><h2>المنتج غير موجود</h2><a href='index.html'>العودة للرئيسية</a></div>";
+            document.getElementById('view-content').innerHTML = "<div style='text-align:center; padding:50px;'><h2>المنتج غير موجود</h2><a href='../index.html'>العودة للرئيسية</a></div>";
         }
     </script>
 </body>
