@@ -257,26 +257,18 @@
 </div>
 
 <script>
-    // 🟠 قاعدة بيانات حبيب ستون - قسم النجيل (للعرض الرئيسي فقط)
+    // 🟠 قاعدة بيانات النجيل التركي بالمسارات المحدثة
     const nageelProducts = {
-        "1": { name: "Habib Antalya Breeze", size: "30mm", density: "نخب أول تركيا", img: "Habib Antalya Breeze (30mm).jpg", desc: "نجيل صناعي تركي فاخر يجمع بين النعومة الفائقة والمظهر الطبيعي." },
-        "2": { name: "Habib Bosphorus Green", size: "50mm", density: "كثافة عالية جداً", img: "Habib Bosphorus Green (50mm).jpg", desc: "أقصى ارتفاع متاح ليعطيك إحساس العشب الطبيعي الغزير." },
-        "3": { name: "Habib Bosphorus Silk", size: "Silk Touch", density: "ناعم جداً", img: "Habib Bosphorus Silk.jpg", desc: "مصمم خصيصاً لمناطق الجلوس المباشر بفضل نعومته الفائقة." },
-        "4": { name: "Habib Istanbul Lush", size: "40mm", density: "جودة بريميوم", img: "Habib Istanbul Lush (40mm).jpg", desc: "يتميز بكثافة ألياف عالية تحاكي العشب الطبيعي تماماً." },
-        "5": { name: "Habib Anatolian Nature", size: "Natural", density: "مظهر واقعي", img: "Habib Anatolian Nature.jpg", desc: "تداخل ألوان العشب الطبيعي ليعطي مظهراً واقعياً للأماكن المفتوحة." },
-        "6": { name: "Habib Izmir Spring", size: "Spring Green", density: "ألياف مرنة", img: "Habib Izmir Spring.jpg", desc: "يعكس بهجة الربيع بألوانه الحيوية، مناسب للتنسيقات المودرن." },
-        "7": { name: "Habib Marmara Turf", size: "Marmara", density: "شديد التحمل", img: "Habib Marmara Turf.jpg", desc: "متانة فائقة وقدرة عالية على تحمل أشعة الشمس المباشرة." },
-        "8": { name: "نجيل طبيعي 50 ملم", size: "50mm", density: "كثافة عالية", img: "grass-50mm-natural.jpeg", desc: "أفضل أنواع النجيل الصناعي للمساحات الواسعة والفلل." },
-        "9": { name: "نجيل 40 ملم (28 غرزة)", size: "40mm", density: "28 غرزة", img: "grass-40mm-natural-28.jpeg", desc: "صُمم للمساحات ذات الاستخدام الكثيف والمشي المتكرر." },
-        "10": { name: "نجيل 40 ملم (24 غرزة)", size: "40mm", density: "24 غرزة", img: "grass-40mm-natural-24.jpeg", desc: "الخيار الأمثل لتنسيق الحدائق المنزلية والأسطح." },
-        "11": { name: "نجيل 30 ملم (24 غرزة)", size: "30mm", density: "24 غرزة", img: "grass-30mm-natural-24.jpeg", desc: "كثافة ممتازة مناسبة للممرات والديكورات الخارجية." },
-        "12": { name: "نجيل 30 ملم (18 غرزة)", size: "30mm", density: "18 غرزة", img: "grass-30mm-natural-18.jpeg", desc: "توازن رائع بين السعر والجودة الممتازة." },
-        "13": { name: "نجيل 30 ملم (16 غرزة)", size: "30mm", density: "16 غرزة", img: "grass-30mm-natural-16.jpeg", desc: "مناسب جداً للديكورات البسيطة والمساحات الجانبية." },
-        "14": { name: "نجيل ستاندرد 20 ملم", size: "20mm", density: "ستاندرد", img: "grass-20mm-standard-12.jpeg", desc: "حل عملي واقتصادي للمساحات الجمالية المتوسطة." },
-        "15": { name: "نجيل طبيعي 40 ملم كلاسيك", size: "40mm", density: "قياسي", img: "grass-40mm-natural.jpeg", desc: "نجيل بمواصفات قياسية عالمية لضمان الاستدامة." }
+        "1": { name: "Habib Anatolian Nature", size: "Natural", density: "مظهر واقعي", img: "assets/images/nageel/Habib Anatolian Nature.jpg", desc: "نجيل تركي يحاكي الطبيعة الأناضولية بألوان متداخلة مذهلة." },
+        "2": { name: "Habib Antalya Breeze", size: "30mm", density: "نخب أول تركيا", img: "assets/images/nageel/Habib Antalya Breeze (30mm).jpg", desc: "نسيم أنطاليا: نجيل صناعي فاخر يجمع بين النعومة الفائقة والمظهر الطبيعي." },
+        "3": { name: "Habib Bosphorus Green", size: "50mm", density: "كثافة عالية جداً", img: "assets/images/nageel/Habib Bosphorus Green (50mm).jpg", desc: "خضرة البسفور: الارتفاع الأعلى لإحساس الرفاهية الكاملة وكثافة العشب الطبيعي." },
+        "4": { name: "Habib Bosphorus Silk", size: "Silk Touch", density: "ناعم جداً", img: "assets/images/nageel/Habib Bosphorus Silk.jpg", desc: "ملمس حريري فائق النعومة مخصص لجلسات الروف والحدائق المريحة." },
+        "5": { name: "Habib Istanbul Lush", size: "40mm", density: "جودة بريميوم", img: "assets/images/nageel/Habib Istanbul Lush (40mm).jpg", desc: "إسطنبول لوش: مزيج مثالي من الكثافة والمتانة والمظهر الجذاب." },
+        "6": { name: "Habib Izmir Spring", size: "Spring Green", density: "ألياف مرنة", img: "assets/images/nageel/Habib Izmir Spring.jpg", desc: "ربيع إزمير: ألوان حيوية تمنح حديقتك إشراقة دائمة ومظهر ربيعي متجدد." },
+        "7": { name: "Habib Marmara Turf", size: "Marmara", density: "شديد التحمل", img: "assets/images/nageel/Habib Marmara Turf.jpg", desc: "نجيل مرمرة: يتحمل الاستخدام الشاق وأشعة الشمس القوية في الأماكن المفتوحة." }
     };
 
-    // 🟠 قاعدة بيانات الأحجار والرخام (لتظهر في "منتجات قد تعجبك" فقط)
+    // 🟠 قاعدة بيانات الأحجار والرخام (التي ستظهر في "منتجات قد تعجبك" فقط)
     const stoneProducts = {
         "101": { name: "زلط أبيض رخامي V1", img: "zalat/zalat-white-marble-v1.jpeg" },
         "103": { name: "زلط أسود بركاني طبيعي", img: "zalat/zalat-black-volcanic.jpeg" },
@@ -290,24 +282,22 @@
 
     // --- منطق العرض الرئيسي ---
     if (p) {
-        // إظهار معلومات المنتج الديناميكي
         document.getElementById('dynamic-info').style.display = 'block';
         document.getElementById('p-name').innerText = p.name;
         document.getElementById('p-size').innerText = p.size;
         document.getElementById('p-density').innerText = p.density;
         document.getElementById('p-desc').innerText = p.desc;
         
-        // تغيير الصورة لصورة النجيل
-        document.getElementById('p-img').src = p.img;
+        // تحديث الصورة لصورة النجيل (استخدام المسار المبعوث)
+        document.getElementById('p-img').src = "../" + p.img; 
         document.getElementById('p-img').alt = p.name;
         document.title = p.name + " | حبيب ستون";
 
-        // تحديث رسالة الواتساب
-        const waText = encodeURIComponent("السلام عليكم حبيب ستون، أرغب في الاستفسار عن تفاصيل وسعر منتج: " + p.name);
+        const waText = encodeURIComponent("السلام عليكم حبيب ستون، أرغب في الاستفسار عن نجيل: " + p.name);
         document.getElementById('p-whatsapp').href = "https://wa.me/201016961497?text=" + waText;
     }
 
-    // --- منطق عرض "منتجات ذات صلة" (الأحجار فقط) ---
+    // --- عرض "منتجات ذات صلة" (الأحجار والرخام فقط - لا يوجد نجيل هنا) ---
     let relatedHTML = '';
     Object.keys(stoneProducts).forEach(id => {
         relatedHTML += `
