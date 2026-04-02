@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">حبيب ستين | تفاصيل المنتج</title>
+    <title id="page-title">حبيب ستون | تفاصيل المنتج</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -13,34 +13,28 @@
         
         body { font-family: 'Cairo', sans-serif; background: #f4f6f9; margin: 0; padding: 0; color: #333; line-height: 1.6; overflow-x: hidden; }
         
-        /* الحاوية الرئيسية */
         .container { max-width: 1000px; margin: 40px auto; background: var(--white); padding: 40px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); position: relative; border-top: 6px solid var(--main-green); }
         
         .product-header { text-align: center; margin-bottom: 35px; }
         .product-name { font-family: 'Amiri', serif; font-size: clamp(28px, 5vw, 40px); color: var(--main-green); font-weight: 800; margin: 0; }
         .product-brand { color: var(--gold); font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-top: 10px; display: block; }
 
-        /* منطقة عرض الصور */
         .img-wrapper { width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 35px; background: #eee; border: 1px solid #e0e0e0; }
         .product-image { width: 100%; max-height: 550px; object-fit: cover; display: block; transition: 0.4s ease; }
 
-        /* تفاصيل البيانات الفنية */
         .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 35px; }
         .info-item { background: var(--light-gray); padding: 20px; border-radius: 10px; border-right: 4px solid var(--gold); }
         .info-label { font-size: 13px; color: var(--text-muted); font-weight: 700; display: block; margin-bottom: 5px; }
         .info-value { font-size: 18px; color: var(--black); font-weight: 700; }
 
-        /* قسم الوصف */
         .description-section { margin-bottom: 40px; padding: 25px; background: #fffdf9; border-radius: 12px; border: 1px solid #f1e6cc; }
         .description-text { font-size: 20px; color: #444; text-align: justify; font-family: 'Amiri', serif; line-height: 2.2; margin: 0; }
 
-        /* أزرار الإجراءات */
         .action-area { display: flex; flex-direction: column; gap: 15px; }
         .btn { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 22px; text-decoration: none; border-radius: 10px; font-size: 20px; font-weight: 700; transition: 0.3s; }
         .btn-whatsapp { background: #25D366; color: white; box-shadow: 0 8px 20px rgba(37, 211, 102, 0.2); }
         .btn-whatsapp:hover { background: #128C7E; transform: translateY(-3px); }
 
-        /* قسم المنتجات ذات الصلة */
         .related-section { margin-top: 60px; border-top: 1px solid #eee; padding-top: 40px; }
         .related-title { font-family: 'Amiri', serif; font-size: 28px; color: var(--main-green); margin-bottom: 30px; text-align: right; }
         .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
@@ -54,7 +48,6 @@
         .btn-gallery { display: inline-block; padding: 16px 45px; background: var(--black); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; margin-top: 35px; transition: 0.3s; border: 2px solid var(--black); }
         .btn-gallery:hover { background: transparent; color: var(--black); }
 
-        /* شاشة الخطأ */
         #error-view { display: none; text-align: center; padding: 100px 20px; }
 
         @media (max-width: 600px) { .info-grid { grid-template-columns: 1fr; } .container { padding: 20px; margin: 20px auto; } }
@@ -65,11 +58,11 @@
 <div id="product-view" class="container" style="display:none;">
     <div class="product-header">
         <h1 id="p-name" class="product-name">جاري تحميل البيانات...</h1>
-        <span class="product-brand">Habib Stone | Premium Selection</span>
+        <span class="product-brand">Habib Clean | Premium Selection</span>
     </div>
 
     <div class="img-wrapper">
-        <img id="p-img" src="" alt="" class="product-image" onerror="this.src='../assets/images/logo.png'">
+        <img id="p-img" src="" alt="" class="product-image">
     </div>
 
     <div class="info-grid">
@@ -104,23 +97,30 @@
     <i class="fas fa-search" style="font-size: 50px; color: var(--gold); margin-bottom: 20px;"></i>
     <h2 style="color:var(--main-green); font-family:'Amiri';">عذراً، هذا المنتج جاري تحديث بياناته</h2>
     <p style="color: #666;">يرجى العودة للصفحة الرئيسية أو تصفح المعرض العام.</p>
-    <a href="../index.html" class="btn-gallery">العودة للصفحة الرئيسية</a>
+    <a href="index.html" class="btn-gallery">العودة للمعرض العام</a>
 </div><script>
-    // 🦈 قاعدة بيانات حبيب ستون الشاملة (النجيل، الزلط، الرخام، الميكا)
-    // ملاحظة: الـ ID هنا هو المفتاح؛ تأكد أن روابط المعرض ترسل الـ ID الصحيح
+    // 🟢 قاعدة بيانات نجيل حبيب كلين الشاملة
+    // الـ ID هو المفتاح الذي يوضع في الرابط (مثلاً: product.html?id=1)
     const products = {
-        // --- [1] قسم النجيل الصناعي (1 - 50) ---
-        "1": { cat: "nageel", name: "نجيل سوبر رويال - 50 ملم", size: "ارتفاع 5 سم", density: "كثافة عالية (فئة القصور)", img: "nageel/grass-50mm-natural.jpeg", desc: "يمثل نجيل سوبر رويال قمة الفخامة في المسطحات الخضراء الصناعية. يتميز بنعومة فائقة وكثافة ألياف تحاكي العشب الطبيعي تماماً، مع مقاومة عالية للأشعة فوق البنفسجية لضمان ثبات اللون لسنوات طويلة." },
-        "2": { cat: "nageel", name: "نجيل أسطوري 40 ملم (28 غرزة)", size: "ارتفاع 4 سم", density: "28 غرزة (شديد التحمل)", img: "nageel/grass-40mm-natural-28.jpeg", desc: "صُمم هذا النوع للمساحات ذات الاستخدام الكثيف. بفضل كثافة الـ 28 غرزة، يوفر ملمساً ممتلئاً ومرونة عالية تمنع هبوط الألياف، مما يجعله مثالياً لمناطق اللعب والجلسات العائلية." },
-        "3": { cat: "nageel", name: "نجيل ملكي 40 ملم (24 غرزة)", size: "ارتفاع 4 سم", density: "24 غرزة (جودة ممتازة)", img: "nageel/grass-40mm-natural-24.jpeg", desc: "الخيار الأمثل لتنسيق الحدائق المنزلية والأسطح (الروف). يجمع بين المظهر الطبيعي الجذاب والسعر المنافس، مع ضمان حبيب ستون للجودة وطول العمر الافتراضي." },
+        // --- [1] مجموعة Habib التركية الفاخرة ---
+        "1": { name: "Habib Antalya Breeze", size: "30mm", density: "نخب أول تركيا 🇹🇷", img: "Habib Antalya Breeze (30mm).jpg", desc: "نسيم أنطاليا: نجيل صناعي فاخر يجمع بين النعومة الفائقة والمظهر الطبيعي الجذاب، مثالي للحدائق المنزلية الراقية والفلل." },
+        "2": { name: "Habib Bosphorus Green", size: "50mm", density: "كثافة عالية جداً", img: "Habib Bosphorus Green (50mm).jpg", desc: "خضرة البسفور: أقصى ارتفاع متاح (5 سم) ليعطيك إحساس العشب الطبيعي الغزير، يتميز بمرونة عالية للألياف وطول عمر افتراضي." },
+        "3": { name: "Habib Istanbul Lush", size: "40mm", density: "جودة بريميوم", img: "Habib Istanbul Lush (40mm).jpg", desc: "إسطنبول لوش: كثافة مثالية وملمس ناعم، مصمم ليتحمل الاستخدام المستمر ويحافظ على لونه الزاهي طوال العام." },
+        "4": { name: "Habib Anatolian Nature", size: "طبيعي", density: "مظهر واقعي 100%", img: "Habib Anatolian Nature.jpg", desc: "طبيعة الأناضول: يتميز بتداخل ألوان العشب الطبيعي ليعطي مظهراً واقعياً جداً يصعب تفرقته عن النجيل الطبيعي." },
+        "5": { name: "Habib Bosphorus Silk", size: "حريري", density: "نعومة فائقة", img: "Habib Bosphorus Silk.jpg", desc: "بسفور سيلك: ملمس ناعم جداً كالحرير، الخيار الأول لمناطق لعب الأطفال والجلسات العائلية المريحة." },
+        "6": { name: "Habib Izmir Spring", size: "ربيعي", density: "ألياف مرنة", img: "Habib Izmir Spring.jpg", desc: "ربيع إزمير: يعكس بهجة الربيع بألوانه الحيوية، مناسب جداً للتنسيقات المودرن والديكورات الخارجية المبتكرة." },
+        "7": { name: "Habib Marmara Turf", size: "مرمرة", density: "شديد التحمل", img: "Habib Marmara Turf.jpg", desc: "نجيل مرمرة: قوة ومتانة فائقة وقدرة عالية على تحمل درجات الحرارة العالية وأشعة الشمس المباشرة في مصر." },
 
-        // --- [2] قسم الأحجار والزلط الديكوري (101 - 150) ---
-        "101": { cat: "zalat", name: "زلط أبيض رخامي ناصع V1", size: "أحجام منتقاة", density: "نخب أول مستورد", img: "zalat/zalat-white-marble-v1.jpeg", desc: "زلط أبيض رخامي طبيعي يتميز بنقاء اللون ونعومة الملمس. يعطي تبايناً بصرياً رائعاً عند دمجه مع المساحات الخضراء، ويمنح الحديقة طابعاً كلاسيكياً فاخراً." },
-        "103": { cat: "zalat", name: "زلط أسود بركاني طبيعي", size: "أحجام متنوعة", density: "أصلي (شديد الصلابة)", img: "zalat/zalat-black-volcanic.jpeg", desc: "عشاق التصميم العصري (Modern) يفضلون الزلط البركاني الأسود. يتميز بصلابة فائقة ولون ثابت لا يتأثر بالمياه أو العوامل الجوية، مما يجعله مثالياً للممرات والديكورات الخارجية." },
-
-        // --- [3] قسم الرخام والميكا (301 - 350) ---
-        "301": { cat: "marble", name: "رخام كرارة ملي براون", size: "ألواح / شرائح", density: "جودة بريميوم", img: "marble/marble-carrara-milli-brown.jpg", desc: "يجمع بين فخامة عروق الكرارة الإيطالية واللمسات البنية الدافئة. يُعد اختياراً مثالياً لتكسية الحوائط الديكورية والواجهات التي تبحث عن الفخامة العصرية والتميز." },
-        "307": { cat: "marble", name: "حجر ميكا رمادي (واجهات)", size: "شرائح طبيعية", density: "طبيعي 100%", img: "marble/stone-mica-grey.jpg", desc: "حجر الميكا الطبيعي يتميز بمتانته الفائقة وعزله الطبيعي للحرارة. يعطي الواجهات مظهراً معمارياً حديثاً وثباتاً في الألوان يقاوم كافة العوامل الجوية المتقلبة." }
+        // --- [2] مجموعة النجيل القياسي (Standard & Specialized) ---
+        "10": { name: "نجيل طبيعي 50 ملم", size: "50mm", density: "قياسي (Standard)", img: "grass-50mm-natural.jpeg", desc: "نجيل صناعي بارتفاع 5 سم، حل عملي وممتاز للمساحات الواسعة والحدائق الكبيرة التي تتطلب مظراً غنياً." },
+        "11": { name: "نجيل طبيعي 40 ملم (28 غرزة)", size: "40mm", density: "28 غرزة (كثافة مرتفعة)", img: "grass-40mm-natural-28.jpeg", desc: "نجيل 4 سم عالي الكثافة، صُمم خصيصاً ليتحمل الحركة الكثيفة والمشي المتكرر دون تأثر جودة الألياف." },
+        "12": { name: "نجيل طبيعي 40 ملم (24 غرزة)", size: "40mm", density: "24 غرزة (جودة ممتازة)", img: "grass-40mm-natural-24.jpeg", desc: "الخيار الأكثر مبيعاً، يوازن بين السعر المنافس والجودة العالية لتنسيق الأسطح (الروف) والبلكونات." },
+        "13": { name: "نجيل طبيعي 30 ملم (24 غرزة)", size: "30mm", density: "متعدد الاستخدامات", img: "grass-30mm-natural-24.jpeg", desc: "نجيل 3 سم مرن وعملي، مناسب جداً للممرات المنزلية والديكورات الجدارية والارضيات المتوسطة." },
+        "14": { name: "نجيل طبيعي 30 ملم (18 غرزة)", size: "30mm", density: "كثافة 18 غرزة", img: "grass-30mm-natural-18.jpeg", desc: "حل اقتصادي وعملي لتنسيق المساحات الجمالية والحدائق الجانبية." },
+        "15": { name: "نجيل طبيعي 30 ملم (16 غرزة)", size: "30mm", density: "كثافة 16 غرزة", img: "grass-30mm-natural-16.jpeg", desc: "نجيل 3 سم بمواصفات قياسية، مثالي للديكورات البسيطة وتغطية المساحات الواسعة بتكلفة موفرة." },
+        "16": { name: "نجيل طبيعي 20 ملم", size: "20mm", density: "ستاندرد", img: "grass-20mm-standard-12.jpeg", desc: "نجيل قصير الارتفاع سهل التنظيف والتركيب، مناسب جداً للاستخدامات التجارية البسيطة والديكور." },
+        "17": { name: "نجيل أبيض (White Grass)", size: "11mm", density: "ديكور خاص", img: "grass-11mm-white.jpg", desc: "نجيل أبيض فريد، يستخدم في تحديد الملاعب، التصاميم الهندسية المودرن، أو كفواصل لونية جذابة." },
+        "18": { name: "تصميم لاندسكيب مودرن", size: "Mixed", density: "تصميم هندسي", img: "modern-landscape-design.jpg", desc: "مثال لتنسيق اللاندسكيب باستخدام منتجات حبيب كلين، يجمع بين النجيل الصناعي والعناصر الجمالية." }
     };
 
     // --- 🚀 محرك التشغيل والربط المنطقي ---
@@ -129,26 +129,26 @@
     const p = products[productId];
 
     if (p) {
-        // 1. تفعيل واجهة العرض وإخفاء رسالة الخطأ
+        // 1. تفعيل واجهة العرض
         document.getElementById('product-view').style.display = 'block';
         document.getElementById('error-view').style.display = 'none';
 
-        // 2. حقن البيانات الأساسية
+        // 2. حقن البيانات
         document.getElementById('p-name').innerText = p.name;
         document.getElementById('p-size').innerText = p.size;
         document.getElementById('p-density').innerText = p.density;
         document.getElementById('p-desc').innerText = p.desc;
         
-        // 3. ضبط مسار الصورة المعتمد (GitHub Structure)
-        document.getElementById('p-img').src = "../assets/images/" + p.img;
+        // 3. ضبط مسار الصورة (يقرأ من نفس المجلد أو المسار الذي حددته)
+        document.getElementById('p-img').src = p.img;
         document.getElementById('p-img').alt = p.name;
-        document.title = `${p.name} | حبيب ستون`;
+        document.title = `${p.name} | حبيب كلين`;
 
-        // 4. إعداد رابط الواتساب الرسمي
-        const waText = `السلام عليكم حبيب ستون، أود الاستفسار عن تفاصيل وأسعار المنتج التالي: ${p.name} (كود: ${productId})`;
+        // 4. إعداد رابط الواتساب الرسمي برقمك
+        const waText = `السلام عليكم حبيب كلين، أود الاستفسار عن سعر ومعاينة منتج: ${p.name}`;
         document.getElementById('p-whatsapp').href = `https://wa.me/201016961497?text=${encodeURIComponent(waText)}`;
 
-        // 5. محرك "خيارات إضافية" (عرض عشوائي من فئات مكملة)
+        // 5. محرك "منتجات قد تعجبك" (عرض عشوائي من النجيل فقط)
         let otherIds = Object.keys(products).filter(id => id !== productId);
         otherIds.sort(() => Math.random() - 0.5); 
 
@@ -156,31 +156,26 @@
         otherIds.slice(0, 4).forEach(id => {
             relatedHTML += `
                 <a href="product.html?id=${id}" class="related-card">
-                    <img src="../assets/images/${products[id].img}" onerror="this.src='../assets/images/logo.png'">
+                    <img src="${products[id].img}" onerror="this.src='logo.png'">
                     <div class="related-body">
                         <h4>${products[id].name}</h4>
-                        <span class="related-link">عرض التفاصيل ←</span>
+                        <span class="related-link">التفاصيل ←</span>
                     </div>
                 </a>`;
         });
         document.getElementById('related-grid').innerHTML = relatedHTML;
 
-        // 6. روابط التنقل الاحترافية بين المعارض
-        let targetLink = (p.cat === "nageel") ? "marble.html" : "grass-gallery.html";
-        let targetText = (p.cat === "nageel") ? "تصفح كتالوج الأحجار والزلط" : "تصفح مجموعة النجيل الصناعي";
-        
+        // 6. رابط العودة للمعرض
         document.getElementById('gallery-nav').innerHTML = `
-            <div style="margin-top: 30px; border-top: 1px solid #eee; padding-top: 25px; text-align: center;">
-                <p style="font-size: 15px; color: #666; margin-bottom: 15px; font-weight: 600;">هل ترغب في استكشاف المزيد من خيارات التنسيق؟</p>
-                <a href="${targetLink}" class="btn-gallery" style="text-decoration: none;">
-                    <i class="fas fa-arrow-right" style="margin-left: 8px; font-size: 14px;"></i>
-                    ${targetText}
+            <div style="margin-top: 30px; border-top: 1px solid #eee; padding-top: 25px;">
+                <p style="font-size: 15px; color: #666; margin-bottom: 15px; font-weight: 600;">هل ترغب في رؤية المزيد؟</p>
+                <a href="grass-gallery.html" class="btn-gallery" style="text-decoration: none;">
+                    <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                    العودة لكتالوج النجيل بالكامل
                 </a>
             </div>
         `;
-
     } else {
-        // في حال عدم وجود ID أو خطأ في الرابط (حماية من الصفحة البيضاء)
         document.getElementById('product-view').style.display = 'none';
         document.getElementById('error-view').style.display = 'block';
     }
