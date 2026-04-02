@@ -1,91 +1,159 @@
-<div class="product-grid">
-    <a href="stones.html?id=40" class="card">
-        <div class="img-wrapper"><img src="../assets/images/marble/marble-galala.jpg" alt="Habib Royal Galala"></div>
-        <div class="card-body">
-            <span>Egyptian Heritage</span>
-            <h3>Habib Royal Galala</h3>
-            <p>عراقة الرخام المصري الأصيل بتفاصيل ملكية</p>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جاليري الرخام والأحجار النادرة | حبيب ستور</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --royal-green: #1a3c34; --gold: #c5a059; --soft-bg: #f8f9fa; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--soft-bg); margin: 0; padding: 0; color: #333; scroll-behavior: smooth; }
+        
+        .hero-banner { position: relative; width: 100%; height: 550px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+        .hero-banner img { position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 1; filter: brightness(0.55); }
+        .hero-content { position: relative; z-index: 2; text-align: center; color: white; padding: 20px; }
+        .hero-content h1 { font-size: 3.5rem; font-weight: 300; margin: 0; letter-spacing: 3px; }
+        .hero-content p { font-size: 1.4rem; opacity: 0.9; font-weight: 300; margin-top: 15px; }
+
+        .container { max-width: 1300px; margin: 60px auto; padding: 0 25px; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 2.5rem; color: var(--royal-green); font-weight: 400; position: relative; display: inline-block; padding-bottom: 15px; }
+        .section-header h2::after { content: ''; position: absolute; bottom: 0; left: 30%; width: 40%; height: 2px; background: var(--gold); }
+
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s; text-decoration: none; border: 1px solid rgba(0,0,0,0.02); }
+        .card:hover { transform: translateY(-15px); box-shadow: 0 25px 50px rgba(0,0,0,0.12); border-color: var(--gold); }
+        
+        .img-wrapper { width: 100%; height: 300px; overflow: hidden; }
+        .img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
+        .card:hover .img-wrapper img { transform: scale(1.1); }
+        
+        .card-body { padding: 30px; text-align: center; }
+        .card-body span { color: var(--gold); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 10px; }
+        .card-body h3 { margin: 0; font-size: 1.3rem; color: var(--royal-green); font-weight: 500; }
+        .card-body p { color: #888; font-size: 0.95rem; margin-top: 12px; font-style: italic; }
+
+        .expert-btn { position: fixed; bottom: 40px; left: 40px; background: #25d366; color: white; padding: 18px 35px; border-radius: 60px; text-decoration: none; box-shadow: 0 15px 35px rgba(37, 211, 102, 0.3); z-index: 1000; font-weight: 600; display: flex; align-items: center; gap: 15px; transition: 0.4s; }
+    </style>
+</head>
+<body>
+
+    <section class="hero-banner">
+        <img src="../assets/images/marble/marble-galala.jpg" alt="Habib Royal Galala Marble">
+        <div class="hero-content">
+            <h1>حبيب ستور</h1>
+            <p>نخبة الرخام العالمي لمساحات تستحق الخلود</p>
         </div>
+    </section>
+
+    <div class="container">
+        <div class="section-header">
+            <h2>مجموعة الرخام والأحجار الملكية</h2>
+        </div>
+
+        <div class="product-grid">
+            
+            <a href="stones.html?id=40" class="card">
+                <div class="img-wrapper"><img src="../assets/images/marble/marble-galala.jpg" alt="Habib Royal Galala"></div>
+                <div class="card-body">
+                    <span>Egyptian Heritage</span>
+                    <h3>Habib Royal Galala</h3>
+                    <p>عراقة الرخام المصري الأصيل بتفاصيل ملكية</p>
+                </div>
+            </a>
+
+            <a href="stones.html?id=41" class="card">
+                <div class="img-wrapper"><img src="../assets/images/marble/marble-crystal-white.jpg" alt="Crystal White"></div>
+                <div class="card-body">
+                    <span>Pure Luxury</span>
+                    <h3>Habib Crystal White</h3>
+                    <p>نقاء الكريستال في قلب تصميمكم المعماري</p>
+                </div>
+            </a>
+
+            <a href="stones.html?id=42" class="card">
+                <div class="img-wrapper"><img src="../assets/images/marble/marble-emperador.jpg" alt="Emperador Marble"></div>
+                <div class="card-body">
+                    <span>Classic Soul</span>
+                    <h3>Habib Emperador Dark</h3>
+                    <p>دفء الرخام الإمبراطوري بلمساته الكلاسيكية</p>
+                </div>
+            </a>
+
+            <a href="stones.html?id=43" class="card">
+                <div class="img-wrapper"><img src="../assets/images/marble/marble-spanish-black.jpg" alt="Spanish Black"></div>
+                <div class="card-body">
+                    <span>Majestic Black</span>
+                    <h3>Habib Spanish Black</h3>
+                    <p>هيبة الأسود الإسباني لإطلالة ملكية فاخرة</p>
+                </div>
+            </a>
+
+            <a href="stones.html?id=44" class="card">
+                <div class="img-wrapper"><img src="../assets/images/marble/marble-carrara-milli-brown.jpg" alt="Carrara Milli Brown"></div>
+                <div class="card-body">
+                    <span>Italian Art</span>
+                    <h3>Habib Carrara Brown</h3>
+                    <p>تداخل العروق الإيطالية مع سحر اللون البني</p>
+                </div>
+            </a>
+
+            <a href="stones.html?id=45" class="card">
+                <div class="img-wrapper"><img src="../assets/images/marble/marble-red-carrara-spanish-black.jpg" alt="Red Spanish Carrara"></div>
+                <div class="card-body">
+                    <span>Exotic Series</span>
+                    <h3>Habib Spanish Fusion</h3>
+                    <p>مزيج لوني نادر يمنح المكان شخصية فريدة</p>
+                </div>
+            </a>
+
+            <a href="stones.html?id=46" class="card">
+                <div class="img-wrapper"><img src="../assets/images/marble/marble-sandstone.jpg" alt="Sandstone"></div>
+                <div class="card-body">
+                    <span>Natural Harmony</span>
+                    <h3>Habib Sandstone Luxe</h3>
+                    <p>تناغم الطبيعة في ملمس حجري ناعم وهادئ</p>
+                </div>
+            </a>
+
+            <a href="stones.html?id=51" class="card">
+                <div class="img-wrapper"><img src="../assets/images/marble/stone-mica-grey.jpg" alt="Mica Grey"></div>
+                <div class="card-body">
+                    <span>Elite Facades</span>
+                    <h3>Habib Mica Grey</h3>
+                    <p>خيار الصفوة لواجهات تعكس الرقي والحداثة</p>
+                </div>
+            </a>
+
+            <a href="stones.html?id=52" class="card">
+                <div class="img-wrapper"><img src="../assets/images/marble/stone-mica-red.jpg" alt="Mica Red"></div>
+                <div class="card-body">
+                    <span>Modern Classic</span>
+                    <h3>Habib Mica Red</h3>
+                    <p>تألق التفاصيل الهندسية بلمسة دافئة</p>
+                </div>
+            </a>
+
+            <a href="stones.html?id=53" class="card">
+                <div class="img-wrapper"><img src="../assets/images/marble/stone-basalt-black.jpg" alt="Basalt Black"></div>
+                <div class="card-body">
+                    <span>Solid Grace</span>
+                    <h3>Habib Black Basalt</h3>
+                    <p>قوة الحجر البركاني بلمسة هندسية معاصرة</p>
+                </div>
+            </a>
+
+        </div> 
+    </div> 
+    
+    <a href="https://wa.me/201016961497" class="expert-btn">
+        <i class="fab fa-whatsapp"></i>
+        <span>استشارة الخبير المعماري</span>
     </a>
 
-    <a href="stones.html?id=41" class="card">
-        <div class="img-wrapper"><img src="../assets/images/marble/marble-crystal-white.jpg" alt="Crystal White"></div>
-        <div class="card-body">
-            <span>Pure Luxury</span>
-            <h3>Habib Crystal White</h3>
-            <p>نقاء الكريستال في قلب تصميمكم المعماري</p>
-        </div>
-    </a>
+    <footer style="text-align: center; padding: 60px 20px; color: #aaa; font-size: 0.85rem; background: #fff; margin-top: 80px; border-top: 1px solid #f1f1f1;">
+        <p style="letter-spacing: 1px;">&copy; 2026 حبيب ستور - جاليري النخبة للاندسكيب</p>
+    </footer>
 
-    <a href="stones.html?id=42" class="card">
-        <div class="img-wrapper"><img src="../assets/images/marble/marble-emperador.jpg" alt="Emperador Marble"></div>
-        <div class="card-body">
-            <span>Classic Soul</span>
-            <h3>Habib Emperador Dark</h3>
-            <p>دفء الرخام الإمبراطوري بلمساته الكلاسيكية</p>
-        </div>
-    </a>
-
-    <a href="stones.html?id=43" class="card">
-        <div class="img-wrapper"><img src="../assets/images/marble/marble-spanish-black.jpg" alt="Spanish Black"></div>
-        <div class="card-body">
-            <span>Majestic Black</span>
-            <h3>Habib Spanish Black</h3>
-            <p>هيبة الأسود الإسباني لإطلالة ملكية فاخرة</p>
-        </div>
-    </a>
-
-    <a href="stones.html?id=44" class="card">
-        <div class="img-wrapper"><img src="../assets/images/marble/marble-carrara-milli-brown.jpg" alt="Carrara Milli Brown"></div>
-        <div class="card-body">
-            <span>Italian Art</span>
-            <h3>Habib Carrara Brown</h3>
-            <p>تداخل العروق الإيطالية مع سحر اللون البني</p>
-        </div>
-    </a>
-
-    <a href="stones.html?id=45" class="card">
-        <div class="img-wrapper"><img src="../assets/images/marble/marble-red-carrara-spanish-black.jpg" alt="Red Spanish Carrara"></div>
-        <div class="card-body">
-            <span>Exotic Series</span>
-            <h3>Habib Spanish Fusion</h3>
-            <p>مزيج لوني نادر يمنح المكان شخصية فريدة</p>
-        </div>
-    </a>
-
-    <a href="stones.html?id=46" class="card">
-        <div class="img-wrapper"><img src="../assets/images/marble/marble-sandstone.jpg" alt="Sandstone"></div>
-        <div class="card-body">
-            <span>Natural Harmony</span>
-            <h3>Habib Sandstone Luxe</h3>
-            <p>تناغم الطبيعة في ملمس حجري ناعم وهادئ</p>
-        </div>
-    </a>
-
-    <a href="stones.html?id=51" class="card">
-        <div class="img-wrapper"><img src="../assets/images/marble/stone-mica-grey.jpg" alt="Mica Grey"></div>
-        <div class="card-body">
-            <span>Elite Facades</span>
-            <h3>Habib Mica Grey</h3>
-            <p>خيار الصفوة لواجهات تعكس الرقي والحداثة</p>
-        </div>
-    </a>
-
-    <a href="stones.html?id=52" class="card">
-        <div class="img-wrapper"><img src="../assets/images/marble/stone-mica-red.jpg" alt="Mica Red"></div>
-        <div class="card-body">
-            <span>Modern Classic</span>
-            <h3>Habib Mica Red</h3>
-            <p>تألق التفاصيل الهندسية بلمسة دافئة</p>
-        </div>
-    </a>
-
-    <a href="stones.html?id=53" class="card">
-        <div class="img-wrapper"><img src="../assets/images/marble/stone-basalt-black.jpg" alt="Basalt Black"></div>
-        <div class="card-body">
-            <span>Solid Grace</span>
-            <h3>Habib Black Basalt</h3>
-            <p>قوة الحجر البركاني بلمسة هندسية معاصرة</p>
-        </div>
-    </a>
-</div>
+</body>
+</html>
