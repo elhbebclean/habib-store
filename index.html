@@ -3,93 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HABIB STORE | الفخامة في عالم اللاندسكيب</title>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@300;600&display=swap" rel="stylesheet">
+    <title>Habib Stone | Premium Selection</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        :root { --gold: #AF944F; --black: #0a0a0a; --bg: #fdfdfd; }
+        :root { --gold: #AF944F; --black: #0a0a0a; --bg: #fdfdfd; --white: #ffffff; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body { font-family: 'Cairo', sans-serif; background: var(--bg); color: var(--black); overflow-x: hidden; }
 
+        /* Luxury Header */
         header { 
             position: fixed; top: 0; width: 100%; z-index: 1000;
-            background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(0,0,0,0.05); padding: 15px 5%;
             display: flex; justify-content: space-between; align-items: center;
         }
-        .logo { font-family: 'Amiri', serif; font-size: 32px; letter-spacing: 3px; color: var(--black); text-decoration: none; }
+        .logo { font-family: 'Amiri', serif; font-size: 30px; color: var(--black); text-decoration: none; font-weight: bold; letter-spacing: 1px; }
 
+        /* Professional Hero Section */
         .hero { 
-            height: 50vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
-            text-align: center; background: #fff; margin-top: 60px;
+            height: 85vh; 
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/nageel/modern-landscape-design.jpg');
+            background-size: cover; 
+            background-position: center;
+            background-attachment: fixed;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; color: #fff; position: relative;
         }
-        .hero h1 { font-family: 'Amiri', serif; font-size: clamp(35px, 8vw, 55px); margin-bottom: 10px; color: var(--black); }
-        .hero p { font-weight: 300; letter-spacing: 2px; color: #888; text-transform: uppercase; font-size: 14px; }
-
-        .container { max-width: 1400px; margin: auto; padding: 50px 5%; }
-        
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-            gap: 30px; 
+        .hero-content {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 50px 70px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 900px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
         }
+        .hero p { font-weight: 700; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; font-size: 14px; margin-bottom: 20px; }
+        .hero h1 { font-family: 'Amiri', serif; font-size: clamp(45px, 8vw, 70px); line-height: 1.1; margin-bottom: 25px; }
+        .hero .sub-text { font-size: 19px; color: #f0f0f0; font-weight: 300; letter-spacing: 0; text-transform: none; }
 
+        /* Grid System */
+        .container { max-width: 1400px; margin: auto; padding: 100px 5%; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 45px; }
         .product-link { text-decoration: none; color: inherit; display: block; }
-
-        .product-card { 
-            background: #fff; position: relative; transition: 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-            overflow: hidden; border-bottom: 1px solid #eee;
-        }
-        .product-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
         
-        .img-container { width: 100%; height: 480px; overflow: hidden; position: relative; background: #f9f9f9; }
-        .img-container img { width: 100%; height: 100%; object-fit: cover; transition: 1.2s; }
+        .product-card { 
+            background: var(--white); border-radius: 20px; overflow: hidden; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04); transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border: 1px solid #f0f0f0;
+        }
+        .product-card:hover { transform: translateY(-15px); box-shadow: 0 40px 80px rgba(0,0,0,0.15); border-color: var(--gold); }
+        
+        .img-container { width: 100%; height: 500px; overflow: hidden; position: relative; }
+        .img-container img { width: 100%; height: 100%; object-fit: cover; transition: 1.5s ease; }
         .product-card:hover img { transform: scale(1.1); }
 
-        .badge { position: absolute; top: 20px; left: 20px; background: var(--gold); color: white; padding: 5px 15px; font-size: 11px; font-weight: bold; z-index: 10; }
+        .badge { position: absolute; top: 25px; left: 25px; background: var(--gold); color: white; padding: 7px 18px; font-size: 12px; font-weight: 800; z-index: 10; border-radius: 8px; }
 
-        .info { padding: 25px 0; text-align: right; }
-        .info h3 { font-size: 22px; margin-bottom: 8px; font-weight: 600; }
-        .info .category { font-size: 11px; color: var(--gold); text-transform: uppercase; margin-bottom: 10px; display: block; letter-spacing: 1px; font-weight: bold; }
-        .info p { font-size: 14px; color: #666; line-height: 1.7; margin-bottom: 20px; height: 50px; overflow: hidden; }
+        .info { padding: 35px; text-align: center; }
+        .info .category { font-size: 13px; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; display: block; font-weight: 800; letter-spacing: 1px; }
+        .info h3 { font-size: 26px; margin-bottom: 15px; font-family: 'Amiri', serif; font-weight: 800; color: var(--black); }
+        .info p { font-size: 16px; color: #777; line-height: 1.8; margin-bottom: 30px; height: 60px; overflow: hidden; }
 
         .btn-luxury { 
-            display: block; width: 100%; background: var(--black); color: #fff; 
-            text-align: center; text-decoration: none; padding: 15px; font-size: 14px;
-            transition: 0.3s; cursor: pointer; border: none; font-weight: 600;
-            letter-spacing: 1px;
+            display: inline-block; width: 100%; background: var(--black); color: #fff; 
+            text-align: center; padding: 20px; font-size: 16px; transition: 0.4s; font-weight: 700; border-radius: 12px;
+            border: 2px solid var(--black);
         }
-        .btn-luxury:hover { background: var(--gold); }
+        .product-card:hover .btn-luxury { background: var(--gold); border-color: var(--gold); }
 
+        /* Floating UI */
         .cart-trigger { 
-            position: fixed; bottom: 30px; left: 30px; background: var(--black); color: #fff;
-            width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2); z-index: 2000; cursor: pointer; transition: 0.3s;
-            text-decoration: none; font-size: 24px;
+            position: fixed; bottom: 35px; left: 35px; background: var(--black); color: #fff;
+            width: 75px; height: 75px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25); z-index: 2000; transition: 0.4s; font-size: 28px;
         }
-        .cart-trigger:hover { transform: scale(1.1); background: var(--gold); }
-        .cart-count { 
-            position: absolute; top: 0; right: 0; background: var(--gold); color: #fff; 
-            width: 22px; height: 22px; border-radius: 50%; font-size: 12px; 
-            display: flex; align-items: center; justify-content: center; font-weight: bold;
-        }
+        .cart-trigger:hover { transform: scale(1.1) rotate(10deg); background: var(--gold); }
+        .cart-count { position: absolute; top: 0; right: 0; background: var(--gold); color: white; width: 25px; height: 25px; border-radius: 50%; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
 
-        footer { text-align: center; padding: 60px 20px; color: #888; font-size: 12px; border-top: 1px solid #eee; background: #fff; }
+        footer { text-align: center; padding: 100px 20px; background: #fafafa; border-top: 1px solid #eee; color: #999; }
+        
+        @media (max-width: 768px) { .hero-content { padding: 30px; } .grid { grid-template-columns: 1fr; } }
     </style>
-</head>
-<body>
+</head><body>
 
 <header>
-    <a href="index.html" class="logo">HABIB STORE</a>
-    <div style="font-size: 11px; font-weight: 300; letter-spacing: 1px; color: var(--gold);">PREMIUM LANDSCAPE SOLUTIONS</div>
+    <a href="index.html" class="logo">HABIB STONE</a>
+    <div style="font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--gold); text-transform: uppercase;">
+        Premium Selection
+    </div>
 </header>
 
-<section class="hero" data-aos="fade-up">
-    <p>Shark Selection</p>
-    <h1>تشكيلة 2026 الحصرية</h1>
-    <div style="width: 40px; height: 1px; background: var(--gold); margin-top: 20px; margin-left: auto; margin-right: auto;"></div>
+<section class="hero" data-aos="fade-in">
+    <div class="hero-content" data-aos="zoom-in" data-aos-delay="200">
+        <p>Habib Stone | Premium Selection</p>
+        <h1>تشكيلة 2026 الحصرية</h1>
+        <p class="sub-text">نحن لا نبيع مجرد خامات، نحن نصمم لك قطعة من الجنة في قلب منزلك</p>
+        <div style="width: 80px; height: 2px; background: var(--gold); margin: 30px auto;"></div>
+    </div>
 </section>
 
 <div class="container">
@@ -104,37 +120,37 @@
                 <div class="info">
                     <span class="category">النجيل التركي والهولندي</span>
                     <h3>قسم النجيل الصناعي</h3>
-                    <p>أعلى كثافات النجيل لاندسكيب بمواصفات أوروبية تتحمل عوامل الجو.</p>
+                    <p>أعلى كثافات النجيل "لاندسكيب" بمواصفات أوروبية تتحمل عوامل الجو القاسية.</p>
                     <div class="btn-luxury">دخول المعرض ➜</div>
                 </div>
             </div>
         </a>
 
         <a href="products/white-marble.html" class="product-link">
-            <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="badge">OFFER</div>
+            <div class="product-card" data-aos="fade-up" data-aos-delay="150">
+                <div class="badge">الأكثر مبيعاً</div>
                 <div class="img-container">
                     <img src="assets/images/zalat/zalat-garden-ideas-luxury.jpg" alt="زلط ديكور فخم">
                 </div>
                 <div class="info">
                     <span class="category">الأحجار والزلط الطبيعي</span>
                     <h3>قسم الأحجار والزلط الملكي</h3>
-                    <p>تشكيلة من الزلط الأبيض والملون والبركاني لتزيين الممرات والحدائق.</p>
+                    <p>تشكيلة حصرية من الزلط الأبيض الرخامي والبركاني لتصميم ممرات عالمية.</p>
                     <div class="btn-luxury">تصفح الأنواع والحساب ➜</div>
                 </div>
             </div>
         </a>
 
         <a href="products/marble.html" class="product-link">
-            <div class="product-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="badge">VIP</div>
+            <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="badge">فئة الـ VIP</div>
                 <div class="img-container">
-                    <img src="assets/images/zalat/marble-carrara-milli-brown.jpeg" alt="ديكورات رخامية">
+                    <img src="assets/images/marble/marble-spanish-black.jpg" alt="ديكورات رخامية">
                 </div>
                 <div class="info">
                     <span class="category">الديكورات الرخامية والميكا</span>
-                    <h3>قسم الرخام والديكور</h3>
-                    <p>أرقى أنواع الرخام والحجر الميكا لتجليد الحوائط والواجهات الفخمة.</p>
+                    <h3>قسم الرخام والميكا</h3>
+                    <p>أرقى أنواع الرخام الطبيعي والحجر الميكا لتجليد الحوائط والواجهات الفخمة.</p>
                     <div class="btn-luxury">استعراض الفخامة ➜</div>
                 </div>
             </div>
@@ -149,19 +165,33 @@
 </a>
 
 <footer>
-    <p>&copy; 2026 HABIB STORE - ALL RIGHTS RESERVED FOR SHARK SELECTION</p>
-    <p style="margin-top: 10px; font-size: 10px; opacity: 0.5;">DESIGNED FOR HIGH-END LANDSCAPE PROJECTS</p>
+    <p style="font-weight: 700; color: var(--black); margin-bottom: 10px;">HABIB STONE | PREMIUM SELECTION</p>
+    <p>&copy; 2026 جميع الحقوق محفوظة لشركة الحبيب</p>
+    <p style="margin-top: 20px; font-size: 11px; opacity: 0.5; letter-spacing: 1px;">DESIGNED FOR HIGH-END LANDSCAPE PROJECTS</p>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
-    AOS.init({ duration: 1000, once: true });
+    // تشغيل الأنيميشن
+    AOS.init({ 
+        duration: 1200, 
+        once: true,
+        offset: 100 
+    });
 
+    // تحديث عداد الشنطة الذكي
     function updateCartCount() {
-        const cart = JSON.parse(localStorage.getItem('habibCart')) || [];
-        document.getElementById('global-cart-count').innerText = cart.length;
+        try {
+            const cart = JSON.parse(localStorage.getItem('habibCart')) || [];
+            const countElement = document.getElementById('global-cart-count');
+            if (countElement) {
+                countElement.innerText = cart.length;
+            }
+        } catch (e) {
+            console.error("Cart error");
+        }
     }
-    window.onload = updateCartCount;
+    window.addEventListener('load', updateCartCount);
 </script>
 
 </body>
