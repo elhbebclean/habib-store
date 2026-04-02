@@ -3,80 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>معرض الرخام والأحجار | حبيب ستور</title>
+    <title>جاليري الرخام والأحجار النادرة | حبيب ستور</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #f4f4f4; margin: 0; overflow-x: hidden; }
-        .gallery-header { text-align: center; padding: 40px 20px; background: #fff; margin-bottom: 20px; }
-        .gallery-header h1 { color: #333; margin: 0; font-size: 2.2rem; }
-
-        /* سكرول المعرض العرضي - اللمسة الاحترافية */
-        .marble-scroll-container {
-            display: flex;
-            overflow-x: auto;
-            gap: 25px;
-            padding: 20px 30px 40px 30px;
-            scrollbar-width: none;
-            scroll-snap-type: x mandatory;
-            -ms-overflow-style: none;
-        }
-        .marble-scroll-container::-webkit-scrollbar { display: none; }
-
-        .stone-card {
-            min-width: 300px;
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-            text-decoration: none;
-            color: inherit;
-            scroll-snap-align: center;
-            transition: transform 0.3s ease;
-        }
-        .stone-card:hover { transform: translateY(-10px); }
-        .stone-card img { width: 100%; height: 250px; object-fit: cover; }
-        .stone-name { padding: 20px; text-align: center; border-top: 1px solid #eee; }
-        .stone-name h3 { margin: 0; font-size: 1.2rem; color: #1a1a1a; font-weight: 500; }
+        :root { --royal-green: #1a3c34; --gold: #c5a059; --soft-bg: #f8f9fa; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--soft-bg); margin: 0; padding: 0; color: #333; scroll-behavior: smooth; }
         
-        .hint-text { text-align: center; color: #888; font-size: 0.9rem; margin-top: -10px; }
+        .hero-banner { position: relative; width: 100%; height: 550px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+        .hero-banner img { position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 1; filter: brightness(0.55); }
+        .hero-content { position: relative; z-index: 2; text-align: center; color: white; padding: 20px; }
+        .hero-content h1 { font-size: 3.5rem; font-weight: 300; margin: 0; letter-spacing: 3px; }
+        .hero-content p { font-size: 1.4rem; opacity: 0.9; font-weight: 300; margin-top: 15px; }
+
+        .container { max-width: 1300px; margin: 60px auto; padding: 0 25px; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 2.5rem; color: var(--royal-green); font-weight: 400; position: relative; display: inline-block; padding-bottom: 15px; }
+        .section-header h2::after { content: ''; position: absolute; bottom: 0; left: 30%; width: 40%; height: 2px; background: var(--gold); }
+
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s; text-decoration: none; border: 1px solid rgba(0,0,0,0.02); }
+        .card:hover { transform: translateY(-15px); box-shadow: 0 25px 50px rgba(0,0,0,0.12); border-color: var(--gold); }
+        
+        .img-wrapper { width: 100%; height: 300px; overflow: hidden; }
+        .img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
+        .card:hover .img-wrapper img { transform: scale(1.1); }
+        
+        .card-body { padding: 30px; text-align: center; }
+        .card-body span { color: var(--gold); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 10px; }
+        .card-body h3 { margin: 0; font-size: 1.3rem; color: var(--royal-green); font-weight: 500; }
+        .card-body p { color: #888; font-size: 0.95rem; margin-top: 12px; font-style: italic; }
+
+        .expert-btn { position: fixed; bottom: 40px; left: 40px; background: #25d366; color: white; padding: 18px 35px; border-radius: 60px; text-decoration: none; box-shadow: 0 15px 35px rgba(37, 211, 102, 0.3); z-index: 1000; font-weight: 600; display: flex; align-items: center; gap: 15px; transition: 0.4s; }
     </style>
 </head>
 <body>
 
-    <div class="gallery-header">
-        <h1>مجموعة الرخام والأحجار الفاخرة</h1>
-    </div>
-    
-    <p class="hint-text"><i class="fas fa-arrows-left-right"></i> اسحب لرؤية المزيد من الأنواع</p>
+    <section class="hero-banner">
+        <img src="../assets/images/marble/marble-galala.jpg" alt="Habib Royal Galala Marble">
+        <div class="hero-content">
+            <h1>حبيب ستور</h1>
+            <p>نخبة الرخام العالمي لمساحات تستحق الخلود</p>
+        </div>
+    </section>
 
-    <div class="marble-scroll-container" id="marbleGallery">
+    <div class="container">
+        <div class="section-header">
+            <h2>مجموعة الرخام والأحجار الملكية</h2>
         </div>
 
-    <script>
-        const marbleData = {
-            'stone-marble-white': { title: 'White Marble Stone', img: 'stone-marble-white.jpg' },
-            'stone-marble-mix': { title: 'Mix Marble Stone', img: 'stone-marble-mix.jpg' },
-            'stone-royal': { title: 'Habib Royal Stone', img: 'stone-royal.jpg' },
-            'stone-mica-v1': { title: 'Mica Stone V1', img: 'stone-mica-v1.jpg' },
-            'stone-mica-v2': { title: 'Mica Stone V2', img: 'stone-mica-v2.jpg' },
-            'stone-sand-yellow': { title: 'Yellow Sand Stone', img: 'stone-sand-yellow.jpg' },
-            'stone-sand-red': { title: 'Red Sand Stone', img: 'stone-sand-red.jpg' },
-            'stone-facade-v1': { title: 'Modern Facade Stone', img: 'stone-facade-v1.jpg' },
-            'stone-facade-v2': { title: 'Modern Facade Stone V2', img: 'stone-facade-v2.jpg' },
-            'stone-interior-v1': { title: 'Interior Decor Stone', img: 'stone-interior-v1.jpg' },
-            'stone-landscape-v1': { title: 'Luxury Stone Landscape', img: 'stone-landscape-v1.jpg' }
-        };
+        <div class="product-grid">
+            
+            <a href="marble-details.html?id=crystal-white" class="card">
+                <div class="img-wrapper"><img src="../assets/images/marble/marble-crystal-white.jpg" alt="Crystal White"></div>
+                <div class="card-body">
+                    <span>Pure Luxury</span>
+                    <h3>Habib Crystal White</h3>
+                    <p>نقاء الكريستال في قلب تصميمكم المعماري</p>
+                </div>
+            </a>
 
-        const gallery = document.getElementById('marbleGallery');
-        Object.keys(marbleData).forEach(key => {
-            gallery.innerHTML += `
-                <a href="marble.html?id=${key}" class="stone-card">
-                    <img src="../assets/images/marble/${marbleData[key].img}" onerror="this.src='../assets/images/nageel-details/Habib-Istanbul-Lush-40mm.jpg'">
-                    <div class="stone-name">
-                        <h3>${marbleData[key].title}</h3>
-                    </div>
-                </a>`;
-        });
-    </script>
+            <a href="marble-details.html?id=spanish-black" class="card">
+                <div class="img-wrapper"><img src="../assets/images/marble/marble-spanish-black.jpg" alt="Spanish Black"></div>
+                <div class="card-body">
+                    <span>Majestic Black</span>
+                    <h3>Habib Spanish Black</h3>
+                    <p>هيبة الأسود الإسباني لإطلالة ملكية فاخرة</p>
+                </div>
+            </a>
+
+            <a href="marble-details.html?id=emperador" class="card">
+                <div class="img-wrapper"><img src="../assets/images/marble/marble-emperador.jpg" alt="Emperador Marble"></div>
+                <div class="card-body">
+                    <span>Classic Soul</span>
+                    <h3>Habib Emperador Dark</h3>
+                    <p>دفء الرخام الإمبراطوري بلمساته الكلاسيكية</p>
+                </div>
+            </a>
+
+            <a href="marble-details.html?id=carrara-brown" class="card">
+                <div class="img-wrapper"><img src="../assets/images/marble/marble-carrara-milli-brown.jpg" alt="Carrara Milli Brown"></div>
+                <div class="card-body">
+                    <span>Italian Art</span>
+                    <h3>Habib Carrara Brown</h3>
+                    <p>تداخل العروق الإيطالية مع سحر اللون البني</p>
+                </div>
+            </a>
+
+            <a href="marble-details.html?id=red-spanish" class="card">
+                <div class="img-wrapper"><img src="../assets/images/marble/marble-red-carrara-spanish-black.jpg" alt="Red Spanish Carrara"></div>
+                <div class="card-body">
+                    <span>Exotic Series</span>
+                    <h3>Habib Spanish Fusion</h3>
+                    <p>مزيج لوني نادر يمنح المكان شخصية فريدة</p>
+                </div>
+            </a>
+
+            <a href="marble-details.html?id=basalt-black" class="card">
+                <div class="img-wrapper"><img src="../assets/images/marble/stone-basalt-black.jpg" alt="Basalt Black"></div>
+                <div class="card-body">
+                    <span>Solid Grace</span>
+                    <h3>Habib Black Basalt</h3>
+                    <p>قوة الحجر البركاني بلمسة هندسية معاصرة</p>
+                </div>
+            </a>
+
+            <a href="marble-details.html?id=sandstone" class="card">
+                <div class="img-wrapper"><img src="../assets/images/marble/marble-sandstone.jpg" alt="Sandstone"></div>
+                <div class="card-body">
+                    <span>Natural Harmony</span>
+                    <h3>Habib Sandstone Luxe</h3>
+                    <p>تناغم الطبيعة في ملمس حجري ناعم وهادئ</p>
+                </div>
+            </a>
+
+            <a href="marble-details.html?id=mica-grey" class="card">
+                <div class="img-wrapper"><img src="../assets/images/marble/stone-mica-grey.jpg" alt="Mica Grey"></div>
+                <div class="card-body">
+                    <span>Elite Facades</span>
+                    <h3>Habib Mica Grey</h3>
+                    <p>خيار الصفوة لواجهات تعكس الرقي والحداثة</p>
+                </div>
+            </a>
+
+        </div> 
+    </div> 
+    
+    <a href="https://wa.me/201016961497" class="expert-btn">
+        <i class="fab fa-whatsapp"></i>
+        <span>استشارة الخبير المعماري</span>
+    </a>
 </body>
 </html>
