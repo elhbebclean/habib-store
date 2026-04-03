@@ -1,58 +1,57 @@
-/* --- SHARK SELECTIONS JS --- */
-
-// [1] غرفة التحكم: غير الصور والأسماء هنا بس يا محمود
-const sharkProducts = [
-    { name: "زلط أبيض ملكي", img: "white-stone.jpg", link: "white-stone.html" },
-    { name: "زلط أسود بازلت", img: "black-stone.jpg", link: "black-stone.html" },
-    { name: "زلط أحمر بركاني", img: "red-stone.jpg", link: "red-stone.html" },
-    { name: "زلط ميكس طبيعي", img: "mix-stone.jpg", link: "mix-stone.html" },
-    { name: "رخام جلالة", img: "galala.jpg", link: "galala.html" },
-    { name: "ميكا حمراء", img: "red-mica.jpg", link: "red-mica.html" }
+// مصفوفة ترشيحات "حبيب ستور" للنخبة
+const eliteSelections = [
+    {
+        title: "Habib White Zalat",
+        img: "assets/images/zalat/white-zalat.jpg",
+        link: "products/zalat.html?id=white-zalat"
+    },
+    {
+        title: "Istanbul Lush 40mm",
+        img: "assets/images/nageel-details/Habib-Istanbul-Lush-40mm.jpg",
+        link: "products/product.html?id=40-12"
+    },
+    {
+        title: "Crystal White Marble",
+        img: "assets/images/marble/marble-crystal-white.jpg",
+        link: "products/stones.html?id=41"
+    }
 ];
 
-// [2] بناء العمود الجانبي برمجياً
-function initSharkSelections() {
-    // إنشاء العمود
-    const sidebar = document.createElement('div');
-    sidebar.className = 'shark-sidebar';
-    sidebar.innerHTML = `<h3 style="color:#d4af37; text-align:center; font-size:16px;">SHARK SELECTIONS</h3><hr style="border-color:#333">`;
+function initEliteGlassBar() {
+    const bar = document.createElement('div');
+    bar.id = 'eliteGlassBar';
 
-    // إضافة المنتجات من غرفة التحكم
-    sharkProducts.forEach(prod => {
-        const item = document.createElement('div');
-        item.className = 'shark-item';
-        item.innerHTML = `
-            <a href="${prod.link}" style="text-decoration:none;">
-                <img src="${prod.img}" alt="${prod.name}">
-                <p>${prod.name}</p>
+    // بناء محتوى الشريط الزجاجي
+    let content = `
+        <div class="glass-header">
+            <h3>SHARK SELECTIONS</h3>
+            <span>Elite Edition</span>
+        </div>
+        <div class="glass-items">
+    `;
+
+    eliteSelections.forEach(item => {
+        // نستخدم المسار الكامل لضمان ظهور الصور في كل الصفحات
+        const fullImg = "https://elhbebclean.github.io/habib-store/" + item.img;
+        const fullLink = "https://elhbebclean.github.io/habib-store/" + item.link;
+
+        content += `
+            <a href="${fullLink}" class="glass-card">
+                <img src="${fullImg}" alt="${item.title}">
+                <span>${item.title}</span>
             </a>
         `;
-        sidebar.appendChild(item);
     });
 
-    document.body.appendChild(sidebar);
+    content += `</div>`;
+    bar.innerHTML = content;
+    document.body.appendChild(bar);
 
-    // [3] تايمر الـ 10 ثواني للظهور
+    // ظهور وقور بتأثير الفايد بعد 10 ثوانٍ
     setTimeout(() => {
-        sidebar.classList.add('visible');
+        bar.classList.add('active');
     }, 10000);
-
-    // [4] فتح وقفل العمود عند اللمس
-    sidebar.addEventListener('click', () => {
-        sidebar.classList.toggle('open');
-    });
-
-    // [5] إضافة زر المود الليلي
-    const nightBtn = document.createElement('div');
-    nightBtn.className = 'night-mode-toggle';
-    nightBtn.innerHTML = '🌙';
-    document.body.appendChild(nightBtn);
-
-    nightBtn.addEventListener('click', () => {
-        document.body.classList.toggle('night-mode');
-        nightBtn.innerHTML = document.body.classList.contains('night-mode') ? '☀️' : '🌙';
-    });
 }
 
-// تشغيل السيستم أول ما الصفحة تفتح
-window.onload = initSharkSelections;
+// التشغيل عند جاهزية الصفحة
+document.addEventListener('DOMContentLoaded', initEliteGlassBar);
