@@ -6,9 +6,7 @@
     <title>تفاصيل المنتج | حبيب ستور للاندسكيب</title>
     
     <link rel="preload" as="image" href="../assets/images/nageel-details/Habib-Istanbul-Lush-40mm.jpg">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
     <link rel="stylesheet" href="../style.css">
 
     <style>
@@ -16,7 +14,6 @@
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--soft-gray); margin: 0; color: #333; line-height: 1.8; }
         
         .product-wrapper { max-width: 1200px; margin: 80px auto; padding: 0 20px; display: flex; flex-wrap: wrap; gap: 60px; align-items: flex-start; }
-        
         .image-section { flex: 1.1; min-width: 350px; position: sticky; top: 40px; }
         .main-display { width: 100%; border-radius: 25px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.1); background: #fff; border: 1px solid rgba(0,0,0,0.05); }
         .main-display img { width: 100%; display: block; transition: transform 0.6s ease; }
@@ -32,12 +29,40 @@
         .features-list li { margin-bottom: 18px; display: flex; align-items: center; gap: 15px; color: var(--royal-green); font-weight: 500; font-size: 1.05rem; }
         .features-list li i { color: var(--gold); font-size: 1.3rem; }
 
-        .cta-box { display: flex; gap: 20px; align-items: center; margin-top: 60px; }
-        .back-gallery { text-decoration: none; color: #999; font-size: 0.95rem; transition: 0.3s; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid transparent; }
-        .back-gallery:hover { color: var(--royal-green); border-color: var(--royal-green); }
+        /* --- شريط المنتجات التكميلية (ستايل نون وجوميا بس زجاجي) --- */
+        .related-section { margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(0,0,0,0.05); }
+        .related-section h3 { color: var(--royal-green); font-weight: 400; font-size: 1.4rem; margin-bottom: 25px; }
+        
+        .horizontal-slider {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 10px 5px 25px 5px;
+            scrollbar-width: none;
+        }
+        .horizontal-slider::-webkit-scrollbar { display: none; }
+
+        .glass-product-card {
+            min-width: 190px;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            border-radius: 20px;
+            padding: 15px;
+            text-decoration: none;
+            text-align: center;
+            transition: 0.4s;
+        }
+        .glass-product-card:hover { transform: translateY(-8px); border-color: var(--gold); background: #fff; }
+        .glass-product-card img { width: 100%; height: 120px; object-fit: cover; border-radius: 15px; margin-bottom: 12px; }
+        .glass-product-card h4 { color: var(--royal-green); font-size: 0.9rem; margin: 0; font-weight: 500; }
+
+        .cta-box { display: flex; gap: 20px; align-items: center; margin-top: 40px; }
+        .back-gallery { text-decoration: none; color: #999; font-size: 0.95rem; transition: 0.3s; display: flex; align-items: center; gap: 10px; }
+        .back-gallery:hover { color: var(--royal-green); }
 
         .expert-btn { position: fixed; bottom: 40px; left: 40px; background: #25d366; color: white; padding: 18px 35px; border-radius: 60px; text-decoration: none; box-shadow: 0 15px 35px rgba(37, 211, 102, 0.25); z-index: 1000; font-weight: 600; display: flex; align-items: center; gap: 15px; transition: 0.4s; }
-        .expert-btn:hover { transform: translateY(-5px); background: #1ebe57; }
 
         @media (max-width: 768px) { .content-section h1 { font-size: 2.2rem; } .product-wrapper { margin: 40px auto; } }
     </style>
@@ -59,7 +84,7 @@
             <div class="luxury-line"></div>
             
             <p class="description-text" id="productDescription">
-                نحن في فريق "حبيب ستور" نؤمن بأن الحديقة ليست مجرد مساحة خضراء، بل هي انعكاس لذوقكم الرفيع ومنظوركم للرفاهية. هذا المنتج المختار بعناية يجمع بين الكثافة الهندسية المثالية والملمس الحريري ليوفر لكم بيئة هادئة ومستدامة تليق بنمط حياتكم الخاص وتستحق ثقتكم.
+                نحن في فريق "حبيب ستور" نؤمن بأن الحديقة ليست مجرد مساحة خضراء، بل هي انعكاس لذوقكم الرفيع ومنظوركم للرفاهية. هذا المنتج المختار بعناية يجمع بين الكثافة الهندسية المثالية والملمس الحريري ليوفر لكم بيئة هادئة ومستدامة تليق بنمط حياتكم الخاص.
             </p>
 
             <ul class="features-list">
@@ -68,6 +93,12 @@
                 <li><i class="fas fa-check-double"></i> ملمس طبيعي ناعم (Habib Signature)</li>
                 <li><i class="fas fa-check-double"></i> استدامة بصرية تدوم لسنوات طوال</li>
             </ul>
+
+            <div class="related-section">
+                <h3>يكتمل الرقي مع:</h3>
+                <div class="horizontal-slider" id="relatedSlider">
+                    </div>
+            </div>
 
             <div class="cta-box">
                 <a href="../grass-gallery.html" class="back-gallery">
@@ -100,19 +131,27 @@
         const productId = urlParams.get('id');
         const product = nageelData[productId];
 
-        const displayImg = document.getElementById('productImage');
-        const displayTitle = document.getElementById('productTitle');
-
-        const fallbackImg = '../assets/images/nageel-details/Habib-Istanbul-Lush-40mm.jpg';
-
         if (product) {
-            displayTitle.innerText = product.title;
-            // التحميل الفوري للصورة
-            displayImg.src = '../assets/images/nageel-details/' + product.img;
-        } else {
-            displayTitle.innerText = 'Habib Elite Selection';
-            displayImg.src = fallbackImg;
+            document.getElementById('productTitle').innerText = product.title;
+            document.getElementById('productImage').src = '../assets/images/nageel-details/' + product.img;
         }
+
+        // ملء شريط المنتجات التكميلية (الزلط والرخام)
+        const complements = [
+            { name: "زلط أبيض ملكي", img: "../assets/images/zalat/white-zalat.jpg", link: "zalat.html?id=white-zalat" },
+            { name: "رخام جلالة فاخر", img: "../assets/images/marble/marble-galala.jpg", link: "stones.html?id=40" },
+            { name: "مايكا رمادي عصرية", img: "../assets/images/marble/stone-mica-grey.jpg", link: "stones.html?id=51" }
+        ];
+
+        const slider = document.getElementById('relatedSlider');
+        complements.forEach(item => {
+            slider.innerHTML += `
+                <a href="${item.link}" class="glass-product-card">
+                    <img src="${item.img}" alt="${item.name}">
+                    <h4>${item.name}</h4>
+                </a>
+            `;
+        });
     </script>
 </body>
 </html>
