@@ -25,18 +25,24 @@
         .content-section h1 { font-size: 2.8rem; color: var(--royal-green); font-weight: 300; margin: 0 0 25px 0; line-height: 1.2; }
         .luxury-line { width: 60px; height: 3px; background: var(--gold); margin-bottom: 35px; }
         
-        .description-text { font-size: 1.15rem; color: #555; margin-bottom: 45px; text-align: justify; font-weight: 300; }
+        .description-text { font-size: 1.15rem; color: #555; margin-bottom: 35px; text-align: justify; font-weight: 300; }
+        
+        /* قسم الثقة الهندسي */
+        .trust-badge { background: rgba(197, 160, 89, 0.08); border-right: 4px solid var(--gold); padding: 25px; border-radius: 12px; margin-bottom: 40px; }
+        .trust-badge h4 { color: var(--royal-green); margin: 0 0 10px 0; font-size: 1.2rem; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+        .trust-badge p { margin: 0; font-size: 1.05rem; color: #555; font-weight: 400; line-height: 1.6; }
+
         .features-list { list-style: none; padding: 0; margin-bottom: 50px; }
         .features-list li { margin-bottom: 18px; display: flex; align-items: center; gap: 15px; color: var(--royal-green); font-weight: 500; font-size: 1.05rem; }
         .features-list li i { color: var(--gold); font-size: 1.3rem; }
 
-        /* --- شريط المنتجات التكميلية (ستايل نون وجوميا بس زجاجي) --- */
+        /* --- شريط المنتجات التكميلية --- */
         .related-section { margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(0,0,0,0.05); }
         .related-section h3 { color: var(--royal-green); font-weight: 400; font-size: 1.4rem; margin-bottom: 25px; }
         
         .horizontal-slider {
             display: flex;
-            gap: 20px;
+            gap: 25px;
             overflow-x: auto;
             padding: 10px 5px 25px 5px;
             scrollbar-width: none;
@@ -44,20 +50,23 @@
         .horizontal-slider::-webkit-scrollbar { display: none; }
 
         .glass-product-card {
-            min-width: 190px;
-            background: rgba(255, 255, 255, 0.4);
+            min-width: 280px; /* مساحة أكبر عشان الكلام يظهر مرتاح */
+            background: rgba(255, 255, 255, 0.6);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(197, 160, 89, 0.2);
             border-radius: 20px;
-            padding: 15px;
+            padding: 18px;
             text-decoration: none;
             text-align: center;
             transition: 0.4s;
+            display: flex;
+            flex-direction: column;
         }
-        .glass-product-card:hover { transform: translateY(-8px); border-color: var(--gold); background: #fff; }
-        .glass-product-card img { width: 100%; height: 120px; object-fit: cover; border-radius: 15px; margin-bottom: 12px; }
-        .glass-product-card h4 { color: var(--royal-green); font-size: 0.9rem; margin: 0; font-weight: 500; }
+        .glass-product-card:hover { transform: translateY(-8px); border-color: var(--gold); background: #fff; box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
+        .glass-product-card img { width: 100%; height: 160px; object-fit: cover; border-radius: 15px; margin-bottom: 15px; }
+        .glass-product-card h4 { color: var(--royal-green); font-size: 1.1rem; margin: 0 0 10px 0; font-weight: 600; }
+        .glass-product-card p { color: #666; font-size: 0.9rem; margin: 0; line-height: 1.6; font-weight: 300; }
 
         .cta-box { display: flex; gap: 20px; align-items: center; margin-top: 40px; }
         .back-gallery { text-decoration: none; color: #999; font-size: 0.95rem; transition: 0.3s; display: flex; align-items: center; gap: 10px; }
@@ -88,6 +97,11 @@
                 نحن في فريق "حبيب ستور" نؤمن بأن الحديقة ليست مجرد مساحة خضراء، بل هي انعكاس لذوقكم الرفيع ومنظوركم للرفاهية. هذا المنتج المختار بعناية يجمع بين الكثافة الهندسية المثالية والملمس الحريري ليوفر لكم بيئة هادئة ومستدامة تليق بنمط حياتكم الخاص.
             </p>
 
+            <div class="trust-badge">
+                <h4><i class="fas fa-hard-hat"></i> إشراف هندسي متكامل</h4>
+                <p>في حبيب ستور، لا نترك مساحتكم للصدفة.. كل سنتيمتر من النجيل أو الأحجار يتم توريده وتركيبه بإشراف هندسي دقيق، لنضمن لكم جودة تدوم لسنوات.</p>
+            </div>
+
             <ul class="features-list">
                 <li><i class="fas fa-check-double"></i> ضمان جودة حبيب ستور الهندسية</li>
                 <li><i class="fas fa-check-double"></i> تقنية مقاومة للأشعة البنفسجية والأمطار</li>
@@ -111,11 +125,10 @@
     
     <a href="https://wa.me/201016961497" class="expert-btn">
         <i class="fab fa-whatsapp"></i>
-        <span>تواصل مع فريق الخبراء</span>
+        <span>احصل على استشارة هندسية ومقايسة مجانية</span>
     </a>
 
     <script>
-        // تم تصحيح أسماء الصور طبقاً للمستودع (الفولدر assets/images/nageel-details)
         const nageelData = {
             '11': { title: 'Habib Practical Green (11mm)', img: 'Habib-Practical-Green-11mm.jpg' },
             '20': { title: 'Habib Standard Turkish (20mm)', img: 'Habib-Standard-Turkish-20mm-12.jpg' },
@@ -138,11 +151,44 @@
             document.getElementById('productImage').src = '../assets/images/nageel-details/' + product.img;
         }
 
-        // تم تصحيح مسارات المنتجات التكميلية (اللينكات بدون نقطتين لأنهم في نفس الفولدر)
+        // الكروت الـ 6 الجديدة بالتفاصيل الهندسية
         const complements = [
-            { name: "زلط أبيض ملكي", img: "../assets/images/zalat/white-zalat.jpg", link: "zalat.html?id=white-zalat" },
-            { name: "رخام جلالة فاخر", img: "../assets/images/marble/marble-galala.jpg", link: "stones.html?id=40" },
-            { name: "مايكا رمادي عصرية", img: "../assets/images/marble/stone-mica-grey.jpg", link: "stones.html?id=51" }
+            { 
+                name: "معرض أحجار الديكور والزلط", 
+                img: "../assets/images/zalat/zalat-garden-ideas-luxury.jpg", 
+                link: "zalat.html",
+                desc: "اكتشف تشكيلة من أحجار الديكور التي يختارها مهندسونا لتمنح حديقتكم تبايناً بصرياً ساحراً مع المساحات الخضراء."
+            },
+            { 
+                name: "معرض الرخام الفاخر", 
+                img: "../assets/images/marble/marble-galala.jpg", 
+                link: "marble.html",
+                desc: "لمسات من الرخام الطبيعي والمشايات الهندسية التي تضمن لكم الفخامة والراحة في كل خطوة داخل مملكتكم."
+            },
+            { 
+                name: "الزلط الأبيض الملكي", 
+                img: "../assets/images/zalat/white-zalat.jpg", 
+                link: "zalat.html?id=white-zalat",
+                desc: "الخيار الأول للنخبة؛ يستخدمه مهندسونا لتحديد المسارات وحواف النجيل بدقة متناهية تعكس نظافة التصميم."
+            },
+            { 
+                name: "مشايات رخام جلالة", 
+                img: "../assets/images/marble/marble-galala.jpg", 
+                link: "stones.html?id=40",
+                desc: "نعتني باختيارها وتركيبها بأسلوب هندسي يدمج بين الوظيفة العملية والجمال الكلاسيكي الأصيل."
+            },
+            { 
+                name: "أحجار الميكا الطبيعية", 
+                img: "../assets/images/marble/stone-mica-red.jpg", 
+                link: "stones.html?id=51",
+                desc: "تجليد الأسوار والأحواض بأحجار الميكا، لإضافة عمق وفخامة للجدران المحيطة بجلساتكم الهادئة."
+            },
+            { 
+                name: "حصى الكوارتز الملون", 
+                img: "../assets/images/zalat/zalat-mix-colors.jpeg", 
+                link: "zalat.html?id=mix",
+                desc: "مزيج من الألوان الهادئة المستوحاة من الطبيعة، ننسقها بحس هندسي لتكسر رتابة المساحات وتضيف حيوية."
+            }
         ];
 
         const slider = document.getElementById('relatedSlider');
@@ -151,6 +197,7 @@
                 <a href="${item.link}" class="glass-product-card">
                     <img src="${item.img}" alt="${item.name}">
                     <h4>${item.name}</h4>
+                    <p>${item.desc}</p>
                 </a>
             `;
         });
