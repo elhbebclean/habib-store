@@ -1,75 +1,99 @@
-/* --- SHARK SELECTIONS CSS --- */
-
-/* العمود الجانبي */
-.shark-sidebar {
+/* --- شريط النخبة الزجاجي (Habib Elite Glass Bar) --- */
+#eliteGlassBar {
     position: fixed;
-    top: 0;
-    right: -280px; /* مستخبي في البداية */
-    width: 260px;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.95); /* أسود ملكي شفاف سنة */
-    border-left: 2px solid #d4af37; /* خط ذهبي رفيع */
-    transition: all 0.5s ease-in-out;
+    bottom: -120px; /* مخفي في البداية تحت الشاشة */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.15); /* شفافية زجاجية */
+    backdrop-filter: blur(20px); /* التأثير المصنفر */
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(197, 160, 89, 0.3); /* إطار ذهبي رقيق */
+    border-radius: 30px;
+    padding: 15px 25px;
     z-index: 9999;
-    padding: 20px;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
-}
-
-/* لما العمود يظهر (بعد 10 ثواني) */
-.shark-sidebar.visible {
-    right: -230px; /* بيظهر منه طرف بس عشان العميل يشدّه */
-    cursor: pointer;
-}
-
-.shark-sidebar.open {
-    right: 0; /* بيفتح بالكامل لما العميل يلمسه */
-}
-
-/* أيقونة المود الليلي (القمر) */
-.night-mode-toggle {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background: #1a1a1a;
-    border: 1px solid #d4af37;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 24px;
-    z-index: 10000;
+    gap: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1); /* حركة ظهور وقورة */
+    opacity: 0;
+}
+
+#eliteGlassBar.active {
+    bottom: 30px; /* يرتفع للأعلى بوقار */
+    opacity: 1;
+}
+
+/* عنوان الشريط */
+.glass-header {
+    min-width: 120px;
+    border-left: 1px solid rgba(197, 160, 89, 0.4);
+    padding-left: 15px;
+}
+
+.glass-header h3 {
+    color: #1a3c34; /* Royal Green */
+    font-size: 0.85rem;
+    margin: 0;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.glass-header span {
+    color: #c5a059; /* Muted Gold */
+    font-size: 0.65rem;
+    text-transform: uppercase;
+}
+
+/* حاوية المنتجات العرضية */
+.glass-items {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    flex-grow: 1;
+}
+
+.glass-items::-webkit-scrollbar { display: none; }
+
+.glass-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    min-width: 180px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     transition: 0.3s;
 }
 
-/* تأثير المود الليلي على الموقع */
-body.night-mode {
-    filter: brightness(0.8) contrast(1.1);
-    background-color: #050505 !important;
+.glass-card:hover {
+    background: rgba(197, 160, 89, 0.15); /* لمسة ذهبية عند اللمس */
+    border-color: #c5a059;
 }
 
-/* تنسيق كروت المنتجات الصغيرة جوه العمود */
-.shark-item {
-    text-align: center;
-    margin-bottom: 20px;
-    transition: 0.3s;
-}
-
-.shark-item img {
-    width: 80px;
-    height: 80px;
-    border-radius: 8px;
-    border: 1px solid #444;
+.glass-card img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%; /* دوائر ذهبية رقيقة */
     object-fit: cover;
+    border: 1.5px solid #c5a059;
 }
 
-.shark-item p {
-    font-size: 12px;
-    margin-top: 5px;
-    color: #d4af37;
+.glass-card span {
+    color: #1a3c34;
+    font-size: 0.75rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* موبايل: تصغير العرض ليلائم الشاشة */
+@media (max-width: 768px) {
+    #eliteGlassBar { width: 95%; padding: 10px 15px; }
+    .glass-header { display: none; } /* إخفاء النص الجانبي في الموبايل لتوفير مساحة */
 }
