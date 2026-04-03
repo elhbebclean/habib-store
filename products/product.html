@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تفاصيل المنتج | حبيب ستور للاندسكيب</title>
     
+    <link rel="preload" as="image" href="../assets/images/nageel-details/Habib-Istanbul-Lush-40mm.jpg">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 
     <style>
         :root { --royal-green: #1a3c34; --gold: #c5a059; --soft-gray: #f8fafa; }
@@ -15,13 +17,11 @@
         
         .product-wrapper { max-width: 1200px; margin: 80px auto; padding: 0 20px; display: flex; flex-wrap: wrap; gap: 60px; align-items: flex-start; }
         
-        /* قسم الصورة الراقية */
         .image-section { flex: 1.1; min-width: 350px; position: sticky; top: 40px; }
         .main-display { width: 100%; border-radius: 25px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.1); background: #fff; border: 1px solid rgba(0,0,0,0.05); }
         .main-display img { width: 100%; display: block; transition: transform 0.6s ease; }
         .main-display:hover img { transform: scale(1.05); }
 
-        /* محتوى الوصف الهادئ للمليارديرات */
         .content-section { flex: 1; min-width: 320px; padding-top: 20px; }
         .brand-tag { color: var(--gold); font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 15px; }
         .content-section h1 { font-size: 2.8rem; color: var(--royal-green); font-weight: 300; margin: 0 0 25px 0; line-height: 1.2; }
@@ -36,21 +36,20 @@
         .back-gallery { text-decoration: none; color: #999; font-size: 0.95rem; transition: 0.3s; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid transparent; }
         .back-gallery:hover { color: var(--royal-green); border-color: var(--royal-green); }
 
-        /* زرار فريق الخبراء (تواصل هندسي) */
         .expert-btn { position: fixed; bottom: 40px; left: 40px; background: #25d366; color: white; padding: 18px 35px; border-radius: 60px; text-decoration: none; box-shadow: 0 15px 35px rgba(37, 211, 102, 0.25); z-index: 1000; font-weight: 600; display: flex; align-items: center; gap: 15px; transition: 0.4s; }
         .expert-btn:hover { transform: translateY(-5px); background: #1ebe57; }
 
         @media (max-width: 768px) { .content-section h1 { font-size: 2.2rem; } .product-wrapper { margin: 40px auto; } }
     </style>
 
-    <script src="main.js" defer></script>
+    <script src="../main.js" defer></script>
 </head>
 <body>
 
     <div class="product-wrapper">
         <div class="image-section">
             <div class="main-display">
-                <img id="productImage" src="" alt="Habib Luxury Collection" onerror="this.src='../assets/images/nageel-details/Habib-Istanbul-Lush-40mm.jpg'">
+                <img id="productImage" src="" fetchpriority="high" alt="Habib Luxury Collection" onerror="this.src='../assets/images/nageel-details/Habib-Istanbul-Lush-40mm.jpg'">
             </div>
         </div>
 
@@ -71,7 +70,7 @@
             </ul>
 
             <div class="cta-box">
-                <a href="grass-gallery.html" class="back-gallery">
+                <a href="../grass-gallery.html" class="back-gallery">
                     <i class="fas fa-arrow-right"></i> العودة إلى المعرض الرئيسي
                 </a>
             </div>
@@ -84,51 +83,19 @@
     </a>
 
     <script>
-        // مصفوفة الربط الذكي: تربط الـ ID من المعرض بصورة الوصف (Habib) بالاسم الدقيق
         const nageelData = {
-            '11': { 
-                title: 'Habib Practical Green (11mm)', 
-                img: 'Habib-Practical-Green-11mm.jpg' 
-            },
-            '20': { 
-                title: 'Habib Standard Turkish (20mm)', 
-                img: 'Habib-Standard-Turkish-20mm-12.jpg' 
-            },
-            '30-16': { 
-                title: 'Habib Antalya Breeze (30mm-16)', 
-                img: 'Habib-Antalya-Breeze-30mm-24.jpg' 
-            },
-            '30-18': { 
-                title: 'Habib Natural Soft (30mm-18)', 
-                img: 'Habib-Marmara-Turf-40mm-12.jpg' 
-            },
-            '30-24': { 
-                title: 'Habib Premium Turf (30mm-24)', 
-                img: 'Habib-Antalya-Breeze-30mm-24.jpg' 
-            },
-            '40-12': { 
-                title: 'Habib Istanbul Lush (40mm-12)', 
-                img: 'Habib-Istanbul-Lush-40mm.jpg' 
-            },
-            '40-24': { 
-                title: 'Habib Bosphorus Green (40mm-24)', 
-                img: 'Habib-Bosphorus-Green-40mm-24.jpg' 
-            },
-            '40-28': { 
-                title: 'Habib Legendary Silk (40mm-28)', 
-                img: 'Habib-Legendary-Silk-40mm-28.jpg' 
-            },
-            '40-natural': { 
-                title: 'Habib Nature Touch (40mm)', 
-                img: 'Habib-Anatolian-Nature-50mm.jpg' 
-            },
-            '50': { 
-                title: 'Habib Anatolian Nature (50mm)', 
-                img: 'Habib Bosphorus Green (50mm).jpg' 
-            }
+            '11': { title: 'Habib Practical Green (11mm)', img: 'Habib-Practical-Green-11mm.jpg' },
+            '20': { title: 'Habib Standard Turkish (20mm)', img: 'Habib-Standard-Turkish-20mm-12.jpg' },
+            '30-16': { title: 'Habib Antalya Breeze (30mm-16)', img: 'Habib-Antalya-Breeze-30mm-24.jpg' },
+            '30-18': { title: 'Habib Natural Soft (30mm-18)', img: 'Habib-Marmara-Turf-40mm-12.jpg' },
+            '30-24': { title: 'Habib Premium Turf (30mm-24)', img: 'Habib-Antalya-Breeze-30mm-24.jpg' },
+            '40-12': { title: 'Habib Istanbul Lush (40mm-12)', img: 'Habib-Istanbul-Lush-40mm.jpg' },
+            '40-24': { title: 'Habib Bosphorus Green (40mm-24)', img: 'Habib-Bosphorus-Green-40mm-24.jpg' },
+            '40-28': { title: 'Habib Legendary Silk (40mm-28)', img: 'Habib-Legendary-Silk-40mm-28.jpg' },
+            '40-natural': { title: 'Habib Nature Touch (40mm)', img: 'Habib-Anatolian-Nature-50mm.jpg' },
+            '50': { title: 'Habib Anatolian Nature (50mm)', img: 'Habib Bosphorus Green (50mm).jpg' }
         };
 
-        // استخراج المعرف من الرابط (e.g., product.html?id=50)
         const urlParams = new URLSearchParams(window.location.search);
         const productId = urlParams.get('id');
         const product = nageelData[productId];
@@ -136,15 +103,13 @@
         const displayImg = document.getElementById('productImage');
         const displayTitle = document.getElementById('productTitle');
 
-        // الصورة الافتراضية (نظام الأمان) لو المنتج مش موجود أو الاسم غلط
         const fallbackImg = '../assets/images/nageel-details/Habib-Istanbul-Lush-40mm.jpg';
 
         if (product) {
             displayTitle.innerText = product.title;
-            // محاولة تحميل الصورة المحددة
+            // التحميل الفوري للصورة
             displayImg.src = '../assets/images/nageel-details/' + product.img;
         } else {
-            // تفعيل نظام الأمان فوراً للمليارديرات
             displayTitle.innerText = 'Habib Elite Selection';
             displayImg.src = fallbackImg;
         }
