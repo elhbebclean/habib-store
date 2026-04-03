@@ -7,6 +7,7 @@
     
     <link rel="preload" as="image" href="../assets/images/nageel-details/Habib-Istanbul-Lush-40mm.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <link rel="stylesheet" href="../style.css">
 
     <style>
@@ -101,7 +102,7 @@
             </div>
 
             <div class="cta-box">
-                <a href="../grass-gallery.html" class="back-gallery">
+                <a href="grass-gallery.html" class="back-gallery">
                     <i class="fas fa-arrow-right"></i> العودة إلى المعرض الرئيسي
                 </a>
             </div>
@@ -114,6 +115,7 @@
     </a>
 
     <script>
+        // تم تصحيح أسماء الصور طبقاً للمستودع (الفولدر assets/images/nageel-details)
         const nageelData = {
             '11': { title: 'Habib Practical Green (11mm)', img: 'Habib-Practical-Green-11mm.jpg' },
             '20': { title: 'Habib Standard Turkish (20mm)', img: 'Habib-Standard-Turkish-20mm-12.jpg' },
@@ -136,7 +138,7 @@
             document.getElementById('productImage').src = '../assets/images/nageel-details/' + product.img;
         }
 
-        // ملء شريط المنتجات التكميلية (الزلط والرخام)
+        // تم تصحيح مسارات المنتجات التكميلية (اللينكات بدون نقطتين لأنهم في نفس الفولدر)
         const complements = [
             { name: "زلط أبيض ملكي", img: "../assets/images/zalat/white-zalat.jpg", link: "zalat.html?id=white-zalat" },
             { name: "رخام جلالة فاخر", img: "../assets/images/marble/marble-galala.jpg", link: "stones.html?id=40" },
