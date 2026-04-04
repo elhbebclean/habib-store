@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>جاليري النجيل الصناعي الفاخر | Habib Stone</title>
+    <title>جاليري النجيل الصناعي الفاخر | Habib Store</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <link rel="stylesheet" href="../style.css">
@@ -12,7 +12,12 @@
         :root { --royal-green: #1a3c34; --gold: #c5a059; --soft-bg: #f8f9fa; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--soft-bg); margin: 0; padding: 0; color: #333; scroll-behavior: smooth; overflow-x: hidden; }
         
-        /* البانر بتاعك زي ما هو */
+        /* أيقونة السلة العائمة الجديدة */
+        .cart-float { position: fixed; top: 20px; left: 20px; background: white; color: var(--royal-green); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-decoration: none; z-index: 1000; font-size: 1.2rem; transition: 0.3s; border: 1px solid rgba(197, 160, 89, 0.3); }
+        .cart-float:hover { transform: scale(1.1); color: var(--gold); border-color: var(--gold); }
+        .cart-badge { position: absolute; top: -5px; right: -5px; background: var(--gold); color: white; font-size: 0.75rem; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+
+        /* البانر */
         .hero-banner { position: relative; width: 100%; height: 500px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
         .hero-banner img { position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 1; filter: brightness(0.65); }
         .hero-content { position: relative; z-index: 2; text-align: center; color: white; padding: 20px; }
@@ -44,7 +49,7 @@
         .card-body h3 { margin: 0; font-size: 0.95rem; color: var(--royal-green); font-weight: 600; }
         .card-body p { color: #888; font-size: 0.8rem; margin-top: 8px; font-style: italic; font-weight: 300; }
 
-        /* ستايل المنتجات ذات الصلة بتاعك زي ما هو */
+        /* ستايل المنتجات ذات الصلة */
         .related-section { margin-top: 80px; padding-top: 40px; border-top: 1px solid rgba(0,0,0,0.05); }
         .related-section h3 { color: var(--royal-green); text-align: center; font-weight: 400; font-size: 2rem; margin-bottom: 40px; }
         .horizontal-slider { display: flex; gap: 25px; overflow-x: auto; padding: 10px 5px 30px 5px; scrollbar-width: none; }
@@ -60,7 +65,7 @@
         .expert-btn:hover { transform: scale(1.05); background: #1ebe57; }
         @media (max-width: 768px) { .expert-btn { bottom: 20px; right: 20px; padding: 15px 25px; font-size: 0.9rem; } .expert-btn span { display: none; } }
 
-        /* الشريط الزجاجي المرفوع 5 ثواني */
+        /* الشريط الزجاجي المرفوع */
         #smartGlassSlider { position: fixed; bottom: 110px; left: 50%; transform: translate(-50%, 200%); background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 20px; padding: 10px 20px; display: flex; gap: 20px; z-index: 999; transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: max-content; }
         #smartGlassSlider.visible { transform: translate(-50%, 0); }
         .smart-glass-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; transition: 0.3s; }
@@ -70,6 +75,11 @@
     </style>
 </head>
 <body>
+
+    <a href="../cart.html" class="cart-float">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-badge" id="cartCount">0</span>
+    </a>
 
     <section class="hero-banner">
         <img src="../assets/images/nageel/modern-landscape-design.jpg" alt="Habib Store Landscape Design">
@@ -85,6 +95,18 @@
         </div>
 
         <div class="product-grid">
+            <a href="product.html?id=6" class="card">
+                <div class="img-wrapper">
+                    <div class="badge">NEW</div>
+                    <img src="../assets/images/nageel/grass-6_mm-natural.jpeg" alt="Habib Eco Green">
+                </div>
+                <div class="card-body">
+                    <span>Smart Choice</span>
+                    <h3>Habib Eco Green (6mm)</h3>
+                    <p>خيار عملي واقتصادي للمساحات المتنوعة</p>
+                </div>
+            </a>
+
             <a href="product.html?id=11" class="card">
                 <div class="img-wrapper"><div class="badge">BEST SELLER</div><img src="../assets/images/nageel/grass-11mm-standard-10.png" alt="Habib Practical Green"></div>
                 <div class="card-body"><span>Practical Collection</span><h3>Habib Practical Green (11mm)</h3><p>أناقة عملية تناسب كافة المساحات</p></div>
@@ -143,6 +165,10 @@
             <img src="../assets/images/marble/marble-galala.jpg" alt="معرض الرخام">
             <span>معرض الرخام</span>
         </a>
+        <a href="trees.html" class="smart-glass-item">
+            <img src="../assets/images/nageel/modern-landscape-design.jpg" alt="معرض الأشجار">
+            <span>معرض الأشجار</span>
+        </a>
     </div>
 
     <a href="https://wa.me/201016961497" class="expert-btn">
@@ -151,11 +177,24 @@
     </a>
 
     <footer style="text-align: center; padding: 60px 20px; color: #aaa; font-size: 0.85rem; background: #fff; margin-top: 40px; border-top: 1px solid #f1f1f1;">
-        <p style="letter-spacing: 1px;">&copy; 2026 Habib Stone - توريد وتركيب بأيدي خبراء ومهندسين</p>
+        <p style="letter-spacing: 1px;">&copy; 2026 Habib Store - توريد وتركيب بأيدي خبراء ومهندسين</p>
     </footer>
 
     <script>
-        // داتا الكروت الـ 6 المظبوطة باللينكات الصحيحة بتاعتك
+        // تحديث رقم السلة تلقائياً
+        function updateCartCount() {
+            try {
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                let count = cart.reduce((total, item) => total + (item.quantity || 1), 0);
+                document.getElementById('cartCount').textContent = count;
+            } catch(e) {
+                console.log("Cart empty or error reading it.");
+            }
+        }
+        updateCartCount();
+        window.addEventListener('storage', updateCartCount);
+
+        // داتا الكروت الـ 6 المظبوطة
         const complements = [
             { name: "معرض أحجار الديكور والزلط", img: "../assets/images/zalat/zalat-garden-ideas-luxury.jpg", link: "white-marble.html", desc: "اكتشف تشكيلة من أحجار الديكور التي يختارها مهندسونا لتمنح حديقتكم تبايناً بصرياً ساحراً." },
             { name: "معرض الرخام الفاخر", img: "../assets/images/marble/marble-galala.jpg", link: "marble.html", desc: "لمسات من الرخام الطبيعي والمشايات الهندسية التي تضمن لكم الفخامة والراحة في كل خطوة." },
