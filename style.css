@@ -1,5 +1,5 @@
 /* =========================================
-   Habib Store - Premium Selection Styles
+   Habib Store | Premium Selection Styles
    ========================================= */
 
 /* الألوان الأساسية والمتغيرات */
@@ -166,10 +166,6 @@ body {
     transition: 0.8s;
 }
 
-.card:hover .img-wrapper img {
-    transform: scale(1.05);
-}
-
 .card-body {
     padding: 15px;
     text-align: center;
@@ -196,14 +192,6 @@ body {
     line-height: 1.4;
 }
 
-.card-body p {
-    color: #888;
-    font-size: 0.8rem;
-    margin-top: 8px;
-    font-style: italic;
-    font-weight: 300;
-}
-
 /* --- أيقونة السلة العائمة --- */
 .cart-float {
     position: fixed;
@@ -227,7 +215,6 @@ body {
 
 .cart-float:hover {
     transform: scale(1.1);
-    color: var(--gold);
     border-color: var(--gold);
 }
 
@@ -245,10 +232,9 @@ body {
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-/* --- زرار الواتساب (الهوية المعتمدة) --- */
+/* --- زرار الواتساب --- */
 .expert-btn {
     position: fixed;
     bottom: 40px;
@@ -267,35 +253,27 @@ body {
     transition: 0.4s;
 }
 
-.expert-btn:hover {
-    transform: scale(1.05);
-    background: #1ebe57;
-}
-
 @media (max-width: 768px) {
     .expert-btn {
         bottom: 20px;
         right: 20px;
         padding: 15px 25px;
-        font-size: 0.9rem;
     }
-    .expert-btn span {
-        display: none;
-    }
+    .expert-btn span { display: none; }
 }
 
 /* --- شريط النخبة الزجاجي (Habib Elite Glass Bar) --- */
 #eliteGlassBar {
     position: fixed;
-    bottom: -120px; /* مخفي في البداية تحت الشاشة */
+    bottom: -120px; 
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
     max-width: 800px;
-    background: rgba(255, 255, 255, 0.15); /* شفافية زجاجية */
-    backdrop-filter: blur(20px); /* التأثير المصنفر */
+    background: rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(20px); 
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(197, 160, 89, 0.3); /* إطار ذهبي رقيق */
+    border: 1px solid rgba(197, 160, 89, 0.3); 
     border-radius: 30px;
     padding: 15px 25px;
     z-index: 9999;
@@ -303,16 +281,15 @@ body {
     align-items: center;
     gap: 20px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1); /* حركة ظهور وقورة */
+    transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
     opacity: 0;
 }
 
 #eliteGlassBar.active {
-    bottom: 30px; /* يرتفع للأعلى بوقار */
+    bottom: 30px; 
     opacity: 1;
 }
 
-/* عنوان الشريط */
 .glass-header {
     min-width: 120px;
     border-left: 1px solid rgba(197, 160, 89, 0.4);
@@ -323,23 +300,19 @@ body {
     color: var(--royal-green);
     font-size: 0.85rem;
     margin: 0;
-    letter-spacing: 1px;
     font-weight: 700;
 }
 
 .glass-header span {
     color: var(--gold);
     font-size: 0.65rem;
-    text-transform: uppercase;
 }
 
-/* حاوية المنتجات العرضية */
 .glass-items {
     display: flex;
     gap: 15px;
     overflow-x: auto;
     scrollbar-width: none;
-    -ms-overflow-style: none;
     flex-grow: 1;
 }
 
@@ -359,7 +332,7 @@ body {
 }
 
 .glass-card:hover {
-    background: rgba(197, 160, 89, 0.15); /* لمسة ذهبية عند اللمس */
+    background: rgba(197, 160, 89, 0.15);
     border-color: var(--gold);
 }
 
@@ -378,9 +351,8 @@ body {
     white-space: nowrap;
 }
 
-/* موبايل: تصغير العرض ليلائم الشاشة */
 @media (max-width: 768px) {
     #eliteGlassBar { width: 95%; padding: 10px 15px; bottom: -120px;}
     #eliteGlassBar.active { bottom: 20px; }
-    .glass-header { display: none; } /* إخفاء النص الجانبي في الموبايل لتوفير مساحة */
+    .glass-header { display: none; }
 }
