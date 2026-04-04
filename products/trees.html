@@ -3,77 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>معرض الأشجار الفاخرة - Habib Stone</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-</head>
-<body style="background-color: #f9f9f9;">
-
-<section class="py-5">
-    <div class="container text-center">
-        <h2 class="mb-5" style="color: #2c5e1a; font-weight: bold; font-family: 'Cairo', sans-serif;">
-            مجموعة الأشجار الفاخرة 🌳 <br>
-            <span style="font-size: 0.5em; color: #666; text-transform: uppercase;">Habib Premium Selection</span>
-        </h2>
+    <title>معرض الأشجار الفاخرة | Habib Store</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../style.css">
+    <script src="../main.js" defer></script>
+    <style>
+        :root { --royal-green: #1a3c34; --gold: #c5a059; --soft-bg: #f8f9fa; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--soft-bg); margin: 0; padding: 0; color: #333; scroll-behavior: smooth; overflow-x: hidden; }
         
-        <div class="row g-4">
-            <div class="col-6 col-md-4 mb-4">
-                <div class="card border-0 shadow-sm p-2 h-100">
-                    <img src="../assets/images/Greenery/Areca Palm.jpeg" class="img-fluid rounded" style="height: 220px; object-fit: cover;">
-                    <h5 class="mt-3" style="font-size: 1.1rem;">نخيل أريكا الملكي</h5>
-                    <button class="btn btn-success w-100 mt-auto" onclick="addToCart('نخيل أريكا', '../assets/images/Greenery/Areca Palm.jpeg')">إضافة للمعاينة</button>
-                </div>
-            </div>
+        /* أيقونة السلة العائمة */
+        .cart-float { position: fixed; top: 20px; left: 20px; background: white; color: var(--royal-green); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-decoration: none; z-index: 1000; font-size: 1.2rem; transition: 0.3s; border: 1px solid rgba(197, 160, 89, 0.3); }
+        .cart-float:hover { transform: scale(1.1); color: var(--gold); border-color: var(--gold); }
+        .cart-badge { position: absolute; top: -5px; right: -5px; background: var(--gold); color: white; font-size: 0.75rem; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
 
-            <div class="col-6 col-md-4 mb-4">
-                <div class="card border-0 shadow-sm p-2 h-100">
-                    <img src="../assets/images/Greenery/Banana Palmo.jpeg" class="img-fluid rounded" style="height: 220px; object-fit: cover;">
-                    <h5 class="mt-3" style="font-size: 1.1rem;">نخيل الموز الاستوائي</h5>
-                    <button class="btn btn-success w-100 mt-auto" onclick="addToCart('نخيل الموز', '../assets/images/Greenery/Banana Palmo.jpeg')">إضافة للمعاينة</button>
-                </div>
-            </div>
+        /* البانر الموحد */
+        .hero-banner { position: relative; width: 100%; height: 500px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+        .hero-banner img { position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 1; filter: brightness(0.60); }
+        .hero-content { position: relative; z-index: 2; text-align: center; color: white; padding: 20px; }
+        .hero-content h1 { font-size: 3.5rem; font-weight: 300; margin: 0; letter-spacing: 2px; text-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        .hero-content p { font-size: 1.4rem; opacity: 0.95; font-weight: 300; margin-top: 15px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
 
-            <div class="col-6 col-md-4 mb-4">
-                <div class="card border-0 shadow-sm p-2 h-100">
-                    <img src="../assets/images/Greenery/Golden Leaf.jpeg" class="img-fluid rounded" style="height: 220px; object-fit: cover;">
-                    <h5 class="mt-3" style="font-size: 1.1rem;">شجرة جولدن ليف</h5>
-                    <button class="btn btn-success w-100 mt-auto" onclick="addToCart('شجرة جولدن ليف', '../assets/images/Greenery/Golden Leaf.jpeg')">إضافة للمعاينة</button>
-                </div>
-            </div>
+        .container { max-width: 1300px; margin: 60px auto; padding: 0 25px; }
+        
+        .section-header { text-align: center; margin-bottom: 40px; }
+        .section-header h2 { font-size: 2.5rem; color: var(--royal-green); font-weight: 400; position: relative; display: inline-block; padding-bottom: 15px; }
+        .section-header h2::after { content: ''; position: absolute; bottom: 0; left: 30%; width: 40%; height: 2px; background: var(--gold); }
 
-            <div class="col-6 col-md-4 mb-4">
-                <div class="card border-0 shadow-sm p-2 h-100">
-                    <img src="../assets/images/Greenery/Green Fan.jpeg" class="img-fluid rounded" style="height: 220px; object-fit: cover;">
-                    <h5 class="mt-3" style="font-size: 1.1rem;">جرين فان المودرن</h5>
-                    <button class="btn btn-success w-100 mt-auto" onclick="addToCart('جرين فان', '../assets/images/Greenery/Green Fan.jpeg')">إضافة للمعاينة</button>
-                </div>
-            </div>
+        /* رسالة المليارديرات (الاحتكار والفخامة) */
+        .billionaire-message { max-width: 800px; margin: 0 auto 60px auto; text-align: center; background: rgba(197, 160, 89, 0.05); padding: 25px; border-radius: 15px; border: 1px solid rgba(197, 160, 89, 0.2); }
+        .billionaire-message p { color: #555; font-size: 1.15rem; line-height: 1.8; margin: 0; font-weight: 400; }
+        .billionaire-message i { color: var(--gold); font-size: 1.5rem; margin-bottom: 15px; display: block; }
 
-            <div class="col-6 col-md-4 mb-4">
-                <div class="card border-0 shadow-sm p-2 h-100">
-                    <img src="../assets/images/Greenery/Taraza Paradise.jpeg" class="img-fluid rounded" style="height: 220px; object-fit: cover;">
-                    <h5 class="mt-3" style="font-size: 1.1rem;">تارازا بارادايس</h5>
-                    <button class="btn btn-success w-100 mt-auto" onclick="addToCart('تارازا بارادايس', '../assets/images/Greenery/Taraza Paradise.jpeg')">إضافة للمعاينة</button>
-                </div>
-            </div>
+        /* الشبكة الموحدة (لتظبيط الأطوال) */
+        .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 80px; }
+        @media (min-width: 992px) { .product-grid { grid-template-columns: repeat(4, 1fr); gap: 30px; } }
 
-            <div class="col-6 col-md-4 mb-4">
-                <div class="card border-0 shadow-sm p-2 h-100">
-                    <img src="../assets/images/Greenery/Tropical Bliss.jpeg" class="img-fluid rounded" style="height: 220px; object-fit: cover;">
-                    <h5 class="mt-3" style="font-size: 1.1rem;">تروبيكال بليس</h5>
-                    <button class="btn btn-success w-100 mt-auto" onclick="addToCart('تروبيكال بليس', '../assets/images/Greenery/Tropical Bliss.jpeg')">إضافة للمعاينة</button>
-                </div>
-            </div>
+        .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s; border: 1px solid rgba(0,0,0,0.02); display: flex; flex-direction: column; position: relative; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(0,0,0,0.12); border-color: var(--gold); }
 
-            <div class="col-6 col-md-4 mb-4">
-                <div class="card border-0 shadow-sm p-2 h-100">
-                    <img src="../assets/images/Greenery/Zava.jpeg" class="img-fluid rounded" style="height: 220px; object-fit: cover;">
-                    <h5 class="mt-3" style="font-size: 1.1rem;">شجرة زافا الديكورية</h5>
-                    <button class="btn btn-success w-100 mt-auto" onclick="addToCart('شجرة زافا', '../assets/images/Greenery/Zava.jpeg')">إضافة للمعاينة</button>
-                </div>
-            </div>
+        /* تظبيط مقاسات الصور زي باقي الموقع */
+        .img-wrapper { width: 100%; aspect-ratio: 1/1; overflow: hidden; position: relative; background: #fff; padding: 15px; box-sizing: border-box; }
+        .img-wrapper img { width: 100%; height: 100%; object-fit: contain; transition: 0.8s; }
+        .card:hover .img-wrapper img { transform: scale(1.05); }
+        
+        .card-body { padding: 15px; text-align: center; display: flex; flex-direction: column; flex-grow: 1; }
+        .card-body span { color: var(--gold); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 5px; }
+        .card-body h3 { margin: 0 0 15px 0; font-size: 1.1rem; color: var(--royal-green); font-weight: 600; }
+        
+        /* زرار الإضافة من برة */
+        .add-to-cart-btn { background: var(--royal-green); color: white; border: none; padding: 12px; border-radius: 10px; width: 100%; margin-top: auto; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px; font-family: inherit; }
+        .add-to-cart-btn:hover { background: var(--gold); }
+
+        /* الواتساب */
+        .expert-btn { position: fixed; bottom: 40px; right: 40px; background: #25d366; color: white; padding: 18px 35px; border-radius: 60px; text-decoration: none; box-shadow: 0 15px 35px rgba(37, 211, 102, 0.3); z-index: 1000; font-weight: 600; display: flex; align-items: center; gap: 15px; transition: 0.4s; }
+        .expert-btn:hover { transform: scale(1.05); background: #1ebe57; }
+        @media (max-width: 768px) { .expert-btn { bottom: 20px; right: 20px; padding: 15px 25px; font-size: 0.9rem; } .expert-btn span { display: none; } }
+
+        /* الشريط العائم */
+        #smartGlassSlider { position: fixed; bottom: 110px; left: 50%; transform: translate(-50%, 200%); background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 20px; padding: 10px 20px; display: flex; gap: 20px; z-index: 999; transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: max-content; }
+        #smartGlassSlider.visible { transform: translate(-50%, 0); }
+        .smart-glass-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; transition: 0.3s; }
+        .smart-glass-item:hover { transform: scale(1.05); }
+        .smart-glass-item img { width: 50px; height: 50px; object-fit: cover; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .smart-glass-item span { font-size: 0.75rem; color: var(--royal-green); font-weight: 700; margin-top: 5px; }
+    </style>
+</head>
+<body>
+
+    <a href="../cart.html" class="cart-float">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-badge" id="cartCount">0</span>
+    </a>
+
+    <section class="hero-banner">
+        <img src="../assets/images/Greenery/Tropical Bliss.jpeg" alt="Habib Premium Trees">
+        <div class="hero-content">
+            <h1>Habib Premium Greenery</h1>
+            <p>مقتنيات حصرية من الأشجار ونباتات الزينة الفاخرة</p>
         </div>
-    </div>
-</section>
+    </section>
 
+    <div class="container">
+        <div class="section-header">
+            <h2>مجموعة الأشجار الفاخرة</h2>
+        </div>
+
+        <div class="billionaire-message">
+            <i class="fas fa-gem"></i>
+            <p>
+                نظراً لحرصنا على تفرد مشاريع عملائنا، نعرض هنا لمحة مبدئية من مقتنياتنا النباتية. <strong>نمتلك تشكيلة أوسع وأكثر ندرة</strong> من الأشجار ونباتات الزينة المستوردة في مخازننا الخاصة، وهي متاحة للعرض والمقايسة فور تواصلكم مع فريقنا الهندسي لتلبية أدق تطلعاتكم المعمارية.
+            </p>
+        </div>
+
+        <div class="product-grid">
+            
+            <div class="card">
+                <div class="img-wrapper">
+                    <img src="../assets/images/Greenery/Areca Palm.jpeg" alt="نخيل أريكا الملكي">
+                </div>
+                <div class="card-body">
+                    <span>Royal Palm</span>
+                    <h3>نخيل أريكا الملكي</h3>
+                    <button class="add-to-cart-btn" onclick="addTreeToCart(this, 'tree-1', 'نخيل أريكا الملكي', '../assets/images/Greenery/Areca Palm.jpeg')">
+                        <i class="fas fa-plus"></i> إضافة للمعاينة
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img-wrapper">
+                    <img src="../assets/images/Greenery/Banana Palmo.jpeg" alt="نخيل الموز الاستوائي">
+                </div>
+                <div class="card-body">
+                    <span>Tropical Choice</span>
+                    <h3>نخيل الموز الاستوائي</h3>
+                    <button class="add-to-cart-btn" onclick="addTreeToCart(this, 'tree-2', 'نخيل الموز الاستوائي', '../assets/images/Greenery/Banana Palmo.jpeg')">
+                        <i class="fas fa-plus"></i> إضافة للمعاينة
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img-wrapper">
+                    <img src="../assets/images/Greenery/Golden Leaf.jpeg" alt="شجرة جولدن ليف">
+                </div>
+                <div class="card-body">
+                    <span>Premium Decor</span>
+                    <h3>شجرة جولدن ليف</h3>
+                    <button class="add-to-cart-btn" onclick="addTreeToCart(this, 'tree-3', 'شجرة جولدن ليف', '../assets/images/Greenery/Golden Leaf.jpeg')">
+                        <i class="fas fa-plus"></i> إضافة للمعاينة
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img-wrapper">
+                    <img src="../assets/images/Greenery/Green Fan.jpeg" alt="جرين فان المودرن">
+                </div>
+                <div class="card-body">
+                    <span>Modern Edge</span>
+                    <h3>جرين فان المودرن</h3>
+                    <button class="add-to-cart-btn" onclick="addTreeToCart(this, 'tree-4', 'جرين فان المودرن', '../assets/images/Greenery/Green Fan.jpeg')">
+                        <i class="fas fa-plus"></i> إضافة للمعاينة
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img-wrapper">
+                    <img src="../assets/images/Greenery/Taraza Paradise.jpeg" alt="تارازا بارادايس">
+                </div>
+                <div class="card-body">
+                    <span>Paradise Line</span>
+                    <h3>تارازا بارادايس</h3>
+                    <button class="add-to-cart-btn" onclick="addTreeToCart(this, 'tree-5', 'تارازا بارادايس', '../assets/images/Greenery/Taraza Paradise.jpeg')">
+                        <i class="fas fa-plus"></i> إضافة للمعاينة
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img-wrapper">
+                    <img src="../assets/images/Greenery/Tropical Bliss.jpeg" alt="تروبيكال بليس">
+                </div>
+                <div class="card-body">
+                    <span>Exotic Flora</span>
+                    <h3>تروبيكال بليس</h3>
+                    <button class="add-to-cart-btn" onclick="addTreeToCart(this, 'tree-6', 'تروبيكال بليس', '../assets/images/Greenery/Tropical Bliss.jpeg')">
+                        <i class="fas fa-plus"></i> إضافة للمعاينة
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img-wrapper">
+                    <img src="../assets/images/Greenery/Zava.jpeg" alt="شجرة زافا الديكورية">
+                </div>
+                <div class="card-body">
+                    <span>Signature Piece</span>
+                    <h3>شجرة زافا الديكورية</h3>
+                    <button class="add-to-cart-btn" onclick="addTreeToCart(this, 'tree-7', 'شجرة زافا الديكورية', '../assets/images/Greenery/Zava.jpeg')">
+                        <i class="fas fa-plus"></i> إضافة للمعاينة
+                    </button>
+                </div>
+            </div>
+
+        </div> 
+    </div> 
+    
+    <div id="smartGlassSlider">
+        <a href="grass-gallery.html" class="smart-glass-item">
+            <img src="../assets/images/nageel/grass-40mm-natural-12.jpeg" alt="معرض النجيل">
+            <span>معرض النجيل</span>
+        </a>
+        <a href="white-marble.html" class="smart-glass-item">
+            <img src="../assets/images/zalat/white-zalat.jpg" alt="معرض الزلط">
+            <span>معرض الزلط</span>
+        </a>
+        <a href="marble.html" class="smart-glass-item">
+            <img src="../assets/images/marble/marble-galala.jpg" alt="معرض الرخام">
+            <span>معرض الرخام</span>
+        </a>
+    </div>
+
+    <a href="https://wa.me/201016961497" class="expert-btn">
+        <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i>
+        <span>تواصل لمعاينة التشكيلة الكاملة</span>
+    </a>
+
+    <footer style="text-align: center; padding: 60px 20px; color: #aaa; font-size: 0.85rem; background: #fff; margin-top: 80px; border-top: 1px solid #f1f1f1;">
+        <p style="letter-spacing: 1px;">&copy; 2026 Habib Store - توريد وتركيب بأيدي خبراء ومهندسين</p>
+    </footer>
+
+    <script>
+        // تحديث رقم السلة
+        function updateCartCount() {
+            try {
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                let count = cart.reduce((total, item) => total + (item.quantity || 1), 0);
+                document.getElementById('cartCount').textContent = count;
+            } catch(e) {
+                console.log("Cart empty or error reading it.");
+            }
+        }
+        updateCartCount();
+        window.addEventListener('storage', updateCartCount);
+
+        // وظيفة زر إضافة الشجر للسلة مباشرة من الكارت
+        function addTreeToCart(btnElement, id, title, imgPath) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            
+            let existingItem = cart.find(item => item.id === id && item.category === 'trees');
+            
+            if(existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: id,
+                    title: title,
+                    img: imgPath,
+                    category: 'trees',
+                    quantity: 1,
+                    price: 0
+                });
+            }
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            
+            // تأثير بصري للزرار لتأكيد الإضافة
+            let originalText = btnElement.innerHTML;
+            btnElement.innerHTML = '<i class="fas fa-check"></i> تمت الإضافة';
+            btnElement.style.background = '#25d366';
+            btnElement.style.color = 'white';
+            
+            setTimeout(() => {
+                btnElement.innerHTML = originalText;
+                btnElement.style.background = '';
+            }, 2000);
+        }
+
+        // تشغيل الشريط الزجاجي المرفوع بعد 5 ثواني
+        setTimeout(() => {
+            const glassSlider = document.getElementById('smartGlassSlider');
+            if(glassSlider) glassSlider.classList.add('visible');
+        }, 5000);
+    </script>
 </body>
 </html>
