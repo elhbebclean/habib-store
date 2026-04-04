@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تفاصيل مقتنيات الرخام | Habib Stone | Premium Selection</title>
+    <title>تفاصيل مقتنيات الرخام | Habib Store | Premium Selection</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <link rel="stylesheet" href="style.css">
@@ -12,6 +12,11 @@
         :root { --royal-green: #1a3c34; --gold: #c5a059; --soft-gray: #f8fafa; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--soft-gray); margin: 0; color: #333; line-height: 1.8; }
         
+        /* أيقونة السلة العائمة */
+        .cart-float { position: fixed; top: 20px; left: 20px; background: white; color: var(--royal-green); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-decoration: none; z-index: 1000; font-size: 1.2rem; transition: 0.3s; border: 1px solid rgba(197, 160, 89, 0.3); }
+        .cart-float:hover { transform: scale(1.1); color: var(--gold); border-color: var(--gold); }
+        .cart-badge { position: absolute; top: -5px; right: -5px; background: var(--gold); color: white; font-size: 0.75rem; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+
         .product-wrapper { max-width: 1200px; margin: 80px auto; padding: 0 20px; display: flex; flex-wrap: wrap; gap: 60px; align-items: flex-start; }
         
         /* قسم الصورة الراقية (معدل بـ Contain) */
@@ -39,7 +44,7 @@
         .features-list li { margin-bottom: 18px; display: flex; align-items: center; gap: 15px; color: var(--royal-green); font-weight: 500; font-size: 1.05rem; }
         .features-list li i { color: var(--gold); font-size: 1.3rem; }
 
-        /* المنتجات التكميلية (كودك الأصلي) */
+        /* المنتجات التكميلية */
         .complements-section { margin-top: 60px; border-top: 1px solid #eaeaea; padding-top: 40px; }
         .complements-section h3 { color: var(--royal-green); font-weight: 400; font-size: 1.5rem; margin-bottom: 25px; }
         .slider-container { display: flex; gap: 20px; overflow-x: auto; padding-bottom: 20px; scrollbar-width: thin; }
@@ -49,17 +54,29 @@
         .insta-card-info { padding: 15px; text-align: center; }
         .insta-card-info h4 { margin: 0; color: #333; font-size: 0.95rem; font-weight: 500; }
 
-        .cta-box { display: flex; gap: 20px; align-items: center; margin-top: 40px; }
+        /* أزرار الإجراءات (إضافة للسلة والعودة) */
+        .cta-box { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin-top: 40px; }
+        
+        .add-to-cart-btn { background: var(--royal-green); color: white; border: none; padding: 15px 30px; border-radius: 30px; font-size: 1.1rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: 0.4s; box-shadow: 0 10px 20px rgba(26, 60, 52, 0.2); font-family: inherit; }
+        .add-to-cart-btn:hover { background: var(--gold); transform: translateY(-3px); box-shadow: 0 15px 25px rgba(197, 160, 89, 0.3); }
+
         .back-gallery { text-decoration: none; color: #999; font-size: 0.95rem; transition: 0.3s; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid transparent; padding-bottom: 3px; }
         .back-gallery:hover { color: var(--royal-green); border-color: var(--royal-green); }
 
-        /* زرار فريق الخبراء (محدث بالهوية المعتمدة) */
+        /* زرار فريق الخبراء (واتساب) */
         .expert-btn { position: fixed; bottom: 40px; left: 40px; background: #25d366; color: white; padding: 18px 35px; border-radius: 60px; text-decoration: none; box-shadow: 0 15px 35px rgba(37, 211, 102, 0.25); z-index: 1000; font-weight: 600; display: flex; align-items: center; gap: 15px; transition: 0.4s; }
         .expert-btn:hover { transform: translateY(-5px); background: #1ebe57; }
 
-        @media (max-width: 768px) { .content-section h1 { font-size: 2.1rem; } .product-wrapper { margin: 40px auto; } .expert-btn { bottom: 20px; left: 20px; padding: 15px 25px; font-size: 0.9rem; } .expert-btn span { display: none; } }
+        @media (max-width: 768px) { 
+            .content-section h1 { font-size: 2.1rem; } 
+            .product-wrapper { margin: 40px auto; } 
+            .expert-btn { bottom: 20px; left: 20px; padding: 15px 25px; font-size: 0.9rem; } 
+            .expert-btn span { display: none; } 
+            .cta-box { flex-direction: column; align-items: flex-start; } 
+            .add-to-cart-btn { width: 100%; justify-content: center; }
+        }
 
-        /* الشريط الزجاجي المرفوع 5 ثواني */
+        /* الشريط الزجاجي المرفوع */
         #smartGlassSlider { position: fixed; bottom: 110px; left: 50%; transform: translate(-50%, 200%); background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 20px; padding: 10px 20px; display: flex; gap: 20px; z-index: 999; transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: max-content; }
         #smartGlassSlider.visible { transform: translate(-50%, 0); }
         .smart-glass-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; transition: 0.3s; }
@@ -70,6 +87,11 @@
 </head>
 <body>
 
+    <a href="../cart.html" class="cart-float">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-badge" id="cartCount">0</span>
+    </a>
+
     <div class="product-wrapper">
         <div class="image-section">
             <div class="main-display">
@@ -78,7 +100,7 @@
         </div>
 
         <div class="content-section">
-            <span class="brand-tag">Habib Stone | Premium Selection</span>
+            <span class="brand-tag">Habib Store | Premium Selection</span>
             <span class="specs-tag" id="p-specs">جاري التحميل...</span>
             <h1 id="p-name">مقتنيات حبيب ستور</h1>
             <div class="luxury-line"></div>
@@ -89,7 +111,7 @@
 
             <div class="trust-badge">
                 <h4><i class="fas fa-hard-hat"></i> توريد وتركيب بأيدي خبراء ومهندسين</h4>
-                <p>في Habib Stone، يكتمل جمال الرخام والأحجار بدقة التنفيذ. يتم التركيب تحت إشراف هندسي متكامل لضمان <strong>Professional Finish</strong> يعكس قيمة وفخامة اختياراتكم وتدوم لسنوات طوال.</p>
+                <p>في Habib Store، يكتمل جمال الرخام والأحجار بدقة التنفيذ. يتم التركيب تحت إشراف هندسي متكامل لضمان <strong>Professional Finish</strong> يعكس قيمة وفخامة اختياراتكم وتدوم لسنوات طوال.</p>
             </div>
 
             <ul class="features-list">
@@ -99,17 +121,22 @@
                 <li><i class="fas fa-check-double"></i> فخامة بصرية تضفي هيبة على المساحات الخاصة</li>
             </ul>
 
+            <div class="cta-box">
+                <button id="addToCartBtn" class="add-to-cart-btn">
+                    <i class="fas fa-cart-plus"></i> أضف إلى السلة
+                </button>
+
+                <a href="marble.html" class="back-gallery">
+                    <i class="fas fa-arrow-right"></i> العودة إلى المعرض الملكي
+                </a>
+            </div>
+
             <div class="complements-section">
                 <h3>يكتمل الرقي مع:</h3>
                 <div class="slider-container" id="complementary-slider">
                 </div>
             </div>
 
-            <div class="cta-box">
-                <a href="marble.html" class="back-gallery">
-                    <i class="fas fa-arrow-right"></i> العودة إلى المعرض الملكي
-                </a>
-            </div>
         </div>
     </div>
     
@@ -122,6 +149,10 @@
             <img src="../assets/images/zalat/white-zalat.jpg" alt="معرض الزلط">
             <span>معرض الزلط</span>
         </a>
+        <a href="trees.html" class="smart-glass-item">
+            <img src="../assets/images/nageel/modern-landscape-design.jpg" alt="معرض الأشجار">
+            <span>معرض الأشجار</span>
+        </a>
     </div>
 
     <a id="p-whatsapp" href="https://wa.me/201016961497" class="expert-btn" target="_blank">
@@ -130,7 +161,7 @@
     </a>
 
     <script>
-        // مصفوفة البيانات الأصلية الخاصة بك
+        // مصفوفة البيانات الأصلية
         const marbleData = {
             "40": { 
                 name: "رخام جلالة | Galala Marble", 
@@ -194,7 +225,7 @@
             }
         };
 
-        // المنتجات التكميلية الأصلية
+        // المنتجات التكميلية
         const complements = [
             { id: "1", name: "نجيل النخبة 50 ملم", img: "Habib-Anatolian-Nature-50mm.jpg", folder: "nageel-details", page: "product-nageel.html" },
             { id: "white-zalat", name: "زلط أبيض ملكي", img: "white-zalat.jpg", folder: "zalat", page: "zalat.html" }
@@ -232,6 +263,56 @@
             document.getElementById('p-name').innerText = "مقتنيات حبيب ستور الخاصة";
             document.getElementById('p-specs').innerText = "تواصل معنا للمزيد";
         }
+
+        // تحديث رقم السلة
+        function updateCartCount() {
+            try {
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                let count = cart.reduce((total, item) => total + (item.quantity || 1), 0);
+                document.getElementById('cartCount').textContent = count;
+            } catch(e) {
+                console.log("Cart empty or error reading it.");
+            }
+        }
+        updateCartCount();
+        window.addEventListener('storage', updateCartCount);
+
+        // وظيفة زر أضف إلى السلة
+        document.getElementById('addToCartBtn').addEventListener('click', function() {
+            if(!product) return;
+            
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            
+            let existingItem = cart.find(item => item.id === productId && item.category === 'marble');
+            
+            if(existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: productId,
+                    title: product.name.split(' |')[0], // بياخد الاسم العربي بس عشان يبقى شكله حلو في السلة
+                    img: '../assets/images/marble/' + product.img,
+                    category: 'marble',
+                    quantity: 1,
+                    price: 0
+                });
+            }
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            
+            // تأثير بصري للزرار لتأكيد الإضافة
+            let btn = this;
+            let originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> تمت الإضافة بنجاح';
+            btn.style.background = '#25d366';
+            btn.style.color = 'white';
+            
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.style.background = '';
+            }, 2000);
+        });
 
         // تشغيل الشريط الزجاجي المرفوع بعد 5 ثواني
         setTimeout(() => {
