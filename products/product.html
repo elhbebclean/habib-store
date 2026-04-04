@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تفاصيل المنتج | حبيب ستور للاندسكيب</title>
+    <title>تفاصيل المنتج | Habib Stone | Premium Selection</title>
     
     <link rel="preload" as="image" href="../assets/images/nageel-details/Habib-Istanbul-Lush-40mm.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -29,6 +29,7 @@
         
         .description-text { font-size: 1.15rem; color: #555; margin-bottom: 35px; text-align: justify; font-weight: 300; }
         
+        /* قسم المهندسين بالهوية الجديدة */
         .trust-badge { background: rgba(197, 160, 89, 0.08); border-right: 4px solid var(--gold); padding: 25px; border-radius: 12px; margin-bottom: 40px; }
         .trust-badge h4 { color: var(--royal-green); margin: 0 0 10px 0; font-size: 1.2rem; font-weight: 600; display: flex; align-items: center; gap: 10px; }
         .trust-badge p { margin: 0; font-size: 1.05rem; color: #555; font-weight: 400; line-height: 1.6; }
@@ -37,6 +38,7 @@
         .features-list li { margin-bottom: 18px; display: flex; align-items: center; gap: 15px; color: var(--royal-green); font-weight: 500; font-size: 1.05rem; }
         .features-list li i { color: var(--gold); font-size: 1.3rem; }
 
+        /* قسم المنتجات ذات الصلة الأصلي بتاعك */
         .related-section { margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(0,0,0,0.05); }
         .related-section h3 { color: var(--royal-green); font-weight: 400; font-size: 1.4rem; margin-bottom: 25px; }
         
@@ -44,7 +46,6 @@
         .horizontal-slider::-webkit-scrollbar { display: none; }
         .glass-product-card { min-width: 280px; background: rgba(255, 255, 255, 0.8); border: 1px solid rgba(197, 160, 89, 0.2); border-radius: 20px; padding: 18px; text-decoration: none; text-align: center; transition: 0.4s; display: flex; flex-direction: column; }
         .glass-product-card:hover { transform: translateY(-8px); border-color: var(--gold); background: #fff; box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
-        /* التعديل هنا للصورة */
         .glass-product-card img { width: 100%; height: 160px; object-fit: contain; background: #fff; border-radius: 15px; margin-bottom: 15px; }
         .glass-product-card h4 { color: var(--royal-green); font-size: 1.1rem; margin: 0 0 10px 0; font-weight: 600; }
         .glass-product-card p { color: #666; font-size: 0.9rem; margin: 0; line-height: 1.6; font-weight: 300; }
@@ -55,6 +56,14 @@
 
         .expert-btn { position: fixed; bottom: 40px; right: 40px; background: #25d366; color: white; padding: 18px 35px; border-radius: 60px; text-decoration: none; box-shadow: 0 15px 35px rgba(37, 211, 102, 0.25); z-index: 1000; font-weight: 600; display: flex; align-items: center; gap: 15px; transition: 0.4s; }
         @media (max-width: 768px) { .expert-btn { bottom: 20px; right: 20px; padding: 15px 25px; font-size: 0.9rem; } .expert-btn span { display: none; } .content-section h1 { font-size: 2.2rem; } .product-wrapper { margin: 40px auto; } }
+
+        /* الشريط الزجاجي المرفوع اللي بيظهر بعد 5 ثواني */
+        #smartGlassSlider { position: fixed; bottom: 110px; left: 50%; transform: translate(-50%, 200%); background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 20px; padding: 10px 20px; display: flex; gap: 20px; z-index: 999; transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: max-content; }
+        #smartGlassSlider.visible { transform: translate(-50%, 0); }
+        .smart-glass-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; transition: 0.3s; }
+        .smart-glass-item:hover { transform: scale(1.05); }
+        .smart-glass-item img { width: 50px; height: 50px; object-fit: cover; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .smart-glass-item span { font-size: 0.75rem; color: var(--royal-green); font-weight: 700; margin-top: 5px; }
     </style>
 
     <script src="../main.js" defer></script>
@@ -69,24 +78,24 @@
         </div>
 
         <div class="content-section">
-            <span class="brand-tag">Elite Landscape Collection</span>
+            <span class="brand-tag">Habib Stone | Premium Selection</span>
             <h1 id="productTitle">جاري تحميل التفاصيل...</h1>
             <div class="luxury-line"></div>
             
             <p class="description-text" id="productDescription">
-                نحن في فريق "حبيب ستور" نؤمن بأن الحديقة ليست مجرد مساحة خضراء، بل هي انعكاس لذوقكم الرفيع ومنظوركم للرفاهية. هذا المنتج المختار بعناية يجمع بين الكثافة الهندسية المثالية والملمس الحريري ليوفر لكم بيئة هادئة ومستدامة تليق بنمط حياتكم الخاص.
+                اختيار الـ <strong>Professional Finish</strong> يبدأ بجودة الخامة. نجيلنا مصمم بتقنية الـ <strong>Ultimate Density</strong> لضمان ملمس الـ <strong>Natural Silk</strong> مع قوة تحمل استثنائية. الخيار الأمثل للمساحات الـ <strong>High-End Landscapes</strong> والفلل الراقية.
             </p>
 
             <div class="trust-badge">
-                <h4><i class="fas fa-hard-hat"></i> إشراف هندسي متكامل</h4>
-                <p>في حبيب ستور، لا نترك مساحتكم للصدفة.. كل سنتيمتر من النجيل أو الأحجار يتم توريده وتركيبه بإشراف هندسي دقيق، لنضمن لكم جودة تدوم لسنوات.</p>
+                <h4><i class="fas fa-hard-hat"></i> توريد وتركيب بأيدي خبراء ومهندسين</h4>
+                <p>في Habib Stone، لا نترك مساحتكم للصدفة. يتم تنفيذ كل مشروع تحت إشراف هندسي متكامل لضمان <strong>Professional Installation</strong>، بداية من تسوية الأرض وحتى نظام تصريف المياه، لضمان جودة تدوم لسنوات.</p>
             </div>
 
             <ul class="features-list">
-                <li><i class="fas fa-check-double"></i> ضمان جودة حبيب ستور الهندسية</li>
-                <li><i class="fas fa-check-double"></i> تقنية مقاومة للأشعة البنفسجية والأمطار</li>
-                <li><i class="fas fa-check-double"></i> ملمس طبيعي ناعم (Habib Signature)</li>
-                <li><i class="fas fa-check-double"></i> استدامة بصرية تدوم لسنوات طوال</li>
+                <li><i class="fas fa-check-double"></i> ضمان جودة Habib Stone الهندسية</li>
+                <li><i class="fas fa-check-double"></i> تقنية مقاومة للأشعة البنفسجية (UV Resistant) لثبات اللون</li>
+                <li><i class="fas fa-check-double"></i> ملمس طبيعي ناعم (Natural Touch)</li>
+                <li><i class="fas fa-check-double"></i> تصريف مياه ذكي (Advanced Drainage)</li>
             </ul>
 
             <div class="related-section">
@@ -103,6 +112,17 @@
         </div>
     </div>
     
+    <div id="smartGlassSlider">
+        <a href="white-marble.html" class="smart-glass-item">
+            <img src="../assets/images/zalat/white-zalat.jpg" alt="معرض الزلط">
+            <span>معرض الزلط</span>
+        </a>
+        <a href="marble.html" class="smart-glass-item">
+            <img src="../assets/images/marble/marble-galala.jpg" alt="معرض الرخام">
+            <span>معرض الرخام</span>
+        </a>
+    </div>
+
     <a href="https://wa.me/201016961497" class="expert-btn">
         <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i>
         <span>استشارة هندسية ومقايسة مجانية</span>
@@ -151,6 +171,12 @@
                 </a>
             `;
         });
+
+        // تشغيل الشريط الزجاجي المرفوع بعد 5 ثواني
+        setTimeout(() => {
+            const glassSlider = document.getElementById('smartGlassSlider');
+            if(glassSlider) glassSlider.classList.add('visible');
+        }, 5000);
     </script>
 </body>
 </html>
