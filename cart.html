@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* دمج ألوان البراند المعتمدة مع ستايل الصفحة */
+        /* دمج ألوان البراند المعتمدة */
         :root { --royal-green: #1a3c34; --gold: #c5a059; --black: #0a0a0a; --gray: #f8fafa; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, 'Cairo', sans-serif; background: #fff; color: var(--black); line-height: 1.6; overflow-x: hidden; }
@@ -22,16 +22,23 @@
         h2 { font-size: 1.6rem; margin-bottom: 25px; border-bottom: 2px solid #eee; padding-bottom: 10px; color: var(--royal-green); font-weight: 600; position: relative; }
         h2::after { content: ''; position: absolute; bottom: -2px; right: 0; width: 60px; height: 2px; background: var(--gold); }
 
-        /* قائمة المنتجات */
+        /* قائمة المنتجات (محدثة لدعم الصور) */
         .cart-section { background: #fff; }
-        .item-row { display: flex; justify-content: space-between; align-items: center; padding: 20px; border-bottom: 1px solid #f2f2f2; border-radius: 12px; transition: 0.3s; }
+        .item-row { display: flex; justify-content: space-between; align-items: center; padding: 20px; border-bottom: 1px solid #f2f2f2; border-radius: 12px; transition: 0.3s; gap: 15px; }
         .item-row:hover { background: var(--gray); }
-        .item-info h4 { font-size: 1.1rem; font-weight: 700; color: var(--royal-green); margin-bottom: 5px; }
-        .item-info p { font-size: 0.9rem; color: var(--gold); font-weight: 600; }
-        .remove-btn { background: #fdf2f2; border: none; color: #ff4d4d; cursor: pointer; transition: 0.3s; padding: 12px; border-radius: 10px; font-size: 16px; display: flex; align-items: center; justify-content: center; }
+        
+        /* القسم الخاص بالصورة والنص */
+        .item-content { display: flex; align-items: center; gap: 15px; flex: 1; }
+        .item-image { width: 75px; height: 75px; border-radius: 10px; object-fit: cover; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
+        
+        .item-info { flex: 1; }
+        .item-info h4 { font-size: 1.1rem; font-weight: 700; color: var(--royal-green); margin-bottom: 5px; line-height: 1.3; }
+        .item-info p { font-size: 0.85rem; color: var(--gold); font-weight: 600; margin: 0; }
+        
+        .remove-btn { background: #fdf2f2; border: none; color: #ff4d4d; cursor: pointer; transition: 0.3s; padding: 12px; border-radius: 10px; font-size: 16px; display: flex; align-items: center; justify-content: center; min-width: 45px; }
         .remove-btn:hover { background: #ff4d4d; color: #fff; transform: scale(1.05); }
 
-        /* فورم تأكيد الطلب الفاخر */
+        /* فورم تأكيد الطلب הפاخر */
         .checkout-form { background: var(--gray); padding: 40px; border-radius: 20px; position: sticky; top: 40px; border: 1px solid rgba(0,0,0,0.03); box-shadow: 0 15px 40px rgba(0,0,0,0.02); }
         .form-group { margin-bottom: 25px; }
         .form-group label { display: block; font-size: 0.85rem; color: var(--royal-green); margin-bottom: 8px; font-weight: 700; letter-spacing: 1px; }
@@ -125,7 +132,7 @@
 </footer>
 
 <script>
-    // تحميل البيانات من السلة (localStorage) - كودك الأصلي بدون أي تعديل
+    // تحميل البيانات من السلة (localStorage) وإضافة دعم الصور
     function loadCart() {
         const cart = JSON.parse(localStorage.getItem('habibCart')) || [];
         const listDiv = document.getElementById('items-list');
@@ -144,11 +151,17 @@
         
         listDiv.innerHTML = '';
         cart.forEach((item, index) => {
+            // إضافة صورة بديلة لو مفيش صورة محفوظة في اللوكال ستوريدج القديم
+            const imgSrc = item.img ? item.img : '../assets/images/zalat/white-zalat.jpg';
+
             listDiv.innerHTML += `
                 <div class="item-row">
-                    <div class="item-info">
-                        <h4>${item.name}</h4>
-                        <p><i class="fas fa-ruler-combined"></i> المساحة المطلوبة: ${item.area} متر (تقريبياً)</p>
+                    <div class="item-content">
+                        <img src="${imgSrc}" class="item-image" alt="${item.name}">
+                        <div class="item-info">
+                            <h4>${item.name}</h4>
+                            <p><i class="fas fa-ruler-combined"></i> المساحة المطلوبة: ${item.area} متر (تقريبياً)</p>
+                        </div>
                     </div>
                     <button class="remove-btn" onclick="deleteItem(${index})" title="حذف من السلة">
                         <i class="fas fa-trash-alt"></i>
@@ -164,7 +177,7 @@
         let cart = JSON.parse(localStorage.getItem('habibCart')) || [];
         cart.splice(index, 1);
         localStorage.setItem('habibCart', JSON.stringify(cart));
-        loadCart();
+        loadCart(); // إعادة تحميل السلة بعد الحذف
     }
 
     // إرسال الطلب للواتساب الرسمي
