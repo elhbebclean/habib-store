@@ -124,7 +124,7 @@
     <i class="fas fa-box-open"></i>
     <h3>سلة الطلبات خالية يا حوت</h3>
     <p style="color: #888; font-size: 1.1rem;">لم تقم بإضافة أي أصناف لطلب المعاينة بعد.</p>
-    <a href="grass-gallery.html" class="back-btn">تصفح المعارض واختر خاماتك ➜</a>
+    <a href="../products/grass-gallery.html" class="back-btn">تصفح المعارض واختر خاماتك ➜</a>
 </div>
 
 <footer style="text-align: center; padding: 40px 20px; color: #aaa; font-size: 0.85rem; background: #fff; border-top: 1px solid #f1f1f1; margin-top: 40px;">
@@ -151,16 +151,16 @@
         
         listDiv.innerHTML = '';
         cart.forEach((item, index) => {
-            // إضافة صورة بديلة لو مفيش صورة محفوظة في اللوكال ستوريدج القديم
-            const imgSrc = item.img ? item.img : '../assets/images/zalat/white-zalat.jpg';
+            // لو الصورة مش موجودة، نحط صورة افتراضية كبديل عشان الشكل ميبوظش
+            const imgSrc = item.img ? item.img : '../assets/images/placeholder.jpg';
 
             listDiv.innerHTML += `
                 <div class="item-row">
                     <div class="item-content">
-                        <img src="${imgSrc}" class="item-image" alt="${item.name}">
+                        <img src="${imgSrc}" class="item-image" alt="${item.name}" onerror="this.src='../assets/images/placeholder.jpg'">
                         <div class="item-info">
                             <h4>${item.name}</h4>
-                            <p><i class="fas fa-ruler-combined"></i> المساحة المطلوبة: ${item.area} متر (تقريبياً)</p>
+                            <p><i class="fas fa-ruler-combined"></i> الكمية / المساحة: ${item.area}</p>
                         </div>
                     </div>
                     <button class="remove-btn" onclick="deleteItem(${index})" title="حذف من السلة">
@@ -203,7 +203,7 @@
         
         cart.forEach((item, i) => {
             message += `${i + 1}. *${item.name}*\n`;
-            message += `   📏 المساحة: ${item.area} متر تقريباً\n\n`;
+            message += `   📏 الكمية / المساحة: ${item.area}\n\n`;
         });
 
         message += `--------------------------------\n`;
