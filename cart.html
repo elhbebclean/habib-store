@@ -44,7 +44,7 @@
         .remove-btn { background: #fdf2f2; border: none; color: #ff4d4d; cursor: pointer; transition: 0.3s; padding: 12px; border-radius: 10px; font-size: 16px; display: flex; align-items: center; justify-content: center; min-width: 45px; }
         .remove-btn:hover { background: #ff4d4d; color: #fff; transform: scale(1.05); }
 
-        /* فورم تأكيد الطلب הפاخر */
+        /* فورم تأكيد الطلب الفاخر */
         .checkout-form { background: var(--gray); padding: 40px; border-radius: 20px; position: sticky; top: 40px; border: 1px solid rgba(0,0,0,0.03); box-shadow: 0 15px 40px rgba(0,0,0,0.02); }
         .form-group { margin-bottom: 25px; }
         .form-group label { display: block; font-size: 0.85rem; color: var(--royal-green); margin-bottom: 8px; font-weight: 700; letter-spacing: 1px; }
@@ -123,23 +123,23 @@
         </div>
 
         <button class="btn-confirm" onclick="sendOrder()">إرسال الطلب للمعايَنة <i class="fab fa-whatsapp" style="font-size: 1.4rem;"></i></button>
-        <p style="font-size: 0.8rem; color: #999; text-align: center; margin-top: 20px; font-weight: 600;">Habib Store | Engineering & Landscape 🦈</p>
+        <p style="font-size: 0.8rem; color: #999; text-align: center; margin-top: 20px; font-weight: 600;">Habib Store | Premium Selection 🦈</p>
     </div>
 </div>
 
 <div id="empty-cart" style="display:none;">
     <i class="fas fa-box-open"></i>
-    <h3>سلة الطلبات خالية يا حوت</h3>
+    <h3>سلة الطلبات خالية</h3>
     <p style="color: #888; font-size: 1.1rem;">لم تقم بإضافة أي أصناف لطلب المعاينة بعد.</p>
-    <a href="grass-gallery.html" class="back-btn">تصفح المعارض واختر خاماتك ➜</a>
+    <a href="index.html" class="back-btn">تصفح المعارض واختر خاماتك ➜</a>
 </div>
 
 <footer style="text-align: center; padding: 40px 20px; color: #aaa; font-size: 0.85rem; background: #fff; border-top: 1px solid #f1f1f1; margin-top: 40px;">
-    <p>&copy; 2026 Habib Store - توريد وتركيب بأيدي خبراء ومهندسين</p>
+    <p>&copy; 2026 Habib Store | Premium Selection - توريد وتركيب بأيدي خبراء ومهندسين</p>
 </footer>
 
 <script>
-    // تحميل البيانات من السلة (localStorage) بنفس الاسم اللي استخدمناه في المعارض ('cart')
+    // تحميل البيانات من السلة (localStorage)
     function loadCart() {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
         const listDiv = document.getElementById('items-list');
@@ -161,14 +161,15 @@
         let totalItems = 0;
 
         cart.forEach((item, index) => {
-            const imgSrc = item.img ? item.img : '../assets/images/placeholder.jpg';
-            // نحسب إجمالي الكميات
+            // حل مشكلة الصور: مسح ../ من المسار لتعمل في صفحة السلة الرئيسية
+            let imgSrc = item.img ? item.img.replace('../', '') : 'assets/images/placeholder.jpg';
+            
             totalItems += item.quantity || 1;
 
             listDiv.innerHTML += `
                 <div class="item-row">
                     <div class="item-content">
-                        <img src="${imgSrc}" class="item-image" alt="${item.title}" onerror="this.src='../assets/images/placeholder.jpg'">
+                        <img src="${imgSrc}" class="item-image" alt="${item.title}" onerror="this.src='assets/images/placeholder.jpg'">
                         <div class="item-info">
                             <h4>${item.title}</h4>
                             <div class="quantity-controls">
@@ -196,6 +197,8 @@
                 cart[index].quantity = newQty;
                 localStorage.setItem('cart', JSON.stringify(cart));
                 loadCart();
+                // تحديث العداد في الهيدر لو موجود
+                if(window.updateGlobalCartCount) window.updateGlobalCartCount();
             }
         }
     }
@@ -206,6 +209,7 @@
         cart.splice(index, 1);
         localStorage.setItem('cart', JSON.stringify(cart));
         loadCart(); 
+        if(window.updateGlobalCartCount) window.updateGlobalCartCount();
     }
 
     // إرسال الطلب للواتساب الرسمي
@@ -216,33 +220,33 @@
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
         if (!name || !loc) { 
-            alert('يا حودة، البيانات ناقصة! الاسم والموقع ضروري عشان نخدمك صح.'); 
+            alert('برجاء إدخال الاسم والموقع لإتمام طلب المعاينة.'); 
             return; 
         }
 
-        // بناء الرسالة بشكل احترافي
-        let message = `*طلب معاينة فنية جديد - HABIB STORE* 🦈\n`;
+        // بناء الرسالة بشكل احترافي بالاسم الجديد
+        let message = `*طلب معاينة فنية جديد - Habib Store | Premium Selection* 🦈\n`;
         message += `--------------------------------\n`;
         message += `👤 *العميل:* ${name}\n`;
         message += `📍 *الموقع:* ${loc}\n`;
-        message += `🛠️ *نوع الطلب:* ${service}\n`;
+        message += `🛠️ *نوع الخدمة:* ${service}\n`;
         message += `--------------------------------\n`;
         message += `📦 *الأصناف المطلوبة:*\n\n`;
         
         cart.forEach((item, i) => {
             message += `${i + 1}. *${item.title}*\n`;
-            message += `   📏 الكمية/العدد المبدئي: ${item.quantity || 1}\n\n`;
+            message += `   📏 الكمية: ${item.quantity || 1}\n\n`;
         });
 
         message += `--------------------------------\n`;
         message += `🚀 *برجاء التواصل لتحديد موعد المعاينة.*`;
 
-        const waNumber = "201016961497"; // رقم واتساب حبيب ستور
+        const waNumber = "201016961497"; 
         const url = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
         
         window.open(url, '_blank');
         
-        // تفريغ السلة بعد الطلب (اختياري، ممكن تشيل السطرين دول لو مش حابب السلة تفضى)
+        // تفريغ السلة بعد الطلب
         localStorage.removeItem('cart');
         setTimeout(loadCart, 1000); 
     }
