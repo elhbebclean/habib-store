@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>جاليري النجيل الصناعي الفاخر | حبيب ستور</title>
+    <title>جاليري النجيل الصناعي الفاخر | Habib Stone</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <link rel="stylesheet" href="../style.css">
     <script src="../main.js" defer></script>
     <style>
         :root { --royal-green: #1a3c34; --gold: #c5a059; --soft-bg: #f8f9fa; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--soft-bg); margin: 0; padding: 0; color: #333; scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--soft-bg); margin: 0; padding: 0; color: #333; scroll-behavior: smooth; overflow-x: hidden; }
         
+        /* البانر بتاعك زي ما هو */
         .hero-banner { position: relative; width: 100%; height: 500px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
         .hero-banner img { position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 1; filter: brightness(0.65); }
         .hero-content { position: relative; z-index: 2; text-align: center; color: white; padding: 20px; }
@@ -23,36 +24,49 @@
         .section-header h2 { font-size: 2.5rem; color: var(--royal-green); font-weight: 400; position: relative; display: inline-block; padding-bottom: 15px; }
         .section-header h2::after { content: ''; position: absolute; bottom: 0; left: 30%; width: 40%; height: 2px; background: var(--gold); }
 
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; margin-bottom: 80px; }
-        .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s; text-decoration: none; border: 1px solid rgba(0,0,0,0.02); }
-        .card:hover { transform: translateY(-15px); box-shadow: 0 25px 50px rgba(0,0,0,0.12); border-color: var(--gold); }
+        /* تعديل الشبكة: عمودين للموبايل و4 للديسكتوب */
+        .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 80px; }
+        @media (min-width: 992px) { .product-grid { grid-template-columns: repeat(4, 1fr); gap: 30px; } }
+
+        .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s; text-decoration: none; border: 1px solid rgba(0,0,0,0.02); display: flex; flex-direction: column; position: relative; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(0,0,0,0.12); border-color: var(--gold); }
         
-        /* التعديل هنا: contain عشان الصورة تظهر كاملة بالمقاسات المكتوبة عليها */
-        .img-wrapper { width: 100%; height: 280px; overflow: hidden; position: relative; background: #fff; padding: 10px; box-sizing: border-box; }
+        /* وسام الجودة الذهبي */
+        .badge { position: absolute; top: 10px; right: 10px; background: var(--gold); color: white; font-size: 0.6rem; padding: 4px 8px; border-radius: 4px; font-weight: 700; z-index: 5; }
+
+        /* التعديل هنا: contain عشان الصورة تظهر كاملة بالمقاسات */
+        .img-wrapper { width: 100%; aspect-ratio: 1/1; overflow: hidden; position: relative; background: #fff; padding: 10px; box-sizing: border-box; }
         .img-wrapper img { width: 100%; height: 100%; object-fit: contain; transition: 0.8s; }
         .card:hover .img-wrapper img { transform: scale(1.05); }
         
-        .card-body { padding: 25px; text-align: center; }
-        .card-body span { color: var(--gold); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 10px; }
-        .card-body h3 { margin: 0; font-size: 1.25rem; color: var(--royal-green); font-weight: 600; }
-        .card-body p { color: #888; font-size: 0.95rem; margin-top: 12px; font-style: italic; font-weight: 300; }
+        .card-body { padding: 15px; text-align: center; }
+        .card-body span { color: var(--gold); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 5px; }
+        .card-body h3 { margin: 0; font-size: 0.95rem; color: var(--royal-green); font-weight: 600; }
+        .card-body p { color: #888; font-size: 0.8rem; margin-top: 8px; font-style: italic; font-weight: 300; }
 
-        /* ستايل المنتجات ذات الصلة في المعرض */
+        /* ستايل المنتجات ذات الصلة بتاعك زي ما هو */
         .related-section { margin-top: 80px; padding-top: 40px; border-top: 1px solid rgba(0,0,0,0.05); }
         .related-section h3 { color: var(--royal-green); text-align: center; font-weight: 400; font-size: 2rem; margin-bottom: 40px; }
         .horizontal-slider { display: flex; gap: 25px; overflow-x: auto; padding: 10px 5px 30px 5px; scrollbar-width: none; }
         .horizontal-slider::-webkit-scrollbar { display: none; }
         .glass-product-card { min-width: 280px; background: rgba(255, 255, 255, 0.8); border: 1px solid rgba(197, 160, 89, 0.2); border-radius: 20px; padding: 18px; text-decoration: none; text-align: center; transition: 0.4s; display: flex; flex-direction: column; }
         .glass-product-card:hover { transform: translateY(-8px); border-color: var(--gold); background: #fff; box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
-        /* التعديل في كروت المنتجات التكميلية كمان */
         .glass-product-card img { width: 100%; height: 160px; object-fit: contain; background: #fff; border-radius: 15px; margin-bottom: 15px; }
         .glass-product-card h4 { color: var(--royal-green); font-size: 1.1rem; margin: 0 0 10px 0; font-weight: 600; }
         .glass-product-card p { color: #666; font-size: 0.9rem; margin: 0; line-height: 1.6; font-weight: 300; }
 
-        /* الواتساب النضيف بدون الشريط الزجاجي */
+        /* الواتساب النضيف */
         .expert-btn { position: fixed; bottom: 40px; right: 40px; background: #25d366; color: white; padding: 18px 35px; border-radius: 60px; text-decoration: none; box-shadow: 0 15px 35px rgba(37, 211, 102, 0.3); z-index: 1000; font-weight: 600; display: flex; align-items: center; gap: 15px; transition: 0.4s; }
         .expert-btn:hover { transform: scale(1.05); background: #1ebe57; }
-        @media (max-width: 768px) { .expert-btn { bottom: 20px; right: 20px; padding: 15px 25px; font-size: 0.9rem; } .expert-btn span { display: none; } } /* على الموبايل بيصغر ويبقى أيقونة بس عشان ماياخدش مساحة */
+        @media (max-width: 768px) { .expert-btn { bottom: 20px; right: 20px; padding: 15px 25px; font-size: 0.9rem; } .expert-btn span { display: none; } }
+
+        /* الشريط الزجاجي المرفوع 5 ثواني */
+        #smartGlassSlider { position: fixed; bottom: 110px; left: 50%; transform: translate(-50%, 200%); background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 20px; padding: 10px 20px; display: flex; gap: 20px; z-index: 999; transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: max-content; }
+        #smartGlassSlider.visible { transform: translate(-50%, 0); }
+        .smart-glass-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; transition: 0.3s; }
+        .smart-glass-item:hover { transform: scale(1.05); }
+        .smart-glass-item img { width: 50px; height: 50px; object-fit: cover; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .smart-glass-item span { font-size: 0.75rem; color: var(--royal-green); font-weight: 700; margin-top: 5px; }
     </style>
 </head>
 <body>
@@ -60,8 +74,8 @@
     <section class="hero-banner">
         <img src="../assets/images/nageel/modern-landscape-design.jpg" alt="Habib Store Landscape Design">
         <div class="hero-content">
-            <h1>حبيب ستور للاندسكيب</h1>
-            <p>توريد وتركيب النجيل الفاخر بأيدي نخبة من المهندسين</p>
+            <h1>Habib Stone | Premium</h1>
+            <p>توريد وتركيب النجيل الفاخر بأيدي خبراء ومهندسين</p>
         </div>
     </section>
 
@@ -72,43 +86,43 @@
 
         <div class="product-grid">
             <a href="product.html?id=11" class="card">
-                <div class="img-wrapper"><img src="../assets/images/nageel/grass-11mm-standard-10.png" alt="Habib Practical Green"></div>
+                <div class="img-wrapper"><div class="badge">BEST SELLER</div><img src="../assets/images/nageel/grass-11mm-standard-10.png" alt="Habib Practical Green"></div>
                 <div class="card-body"><span>Practical Collection</span><h3>Habib Practical Green (11mm)</h3><p>أناقة عملية تناسب كافة المساحات</p></div>
             </a>
             <a href="product.html?id=20" class="card">
-                <div class="img-wrapper"><img src="../assets/images/nageel/grass-20mm-standard-12.jpeg" alt="Habib Standard Turkish"></div>
+                <div class="img-wrapper"><div class="badge">PREMIUM</div><img src="../assets/images/nageel/grass-20mm-standard-12.jpeg" alt="Habib Standard Turkish"></div>
                 <div class="card-body"><span>Turkish Quality</span><h3>Habib Standard Turkish (20mm)</h3><p>توازن مثالي بين المتانة والنعومة</p></div>
             </a>
             <a href="product.html?id=30-16" class="card">
-                <div class="img-wrapper"><img src="../assets/images/nageel/grass-30mm-natural-16.jpeg" alt="Habib Antalya Breeze"></div>
+                <div class="img-wrapper"><div class="badge">ENGINEER'S CHOICE</div><img src="../assets/images/nageel/grass-30mm-natural-16.jpeg" alt="Habib Antalya Breeze"></div>
                 <div class="card-body"><span>Natural Line</span><h3>Habib Antalya Breeze (30mm)</h3><p>إطلالة طبيعية تعكس سحر الطبيعة</p></div>
             </a>
             <a href="product.html?id=30-18" class="card">
-                <div class="img-wrapper"><img src="../assets/images/nageel/grass-30mm-natural-18.jpeg" alt="Habib Natural Soft"></div>
+                <div class="img-wrapper"><div class="badge">BEST SELLER</div><img src="../assets/images/nageel/grass-30mm-natural-18.jpeg" alt="Habib Natural Soft"></div>
                 <div class="card-body"><span>Luxury Touch</span><h3>Habib Natural Soft (30mm)</h3><p>كثافة استثنائية لملمس أكثر رقة</p></div>
             </a>
             <a href="product.html?id=30-24" class="card">
-                <div class="img-wrapper"><img src="../assets/images/nageel/grass-30mm-natural-24.jpeg" alt="Habib Premium Turf"></div>
+                <div class="img-wrapper"><div class="badge">HIGH QUALITY</div><img src="../assets/images/nageel/grass-30mm-natural-24.jpeg" alt="Habib Premium Turf"></div>
                 <div class="card-body"><span>High Density</span><h3>Habib Premium Turf (30mm)</h3><p>اختيار المهندسين للمشاريع الراقية</p></div>
             </a>
             <a href="product.html?id=40-12" class="card">
-                <div class="img-wrapper"><img src="../assets/images/nageel/grass-40mm-natural-12.jpeg" alt="Habib Istanbul Lush"></div>
+                <div class="img-wrapper"><div class="badge">ENGINEER'S CHOICE</div><img src="../assets/images/nageel/grass-40mm-natural-12.jpeg" alt="Habib Istanbul Lush"></div>
                 <div class="card-body"><span>Elite Series</span><h3>Habib Istanbul Lush (40mm)</h3><p>فخامة ملكية تليق بخصوصيتكم</p></div>
             </a>
             <a href="product.html?id=40-24" class="card">
-                <div class="img-wrapper"><img src="../assets/images/nageel/grass-40mm-natural-24.jpeg" alt="Habib Bosphorus Green"></div>
+                <div class="img-wrapper"><div class="badge">BEST SELLER</div><img src="../assets/images/nageel/grass-40mm-natural-24.jpeg" alt="Habib Bosphorus Green"></div>
                 <div class="card-body"><span>Royal Collection</span><h3>Habib Bosphorus Green (40mm)</h3><p>جمال أخاذ واستدامة ملكية</p></div>
             </a>
             <a href="product.html?id=40-28" class="card">
-                <div class="img-wrapper"><img src="../assets/images/nageel/grass-40mm-natural-28.jpeg" alt="Habib Legendary Silk"></div>
+                <div class="img-wrapper"><div class="badge">PREMIUM</div><img src="../assets/images/nageel/grass-40mm-natural-28.jpeg" alt="Habib Legendary Silk"></div>
                 <div class="card-body"><span>Supreme Quality</span><h3>Habib Legendary Silk (40mm)</h3><p>نعومة استثنائية لمساحاتكم الخاصة</p></div>
             </a>
             <a href="product.html?id=40-natural" class="card">
-                <div class="img-wrapper"><img src="../assets/images/nageel/grass-40mm-natural.jpeg" alt="Habib Nature Touch"></div>
+                <div class="img-wrapper"><div class="badge">NEW</div><img src="../assets/images/nageel/grass-40mm-natural.jpeg" alt="Habib Nature Touch"></div>
                 <div class="card-body"><span>Nature Elite</span><h3>Habib Nature Touch (40mm)</h3><p>محاكاة الطبيعة في أبهى صورها</p></div>
             </a>
             <a href="product.html?id=50" class="card">
-                <div class="img-wrapper"><img src="../assets/images/nageel/grass-50mm-natural.jpeg" alt="Habib Anatolian Nature"></div>
+                <div class="img-wrapper"><div class="badge">ENGINEER'S CHOICE</div><img src="../assets/images/nageel/grass-50mm-natural.jpeg" alt="Habib Anatolian Nature"></div>
                 <div class="card-body"><span>Imperial Grade</span><h3>Habib Anatolian Nature (50mm)</h3><p>قمة الفخامة والرفاهية الهندسية</p></div>
             </a>
         </div> 
@@ -120,17 +134,28 @@
 
     </div> 
     
+    <div id="smartGlassSlider">
+        <a href="white-marble.html" class="smart-glass-item">
+            <img src="../assets/images/zalat/white-zalat.jpg" alt="معرض الزلط">
+            <span>معرض الزلط</span>
+        </a>
+        <a href="marble.html" class="smart-glass-item">
+            <img src="../assets/images/marble/marble-galala.jpg" alt="معرض الرخام">
+            <span>معرض الرخام</span>
+        </a>
+    </div>
+
     <a href="https://wa.me/201016961497" class="expert-btn">
         <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i>
         <span>استشارة هندسية ومقايسة مجانية</span>
     </a>
 
     <footer style="text-align: center; padding: 60px 20px; color: #aaa; font-size: 0.85rem; background: #fff; margin-top: 40px; border-top: 1px solid #f1f1f1;">
-        <p style="letter-spacing: 1px;">&copy; 2026 حبيب ستور - جاليري النخبة للاندسكيب</p>
+        <p style="letter-spacing: 1px;">&copy; 2026 Habib Stone - توريد وتركيب بأيدي خبراء ومهندسين</p>
     </footer>
 
     <script>
-        // داتا الكروت الـ 6 المظبوطة باللينكات الصحيحة (على الخريطة)
+        // داتا الكروت الـ 6 المظبوطة باللينكات الصحيحة بتاعتك
         const complements = [
             { name: "معرض أحجار الديكور والزلط", img: "../assets/images/zalat/zalat-garden-ideas-luxury.jpg", link: "white-marble.html", desc: "اكتشف تشكيلة من أحجار الديكور التي يختارها مهندسونا لتمنح حديقتكم تبايناً بصرياً ساحراً." },
             { name: "معرض الرخام الفاخر", img: "../assets/images/marble/marble-galala.jpg", link: "marble.html", desc: "لمسات من الرخام الطبيعي والمشايات الهندسية التي تضمن لكم الفخامة والراحة في كل خطوة." },
@@ -150,6 +175,11 @@
                 </a>
             `;
         });
+
+        // تشغيل الشريط الزجاجي المرفوع بعد 5 ثواني
+        setTimeout(() => {
+            document.getElementById('smartGlassSlider').classList.add('visible');
+        }, 5000);
     </script>
 </body>
 </html>
