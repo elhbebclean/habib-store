@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>جاليري الزلط والأحجار الفاخرة | حبيب ستور</title>
+    <title>Habib Stone | Premium Selection - جاليري الزلط والأحجار</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -11,37 +11,45 @@
     <script src="main.js" defer></script>
     <style>
         :root { --royal-green: #1a3c34; --gold: #c5a059; --soft-bg: #f8f9fa; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--soft-bg); margin: 0; padding: 0; color: #333; scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--soft-bg); margin: 0; padding: 0; color: #333; scroll-behavior: smooth; overflow-x: hidden; }
         
-        /* Hero Section */
+        /* Hero Section بالهوية الجديدة */
         .hero-banner { position: relative; width: 100%; height: 500px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
         .hero-banner img { position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 1; filter: brightness(0.60); }
         .hero-content { position: relative; z-index: 2; text-align: center; color: white; padding: 20px; }
-        .hero-content h1 { font-size: 3.2rem; font-weight: 300; margin: 0; letter-spacing: 2px; }
-        .hero-content p { font-size: 1.3rem; opacity: 0.9; font-weight: 300; margin-top: 15px; }
+        .hero-content h1 { font-size: 3.5rem; font-weight: 300; margin: 0; letter-spacing: 2px; text-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        .hero-content p { font-size: 1.4rem; opacity: 0.95; font-weight: 300; margin-top: 15px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
 
-        /* Grid System */
-        .container { max-width: 1300px; margin: 60px auto; padding: 0 25px; }
+        /* Grid System: 2 للموبايل و 4 للكمبيوتر */
+        .container { max-width: 1400px; margin: 60px auto; padding: 0 15px; }
         .section-header { text-align: center; margin-bottom: 60px; }
         .section-header h2 { font-size: 2.5rem; color: var(--royal-green); font-weight: 400; position: relative; display: inline-block; padding-bottom: 15px; }
         .section-header h2::after { content: ''; position: absolute; bottom: 0; left: 30%; width: 40%; height: 2px; background: var(--gold); }
 
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); text-decoration: none; border: 1px solid rgba(0,0,0,0.02); }
-        .card:hover { transform: translateY(-15px); box-shadow: 0 25px 50px rgba(0,0,0,0.12); border-color: var(--gold); }
-        
-        .img-wrapper { width: 100%; height: 280px; overflow: hidden; position: relative; }
-        .img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
-        .card:hover .img-wrapper img { transform: scale(1.1); }
-        
-        .card-body { padding: 30px; text-align: center; }
-        .card-body span { color: var(--gold); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 10px; }
-        .card-body h3 { margin: 0; font-size: 1.25rem; color: var(--royal-green); font-weight: 500; }
-        .card-body p { color: #888; font-size: 0.95rem; margin-top: 12px; font-style: italic; font-weight: 300; }
+        .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 80px; }
+        @media (min-width: 992px) { .product-grid { grid-template-columns: repeat(4, 1fr); gap: 30px; } }
 
-        /* Expert Button */
-        .expert-btn { position: fixed; bottom: 40px; left: 40px; background: #25d366; color: white; padding: 18px 35px; border-radius: 60px; text-decoration: none; box-shadow: 0 15px 35px rgba(37, 211, 102, 0.3); z-index: 1000; font-weight: 600; display: flex; align-items: center; gap: 15px; transition: 0.4s; }
+        .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); text-decoration: none; border: 1px solid rgba(0,0,0,0.02); display: flex; flex-direction: column; position: relative; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(0,0,0,0.12); border-color: var(--gold); }
+        
+        /* وسام الجودة الذهبي */
+        .badge { position: absolute; top: 10px; right: 10px; background: var(--gold); color: white; font-size: 0.6rem; padding: 4px 8px; border-radius: 4px; font-weight: 700; z-index: 5; text-transform: uppercase; }
+
+        /* Contain لإظهار التفاصيل كاملة */
+        .img-wrapper { width: 100%; aspect-ratio: 1/1; overflow: hidden; position: relative; background: #fff; padding: 10px; box-sizing: border-box; }
+        .img-wrapper img { width: 100%; height: 100%; object-fit: contain; transition: 0.8s; }
+        .card:hover .img-wrapper img { transform: scale(1.05); }
+        
+        /* تنسيق الكارت المصغر */
+        .card-body { padding: 15px; text-align: center; }
+        .card-body span { color: var(--gold); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 5px; }
+        .card-body h3 { margin: 0; font-size: 0.95rem; color: var(--royal-green); font-weight: 600; }
+        .card-body p { color: #888; font-size: 0.8rem; margin-top: 8px; font-style: italic; font-weight: 300; }
+
+        /* Expert Button بالهوية المعتمدة */
+        .expert-btn { position: fixed; bottom: 40px; right: 40px; background: #25d366; color: white; padding: 18px 35px; border-radius: 60px; text-decoration: none; box-shadow: 0 15px 35px rgba(37, 211, 102, 0.3); z-index: 1000; font-weight: 600; display: flex; align-items: center; gap: 15px; transition: 0.4s; }
         .expert-btn:hover { transform: scale(1.05); background: #1ebe57; }
+        @media (max-width: 768px) { .expert-btn { bottom: 20px; right: 20px; padding: 15px 25px; font-size: 0.9rem; } .expert-btn span { display: none; } }
     </style>
 </head>
 <body>
@@ -49,8 +57,8 @@
     <section class="hero-banner">
         <img src="../assets/images/zalat/zalat-garden-ideas-luxury.jpg" alt="Habib Luxury Zalat & Stones">
         <div class="hero-content">
-            <h1>حبيب ستور</h1>
-            <p>تناغم الطبيعة والفخامة في مساحتكم الخارجية</p>
+            <h1>Habib Stone | Premium</h1>
+            <p>توريد وتركيب الزلط والأحجار بأيدي خبراء ومهندسين</p>
         </div>
     </section>
 
@@ -62,7 +70,10 @@
         <div class="product-grid">
             
             <a href="zalat.html?id=white-zalat" class="card">
-                <div class="img-wrapper"><img src="../assets/images/zalat/white-zalat.jpg" alt="Habib White Zalat"></div>
+                <div class="img-wrapper">
+                    <div class="badge">BEST SELLER</div>
+                    <img src="../assets/images/zalat/white-zalat.jpg" alt="Habib White Zalat">
+                </div>
                 <div class="card-body">
                     <span>Royal Collection</span>
                     <h3>Habib White Zalat</h3>
@@ -71,7 +82,10 @@
             </a>
 
             <a href="zalat.html?id=asyuti-v2" class="card">
-                <div class="img-wrapper"><img src="../assets/images/zalat/zalat-asyuti-v2.jpeg" alt="Habib Asyuti Zalat"></div>
+                <div class="img-wrapper">
+                    <div class="badge">PREMIUM</div>
+                    <img src="../assets/images/zalat/zalat-asyuti-v2.jpeg" alt="Habib Asyuti Zalat">
+                </div>
                 <div class="card-body">
                     <span>Heritage Line</span>
                     <h3>Habib Asyuti Zalat V2</h3>
@@ -80,7 +94,10 @@
             </a>
 
             <a href="zalat.html?id=black-royal" class="card">
-                <div class="img-wrapper"><img src="../assets/images/zalat/zalat-black-royal.jpg" alt="Habib Black Royal Zalat"></div>
+                <div class="img-wrapper">
+                    <div class="badge">ENGINEER'S CHOICE</div>
+                    <img src="../assets/images/zalat/zalat-black-royal.jpg" alt="Habib Black Royal Zalat">
+                </div>
                 <div class="card-body">
                     <span>Majestic Series</span>
                     <h3>Habib Black Royal Zalat</h3>
@@ -89,7 +106,10 @@
             </a>
 
             <a href="zalat.html?id=black-volcanic" class="card">
-                <div class="img-wrapper"><img src="../assets/images/zalat/zalat-black-volcanic.jpeg" alt="Habib Black Volcanic"></div>
+                <div class="img-wrapper">
+                    <div class="badge">HIGH QUALITY</div>
+                    <img src="../assets/images/zalat/zalat-black-volcanic.jpeg" alt="Habib Black Volcanic">
+                </div>
                 <div class="card-body">
                     <span>Nature Elite</span>
                     <h3>Habib Black Volcanic Zalat</h3>
@@ -98,7 +118,10 @@
             </a>
 
             <a href="zalat.html?id=light-gray" class="card">
-                <div class="img-wrapper"><img src="../assets/images/zalat/zalat-light-gray.jpg" alt="Habib Light Gray Zalat"></div>
+                <div class="img-wrapper">
+                    <div class="badge">BEST SELLER</div>
+                    <img src="../assets/images/zalat/zalat-light-gray.jpg" alt="Habib Light Gray Zalat">
+                </div>
                 <div class="card-body">
                     <span>Serene Touch</span>
                     <h3>Habib Light Gray Zalat</h3>
@@ -107,7 +130,10 @@
             </a>
 
             <a href="zalat.html?id=mix-colors" class="card">
-                <div class="img-wrapper"><img src="../assets/images/zalat/zalat-mix-colors.jpeg" alt="Habib Mix Colors Zalat"></div>
+                <div class="img-wrapper">
+                    <div class="badge">ENGINEER'S CHOICE</div>
+                    <img src="../assets/images/zalat/zalat-mix-colors.jpeg" alt="Habib Mix Colors Zalat">
+                </div>
                 <div class="card-body">
                     <span>Harmony Blend</span>
                     <h3>Habib Mix Colors Zalat</h3>
@@ -116,7 +142,10 @@
             </a>
 
             <a href="zalat.html?id=mix-colors-2" class="card">
-                <div class="img-wrapper"><img src="../assets/images/zalat/zalat-mix-colors_.jpg" alt="Habib Elite Mix Colors"></div>
+                <div class="img-wrapper">
+                    <div class="badge">PREMIUM</div>
+                    <img src="../assets/images/zalat/zalat-mix-colors_.jpg" alt="Habib Elite Mix Colors">
+                </div>
                 <div class="card-body">
                     <span>Exclusive Blend</span>
                     <h3>Habib Elite Mix Colors</h3>
@@ -125,7 +154,10 @@
             </a>
 
             <a href="zalat.html?id=red-volcanic" class="card">
-                <div class="img-wrapper"><img src="../assets/images/zalat/zalat-red-volcanic.jpeg" alt="Habib Red Volcanic"></div>
+                <div class="img-wrapper">
+                    <div class="badge">SPECIAL</div>
+                    <img src="../assets/images/zalat/zalat-red-volcanic.jpeg" alt="Habib Red Volcanic">
+                </div>
                 <div class="card-body">
                     <span>Warm Elegance</span>
                     <h3>Habib Red Volcanic Zalat</h3>
@@ -134,7 +166,10 @@
             </a>
 
             <a href="zalat.html?id=white-marble-v1" class="card">
-                <div class="img-wrapper"><img src="../assets/images/zalat/zalat-white-marble-v1.jpeg" alt="Habib White Marble V1"></div>
+                <div class="img-wrapper">
+                    <div class="badge">BEST SELLER</div>
+                    <img src="../assets/images/zalat/zalat-white-marble-v1.jpeg" alt="Habib White Marble V1">
+                </div>
                 <div class="card-body">
                     <span>Marble Core</span>
                     <h3>Habib White Marble Zalat V1</h3>
@@ -143,7 +178,10 @@
             </a>
 
             <a href="zalat.html?id=white-marble-v2" class="card">
-                <div class="img-wrapper"><img src="../assets/images/zalat/zalat-white-marble-v2.jpeg" alt="Habib White Marble V2"></div>
+                <div class="img-wrapper">
+                    <div class="badge">LUXURY</div>
+                    <img src="../assets/images/zalat/zalat-white-marble-v2.jpeg" alt="Habib White Marble V2">
+                </div>
                 <div class="card-body">
                     <span>Luxury Marble</span>
                     <h3>Habib White Marble Zalat V2</h3>
@@ -152,7 +190,10 @@
             </a>
 
             <a href="zalat.html?id=mica-grey" class="card">
-                <div class="img-wrapper"><img src="../assets/images/zalat/stone-mica-grey.jpeg" alt="Habib Mica Grey Stone"></div>
+                <div class="img-wrapper">
+                    <div class="badge">ENGINEER'S CHOICE</div>
+                    <img src="../assets/images/zalat/stone-mica-grey.jpeg" alt="Habib Mica Grey Stone">
+                </div>
                 <div class="card-body">
                     <span>Premium Facades</span>
                     <h3>Habib Stone Mica Grey</h3>
@@ -161,7 +202,10 @@
             </a>
 
             <a href="zalat.html?id=mica-red" class="card">
-                <div class="img-wrapper"><img src="../assets/images/zalat/stone-mica-red.jpeg" alt="Habib Mica Red Stone"></div>
+                <div class="img-wrapper">
+                    <div class="badge">PREMIUM</div>
+                    <img src="../assets/images/zalat/stone-mica-red.jpeg" alt="Habib Mica Red Stone">
+                </div>
                 <div class="card-body">
                     <span>Modern Classic</span>
                     <h3>Habib Stone Mica Red</h3>
@@ -173,12 +217,12 @@
     </div> 
     
     <a href="https://wa.me/201016961497" class="expert-btn">
-        <i class="fab fa-whatsapp"></i>
-        <span>تواصل مع استشاري اللاندسكيب</span>
+        <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i>
+        <span>استشارة هندسية ومقايسة مجانية</span>
     </a>
 
     <footer style="text-align: center; padding: 60px 20px; color: #aaa; font-size: 0.85rem; background: #fff; margin-top: 80px; border-top: 1px solid #f1f1f1;">
-        <p style="letter-spacing: 1px;">&copy; 2026 حبيب ستور - جاليري النخبة للاندسكيب</p>
+        <p style="letter-spacing: 1px;">&copy; 2026 Habib Stone - توريد وتركيب بأيدي خبراء ومهندسين</p>
     </footer>
 
 </body>
