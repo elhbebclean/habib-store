@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="معرض الأشجار ونباتات الزينة الفاخرة من حبيب ستور. تشكيلة حصرية من نخيل الأريكا، الموز الاستوائي، وأشجار الديكور للمشاريع الراقية. الأسعار تحدد عند المعاينة.">
     <title>معرض الأشجار الفاخرة | Habib Store</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -50,7 +51,10 @@
         
         .card-body { padding: 15px; text-align: center; display: flex; flex-direction: column; flex-grow: 1; }
         .card-body span { color: var(--gold); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 5px; }
-        .card-body h3 { margin: 0 0 15px 0; font-size: 1.1rem; color: var(--royal-green); font-weight: 600; }
+        .card-body h3 { margin: 0 0 10px 0; font-size: 1.1rem; color: var(--royal-green); font-weight: 600; }
+        
+        /* السعر المرن */
+        .price-note { font-size: 0.7rem; color: #666; margin-bottom: 15px; font-weight: 500; }
         
         /* زرار الإضافة من برة */
         .add-to-cart-btn { background: var(--royal-green); color: white; border: none; padding: 12px; border-radius: 10px; width: 100%; margin-top: auto; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px; font-family: inherit; }
@@ -78,7 +82,7 @@
     </a>
 
     <section class="hero-banner">
-        <img src="../assets/images/Greenery/Tropical Bliss.jpeg" alt="Habib Premium Trees">
+        <img src="../assets/images/Greenery/Tropical Bliss.jpeg" alt="أشجار فاخرة للاندسكيب" fetchpriority="high">
         <div class="hero-content">
             <h1>Habib Premium Greenery</h1>
             <p>مقتنيات حصرية من الأشجار ونباتات الزينة الفاخرة</p>
@@ -101,11 +105,12 @@
             
             <div class="card">
                 <div class="img-wrapper">
-                    <img src="../assets/images/Greenery/Areca Palm.jpeg" alt="نخيل أريكا الملكي">
+                    <img src="../assets/images/Greenery/Areca Palm.jpeg" alt="نخيل أريكا الملكي" loading="lazy">
                 </div>
                 <div class="card-body">
                     <span>Royal Palm</span>
                     <h3>نخيل أريكا الملكي</h3>
+                    <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
                     <button class="add-to-cart-btn" onclick="addTreeToCart(this, 'tree-1', 'نخيل أريكا الملكي', '../assets/images/Greenery/Areca Palm.jpeg')">
                         <i class="fas fa-plus"></i> إضافة للمعاينة
                     </button>
@@ -114,11 +119,12 @@
 
             <div class="card">
                 <div class="img-wrapper">
-                    <img src="../assets/images/Greenery/Banana Palmo.jpeg" alt="نخيل الموز الاستوائي">
+                    <img src="../assets/images/Greenery/Banana Palmo.jpeg" alt="نخيل الموز الاستوائي" loading="lazy">
                 </div>
                 <div class="card-body">
                     <span>Tropical Choice</span>
                     <h3>نخيل الموز الاستوائي</h3>
+                    <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
                     <button class="add-to-cart-btn" onclick="addTreeToCart(this, 'tree-2', 'نخيل الموز الاستوائي', '../assets/images/Greenery/Banana Palmo.jpeg')">
                         <i class="fas fa-plus"></i> إضافة للمعاينة
                     </button>
@@ -127,11 +133,12 @@
 
             <div class="card">
                 <div class="img-wrapper">
-                    <img src="../assets/images/Greenery/Golden Leaf.jpeg" alt="شجرة جولدن ليف">
+                    <img src="../assets/images/Greenery/Golden Leaf.jpeg" alt="شجرة جولدن ليف" loading="lazy">
                 </div>
                 <div class="card-body">
                     <span>Premium Decor</span>
                     <h3>شجرة جولدن ليف</h3>
+                    <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
                     <button class="add-to-cart-btn" onclick="addTreeToCart(this, 'tree-3', 'شجرة جولدن ليف', '../assets/images/Greenery/Golden Leaf.jpeg')">
                         <i class="fas fa-plus"></i> إضافة للمعاينة
                     </button>
@@ -140,11 +147,12 @@
 
             <div class="card">
                 <div class="img-wrapper">
-                    <img src="../assets/images/Greenery/Green Fan.jpeg" alt="جرين فان المودرن">
+                    <img src="../assets/images/Greenery/Green Fan.jpeg" alt="جرين فان المودرن" loading="lazy">
                 </div>
                 <div class="card-body">
                     <span>Modern Edge</span>
                     <h3>جرين فان المودرن</h3>
+                    <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
                     <button class="add-to-cart-btn" onclick="addTreeToCart(this, 'tree-4', 'جرين فان المودرن', '../assets/images/Greenery/Green Fan.jpeg')">
                         <i class="fas fa-plus"></i> إضافة للمعاينة
                     </button>
@@ -153,11 +161,12 @@
 
             <div class="card">
                 <div class="img-wrapper">
-                    <img src="../assets/images/Greenery/Taraza Paradise.jpeg" alt="تارازا بارادايس">
+                    <img src="../assets/images/Greenery/Taraza Paradise.jpeg" alt="تارازا بارادايس" loading="lazy">
                 </div>
                 <div class="card-body">
                     <span>Paradise Line</span>
                     <h3>تارازا بارادايس</h3>
+                    <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
                     <button class="add-to-cart-btn" onclick="addTreeToCart(this, 'tree-5', 'تارازا بارادايس', '../assets/images/Greenery/Taraza Paradise.jpeg')">
                         <i class="fas fa-plus"></i> إضافة للمعاينة
                     </button>
@@ -166,11 +175,12 @@
 
             <div class="card">
                 <div class="img-wrapper">
-                    <img src="../assets/images/Greenery/Tropical Bliss.jpeg" alt="تروبيكال بليس">
+                    <img src="../assets/images/Greenery/Tropical Bliss.jpeg" alt="تروبيكال بليس" loading="lazy">
                 </div>
                 <div class="card-body">
                     <span>Exotic Flora</span>
                     <h3>تروبيكال بليس</h3>
+                    <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
                     <button class="add-to-cart-btn" onclick="addTreeToCart(this, 'tree-6', 'تروبيكال بليس', '../assets/images/Greenery/Tropical Bliss.jpeg')">
                         <i class="fas fa-plus"></i> إضافة للمعاينة
                     </button>
@@ -179,11 +189,12 @@
 
             <div class="card">
                 <div class="img-wrapper">
-                    <img src="../assets/images/Greenery/Zava.jpeg" alt="شجرة زافا الديكورية">
+                    <img src="../assets/images/Greenery/Zava.jpeg" alt="شجرة زافا الديكورية" loading="lazy">
                 </div>
                 <div class="card-body">
                     <span>Signature Piece</span>
                     <h3>شجرة زافا الديكورية</h3>
+                    <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
                     <button class="add-to-cart-btn" onclick="addTreeToCart(this, 'tree-7', 'شجرة زافا الديكورية', '../assets/images/Greenery/Zava.jpeg')">
                         <i class="fas fa-plus"></i> إضافة للمعاينة
                     </button>
@@ -195,20 +206,20 @@
     
     <div id="smartGlassSlider">
         <a href="grass-gallery.html" class="smart-glass-item">
-            <img src="../assets/images/nageel/grass-40mm-natural-12.jpeg" alt="معرض النجيل">
+            <img src="../assets/images/nageel/grass-40mm-natural-12.jpeg" alt="معرض النجيل" loading="lazy">
             <span>معرض النجيل</span>
         </a>
         <a href="white-marble.html" class="smart-glass-item">
-            <img src="../assets/images/zalat/white-zalat.jpg" alt="معرض الزلط">
+            <img src="../assets/images/zalat/white-zalat.jpg" alt="معرض الزلط" loading="lazy">
             <span>معرض الزلط</span>
         </a>
         <a href="marble.html" class="smart-glass-item">
-            <img src="../assets/images/marble/marble-galala.jpg" alt="معرض الرخام">
+            <img src="../assets/images/marble/marble-galala.jpg" alt="معرض الرخام" loading="lazy">
             <span>معرض الرخام</span>
         </a>
     </div>
 
-    <a href="https://wa.me/201016961497" class="expert-btn">
+    <a href="https://wa.me/201016961497" class="expert-btn" aria-label="تواصل معنا عبر الواتساب للاستشارة والمقايسة">
         <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i>
         <span>تواصل لمعاينة التشكيلة الكاملة</span>
     </a>
