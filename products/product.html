@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="تفاصيل ومواصفات النجيل الصناعي الفاخر من Habib Store. جودة احترافية، ملمس طبيعي، وتصريف مياه متقدم بإشراف هندسي. أضف المنتج لمعاينة السعر والمقايسة.">
     <title>تفاصيل المنتج | Habib Store | Premium Selection</title>
     
     <link rel="preload" as="image" href="../assets/images/nageel/grass-11mm-standard-10.png">
@@ -80,7 +81,7 @@
 </head>
 <body>
 
-    <a href="../cart.html" class="cart-float">
+    <a href="../cart.html" class="cart-float" aria-label="سلة المشتريات">
         <i class="fas fa-shopping-cart"></i>
         <span class="cart-badge" id="cartCount">0</span>
     </a>
@@ -147,7 +148,7 @@
         </a>
     </div>
 
-    <a href="https://wa.me/201016961497" class="expert-btn">
+    <a href="https://wa.me/201016961497" class="expert-btn" aria-label="تواصل معنا عبر الواتساب للاستشارة والمقايسة">
         <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i>
         <span>استشارة هندسية ومقايسة مجانية</span>
     </a>
@@ -188,6 +189,8 @@
                 console.log("Cart empty or error reading it.");
             }
         }
+        
+        // لو دالة main.js موجودة وشغالة، ممكن نستغني عن دي، بس خليناها احتياطي
         updateCartCount();
         window.addEventListener('storage', updateCartCount);
 
@@ -213,7 +216,12 @@
             }
             
             localStorage.setItem('cart', JSON.stringify(cart));
+            
+            // التحديث المشترك بين الكود هنا وملف main.js عشان النبض يشتغل
             updateCartCount();
+            if (typeof updateGlobalCartCount === "function") {
+                updateGlobalCartCount();
+            }
             
             // تأثير بصري للزرار لتأكيد الإضافة
             let btn = this;
@@ -228,7 +236,7 @@
             }, 2000);
         });
 
-        // اللينكات
+        // اللينكات - تم إضافة loading="lazy" للصور هنا عشان الـ SEO
         const complements = [
             { name: "معرض أحجار الديكور والزلط", img: "../assets/images/zalat/zalat-garden-ideas-luxury.jpg", link: "white-marble.html", desc: "اكتشف تشكيلة من أحجار الديكور التي يختارها مهندسونا لتمنح حديقتكم تبايناً بصرياً ساحراً." },
             { name: "معرض الرخام الفاخر", img: "../assets/images/marble/marble-galala.jpg", link: "marble.html", desc: "لمسات من الرخام الطبيعي والمشايات الهندسية التي تضمن لكم الفخامة والراحة في كل خطوة." },
@@ -242,7 +250,7 @@
         complements.forEach(item => {
             slider.innerHTML += `
                 <a href="${item.link}" class="glass-product-card">
-                    <img src="${item.img}" alt="${item.name}">
+                    <img src="${item.img}" alt="${item.name}" loading="lazy">
                     <h4>${item.name}</h4>
                     <p>${item.desc}</p>
                 </a>
