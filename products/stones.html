@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="تفاصيل ومواصفات مقتنيات الرخام والأحجار الفاخرة من حبيب ستور. رخام جلالة، إمبردور، وأحجار مايكا للواجهات والقصور بتنفيذ وإشراف هندسي متكامل.">
     <title>تفاصيل مقتنيات الرخام | Habib Store | Premium Selection</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <link rel="stylesheet" href="style.css">
-    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="../style.css">
+    <script src="../main.js" defer></script>
     <style>
         :root { --royal-green: #1a3c34; --gold: #c5a059; --soft-gray: #f8fafa; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--soft-gray); margin: 0; color: #333; line-height: 1.8; }
@@ -87,7 +88,7 @@
 </head>
 <body>
 
-    <a href="../cart.html" class="cart-float">
+    <a href="../cart.html" class="cart-float" aria-label="سلة المشتريات">
         <i class="fas fa-shopping-cart"></i>
         <span class="cart-badge" id="cartCount">0</span>
     </a>
@@ -95,7 +96,7 @@
     <div class="product-wrapper">
         <div class="image-section">
             <div class="main-display">
-                <img id="p-img" src="" alt="Habib Exclusive Selection" onerror="this.src='../assets/images/marble/marble-galala.jpg'">
+                <img id="p-img" src="" alt="Habib Exclusive Selection" fetchpriority="high" onerror="this.src='../assets/images/marble/marble-galala.jpg'">
             </div>
         </div>
 
@@ -155,7 +156,7 @@
         </a>
     </div>
 
-    <a id="p-whatsapp" href="https://wa.me/201016961497" class="expert-btn" target="_blank">
+    <a id="p-whatsapp" href="https://wa.me/201016961497" class="expert-btn" target="_blank" aria-label="تواصل معنا عبر الواتساب للاستشارة والمقايسة">
         <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i>
         <span>استشارة هندسية ومقايسة مجانية</span>
     </a>
@@ -247,12 +248,12 @@
             const whatsappMsg = encodeURIComponent("تحياتي، مهتم بمعرفة تفاصيل أكثر عن مقتنيات " + product.name);
             document.getElementById('p-whatsapp').href = "https://wa.me/201016961497?text=" + whatsappMsg;
 
-            // بناء المنتجات التكميلية
+            // بناء المنتجات التكميلية (تم إضافة loading="lazy" للصور)
             let sliderHTML = '';
             complements.forEach(item => {
                 sliderHTML += `
                     <a href="${item.page}?id=${item.id}" class="insta-card">
-                        <img src="../assets/images/${item.folder}/${item.img}" alt="${item.name}">
+                        <img src="../assets/images/${item.folder}/${item.img}" alt="${item.name}" loading="lazy">
                         <div class="insta-card-info">
                             <h4>${item.name}</h4>
                         </div>
@@ -299,7 +300,12 @@
             }
             
             localStorage.setItem('cart', JSON.stringify(cart));
+            
+            // التحديث المشترك بين الكود هنا وملف main.js عشان النبض يشتغل
             updateCartCount();
+            if (typeof updateGlobalCartCount === "function") {
+                updateGlobalCartCount();
+            }
             
             // تأثير بصري للزرار لتأكيد الإضافة
             let btn = this;
