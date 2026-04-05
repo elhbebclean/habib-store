@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Habib Stone | Premium Selection. توريد وتركيب النجيل الصناعي، الرخام الطبيعي، الزلط الديكوري، والأشجار الفاخرة بأعلى جودة وإشراف هندسي متكامل.">
     <title>Habib Stone | Premium Selection</title>
+    
+    <link rel="preload" as="image" href="assets/images/nageel/modern-landscape-design.jpg" fetchpriority="high">
     
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
@@ -86,6 +89,7 @@
             position: fixed; bottom: 35px; left: 35px; background: var(--black); color: #fff;
             width: 75px; height: 75px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
             box-shadow: 0 20px 40px rgba(0,0,0,0.25); z-index: 2000; transition: 0.4s; font-size: 28px;
+            text-decoration: none;
         }
         .cart-trigger:hover { transform: scale(1.1) rotate(10deg); background: var(--gold); }
         .cart-count { position: absolute; top: 0; right: 0; background: var(--gold); color: white; width: 25px; height: 25px; border-radius: 50%; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
@@ -98,7 +102,8 @@
         
         @media (max-width: 768px) { .hero-content { padding: 30px; } .grid { grid-template-columns: 1fr; } }
     </style>
-</head><body>
+</head>
+<body>
 
 <header>
     <a href="index.html" class="logo">HABIB STONE</a>
@@ -123,7 +128,7 @@
             <div class="product-card" data-aos="fade-up">
                 <div class="badge">الأكثر طلباً</div>
                 <div class="img-container">
-                    <img src="assets/images/nageel/modern-landscape-design.jpg" alt="النجيل الصناعي الفاخر">
+                    <img src="assets/images/nageel/modern-landscape-design.jpg" alt="النجيل الصناعي الفاخر" loading="lazy">
                 </div>
                 <div class="info">
                     <span class="category">النجيل التركي والهولندي</span>
@@ -138,7 +143,7 @@
             <div class="product-card" data-aos="fade-up" data-aos-delay="150">
                 <div class="badge">الأكثر مبيعاً</div>
                 <div class="img-container">
-                    <img src="assets/images/zalat/zalat-garden-ideas-luxury.jpg" alt="زلط ديكور فخم">
+                    <img src="assets/images/zalat/zalat-garden-ideas-luxury.jpg" alt="زلط ديكور فخم" loading="lazy">
                 </div>
                 <div class="info">
                     <span class="category">الأحجار والزلط الطبيعي</span>
@@ -153,7 +158,7 @@
             <div class="product-card" data-aos="fade-up" data-aos-delay="300">
                 <div class="badge">فئة الـ VIP</div>
                 <div class="img-container">
-                    <img src="assets/images/marble/marble-galala.jpg" alt="رخام جلالة فاخر">
+                    <img src="assets/images/marble/marble-galala.jpg" alt="رخام جلالة فاخر" loading="lazy">
                 </div>
                 <div class="info">
                     <span class="category">الديكورات الرخامية والميكا</span>
@@ -168,7 +173,7 @@
             <div class="product-card" data-aos="fade-up" data-aos-delay="450">
                 <div class="badge badge-new">القسم الجديد</div>
                 <div class="img-container">
-                    <img src="assets/images/Greenery/Areca Palm.jpeg" alt="الأشجار والنباتات الفاخرة">
+                    <img src="assets/images/Greenery/Areca Palm.jpeg" alt="الأشجار والنباتات الفاخرة" loading="lazy">
                 </div>
                 <div class="info">
                     <span class="category">اللمسة الخضراء الطبيعية</span>
@@ -182,9 +187,9 @@
     </div>
 </div>
 
-<a href="cart.html" class="cart-trigger">
+<a href="cart.html" class="cart-trigger" aria-label="الذهاب إلى سلة المشتريات">
     <i class="fas fa-shopping-bag"></i>
-    <span class="cart-count" id="global-cart-count">0</span>
+    <span class="cart-count" id="cartCount">0</span>
 </a>
 
 <footer>
@@ -209,19 +214,21 @@
         offset: 100 
     });
 
-    // تحديث عداد الشنطة الذكي
+    // تحديث عداد الشنطة الذكي (تم التعديل ليقرأ من 'cart' ولحساب الكميات بدقة)
     function updateCartCount() {
         try {
-            const cart = JSON.parse(localStorage.getItem('habibCart')) || [];
-            const countElement = document.getElementById('global-cart-count');
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const countElement = document.getElementById('cartCount');
             if (countElement) {
-                countElement.innerText = cart.length;
+                const totalItems = cart.reduce((total, item) => total + (item.quantity || 1), 0);
+                countElement.innerText = totalItems;
             }
         } catch (e) {
             console.error("Cart error");
         }
     }
     window.addEventListener('load', updateCartCount);
+    window.addEventListener('storage', updateCartCount);
 </script>
 
 </body>
