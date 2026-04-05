@@ -128,9 +128,4 @@ function orderCurrentDesign() {
     // استخراج اسم الصورة (مثال: n3.jpg)
     const imageName = currentImagePath.split('/').pop(); 
     
-    // رسالة الواتساب وتشفيرها (encodeURIComponent) عشان العربي يوصل سليم وميضربش
-    const message = `مرحباً، أريد تنفيذ هذا التصميم من سابقة أعمال ${currentCategoryName}.\n(كود الصورة: ${imageName})`;
-    const encodedMessage = encodeURIComponent(message);
-    
-    window.open(`https://wa.me/201016961497?text=${encodedMessage}`, '_blank');
-}
+    // رسالة الواتساب وتشفيرها (encodeURIComponent) 
