@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="جاليري الزلط والأحجار للديكور واللاندسكيب من حبيب ستور. توريد وتركيب زلط أبيض، أسيوطي، بركاني وميكس ألوان بأعلى جودة وإشراف هندسي. الأسعار تحدد عند المعاينة.">
-    <title>Habib Store | Premium Selection - جاليري الزلط والأحجار</title>
+    <title>Habib Store | Premium Selection - مقايسة وتنسيق حدائق الزلط</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -14,17 +14,17 @@
         :root { --royal-green: #1a3c34; --gold: #c5a059; --soft-bg: #f8f9fa; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--soft-bg); margin: 0; padding: 0; color: #333; scroll-behavior: smooth; overflow-x: hidden; }
         
-        /* أيقونة السلة العائمة */
+        /* أيقونة المقايسة العائمة (بديلة للسلة) */
         .cart-float { position: fixed; top: 20px; left: 20px; background: white; color: var(--royal-green); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-decoration: none; z-index: 1000; font-size: 1.2rem; transition: 0.3s; border: 1px solid rgba(197, 160, 89, 0.3); }
         .cart-float:hover { transform: scale(1.1); color: var(--gold); border-color: var(--gold); }
         .cart-badge { position: absolute; top: -5px; right: -5px; background: var(--gold); color: white; font-size: 0.75rem; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
 
         /* Hero Section بالهوية الجديدة */
-        .hero-banner { position: relative; width: 100%; height: 500px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+        .hero-banner { position: relative; width: 100%; min-height: 550px; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; }
         .hero-banner img { position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 1; filter: brightness(0.60); }
-        .hero-content { position: relative; z-index: 2; text-align: center; color: white; padding: 20px; }
-        .hero-content h1 { font-size: 3.5rem; font-weight: 300; margin: 0; letter-spacing: 2px; text-shadow: 0 4px 15px rgba(0,0,0,0.3); }
-        .hero-content p { font-size: 1.4rem; opacity: 0.95; font-weight: 300; margin-top: 15px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .hero-content { position: relative; z-index: 2; text-align: center; color: white; max-width: 900px; width: 100%; }
+        .hero-content h1 { font-size: 3.2rem; font-weight: 700; margin: 0 0 15px 0; line-height: 1.3; text-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        .hero-content p { font-size: 1.4rem; opacity: 0.95; font-weight: 300; margin-top: 10px; line-height: 1.6; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
 
         /* Grid System: 2 للموبايل و 4 للكمبيوتر */
         .container { max-width: 1400px; margin: 60px auto; padding: 0 15px; }
@@ -49,13 +49,25 @@
         /* تنسيق الكارت المصغر */
         .card-body { padding: 15px; text-align: center; }
         .card-body span { color: var(--gold); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 5px; }
-        .card-body h3 { margin: 0; font-size: 0.95rem; color: var(--royal-green); font-weight: 600; }
-        .card-body p { color: #888; font-size: 0.8rem; margin-top: 8px; font-style: italic; font-weight: 300; }
+        .card-body h3 { margin: 0; font-size: 0.95rem; color: var(--royal-green); font-weight: 600; line-height: 1.4; }
+        .card-body p { color: #888; font-size: 0.8rem; margin-top: 8px; font-weight: 600; line-height: 1.5; }
+
+        /* تنسيقات الأزرار والأسعار */
+        .price-note { color: #888; font-size: 0.75rem; margin-top: 8px; font-style: italic; font-weight: 300; }
+        .card-actions { padding: 10px 15px 15px; display: flex; flex-direction: column; gap: 8px; }
+        .btn-add-cart { background: var(--royal-green); color: white; border: none; padding: 10px; border-radius: 8px; cursor: pointer; font-family: inherit; font-weight: 600; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .btn-add-cart:hover { background: var(--gold); }
+        .btn-details { text-align: center; color: var(--royal-green); font-size: 0.85rem; font-weight: 600; text-decoration: none; border: 1px solid var(--royal-green); padding: 8px; border-radius: 8px; transition: 0.3s; }
+        .btn-details:hover { background: var(--royal-green); color: white; }
 
         /* Expert Button بالهوية المعتمدة */
         .expert-btn { position: fixed; bottom: 40px; right: 40px; background: #25d366; color: white; padding: 18px 35px; border-radius: 60px; text-decoration: none; box-shadow: 0 15px 35px rgba(37, 211, 102, 0.3); z-index: 1000; font-weight: 600; display: flex; align-items: center; gap: 15px; transition: 0.4s; }
         .expert-btn:hover { transform: scale(1.05); background: #1ebe57; }
-        @media (max-width: 768px) { .expert-btn { bottom: 20px; right: 20px; padding: 15px 25px; font-size: 0.9rem; } .expert-btn span { display: none; } }
+        @media (max-width: 768px) { 
+            .expert-btn { bottom: 20px; right: 20px; padding: 15px 25px; font-size: 0.9rem; } 
+            .expert-btn span { display: none; } 
+            .hero-content h1 { font-size: 2.2rem; }
+        }
 
         /* الشريط الزجاجي المرفوع */
         #smartGlassSlider { position: fixed; bottom: 110px; left: 50%; transform: translate(-50%, 200%); background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 20px; padding: 10px 20px; display: flex; gap: 20px; z-index: 999; transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: max-content; }
@@ -68,16 +80,24 @@
 </head>
 <body>
 
-    <a href="../cart.html" class="cart-float">
-        <i class="fas fa-shopping-cart"></i>
+    <a href="../cart.html" class="cart-float" title="قائمة المقايسة">
+        <i class="fas fa-clipboard-list"></i>
         <span class="cart-badge" id="cartCount">0</span>
     </a>
 
     <section class="hero-banner">
         <img src="../assets/images/zalat/zalat-garden-ideas-luxury.jpg" alt="تصميم حدائق فاخرة بالزلط" fetchpriority="high">
         <div class="hero-content">
-            <h1>Habib Store | Premium</h1>
-            <p>توريد وتركيب الزلط والأحجار بأيدي خبراء ومهندسين</p>
+            <div style="display: inline-flex; align-items: center; gap: 10px; background: rgba(26, 60, 52, 0.8); padding: 8px 25px; border-radius: 50px; border: 1px solid var(--gold); font-weight: bold; font-size: 1.3rem; margin-bottom: 20px;">
+                <i class="fas fa-phone-alt" style="color: var(--gold);"></i> 01016961497
+            </div>
+
+            <h1>صمم مساحتك بروعة الزلط والأحجار..</h1>
+            <p>اختار اللي يناسب ذوقك من الزلط الطبيعي وأحجار الديكور، ضيفهم للمقايسة، وسيب الباقي لخبراء حبيب ستور للتوريد والتركيب الهندسي.</p>
+
+            <div style="margin-top: 25px; color: #fff; background: var(--gold); display: inline-block; padding: 12px 30px; border-radius: 8px; font-weight: 700; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                <i class="fas fa-stopwatch" style="margin-left: 8px;"></i> معاينة فورية وتركيب دقيق في خلال 48 ساعة
+            </div>
         </div>
     </section>
 
@@ -100,7 +120,7 @@
                     <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
                 </div>
                 <div class="card-actions">
-                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('white-zalat', 'Habib White Zalat')"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('white-zalat', 'Habib White Zalat')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
                     <a href="zalat.html?id=white-zalat" class="btn-details">عرض التفاصيل</a>
                 </div>
             </div>
@@ -117,7 +137,7 @@
                     <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
                 </div>
                 <div class="card-actions">
-                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('asyuti-v2', 'Habib Asyuti Zalat V2')"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('asyuti-v2', 'Habib Asyuti Zalat V2')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
                     <a href="zalat.html?id=asyuti-v2" class="btn-details">عرض التفاصيل</a>
                 </div>
             </div>
@@ -134,7 +154,7 @@
                     <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
                 </div>
                 <div class="card-actions">
-                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('black-royal', 'Habib Black Royal Zalat')"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('black-royal', 'Habib Black Royal Zalat')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
                     <a href="zalat.html?id=black-royal" class="btn-details">عرض التفاصيل</a>
                 </div>
             </div>
@@ -151,7 +171,7 @@
                     <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
                 </div>
                 <div class="card-actions">
-                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('black-volcanic', 'Habib Black Volcanic Zalat')"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('black-volcanic', 'Habib Black Volcanic Zalat')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
                     <a href="zalat.html?id=black-volcanic" class="btn-details">عرض التفاصيل</a>
                 </div>
             </div>
@@ -168,7 +188,7 @@
                     <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
                 </div>
                 <div class="card-actions">
-                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('light-gray', 'Habib Light Gray Zalat')"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('light-gray', 'Habib Light Gray Zalat')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
                     <a href="zalat.html?id=light-gray" class="btn-details">عرض التفاصيل</a>
                 </div>
             </div>
@@ -185,7 +205,7 @@
                     <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
                 </div>
                 <div class="card-actions">
-                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('mix-colors', 'Habib Mix Colors Zalat')"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('mix-colors', 'Habib Mix Colors Zalat')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
                     <a href="zalat.html?id=mix-colors" class="btn-details">عرض التفاصيل</a>
                 </div>
             </div>
@@ -202,7 +222,7 @@
                     <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
                 </div>
                 <div class="card-actions">
-                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('mix-colors-2', 'Habib Elite Mix Colors')"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('mix-colors-2', 'Habib Elite Mix Colors')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
                     <a href="zalat.html?id=mix-colors-2" class="btn-details">عرض التفاصيل</a>
                 </div>
             </div>
@@ -219,7 +239,7 @@
                     <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
                 </div>
                 <div class="card-actions">
-                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('red-volcanic', 'Habib Red Volcanic Zalat')"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('red-volcanic', 'Habib Red Volcanic Zalat')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
                     <a href="zalat.html?id=red-volcanic" class="btn-details">عرض التفاصيل</a>
                 </div>
             </div>
@@ -236,7 +256,7 @@
                     <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
                 </div>
                 <div class="card-actions">
-                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('white-marble-v1', 'Habib White Marble Zalat V1')"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('white-marble-v1', 'Habib White Marble Zalat V1')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
                     <a href="zalat.html?id=white-marble-v1" class="btn-details">عرض التفاصيل</a>
                 </div>
             </div>
@@ -253,7 +273,7 @@
                     <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
                 </div>
                 <div class="card-actions">
-                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('white-marble-v2', 'Habib White Marble Zalat V2')"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('white-marble-v2', 'Habib White Marble Zalat V2')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
                     <a href="zalat.html?id=white-marble-v2" class="btn-details">عرض التفاصيل</a>
                 </div>
             </div>
@@ -270,7 +290,7 @@
                     <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
                 </div>
                 <div class="card-actions">
-                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('mica-grey', 'Habib Stone Mica Grey')"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('mica-grey', 'Habib Stone Mica Grey')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
                     <a href="zalat.html?id=mica-grey" class="btn-details">عرض التفاصيل</a>
                 </div>
             </div>
@@ -287,7 +307,7 @@
                     <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
                 </div>
                 <div class="card-actions">
-                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('mica-red', 'Habib Stone Mica Red')"><i class="fas fa-cart-plus"></i> أضف للسلة</button>
+                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('mica-red', 'Habib Stone Mica Red')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
                     <a href="zalat.html?id=mica-red" class="btn-details">عرض التفاصيل</a>
                 </div>
             </div>
