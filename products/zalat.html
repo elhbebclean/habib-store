@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تفاصيل الأحجار الفاخرة | Habib Store | Premium Selection</title>
+    <meta name="description" content="تفاصيل الأحجار الفاخرة والزلط للديكور واللاندسكيب من حبيب ستور. جودة احترافية وإشراف هندسي. أضف المنتج لمعاينة السعر والمقايسة.">
+    <title>تفاصيل الأحجار الفاخرة | Habib Store | مقايسة وتنسيق حدائق</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <link rel="stylesheet" href="style.css">
@@ -12,7 +13,7 @@
         :root { --royal-green: #1a3c34; --gold: #c5a059; --soft-gray: #f8fafa; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--soft-gray); margin: 0; color: #333; line-height: 1.8; }
         
-        /* أيقونة السلة العائمة */
+        /* أيقونة المقايسة العائمة (بديلة للسلة) */
         .cart-float { position: fixed; top: 20px; left: 20px; background: white; color: var(--royal-green); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-decoration: none; z-index: 1000; font-size: 1.2rem; transition: 0.3s; border: 1px solid rgba(197, 160, 89, 0.3); }
         .cart-float:hover { transform: scale(1.1); color: var(--gold); border-color: var(--gold); }
         .cart-badge { position: absolute; top: -5px; right: -5px; background: var(--gold); color: white; font-size: 0.75rem; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
@@ -27,28 +28,46 @@
 
         /* محتوى الوصف */
         .content-section { flex: 1; min-width: 320px; padding-top: 20px; }
-        .brand-tag { color: var(--gold); font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 15px; }
+        .brand-tag { color: var(--gold); font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 5px; }
+        
+        /* إضافة رقم الهاتف للثقة */
+        .phone-trust { display: inline-flex; align-items: center; gap: 8px; background: rgba(26, 60, 52, 0.08); padding: 6px 15px; border-radius: 20px; font-weight: bold; color: var(--royal-green); margin-bottom: 15px; font-size: 0.9rem; border: 1px solid rgba(26, 60, 52, 0.1); }
+
         .content-section h1 { font-size: 2.5rem; color: var(--royal-green); font-weight: 300; margin: 0 0 25px 0; line-height: 1.3; }
-        .luxury-line { width: 60px; height: 3px; background: var(--gold); margin-bottom: 35px; }
+        .luxury-line { width: 60px; height: 3px; background: var(--gold); margin-bottom: 30px; }
         
-        .description-text { font-size: 1.15rem; color: #555; margin-bottom: 35px; text-align: justify; font-weight: 300; }
+        .description-text { font-size: 1.15rem; color: #555; margin-bottom: 30px; text-align: justify; font-weight: 300; line-height: 1.9;}
         
-        /* قسم المهندسين الجديد */
-        .trust-badge { background: rgba(197, 160, 89, 0.08); border-right: 4px solid var(--gold); padding: 25px; border-radius: 12px; margin-bottom: 40px; }
+        /* قسم المهندسين والميزة التنافسية */
+        .trust-badge { background: rgba(197, 160, 89, 0.08); border-right: 4px solid var(--gold); padding: 25px; border-radius: 12px; margin-bottom: 30px; }
         .trust-badge h4 { color: var(--royal-green); margin: 0 0 10px 0; font-size: 1.2rem; font-weight: 600; display: flex; align-items: center; gap: 10px; }
         .trust-badge p { margin: 0; font-size: 1.05rem; color: #555; font-weight: 400; line-height: 1.6; }
+
+        .speed-badge { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--gold); padding: 8px 15px; border-radius: 8px; color: var(--royal-green); font-weight: 700; font-size: 0.95rem; margin-bottom: 40px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
 
         .features-list { list-style: none; padding: 0; margin-bottom: 50px; }
         .features-list li { margin-bottom: 18px; display: flex; align-items: center; gap: 15px; color: var(--royal-green); font-weight: 500; font-size: 1.05rem; }
         .features-list li i { color: var(--gold); font-size: 1.3rem; }
 
+        /* المنتجات التكميلية (Cross-Selling) */
+        .complements-section { margin-top: 50px; border-top: 1px solid #eaeaea; padding-top: 40px; }
+        .complements-section h3 { color: var(--royal-green); font-weight: 400; font-size: 1.5rem; margin-bottom: 25px; }
+        .slider-container { display: flex; gap: 20px; overflow-x: auto; padding-bottom: 20px; scrollbar-width: thin; }
+        .slider-container::-webkit-scrollbar { height: 6px; }
+        .slider-container::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
+        .insta-card { min-width: 220px; display: block; text-decoration: none; border-radius: 15px; overflow: hidden; background: #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.05); transition: 0.3s; border: 1px solid rgba(0,0,0,0.02); }
+        .insta-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-color: var(--gold); }
+        .insta-card img { width: 100%; height: 140px; object-fit: cover; }
+        .insta-card-info { padding: 15px; text-align: center; }
+        .insta-card-info h4 { margin: 0; color: #333; font-size: 0.95rem; font-weight: 600; }
+
         /* أزرار الإجراءات */
-        .cta-box { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin-top: 60px; }
+        .cta-box { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin-top: 40px; }
         
         .add-to-cart-btn { background: var(--royal-green); color: white; border: none; padding: 15px 30px; border-radius: 30px; font-size: 1.1rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: 0.4s; box-shadow: 0 10px 20px rgba(26, 60, 52, 0.2); font-family: inherit; }
         .add-to-cart-btn:hover { background: var(--gold); transform: translateY(-3px); box-shadow: 0 15px 25px rgba(197, 160, 89, 0.3); }
 
-        .back-gallery { text-decoration: none; color: #999; font-size: 0.95rem; transition: 0.3s; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid transparent; }
+        .back-gallery { text-decoration: none; color: #999; font-size: 0.95rem; transition: 0.3s; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid transparent; padding-bottom: 3px; }
         .back-gallery:hover { color: var(--royal-green); border-color: var(--royal-green); }
 
         /* زرار فريق الخبراء (تواصل هندسي) */
@@ -75,20 +94,22 @@
 </head>
 <body>
 
-    <a href="../cart.html" class="cart-float">
-        <i class="fas fa-shopping-cart"></i>
+    <a href="../cart.html" class="cart-float" aria-label="قائمة المقايسة">
+        <i class="fas fa-clipboard-list"></i>
         <span class="cart-badge" id="cartCount">0</span>
     </a>
 
     <div class="product-wrapper">
         <div class="image-section">
             <div class="main-display">
-                <img id="productImage" src="" alt="Habib Luxury Stones" onerror="this.src='../assets/images/zalat/zalat-black-royal.jpg'">
+                <img id="productImage" src="" alt="Habib Luxury Stones" fetchpriority="high" onerror="this.src='../assets/images/zalat/zalat-black-royal.jpg'">
             </div>
         </div>
 
         <div class="content-section">
             <span class="brand-tag">Habib Store | Premium Selection</span>
+            <div class="phone-trust"><i class="fas fa-phone-alt"></i> 01016961497</div>
+
             <h1 id="productTitle">جاري تحميل التفاصيل...</h1>
             <div class="luxury-line"></div>
             
@@ -101,6 +122,10 @@
                 <p>جمال الحجر يكتمل بالتركيب الدقيق. يتم توريد وتوزيع الزلط والأحجار تحت إشراف <strong>Professional Engineers</strong> لضمان تحقيق التباين البصري السليم وضمان <strong>Professional Finish</strong> يدوم لسنوات.</p>
             </div>
 
+            <div class="speed-badge">
+                <i class="fas fa-stopwatch"></i> معاينة فورية وتركيب هندسي دقيق في خلال 48 ساعة
+            </div>
+
             <ul class="features-list">
                 <li><i class="fas fa-check-double"></i> انتقاء يدوي دقيق من أنقى المصادر الطبيعية</li>
                 <li><i class="fas fa-check-double"></i> ثبات لوني يقاوم العوامل الجوية لسنوات</li>
@@ -110,13 +135,20 @@
 
             <div class="cta-box">
                 <button id="addToCartBtn" class="add-to-cart-btn">
-                    <i class="fas fa-cart-plus"></i> أضف إلى السلة
+                    <i class="fas fa-plus-circle"></i> أضف للمقايسة
                 </button>
 
                 <a href="white-marble.html" class="back-gallery">
                     <i class="fas fa-arrow-right"></i> العودة إلى معرض الزلط والأحجار
                 </a>
             </div>
+
+            <div class="complements-section">
+                <h3>يكتمل جمال حديقتك مع:</h3>
+                <div class="slider-container" id="complementary-slider">
+                    </div>
+            </div>
+
         </div>
     </div>
     
@@ -135,13 +167,12 @@
         </a>
     </div>
 
-    <a href="https://wa.me/201016961497" class="expert-btn">
+    <a id="p-whatsapp" href="https://wa.me/201016961497" class="expert-btn" target="_blank">
         <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i>
         <span>استشارة هندسية ومقايسة مجانية</span>
     </a>
 
     <script>
-        // مصفوفة الربط الذكي
         const zalatData = {
             'white-zalat': { title: 'Habib White Zalat', img: 'white-zalat.jpg' },
             'asyuti-v2': { title: 'Habib Asyuti Zalat V2', img: 'zalat-asyuti-v2.jpeg' },
@@ -157,6 +188,13 @@
             'mica-red': { title: 'Habib Stone Mica Red', img: 'stone-mica-red.jpeg' }
         };
 
+        // منتجات الربط الذكي
+        const complements = [
+            { id: "11", name: "نجيل براكتيكال 11 ملم", img: "grass-11mm-standard-10.png", folder: "nageel", page: "product-nageel.html" },
+            { id: "40", name: "مشايات رخام جلالة", img: "marble-galala.jpg", folder: "marble", page: "product-marble.html" },
+            { id: "46", name: "حجر ساند ستون", img: "marble-sandstone.jpg", folder: "marble", page: "product-marble.html" }
+        ];
+
         const urlParams = new URLSearchParams(window.location.search);
         const productId = urlParams.get('id');
         const product = zalatData[productId];
@@ -169,10 +207,27 @@
         if (product) {
             displayTitle.innerText = product.title;
             displayImg.src = '../assets/images/zalat/' + product.img;
+
+            // تخصيص رسالة الواتساب الفاخرة
+            const whatsappMsg = encodeURIComponent("تحياتي، مهتم بمعرفة تفاصيل المقايسة لـ " + product.title);
+            document.getElementById('p-whatsapp').href = "https://wa.me/201016961497?text=" + whatsappMsg;
         } else {
             displayTitle.innerText = 'Habib Premium Stones';
             displayImg.src = fallbackImg;
         }
+
+        // بناء المنتجات التكميلية (Cross-Selling)
+        let sliderHTML = '';
+        complements.forEach(item => {
+            sliderHTML += `
+                <a href="${item.page}?id=${item.id}" class="insta-card">
+                    <img src="../assets/images/${item.folder}/${item.img}" alt="${item.name}" loading="lazy">
+                    <div class="insta-card-info">
+                        <h4>${item.name}</h4>
+                    </div>
+                </a>`;
+        });
+        document.getElementById('complementary-slider').innerHTML = sliderHTML;
 
         // تحديث رقم السلة
         function updateCartCount() {
@@ -187,7 +242,7 @@
         updateCartCount();
         window.addEventListener('storage', updateCartCount);
 
-        // وظيفة زر أضف إلى السلة
+        // وظيفة الإضافة للمقايسة
         document.getElementById('addToCartBtn').addEventListener('click', function() {
             if(!product) return;
             
@@ -209,19 +264,25 @@
             }
             
             localStorage.setItem('cart', JSON.stringify(cart));
-            updateCartCount();
             
-            // تأثير بصري للزرار لتأكيد الإضافة
+            updateCartCount();
+            if (typeof updateGlobalCartCount === "function") {
+                updateGlobalCartCount();
+            }
+            
+            // تأثير تأكيد الإضافة
             let btn = this;
             let originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fas fa-check"></i> تمت الإضافة بنجاح';
+            btn.innerHTML = '<i class="fas fa-check-circle"></i> تمت الإضافة للمقايسة بنجاح';
             btn.style.background = '#25d366';
             btn.style.color = 'white';
+            btn.style.boxShadow = '0 10px 20px rgba(37, 211, 102, 0.3)';
             
             setTimeout(() => {
                 btn.innerHTML = originalText;
                 btn.style.background = '';
-            }, 2000);
+                btn.style.boxShadow = '';
+            }, 2500);
         });
 
         // تشغيل الشريط الزجاجي المرفوع بعد 5 ثواني
