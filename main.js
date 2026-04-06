@@ -1,9 +1,9 @@
 /* =========================================
    Habib Store | Premium Selection
-   Main Core Logic - v3.4 (Smart Paths Edition)
+   Main Core Logic - v3.5 (Professional Edition)
    ========================================= */
 
-// 1. تحديث عدّاد السلة
+// 1. تحديث عدّاد المقايسة (السلة)
 function updateGlobalCartCount() {
     const cartBadge = document.getElementById('cartCount');
     if (cartBadge) {
@@ -11,22 +11,24 @@ function updateGlobalCartCount() {
         const totalItems = cart.reduce((total, item) => total + (item.quantity || 1), 0);
         cartBadge.textContent = totalItems;
         
-        cartBadge.style.transform = "scale(1.2)";
-        setTimeout(() => cartBadge.style.transform = "scale(1)", 200);
+        // تأثير نبض خفيف عند التحديث
+        cartBadge.style.transform = "scale(1.3)";
+        setTimeout(() => cartBadge.style.transform = "scale(1)", 300);
     }
 }
 
-// 2. إظهار "شريط النخبة"
+// 2. إظهار شريط التنقل الذكي (Smart Glass Bar)
 function handleEliteBarAppearance() {
     setTimeout(() => {
-        const eliteBar = document.getElementById('eliteGlassBar');
+        const eliteBar = document.getElementById('smartGlassSlider') || document.getElementById('eliteGlassBar');
         if (eliteBar) {
+            eliteBar.classList.add('visible');
             eliteBar.classList.add('active');
         }
-    }, 5000); 
+    }, 4000); 
 }
 
-// 3. التشغيل الأساسي
+// 3. التشغيل الأساسي عند تحميل الصفحة
 document.addEventListener('DOMContentLoaded', () => {
     updateGlobalCartCount();
     handleEliteBarAppearance();
@@ -34,36 +36,49 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* =========================================
-   🔥 الإضافات الجديدة (المبيعات والكتالوج الذكي)
+   🔥 محرك المبيعات والكتالوج الذكي
    ========================================= */
 
-// 4. الإضافة السريعة للسلة
-function quickAddToCart(productId, productName) {
+// 4. الإضافة السريعة للمقايسة (مع دعم الصور)
+function quickAddToCart(productId, productName, category = 'general') {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     
+    // محاولة تخمين مسار الصورة بناءً على الفئة
+    let imgPath = `assets/images/${category}/${productId}.jpg`; 
+    if (category === 'zalat') imgPath = `assets/images/zalat/${productId}.jpg`;
+
     let existingItem = cart.find(item => item.id === productId);
     if (existingItem) {
         existingItem.quantity += 1;
     } else {
-        cart.push({ id: productId, name: productName, price: "يحدد بدقة عند المعاينة", quantity: 1 });
+        cart.push({ 
+            id: productId, 
+            title: productName, 
+            img: imgPath,
+            category: category,
+            quantity: 1 
+        });
     }
     
     localStorage.setItem('cart', JSON.stringify(cart));
     updateGlobalCartCount();
-    alert(`تم إضافة "${productName}" إلى السلة بنجاح 🛒`);
+    
+    // تنبيه احترافي للعميل
+    console.log(`✅ تم إضافة ${productName} لقائمة المقايسة`);
 }
 
-// 5. محرك الكتالوج الذكي (نسخة تصحيح المسارات)
+// 5. محرك الكتالوج (سابقة الأعمال) - نسخة تصحيح المسارات
 let catalogImages = [];
 let currentImageIndex = 0;
 let currentCategoryName = '';
 
 const portfolioSettings = {
-    'nageel': { prefix: 'n', ext: 'jpg', nameAr: 'النجيل' },
-    'marble': { prefix: 'm', ext: 'jpeg', nameAr: 'الرخام' },
-    'zalat': { prefix: 'z', ext: 'jpeg', nameAr: 'الزلط' }
+    'nageel': { prefix: 'n', ext: 'jpg', nameAr: 'النجيل الصناعي' },
+    'marble': { prefix: 'm', ext: 'jpeg', nameAr: 'الرخام الطبيعي' },
+    'zalat': { prefix: 'z', ext: 'jpeg', nameAr: 'الزلط والأحجار' }
 };
 
+// التأكد من وجود الصورة قبل عرضها
 function checkImageExists(url) {
     return new Promise(resolve => {
         let img = new Image();
@@ -73,7 +88,7 @@ function checkImageExists(url) {
     });
 }
 
-// الدالة دي بتعرف إحنا في الصفحة الرئيسية ولا في فولدر products وتظبط المسار لوحدها
+// تحديد المسار الصحيح (لو في products يرجع خطوة ويدخل assets)
 function getBasePath() {
     return window.location.pathname.includes('/products/') ? '../' : './';
 }
@@ -85,31 +100,33 @@ async function openCatalog(category) {
     currentCategoryName = settings.nameAr;
     catalogImages = [];
     
-    const lightbox = document.getElementById('catalogLightbox');
+    const lightbox = document.getElementById('catalogLightbox') || document.getElementById('zalatLightbox');
+    if (!lightbox) return;
+    
+    lightbox.style.display = 'flex'; // إظهار النافذة فوراً
     lightbox.classList.add('active');
     
-    const basePath = getBasePath(); // استخدام المسار الذكي
+    const basePath = getBasePath();
     
-    let i = 1;
-    while (true) {
+    // تحميل أول 10 صور محتملة (z1, z2, z3...)
+    for (let i = 1; i <= 10; i++) {
         let imgUrl = `${basePath}assets/images/portfolio/${settings.prefix}${i}.${settings.ext}`;
         let exists = await checkImageExists(imgUrl);
         
         if (exists) {
             catalogImages.push(imgUrl);
-            if (i === 1) {
+            if (catalogImages.length === 1) {
                 currentImageIndex = 0;
                 updateCatalogView();
             }
-            i++;
         } else {
-            break; 
+            if (i > 1) break; // لو مفيش غير صورة واحدة أو خلصنا الصور
         }
     }
 }
 
 function updateCatalogView() {
-    const mainImg = document.getElementById('catalogMainImage');
+    const mainImg = document.getElementById('catalogMainImage') || document.getElementById('zalatMainImage');
     if (mainImg && catalogImages.length > 0) {
         mainImg.src = catalogImages[currentImageIndex];
     }
@@ -128,18 +145,22 @@ function prevCatalogImage() {
 }
 
 function closeCatalog(event) {
-    if (!event || event.target.id === 'catalogLightbox' || event.target.classList.contains('close-btn')) {
-        document.getElementById('catalogLightbox').classList.remove('active');
+    const lightbox = document.getElementById('catalogLightbox') || document.getElementById('zalatLightbox');
+    if (!event || event.target === lightbox || event.target.classList.contains('close-btn')) {
+        if (lightbox) {
+            lightbox.classList.remove('active');
+            lightbox.style.display = 'none';
+        }
     }
 }
 
-// 6. زر الواتساب الذكي للكتالوج
+// 6. طلب تنفيذ تصميم محدد من سابقة الأعمال عبر واتساب
 function orderCurrentDesign() {
     if (catalogImages.length === 0) return;
     const currentImagePath = catalogImages[currentImageIndex];
     const imageName = currentImagePath.split('/').pop(); 
     
-    const message = `مرحباً، أريد تنفيذ هذا التصميم من سابقة أعمال ${currentCategoryName}.\n(كود الصورة: ${imageName})`;
+    const message = `*طلب تنفيذ تصميم محدد - Habib Store* 🦈\n--------------------------------\nمرحباً محمود، أعجبني هذا التصميم من سابقة أعمال ${currentCategoryName}.\n(كود الصورة: ${imageName})\n\nأريد الاستفسار عن تفاصيل تنفيذه ومقايسته.`;
     const encodedMessage = encodeURIComponent(message);
     
     window.open(`https://wa.me/201016961497?text=${encodedMessage}`, '_blank');
