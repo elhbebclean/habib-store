@@ -431,7 +431,8 @@
         }
 
         // ----------------- سكريبت سابقة أعمال الزلط ----------------- //
-        const zalatWorks = ['z1.jpg', 'z2.jpg', 'z3.jpg', 'z4.jpg', 'z5.jpg'];
+        // المسارات متحدثة لتقرأ الصور بصيغة .jpeg من مجلد portfolio
+        const zalatWorks = ['z1.jpeg', 'z2.jpeg', 'z3.jpeg', 'z4.jpeg', 'z5.jpeg'];
         let currentZIndex = 0;
 
         function openZalatCatalog() {
@@ -446,7 +447,8 @@
 
         function updateZalatLightbox() {
             const imgName = zalatWorks[currentZIndex];
-            document.getElementById('zalatMainImage').src = `../assets/images/zalat/${imgName}`;
+            // مسار الصورة بيقرا من فولدر portfolio
+            document.getElementById('zalatMainImage').src = `../assets/images/portfolio/${imgName}`;
             
             const msg = encodeURIComponent(`تحياتي، أعجبني هذا التصميم من سابقة أعمال الزلط (صورة ${imgName}) وأريد الاستفسار عن مقايسة لتنفيذ تصميم مشابه.`);
             document.getElementById('orderZalatBtn').href = `https://wa.me/201016961497?text=${msg}`;
