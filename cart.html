@@ -128,9 +128,9 @@
 </div>
 
 <div id="empty-cart" style="display:none;">
-    <i class="fas fa-box-open"></i>
-    <h3>سلة الطلبات خالية</h3>
-    <p style="color: #888; font-size: 1.1rem;">لم تقم بإضافة أي أصناف لطلب المعاينة بعد.</p>
+    <i class="fas fa-clipboard-list"></i>
+    <h3>قائمة المقايسة خالية</h3>
+    <p style="color: #888; font-size: 1.1rem;">لم تقم بإضافة أي خامات أو منتجات لطلب المعاينة بعد.</p>
     <a href="index.html" class="back-btn">تصفح المعارض واختر خاماتك ➜</a>
 </div>
 
@@ -161,8 +161,8 @@
         let totalItems = 0;
 
         cart.forEach((item, index) => {
-            // حل مشكلة الصور: مسح ../ من المسار لتعمل في صفحة السلة الرئيسية
-            let imgSrc = item.img ? item.img.replace('../', '') : 'assets/images/placeholder.jpg';
+            // المعالجة الدقيقة لمسار الصورة (إزالة أي ../ لضمان قراءة الصورة من الجذر الأساسي للموقع)
+            let imgSrc = item.img ? item.img.replace(/\.\.\//g, '') : 'assets/images/placeholder.jpg';
             
             totalItems += item.quantity || 1;
 
@@ -179,7 +179,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="remove-btn" onclick="deleteItem(${index})" title="حذف من السلة">
+                    <button class="remove-btn" onclick="deleteItem(${index})" title="حذف من قائمة المقايسة">
                         <i class="fas fa-trash-alt"></i>
                     </button>
                 </div>`;
@@ -197,7 +197,6 @@
                 cart[index].quantity = newQty;
                 localStorage.setItem('cart', JSON.stringify(cart));
                 loadCart();
-                // تحديث العداد في الهيدر لو موجود
                 if(window.updateGlobalCartCount) window.updateGlobalCartCount();
             }
         }
@@ -246,7 +245,7 @@
         
         window.open(url, '_blank');
         
-        // تفريغ السلة بعد الطلب
+        // تفريغ السلة بعد الطلب وتحديث الصفحة
         localStorage.removeItem('cart');
         setTimeout(loadCart, 1000); 
     }
