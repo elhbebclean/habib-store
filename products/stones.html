@@ -237,9 +237,11 @@
             }
         };
 
+        // تم تعديل المصفوفة دي عشان تبقى بوابات للمعارض التانية
         const complements = [
-            { id: "1", name: "نجيل النخبة 50 ملم", img: "Habib-Anatolian-Nature-50mm.jpg", folder: "nageel-details", page: "product-nageel.html" },
-            { id: "white-zalat", name: "زلط أبيض ملكي", img: "white-zalat.jpg", folder: "zalat", page: "zalat.html" }
+            { link: "grass-gallery.html", name: "معرض النجيل الفاخر", img: "modern-landscape-design.jpg", folder: "nageel" },
+            { link: "white-marble.html", name: "معرض الزلط والأحجار", img: "white-zalat.jpg", folder: "zalat" },
+            { link: "trees.html", name: "معرض الأشجار والنباتات", img: "Areca Palm.jpeg", folder: "Greenery" }
         ];
 
         const urlParams = new URLSearchParams(window.location.search);
@@ -256,9 +258,10 @@
             document.getElementById('p-whatsapp').href = "https://wa.me/201016961497?text=" + whatsappMsg;
 
             let sliderHTML = '';
+            // تم تعديل الرابط هنا عشان يقرأ link مباشرة من غير id
             complements.forEach(item => {
                 sliderHTML += `
-                    <a href="${item.page}?id=${item.id}" class="insta-card">
+                    <a href="${item.link}" class="insta-card">
                         <img src="../assets/images/${item.folder}/${item.img}" alt="${item.name}" loading="lazy">
                         <div class="insta-card-info">
                             <h4>${item.name}</h4>
