@@ -6,7 +6,9 @@
     <meta name="description" content="جاليري النجيل الصناعي الفاخر من حبيب ستور. توريد وتركيب نجيل صناعي بأعلى جودة وإشراف هندسي متكامل. الأسعار تحدد بدقة عند المعاينة الفنية.">
     <title>جاليري النجيل الصناعي الفاخر | Habib Store | مقايسة وتنسيق حدائق</title>
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+    
     <link rel="stylesheet" href="../style.css">
     <script src="../main.js" defer></script>
     
@@ -17,7 +19,7 @@
         /* أيقونة المقايسة العائمة (بديلة للسلة) */
         .cart-float { position: fixed; top: 20px; left: 20px; background: white; color: var(--royal-green); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-decoration: none; z-index: 1000; font-size: 1.2rem; transition: 0.3s; border: 1px solid rgba(197, 160, 89, 0.3); }
         .cart-float:hover { transform: scale(1.1); color: var(--gold); border-color: var(--gold); }
-        .cart-badge { position: absolute; top: -5px; right: -5px; background: var(--gold); color: white; font-size: 0.75rem; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .cart-badge { position: absolute; top: -5px; right: -5px; background: var(--gold); color: #1a3c34; font-size: 0.75rem; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
 
         /* البانر */
         .hero-banner { position: relative; width: 100%; min-height: 550px; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; }
@@ -38,7 +40,8 @@
         .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s; text-decoration: none; border: 1px solid rgba(0,0,0,0.02); display: flex; flex-direction: column; position: relative; }
         .card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(0,0,0,0.12); border-color: var(--gold); }
         
-        .badge { position: absolute; top: 10px; right: 10px; background: var(--gold); color: white; font-size: 0.6rem; padding: 4px 8px; border-radius: 4px; font-weight: 700; z-index: 5; }
+        /* تم تغيير لون النص لـ royal-green لضمان التباين مع الذهبي حسب تقرير Lighthouse */
+        .badge { position: absolute; top: 10px; right: 10px; background: var(--gold); color: var(--royal-green); font-size: 0.6rem; padding: 4px 8px; border-radius: 4px; font-weight: 900; z-index: 5; }
 
         .img-wrapper { width: 100%; aspect-ratio: 1/1; overflow: hidden; position: relative; background: #fff; padding: 10px; box-sizing: border-box; }
         .img-wrapper img { width: 100%; height: 100%; object-fit: contain; transition: 0.8s; }
@@ -85,231 +88,233 @@
 </head>
 <body>
 
-    <a href="../cart.html" class="cart-float" title="قائمة المقايسة">
-        <i class="fas fa-clipboard-list"></i>
+    <a href="../cart.html" class="cart-float" aria-label="قائمة المقايسة" title="قائمة المقايسة">
+        <i class="fas fa-clipboard-list" aria-hidden="true"></i>
         <span class="cart-badge" id="cartCount">0</span>
     </a>
 
-    <section class="hero-banner">
-        <img src="../assets/images/nageel/modern-landscape-design.jpg" alt="تصميم لاندسكيب فاخر من حبيب ستور" fetchpriority="high">
-        <div class="hero-content">
-            <div style="display: inline-flex; align-items: center; gap: 10px; background: rgba(26, 60, 52, 0.8); padding: 8px 25px; border-radius: 50px; border: 1px solid var(--gold); font-weight: bold; font-size: 1.3rem; margin-bottom: 20px;">
-                <i class="fas fa-phone-alt" style="color: var(--gold);"></i> 01016961497
-            </div>
-            
-            <h1>صمم جنينة أحلامك في خطوات..</h1>
-            <p>اختار النجيل، الزلط، والرخام، ضيفهم للمقايسة، وسيب الباقي لخبراء حبيب ستور للتوريد والتركيب.</p>
-            
-            <div style="margin-top: 25px; color: #fff; background: var(--gold); display: inline-block; padding: 12px 30px; border-radius: 8px; font-weight: 700; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
-                <i class="fas fa-stopwatch" style="margin-left: 8px;"></i> معاينة فورية وتركيب هندسي دقيق في خلال 48 ساعة
-            </div>
-        </div>
-    </section>
-
-    <div class="container">
-        <div class="section-header">
-            <h2>مجموعة النجيل الفاخرة</h2>
-        </div>
-
-        <div class="product-grid">
-            <div class="card">
-                <div class="img-wrapper"><div class="badge">NEW</div><img src="../assets/images/nageel/grass-6_mm-natural.jpeg" alt="نجيل صناعي Habib Eco Green 6mm" loading="lazy"></div>
-                <div class="card-body">
-                    <span>Smart Choice</span>
-                    <h3>Habib Eco Green (6mm)</h3>
-                    <p>حلول عملية واقتصادية لكسوة الحوائط والممرات.</p>
-                    <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
+    <main>
+        <section class="hero-banner">
+            <img src="../assets/images/nageel/modern-landscape-design.jpg" alt="تصميم لاندسكيب فاخر من حبيب ستور" fetchpriority="high" width="1200" height="600">
+            <div class="hero-content">
+                <div style="display: inline-flex; align-items: center; gap: 10px; background: rgba(26, 60, 52, 0.8); padding: 8px 25px; border-radius: 50px; border: 1px solid var(--gold); font-weight: bold; font-size: 1.3rem; margin-bottom: 20px;">
+                    <i class="fas fa-phone-alt" style="color: var(--gold);" aria-hidden="true"></i> 01016961497
                 </div>
-                <div class="card-actions">
-                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('6', 'Habib Eco Green (6mm)')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
-                    <a href="product.html?id=6" class="btn-details">عرض التفاصيل</a>
+                
+                <h1>صمم جنينة أحلامك في خطوات..</h1>
+                <p>اختار النجيل، الزلط، والرخام، ضيفهم للمقايسة، وسيب الباقي لخبراء حبيب ستور للتوريد والتركيب.</p>
+                
+                <div style="margin-top: 25px; color: #1a3c34; background: var(--gold); display: inline-block; padding: 12px 30px; border-radius: 8px; font-weight: 900; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                    <i class="fas fa-stopwatch" style="margin-left: 8px;" aria-hidden="true"></i> معاينة فورية وتركيب هندسي دقيق في خلال 48 ساعة
                 </div>
             </div>
+        </section>
 
-            <div class="card">
-                <div class="img-wrapper"><div class="badge">BEST SELLER</div><img src="../assets/images/nageel/grass-11mm-standard-10.png" alt="نجيل صناعي Habib Practical Green 11mm" loading="lazy"></div>
-                <div class="card-body">
-                    <span>Practical Collection</span>
-                    <h3>Habib Practical Green (11mm)</h3>
-                    <p>حلول عملية واقتصادية لكسوة الحوائط والممرات.</p>
-                    <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
-                </div>
-                <div class="card-actions">
-                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('11', 'Habib Practical Green (11mm)')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
-                    <a href="product.html?id=11" class="btn-details">عرض التفاصيل</a>
-                </div>
+        <div class="container">
+            <div class="section-header">
+                <h2>مجموعة النجيل الفاخرة</h2>
             </div>
 
-            <div class="card">
-                <div class="img-wrapper"><div class="badge">PREMIUM</div><img src="../assets/images/nageel/grass-20mm-standard-12.jpeg" alt="نجيل صناعي Habib Standard Turkish 20mm" loading="lazy"></div>
-                <div class="card-body">
-                    <span>Turkish Quality</span>
-                    <h3>Habib Standard Turkish (20mm)</h3>
-                    <p>التوازن المثالي للسعر والجودة، مناسب جداً لرووف البيوت والجناين الخاصة.</p>
-                    <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
+            <div class="product-grid">
+                <div class="card">
+                    <div class="img-wrapper"><div class="badge">NEW</div><img src="../assets/images/nageel/grass-6_mm-natural.jpeg" alt="نجيل صناعي Habib Eco Green 6mm" loading="lazy" width="400" height="400"></div>
+                    <div class="card-body">
+                        <span>Smart Choice</span>
+                        <h3>Habib Eco Green (6mm)</h3>
+                        <p>حلول عملية واقتصادية لكسوة الحوائط والممرات.</p>
+                        <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
+                    </div>
+                    <div class="card-actions">
+                        <button type="button" class="btn-add-cart" onclick="quickAddToCart('6', 'Habib Eco Green (6mm)')"><i class="fas fa-plus-circle" aria-hidden="true"></i> أضف للمقايسة</button>
+                        <a href="product.html?id=6" class="btn-details" aria-label="عرض تفاصيل نجيل Habib Eco Green 6mm">عرض التفاصيل</a>
+                    </div>
                 </div>
-                <div class="card-actions">
-                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('20', 'Habib Standard Turkish (20mm)')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
-                    <a href="product.html?id=20" class="btn-details">عرض التفاصيل</a>
-                </div>
-            </div>
 
-            <div class="card">
-                <div class="img-wrapper"><div class="badge">ENGINEER'S CHOICE</div><img src="../assets/images/nageel/grass-30mm-natural-16.jpeg" alt="نجيل صناعي Habib Antalya Breeze 30mm" loading="lazy"></div>
-                <div class="card-body">
-                    <span>Natural Line</span>
-                    <h3>Habib Antalya Breeze (30mm)</h3>
-                    <p>التوازن المثالي للسعر والجودة، مناسب جداً لرووف البيوت والجناين الخاصة.</p>
-                    <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
+                <div class="card">
+                    <div class="img-wrapper"><div class="badge">BEST SELLER</div><img src="../assets/images/nageel/grass-11mm-standard-10.png" alt="نجيل صناعي Habib Practical Green 11mm" loading="lazy" width="400" height="400"></div>
+                    <div class="card-body">
+                        <span>Practical Collection</span>
+                        <h3>Habib Practical Green (11mm)</h3>
+                        <p>حلول عملية واقتصادية لكسوة الحوائط والممرات.</p>
+                        <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
+                    </div>
+                    <div class="card-actions">
+                        <button type="button" class="btn-add-cart" onclick="quickAddToCart('11', 'Habib Practical Green (11mm)')"><i class="fas fa-plus-circle" aria-hidden="true"></i> أضف للمقايسة</button>
+                        <a href="product.html?id=11" class="btn-details" aria-label="عرض تفاصيل نجيل Habib Practical Green 11mm">عرض التفاصيل</a>
+                    </div>
                 </div>
-                <div class="card-actions">
-                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('30-16', 'Habib Antalya Breeze (30mm)')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
-                    <a href="product.html?id=30-16" class="btn-details">عرض التفاصيل</a>
-                </div>
-            </div>
 
-            <div class="card">
-                <div class="img-wrapper"><div class="badge">BEST SELLER</div><img src="../assets/images/nageel/grass-30mm-natural-18.jpeg" alt="نجيل صناعي Habib Natural Soft 30mm" loading="lazy"></div>
-                <div class="card-body">
-                    <span>Luxury Touch</span>
-                    <h3>Habib Natural Soft (30mm)</h3>
-                    <p>التوازن المثالي للسعر والجودة، مناسب جداً لرووف البيوت والجناين الخاصة.</p>
-                    <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
+                <div class="card">
+                    <div class="img-wrapper"><div class="badge">PREMIUM</div><img src="../assets/images/nageel/grass-20mm-standard-12.jpeg" alt="نجيل صناعي Habib Standard Turkish 20mm" loading="lazy" width="400" height="400"></div>
+                    <div class="card-body">
+                        <span>Turkish Quality</span>
+                        <h3>Habib Standard Turkish (20mm)</h3>
+                        <p>التوازن المثالي للسعر والجودة، مناسب جداً لرووف البيوت والجناين الخاصة.</p>
+                        <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
+                    </div>
+                    <div class="card-actions">
+                        <button type="button" class="btn-add-cart" onclick="quickAddToCart('20', 'Habib Standard Turkish (20mm)')"><i class="fas fa-plus-circle" aria-hidden="true"></i> أضف للمقايسة</button>
+                        <a href="product.html?id=20" class="btn-details" aria-label="عرض تفاصيل نجيل Habib Standard Turkish 20mm">عرض التفاصيل</a>
+                    </div>
                 </div>
-                <div class="card-actions">
-                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('30-18', 'Habib Natural Soft (30mm)')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
-                    <a href="product.html?id=30-18" class="btn-details">عرض التفاصيل</a>
-                </div>
-            </div>
 
-            <div class="card">
-                <div class="img-wrapper"><div class="badge">HIGH QUALITY</div><img src="../assets/images/nageel/grass-30mm-natural-24.jpeg" alt="نجيل صناعي Habib Premium Turf 30mm" loading="lazy"></div>
-                <div class="card-body">
-                    <span>High Density</span>
-                    <h3>Habib Premium Turf (30mm)</h3>
-                    <p>التوازن المثالي للسعر والجودة، مناسب جداً لرووف البيوت والجناين الخاصة.</p>
-                    <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
+                <div class="card">
+                    <div class="img-wrapper"><div class="badge">ENGINEER'S CHOICE</div><img src="../assets/images/nageel/grass-30mm-natural-16.jpeg" alt="نجيل صناعي Habib Antalya Breeze 30mm" loading="lazy" width="400" height="400"></div>
+                    <div class="card-body">
+                        <span>Natural Line</span>
+                        <h3>Habib Antalya Breeze (30mm)</h3>
+                        <p>التوازن المثالي للسعر والجودة، مناسب جداً لرووف البيوت والجناين الخاصة.</p>
+                        <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
+                    </div>
+                    <div class="card-actions">
+                        <button type="button" class="btn-add-cart" onclick="quickAddToCart('30-16', 'Habib Antalya Breeze (30mm)')"><i class="fas fa-plus-circle" aria-hidden="true"></i> أضف للمقايسة</button>
+                        <a href="product.html?id=30-16" class="btn-details" aria-label="عرض تفاصيل نجيل Habib Antalya Breeze 30mm">عرض التفاصيل</a>
+                    </div>
                 </div>
-                <div class="card-actions">
-                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('30-24', 'Habib Premium Turf (30mm)')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
-                    <a href="product.html?id=30-24" class="btn-details">عرض التفاصيل</a>
-                </div>
-            </div>
 
-            <div class="card">
-                <div class="img-wrapper"><div class="badge">ENGINEER'S CHOICE</div><img src="../assets/images/nageel/grass-40mm-natural-12.jpeg" alt="نجيل صناعي Habib Istanbul Lush 40mm" loading="lazy"></div>
-                <div class="card-body">
-                    <span>Elite Series</span>
-                    <h3>Habib Istanbul Lush (40mm)</h3>
-                    <p>فخامة ملكية للفلل والقصور، ملمس طبيعي وكثافة عالية جداً.</p>
-                    <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
+                <div class="card">
+                    <div class="img-wrapper"><div class="badge">BEST SELLER</div><img src="../assets/images/nageel/grass-30mm-natural-18.jpeg" alt="نجيل صناعي Habib Natural Soft 30mm" loading="lazy" width="400" height="400"></div>
+                    <div class="card-body">
+                        <span>Luxury Touch</span>
+                        <h3>Habib Natural Soft (30mm)</h3>
+                        <p>التوازن المثالي للسعر والجودة، مناسب جداً لرووف البيوت والجناين الخاصة.</p>
+                        <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
+                    </div>
+                    <div class="card-actions">
+                        <button type="button" class="btn-add-cart" onclick="quickAddToCart('30-18', 'Habib Natural Soft (30mm)')"><i class="fas fa-plus-circle" aria-hidden="true"></i> أضف للمقايسة</button>
+                        <a href="product.html?id=30-18" class="btn-details" aria-label="عرض تفاصيل نجيل Habib Natural Soft 30mm">عرض التفاصيل</a>
+                    </div>
                 </div>
-                <div class="card-actions">
-                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('40-12', 'Habib Istanbul Lush (40mm)')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
-                    <a href="product.html?id=40-12" class="btn-details">عرض التفاصيل</a>
-                </div>
-            </div>
 
-            <div class="card">
-                <div class="img-wrapper"><div class="badge">BEST SELLER</div><img src="../assets/images/nageel/grass-40mm-natural-24.jpeg" alt="نجيل صناعي Habib Bosphorus Green 40mm" loading="lazy"></div>
-                <div class="card-body">
-                    <span>Royal Collection</span>
-                    <h3>Habib Bosphorus Green (40mm)</h3>
-                    <p>فخامة ملكية للفلل والقصور، ملمس طبيعي وكثافة عالية جداً.</p>
-                    <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
+                <div class="card">
+                    <div class="img-wrapper"><div class="badge">HIGH QUALITY</div><img src="../assets/images/nageel/grass-30mm-natural-24.jpeg" alt="نجيل صناعي Habib Premium Turf 30mm" loading="lazy" width="400" height="400"></div>
+                    <div class="card-body">
+                        <span>High Density</span>
+                        <h3>Habib Premium Turf (30mm)</h3>
+                        <p>التوازن المثالي للسعر والجودة، مناسب جداً لرووف البيوت والجناين الخاصة.</p>
+                        <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
+                    </div>
+                    <div class="card-actions">
+                        <button type="button" class="btn-add-cart" onclick="quickAddToCart('30-24', 'Habib Premium Turf (30mm)')"><i class="fas fa-plus-circle" aria-hidden="true"></i> أضف للمقايسة</button>
+                        <a href="product.html?id=30-24" class="btn-details" aria-label="عرض تفاصيل نجيل Habib Premium Turf 30mm">عرض التفاصيل</a>
+                    </div>
                 </div>
-                <div class="card-actions">
-                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('40-24', 'Habib Bosphorus Green (40mm)')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
-                    <a href="product.html?id=40-24" class="btn-details">عرض التفاصيل</a>
-                </div>
-            </div>
 
-            <div class="card">
-                <div class="img-wrapper"><div class="badge">PREMIUM</div><img src="../assets/images/nageel/grass-40mm-natural-28.jpeg" alt="نجيل صناعي Habib Legendary Silk 40mm" loading="lazy"></div>
-                <div class="card-body">
-                    <span>Supreme Quality</span>
-                    <h3>Habib Legendary Silk (40mm)</h3>
-                    <p>فخامة ملكية للفلل والقصور، ملمس طبيعي وكثافة عالية جداً.</p>
-                    <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
+                <div class="card">
+                    <div class="img-wrapper"><div class="badge">ENGINEER'S CHOICE</div><img src="../assets/images/nageel/grass-40mm-natural-12.jpeg" alt="نجيل صناعي Habib Istanbul Lush 40mm" loading="lazy" width="400" height="400"></div>
+                    <div class="card-body">
+                        <span>Elite Series</span>
+                        <h3>Habib Istanbul Lush (40mm)</h3>
+                        <p>فخامة ملكية للفلل والقصور، ملمس طبيعي وكثافة عالية جداً.</p>
+                        <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
+                    </div>
+                    <div class="card-actions">
+                        <button type="button" class="btn-add-cart" onclick="quickAddToCart('40-12', 'Habib Istanbul Lush (40mm)')"><i class="fas fa-plus-circle" aria-hidden="true"></i> أضف للمقايسة</button>
+                        <a href="product.html?id=40-12" class="btn-details" aria-label="عرض تفاصيل نجيل Habib Istanbul Lush 40mm">عرض التفاصيل</a>
+                    </div>
                 </div>
-                <div class="card-actions">
-                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('40-28', 'Habib Legendary Silk (40mm)')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
-                    <a href="product.html?id=40-28" class="btn-details">عرض التفاصيل</a>
-                </div>
-            </div>
 
-            <div class="card">
-                <div class="img-wrapper"><div class="badge">NEW</div><img src="../assets/images/nageel/grass-40mm-natural.jpeg" alt="نجيل صناعي Habib Nature Touch 40mm" loading="lazy"></div>
-                <div class="card-body">
-                    <span>Nature Elite</span>
-                    <h3>Habib Nature Touch (40mm)</h3>
-                    <p>فخامة ملكية للفلل والقصور، ملمس طبيعي وكثافة عالية جداً.</p>
-                    <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
+                <div class="card">
+                    <div class="img-wrapper"><div class="badge">BEST SELLER</div><img src="../assets/images/nageel/grass-40mm-natural-24.jpeg" alt="نجيل صناعي Habib Bosphorus Green 40mm" loading="lazy" width="400" height="400"></div>
+                    <div class="card-body">
+                        <span>Royal Collection</span>
+                        <h3>Habib Bosphorus Green (40mm)</h3>
+                        <p>فخامة ملكية للفلل والقصور، ملمس طبيعي وكثافة عالية جداً.</p>
+                        <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
+                    </div>
+                    <div class="card-actions">
+                        <button type="button" class="btn-add-cart" onclick="quickAddToCart('40-24', 'Habib Bosphorus Green (40mm)')"><i class="fas fa-plus-circle" aria-hidden="true"></i> أضف للمقايسة</button>
+                        <a href="product.html?id=40-24" class="btn-details" aria-label="عرض تفاصيل نجيل Habib Bosphorus Green 40mm">عرض التفاصيل</a>
+                    </div>
                 </div>
-                <div class="card-actions">
-                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('40-natural', 'Habib Nature Touch (40mm)')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
-                    <a href="product.html?id=40-natural" class="btn-details">عرض التفاصيل</a>
-                </div>
-            </div>
 
-            <div class="card">
-                <div class="img-wrapper"><div class="badge">ENGINEER'S CHOICE</div><img src="../assets/images/nageel/grass-50mm-natural.jpeg" alt="نجيل صناعي Habib Anatolian Nature 50mm" loading="lazy"></div>
-                <div class="card-body">
-                    <span>Imperial Grade</span>
-                    <h3>Habib Anatolian Nature (50mm)</h3>
-                    <p>فخامة ملكية للفلل والقصور، ملمس طبيعي وكثافة عالية جداً.</p>
-                    <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
+                <div class="card">
+                    <div class="img-wrapper"><div class="badge">PREMIUM</div><img src="../assets/images/nageel/grass-40mm-natural-28.jpeg" alt="نجيل صناعي Habib Legendary Silk 40mm" loading="lazy" width="400" height="400"></div>
+                    <div class="card-body">
+                        <span>Supreme Quality</span>
+                        <h3>Habib Legendary Silk (40mm)</h3>
+                        <p>فخامة ملكية للفلل والقصور، ملمس طبيعي وكثافة عالية جداً.</p>
+                        <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
+                    </div>
+                    <div class="card-actions">
+                        <button type="button" class="btn-add-cart" onclick="quickAddToCart('40-28', 'Habib Legendary Silk (40mm)')"><i class="fas fa-plus-circle" aria-hidden="true"></i> أضف للمقايسة</button>
+                        <a href="product.html?id=40-28" class="btn-details" aria-label="عرض تفاصيل نجيل Habib Legendary Silk 40mm">عرض التفاصيل</a>
+                    </div>
                 </div>
-                <div class="card-actions">
-                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('50', 'Habib Anatolian Nature (50mm)')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
-                    <a href="product.html?id=50" class="btn-details">عرض التفاصيل</a>
+
+                <div class="card">
+                    <div class="img-wrapper"><div class="badge">NEW</div><img src="../assets/images/nageel/grass-40mm-natural.jpeg" alt="نجيل صناعي Habib Nature Touch 40mm" loading="lazy" width="400" height="400"></div>
+                    <div class="card-body">
+                        <span>Nature Elite</span>
+                        <h3>Habib Nature Touch (40mm)</h3>
+                        <p>فخامة ملكية للفلل والقصور، ملمس طبيعي وكثافة عالية جداً.</p>
+                        <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
+                    </div>
+                    <div class="card-actions">
+                        <button type="button" class="btn-add-cart" onclick="quickAddToCart('40-natural', 'Habib Nature Touch (40mm)')"><i class="fas fa-plus-circle" aria-hidden="true"></i> أضف للمقايسة</button>
+                        <a href="product.html?id=40-natural" class="btn-details" aria-label="عرض تفاصيل نجيل Habib Nature Touch 40mm">عرض التفاصيل</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="img-wrapper"><div class="badge">ENGINEER'S CHOICE</div><img src="../assets/images/nageel/grass-50mm-natural.jpeg" alt="نجيل صناعي Habib Anatolian Nature 50mm" loading="lazy" width="400" height="400"></div>
+                    <div class="card-body">
+                        <span>Imperial Grade</span>
+                        <h3>Habib Anatolian Nature (50mm)</h3>
+                        <p>فخامة ملكية للفلل والقصور، ملمس طبيعي وكثافة عالية جداً.</p>
+                        <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
+                    </div>
+                    <div class="card-actions">
+                        <button type="button" class="btn-add-cart" onclick="quickAddToCart('50', 'Habib Anatolian Nature (50mm)')"><i class="fas fa-plus-circle" aria-hidden="true"></i> أضف للمقايسة</button>
+                        <a href="product.html?id=50" class="btn-details" aria-label="عرض تفاصيل نجيل Habib Anatolian Nature 50mm">عرض التفاصيل</a>
+                    </div>
+                </div>
+
+            </div> 
+
+            <div class="related-section">
+                <h3>تكتمل اللوحة الفنية مع إضافاتنا الهندسية</h3>
+                <div class="horizontal-slider" id="relatedSlider">
                 </div>
             </div>
 
         </div> 
-
-        <div class="related-section">
-            <h3>تكتمل اللوحة الفنية مع إضافاتنا الهندسية</h3>
-            <div class="horizontal-slider" id="relatedSlider">
-                </div>
-        </div>
-
-    </div> 
+    </main>
     
     <div id="smartGlassSlider">
         <a href="white-marble.html" class="smart-glass-item">
-            <img src="../assets/images/zalat/white-zalat.jpg" alt="معرض الزلط" loading="lazy">
+            <img src="../assets/images/zalat/white-zalat.jpg" alt="معرض الزلط" loading="lazy" width="50" height="50">
             <span>معرض الزلط</span>
         </a>
         <a href="marble.html" class="smart-glass-item">
-            <img src="../assets/images/marble/marble-galala.jpg" alt="معرض الرخام" loading="lazy">
+            <img src="../assets/images/marble/marble-galala.jpg" alt="معرض الرخام" loading="lazy" width="50" height="50">
             <span>معرض الرخام</span>
         </a>
         <a href="trees.html" class="smart-glass-item">
-            <img src="../assets/images/nageel/modern-landscape-design.jpg" alt="معرض الأشجار" loading="lazy">
+            <img src="../assets/images/nageel/modern-landscape-design.jpg" alt="معرض الأشجار" loading="lazy" width="50" height="50">
             <span>معرض الأشجار</span>
         </a>
     </div>
 
     <a href="https://wa.me/201016961497" class="expert-btn" aria-label="تواصل معنا عبر الواتساب للاستشارة والمقايسة">
-        <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i>
+        <i class="fab fa-whatsapp" style="font-size: 1.5rem;" aria-hidden="true"></i>
         <span>استشارة هندسية ومقايسة مجانية</span>
     </a>
 
     <div class="catalog-float-btn" onclick="openCatalog('nageel')">
-        <i class="fas fa-camera"></i>
+        <i class="fas fa-camera" aria-hidden="true"></i>
         شاهد تنفيذاتنا في النجيل
     </div>
 
     <div id="catalogLightbox" class="catalog-lightbox" onclick="closeCatalog(event)">
-        <button class="close-btn" onclick="closeCatalog(event)">&times;</button>
+        <button class="close-btn" onclick="closeCatalog(event)" aria-label="إغلاق المعرض">&times;</button>
         <div class="slider-container">
-            <button class="nav-arrow nav-left" onclick="prevCatalogImage(); event.stopPropagation();"><i class="fas fa-chevron-left"></i></button>
-            <img id="catalogMainImage" src="" alt="سابقة أعمال حبيب ستور">
-            <button class="nav-arrow nav-right" onclick="nextCatalogImage(); event.stopPropagation();"><i class="fas fa-chevron-right"></i></button>
+            <button class="nav-arrow nav-left" onclick="prevCatalogImage(); event.stopPropagation();" aria-label="الصورة السابقة"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+            <img id="catalogMainImage" src="" alt="سابقة أعمال حبيب ستور" width="800" height="600">
+            <button class="nav-arrow nav-right" onclick="nextCatalogImage(); event.stopPropagation();" aria-label="الصورة التالية"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
         </div>
         <button class="order-design-btn" onclick="orderCurrentDesign(); event.stopPropagation();">
-            أريد تنفيذ هذا التصميم <i class="fab fa-whatsapp" style="font-size: 1.3rem;"></i>
+            أريد تنفيذ هذا التصميم <i class="fab fa-whatsapp" style="font-size: 1.3rem;" aria-hidden="true"></i>
         </button>
     </div>
 
@@ -366,9 +371,10 @@
 
         const slider = document.getElementById('relatedSlider');
         complements.forEach(item => {
+            // تم إضافة أبعاد لصور السلايدر لمنع CLS
             slider.innerHTML += `
                 <a href="${item.link}" class="glass-product-card">
-                    <img src="${item.img}" alt="${item.name}" loading="lazy">
+                    <img src="${item.img}" alt="${item.name}" loading="lazy" width="280" height="160">
                     <h4>${item.name}</h4>
                     <p>${item.desc}</p>
                 </a>
