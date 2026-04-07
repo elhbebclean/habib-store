@@ -7,8 +7,8 @@
     <title>تفاصيل الأحجار الفاخرة | Habib Store | مقايسة وتنسيق حدائق</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <link rel="stylesheet" href="style.css">
-    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="../style.css">
+    <script src="../main.js" defer></script>
     <style>
         :root { --royal-green: #1a3c34; --gold: #c5a059; --soft-gray: #f8fafa; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--soft-gray); margin: 0; color: #333; line-height: 1.8; }
@@ -188,11 +188,11 @@
             'mica-red': { title: 'Habib Stone Mica Red', img: 'stone-mica-red.jpeg' }
         };
 
-        // منتجات الربط الذكي
+        // تم التعديل لتكون بوابات للمعارض الرئيسية
         const complements = [
-            { id: "11", name: "نجيل براكتيكال 11 ملم", img: "grass-11mm-standard-10.png", folder: "nageel", page: "product-nageel.html" },
-            { id: "40", name: "مشايات رخام جلالة", img: "marble-galala.jpg", folder: "marble", page: "product-marble.html" },
-            { id: "46", name: "حجر ساند ستون", img: "marble-sandstone.jpg", folder: "marble", page: "product-marble.html" }
+            { link: "grass-gallery.html", name: "معرض النجيل الفاخر", img: "modern-landscape-design.jpg", folder: "nageel" },
+            { link: "marble.html", name: "معرض الرخام", img: "marble-galala.jpg", folder: "marble" },
+            { link: "trees.html", name: "معرض الأشجار والنباتات", img: "Areca Palm.jpeg", folder: "Greenery" }
         ];
 
         const urlParams = new URLSearchParams(window.location.search);
@@ -216,11 +216,11 @@
             displayImg.src = fallbackImg;
         }
 
-        // بناء المنتجات التكميلية (Cross-Selling)
+        // بناء المنتجات التكميلية (Cross-Selling) بناءً على الرابط المباشر
         let sliderHTML = '';
         complements.forEach(item => {
             sliderHTML += `
-                <a href="${item.page}?id=${item.id}" class="insta-card">
+                <a href="${item.link}" class="insta-card">
                     <img src="../assets/images/${item.folder}/${item.img}" alt="${item.name}" loading="lazy">
                     <div class="insta-card-info">
                         <h4>${item.name}</h4>
