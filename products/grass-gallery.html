@@ -16,50 +16,75 @@
         :root { --royal-green: #1a3c34; --gold: #c5a059; --soft-bg: #f8f9fa; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--soft-bg); margin: 0; padding: 0; color: #333; scroll-behavior: smooth; overflow-x: hidden; }
         
+        /* شريط الاستعجال */
+        .urgency-bar { background: var(--gold); color: var(--royal-green); text-align: center; padding: 12px 15px; font-weight: 800; font-size: 0.95rem; position: relative; z-index: 1001; display: flex; justify-content: center; align-items: center; gap: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .urgency-bar i { animation: pulseAlert 1.5s infinite; color: #d32f2f; font-size: 1.1rem; }
+        @keyframes pulseAlert { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.2); opacity: 0.8; } 100% { transform: scale(1); opacity: 1; } }
+
         /* أيقونة المقايسة العائمة */
-        .cart-float { position: fixed; top: 20px; left: 20px; background: white; color: var(--royal-green); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-decoration: none; z-index: 1000; font-size: 1.2rem; transition: 0.3s; border: 1px solid rgba(197, 160, 89, 0.3); }
+        .cart-float { position: fixed; top: 70px; left: 20px; background: white; color: var(--royal-green); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-decoration: none; z-index: 1000; font-size: 1.2rem; transition: 0.3s; border: 1px solid rgba(197, 160, 89, 0.3); }
         .cart-float:hover { transform: scale(1.1); color: var(--gold); border-color: var(--gold); }
         .cart-badge { position: absolute; top: -5px; right: -5px; background: var(--gold); color: #1a3c34; font-size: 0.75rem; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
 
         /* الهيرو السينمائي */
         .hero-banner { position: relative; width: 100%; min-height: 550px; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; background: var(--royal-green); }
         .hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; filter: brightness(0.6); }
-        .hero-content { position: relative; z-index: 2; text-align: center; color: white; max-width: 900px; width: 100%; }
+        .hero-content { position: relative; z-index: 2; text-align: center; color: white; max-width: 900px; width: 100%; margin-bottom: 40px; }
         .hero-content h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; margin: 0 0 15px 0; text-shadow: 0 4px 15px rgba(0,0,0,0.5); }
         .hero-content p { font-size: clamp(1rem, 3vw, 1.4rem); opacity: 0.95; font-weight: 300; margin-top: 10px; line-height: 1.6; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
 
-        .container { max-width: 1300px; margin: 60px auto; padding: 0 25px; }
+        .container { max-width: 1300px; margin: 0 auto 60px; padding: 0 25px; }
+
+        /* دروع الثقة (Trust Badges) */
+        .trust-badges { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; padding: 30px 20px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); max-width: 1000px; margin: -60px auto 60px; position: relative; z-index: 10; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); border: 1px solid rgba(197, 160, 89, 0.3); }
+        .trust-item { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; flex: 1; min-width: 220px; }
+        .trust-item i { font-size: 2.2rem; color: var(--gold); }
+        .trust-item h4 { margin: 0; color: var(--royal-green); font-size: 1.1rem; font-weight: 800; }
+        .trust-item p { margin: 0; font-size: 0.85rem; color: #555; font-weight: 600; line-height: 1.4; }
+
         .section-header { text-align: center; margin-bottom: 60px; }
         .section-header h2 { font-size: 2.5rem; color: var(--royal-green); font-weight: 700; position: relative; display: inline-block; padding-bottom: 15px; }
         .section-header h2::after { content: ''; position: absolute; bottom: 0; left: 30%; width: 40%; height: 3px; background: var(--gold); border-radius: 10px; }
 
-        /* الشبكة المرنة للموبايل واللاب */
+        /* الشبكة المرنة */
         .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 40px; }
         @media (min-width: 992px) { .product-grid { grid-template-columns: repeat(3, 1fr); gap: 30px; } }
 
-        /* الكارت بتصميم البوتيك - حواف 20px */
+        /* الكارت بتصميم البوتيك */
         .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s; border: 1px solid rgba(0,0,0,0.02); display: flex; flex-direction: column; position: relative; }
         .card:hover { transform: translateY(-10px); border-color: var(--gold); box-shadow: 0 25px 50px rgba(0,0,0,0.12); }
         .badge { position: absolute; top: 10px; right: 10px; background: var(--gold); color: var(--royal-green); font-size: 0.6rem; padding: 4px 8px; border-radius: 4px; font-weight: 900; z-index: 5; }
-
         .img-wrapper { width: 100%; aspect-ratio: 1/1; overflow: hidden; position: relative; background: #fff; padding: 10px; box-sizing: border-box; }
         .img-wrapper img { width: 100%; height: 100%; object-fit: cover; border-radius: 15px; transition: 0.8s; }
-        
         .card-body { padding: 15px; text-align: center; flex-grow: 1; }
         .card-body span { color: var(--gold); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; display: block; margin-bottom: 5px; }
         .card-body h3 { margin: 0; font-size: 1rem; color: var(--royal-green); font-weight: 700; }
         .card-body p { color: #555; font-size: 0.85rem; margin-top: 10px; line-height: 1.5; font-weight: 600; }
         .price-note { color: #888; font-size: 0.75rem; margin-top: 8px; font-style: italic; font-weight: 300; }
-
         .card-actions { padding: 10px 15px 15px; display: flex; flex-direction: column; gap: 8px; }
         .btn-add-cart { background: var(--royal-green); color: white; border: none; padding: 12px; border-radius: 12px; cursor: pointer; font-family: inherit; font-weight: 700; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; }
         .btn-add-cart:hover { background: var(--gold); }
         .btn-details { text-align: center; color: var(--royal-green); font-size: 0.85rem; font-weight: 600; text-decoration: none; border: 1px solid var(--royal-green); padding: 10px; border-radius: 12px; transition: 0.3s; display: block; }
         .btn-details:hover { background: var(--royal-green); color: white; }
 
+        /* شريط الأرقام (Social Proof) */
+        .stats-banner { background: linear-gradient(135deg, var(--royal-green) 0%, #112621 100%); color: white; padding: 40px 20px; border-radius: 20px; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px; text-align: center; margin: 60px 0; box-shadow: 0 15px 30px rgba(26, 60, 52, 0.2); border: 1px solid rgba(197, 160, 89, 0.3); }
+        .stat-item h3 { color: var(--gold); font-size: 2.8rem; margin: 0 0 5px 0; font-weight: 900; }
+        .stat-item p { margin: 0; font-size: 1.1rem; font-weight: 400; opacity: 0.9; }
+
         /* حاوية الفيديوهات الفاصلة */
         .mid-video-container { width: 100%; margin: 60px 0; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); position: relative; }
         .mid-video-container video { width: 100%; display: block; }
+
+        /* سكشن كيف نعمل (How We Work) */
+        .how-it-works { margin: 80px 0; }
+        .steps-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
+        .step-card { background: white; padding: 40px 20px; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid rgba(197, 160, 89, 0.1); position: relative; transition: 0.3s; }
+        .step-card:hover { transform: translateY(-5px); border-color: var(--gold); }
+        .step-number { position: absolute; top: -20px; right: 20px; background: var(--gold); color: var(--royal-green); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 900; border: 4px solid var(--soft-bg); }
+        .step-card i { font-size: 2.5rem; color: var(--royal-green); margin-bottom: 20px; }
+        .step-card h4 { color: var(--royal-green); font-size: 1.2rem; margin: 0 0 10px 0; font-weight: 800; }
+        .step-card p { color: #666; font-size: 0.95rem; line-height: 1.6; margin: 0; }
 
         /* المنتجات ذات الصلة */
         .related-section { margin-top: 80px; padding-top: 40px; border-top: 1px solid rgba(0,0,0,0.05); }
@@ -75,12 +100,15 @@
         /* الواتساب */
         .expert-btn { position: fixed; bottom: 40px; right: 40px; background: #25d366; color: white; padding: 18px 35px; border-radius: 60px; text-decoration: none; box-shadow: 0 15px 35px rgba(37, 211, 102, 0.3); z-index: 1000; font-weight: 600; display: flex; align-items: center; gap: 15px; transition: 0.4s; }
         
-        /* تظبيط الزراير العائمة للموبايل */
+        /* الموبايل */
         @media (max-width: 768px) { 
             .expert-btn { bottom: 20px; right: 20px; padding: 15px 25px; } 
             .expert-btn span { display: none; }
             .hero-content h1 { font-size: 2.2rem; }
             .catalog-float-btn { bottom: 75px !important; right: 20px !important; }
+            .trust-badges { margin-top: -30px; padding: 20px 10px; }
+            .stat-item h3 { font-size: 2.2rem; }
+            .urgency-bar { font-size: 0.85rem; padding: 10px; flex-direction: column; gap: 5px; }
         }
 
         /* الشريط الزجاجي */
@@ -92,6 +120,11 @@
     </style>
 </head>
 <body>
+
+    <div class="urgency-bar">
+        <i class="fas fa-bell"></i>
+        <span>احجز استشارتك الآن.. متبقي 3 مواعيد فقط للمعاينة المجانية هذا الأسبوع!</span>
+    </div>
 
     <a href="../cart.html" class="cart-float" aria-label="قائمة المقايسة" title="قائمة المقايسة">
         <i class="fas fa-clipboard-list" aria-hidden="true"></i>
@@ -113,6 +146,24 @@
         </section>
 
         <div class="container">
+            <div class="trust-badges">
+                <div class="trust-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>ضمان 5 سنوات</h4>
+                    <p>ضد بهتان اللون وتأثير الأشعة فوق البنفسجية (UV)</p>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-hard-hat"></i>
+                    <h4>إشراف هندسي</h4>
+                    <p>تنفيذ وتخطيط بأيدي مهندسين متخصصين 100%</p>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-water"></i>
+                    <h4>صرف معتمد</h4>
+                    <p>نظام ذكي يمنع تراكم مياه الأمطار والري تماماً</p>
+                </div>
+            </div>
+
             <div class="section-header">
                 <h2>مجموعة الصفوة الملكية</h2>
             </div>
@@ -144,6 +195,21 @@
                         <button type="button" class="btn-add-cart" onclick="quickAddToCart('40-24', 'Habib Bosphorus Green (40mm)')"><i class="fas fa-plus-circle" aria-hidden="true"></i> أضف للمقايسة</button>
                         <a href="product.html?id=40-24" class="btn-details" aria-label="عرض تفاصيل نجيل Habib Bosphorus Green 40mm">عرض التفاصيل</a>
                     </div>
+                </div>
+            </div>
+
+            <div class="stats-banner">
+                <div class="stat-item">
+                    <h3>+350</h3>
+                    <p>ڤيلا وقصر تم تسليمهم</p>
+                </div>
+                <div class="stat-item">
+                    <h3>+15,000</h3>
+                    <p>متر مربع تم تركيبه</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>رضا العملاء عن الجودة</p>
                 </div>
             </div>
 
@@ -197,6 +263,32 @@
                 </div>
             </div> 
 
+            <div class="how-it-works">
+                <div class="section-header">
+                    <h2>طريقك للفخامة في 3 خطوات</h2>
+                </div>
+                <div class="steps-container">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <i class="fas fa-ruler-combined"></i>
+                        <h4>معاينة هندسية دقيقة</h4>
+                        <p>يصلك مهندس متخصص لرفع المقاسات، دراسة طبيعة الأرض، وتحديد أفضل مسار للصرف.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        <h4>مقايسة شفافة واختيار</h4>
+                        <p>تستلم مقايسة تفصيلية بالأسعار، ونساعدك في اختيار الخامات الأنسب من البوتيك لتصميمك.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <i class="fas fa-truck-loading"></i>
+                        <h4>توريد وتركيب ملكي</h4>
+                        <p>خلال 48 ساعة فقط، نقوم بالتوريد والتركيب وتسليم حديقتك على المفتاح بأعلى جودة.</p>
+                    </div>
+                </div>
+            </div>
+
             <div class="related-section">
                 <h3>تكتمل اللوحة الفنية مع إضافاتنا الهندسية</h3>
                 <div class="horizontal-slider" id="relatedSlider">
@@ -246,7 +338,6 @@
     </footer>
 
     <script>
-        // تحديث عداد السلة (المقايسة)
         function updateCartCount() {
             try {
                 let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -258,7 +349,6 @@
         updateCartCount();
         window.addEventListener('storage', updateCartCount);
 
-        // بيانات "المنتجات ذات الصلة"
         const complements = [
             { name: "معرض الزلط والأحجار", img: "../assets/images/zalat/white-zalat.jpg", link: "white-marble.html", desc: "تشكيلة من أحجار الديكور والزلط التي يختارها مهندسونا لتزيين المسارات." },
             { name: "معرض وتوريد وتركيب الرخام الفاخر", img: "../assets/images/marble/marble-galala.jpg", link: "marble.html", desc: "لمسات من الرخام الطبيعي والمشايات الهندسية التي تضمن لكم الفخامة والراحة." },
@@ -278,7 +368,6 @@
             `;
         });
 
-        // ظهور الشريط الزجاجي
         setTimeout(() => {
             const smartSlider = document.getElementById('smartGlassSlider');
             if(smartSlider) smartSlider.classList.add('visible');
