@@ -16,26 +16,17 @@
         :root { --royal-green: #1a3c34; --gold: #c5a059; --soft-bg: #fdfdfd; }
         body { font-family: 'Cairo', sans-serif; background-color: var(--soft-bg); margin: 0; padding: 0; color: #333; scroll-behavior: smooth; overflow-x: hidden; }
         
-        /* أيقونة المقايسة العائمة */
+        /* 1. أيقونة المقايسة العائمة */
         .cart-float { position: fixed; top: 20px; left: 20px; background: white; color: var(--royal-green); width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-decoration: none; z-index: 1000; font-size: 1.3rem; transition: 0.3s; border: 1px solid var(--gold); }
         .cart-float:hover { transform: scale(1.1); background: var(--gold); color: white; }
         .cart-badge { position: absolute; top: -5px; right: -5px; background: var(--royal-green); color: white; font-size: 0.75rem; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
 
-        /* الهيرو السينمائي المتطور (الفيديو المتأمن) */
+        /* 2. الهيرو السينمائي المتأمن (فيديو + طبقة تمويه) */
         .hero-banner { position: relative; width: 100%; height: 65vh; overflow: hidden; display: flex; align-items: center; justify-content: center; background: var(--royal-green); }
-        
-        .hero-video {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            object-fit: cover; z-index: 1;
-        }
-
-        .hero-banner::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.3); z-index: 2; /* تعتيم خفيف جداً لإظهار الفيديو */
-        }
-
+        .hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+        .hero-banner::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.35); z-index: 2; }
         .hero-content { position: relative; z-index: 3; text-align: center; color: white; padding: 20px; }
-        .hero-content h1 { font-family: 'Amiri', serif; font-size: clamp(30px, 6vw, 55px); margin-bottom: 15px; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); }
+        .hero-content h1 { font-family: 'Amiri', serif; font-size: clamp(28px, 6vw, 55px); margin-bottom: 15px; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); }
         .hero-content p { font-size: 1.3rem; font-weight: 400; text-shadow: 1px 1px 5px rgba(0,0,0,0.7); max-width: 800px; margin: 0 auto; }
 
         .container { max-width: 1300px; margin: 60px auto; padding: 0 25px; }
@@ -43,65 +34,57 @@
         .section-header h2 { font-family: 'Amiri', serif; font-size: 2.8rem; color: var(--royal-green); font-weight: 700; position: relative; display: inline-block; padding-bottom: 15px; }
         .section-header h2::after { content: ''; position: absolute; bottom: 0; left: 25%; width: 50%; height: 3px; background: var(--gold); border-radius: 10px; }
 
-        /* شبكة الـ 5 منتجات بتصميم البوتيك */
-        .product-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 35px; 
-            margin-bottom: 80px; 
-        }
-
-        /* كارت الملياردير مع حواف 20px */
-        .card { 
-            background: white; border-radius: 20px; overflow: hidden; 
-            box-shadow: 0 10px 40px rgba(0,0,0,0.05); transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1); 
-            border: 1px solid #f0f0f0; display: flex; flex-direction: column; position: relative; 
-        }
+        /* 3. شبكة الـ 5 منتجات بتصميم البوتيك (حواف 20px) */
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 35px; margin-bottom: 80px; }
+        .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.05); transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1); border: 1px solid #f0f0f0; display: flex; flex-direction: column; position: relative; }
         .card:hover { transform: translateY(-15px); box-shadow: 0 30px 60px rgba(0,0,0,0.15); border-color: var(--gold); }
-        
         .badge { position: absolute; top: 15px; left: 15px; background: var(--gold); color: white; font-size: 0.7rem; padding: 6px 12px; border-radius: 50px; font-weight: 800; z-index: 5; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-
-        .img-wrapper { width: 100%; aspect-ratio: 4/3; overflow: hidden; position: relative; background: #fff; }
+        .img-wrapper { width: 100%; aspect-ratio: 4/3; overflow: hidden; position: relative; }
         .img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: 1.2s; }
         .card:hover .img-wrapper img { transform: scale(1.1); }
         
         .card-body { padding: 25px; text-align: center; flex-grow: 1; }
         .card-body span { color: var(--gold); font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 8px; }
         .card-body h3 { font-family: 'Amiri', serif; margin: 0; font-size: 1.6rem; color: var(--royal-green); font-weight: 700; }
-        .card-body p { color: #666; font-size: 1rem; margin-top: 15px; line-height: 1.6; font-weight: 400; }
+        .card-body p { color: #666; font-size: 1rem; margin-top: 15px; line-height: 1.6; }
         
-        .price-note { color: var(--gold); font-size: 0.85rem; margin-top: 15px; font-weight: 700; border-top: 1px solid #eee; padding-top: 15px; }
-
         .card-actions { padding: 0 25px 25px; display: flex; flex-direction: column; gap: 10px; }
         .btn-add-cart { background: var(--royal-green); color: white; border: none; padding: 15px; border-radius: 12px; cursor: pointer; font-family: 'Cairo', sans-serif; font-weight: 700; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px; }
-        .btn-add-cart:hover { background: var(--gold); transform: scale(1.02); }
+        .btn-add-cart:hover { background: var(--gold); }
 
-        /* الواتساب */
+        /* 4. الشريط الزجاجي الذكي (الذي يعرض الأقسام) */
+        #smartGlassSlider { position: fixed; bottom: 110px; left: 50%; transform: translate(-50%, 200%); background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 20px; padding: 10px 20px; display: flex; gap: 20px; z-index: 999; transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: max-content; }
+        #smartGlassSlider.visible { transform: translate(-50%, 0); }
+        .smart-glass-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; transition: 0.3s; }
+        .smart-glass-item img { width: 50px; height: 50px; object-fit: cover; border-radius: 50%; border: 2px solid #fff; }
+        .smart-glass-item span { font-size: 0.75rem; color: var(--royal-green); font-weight: 700; margin-top: 5px; }
+
+        /* 5. زرار سابقة الأعمال والواتساب */
+        .catalog-float-btn { position: fixed; bottom: 120px; right: 40px; background: var(--royal-green); color: white; padding: 12px 25px; border-radius: 50px; cursor: pointer; z-index: 1000; font-weight: 700; display: flex; align-items: center; gap: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); transition: 0.3s; border: 1px solid var(--gold); }
+        .catalog-float-btn:hover { transform: scale(1.05); background: var(--gold); }
         .expert-btn { position: fixed; bottom: 40px; right: 40px; background: #25d366; color: white; padding: 18px 35px; border-radius: 60px; text-decoration: none; box-shadow: 0 15px 35px rgba(37, 211, 102, 0.3); z-index: 1000; font-weight: 700; display: flex; align-items: center; gap: 12px; transition: 0.4s; }
-        .expert-btn:hover { transform: scale(1.05); background: #1eb954; }
 
-        /* تحسينات الموبايل */
+        /* 6. نافذة سابقة الأعمال (Lightbox) - رجعت كما كانت */
+        .catalog-lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); display: none; align-items: center; justify-content: center; z-index: 2000; padding: 20px; }
+        .slider-container { position: relative; max-width: 900px; width: 100%; text-align: center; }
+        .slider-container img { max-width: 100%; max-height: 80vh; border-radius: 20px; border: 3px solid var(--gold); }
+        .nav-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: var(--gold); color: white; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; }
+        .nav-left { left: -60px; } .nav-right { right: -60px; }
+        .close-btn { position: absolute; top: -50px; right: 0; background: none; border: none; color: white; font-size: 2.5rem; cursor: pointer; }
+        .order-design-btn { margin-top: 25px; background: #25d366; color: white; padding: 15px 30px; border-radius: 12px; border: none; font-family: inherit; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; }
+
         @media (max-width: 768px) { 
-            .hero-banner { height: 50vh; }
-            .hero-content h1 { font-size: 2.2rem; }
-            .product-grid { grid-template-columns: 1fr; }
+            .nav-arrow { width: 35px; height: 35px; top: auto; bottom: -60px; }
+            .nav-left { left: 30%; } .nav-right { right: 30%; }
+            .catalog-float-btn { right: 20px; bottom: 160px; font-size: 0.8rem; }
+            .expert-btn { bottom: 20px; right: 20px; padding: 15px; border-radius: 50%; }
             .expert-btn span { display: none; }
-            .expert-btn { padding: 15px; border-radius: 50%; }
         }
-
-        /* كود السلايدر السفلي */
-        .related-section { margin-top: 80px; padding-top: 40px; border-top: 1px solid #eee; }
-        .related-section h3 { font-family: 'Amiri', serif; color: var(--royal-green); text-align: center; font-size: 2.2rem; margin-bottom: 40px; }
-        .horizontal-slider { display: flex; gap: 20px; overflow-x: auto; padding: 10px 5px 30px; scrollbar-width: none; }
-        .horizontal-slider::-webkit-scrollbar { display: none; }
-        .glass-product-card { min-width: 280px; background: white; border: 1px solid #eee; border-radius: 20px; padding: 15px; text-decoration: none; text-align: center; transition: 0.4s; }
-        .glass-product-card:hover { border-color: var(--gold); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .glass-product-card img { width: 100%; height: 150px; object-fit: cover; border-radius: 15px; margin-bottom: 10px; }
     </style>
 </head>
 <body>
 
-    <a href="../cart.html" class="cart-float" aria-label="قائمة المقايسة">
+    <a href="../cart.html" class="cart-float">
         <i class="fas fa-clipboard-list"></i>
         <span class="cart-badge" id="cartCount">0</span>
     </a>
@@ -111,151 +94,145 @@
             <video class="hero-video" autoplay loop muted playsinline>
                 <source src="https://res.cloudinary.com/dwa0e5sup/video/upload/e_accelerate:-25,e_brightness:5,e_contrast:5/l_My%20Brand:Habib_Landscape_Boutique_lfd7am/c_scale,w_180/fl_layer_apply,g_north_west,x_40,y_40/q_auto/f_auto/v1775693440/decorative-white-pebbles-finish_nc4acd.mp4" type="video/mp4">
             </video>
-            <div class="hero-content" data-aos="fade-up">
+            <div class="hero-content">
                 <div style="display: inline-flex; align-items: center; gap: 10px; background: rgba(26, 60, 52, 0.85); padding: 10px 30px; border-radius: 50px; border: 1px solid var(--gold); font-weight: bold; font-size: 1.2rem; margin-bottom: 25px;">
                     <i class="fas fa-phone-alt" style="color: var(--gold);"></i> 01016961497
                 </div>
                 <h1>بوتيك النجيل الصناعي الفاخر</h1>
-                <p>نحن لا نبيع مجرد خامات، نحن نصمم لك قطعة من الجنة في قلب مساحتك بإشراف هندسي وتوريد ملكي خلال 48 ساعة.</p>
+                <p>صياغة هندسية مخصصة للقصور والفلل.. توريد وتركيب ملكي في 48 ساعة.</p>
             </div>
         </section>
 
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
+            <div class="section-header">
                 <h2>Royal Selection | اختيار الصفوة</h2>
             </div>
 
             <div class="product-grid">
-                
-                <div class="card" data-aos="fade-up">
+                <div class="card">
                     <div class="badge">NEW</div>
-                    <div class="img-wrapper">
-                        <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775700325/grass-6mm.jpg_zvt4du.jpg" alt="Minimalist Pure 6mm" loading="lazy">
-                    </div>
+                    <div class="img-wrapper"><img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775700325/grass-6mm.jpg_zvt4du.jpg" alt="Habib Eco 6mm"></div>
                     <div class="card-body">
                         <span>Minimalist Pure</span>
                         <h3>Habib Eco (6mm)</h3>
-                        <p>فلسفة البساطة في أرقى صورها. مصمم للمساحات التي تبحث عن النظافة المطلقة والمظهر العملي الأنيق دون تكلف.</p>
-                        <div class="price-note"><i class="fas fa-info-circle"></i> المقايسة الفنية تحدد السعر النهائي</div>
-                    </div>
-                    <div class="card-actions">
-                        <button type="button" class="btn-add-cart" onclick="quickAddToCart('6', 'Habib Eco (6mm)')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
+                        <p>فلسفة البساطة في أرقى صورها. مصمم للمساحات التي تبحث عن النظافة المطلقة والمظهر العملي الأنيق.</p>
+                        <button class="btn-add-cart" onclick="quickAddToCart('6', 'Habib Eco (6mm)')"><i class="fas fa-plus"></i> أضف للمقايسة</button>
                     </div>
                 </div>
-
-                <div class="card" data-aos="fade-up" data-aos-delay="100">
+                <div class="card">
                     <div class="badge">BEST SELLER</div>
-                    <div class="img-wrapper">
-                        <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775700311/grass-11mm.jpg_i6fcam.jpg" alt="Urban Terrace Elite 11mm" loading="lazy">
-                    </div>
+                    <div class="img-wrapper"><img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775700311/grass-11mm.jpg_i6fcam.jpg" alt="Habib Practical 11mm"></div>
                     <div class="card-body">
                         <span>Urban Terrace Elite</span>
                         <h3>Habib Practical (11mm)</h3>
-                        <p>التوازن المثالي لخصوصية شرفتك. نسيج ناعم وكثافة مدروسة تمنح بلكونتك إطلالة الفنادق العالمية الساحرة.</p>
-                        <div class="price-note"><i class="fas fa-info-circle"></i> المقايسة الفنية تحدد السعر النهائي</div>
-                    </div>
-                    <div class="card-actions">
-                        <button type="button" class="btn-add-cart" onclick="quickAddToCart('11', 'Habib Practical (11mm)')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
+                        <p>التوازن المثالي لخصوصية شرفتك. نسيج ناعم وكثافة مدروسة تمنح بلكونتك إطلالة الفنادق.</p>
+                        <button class="btn-add-cart" onclick="quickAddToCart('11', 'Habib Practical (11mm)')"><i class="fas fa-plus"></i> أضف للمقايسة</button>
                     </div>
                 </div>
-
-                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                <div class="card">
                     <div class="badge">LANDSCAPE GOLD</div>
-                    <div class="img-wrapper">
-                        <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775700294/grass-30mm.jpg_g8cczk.jpg" alt="The Natural Legacy 30mm" loading="lazy">
-                    </div>
+                    <div class="img-wrapper"><img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775700294/grass-30mm.jpg_g8cczk.jpg" alt="Habib Antalya 30mm"></div>
                     <div class="card-body">
                         <span>The Natural Legacy</span>
                         <h3>Habib Antalya (30mm)</h3>
-                        <p>بداية الفخامة الحقيقية. كثافة غنية تحاكي الطبيعة في أوج نضارتها، لتمنح حديقتك هيبة القصور وتتحمل ذكرياتك الثمينة.</p>
-                        <div class="price-note"><i class="fas fa-info-circle"></i> المقايسة الفنية تحدد السعر النهائي</div>
-                    </div>
-                    <div class="card-actions">
-                        <button type="button" class="btn-add-cart" onclick="quickAddToCart('30', 'Habib Antalya (30mm)')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
+                        <p>بداية الفخامة الحقيقية. كثافة غنية تحاكي الطبيعة، لتمنح حديقتك هيبة القصور وتتحمل ذكرياتك.</p>
+                        <button class="btn-add-cart" onclick="quickAddToCart('30', 'Habib Antalya (30mm)')"><i class="fas fa-plus"></i> أضف للمقايسة</button>
                     </div>
                 </div>
-
-                <div class="card" data-aos="fade-up" data-aos-delay="300">
+                <div class="card">
                     <div class="badge">VIP SELECTION</div>
-                    <div class="img-wrapper">
-                        <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775700336/grass-40mm.jpg_bokwik.jpg" alt="VIP Sensory Experience 40mm" loading="lazy">
-                    </div>
+                    <div class="img-wrapper"><img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775700336/grass-40mm.jpg_bokwik.jpg" alt="Habib Istanbul 40mm"></div>
                     <div class="card-body">
                         <span>VIP Sensory Experience</span>
                         <h3>Habib Istanbul (40mm)</h3>
-                        <p>تجربة حسية لا تُنسى. شعيرات طويلة وكثافة مضاعفة تمنحك شعوراً بالانغماس في الرفاهية مع كل خطوة، تماماً كما في أفخم المنتجعات.</p>
-                        <div class="price-note"><i class="fas fa-info-circle"></i> المقايسة الفنية تحدد السعر النهائي</div>
-                    </div>
-                    <div class="card-actions">
-                        <button type="button" class="btn-add-cart" onclick="quickAddToCart('40', 'Habib Istanbul (40mm)')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
+                        <p>تجربة حسية لا تُنسى. شعيرات طويلة وكثافة مضاعفة تمنحك شعوراً بالرفاهية مع كل خطوة.</p>
+                        <button class="btn-add-cart" onclick="quickAddToCart('40', 'Habib Istanbul (40mm)')"><i class="fas fa-plus"></i> أضف للمقايسة</button>
                     </div>
                 </div>
-
-                <div class="card" data-aos="fade-up" data-aos-delay="400">
+                <div class="card">
                     <div class="badge" style="background: var(--royal-green);">ROYAL GRADE</div>
-                    <div class="img-wrapper">
-                        <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775700146/grass-50mm.jpg_jksw1m.jpg" alt="Royal Infinite Lush 50mm" loading="lazy">
-                    </div>
+                    <div class="img-wrapper"><img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775700146/grass-50mm.jpg_jksw1m.jpg" alt="Habib Anatolian 50mm"></div>
                     <div class="card-body">
                         <span>Royal Infinite Lush</span>
                         <h3>Habib Anatolian (50mm)</h3>
-                        <p>القمة التي لا تُنافس. أقصى ما توصلت إليه تكنولوجيا النجيل عالمياً؛ نعومة حريرية وكثافة ملكية تليق فقط بالمشاريع الاستثنائية.</p>
-                        <div class="price-note"><i class="fas fa-info-circle"></i> المقايسة الفنية تحدد السعر النهائي</div>
-                    </div>
-                    <div class="card-actions">
-                        <button type="button" class="btn-add-cart" onclick="quickAddToCart('50', 'Habib Anatolian (50mm)')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
+                        <p>القمة التي لا تُنافس. أقصى ما توصلت إليه تكنولوجيا النجيل عالمياً؛ نعومة حريرية وكثافة ملكية.</p>
+                        <button class="btn-add-cart" onclick="quickAddToCart('50', 'Habib Anatolian (50mm)')"><i class="fas fa-plus"></i> أضف للمقايسة</button>
                     </div>
                 </div>
-
-            </div> 
+            </div>
 
             <div class="related-section">
                 <h3>تكتمل اللوحة الفنية مع إضافاتنا الهندسية</h3>
-                <div class="horizontal-slider" id="relatedSlider">
-                    </div>
+                <div class="horizontal-slider" id="relatedSlider"></div>
             </div>
-
-        </div> 
+        </div>
     </main>
 
-    <a href="https://wa.me/201016961497" class="expert-btn" aria-label="تواصل واتساب">
-        <i class="fab fa-whatsapp"></i>
-        <span>اطلب مقايسة فنية ومعاينة فورية</span>
+    <div id="smartGlassSlider">
+        <a href="white-marble.html" class="smart-glass-item">
+            <img src="../assets/images/zalat/white-zalat.jpg" alt="معرض الزلط"><span>معرض الزلط</span>
+        </a>
+        <a href="marble.html" class="smart-glass-item">
+            <img src="../assets/images/marble/marble-galala.jpg" alt="معرض الرخام"><span>معرض الرخام</span>
+        </a>
+        <a href="trees.html" class="smart-glass-item">
+            <img src="../assets/images/nageel/modern-landscape-design.jpg" alt="معرض الأشجار"><span>معرض الأشجار</span>
+        </a>
+    </div>
+
+    <div class="catalog-float-btn" onclick="openCatalog('nageel')">
+        <i class="fas fa-camera"></i> شاهد تنفيذاتنا في النجيل
+    </div>
+    <a href="https://wa.me/201016961497" class="expert-btn">
+        <i class="fab fa-whatsapp"></i> <span>استشارة ومقايسة مجانية</span>
     </a>
 
-    <footer style="text-align: center; padding: 60px 20px; color: #aaa; font-size: 0.85rem; background: #fff; margin-top: 40px; border-top: 1px solid #eee;">
-        <p>&copy; 2026 Habib Store | Premium Selection - Engineered for Luxury Landscape</p>
+    <div id="catalogLightbox" class="catalog-lightbox" onclick="closeCatalog(event)">
+        <button class="close-btn" onclick="closeCatalog(event)">&times;</button>
+        <div class="slider-container">
+            <button class="nav-arrow nav-left" onclick="prevCatalogImage(); event.stopPropagation();"><i class="fas fa-chevron-left"></i></button>
+            <img id="catalogMainImage" src="" alt="سابقة أعمال حبيب ستور">
+            <button class="nav-arrow nav-right" onclick="nextCatalogImage(); event.stopPropagation();"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <button class="order-design-btn" onclick="orderCurrentDesign(); event.stopPropagation();">
+            أريد تنفيذ هذا التصميم <i class="fab fa-whatsapp"></i>
+        </button>
+    </div>
+
+    <footer style="text-align: center; padding: 40px; color: #aaa; font-size: 0.8rem; background: #fff;">
+        <p>&copy; 2026 Habib Store | Premium Selection</p>
     </footer>
 
     <script>
-        // تحديث العداد
+        // سكريبت الشريط الزجاجي والسلايدر
         function updateCartCount() {
             try {
                 let cart = JSON.parse(localStorage.getItem('cart')) || [];
-                let count = cart.reduce((total, item) => total + (item.quantity || 1), 0);
-                document.getElementById('cartCount').textContent = count;
-            } catch(e) { console.log("Cart Error"); }
+                document.getElementById('cartCount').textContent = cart.reduce((t, i) => t + (i.quantity || 1), 0);
+            } catch(e) {}
         }
         updateCartCount();
         window.addEventListener('storage', updateCartCount);
+        setTimeout(() => document.getElementById('smartGlassSlider').classList.add('visible'), 5000);
 
-        // تعبئة السلايدر السفلي
         const complements = [
             { name: "معرض الزلط الملكي", img: "../assets/images/zalat/white-zalat.jpg", link: "white-marble.html", desc: "أحجار ديكورية منتقاة بعناية." },
             { name: "تجليد الميكا الفاخر", img: "../assets/images/marble/stone-mica-red.jpg", link: "stones.html?id=52", desc: "فخامة الأحجار الطبيعية للجدران." },
-            { name: "الأشجار والنخيل", img: "../assets/images/nageel/modern-landscape-design.jpg", link: "trees.html", desc: "اللمسة الخضراء الحية لمكانك." }
+            { name: "رخام جلالة الفاخر", img: "../assets/images/marble/marble-galala.jpg", link: "stones.html?id=40", desc: "مشايات هندسية ملكية." }
         ];
-
         const slider = document.getElementById('relatedSlider');
         complements.forEach(item => {
             slider.innerHTML += `
                 <a href="${item.link}" class="glass-product-card">
-                    <img src="${item.img}" alt="${item.name}" loading="lazy">
+                    <img src="${item.img}" alt="${item.name}">
                     <h4>${item.name}</h4>
                     <p>${item.desc}</p>
                 </a>
             `;
         });
+
+        // وظائف سابقة الأعمال (Lightbox) - تأكد إن الصور موجودة في ملف main.js أو أضفها هنا
+        // أنا مفترض إن main.js هو اللي فيه الـ Array بتاعة الصور ووظيفة openCatalog
     </script>
 </body>
 </html>
