@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* تم توحيد الألوان مع باقي صفحات المعارض */
+        /* توحيد الألوان */
         :root { --royal-green: #1a3c34; --gold: #c5a059; --black: #0a0a0a; --bg: #fdfdfd; --white: #ffffff; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
@@ -26,63 +26,77 @@
         }
         .logo { font-family: 'Amiri', serif; font-size: 30px; color: var(--royal-green); text-decoration: none; font-weight: bold; letter-spacing: 1px; }
 
-        /* Professional Hero Section (التعديل السينمائي هنا) */
+        /* --- الهيرو السينمائي الجديد (فيديو الزلط الأبيض) --- */
         .hero { 
-            height: 75vh; /* تقليل الارتفاع لإعطاء إيحاء الشريط السينمائي البانورامي */
-            position: relative; /* ضروري عشان الفيديو يكون جواه */
-            overflow: hidden; /* بيقص أي زيادة من الفيديو الطولي */
+            height: 75vh; 
+            position: relative; 
+            overflow: hidden; 
             display: flex; flex-direction: column; justify-content: center; align-items: center;
             text-align: center; color: #fff;
-            background-color: var(--royal-green); /* لون احتياطي قبل تحميل الفيديو */
+            background-color: var(--royal-green); 
         }
         
-        /* كود سحر الفيديو */
         .hero-video {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* بيقص الفيديو الطولي عشان يملأ العرض بالكامل من غير مط */
-            object-position: center center; /* بيركز على منتصف الشاشة (الفنش والزلط) */
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover; 
+            object-position: center center; 
             z-index: 0;
         }
 
-        /* طبقة ظل فوق الفيديو عشان الكلام يظهر بفخامة */
+        /* ظل خفيف جداً لضمان وضوح فيديو الزلط */
         .hero::before {
             content: '';
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.55); /* تغميق الفيديو بنسبة 55% */
+            background: rgba(0, 0, 0, 0.25); /* قللنا التغميق لـ 25% بس */
             z-index: 1;
         }
 
-        .hero-content {
-            position: relative; /* عشان الكلام يكون فوق الفيديو والظل */
+        /* تصميم "مينيمال" لعدم تغطية تفاصيل الفيديو */
+        .hero-content-minimal {
+            position: relative; 
             z-index: 2;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            padding: 50px 70px;
-            border-radius: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            max-width: 950px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+            padding: 0 20px;
+            max-width: 900px;
         }
         
-        .hero p.tagline { font-weight: 700; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; font-size: 14px; margin-bottom: 20px; }
-        .hero h1 { font-family: 'Amiri', serif; font-size: clamp(40px, 7vw, 65px); line-height: 1.2; margin-bottom: 25px; }
-        .hero .sub-text { font-size: 19px; color: #f0f0f0; font-weight: 400; letter-spacing: 0; line-height: 1.6; }
+        .tagline-gold { 
+            font-weight: 700; letter-spacing: 4px; color: var(--gold); 
+            text-transform: uppercase; font-size: 15px; margin-bottom: 15px; 
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.7); 
+        }
+        
+        .hero-content-minimal h1 { 
+            font-family: 'Amiri', serif; font-size: clamp(40px, 7vw, 65px); 
+            line-height: 1.2; margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+        }
+        
+        .hero-content-minimal .sub-text { 
+            font-size: 20px; color: #fdfdfd; font-weight: 600; 
+            line-height: 1.6; margin-bottom: 35px;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+        }
 
-        /* Grid System */
-        .container { max-width: 1400px; margin: auto; padding: 100px 5%; }
+        .hero-contact-pill {
+            display: inline-flex; align-items: center; gap: 10px; 
+            background: rgba(26, 60, 52, 0.85); padding: 12px 30px; 
+            border-radius: 50px; border: 1px solid var(--gold); 
+            font-weight: bold; font-size: 1.3rem; margin-bottom: 25px; 
+            color: white; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            backdrop-filter: blur(5px);
+        }
+
+        /* --- كروت المنتجات --- */
+        .container { max-width: 1400px; margin: auto; padding: 80px 5% 50px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 45px; }
         .product-link { text-decoration: none; color: inherit; display: block; }
         
         .product-card { 
             background: var(--white); border-radius: 20px; overflow: hidden; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.04); transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-            border: 1px solid #f0f0f0;
-            height: 100%; display: flex; flex-direction: column;
+            border: 1px solid #f0f0f0; height: 100%; display: flex; flex-direction: column;
         }
         .product-card:hover { transform: translateY(-15px); box-shadow: 0 40px 80px rgba(0,0,0,0.15); border-color: var(--gold); }
         
@@ -105,6 +119,27 @@
         }
         .product-card:hover .btn-luxury { background: var(--gold); }
 
+        /* --- الشريط السينمائي السفلي (فيديو البوتيك) --- */
+        .bottom-cinematic-strip {
+            position: relative; width: 100%; height: 40vh; overflow: hidden; margin-top: 30px;
+        }
+        .bottom-cinematic-strip video {
+            width: 100%; height: 100%; object-fit: cover; object-position: center center;
+        }
+        .bottom-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(26, 60, 52, 0.4); /* ظل أخضر خفيف */
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            color: #fff; text-align: center; padding: 20px;
+        }
+        .bottom-overlay h2 {
+            font-family: 'Amiri', serif; font-size: clamp(28px, 5vw, 45px);
+            color: var(--gold); margin-bottom: 15px; text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+        }
+        .bottom-overlay p {
+            font-size: 1.2rem; font-weight: 700; text-shadow: 2px 2px 6px rgba(0,0,0,0.7); letter-spacing: 1px;
+        }
+
         /* Floating UI (أيقونة المقايسة) */
         .cart-trigger { 
             position: fixed; bottom: 35px; left: 35px; background: var(--royal-green); color: #fff;
@@ -115,13 +150,12 @@
         .cart-trigger:hover { transform: scale(1.1); background: var(--gold); border-color: var(--white); }
         .cart-count { position: absolute; top: -5px; right: -5px; background: var(--gold); color: white; width: 26px; height: 26px; border-radius: 50%; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
 
-        footer { text-align: center; padding: 80px 20px 50px; background: #fafafa; border-top: 1px solid #eee; color: #999; }
+        footer { text-align: center; padding: 60px 20px 40px; background: #fafafa; color: #999; }
         .policy-link { display: inline-block; margin: 20px 0; color: #666; text-decoration: none; font-size: 14px; font-weight: 600; border-bottom: 1px solid var(--gold); padding-bottom: 3px; transition: 0.3s; }
         .policy-link:hover { color: var(--gold); }
         
         @media (max-width: 768px) { 
             .hero { height: 70vh; }
-            .hero-content { padding: 30px; margin: 0 15px; } 
             .grid { grid-template-columns: 1fr; } 
             .cart-trigger { bottom: 20px; left: 20px; width: 60px; height: 60px; font-size: 22px; } 
         }
@@ -138,22 +172,16 @@
 
 <section class="hero" data-aos="fade-in">
     <video class="hero-video" autoplay loop muted playsinline>
-        <source src="https://res.cloudinary.com/dwa0e5sup/video/upload/q_auto/f_auto/v1775695212/Habib_Landscape_Boutique_jiblvy.mp4" type="video/mp4">
+        <source src="https://res.cloudinary.com/dwa0e5sup/video/upload/q_auto/f_auto/v1775693440/decorative-white-pebbles-finish_nc4acd.mp4" type="video/mp4">
     </video>
 
-    <div class="hero-content" data-aos="zoom-in" data-aos-delay="200">
-        
-        <div style="display: inline-flex; align-items: center; gap: 10px; background: rgba(26, 60, 52, 0.9); padding: 8px 25px; border-radius: 50px; border: 1px solid var(--gold); font-weight: bold; font-size: 1.3rem; margin-bottom: 25px; color: white; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+    <div class="hero-content-minimal" data-aos="zoom-in" data-aos-delay="200">
+        <div class="hero-contact-pill">
             <i class="fas fa-phone-alt" style="color: var(--gold);"></i> 01016961497
         </div>
-
-        <p class="tagline">Habib Store | Premium Selection</p>
+        <p class="tagline-gold">Habib Store | Premium Selection</p>
         <h1>تشكيلة 2026 الحصرية</h1>
         <p class="sub-text">نحن لا نورد مجرد خامات، نحن نصمم لك قطعة من الجنة في قلب مساحتك بإشراف هندسي متكامل ومقايسة دقيقة.</p>
-        
-        <div style="margin-top: 30px; color: #fff; background: var(--gold); display: inline-block; padding: 12px 30px; border-radius: 8px; font-weight: 700; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-            <i class="fas fa-stopwatch" style="margin-left: 8px;"></i> معاينة فورية وتوريد وتركيب خلال 48 ساعة
-        </div>
     </div>
 </section>
 
@@ -222,6 +250,16 @@
         
     </div>
 </div>
+
+<section class="bottom-cinematic-strip" data-aos="fade-up">
+    <video autoplay loop muted playsinline>
+        <source src="https://res.cloudinary.com/dwa0e5sup/video/upload/q_auto/f_auto/v1775695212/Habib_Landscape_Boutique_jiblvy.mp4" type="video/mp4">
+    </video>
+    <div class="bottom-overlay">
+        <h2>نصمم لك "قطعة من الجنة"</h2>
+        <p><i class="fas fa-stopwatch" style="color: var(--gold); margin-left: 8px;"></i> معاينة فورية وتوريد وتركيب خلال 48 ساعة</p>
+    </div>
+</section>
 
 <a href="cart.html" class="cart-trigger" aria-label="الذهاب إلى قائمة المقايسة">
     <i class="fas fa-clipboard-list"></i>
