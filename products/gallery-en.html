@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exclusive marble and natural stone gallery by Habib Landscape Boutique. Premium supply and installation.">
+    <title>Marble & Stone Gallery | Habib Landscape Boutique</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <script src="../main.js" defer></script>
+    
+    <style>
+        :root { --royal-green: #1a3c34; --gold: #c5a059; --soft-bg: #f8f9fa; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: var(--soft-bg); margin: 0; padding: 0; color: #333; scroll-behavior: smooth; overflow-x: hidden; }
+
+        /* Small Boutique Logo (100px) */
+        .brand-logo { width: 100px; height: auto; margin-bottom: 20px; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3)); transition: 0.3s; }
+
+        /* Hero Banner - Compact & Elegant */
+        .hero-banner { position: relative; width: 100%; height: 75vh; min-height: 450px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+        .hero-banner video { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100%; min-height: 100%; object-fit: cover; z-index: 1; filter: brightness(0.45); }
+        .hero-content { position: relative; z-index: 2; text-align: center; color: white; padding: 0 20px; }
+        .hero-content h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 700; margin-bottom: 10px; }
+
+        /* Language Switch Button */
+        .lang-switch { position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,0.1); border: 1px solid white; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-size: 0.8rem; z-index: 1001; transition: 0.3s; }
+        .lang-switch:hover { background: white; color: var(--royal-green); }
+
+        /* Product Grid Setup */
+        .container { max-width: 1300px; margin: 40px auto; padding: 0 15px; }
+        .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+        @media (min-width: 992px) { .product-grid { grid-template-columns: repeat(4, 1fr); gap: 25px; } }
+
+        .card { background: white; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0,0,0,0.05); transition: 0.4s; position: relative; display: flex; flex-direction: column; animation: luxuryPulse 5s infinite; }
+        .card:hover { transform: translateY(-10px); border-color: var(--gold); box-shadow: 0 15px 30px rgba(0,0,0,0.1); animation: none; }
+        @keyframes luxuryPulse {
+            0%, 100% { box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+            50% { box-shadow: 0 10px 20px rgba(197, 160, 89, 0.15); }
+        }
+
+        .img-wrapper { width: 100%; aspect-ratio: 1/1; overflow: hidden; background: #fff; }
+        .img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: 1s ease; }
+        .card:hover .img-wrapper img { transform: scale(1.1); }
+
+        .card-body { padding: 15px; text-align: center; flex-grow: 1; }
+        .card-body h3 { font-size: 1rem; color: var(--royal-green); margin: 5px 0; font-weight: 700; }
+        .card-body p { font-size: 0.8rem; color: #666; line-height: 1.5; margin: 8px 0; height: 40px; overflow: hidden; }
+
+        .btn-add-cart { background: var(--royal-green); color: white; border: none; padding: 12px; width: 100%; cursor: pointer; font-weight: 600; font-family: inherit; transition: 0.3s; }
+        .btn-add-cart:hover { background: var(--gold); }
+
+        /* Floating UI */
+        .cart-float { position: fixed; top: 20px; left: 20px; background: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border: 1px solid var(--gold); text-decoration: none; color: var(--royal-green); }
+        .cart-badge { position: absolute; top: -5px; right: -5px; background: var(--gold); color: white; font-size: 0.7rem; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+        .expert-btn { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; z-index: 1000; font-weight: bold; display: flex; align-items: center; gap: 10px; }
+    </style>
+</head>
+<body>
+    <a href="gallery.html" class="lang-switch">العربية</a>
+
+    <a href="../cart.html" class="cart-float"><i class="fas fa-clipboard-list"></i><span class="cart-badge" id="cartCount">0</span></a>
+
+    <section class="hero-banner">
+        <video autoplay muted loop playsinline><source src="https://res.cloudinary.com/dwa0e5sup/video/upload/q_auto/f_auto/v1775693481/habib-outdoor-luxury-vibes_grcz5f.mp4" type="video/mp4"></video>
+        <div class="hero-content">
+            <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png" alt="Logo" class="brand-logo">
+            <h1>Premium Marble & Stone Gallery</h1>
+            <p>High-end supply and engineering installation for luxury estates.</p>
+            <div style="background: rgba(26,60,52,0.8); padding: 8px 25px; border-radius: 50px; border: 1px solid var(--gold); display: inline-block; font-weight: bold;">
+                <i class="fas fa-phone-alt" style="color: var(--gold); margin-right: 8px;"></i> 01016961497
+            </div>
+        </div>
+    </section><div class="container">
+        <div style="text-align: center; margin-bottom: 50px;">
+            <h2 style="color: var(--royal-green); font-weight: 400; font-size: 2rem;">Exclusive Marble & Stone Collection</h2>
+            <div style="width: 60px; height: 2px; background: var(--gold); margin: 15px auto;"></div>
+        </div>
+
+        <div class="product-grid">
+            
+            <div class="card">
+                <div class="img-wrapper">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775732441/habib-landscape-boutique-luxury-wall-cladding-villa.jpg_xtxuid.jpg" alt="Galala Marble">
+                </div>
+                <div class="card-body">
+                    <span>Premium Classic</span>
+                    <h3>Galala Marble</h3>
+                    <p>Authentic elegance providing a timeless classical radiance for your spaces.</p>
+                </div>
+                <div class="card-actions">
+                    <button class="btn-add-cart" onclick="quickAddToCart('40', 'Galala Marble')">Add to Quote</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img-wrapper">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775732414/habib-landscape-boutique-royal-villa-entrance-flooring.jpg_mpu58y.jpg" alt="Crystal White Marble">
+                </div>
+                <div class="card-body">
+                    <span>Pure Luxury</span>
+                    <h3>Crystal White Marble</h3>
+                    <p>Exceptional purity that adds spaciousness and visual serenity to palaces.</p>
+                </div>
+                <div class="card-actions">
+                    <button class="btn-add-cart" onclick="quickAddToCart('41', 'Crystal White Marble')">Add to Quote</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img-wrapper">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775732694/habib-landscape-boutique-decorative-outdoor-walls.jpg_cwwqq8.jpg" alt="Emperador Marble">
+                </div>
+                <div class="card-body">
+                    <span>Royal Warmth</span>
+                    <h3>Emperador Marble</h3>
+                    <p>Royal warmth and natural veins reflecting luxury in its finest forms.</p>
+                </div>
+                <div class="card-actions">
+                    <button class="btn-add-cart" onclick="quickAddToCart('42', 'Emperador Marble')">Add to Quote</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img-wrapper">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775732416/habib-boutique-red-mica-stone-wall-cladding.jpg_kr4uuk.jpg" alt="Spanish Black Marble">
+                </div>
+                <div class="card-body">
+                    <span>Majestic Presence</span>
+                    <h3>Spanish Black Marble</h3>
+                    <p>The prestige and depth of black for a strong and confident architectural personality.</p>
+                </div>
+                <div class="card-actions">
+                    <button class="btn-add-cart" onclick="quickAddToCart('43', 'Spanish Black Marble')">Add to Quote</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img-wrapper">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775732444/habib-landscape-boutique-luxury-outdoor-pathway.jpg_tg3aho.jpg" alt="Carrara Marble">
+                </div>
+                <div class="card-body">
+                    <span>Italian Art</span>
+                    <h3>Carrara Marble</h3>
+                    <p>Italian artistic fusion blending natural charm with refined taste.</p>
+                </div>
+                <div class="card-actions">
+                    <button class="btn-add-cart" onclick="quickAddToCart('44', 'Carrara Marble')">Add to Quote</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img-wrapper">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775732443/habib-landscape-boutique-seamless-outdoor-flooring.jpg_nlerds.jpg" alt="Sandstone">
+                </div>
+                <div class="card-body">
+                    <span>Natural Harmony</span>
+                    <h3>Natural Sandstone</h3>
+                    <p>Calm sandy harmony that enhances the energy and balance of the location.</p>
+                </div>
+                <div class="card-actions">
+                    <button class="btn-add-cart" onclick="quickAddToCart('46', 'Sandstone')">Add to Quote</button>
+                </div>
+            </div><div class="card">
+                <div class="img-wrapper">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775732445/habib-boutique-elegant-garden-stairs-stone.jpg_okvykf.jpg" alt="Mica Grey Stone">
+                </div>
+                <div class="card-body">
+                    <span>Elite Facades</span>
+                    <h3>Mica Grey Stone</h3>
+                    <p>A modern architectural touch that grants facades durability and calm beauty.</p>
+                </div>
+                <div class="card-actions">
+                    <button class="btn-add-cart" onclick="quickAddToCart('51', 'Mica Grey Stone')">Add to Quote</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img-wrapper">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775732688/habib-boutique-premium-stone-facade-design.jpg_uw9isg.jpg" alt="Mica Red Stone">
+                </div>
+                <div class="card-body">
+                    <span>Warm Elegance</span>
+                    <h3>Mica Red Stone</h3>
+                    <p>Earthy warmth embracing nature to create a vibrant and luxurious facade.</p>
+                </div>
+                <div class="card-actions">
+                    <button class="btn-add-cart" onclick="quickAddToCart('52', 'Mica Red Stone')">Add to Quote</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img-wrapper">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775732689/habib-landscape-boutique-modern-exterior-wall-stone.jpg_gxrsvd.jpg" alt="Black Basalt">
+                </div>
+                <div class="card-body">
+                    <span>Solid Grace</span>
+                    <h3>Black Basalt Stone</h3>
+                    <p>Volcanic durability and strong presence, the elite choice for eternal spaces.</p>
+                </div>
+                <div class="card-actions">
+                    <button class="btn-add-cart" onclick="quickAddToCart('53', 'Black Basalt Stone')">Add to Quote</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img-wrapper">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775732690/habib-boutique-sophisticated-stone-wall-texture.jpg_llbui2.jpg" alt="Decorative Stone">
+                </div>
+                <div class="card-body">
+                    <span>Modern Texture</span>
+                    <h3>Modern Decorative Stone</h3>
+                    <p>Sophisticated textures perfect for high-end interior and exterior designs.</p>
+                </div>
+                <div class="card-actions">
+                    <button class="btn-add-cart" onclick="quickAddToCart('60', 'Decorative Stone')">Add to Quote</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img-wrapper">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775732695/habib-boutique-premium-stone-walkway-design.jpg_kxa78c.jpg" alt="Premium Walkways">
+                </div>
+                <div class="card-body">
+                    <span>Grand Pathways</span>
+                    <h3>Premium Stone Walkways</h3>
+                    <p>Designs reflecting prestige while enduring heavy use with lasting beauty.</p>
+                </div>
+                <div class="card-actions">
+                    <button class="btn-add-cart" onclick="quickAddToCart('61', 'Premium Walkways')">Add to Quote</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img-wrapper">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775732694/habib-boutique-architectural-stone-elements.jpg_ejc9bd.jpg" alt="Architectural Elements">
+                </div>
+                <div class="card-body">
+                    <span>Bespoke Art</span>
+                    <h3>Architectural Stone Details</h3>
+                    <p>Carved artistic pieces from natural stone to decorate entrances and columns.</p>
+                </div>
+                <div class="card-actions">
+                    <button class="btn-add-cart" onclick="quickAddToCart('62', 'Architectural Elements')">Add to Quote</button>
+                </div>
+            </div>
+        </div> </div> <div id="smartGlassSlider">
+        <a href="grass-en.html" class="smart-glass-item">
+            <img src="../assets/images/nageel/grass-40mm-natural-12.jpeg" alt="Grass">
+            <span>Premium Grass</span>
+        </a>
+        <a href="pebbles-en.html" class="smart-glass-item">
+            <img src="../assets/images/zalat/white-zalat.jpg" alt="Pebbles">
+            <span>Royal Pebbles</span>
+        </a>
+        <a href="trees-en.html" class="smart-glass-item">
+            <img src="../assets/images/nageel/modern-landscape-design.jpg" alt="Trees">
+            <span>Trees Design</span>
+        </a>
+    </div>
+
+    <a href="https://wa.me/201016961497" class="expert-btn">
+        <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i>
+        <span>Free Expert Consultation</span>
+    </a>
+
+    <div class="catalog-float-btn" onclick="openCatalog()" style="position: fixed; bottom: 110px; right: 30px; background: var(--royal-green); color: white; padding: 12px 25px; border-radius: 50px; cursor: pointer; z-index: 998; border: 1px solid var(--gold); font-weight: 600;">
+        <i class="fas fa-camera"></i> View Our Portfolio
+    </div>
+
+    <div id="catalogLightbox" class="catalog-lightbox">
+        <button class="close-btn" onclick="closeCatalog(event)" style="position: absolute; top: 20px; right: 20px; background: none; border: none; color: white; font-size: 3rem; cursor: pointer;">&times;</button>
+        <div style="position: relative; width: 90%; max-width: 900px; text-align: center;">
+            <img id="catalogMainImage" src="" alt="Habib Portfolio" style="width: 100%; max-height: 75vh; object-fit: contain; border-radius: 8px; border: 1px solid var(--gold);">
+            <div style="margin-top: 20px; display: flex; justify-content: center; gap: 20px;">
+                <button onclick="prevCatalogImage()" style="background: none; border: 1px solid white; color: white; padding: 10px 25px; cursor: pointer;">Previous</button>
+                <button onclick="nextCatalogImage()" style="background: none; border: 1px solid white; color: white; padding: 10px 25px; cursor: pointer;">Next</button>
+            </div>
+            <button class="order-design-btn" onclick="orderCurrentDesign()" style="margin-top: 25px; background: #25d366; color: white; border: none; padding: 15px 40px; border-radius: 50px; font-weight: bold; cursor: pointer; font-family: inherit;">Request This Design <i class="fab fa-whatsapp"></i></button>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 80px 20px; color: #999; font-size: 0.8rem; background: #fff; margin-top: 50px; border-top: 1px solid #eee; letter-spacing: 2px;">
+        <p>&copy; 2026 HABIB LANDSCAPE BOUTIQUE - THE ART OF STONE</p>
+    </footer>
+
+    <script>
+        const portfolioLinks = [
+            "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775732441/habib-landscape-boutique-luxury-wall-cladding-villa.jpg_xtxuid.jpg",
+            "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775732414/habib-landscape-boutique-royal-villa-entrance-flooring.jpg_mpu58y.jpg",
+            "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775732694/habib-landscape-boutique-decorative-outdoor-walls.jpg_cwwqq8.jpg",
+            "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775732688/habib-boutique-premium-stone-facade-design.jpg_uw9isg.jpg"
+        ];
+        let currentIdx = 0;
+
+        function openCatalog() {
+            document.getElementById('catalogMainImage').src = portfolioLinks[currentIdx];
+            document.getElementById('catalogLightbox').style.display = 'flex';
+        }
+
+        function closeCatalog(e) {
+            if (e.target.id === 'catalogLightbox' || e.target.className === 'close-btn') {
+                document.getElementById('catalogLightbox').style.display = 'none';
+            }
+        }
+
+        function nextCatalogImage() {
+            currentIdx = (currentIdx + 1) % portfolioLinks.length;
+            document.getElementById('catalogMainImage').src = portfolioLinks[currentIdx];
+        }
+
+        function prevCatalogImage() {
+            currentIdx = (currentIdx - 1 + portfolioLinks.length) % portfolioLinks.length;
+            document.getElementById('catalogMainImage').src = portfolioLinks[currentIdx];
+        }
+
+        function orderCurrentDesign() {
+            const msg = `Hi Habib Boutique, I am interested in this design: ${portfolioLinks[currentIdx]}`;
+            window.open(`https://wa.me/201016961497?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        function updateCart() {
+            try {
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                document.getElementById('cartCount').textContent = cart.length;
+            } catch(e) {}
+        }
+        updateCart();
+        window.addEventListener('storage', updateCart);
+        setTimeout(() => document.getElementById('smartGlassSlider').classList.add('visible'), 4000);
+    </script>
+</body>
+</html>
