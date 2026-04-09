@@ -74,10 +74,13 @@
 
         /* الواتساب */
         .expert-btn { position: fixed; bottom: 40px; right: 40px; background: #25d366; color: white; padding: 18px 35px; border-radius: 60px; text-decoration: none; box-shadow: 0 15px 35px rgba(37, 211, 102, 0.3); z-index: 1000; font-weight: 600; display: flex; align-items: center; gap: 15px; transition: 0.4s; }
+        
+        /* تظبيط الزراير العائمة للموبايل */
         @media (max-width: 768px) { 
             .expert-btn { bottom: 20px; right: 20px; padding: 15px 25px; } 
             .expert-btn span { display: none; }
             .hero-content h1 { font-size: 2.2rem; }
+            .catalog-float-btn { bottom: 85px !important; right: 20px !important; }
         }
 
         /* الشريط الزجاجي */
@@ -116,7 +119,7 @@
 
             <div class="product-grid">
                 <div class="card">
-                    <div class="img-wrapper"><div class="badge" style="background: var(--royal-green); color: white;">ENGINEER'S CHOICE</div><img src="../assets/images/nageel/grass-50mm-natural.jpeg" alt="نجيل صناعي Habib Anatolian Nature 50mm" loading="lazy" width="400" height="400"></div>
+                    <div class="img-wrapper"><div class="badge" style="background: var(--royal-green); color: white;">ENGINEER'S CHOICE</div><img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775700146/grass-50mm.jpg_jksw1m.jpg" alt="نجيل صناعي Habib Anatolian Nature 50mm" loading="lazy"></div>
                     <div class="card-body">
                         <span>Imperial Grade</span>
                         <h3>Habib Anatolian Nature (50mm)</h3>
@@ -130,7 +133,7 @@
                 </div>
 
                 <div class="card">
-                    <div class="img-wrapper"><div class="badge">BEST SELLER</div><img src="../assets/images/nageel/grass-40mm-natural-24.jpeg" alt="نجيل صناعي Habib Bosphorus Green 40mm" loading="lazy" width="400" height="400"></div>
+                    <div class="img-wrapper"><div class="badge">BEST SELLER</div><img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775700336/grass-40mm.jpg_bokwik.jpg" alt="نجيل صناعي Habib Bosphorus Green 40mm" loading="lazy"></div>
                     <div class="card-body">
                         <span>Royal Collection</span>
                         <h3>Habib Bosphorus Green (40mm)</h3>
@@ -152,7 +155,7 @@
 
             <div class="product-grid">
                 <div class="card">
-                    <div class="img-wrapper"><div class="badge">LUXURY</div><img src="../assets/images/nageel/grass-30mm-natural-18.jpeg" alt="نجيل صناعي Habib Natural Soft 30mm" loading="lazy" width="400" height="400"></div>
+                    <div class="img-wrapper"><div class="badge">LUXURY</div><img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775700294/grass-30mm.jpg_g8cczk.jpg" alt="نجيل صناعي Habib Natural Soft 30mm" loading="lazy"></div>
                     <div class="card-body">
                         <span>Luxury Touch</span>
                         <h3>Habib Natural Soft (30mm)</h3>
@@ -166,7 +169,7 @@
                 </div>
 
                 <div class="card">
-                    <div class="img-wrapper"><div class="badge">PRACTICAL</div><img src="../assets/images/nageel/grass-11mm-standard-10.png" alt="نجيل صناعي Habib Practical Green 11mm" loading="lazy" width="400" height="400"></div>
+                    <div class="img-wrapper"><div class="badge">PRACTICAL</div><img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775700311/grass-11mm.jpg_i6fcam.jpg" alt="نجيل صناعي Habib Practical Green 11mm" loading="lazy"></div>
                     <div class="card-body">
                         <span>Practical Collection</span>
                         <h3>Habib Practical Green (11mm)</h3>
@@ -180,7 +183,7 @@
                 </div>
 
                 <div class="card">
-                    <div class="img-wrapper"><div class="badge">SMART</div><img src="../assets/images/nageel/grass-6_mm-natural.jpeg" alt="نجيل صناعي Habib Eco Green 6mm" loading="lazy" width="400" height="400"></div>
+                    <div class="img-wrapper"><div class="badge">SMART</div><img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775700325/grass-6mm.jpg_zvt4du.jpg" alt="نجيل صناعي Habib Eco Green 6mm" loading="lazy"></div>
                     <div class="card-body">
                         <span>Smart Choice</span>
                         <h3>Habib Eco Green (6mm)</h3>
@@ -217,14 +220,14 @@
         </a>
     </div>
 
+    <div class="catalog-float-btn" onclick="openCatalog('nageel')" style="position: fixed; bottom: 105px; right: 40px; background: var(--royal-green); color: white; padding: 12px 20px; border-radius: 50px; cursor: pointer; z-index: 1000; font-weight: 700; display: flex; align-items: center; gap: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); border: 1px solid var(--gold);">
+        <i class="fas fa-camera" aria-hidden="true"></i> شاهد تنفيذاتنا في النجيل
+    </div>
+
     <a href="https://wa.me/201016961497" class="expert-btn" aria-label="تواصل معنا عبر الواتساب للاستشارة والمقايسة">
         <i class="fab fa-whatsapp" style="font-size: 1.5rem;" aria-hidden="true"></i>
         <span>استشارة هندسية ومقايسة مجانية</span>
     </a>
-
-    <div class="catalog-float-btn" onclick="openCatalog('nageel')" style="position: fixed; bottom: 120px; right: 40px; background: var(--royal-green); color: white; padding: 12px 20px; border-radius: 50px; cursor: pointer; z-index: 1000; font-weight: 700; display: flex; align-items: center; gap: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); border: 1px solid var(--gold);">
-        <i class="fas fa-camera" aria-hidden="true"></i> شاهد تنفيذاتنا في النجيل
-    </div>
 
     <div id="catalogLightbox" class="catalog-lightbox" onclick="closeCatalog(event)">
         <button class="close-btn" onclick="closeCatalog(event)" aria-label="إغلاق المعرض">&times;</button>
