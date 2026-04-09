@@ -74,13 +74,15 @@
 
         /* الواتساب */
         .expert-btn { position: fixed; bottom: 40px; right: 40px; background: #25d366; color: white; padding: 18px 35px; border-radius: 60px; text-decoration: none; box-shadow: 0 15px 35px rgba(37, 211, 102, 0.3); z-index: 1000; font-weight: 600; display: flex; align-items: center; gap: 15px; transition: 0.4s; }
-      /* تظبيط الزراير العائمة للموبايل */
+        
+        /* تظبيط الزراير العائمة للموبايل */
         @media (max-width: 768px) { 
             .expert-btn { bottom: 20px; right: 20px; padding: 15px 25px; } 
             .expert-btn span { display: none; }
             .hero-content h1 { font-size: 2.2rem; }
             .catalog-float-btn { bottom: 75px !important; right: 20px !important; }
         }
+
         /* الشريط الزجاجي */
         #smartGlassSlider { position: fixed; bottom: 110px; left: 50%; transform: translate(-50%, 200%); background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 20px; padding: 10px 20px; display: flex; gap: 20px; z-index: 999; transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: max-content; }
         #smartGlassSlider.visible { transform: translate(-50%, 0); }
@@ -99,11 +101,12 @@
     <main>
         <section class="hero-banner">
             <video class="hero-video" autoplay loop muted playsinline>
-                <source src="https://res.cloudinary.com/dwa0e5sup/video/upload/e_accelerate:-25,e_brightness:5,e_contrast:5/l_My%20Brand:Habib_Landscape_Boutique_lfd7am/c_scale,w_180/fl_layer_apply,g_north_west,x_40,y_40/q_auto/f_auto/v1775693440/decorative-white-pebbles-finish_nc4acd.mp4" type="video/mp4">
-         
-           <video class="hero-video" autoplay loop muted playsinline>
-    <source src="https://res.cloudinary.com/dwa0e5sup/video/upload/e_accelerate:-25,e_brightness:5,e_contrast:5/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,c_scale,w_180,o_80/fl_layer_apply,g_north_west,x_40,y_40/q_auto/f_auto/v1775693440/decorative-white-pebbles-finish_nc4acd.mp4" type="video/mp4">
-</video>
+                <source src="https://res.cloudinary.com/dwa0e5sup/video/upload/e_accelerate:-25,e_brightness:5,e_contrast:5/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,c_scale,w_180,o_80/fl_layer_apply,g_north_west,x_40,y_40/q_auto/f_auto/v1775693440/decorative-white-pebbles-finish_nc4acd.mp4" type="video/mp4">
+            </video>
+            <div class="hero-content">
+                <div style="display: inline-flex; align-items: center; gap: 10px; background: rgba(26, 60, 52, 0.85); padding: 8px 25px; border-radius: 50px; border: 1px solid var(--gold); font-weight: bold; font-size: 1.1rem; margin-bottom: 20px;">
+                    <i class="fas fa-phone-alt" style="color: var(--gold);"></i> 01016961497
+                </div>
                 <h1>Habib Landscape Boutique</h1>
                 <p>نحن لا نبيع خامات.. نحن نصيغ فخامة مساحتك الخاصة بإشراف هندسي وتوريد ملكي.</p>
             </div>
@@ -144,10 +147,12 @@
                 </div>
             </div>
 
-          
-<video autoplay loop muted playsinline style="width: 100%; border-radius: 20px;">
-    <source src="https://res.cloudinary.com/dwa0e5sup/video/upload/e_accelerate:-20,c_fill,w_1200,g_center,e_vignette/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,c_scale,w_150,o_80/fl_layer_apply,g_north_west,x_40,y_40/q_auto/f_auto/v1775693447/habib-landscape-luxury-design_qzbdi3.mp4" type="video/mp4">
-</video>
+            <div class="mid-video-container">
+                <video autoplay loop muted playsinline style="width: 100%; border-radius: 20px;">
+                    <source src="https://res.cloudinary.com/dwa0e5sup/video/upload/e_accelerate:-20,c_fill,w_1200,g_center,e_vignette/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,c_scale,w_150,o_80/fl_layer_apply,g_north_west,x_40,y_40/q_auto/f_auto/v1775693447/habib-landscape-luxury-design_qzbdi3.mp4" type="video/mp4">
+                </video>
+            </div>
+
             <div class="product-grid">
                 <div class="card">
                     <div class="img-wrapper"><div class="badge">LUXURY</div><img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775700294/grass-30mm.jpg_g8cczk.jpg" alt="نجيل صناعي Habib Natural Soft 30mm" loading="lazy"></div>
@@ -215,7 +220,7 @@
         </a>
     </div>
 
-    <div class="catalog-float-btn" onclick="openCatalog('nageel')" style="position: fixed; bottom: 105px; right: 40px; background: var(--royal-green); color: white; padding: 12px 20px; border-radius: 50px; cursor: pointer; z-index: 1000; font-weight: 700; display: flex; align-items: center; gap: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); border: 1px solid var(--gold);">
+    <div class="catalog-float-btn" onclick="openCatalog('nageel')" style="position: fixed; bottom: 95px; right: 40px; background: var(--royal-green); color: white; padding: 12px 20px; border-radius: 50px; cursor: pointer; z-index: 1000; font-weight: 700; display: flex; align-items: center; gap: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); border: 1px solid var(--gold);">
         <i class="fas fa-camera" aria-hidden="true"></i> شاهد تنفيذاتنا في النجيل
     </div>
 
