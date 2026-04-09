@@ -37,10 +37,8 @@
         .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); text-decoration: none; border: 1px solid rgba(0,0,0,0.02); display: flex; flex-direction: column; position: relative; }
         .card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(0,0,0,0.12); border-color: var(--gold); }
         
-        /* وسام الجودة */
         .badge { position: absolute; top: 10px; right: 10px; background: var(--gold); color: white; font-size: 0.6rem; padding: 4px 8px; border-radius: 4px; font-weight: 700; z-index: 5; text-transform: uppercase; }
 
-        /* Contain Mode للصور */
         .img-wrapper { width: 100%; aspect-ratio: 1/1; overflow: hidden; position: relative; background: #fff; padding: 10px; box-sizing: border-box; }
         .img-wrapper img { width: 100%; height: 100%; object-fit: contain; transition: 0.8s; }
         .card:hover .img-wrapper img { transform: scale(1.05); }
@@ -68,7 +66,6 @@
         #smartGlassSlider { position: fixed; bottom: 110px; left: 50%; transform: translate(-50%, 200%); background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 20px; padding: 10px 20px; display: flex; gap: 20px; z-index: 999; transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: max-content; }
         #smartGlassSlider.visible { transform: translate(-50%, 0); }
         .smart-glass-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; transition: 0.3s; }
-        .smart-glass-item:hover { transform: scale(1.05); }
         .smart-glass-item img { width: 50px; height: 50px; object-fit: cover; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         .smart-glass-item span { font-size: 0.75rem; color: var(--royal-green); font-weight: 700; margin-top: 5px; }
     </style>
@@ -81,14 +78,14 @@
     </a>
 
     <section class="hero-banner">
-        <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,e_improve,e_sharpen:100/l_logo,g_south_east,w_200,o_70,x_20,y_20/v1775732442/habib-landscape-boutique-galala-marble-pathways.jpg" alt="رخام جلالة فاخر" fetchpriority="high">
+        <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,e_improve,e_sharpen:100/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,g_south_east,w_200,o_70,x_20,y_20/v1775732442/habib-landscape-boutique-galala-marble-pathways.jpg" alt="فخامة الرخام حبيب بوتيك" fetchpriority="high">
         <div class="hero-content">
             <div style="display: inline-flex; align-items: center; gap: 10px; background: rgba(26, 60, 52, 0.8); padding: 8px 25px; border-radius: 50px; border: 1px solid var(--gold); font-weight: bold; font-size: 1.3rem; margin-bottom: 20px;">
                 <i class="fas fa-phone-alt" style="color: var(--gold);"></i> 01016961497
             </div>
             
             <h1>صمم مساحتك بفخامة الرخام..</h1>
-            <p>اختار اللي يناسب ذوقك من الرخام وأحجار الديكور، ضيفهم للمقايسة، وسيب الباقي لخبراء حبيب لاندسكيب بوتيك للتوريد والتركيب الهندسي.</p>
+            <p>اختار اللي يناسب ذوقك من الرخام وأحجار الديكور، وسيب الباقي لخبراء حبيب لاندسكيب بوتيك للتوريد والتركيب الهندسي.</p>
             
             <div style="margin-top: 25px; color: #fff; background: var(--gold); display: inline-block; padding: 12px 30px; border-radius: 8px; font-weight: 700; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
                 <i class="fas fa-stopwatch" style="margin-left: 8px;"></i> معاينة فورية وتركيب دقيق في خلال 48 ساعة
@@ -106,16 +103,15 @@
             <div class="card">
                 <div class="img-wrapper">
                     <div class="badge">BEST SELLER</div>
-                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,e_improve,e_sharpen:100/l_logo,g_south_east,w_200,o_70,x_20,y_20/v1775732413/habib-landscape-boutique-galala-marble-pathways.jpg" alt="رخام جلالة" loading="lazy">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,e_improve,e_sharpen:100/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,g_south_east,w_200,o_70,x_20,y_20/v1775732413/habib-landscape-boutique-galala-marble-pathways.jpg" alt="رخام جلالة حبيب بوتيك" loading="lazy">
                 </div>
                 <div class="card-body">
                     <span>Premium Classic</span>
                     <h3>رخام جلالة<br>Galala Marble</h3>
                     <p>أصالة وعراقة تمنح مساحاتك إشراقة كلاسيكية لا تفقد قيمتها.</p>
-                    <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
                 </div>
                 <div class="card-actions">
-                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('40', 'رخام جلالة')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
+                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('40', 'رخام جلالة')">أضف للمقايسة</button>
                     <a href="stones.html?id=40" class="btn-details">عرض التفاصيل</a>
                 </div>
             </div>
@@ -123,16 +119,15 @@
             <div class="card">
                 <div class="img-wrapper">
                     <div class="badge">PURE LUXURY</div>
-                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,e_improve,e_sharpen:100/l_logo,g_south_east,w_200,o_70,x_20,y_20/v1775732414/habib-landscape-boutique-royal-villa-entrance-flooring.jpg" alt="كريستال وايت" loading="lazy">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,e_improve,e_sharpen:100/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,g_south_east,w_200,o_70,x_20,y_20/v1775732414/habib-landscape-boutique-royal-villa-entrance-flooring.jpg" alt="كريستال وايت حبيب بوتيك" loading="lazy">
                 </div>
                 <div class="card-body">
                     <span>Pure Luxury</span>
                     <h3>رخام كريستال وايت<br>Crystal White</h3>
                     <p>نقاء استثنائي يضفي اتساعاً وهدوءاً بصرياً يليق بالقصور.</p>
-                    <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
                 </div>
                 <div class="card-actions">
-                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('41', 'رخام كريستال وايت')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
+                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('41', 'رخام كريستال وايت')">أضف للمقايسة</button>
                     <a href="stones.html?id=41" class="btn-details">عرض التفاصيل</a>
                 </div>
             </div>
@@ -140,48 +135,45 @@
             <div class="card">
                 <div class="img-wrapper">
                     <div class="badge">PREMIUM</div>
-                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,e_improve,e_sharpen:100/l_logo,g_south_east,w_200,o_70,x_20,y_20/v1775732441/habib-landscape-boutique-luxury-wall-cladding-villa.jpg" alt="إمبردور فاخر" loading="lazy">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,e_improve,e_sharpen:100/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,g_south_east,w_200,o_70,x_20,y_20/v1775732441/habib-landscape-boutique-luxury-wall-cladding-villa.jpg" alt="إمبردور حبيب بوتيك" loading="lazy">
                 </div>
                 <div class="card-body">
                     <span>Royal Warmth</span>
                     <h3>رخام إمبردور<br>Emperador</h3>
                     <p>دفء ملكي وعروق تعكس الفخامة في أبهى صورها الهندسية.</p>
-                    <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
                 </div>
                 <div class="card-actions">
-                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('42', 'رخام إمبردور')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
+                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('42', 'رخام إمبردور')">أضف للمقايسة</button>
                     <a href="stones.html?id=42" class="btn-details">عرض التفاصيل</a>
-                </div>
-            </div><div class="card">
-                <div class="img-wrapper">
-                    <div class="badge">ENGINEER'S CHOICE</div>
-                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,e_improve,e_sharpen:100/l_logo,g_south_east,w_200,o_70,x_20,y_20/v1775732416/habib-boutique-exclusive-pool-surround-stone.jpg" alt="أسود إسباني" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <span>Majestic Presence</span>
-                    <h3>رخام أسود إسباني<br>Spanish Black</h3>
-                    <p>هيبة اللون الأسود وعمقه، لشخصية معمارية قوية وواثقة.</p>
-                    <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
-                </div>
-                <div class="card-actions">
-                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('43', 'رخام أسود إسباني')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
-                    <a href="stones.html?id=43" class="btn-details">عرض التفاصيل</a>
                 </div>
             </div>
 
             <div class="card">
                 <div class="img-wrapper">
+                    <div class="badge">ENGINEER'S CHOICE</div>
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,e_improve,e_sharpen:100/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,g_south_east,w_200,o_70,x_20,y_20/v1775732416/habib-boutique-exclusive-pool-surround-stone.jpg" alt="أسود إسباني حبيب بوتيك" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <span>Majestic Presence</span>
+                    <h3>رخام أسود إسباني<br>Spanish Black</h3>
+                    <p>هيبة اللون الأسود وعمقه، لشخصية معمارية قوية وواثقة.</p>
+                </div>
+                <div class="card-actions">
+                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('43', 'رخام أسود إسباني')">أضف للمقايسة</button>
+                    <a href="stones.html?id=43" class="btn-details">عرض التفاصيل</a>
+                </div>
+            </div><div class="card">
+                <div class="img-wrapper">
                     <div class="badge">EXCLUSIVE</div>
-                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,e_improve,e_sharpen:100/l_logo,g_south_east,w_200,o_70,x_20,y_20/v1775732694/habib-boutique-architectural-stone-elements.jpg" alt="كارارا ملي براون" loading="lazy">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,e_improve,e_sharpen:100/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,g_south_east,w_200,o_70,x_20,y_20/v1775732694/habib-boutique-architectural-stone-elements.jpg" alt="رخام كارارا ملي براون حبيب بوتيك" loading="lazy">
                 </div>
                 <div class="card-body">
                     <span>Italian Art</span>
                     <h3>رخام كارارا ملي براون<br>Carrara Milli Brown</h3>
                     <p>تداخل فني إيطالي يمزج بين السحر الطبيعي والذوق الرفيع.</p>
-                    <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
                 </div>
                 <div class="card-actions">
-                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('44', 'رخام كارارا ملي براون')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
+                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('44', 'رخام كارارا ملي براون')">أضف للمقايسة</button>
                     <a href="stones.html?id=44" class="btn-details">عرض التفاصيل</a>
                 </div>
             </div>
@@ -189,16 +181,15 @@
             <div class="card">
                 <div class="img-wrapper">
                     <div class="badge">NATURAL CHOICE</div>
-                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,e_improve,e_sharpen:100/l_logo,g_south_east,w_200,o_70,x_20,y_20/v1775732695/habib-boutique-premium-stone-walkway-design.jpg" alt="حجر ساند ستون" loading="lazy">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,e_improve,e_sharpen:100/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,g_south_east,w_200,o_70,x_20,y_20/v1775732695/habib-boutique-premium-stone-walkway-design.jpg" alt="حجر ساند ستون حبيب بوتيك" loading="lazy">
                 </div>
                 <div class="card-body">
                     <span>Natural Harmony</span>
                     <h3>حجر ساند ستون<br>Sandstone</h3>
                     <p>تناغم رملي هادئ يعزز من طاقة المكان وانسجامه مع الطبيعة.</p>
-                    <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
                 </div>
                 <div class="card-actions">
-                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('46', 'حجر ساند ستون')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
+                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('46', 'حجر ساند ستون')">أضف للمقايسة</button>
                     <a href="stones.html?id=46" class="btn-details">عرض التفاصيل</a>
                 </div>
             </div>
@@ -206,16 +197,15 @@
             <div class="card">
                 <div class="img-wrapper">
                     <div class="badge">BEST SELLER</div>
-                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,e_improve,e_sharpen:100/l_logo,g_south_east,w_200,o_70,x_20,y_20/v1775732689/habib-landscape-boutique-modern-exterior-wall-stone.jpg" alt="مايكا رمادي" loading="lazy">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,e_improve,e_sharpen:100/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,g_south_east,w_200,o_70,x_20,y_20/v1775732689/habib-landscape-boutique-modern-exterior-wall-stone.jpg" alt="مايكا رمادي حبيب بوتيك" loading="lazy">
                 </div>
                 <div class="card-body">
                     <span>Elite Facades</span>
                     <h3>حجر مايكا رمادي<br>Mica Grey</h3>
                     <p>لمسة معمارية عصرية تمنح الواجهات صموداً وجمالاً هادئاً.</p>
-                    <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
                 </div>
                 <div class="card-actions">
-                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('51', 'حجر مايكا رمادي')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
+                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('51', 'حجر مايكا رمادي')">أضف للمقايسة</button>
                     <a href="stones.html?id=51" class="btn-details">عرض التفاصيل</a>
                 </div>
             </div>
@@ -223,16 +213,15 @@
             <div class="card">
                 <div class="img-wrapper">
                     <div class="badge">PREMIUM</div>
-                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,e_improve,e_sharpen:100/l_logo,g_south_east,w_200,o_70,x_20,y_20/v1775732416/habib-boutique-red-mica-stone-wall-cladding.jpg" alt="مايكا أحمر" loading="lazy">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,e_improve,e_sharpen:100/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,g_south_east,w_200,o_70,x_20,y_20/v1775732416/habib-boutique-red-mica-stone-wall-cladding.jpg" alt="مايكا أحمر حبيب بوتيك" loading="lazy">
                 </div>
                 <div class="card-body">
                     <span>Warm Elegance</span>
                     <h3>حجر مايكا أحمر<br>Mica Red</h3>
                     <p>دفء ترابي يعانق الطبيعة ليصنع واجهة تنبض بالحياة والفخامة.</p>
-                    <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
                 </div>
                 <div class="card-actions">
-                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('52', 'حجر مايكا أحمر')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
+                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('52', 'حجر مايكا أحمر')">أضف للمقايسة</button>
                     <a href="stones.html?id=52" class="btn-details">عرض التفاصيل</a>
                 </div>
             </div>
@@ -240,16 +229,15 @@
             <div class="card">
                 <div class="img-wrapper">
                     <div class="badge">ENGINEER'S CHOICE</div>
-                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,e_improve,e_sharpen:100/l_logo,g_south_east,w_200,o_70,x_20,y_20/v1775732444/habib-landscape-boutique-luxury-outdoor-pathway.jpg" alt="بازلت أسود" loading="lazy">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,e_improve,e_sharpen:100/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,g_south_east,w_200,o_70,x_20,y_20/v1775732444/habib-landscape-boutique-luxury-outdoor-pathway.jpg" alt="بازلت أسود حبيب بوتيك" loading="lazy">
                 </div>
                 <div class="card-body">
                     <span>Solid Grace</span>
                     <h3>حجر بازلت أسود<br>Black Basalt</h3>
                     <p>صلابة بركانية وقوة حضور، خيار الصفوة للمساحات الخالدة.</p>
-                    <div class="price-note">السعر يحدد بدقة عند المعاينة الفنية</div>
                 </div>
                 <div class="card-actions">
-                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('53', 'حجر بازلت أسود')"><i class="fas fa-plus-circle"></i> أضف للمقايسة</button>
+                    <button type="button" class="btn-add-cart" onclick="quickAddToCart('53', 'حجر بازلت أسود')">أضف للمقايسة</button>
                     <a href="stones.html?id=53" class="btn-details">عرض التفاصيل</a>
                 </div>
             </div>
@@ -259,15 +247,15 @@
     
     <div id="smartGlassSlider">
         <a href="grass-gallery.html" class="smart-glass-item">
-            <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,w_100/v1775732414/habib-landscape-boutique-modern-hardscape-paving.jpg" alt="معرض النجيل" loading="lazy">
+            <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,w_100/v1775732414/habib-landscape-boutique-modern-hardscape-paving.jpg" alt="معرض النجيل حبيب بوتيك" loading="lazy">
             <span>معرض النجيل</span>
         </a>
         <a href="white-marble.html" class="smart-glass-item">
-            <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,w_100/v1775732688/habib-boutique-premium-stone-facade-design.jpg" alt="معرض الزلط" loading="lazy">
+            <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,w_100/v1775732688/habib-boutique-premium-stone-facade-design.jpg" alt="معرض الزلط حبيب بوتيك" loading="lazy">
             <span>معرض الزلط</span>
         </a>
         <a href="trees.html" class="smart-glass-item">
-            <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,w_100/v1775732445/habib-boutique-elegant-garden-stairs-stone.jpg" alt="معرض الأشجار" loading="lazy">
+            <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,w_100/v1775732445/habib-boutique-elegant-garden-stairs-stone.jpg" alt="معرض الأشجار حبيب بوتيك" loading="lazy">
             <span>معرض الأشجار</span>
         </a>
     </div>
@@ -278,7 +266,7 @@
     </a>
 
     <footer style="text-align: center; padding: 60px 20px; color: #aaa; font-size: 0.85rem; background: #fff; margin-top: 80px; border-top: 1px solid #f1f1f1;">
-        <p style="letter-spacing: 1px;">&copy; 2026 Habib Landscape Boutique - فخامة التنفيذ الهندسي</p>
+        <p style="letter-spacing: 1px;">&copy; 2026 Habib Landscape Boutique - توريد وتركيب بأيدي خبراء ومهندسين</p>
     </footer>
 
     <script>
@@ -287,7 +275,7 @@
                 let cart = JSON.parse(localStorage.getItem('cart')) || [];
                 let count = cart.reduce((total, item) => total + (item.quantity || 1), 0);
                 document.getElementById('cartCount').textContent = count;
-            } catch(e) { console.log("Cart error."); }
+            } catch(e) { console.log("Cart empty."); }
         }
         updateCartCount();
         window.addEventListener('storage', updateCartCount);
