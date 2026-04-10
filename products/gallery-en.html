@@ -15,15 +15,15 @@
     <link rel="dns-prefetch" href="https://res.cloudinary.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-    <link rel="canonical" href="https://elhbebclean.github.io/Elhabib_clean_home/grass-gallery.html">
-    <link rel="alternate" hreflang="ar-EG" href="https://elhbebclean.github.io/Elhabib_clean_home/grass-gallery.html">
-    <link rel="alternate" hreflang="en-EG" href="https://elhbebclean.github.io/Elhabib_clean_home/products/gallery-en.html">
-    <link rel="alternate" hreflang="x-default" href="https://elhbebclean.github.io/Elhabib_clean_home/grass-gallery.html">
+    <link rel="canonical" href="https://habib-landscape-boutique.com/products/gallery-en.html">
+    <link rel="alternate" hreflang="ar-EG" href="https://habib-landscape-boutique.com/products/grass-gallery.html">
+    <link rel="alternate" hreflang="en-EG" href="https://habib-landscape-boutique.com/products/gallery-en.html">
+    <link rel="alternate" hreflang="x-default" href="https://habib-landscape-boutique.com/products/gallery-en.html">
 
     <meta property="og:title" content="Habib Landscape Boutique | Luxury in Natural Design">
     <meta property="og:description" content="Crafting the luxury of your private space with engineering supervision and royal supply for estates.">
     <meta property="og:image" content="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto:eco,f_auto,w_600/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png">
-    <meta property="og:url" content="https://elhbebclean.github.io/Elhabib_clean_home/grass-gallery.html">
+    <meta property="og:url" content="https://habib-landscape-boutique.com/products/gallery-en.html">
     
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
@@ -37,8 +37,8 @@
       "@type": "HomeAndConstructionBusiness",
       "name": "Habib Landscape Boutique",
       "image": "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto:eco,f_auto,w_600/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png",
-      "@id": "https://elhbebclean.github.io/Elhabib_clean_home/",
-      "url": "https://elhbebclean.github.io/Elhabib_clean_home/",
+      "@id": "https://habib-landscape-boutique.com/",
+      "url": "https://habib-landscape-boutique.com/",
       "telephone": "+201145393026",
       "address": {
         "@type": "PostalAddress",
@@ -74,8 +74,41 @@
         .hero-content { position: relative; z-index: 2; text-align: center; color: white; max-width: 900px; width: 100%; margin-bottom: 40px; animation: fadeInUp 1.2s ease-out; }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         
-        .lang-switch { position: absolute; top: 20px; left: 20px; z-index: 1001; background: rgba(26, 60, 52, 0.8); backdrop-filter: blur(5px); border: 1px solid var(--gold); border-radius: 30px; padding: 5px 15px; color: white; text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: 0.3s; display: flex; align-items: center; gap: 8px; }
-        .lang-switch:hover { background: var(--gold); color: var(--royal-green); }
+        /* Updated Language Switch Styles */
+        .header-lang-container {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+        }
+        
+        .lang-switch { 
+            background: rgba(26, 60, 52, 0.85); 
+            backdrop-filter: blur(8px); 
+            border: 1px solid var(--gold); 
+            border-radius: 30px; 
+            padding: 8px 18px; 
+            color: white; 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 0.95rem; 
+            transition: all 0.3s ease; 
+            display: flex; 
+            align-items: center; 
+            gap: 8px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .lang-switch:hover { 
+            background: var(--gold); 
+            color: var(--royal-green);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(197, 160, 89, 0.4);
+        }
+        .lang-switch i {
+            font-size: 1.1rem;
+        }
 
         .hero-content h1 { font-size: clamp(2rem, 5vw, 3.8rem); font-weight: 800; margin: 0 0 15px 0; text-shadow: 0 5px 20px rgba(0,0,0,0.6); letter-spacing: 1px; }
         .hero-content p { font-size: clamp(1.1rem, 3vw, 1.5rem); opacity: 0.95; font-weight: 300; margin-top: 10px; line-height: 1.6; text-shadow: 0 2px 10px rgba(0,0,0,0.6); }
@@ -159,6 +192,8 @@
             .stat-item h3 { font-size: 1.25rem; }
             .urgency-bar { font-size: 0.85rem; padding: 10px; flex-direction: column; gap: 5px; }
             .urgency-text-container { align-items: center; text-align: center; }
+            .header-lang-container { top: 15px; left: 15px; }
+            .lang-switch { padding: 6px 12px; font-size: 0.85rem; }
         }
 
         #smartGlassSlider { position: fixed; bottom: 110px; left: 50%; transform: translate(-50%, 200%); background: rgba(255, 255, 255, 0.65); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 20px; padding: 10px 20px; display: flex; gap: 20px; z-index: 999; transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 15px 35px rgba(0,0,0,0.15); width: max-content; }
@@ -181,9 +216,27 @@
         </div>
     </div>
 
-    <a href="../grass-gallery.html" class="lang-switch" aria-label="اللغة العربية">
-        <i class="fas fa-globe" aria-hidden="true"></i> اللغة العربية
-    </a>
+    <div class="header-lang-container">
+        <a href="../products/grass-gallery.html" class="lang-switch" aria-label="اللغة العربية">
+            <i class="fas fa-globe" aria-hidden="true"></i> العربية
+        </a>
+    </div>
+
+    <div class="menu-toggle" onclick="toggleMobileMenu()" aria-label="Open Menu">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <div id="mobileMenuOverlay" class="mobile-menu-overlay">
+        <button class="close-menu-btn" onclick="toggleMobileMenu()" aria-label="Close Menu">&times;</button>
+        <div class="mobile-menu-content">
+            <a href="https://habib-landscape-boutique.com/index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="https://habib-landscape-boutique.com/products/gallery-en.html"><i class="fas fa-leaf"></i> Turf Gallery</a>
+            <a href="https://habib-landscape-boutique.com/products/marble.html"><i class="fas fa-cubes"></i> Marble Gallery</a>
+            <a href="https://habib-landscape-boutique.com/products/white-marble.html"><i class="fas fa-gem"></i> Stone Gallery</a>
+            <a href="https://habib-landscape-boutique.com/products/trees.html"><i class="fas fa-tree"></i> Tree Gallery</a>
+            <a href="https://habib-landscape-boutique.com/contact.html" style="margin-top: 20px; color: var(--gold); border-top: 1px solid rgba(197, 160, 89, 0.3); padding-top: 20px;"><i class="fas fa-envelope"></i> Contact Us</a>
+        </div>
+    </div>
 
     <a href="../cart.html" class="cart-float" aria-label="Go to Estimation List" title="Estimation List">
         <i class="fas fa-clipboard-list" aria-hidden="true"></i>
