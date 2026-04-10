@@ -1,6 +1,6 @@
 /* =========================================
    Habib Store | Premium Selection
-   Main Core Logic - v7.0 (VIP Cloudinary & Descriptions)
+   Main Core Logic - v8.0 (VIP Cloudinary & Hamburger Menu)
    ========================================= */
 
 // 1. تحديث عدّاد المقايسة (السلة)
@@ -28,7 +28,15 @@ function handleEliteBarAppearance() {
     }, 4000); 
 }
 
-// 3. التشغيل الأساسي عند تحميل الصفحة
+// 3. فتح وقفل القائمة الجانبية (Hamburger Menu / الستارة)
+function toggleMobileMenu() {
+    const overlay = document.getElementById('mobileMenuOverlay');
+    if (overlay) {
+        overlay.classList.toggle('active');
+    }
+}
+
+// 4. التشغيل الأساسي عند تحميل الصفحة
 document.addEventListener('DOMContentLoaded', () => {
     updateGlobalCartCount();
     handleEliteBarAppearance();
@@ -39,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
    🔥 محرك المبيعات والكتالوج الذكي
    ========================================= */
 
-// 4. الإضافة السريعة للمقايسة (مع دعم الصور)
+// 5. الإضافة السريعة للمقايسة (مع دعم الصور)
 function quickAddToCart(productId, productName, category = 'general') {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     
@@ -67,7 +75,7 @@ function quickAddToCart(productId, productName, category = 'general') {
     console.log(`✅ تم إضافة ${productName} لقائمة المقايسة`);
 }
 
-// 5. محرك الكتالوج (سابقة الأعمال السحابية مع الأوصاف)
+// 6. محرك الكتالوج (سابقة الأعمال السحابية مع الأوصاف)
 let catalogImages = [];
 let currentImageIndex = 0;
 let currentCategoryName = '';
@@ -202,7 +210,7 @@ function closeCatalog(event) {
     }
 }
 
-// 6. طلب تنفيذ تصميم محدد من سابقة الأعمال عبر واتساب
+// 7. طلب تنفيذ تصميم محدد من سابقة الأعمال عبر واتساب
 function orderCurrentDesign() {
     if (catalogImages.length === 0) return;
     const mediaUrl = catalogImages[currentImageIndex].url;
