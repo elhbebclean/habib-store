@@ -228,7 +228,8 @@
         };
 
         const urlParams = new URLSearchParams(window.location.search);
-        const productId = urlParams.get('id') || 'emerald'; 
+        // الافتراضي نخليه 50 عشان لو مفيش id في الرابط
+        const productId = urlParams.get('id') || '50'; 
         const product = nageelData[productId];
 
         if (product) {
@@ -248,7 +249,7 @@
                 `;
             });
 
-            // تحميل الصورة الأساسية بدون تعديل المسار
+            // تحميل الصورة الأساسية
             const mainImg = document.getElementById('productImage');
             mainImg.src = product.images[0];
 
