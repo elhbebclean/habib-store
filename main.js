@@ -1,87 +1,133 @@
 /* =========================================
    Habib Store | Premium Selection
-   Main Core Logic - v8.0 (VIP Cloudinary & Hamburger Menu)
+   Main Core Logic - Optimized Version
    ========================================= */
 
-// 1. تحديث عدّاد المقايسة (السلة)
-function updateGlobalCartCount() {
-    const cartBadge = document.getElementById('cartCount');
-    if (cartBadge) {
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const totalItems = cart.reduce((total, item) => total + (item.quantity || 1), 0);
-        cartBadge.textContent = totalItems;
-        
-        // تأثير نبض خفيف عند التحديث
-        cartBadge.style.transform = "scale(1.3)";
-        setTimeout(() => cartBadge.style.transform = "scale(1)", 300);
+// أدوات مساعدة آمنة
+function safeGetCart() {
+    try {
+        const cart = JSON.parse(localStorage.getItem('cart'));
+        return Array.isArray(cart) ? cart : [];
+    } catch (error) {
+        return [];
     }
 }
 
-// 2. إظهار شريط التنقل الذكي (Smart Glass Bar)
+function safeSetCart(cart) {
+    try {
+        localStorage.setItem('cart', JSON.stringify(cart));
+    } catch (error) {
+        console.error('Failed to save cart:', error);
+    }
+}
+
+// 1. تحديث عدّاد المقايسة
+function updateGlobalCartCount() {
+    const cartBadge = document.getElementById('cartCount');
+    if (!cartBadge) return;
+
+    const cart = safeGetCart();
+    const totalItems = cart.reduce((total, item) => total + (item.quantity || 1), 0);
+    cartBadge.textContent = totalItems;
+
+    cartBadge.style.transform = 'scale(1.18)';
+    setTimeout(() => {
+        cartBadge.style.transform = 'scale(1)';
+    }, 220);
+}
+
+// 2. إظهار الشريط الذكي
 function handleEliteBarAppearance() {
     setTimeout(() => {
-        const eliteBar = document.getElementById('smartGlassSlider') || document.getElementById('eliteGlassBar');
+        const eliteBar =
+            document.getElementById('smartGlassSlider') ||
+            document.getElementById('eliteGlassBar');
+
         if (eliteBar) {
             eliteBar.classList.add('visible');
             eliteBar.classList.add('active');
         }
-    }, 4000); 
+    }, 2500);
 }
 
-// 3. فتح وقفل القائمة الجانبية (Hamburger Menu / الستارة)
+// 3. فتح وقفل القائمة الجانبية
 function toggleMobileMenu() {
     const overlay = document.getElementById('mobileMenuOverlay');
-    if (overlay) {
-        overlay.classList.toggle('active');
-    }
+    if (!overlay) return;
+
+    const isActive = overlay.classList.toggle('active');
+    overlay.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+    document.body.style.overflow = isActive ? 'hidden' : '';
 }
+
+// إغلاق القائمة بالضغط على الخلفية
+document.addEventListener('click', function (event) {
+    const overlay = document.getElementById('mobileMenuOverlay');
+    if (!overlay || !overlay.classList.contains('active')) return;
+
+    if (event.target === overlay) {
+        toggleMobileMenu();
+    }
+});
+
+// إغلاق القائمة بزر Escape
+document.addEventListener('keydown', function (event) {
+    const overlay = document.getElementById('mobileMenuOverlay');
+    if (!overlay || !overlay.classList.contains('active')) return;
+
+    if (event.key === 'Escape') {
+        toggleMobileMenu();
+    }
+});
 
 // 4. التشغيل الأساسي عند تحميل الصفحة
 document.addEventListener('DOMContentLoaded', () => {
     updateGlobalCartCount();
     handleEliteBarAppearance();
-    window.addEventListener('storage', updateGlobalCartCount);
+
+    window.addEventListener('storage', updateGlobalCartCount, { passive: true });
 });
 
 /* =========================================
-   🔥 محرك المبيعات والكتالوج الذكي
+   محرك المبيعات والكتالوج الذكي
    ========================================= */
 
-// 5. الإضافة السريعة للمقايسة (مع دعم الصور)
+// 5. الإضافة السريعة للمقايسة
 function quickAddToCart(productId, productName, category = 'general') {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    
-    // محاولة تخمين مسار الصورة بناءً على الفئة
-    let imgPath = `assets/images/${category}/${productId}.jpg`; 
-    if (category === 'zalat') imgPath = `assets/images/zalat/${productId}.jpg`;
+    const cart = safeGetCart();
 
-    let existingItem = cart.find(item => item.id === productId);
+    let imgPath = `assets/images/${category}/${productId}.jpg`;
+    if (category === 'zalat') {
+        imgPath = `assets/images/zalat/${productId}.jpg`;
+    }
+
+    const existingItem = cart.find(item => item.id === productId);
+
     if (existingItem) {
         existingItem.quantity += 1;
     } else {
-        cart.push({ 
-            id: productId, 
-            title: productName, 
+        cart.push({
+            id: productId,
+            title: productName,
             img: imgPath,
             category: category,
-            quantity: 1 
+            quantity: 1
         });
     }
-    
-    localStorage.setItem('cart', JSON.stringify(cart));
+
+    safeSetCart(cart);
     updateGlobalCartCount();
-    
-    // تنبيه احترافي للعميل
+
     console.log(`✅ تم إضافة ${productName} لقائمة المقايسة`);
 }
 
-// 6. محرك الكتالوج (سابقة الأعمال السحابية مع الأوصاف)
+// 6. محرك الكتالوج
 let catalogImages = [];
 let currentImageIndex = 0;
 let currentCategoryName = '';
 
 const portfolioData = {
-    'nageel': {
+    nageel: {
         nameAr: 'النجيل الصناعي',
         media: [
             { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828245/Habib_Emerald_fzsejd.jpg", desc: "نجيل حبيب الزمرد (Emerald) - فخامة ملكية ولمسة حريرية" },
@@ -96,7 +142,7 @@ const portfolioData = {
             { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828245/%D8%AA%D8%B5%D9%85%D9%8A%D9%85_%D9%88%D8%AA%D9%86%D9%81%D9%8A%D8%B0_%D8%AD%D8%AF%D8%A7%D8%A6%D9%82_%D9%85%D9%86%D8%B2%D9%84%D9%8A%D9%87_yeopv0.jpg", desc: "تصميم وتنفيذ حدائق منزلية بمستوى القصور" }
         ]
     },
-    'marble': {
+    marble: {
         nameAr: 'الرخام والميكا',
         media: [
             { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828656/marble-sandstone_x2lwm2.jpg", desc: "أناقة الساند ستون (Marble Sandstone) - لمسة كلاسيكية" },
@@ -115,7 +161,7 @@ const portfolioData = {
             { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828645/m1_zoyqwm.jpg", desc: "قوة وجمال الرخام في أبسط أشكاله (نموذج M1)" }
         ]
     },
-    'zalat': {
+    zalat: {
         nameAr: 'الزلط والأحجار',
         media: [
             { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828577/zalat-mix-colors__visent.jpg", desc: "الزلط الملون - يضفي حيوية وروح للاندسكيب" },
@@ -130,31 +176,38 @@ const portfolioData = {
 
 function openCatalog(category) {
     const data = portfolioData[category];
-    if (!data || data.media.length === 0) return;
+    if (!data || !Array.isArray(data.media) || data.media.length === 0) return;
 
     currentCategoryName = data.nameAr;
-    catalogImages = data.media; 
+    catalogImages = data.media;
     currentImageIndex = 0;
-    
-    const lightbox = document.getElementById('catalogLightbox') || document.getElementById('zalatLightbox');
+
+    const lightbox =
+        document.getElementById('catalogLightbox') ||
+        document.getElementById('zalatLightbox');
+
     if (!lightbox) return;
-    
-    lightbox.style.display = 'flex'; 
+
+    lightbox.style.display = 'flex';
     lightbox.classList.add('active');
-    
+    document.body.style.overflow = 'hidden';
+
     updateCatalogView();
 }
 
 function updateCatalogView() {
-    const mainImg = document.getElementById('catalogMainImage') || document.getElementById('zalatMainImage');
+    const mainImg =
+        document.getElementById('catalogMainImage') ||
+        document.getElementById('zalatMainImage');
+
     const descElement = document.getElementById('catalogDescription');
-    
+
     if (!mainImg || catalogImages.length === 0) return;
 
     const currentItem = catalogImages[currentImageIndex];
     const mediaUrl = currentItem.url;
-    const mediaDesc = currentItem.desc;
-    
+    const mediaDesc = currentItem.desc || '';
+
     const isVideo = mediaUrl.includes('.mp4') || mediaUrl.includes('/video/');
     const parent = mainImg.parentElement;
 
@@ -164,10 +217,14 @@ function updateCatalogView() {
     }
 
     const existingVideo = document.getElementById('catalogMainVideo');
-    if (existingVideo) existingVideo.remove();
+    if (existingVideo) {
+        existingVideo.pause();
+        existingVideo.remove();
+    }
 
     if (isVideo) {
         mainImg.style.display = 'none';
+
         const videoEl = document.createElement('video');
         videoEl.id = 'catalogMainVideo';
         videoEl.src = mediaUrl;
@@ -175,14 +232,20 @@ function updateCatalogView() {
         videoEl.loop = true;
         videoEl.muted = true;
         videoEl.controls = true;
+        videoEl.preload = 'none';
+        videoEl.playsInline = true;
         videoEl.style.width = '100%';
         videoEl.style.maxHeight = '80vh';
         videoEl.style.objectFit = 'contain';
         videoEl.style.borderRadius = '12px';
+
         parent.insertBefore(videoEl, mainImg);
     } else {
         mainImg.style.display = 'block';
+        mainImg.loading = 'lazy';
+        mainImg.decoding = 'async';
         mainImg.src = mediaUrl;
+        mainImg.alt = mediaDesc || currentCategoryName;
     }
 }
 
@@ -199,25 +262,55 @@ function prevCatalogImage() {
 }
 
 function closeCatalog(event) {
-    const lightbox = document.getElementById('catalogLightbox') || document.getElementById('zalatLightbox');
-    if (!event || event.target === lightbox || event.target.classList.contains('close-btn')) {
-        if (lightbox) {
-            lightbox.classList.remove('active');
-            lightbox.style.display = 'none';
-            const existingVideo = document.getElementById('catalogMainVideo');
-            if (existingVideo) existingVideo.remove();
+    const lightbox =
+        document.getElementById('catalogLightbox') ||
+        document.getElementById('zalatLightbox');
+
+    if (!lightbox) return;
+
+    const clickedCloseButton = event && event.target && event.target.classList.contains('close-btn');
+    const clickedOverlay = event && event.target === lightbox;
+
+    if (!event || clickedOverlay || clickedCloseButton) {
+        const existingVideo = document.getElementById('catalogMainVideo');
+        if (existingVideo) {
+            existingVideo.pause();
+            existingVideo.remove();
         }
+
+        lightbox.classList.remove('active');
+        lightbox.style.display = 'none';
+        document.body.style.overflow = '';
     }
 }
 
-// 7. طلب تنفيذ تصميم محدد من سابقة الأعمال عبر واتساب
+// إغلاق الكتالوج بزر Escape
+document.addEventListener('keydown', function (event) {
+    const lightbox =
+        document.getElementById('catalogLightbox') ||
+        document.getElementById('zalatLightbox');
+
+    if (!lightbox || !lightbox.classList.contains('active')) return;
+
+    if (event.key === 'Escape') {
+        closeCatalog();
+    }
+});
+
+// 7. طلب تنفيذ تصميم محدد
 function orderCurrentDesign() {
     if (catalogImages.length === 0) return;
+
     const mediaUrl = catalogImages[currentImageIndex].url;
-    const imageName = mediaUrl.split('/').pop().split('.')[0]; 
-    
-    const message = `*طلب تنفيذ تصميم محدد - Habib Store* 🦈\n--------------------------------\nمرحباً محمود، أعجبني هذا التصميم من سابقة أعمال ${currentCategoryName}.\n(كود الصورة: ${imageName})\n\nأريد الاستفسار عن تفاصيل تنفيذه ومقايسته.`;
+    const imageName = mediaUrl.split('/').pop().split('.')[0];
+
+    const message =
+        `*طلب تنفيذ تصميم محدد - Habib Store* 🦈\n` +
+        `--------------------------------\n` +
+        `مرحباً، أعجبني هذا التصميم من سابقة أعمال ${currentCategoryName}.\n` +
+        `(كود الصورة: ${imageName})\n\n` +
+        `أريد الاستفسار عن تفاصيل تنفيذه ومقايسته.`;
+
     const encodedMessage = encodeURIComponent(message);
-    
-    window.open(`https://wa.me/201145393026?text=${encodedMessage}`, '_blank');
+    window.open(`https://wa.me/201145393026?text=${encodedMessage}`, '_blank', 'noopener');
 }
