@@ -144,6 +144,19 @@
     <script>
         // قاعدة بيانات المنتجات بتفاصيل الـ VIP ومسارات Cloudinary الأصلية
         const nageelData = {
+            'emerald': { 
+                title: 'Habib Emerald Special (VIP)', 
+                desc: 'جوهرة التشكيلة، نجيل الزمرد الفاخر بملمس حريري ولون أخضر حيوي فريد، مصمم للباحثين عن التميز المعماري في أرقى الفلل.',
+                specs: [
+                    { icon: 'fa-gem', title: 'الإصدار', value: 'إصدار الزمرد الحصري' },
+                    { icon: 'fa-leaf', title: 'المظهر', value: 'طبيعي 100% (High-End)' },
+                    { icon: 'fa-shield-virus', title: 'الأمان', value: 'مضاد للبكتيريا والروائح' },
+                    { icon: 'fa-couch', title: 'الراحة', value: 'نعومة فائقة للمشي حافياً' }
+                ],
+                images: [
+                    'https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828245/Habib_Emerald_fzsejd.jpg'
+                ]
+            },
             '50': { 
                 title: 'Habib Anatolian Nature (50mm)', 
                 desc: 'الرفاهية الملكية للقصور والفلل. يمنحك ملمس طبيعي يضاهي العشب الحقيقي مع كثافة فائقة تضمن العزل الحراري والصوتي التام للمساحات الواسعة.',
@@ -156,19 +169,6 @@
                 images: [
                     'https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775822183/Habib-Anatolian-Nature-50mm_aisbwp.jpg',
                     'https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775822184/Habib_Bosphorus_Green_50mm_vp0f4p.jpg'
-                ]
-            },
-            'emerald': { 
-                title: 'Habib Emerald Special (VIP)', 
-                desc: 'جوهرة التشكيلة، نجيل الزمرد الفاخر بملمس حريري ولون أخضر حيوي فريد، مصمم للباحثين عن التميز المعماري في أرقى الفلل.',
-                specs: [
-                    { icon: 'fa-gem', title: 'الإصدار', value: 'إصدار الزمرد الحصري' },
-                    { icon: 'fa-leaf', title: 'المظهر', value: 'طبيعي 100% (High-End)' },
-                    { icon: 'fa-shield-virus', title: 'الأمان', value: 'مضاد للبكتيريا والروائح' },
-                    { icon: 'fa-couch', title: 'الراحة', value: 'نعومة فائقة للمشي حافياً' }
-                ],
-                images: [
-                    'https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828245/Habib_Emerald_fzsejd.jpg'
                 ]
             },
             '40-24': { 
@@ -228,7 +228,7 @@
         };
 
         const urlParams = new URLSearchParams(window.location.search);
-        const productId = urlParams.get('id') || '50'; 
+        const productId = urlParams.get('id') || 'emerald'; 
         const product = nageelData[productId];
 
         if (product) {
