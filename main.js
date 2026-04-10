@@ -1,6 +1,6 @@
 /* =========================================
    Habib Store | Premium Selection
-   Main Core Logic - v4.0 (VIP Cloudinary Edition)
+   Main Core Logic - v5.0 (VIP Cloudinary & Full Descriptions)
    ========================================= */
 
 // 1. تحديث عدّاد المقايسة (السلة)
@@ -43,8 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
 function quickAddToCart(productId, productName, category = 'general') {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     
-    // صورة افتراضية للمقايسة السريعة (يمكن تحديثها لاحقاً لروابط كلاوديناري)
+    // مسار افتراضي (يمكنك تعديله لاحقاً لربطه بكلاوديناري إن أردت)
     let imgPath = `assets/images/${category}/${productId}.jpg`; 
+    if (category === 'zalat') imgPath = `assets/images/zalat/${productId}.jpg`;
 
     let existingItem = cart.find(item => item.id === productId);
     if (existingItem) {
@@ -66,61 +67,63 @@ function quickAddToCart(productId, productName, category = 'general') {
 }
 
 /* =========================================
-   💎 الكتالوج الذكي (سابقة الأعمال VIP)
+   💎 الكتالوج الذكي (سابقة الأعمال والأوصاف)
    ========================================= */
 
 let catalogImages = [];
 let currentImageIndex = 0;
 let currentCategoryName = '';
 
-// قاعدة بيانات Cloudinary المركزية لجميع أقسام البوتيك
+// قاعدة بيانات Cloudinary المركزية لجميع أقسام البوتيك (بالأوصاف الكاملة)
 const portfolioData = {
     'nageel': {
         nameAr: 'النجيل الصناعي',
         media: [
-            "https://res.cloudinary.com/dwa0e5sup/video/upload/q_auto/f_auto/v1775693479/habib-boutique-real-projects_mebxrx.mp4",
-            "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775822184/Habib_Bosphorus_Green_50mm_vp0f4p.jpg",
-            "https://res.cloudinary.com/dwa0e5sup/video/upload/q_auto/f_auto/v1775693494/premium-artificial-grass-shimmer_yvcktl.mp4",
-            "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828246/Pure_Meadow_fsfkqc.jpg",
-            "https://res.cloudinary.com/dwa0e5sup/video/upload/q_auto/f_auto/v1775686076/videoplayback_4_v5j6ev.mp4",
-            "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828245/Estimasi_Pembuatan_Lapangan_Mini_Soccer_2022_ac4xcw.jpg",
-            "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828245/EverGreen_Pro_p71o91.jpg",
-            "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828245/%D8%AA%D8%B5%D9%85%D9%8A%D9%85_%D9%88%D8%AA%D9%86%D9%81%D9%8A%D8%B0_%D8%AD%D8%AF%D8%A7%D8%A6%D9%82_%D9%85%D9%86%D8%B2%D9%84%D9%8A%D9%87_yeopv0.jpg"
+            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828245/Habib_Emerald_fzsejd.jpg", desc: "نجيل حبيب الزمرد (Emerald) - فخامة ملكية ولمسة حريرية" },
+            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828246/nageel-11mm_c4lq7h.jpg", desc: "النجيل الصناعي 11 ملم (Contract Pro) - قوة تحمل فائقة للممرات" },
+            { url: "https://res.cloudinary.com/dwa0e5sup/video/upload/q_auto/f_auto/v1775693479/habib-boutique-real-projects_mebxrx.mp4", desc: "نظرة عامة على مشاريع Habib Boutique الحقيقية" },
+            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775822184/Habib_Bosphorus_Green_50mm_vp0f4p.jpg", desc: "قصر البوسفور بنجيل 50 ملم - كثافة وعزل ممتاز" },
+            { url: "https://res.cloudinary.com/dwa0e5sup/video/upload/q_auto/f_auto/v1775693494/premium-artificial-grass-shimmer_yvcktl.mp4", desc: "استمتع بلمعان النجيل الفاخر (Premium Shimmer)" },
+            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828246/Pure_Meadow_fsfkqc.jpg", desc: "مروج Pure Meadow - تداخل طبيعي ساحر" },
+            { url: "https://res.cloudinary.com/dwa0e5sup/video/upload/q_auto/f_auto/v1775686076/videoplayback_4_v5j6ev.mp4", desc: "استعراض سينمائي لجودة ومرونة النجيل الصناعي" },
+            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828245/Estimasi_Pembuatan_Lapangan_Mini_Soccer_2022_ac4xcw.jpg", desc: "تجهيز ملاعب ميني سوكر (Mini Soccer) باحترافية" },
+            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828245/EverGreen_Pro_p71o91.jpg", desc: "إيفر جرين برو (EverGreen Pro) - ديمومة وجمال مستمر" },
+            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828245/%D8%AA%D8%B5%D9%85%D9%8A%D9%85_%D9%88%D8%AA%D9%86%D9%81%D9%8A%D8%B0_%D8%AD%D8%AF%D8%A7%D8%A6%D9%82_%D9%85%D9%86%D8%B2%D9%84%D9%8A%D9%87_yeopv0.jpg", desc: "تصميم وتنفيذ حدائق منزلية بمستوى القصور" }
         ]
     },
     'marble': {
         nameAr: 'الرخام والميكا',
         media: [
-            "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828656/marble-sandstone_x2lwm2.jpg",
-            "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828657/stone-mica-grey_ydczzj.jpg",
-            "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828657/marble-spanish-black_qotril.jpg",
-            "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828655/marble-galala_bfrlgm.jpg",
-            "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828656/marble-emperador_mjteik.jpg",
-            "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828654/marble-crystal-white_pgwl6u.jpg",
-            "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828656/marble-milli-brown_gm9oah.jpg",
-            "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828657/marble-red-carrara-spanish-black_yssppd.jpg",
-            "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828655/marble-carrara-milli-brown0_h8uli6.jpg",
-            "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828653/marble-carrara-milli-brown_jil1x2.jpg",
-            "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828652/m5_zfxydn.jpg",
-            "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828646/m4_ayob4d.jpg",
-            "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828646/m3_i7gt04.jpg",
-            "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828645/m1_zoyqwm.jpg"
+            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828656/marble-sandstone_x2lwm2.jpg", desc: "أناقة الساند ستون (Marble Sandstone) - لمسة كلاسيكية" },
+            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828657/stone-mica-grey_ydczzj.jpg", desc: "سحر الميكا الرمادي (Mica Grey) - وقار وعصرية" },
+            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828657/marble-spanish-black_qotril.jpg", desc: "الأسود الإسباني (Spanish Black) - ملك الأناقة" },
+            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828655/marble-galala_bfrlgm.jpg", desc: "رخام الجلالة (Galala) - أصالة مصرية بمقاييس عالمية" },
+            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828656/marble-emperador_mjteik.jpg", desc: "إمبرادور (Emperador) - فخامة بنية عميقة" },
+            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828654/marble-crystal-white_pgwl6u.jpg", desc: "كريستال وايت (Crystal White) - قمة النقاء" },
+            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828656/marble-milli-brown_gm9oah.jpg", desc: "ميلي براون (Milli Brown) - روح دافئة وترابية" },
+            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828657/marble-red-carrara-spanish-black_yssppd.jpg", desc: "دمج الكاريرا الأحمر مع الأسود الإسباني - جرأة وتميز" },
+            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828655/marble-carrara-milli-brown0_h8uli6.jpg", desc: "توازن راقي بين الكاريرا والميلي براون" },
+            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828653/marble-carrara-milli-brown_jil1x2.jpg", desc: "تصميم هندسي متكامل بالرخام الطبيعي" },
+            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828652/m5_zfxydn.jpg", desc: "جداريات رخامية بتصميم VIP (نموذج M5)" },
+            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828646/m4_ayob4d.jpg", desc: "تشكيل حجري فاخر للواجهات (نموذج M4)" },
+            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828646/m3_i7gt04.jpg", desc: "تداخل فني بين الرخام والمحيط (نموذج M3)" },
+            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828645/m1_zoyqwm.jpg", desc: "قوة وجمال الرخام في أبسط أشكاله (نموذج M1)" }
         ]
     },
     'zalat': {
         nameAr: 'الزلط والأحجار الديكورية',
         media: [
-            "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828577/zalat-mix-colors__visent.jpg",
-            "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828696/z2_ixj65v.jpg",
-            "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828713/z3_vbfoc3.jpg",
-            "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828713/z5_tkiavv.jpg",
-            "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828246/Pure_Meadow_fsfkqc.jpg",
-            "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828245/%D8%AA%D8%B5%D9%85%D9%8A%D9%85_%D9%88%D8%AA%D9%86%D9%81%D9%8A%D8%B0_%D8%AD%D8%AF%D8%A7%D8%A6%D9%82_%D9%85%D9%86%D8%B2%D9%84%D9%8A%D9%87_yeopv0.jpg"
+            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828577/zalat-mix-colors__visent.jpg", desc: "الزلط الملون - يضفي حيوية وروح للاندسكيب" },
+            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828696/z2_ixj65v.jpg", desc: "تنسيق ممرات الزلط بتصميمات هندسية راقية" },
+            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828713/z3_vbfoc3.jpg", desc: "دمج الزلط مع المساحات الخضراء للحدائق" },
+            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828713/z5_tkiavv.jpg", desc: "تشكيلات حجرية وزلط أبيض لمداخل الفلل" },
+            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828246/Pure_Meadow_fsfkqc.jpg", desc: "مروج Pure Meadow مع لمسات الزلط" },
+            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828245/%D8%AA%D8%B5%D9%85%D9%8A%D9%85_%D9%88%D8%AA%D9%86%D9%81%D9%8A%D8%B0_%D8%AD%D8%AF%D8%A7%D8%A6%D9%82_%D9%85%D9%86%D8%B2%D9%84%D9%8A%D9%87_yeopv0.jpg", desc: "تصميم وتنفيذ متكامل شامل الأحجار الديكورية" }
         ]
     }
 };
 
-// 5. فتح الكتالوج الذكي (بدون الحاجة لفحص وجود الصور لأنها مرفوعة ومؤكدة)
+// 5. فتح الكتالوج الذكي 
 function openCatalog(category) {
     const data = portfolioData[category];
     if (!data || data.media.length === 0) return;
@@ -138,14 +141,27 @@ function openCatalog(category) {
     updateCatalogView();
 }
 
-// التحديث الذكي لعرض الصور أو الفيديوهات
+// التحديث الذكي لعرض الصور أو الفيديوهات مع الوصف
 function updateCatalogView() {
     const mainImg = document.getElementById('catalogMainImage') || document.getElementById('zalatMainImage');
+    const descElement = document.getElementById('catalogDescription'); 
+    
     if (!mainImg || catalogImages.length === 0) return;
 
     const currentMedia = catalogImages[currentImageIndex];
-    const isVideo = currentMedia.includes('.mp4') || currentMedia.includes('/video/');
+    
+    // دعم النظامين (النص القديم، أو الكائن الجديد اللي فيه الوصف)
+    const mediaUrl = typeof currentMedia === 'string' ? currentMedia : currentMedia.url;
+    const mediaDesc = typeof currentMedia === 'string' ? '' : currentMedia.desc;
+    
+    const isVideo = mediaUrl.includes('.mp4') || mediaUrl.includes('/video/');
     const parent = mainImg.parentElement;
+
+    // تحديث الوصف
+    if (descElement) {
+        descElement.innerText = mediaDesc;
+        descElement.style.display = mediaDesc ? 'block' : 'none'; 
+    }
 
     // تنظيف أي فيديو قديم معروض
     const existingVideo = document.getElementById('catalogMainVideo');
@@ -156,7 +172,7 @@ function updateCatalogView() {
         mainImg.style.display = 'none';
         const videoEl = document.createElement('video');
         videoEl.id = 'catalogMainVideo';
-        videoEl.src = currentMedia;
+        videoEl.src = mediaUrl;
         videoEl.autoplay = true;
         videoEl.loop = true;
         videoEl.muted = true;
@@ -169,7 +185,7 @@ function updateCatalogView() {
     } else {
         // عرض الصورة العادية
         mainImg.style.display = 'block';
-        mainImg.src = currentMedia;
+        mainImg.src = mediaUrl;
     }
 }
 
@@ -202,9 +218,11 @@ function closeCatalog(event) {
 // 6. طلب تنفيذ تصميم محدد من سابقة الأعمال عبر واتساب
 function orderCurrentDesign() {
     if (catalogImages.length === 0) return;
-    const currentImagePath = catalogImages[currentImageIndex];
+    const currentMedia = catalogImages[currentImageIndex];
+    const mediaUrl = typeof currentMedia === 'string' ? currentMedia : currentMedia.url;
+    
     // استخراج اسم أو كود الملف من الرابط
-    const imageName = currentImagePath.split('/').pop().split('.')[0]; 
+    const imageName = mediaUrl.split('/').pop().split('.')[0]; 
     
     const message = `*طلب تنفيذ تصميم محدد - Habib Store* 🦈\n--------------------------------\nمرحباً، أعجبني هذا التصميم من سابقة أعمال ${currentCategoryName}.\n(كود المرجع: ${imageName})\n\nأريد الاستفسار عن تفاصيل تنفيذه ومقايسته.`;
     const encodedMessage = encodeURIComponent(message);
