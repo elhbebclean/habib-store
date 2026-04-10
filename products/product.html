@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NT75WPGT');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="تفاصيل ومواصفات النجيل الصناعي الفاخر من Habib Store. جودة احترافية، ملمس طبيعي، وتصريف مياه متقدم بإشراف هندسي. أضف المنتج لمعاينة السعر والمقايسة.">
-    <title>تفاصيل المنتج | Habib Store | مقايسة وتنسيق حدائق</title>
+    <meta name="description" content="تفاصيل ومواصفات النجيل الصناعي الفاخر من Habib Landscape Boutique. جودة احترافية للقصور، ملمس طبيعي، وتصريف مياه متقدم بإشراف هندسي.">
+    <title>المواصفات الهندسية | Habib Landscape Boutique</title>
     
-    <link rel="preload" as="image" href="../assets/images/nageel/grass-11mm-standard-10.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
     <link rel="stylesheet" href="../style.css">
+
+    <script type="application/ld+json" id="productSchema">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "Habib Premium Landscape Turf",
+      "description": "نجيل صناعي فاخر للقصور والفلل بضمان 5 سنوات وإشراف هندسي كامل من حبيب لاندسكيب بوتيك.",
+      "brand": { "@type": "Brand", "name": "Habib Landscape Boutique" }
+    }
+    </script>
 
     <style>
         :root { --royal-green: #1a3c34; --gold: #c5a059; --soft-gray: #f8fafa; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--soft-gray); margin: 0; color: #333; line-height: 1.8; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--soft-gray); margin: 0; color: #333; line-height: 1.8; overflow-x: hidden; }
         
-        /* أيقونة المقايسة العائمة (بديلة للسلة) */
         .cart-float { position: fixed; top: 20px; left: 20px; background: white; color: var(--royal-green); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-decoration: none; z-index: 1000; font-size: 1.2rem; transition: 0.3s; border: 1px solid rgba(197, 160, 89, 0.3); }
         .cart-float:hover { transform: scale(1.1); color: var(--gold); border-color: var(--gold); }
         .cart-badge { position: absolute; top: -5px; right: -5px; background: var(--gold); color: white; font-size: 0.75rem; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
@@ -23,66 +35,62 @@
         .product-wrapper { max-width: 1200px; margin: 80px auto; padding: 0 20px; display: flex; flex-wrap: wrap; gap: 60px; align-items: flex-start; }
         .image-section { flex: 1.1; min-width: 350px; position: sticky; top: 40px; }
         
-        .main-display { width: 100%; border-radius: 25px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.1); background: #fff; border: 1px solid rgba(0,0,0,0.05); padding: 15px; box-sizing: border-box; }
-        .main-display img { width: 100%; height: auto; max-height: 600px; object-fit: contain; display: block; transition: transform 0.6s ease; }
+        .main-display { width: 100%; border-radius: 25px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.1); background: #fff; border: 1px solid rgba(0,0,0,0.05); padding: 15px; box-sizing: border-box; position: relative; }
+        .main-display img { width: 100%; height: auto; max-height: 550px; object-fit: cover; display: block; transition: transform 0.6s ease; border-radius: 15px; }
         .main-display:hover img { transform: scale(1.02); }
-
-        .content-section { flex: 1; min-width: 320px; padding-top: 20px; }
-        .brand-tag { color: var(--gold); font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 5px; }
         
-        /* إضافة رقم الهاتف للثقة */
+        .thumbnail-container { display: flex; gap: 15px; margin-top: 20px; overflow-x: auto; padding-bottom: 10px; scrollbar-width: none; }
+        .thumbnail-container::-webkit-scrollbar { display: none; }
+        .thumbnail { width: 100px; height: 80px; border-radius: 12px; overflow: hidden; cursor: pointer; border: 2px solid transparent; transition: 0.3s; opacity: 0.6; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .thumbnail img { width: 100%; height: 100%; object-fit: cover; }
+        .thumbnail.active, .thumbnail:hover { border-color: var(--gold); opacity: 1; transform: translateY(-3px); }
+
+        .content-section { flex: 1; min-width: 320px; padding-top: 10px; }
+        .brand-tag { color: var(--gold); font-size: 0.9rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 8px; }
+        
         .phone-trust { display: inline-flex; align-items: center; gap: 8px; background: rgba(26, 60, 52, 0.08); padding: 6px 15px; border-radius: 20px; font-weight: bold; color: var(--royal-green); margin-bottom: 15px; font-size: 0.9rem; border: 1px solid rgba(26, 60, 52, 0.1); }
         
-        .content-section h1 { font-size: 2.8rem; color: var(--royal-green); font-weight: 300; margin: 0 0 25px 0; line-height: 1.2; }
-        .luxury-line { width: 60px; height: 3px; background: var(--gold); margin-bottom: 30px; }
+        .content-section h1 { font-size: clamp(2rem, 4vw, 2.8rem); color: var(--royal-green); font-weight: 800; margin: 0 0 20px 0; line-height: 1.2; text-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .luxury-line { width: 80px; height: 4px; background: var(--gold); margin-bottom: 25px; border-radius: 5px; }
         
-        .description-text { font-size: 1.15rem; color: #555; margin-bottom: 30px; text-align: justify; font-weight: 300; line-height: 1.9; }
+        .description-text { font-size: 1.15rem; color: #444; margin-bottom: 30px; text-align: justify; font-weight: 500; line-height: 1.9; }
         
-        /* قسم المهندسين والميزة التنافسية */
-        .trust-badge { background: rgba(197, 160, 89, 0.08); border-right: 4px solid var(--gold); padding: 25px; border-radius: 12px; margin-bottom: 30px; position: relative; }
-        .trust-badge h4 { color: var(--royal-green); margin: 0 0 10px 0; font-size: 1.2rem; font-weight: 600; display: flex; align-items: center; gap: 10px; }
-        .trust-badge p { margin: 0; font-size: 1.05rem; color: #555; font-weight: 400; line-height: 1.6; }
+        .trust-badge { background: linear-gradient(135deg, rgba(26, 60, 52, 0.05) 0%, rgba(197, 160, 89, 0.1) 100%); border-right: 4px solid var(--gold); padding: 25px; border-radius: 12px; margin-bottom: 30px; position: relative; box-shadow: 0 10px 20px rgba(0,0,0,0.02); }
+        .trust-badge h4 { color: var(--royal-green); margin: 0 0 10px 0; font-size: 1.2rem; font-weight: 800; display: flex; align-items: center; gap: 10px; }
+        .trust-badge p { margin: 0; font-size: 1.05rem; color: #555; font-weight: 600; line-height: 1.6; }
         
-        .speed-badge { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--gold); padding: 8px 15px; border-radius: 8px; color: var(--royal-green); font-weight: 700; font-size: 0.95rem; margin-bottom: 40px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .speed-badge { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--gold); padding: 10px 18px; border-radius: 8px; color: var(--royal-green); font-weight: 800; font-size: 0.95rem; margin-bottom: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
 
-        .features-list { list-style: none; padding: 0; margin-bottom: 50px; }
-        .features-list li { margin-bottom: 18px; display: flex; align-items: center; gap: 15px; color: var(--royal-green); font-weight: 500; font-size: 1.05rem; }
-        .features-list li i { color: var(--gold); font-size: 1.3rem; }
-
-        .related-section { margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(0,0,0,0.05); }
-        .related-section h3 { color: var(--royal-green); font-weight: 400; font-size: 1.4rem; margin-bottom: 25px; }
-        
-        .horizontal-slider { display: flex; gap: 25px; overflow-x: auto; padding: 10px 5px 25px 5px; scrollbar-width: none; }
-        .horizontal-slider::-webkit-scrollbar { display: none; }
-        .glass-product-card { min-width: 280px; background: rgba(255, 255, 255, 0.8); border: 1px solid rgba(197, 160, 89, 0.2); border-radius: 20px; padding: 18px; text-decoration: none; text-align: center; transition: 0.4s; display: flex; flex-direction: column; }
-        .glass-product-card:hover { transform: translateY(-8px); border-color: var(--gold); background: #fff; box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
-        .glass-product-card img { width: 100%; height: 160px; object-fit: contain; background: #fff; border-radius: 15px; margin-bottom: 15px; }
-        .glass-product-card h4 { color: var(--royal-green); font-size: 1.1rem; margin: 0 0 10px 0; font-weight: 600; }
-        .glass-product-card p { color: #666; font-size: 0.9rem; margin: 0; line-height: 1.6; font-weight: 300; }
+        .specs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 40px; }
+        .spec-item { background: white; padding: 15px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.05); display: flex; align-items: center; gap: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.02); }
+        .spec-item i { color: var(--gold); font-size: 1.4rem; }
+        .spec-item div { display: flex; flex-direction: column; }
+        .spec-item span.title { font-size: 0.8rem; color: #777; font-weight: 700; text-transform: uppercase; }
+        .spec-item span.value { font-size: 1rem; color: var(--royal-green); font-weight: 800; }
 
         .cta-box { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin-top: 40px; margin-bottom: 60px;}
-        
-        .add-to-cart-btn { background: var(--royal-green); color: white; border: none; padding: 15px 30px; border-radius: 30px; font-size: 1.1rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: 0.4s; box-shadow: 0 10px 20px rgba(26, 60, 52, 0.2); font-family: inherit; }
-        .add-to-cart-btn:hover { background: var(--gold); transform: translateY(-3px); box-shadow: 0 15px 25px rgba(197, 160, 89, 0.3); }
+        .add-to-cart-btn { background: var(--royal-green); color: white; border: none; padding: 16px 35px; border-radius: 30px; font-size: 1.15rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: 0.4s; box-shadow: 0 10px 20px rgba(26, 60, 52, 0.2); font-family: inherit; }
+        .add-to-cart-btn:hover { background: var(--gold); transform: translateY(-3px); box-shadow: 0 15px 25px rgba(197, 160, 89, 0.3); color: var(--royal-green); }
 
-        .back-gallery { text-decoration: none; color: #999; font-size: 0.95rem; transition: 0.3s; display: flex; align-items: center; gap: 10px; }
+        .back-gallery { text-decoration: none; color: #777; font-size: 1rem; font-weight: 600; transition: 0.3s; display: flex; align-items: center; gap: 10px; }
         .back-gallery:hover { color: var(--royal-green); }
 
-        .expert-btn { position: fixed; bottom: 40px; right: 40px; background: #25d366; color: white; padding: 18px 35px; border-radius: 60px; text-decoration: none; box-shadow: 0 15px 35px rgba(37, 211, 102, 0.25); z-index: 1000; font-weight: 600; display: flex; align-items: center; gap: 15px; transition: 0.4s; }
-        @media (max-width: 768px) { .expert-btn { bottom: 20px; right: 20px; padding: 15px 25px; font-size: 0.9rem; } .expert-btn span { display: none; } .content-section h1 { font-size: 2.2rem; } .product-wrapper { margin: 40px auto; } .cta-box { flex-direction: column; align-items: flex-start; } .add-to-cart-btn { width: 100%; justify-content: center; } }
+        .expert-btn { position: fixed; bottom: 40px; right: 40px; background: #25d366; color: white; padding: 18px 35px; border-radius: 60px; text-decoration: none; box-shadow: 0 15px 35px rgba(37, 211, 102, 0.3); z-index: 1000; font-weight: 800; display: flex; align-items: center; gap: 15px; transition: 0.4s; }
+        .expert-btn:hover { transform: scale(1.05); }
 
-        #smartGlassSlider { position: fixed; bottom: 110px; left: 50%; transform: translate(-50%, 200%); background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 20px; padding: 10px 20px; display: flex; gap: 20px; z-index: 999; transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: max-content; }
-        #smartGlassSlider.visible { transform: translate(-50%, 0); }
-        .smart-glass-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; transition: 0.3s; }
-        .smart-glass-item:hover { transform: scale(1.05); }
-        .smart-glass-item img { width: 50px; height: 50px; object-fit: cover; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .smart-glass-item span { font-size: 0.75rem; color: var(--royal-green); font-weight: 700; margin-top: 5px; }
+        @media (max-width: 768px) { 
+            .expert-btn { bottom: 20px; right: 20px; padding: 15px 25px; font-size: 0.9rem; } 
+            .expert-btn span { display: none; } 
+            .product-wrapper { margin: 40px auto; } 
+            .cta-box { flex-direction: column; align-items: stretch; } 
+            .add-to-cart-btn { justify-content: center; } 
+            .specs-grid { grid-template-columns: 1fr; }
+        }
     </style>
-
-    <script src="../main.js" defer></script>
 </head>
 <body>
-
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NT75WPGT"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="../cart.html" class="cart-float" aria-label="قائمة المقايسة">
         <i class="fas fa-clipboard-list"></i>
         <span class="cart-badge" id="cartCount">0</span>
@@ -91,122 +99,175 @@
     <div class="product-wrapper">
         <div class="image-section">
             <div class="main-display">
-                <img id="productImage" src="" fetchpriority="high" alt="Habib Luxury Collection" onerror="this.src='../assets/images/nageel/grass-11mm-standard-10.png'">
+                <img id="productImage" src="" fetchpriority="high" alt="Habib Luxury Collection">
             </div>
+            <div id="thumbnailsContainer" class="thumbnail-container"></div>
         </div>
 
         <div class="content-section">
-            <span class="brand-tag">Habib Store | Premium Selection</span>
-            <div class="phone-trust"><i class="fas fa-phone-alt"></i> 01016961497</div>
+            <span class="brand-tag">Premium Selection | VIP Edition</span>
+            <div class="phone-trust"><i class="fas fa-phone-alt"></i> 01145393026</div>
             
-            <h1 id="productTitle">جاري تحميل التفاصيل...</h1>
+            <h1 id="productTitle">جاري تحميل الفخامة...</h1>
             <div class="luxury-line"></div>
             
-            <p class="description-text" id="productDescription">
-                جاري تحميل مواصفات المنتج...
-            </p>
+            <p class="description-text" id="productDescription"></p>
+
+            <div class="specs-grid" id="productSpecs"></div>
 
             <div class="trust-badge">
-                <h4><i class="fas fa-hard-hat"></i> توريد وتركيب بأيدي خبراء ومهندسين</h4>
-                <p>في Habib Store، لا نترك مساحتكم للصدفة. يتم تنفيذ كل مشروع تحت إشراف هندسي متكامل لضمان <strong>Professional Installation</strong>، بداية من تسوية الأرض وحتى نظام تصريف المياه.</p>
+                <h4><i class="fas fa-hard-hat"></i> الإشراف الهندسي الملكي</h4>
+                <p>في Habib Boutique، يتم رفع المقاسات بالليزر ودراسة مناسيب الصرف بعناية، لضمان <strong>عزل تام ومظهر طبيعي بلا فواصل مرئية</strong> تليق بمستوى القصور.</p>
             </div>
             
             <div class="speed-badge">
-                <i class="fas fa-stopwatch"></i> معاينة فورية وتركيب هندسي دقيق في خلال 48 ساعة
+                <i class="fas fa-stopwatch"></i> معاينة VIP وتوريد وتركيب هندسي خلال 48 ساعة
             </div>
-
-            <ul class="features-list">
-                <li><i class="fas fa-check-double"></i> ضمان جودة Habib Store الهندسية</li>
-                <li><i class="fas fa-check-double"></i> تقنية مقاومة للأشعة البنفسجية (UV Resistant) لثبات اللون</li>
-                <li><i class="fas fa-check-double"></i> ملمس طبيعي ناعم (Natural Touch)</li>
-                <li><i class="fas fa-check-double"></i> تصريف مياه ذكي (Advanced Drainage)</li>
-            </ul>
 
             <div class="cta-box">
                 <button id="addToCartBtn" class="add-to-cart-btn">
-                    <i class="fas fa-plus-circle"></i> أضف للمقايسة
+                    <i class="fas fa-plus-circle"></i> أضف للمقايسة الهندسية
                 </button>
 
                 <a href="grass-gallery.html" class="back-gallery">
-                    <i class="fas fa-arrow-right"></i> العودة إلى المعرض الرئيسي
+                    <i class="fas fa-arrow-right"></i> العودة إلى تشكيلة النخبة
                 </a>
             </div>
-
-            <div class="related-section">
-                <h3>يكتمل الرقي مع إضافاتنا الهندسية:</h3>
-                <div class="horizontal-slider" id="relatedSlider">
-                </div>
-            </div>
-
         </div>
     </div>
-    
-    <div id="smartGlassSlider">
-        <a href="white-marble.html" class="smart-glass-item">
-            <img src="../assets/images/zalat/white-zalat.jpg" alt="معرض الزلط">
-            <span>معرض الزلط</span>
-        </a>
-        <a href="marble.html" class="smart-glass-item">
-            <img src="../assets/images/marble/marble-galala.jpg" alt="معرض الرخام">
-            <span>معرض الرخام</span>
-        </a>
-        <a href="trees.html" class="smart-glass-item">
-            <img src="../assets/images/nageel/modern-landscape-design.jpg" alt="معرض الأشجار">
-            <span>معرض الأشجار</span>
-        </a>
-    </div>
 
-    <a href="https://wa.me/201016961497" class="expert-btn" aria-label="تواصل معنا عبر الواتساب للاستشارة والمقايسة">
-        <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i>
-        <span>استشارة هندسية ومقايسة مجانية</span>
+    <a href="https://wa.me/201145393026" class="expert-btn" aria-label="تواصل معنا للاستشارة">
+        <i class="fab fa-whatsapp" style="font-size: 1.6rem;"></i>
+        <span>استشارة مهندس حبيب للقصور والفلل</span>
     </a>
 
     <script>
-        // داتا المنتجات مع إضافة الوصف البيعي لكل نوع حسب كثافته
+        // دالة إضافة اللوجو (العلامة المائية) أوتوماتيك لروابط Cloudinary
+        function applyWatermark(url) {
+            if (!url) return '';
+            // يستبدل مسار الرفع العادي بمسار مدمج فيه اللوجو بتاعك بجودة عالية
+            return url.replace('/upload/', '/upload/w_800,q_auto:best,f_auto/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,w_130,o_90/fl_layer_apply,g_south_east,x_20,y_20/');
+        }
+
+        // قاعدة بيانات المنتجات بتفاصيل الـ VIP
         const nageelData = {
-            '6': { title: 'Habib Eco Green (6mm)', img: 'grass-6_mm-natural.jpeg', desc: 'حلول عملية واقتصادية لكسوة الحوائط والممرات.' },
-            '11': { title: 'Habib Practical Green (11mm)', img: 'grass-11mm-standard-10.png', desc: 'حلول عملية واقتصادية لكسوة الحوائط والممرات، مع متانة تتحمل الاستخدام اليومي.' },
-            '20': { title: 'Habib Standard Turkish (20mm)', img: 'grass-20mm-standard-12.jpeg', desc: 'توازن مثالي بين المتانة والنعومة، خيار ممتاز للمساحات المتوسطة.' },
-            '30-16': { title: 'Habib Antalya Breeze (30mm-16)', img: 'grass-30mm-natural-16.jpeg', desc: 'التوازن المثالي للسعر والجودة، مناسب جداً لرووف البيوت والجناين الخاصة.' },
-            '30-18': { title: 'Habib Natural Soft (30mm-18)', img: 'grass-30mm-natural-18.jpeg', desc: 'التوازن المثالي للسعر والجودة، مناسب جداً لرووف البيوت والجناين الخاصة.' },
-            '30-24': { title: 'Habib Premium Turf (30mm-24)', img: 'grass-30mm-natural-24.jpeg', desc: 'التوازن المثالي للسعر والجودة، مناسب جداً لرووف البيوت والجناين الخاصة.' },
-            '40-12': { title: 'Habib Istanbul Lush (40mm-12)', img: 'grass-40mm-natural-12.jpeg', desc: 'فخامة ملكية للفلل والقصور، ملمس طبيعي وكثافة عالية جداً.' },
-            '40-24': { title: 'Habib Bosphorus Green (40mm-24)', img: 'grass-40mm-natural-24.jpeg', desc: 'فخامة ملكية للفلل والقصور، ملمس طبيعي وكثافة عالية جداً.' },
-            '40-28': { title: 'Habib Legendary Silk (40mm-28)', img: 'grass-40mm-natural-28.jpeg', desc: 'فخامة ملكية للفلل والقصور، ملمس طبيعي وكثافة عالية جداً.' },
-            '40-natural': { title: 'Habib Nature Touch (40mm)', img: 'grass-40mm-natural.jpeg', desc: 'فخامة ملكية للفلل والقصور، ملمس طبيعي وكثافة عالية جداً.' },
-            '50': { title: 'Habib Anatolian Nature (50mm)', img: 'grass-50mm-natural.jpeg', desc: 'فخامة ملكية للفلل والقصور، ملمس طبيعي وكثافة عالية جداً.' }
+            '50': { 
+                title: 'Habib Anatolian Nature (50mm)', 
+                desc: 'الرفاهية الملكية للقصور والفلل. يمنحك ملمس طبيعي يضاهي العشب الحقيقي مع كثافة فائقة تضمن العزل الحراري والصوتي التام للمساحات الواسعة.',
+                specs: [
+                    { icon: 'fa-globe-europe', title: 'المنشأ', value: 'أوروبي معتمد (VIP)' },
+                    { icon: 'fa-layer-group', title: 'الكثافة', value: 'فائقة التحمل' },
+                    { icon: 'fa-sun', title: 'حماية UV', value: 'ضمان 10 سنوات ثبات لون' },
+                    { icon: 'fa-home', title: 'الاستخدام', value: 'محيط القصور والرووف' }
+                ],
+                images: [
+                    'https://res.cloudinary.com/dwa0e5sup/image/upload/v1775822183/Habib-Anatolian-Nature-50mm_aisbwp.jpg',
+                    'https://res.cloudinary.com/dwa0e5sup/image/upload/v1775822184/Habib_Bosphorus_Green_50mm_vp0f4p.jpg'
+                ]
+            },
+            '40-24': { 
+                title: 'Habib Bosphorus Green (40mm)', 
+                desc: 'صُمم خصيصاً ليحتفظ برونقه الملكي في ممرات الحدائق الفاخرة وحول حمامات السباحة. لون غني ومقاومة شديدة للاستخدام المستمر.',
+                specs: [
+                    { icon: 'fa-globe-europe', title: 'المنشأ', value: 'أوروبي فاخر' },
+                    { icon: 'fa-layer-group', title: 'الكثافة', value: 'عالية التحمل' },
+                    { icon: 'fa-swimming-pool', title: 'مقاومة الماء', value: 'تصريف ذكي Smart-Flow' },
+                    { icon: 'fa-home', title: 'الاستخدام', value: 'حول المسابح والممرات' }
+                ],
+                images: [
+                    'https://res.cloudinary.com/dwa0e5sup/image/upload/v1775821960/grass-40mm-natural-24_ljrbin.jpg'
+                ]
+            },
+            '30-18': { 
+                title: 'Habib Natural Soft (30mm)', 
+                desc: 'التوازن الهندسي المثالي بين النعومة الفائقة وقوة التحمل. الاختيار الأول لجلسات الرووف والمساحات العائلية الخاصة للحصول على مظهر طبيعي مريح.',
+                specs: [
+                    { icon: 'fa-globe-europe', title: 'المنشأ', value: 'أوروبي' },
+                    { icon: 'fa-feather', title: 'الملمس', value: 'ناعم جداً (Soft Touch)' },
+                    { icon: 'fa-sun', title: 'حماية UV', value: 'مقاومة للحرارة' },
+                    { icon: 'fa-home', title: 'الاستخدام', value: 'الجلسات والرووف' }
+                ],
+                images: [
+                    'https://res.cloudinary.com/dwa0e5sup/image/upload/v1775822183/Habib-Antalya-Breeze-30mm-24_v1pjzl.jpg',
+                    'https://res.cloudinary.com/dwa0e5sup/image/upload/v1775821960/grass-30mm-natural-24_shruzu.jpg'
+                ]
+            },
+            '6': { 
+                title: 'Habib Eco Green (6mm)', 
+                desc: 'حلول اقتصادية بلمسة معمارية ذكية. مخصص لتجليد الحوائط الديكورية والممرات الجانبية ليضفي روح الطبيعة على كل زاوية.',
+                specs: [
+                    { icon: 'fa-check-circle', title: 'النوع', value: 'ديكوري ذكي' },
+                    { icon: 'fa-weight-hanging', title: 'الوزن', value: 'خفيف لتجليد الحوائط' },
+                    { icon: 'fa-shield-alt', title: 'الحماية', value: 'طبقة خارجية عازلة' },
+                    { icon: 'fa-home', title: 'الاستخدام', value: 'جدران وممرات جانبية' }
+                ],
+                images: [
+                    'https://res.cloudinary.com/dwa0e5sup/image/upload/v1775821960/grass-6_mm-natural_a4kf7g.jpg',
+                    'https://res.cloudinary.com/dwa0e5sup/image/upload/v1775822229/grass-6mm.jpg_xvh3u9.jpg'
+                ]
+            }
         };
 
         const urlParams = new URLSearchParams(window.location.search);
-        const productId = urlParams.get('id');
+        // لو مفيش ID، هيفتح أوتوماتيك على 50 ملم كعرض افتراضي
+        const productId = urlParams.get('id') || '50'; 
         const product = nageelData[productId];
 
         if (product) {
             document.getElementById('productTitle').innerText = product.title;
-            document.getElementById('productImage').src = '../assets/images/nageel/' + product.img;
+            document.getElementById('productDescription').innerHTML = `<strong>التميز المعماري:</strong> ${product.desc}`;
             
-            // حقن الوصف الديناميكي
-            document.getElementById('productDescription').innerHTML = 
-                `<strong>التميز الهندسي:</strong> ${product.desc} <br><br> اختيار الـ <strong>Professional Finish</strong> يبدأ بجودة الخامة. الخيار الأمثل للمساحات الـ <strong>High-End Landscapes</strong>.`;
+            // تحميل المواصفات
+            const specsContainer = document.getElementById('productSpecs');
+            product.specs.forEach(spec => {
+                specsContainer.innerHTML += `
+                    <div class="spec-item">
+                        <i class="fas ${spec.icon}"></i>
+                        <div>
+                            <span class="title">${spec.title}</span>
+                            <span class="value">${spec.value}</span>
+                        </div>
+                    </div>
+                `;
+            });
+
+            // تحميل الصور (مع إضافة العلامة المائية)
+            const mainImg = document.getElementById('productImage');
+            mainImg.src = applyWatermark(product.images[0]);
+
+            const thumbsContainer = document.getElementById('thumbnailsContainer');
+            if(product.images.length > 1) {
+                product.images.forEach((imgUrl, index) => {
+                    let watermarkedUrl = applyWatermark(imgUrl);
+                    let activeClass = index === 0 ? 'active' : '';
+                    thumbsContainer.innerHTML += `
+                        <div class="thumbnail ${activeClass}" onclick="changeMainImage(this, '${watermarkedUrl}')">
+                            <img src="${watermarkedUrl}" alt="Thumbnail">
+                        </div>
+                    `;
+                });
+            }
         }
 
+        // دالة تغيير الصورة عند الضغط على المصغرات
+        function changeMainImage(element, newSrc) {
+            document.getElementById('productImage').src = newSrc;
+            document.querySelectorAll('.thumbnail').forEach(th => th.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        // نظام سلة المقايسة
         function updateCartCount() {
             try {
                 let cart = JSON.parse(localStorage.getItem('cart')) || [];
                 let count = cart.reduce((total, item) => total + (item.quantity || 1), 0);
                 document.getElementById('cartCount').textContent = count;
-            } catch(e) {
-                console.log("Cart Error");
-            }
+            } catch(e) {}
         }
-        
         updateCartCount();
-        window.addEventListener('storage', updateCartCount);
 
-        // وظيفة الإضافة للمقايسة
         document.getElementById('addToCartBtn').addEventListener('click', function() {
             if(!product) return;
-            
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
             let existingItem = cart.find(item => item.id === productId && item.category === 'nageel');
             
@@ -216,7 +277,7 @@
                 cart.push({
                     id: productId,
                     title: product.title,
-                    img: '../assets/images/nageel/' + product.img,
+                    img: applyWatermark(product.images[0]),
                     category: 'nageel',
                     quantity: 1,
                     price: 0
@@ -224,51 +285,20 @@
             }
             
             localStorage.setItem('cart', JSON.stringify(cart));
-            
             updateCartCount();
-            if (typeof updateGlobalCartCount === "function") {
-                updateGlobalCartCount();
-            }
             
-            // تأثير تأكيد الإضافة
             let btn = this;
             let originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fas fa-check-circle"></i> تمت الإضافة للمقايسة بنجاح';
+            btn.innerHTML = '<i class="fas fa-check-circle"></i> تمت الإضافة بنجاح للمقايسة';
             btn.style.background = '#25d366';
             btn.style.color = 'white';
-            btn.style.boxShadow = '0 10px 20px rgba(37, 211, 102, 0.3)';
             
             setTimeout(() => {
                 btn.innerHTML = originalText;
                 btn.style.background = '';
-                btn.style.boxShadow = '';
+                btn.style.color = '';
             }, 2500);
         });
-
-        const complements = [
-            { name: "معرض أحجار الديكور والزلط", img: "../assets/images/zalat/zalat-garden-ideas-luxury.jpg", link: "white-marble.html", desc: "اكتشف تشكيلة من أحجار الديكور التي يختارها مهندسونا لتمنح حديقتكم تبايناً بصرياً ساحراً." },
-            { name: "معرض الرخام الفاخر", img: "../assets/images/marble/marble-galala.jpg", link: "marble.html", desc: "لمسات من الرخام الطبيعي والمشايات الهندسية التي تضمن لكم الفخامة والراحة في كل خطوة." },
-            { name: "الزلط الأبيض الملكي", img: "../assets/images/zalat/white-zalat.jpg", link: "zalat.html?id=white-zalat", desc: "الخيار الأول للنخبة؛ لتحديد المسارات وحواف النجيل بدقة متناهية تعكس نظافة التصميم." },
-            { name: "مشايات رخام جلالة", img: "../assets/images/marble/marble-galala.jpg", link: "stones.html?id=40", desc: "نعتني باختيارها وتركيبها بأسلوب هندسي يدمج بين الوظيفة العملية والجمال الكلاسيكي." },
-            { name: "أحجار الميكا الطبيعية", img: "../assets/images/marble/stone-mica-red.jpg", link: "stones.html?id=51", desc: "تجليد الأسوار والأحواض بأحجار الميكا، لإضافة عمق وفخامة للجدران المحيطة بجلساتكم." },
-            { name: "حصى الكوارتز الملون", img: "../assets/images/zalat/zalat-mix-colors.jpeg", link: "zalat.html?id=mix", desc: "مزيج من الألوان الهادئة المستوحاة من الطبيعة، ننسقها بحس هندسي لتكسر رتابة المساحات." }
-        ];
-
-        const slider = document.getElementById('relatedSlider');
-        complements.forEach(item => {
-            slider.innerHTML += `
-                <a href="${item.link}" class="glass-product-card">
-                    <img src="${item.img}" alt="${item.name}" loading="lazy">
-                    <h4>${item.name}</h4>
-                    <p>${item.desc}</p>
-                </a>
-            `;
-        });
-
-        setTimeout(() => {
-            const glassSlider = document.getElementById('smartGlassSlider');
-            if(glassSlider) glassSlider.classList.add('visible');
-        }, 5000);
     </script>
 </body>
 </html>
