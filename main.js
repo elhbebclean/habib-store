@@ -1,6 +1,6 @@
 /* =========================================
    Habib Store | Premium Selection
-   Main Core Logic - v5.0 (VIP Cloudinary & Full Descriptions)
+   Main Core Logic - v3.6 (Professional Edition + VIP Cloudinary)
    ========================================= */
 
 // 1. تحديث عدّاد المقايسة (السلة)
@@ -36,14 +36,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* =========================================
-   🔥 محرك المبيعات
+   🔥 محرك المبيعات والكتالوج الذكي
    ========================================= */
 
-// 4. الإضافة السريعة للمقايسة
+// 4. الإضافة السريعة للمقايسة (مع دعم الصور)
 function quickAddToCart(productId, productName, category = 'general') {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     
-    // مسار افتراضي (يمكنك تعديله لاحقاً لربطه بكلاوديناري إن أردت)
+    // محاولة تخمين مسار الصورة بناءً على الفئة
     let imgPath = `assets/images/${category}/${productId}.jpg`; 
     if (category === 'zalat') imgPath = `assets/images/zalat/${productId}.jpg`;
 
@@ -63,18 +63,16 @@ function quickAddToCart(productId, productName, category = 'general') {
     localStorage.setItem('cart', JSON.stringify(cart));
     updateGlobalCartCount();
     
+    // تنبيه احترافي للعميل
     console.log(`✅ تم إضافة ${productName} لقائمة المقايسة`);
 }
 
-/* =========================================
-   💎 الكتالوج الذكي (سابقة الأعمال والأوصاف)
-   ========================================= */
-
+// 5. محرك الكتالوج (سابقة الأعمال VIP السحابية)
 let catalogImages = [];
 let currentImageIndex = 0;
 let currentCategoryName = '';
 
-// قاعدة بيانات Cloudinary المركزية لجميع أقسام البوتيك (بالأوصاف الكاملة)
+// قاعدة بيانات Cloudinary المركزية لجميع أقسام البوتيك بالأوصاف
 const portfolioData = {
     'nageel': {
         nameAr: 'النجيل الصناعي',
@@ -111,7 +109,7 @@ const portfolioData = {
         ]
     },
     'zalat': {
-        nameAr: 'الزلط والأحجار الديكورية',
+        nameAr: 'الزلط والأحجار',
         media: [
             { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828577/zalat-mix-colors__visent.jpg", desc: "الزلط الملون - يضفي حيوية وروح للاندسكيب" },
             { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828696/z2_ixj65v.jpg", desc: "تنسيق ممرات الزلط بتصميمات هندسية راقية" },
@@ -123,52 +121,47 @@ const portfolioData = {
     }
 };
 
-// 5. فتح الكتالوج الذكي 
 function openCatalog(category) {
     const data = portfolioData[category];
-    if (!data || data.media.length === 0) return;
+    if (!data) return;
 
     currentCategoryName = data.nameAr;
-    catalogImages = data.media;
+    catalogImages = data.media; // مصفوفة الكائنات {url, desc}
     currentImageIndex = 0;
     
     const lightbox = document.getElementById('catalogLightbox') || document.getElementById('zalatLightbox');
     if (!lightbox) return;
     
-    lightbox.style.display = 'flex'; 
+    lightbox.style.display = 'flex'; // إظهار النافذة فوراً
     lightbox.classList.add('active');
     
     updateCatalogView();
 }
 
-// التحديث الذكي لعرض الصور أو الفيديوهات مع الوصف
 function updateCatalogView() {
     const mainImg = document.getElementById('catalogMainImage') || document.getElementById('zalatMainImage');
-    const descElement = document.getElementById('catalogDescription'); 
+    const descElement = document.getElementById('catalogDescription');
     
     if (!mainImg || catalogImages.length === 0) return;
 
     const currentMedia = catalogImages[currentImageIndex];
-    
-    // دعم النظامين (النص القديم، أو الكائن الجديد اللي فيه الوصف)
-    const mediaUrl = typeof currentMedia === 'string' ? currentMedia : currentMedia.url;
-    const mediaDesc = typeof currentMedia === 'string' ? '' : currentMedia.desc;
+    const mediaUrl = currentMedia.url;
+    const mediaDesc = currentMedia.desc;
     
     const isVideo = mediaUrl.includes('.mp4') || mediaUrl.includes('/video/');
     const parent = mainImg.parentElement;
 
-    // تحديث الوصف
+    // تحديث الوصف إذا كان العنصر موجوداً
     if (descElement) {
         descElement.innerText = mediaDesc;
-        descElement.style.display = mediaDesc ? 'block' : 'none'; 
+        descElement.style.display = mediaDesc ? 'block' : 'none';
     }
 
-    // تنظيف أي فيديو قديم معروض
+    // تنظيف أي فيديو معروض سابقاً
     const existingVideo = document.getElementById('catalogMainVideo');
     if (existingVideo) existingVideo.remove();
 
     if (isVideo) {
-        // إخفاء الصورة وعرض مشغل الفيديو
         mainImg.style.display = 'none';
         const videoEl = document.createElement('video');
         videoEl.id = 'catalogMainVideo';
@@ -183,7 +176,6 @@ function updateCatalogView() {
         videoEl.style.borderRadius = '12px';
         parent.insertBefore(videoEl, mainImg);
     } else {
-        // عرض الصورة العادية
         mainImg.style.display = 'block';
         mainImg.src = mediaUrl;
     }
@@ -203,12 +195,11 @@ function prevCatalogImage() {
 
 function closeCatalog(event) {
     const lightbox = document.getElementById('catalogLightbox') || document.getElementById('zalatLightbox');
-    // إغلاق المعرض إذا تم النقر خارج الصورة أو على زر الإغلاق
     if (!event || event.target === lightbox || event.target.classList.contains('close-btn')) {
         if (lightbox) {
             lightbox.classList.remove('active');
             lightbox.style.display = 'none';
-            // إيقاف أي فيديو شغال عند الإغلاق
+            // إيقاف الفيديو عند الإغلاق
             const existingVideo = document.getElementById('catalogMainVideo');
             if (existingVideo) existingVideo.remove();
         }
@@ -218,15 +209,11 @@ function closeCatalog(event) {
 // 6. طلب تنفيذ تصميم محدد من سابقة الأعمال عبر واتساب
 function orderCurrentDesign() {
     if (catalogImages.length === 0) return;
-    const currentMedia = catalogImages[currentImageIndex];
-    const mediaUrl = typeof currentMedia === 'string' ? currentMedia : currentMedia.url;
-    
-    // استخراج اسم أو كود الملف من الرابط
+    const mediaUrl = catalogImages[currentImageIndex].url;
     const imageName = mediaUrl.split('/').pop().split('.')[0]; 
     
-    const message = `*طلب تنفيذ تصميم محدد - Habib Store* 🦈\n--------------------------------\nمرحباً، أعجبني هذا التصميم من سابقة أعمال ${currentCategoryName}.\n(كود المرجع: ${imageName})\n\nأريد الاستفسار عن تفاصيل تنفيذه ومقايسته.`;
+    const message = `*طلب تنفيذ تصميم محدد - Habib Store* 🦈\n--------------------------------\nمرحباً محمود، أعجبني هذا التصميم من سابقة أعمال ${currentCategoryName}.\n(كود الصورة: ${imageName})\n\nأريد الاستفسار عن تفاصيل تنفيذه ومقايسته.`;
     const encodedMessage = encodeURIComponent(message);
     
-    // توجيه العميل للرقم المعتمد للمقايسات 
     window.open(`https://wa.me/201145393026?text=${encodedMessage}`, '_blank');
 }
