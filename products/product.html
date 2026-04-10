@@ -142,14 +142,7 @@
     </a>
 
     <script>
-        // دالة إضافة اللوجو (العلامة المائية) أوتوماتيك لروابط Cloudinary
-        function applyWatermark(url) {
-            if (!url) return '';
-            // يستبدل مسار الرفع العادي بمسار مدمج فيه اللوجو بتاعك بجودة عالية
-            return url.replace('/upload/', '/upload/w_800,q_auto:best,f_auto/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,w_130,o_90/fl_layer_apply,g_south_east,x_20,y_20/');
-        }
-
-        // قاعدة بيانات المنتجات بتفاصيل الـ VIP
+        // قاعدة بيانات المنتجات بتفاصيل الـ VIP ومسارات الصور الأصلية
         const nageelData = {
             '50': { 
                 title: 'Habib Anatolian Nature (50mm)', 
@@ -161,8 +154,8 @@
                     { icon: 'fa-home', title: 'الاستخدام', value: 'محيط القصور والرووف' }
                 ],
                 images: [
-                    'https://res.cloudinary.com/dwa0e5sup/image/upload/v1775822183/Habib-Anatolian-Nature-50mm_aisbwp.jpg',
-                    'https://res.cloudinary.com/dwa0e5sup/image/upload/v1775822184/Habib_Bosphorus_Green_50mm_vp0f4p.jpg'
+                    'https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775822183/Habib-Anatolian-Nature-50mm_aisbwp.jpg',
+                    'https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775822184/Habib_Bosphorus_Green_50mm_vp0f4p.jpg'
                 ]
             },
             '40-24': { 
@@ -175,7 +168,7 @@
                     { icon: 'fa-home', title: 'الاستخدام', value: 'حول المسابح والممرات' }
                 ],
                 images: [
-                    'https://res.cloudinary.com/dwa0e5sup/image/upload/v1775821960/grass-40mm-natural-24_ljrbin.jpg'
+                    'https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775821960/grass-40mm-natural-24_ljrbin.jpg'
                 ]
             },
             '30-18': { 
@@ -188,8 +181,8 @@
                     { icon: 'fa-home', title: 'الاستخدام', value: 'الجلسات والرووف' }
                 ],
                 images: [
-                    'https://res.cloudinary.com/dwa0e5sup/image/upload/v1775822183/Habib-Antalya-Breeze-30mm-24_v1pjzl.jpg',
-                    'https://res.cloudinary.com/dwa0e5sup/image/upload/v1775821960/grass-30mm-natural-24_shruzu.jpg'
+                    'https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775822183/Habib-Antalya-Breeze-30mm-24_v1pjzl.jpg',
+                    'https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775821960/grass-30mm-natural-24_shruzu.jpg'
                 ]
             },
             '6': { 
@@ -202,14 +195,13 @@
                     { icon: 'fa-home', title: 'الاستخدام', value: 'جدران وممرات جانبية' }
                 ],
                 images: [
-                    'https://res.cloudinary.com/dwa0e5sup/image/upload/v1775821960/grass-6_mm-natural_a4kf7g.jpg',
-                    'https://res.cloudinary.com/dwa0e5sup/image/upload/v1775822229/grass-6mm.jpg_xvh3u9.jpg'
+                    'https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775821960/grass-6_mm-natural_a4kf7g.jpg',
+                    'https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775822229/grass-6mm.jpg_xvh3u9.jpg'
                 ]
             }
         };
 
         const urlParams = new URLSearchParams(window.location.search);
-        // لو مفيش ID، هيفتح أوتوماتيك على 50 ملم كعرض افتراضي
         const productId = urlParams.get('id') || '50'; 
         const product = nageelData[productId];
 
@@ -217,7 +209,6 @@
             document.getElementById('productTitle').innerText = product.title;
             document.getElementById('productDescription').innerHTML = `<strong>التميز المعماري:</strong> ${product.desc}`;
             
-            // تحميل المواصفات
             const specsContainer = document.getElementById('productSpecs');
             product.specs.forEach(spec => {
                 specsContainer.innerHTML += `
@@ -231,32 +222,30 @@
                 `;
             });
 
-            // تحميل الصور (مع إضافة العلامة المائية)
+            // تحميل الصورة الأساسية بدون تعديل المسار
             const mainImg = document.getElementById('productImage');
-            mainImg.src = applyWatermark(product.images[0]);
+            mainImg.src = product.images[0];
 
+            // تحميل المصغرات لو فيه أكتر من صورة
             const thumbsContainer = document.getElementById('thumbnailsContainer');
             if(product.images.length > 1) {
                 product.images.forEach((imgUrl, index) => {
-                    let watermarkedUrl = applyWatermark(imgUrl);
                     let activeClass = index === 0 ? 'active' : '';
                     thumbsContainer.innerHTML += `
-                        <div class="thumbnail ${activeClass}" onclick="changeMainImage(this, '${watermarkedUrl}')">
-                            <img src="${watermarkedUrl}" alt="Thumbnail">
+                        <div class="thumbnail ${activeClass}" onclick="changeMainImage(this, '${imgUrl}')">
+                            <img src="${imgUrl}" alt="Thumbnail">
                         </div>
                     `;
                 });
             }
         }
 
-        // دالة تغيير الصورة عند الضغط على المصغرات
         function changeMainImage(element, newSrc) {
             document.getElementById('productImage').src = newSrc;
             document.querySelectorAll('.thumbnail').forEach(th => th.classList.remove('active'));
             element.classList.add('active');
         }
 
-        // نظام سلة المقايسة
         function updateCartCount() {
             try {
                 let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -277,7 +266,7 @@
                 cart.push({
                     id: productId,
                     title: product.title,
-                    img: applyWatermark(product.images[0]),
+                    img: product.images[0], // استخدام الصورة الأولى كأيقونة في المقايسة
                     category: 'nageel',
                     quantity: 1,
                     price: 0
