@@ -1,99 +1,96 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NT75WPGT');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="تفاصيل ومواصفات مقتنيات الرخام والأحجار الفاخرة من حبيب ستور. رخام جلالة، إمبردور، وأحجار مايكا للواجهات والقصور بتنفيذ وإشراف هندسي متكامل.">
-    <title>تفاصيل مقتنيات الرخام | Habib Store | مقايسة وتنسيق حدائق</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="description" content="تفاصيل ومواصفات جداريات النخبة الديكورية من Habib Landscape Boutique. تصميمات معمارية وتكسيات فاخرة لتأسيس واجهات القصور والفلل بإشراف هندسي متكامل.">
+    <title>تفاصيل اللوحة الفنية | Habib Landscape Boutique</title>
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
-    <script src="../main.js" defer></script>
+    
     <style>
         :root { --royal-green: #1a3c34; --gold: #c5a059; --soft-gray: #f8fafa; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--soft-gray); margin: 0; color: #333; line-height: 1.8; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--soft-gray); margin: 0; color: #333; line-height: 1.8; overflow-x: hidden; }
         
-        /* أيقونة المقايسة العائمة (بديلة للسلة) */
         .cart-float { position: fixed; top: 20px; left: 20px; background: white; color: var(--royal-green); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-decoration: none; z-index: 1000; font-size: 1.2rem; transition: 0.3s; border: 1px solid rgba(197, 160, 89, 0.3); }
         .cart-float:hover { transform: scale(1.1); color: var(--gold); border-color: var(--gold); }
         .cart-badge { position: absolute; top: -5px; right: -5px; background: var(--gold); color: white; font-size: 0.75rem; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
 
         .product-wrapper { max-width: 1200px; margin: 80px auto; padding: 0 20px; display: flex; flex-wrap: wrap; gap: 60px; align-items: flex-start; }
         
-        /* قسم الصورة الراقية (معدل بـ Contain) */
         .image-section { flex: 1.1; min-width: 350px; position: sticky; top: 40px; }
         .main-display { width: 100%; border-radius: 25px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.1); background: #fff; border: 1px solid rgba(0,0,0,0.05); padding: 15px; box-sizing: border-box; }
-        .main-display img { width: 100%; display: block; transition: transform 0.6s ease; object-fit: contain; max-height: 600px; }
+        .main-display img { width: 100%; display: block; transition: transform 0.6s ease; object-fit: contain; max-height: 600px; border-radius: 15px; }
         .main-display:hover img { transform: scale(1.02); }
 
-        /* محتوى الوصف الهادئ للمليارديرات */
         .content-section { flex: 1; min-width: 320px; padding-top: 20px; }
-        .brand-tag { color: var(--gold); font-size: 0.95rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 5px; }
+        .brand-tag { color: var(--gold); font-size: 0.95rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 5px; }
         
-        /* إضافة رقم الهاتف للثقة */
         .phone-trust { display: inline-flex; align-items: center; gap: 8px; background: rgba(26, 60, 52, 0.08); padding: 6px 15px; border-radius: 20px; font-weight: bold; color: var(--royal-green); margin-bottom: 15px; font-size: 0.9rem; border: 1px solid rgba(26, 60, 52, 0.1); }
 
-        .specs-tag { color: var(--royal-green); font-size: 1rem; font-weight: 700; display: block; margin-bottom: 15px; }
+        .specs-tag { color: var(--royal-green); font-size: 1.1rem; font-weight: 800; display: block; margin-bottom: 15px; border-bottom: 2px solid var(--gold); padding-bottom: 5px; width: fit-content; }
         
-        .content-section h1 { font-size: 2.8rem; color: var(--royal-green); font-weight: 300; margin: 0 0 25px 0; line-height: 1.3; }
-        .luxury-line { width: 60px; height: 3px; background: var(--gold); margin-bottom: 30px; }
+        .content-section h1 { font-size: clamp(2rem, 4vw, 2.8rem); color: var(--royal-green); font-weight: 800; margin: 0 0 25px 0; line-height: 1.3; }
+        .luxury-line { width: 60px; height: 4px; background: var(--gold); margin-bottom: 30px; border-radius: 5px; }
         
-        .description-text { font-size: 1.15rem; color: #555; margin-bottom: 30px; text-align: justify; font-weight: 300; line-height: 2; }
+        .description-text { font-size: 1.15rem; color: #444; margin-bottom: 30px; text-align: justify; font-weight: 500; line-height: 2; }
         
-        /* قسم المهندسين والميزة التنافسية */
-        .trust-badge { background: rgba(197, 160, 89, 0.08); border-right: 4px solid var(--gold); padding: 25px; border-radius: 12px; margin-bottom: 30px; }
-        .trust-badge h4 { color: var(--royal-green); margin: 0 0 10px 0; font-size: 1.2rem; font-weight: 600; display: flex; align-items: center; gap: 10px; }
-        .trust-badge p { margin: 0; font-size: 1.05rem; color: #555; font-weight: 400; line-height: 1.6; }
+        .trust-badge { background: linear-gradient(135deg, rgba(26, 60, 52, 0.05) 0%, rgba(197, 160, 89, 0.1) 100%); border-right: 4px solid var(--gold); padding: 25px; border-radius: 12px; margin-bottom: 30px; }
+        .trust-badge h4 { color: var(--royal-green); margin: 0 0 10px 0; font-size: 1.2rem; font-weight: 800; display: flex; align-items: center; gap: 10px; }
+        .trust-badge p { margin: 0; font-size: 1.05rem; color: #555; font-weight: 600; line-height: 1.6; }
 
-        .speed-badge { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--gold); padding: 8px 15px; border-radius: 8px; color: var(--royal-green); font-weight: 700; font-size: 0.95rem; margin-bottom: 40px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .speed-badge { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--gold); padding: 10px 18px; border-radius: 8px; color: var(--royal-green); font-weight: 800; font-size: 0.95rem; margin-bottom: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
 
         .features-list { list-style: none; padding: 0; margin-bottom: 50px; }
-        .features-list li { margin-bottom: 18px; display: flex; align-items: center; gap: 15px; color: var(--royal-green); font-weight: 500; font-size: 1.05rem; }
+        .features-list li { margin-bottom: 18px; display: flex; align-items: center; gap: 15px; color: var(--royal-green); font-weight: 700; font-size: 1.05rem; }
         .features-list li i { color: var(--gold); font-size: 1.3rem; }
 
-        /* المنتجات التكميلية */
         .complements-section { margin-top: 60px; border-top: 1px solid #eaeaea; padding-top: 40px; }
-        .complements-section h3 { color: var(--royal-green); font-weight: 400; font-size: 1.5rem; margin-bottom: 25px; }
-        .slider-container { display: flex; gap: 20px; overflow-x: auto; padding-bottom: 20px; scrollbar-width: thin; }
-        .insta-card { min-width: 200px; display: block; text-decoration: none; border-radius: 15px; overflow: hidden; background: #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.05); transition: 0.3s; }
-        .insta-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-color: var(--gold); border: 1px solid transparent; }
-        .insta-card img { width: 100%; height: 140px; object-fit: cover; }
+        .complements-section h3 { color: var(--royal-green); font-weight: 800; font-size: 1.5rem; margin-bottom: 25px; }
+        .slider-container { display: flex; gap: 20px; overflow-x: auto; padding-bottom: 20px; scrollbar-width: none; }
+        .slider-container::-webkit-scrollbar { display: none; }
+        
+        .insta-card { min-width: 220px; display: block; text-decoration: none; border-radius: 15px; overflow: hidden; background: #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.05); transition: 0.4s; border: 1px solid rgba(197, 160, 89, 0.2); }
+        .insta-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-color: var(--gold); }
+        .insta-card img { width: 100%; height: 160px; object-fit: cover; }
         .insta-card-info { padding: 15px; text-align: center; }
-        .insta-card-info h4 { margin: 0; color: #333; font-size: 0.95rem; font-weight: 500; }
+        .insta-card-info h4 { margin: 0; color: var(--royal-green); font-size: 1rem; font-weight: 700; }
 
-        /* أزرار الإجراءات */
         .cta-box { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin-top: 40px; }
         
-        .add-to-cart-btn { background: var(--royal-green); color: white; border: none; padding: 15px 30px; border-radius: 30px; font-size: 1.1rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: 0.4s; box-shadow: 0 10px 20px rgba(26, 60, 52, 0.2); font-family: inherit; }
-        .add-to-cart-btn:hover { background: var(--gold); transform: translateY(-3px); box-shadow: 0 15px 25px rgba(197, 160, 89, 0.3); }
+        .add-to-cart-btn { background: var(--royal-green); color: white; border: none; padding: 16px 35px; border-radius: 30px; font-size: 1.15rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: 0.4s; box-shadow: 0 10px 20px rgba(26, 60, 52, 0.2); font-family: inherit; }
+        .add-to-cart-btn:hover { background: var(--gold); transform: translateY(-3px); box-shadow: 0 15px 25px rgba(197, 160, 89, 0.3); color: var(--royal-green); }
 
-        .back-gallery { text-decoration: none; color: #999; font-size: 0.95rem; transition: 0.3s; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid transparent; padding-bottom: 3px; }
-        .back-gallery:hover { color: var(--royal-green); border-color: var(--royal-green); }
+        .back-gallery { text-decoration: none; color: #777; font-size: 1rem; font-weight: 600; transition: 0.3s; display: flex; align-items: center; gap: 10px; }
+        .back-gallery:hover { color: var(--royal-green); }
 
-        /* زرار فريق الخبراء (واتساب) */
-        .expert-btn { position: fixed; bottom: 40px; left: 40px; background: #25d366; color: white; padding: 18px 35px; border-radius: 60px; text-decoration: none; box-shadow: 0 15px 35px rgba(37, 211, 102, 0.25); z-index: 1000; font-weight: 600; display: flex; align-items: center; gap: 15px; transition: 0.4s; }
+        .expert-btn { position: fixed; bottom: 40px; right: 40px; background: #25d366; color: white; padding: 18px 35px; border-radius: 60px; text-decoration: none; box-shadow: 0 15px 35px rgba(37, 211, 102, 0.25); z-index: 1000; font-weight: 800; display: flex; align-items: center; gap: 15px; transition: 0.4s; }
         .expert-btn:hover { transform: translateY(-5px); background: #1ebe57; }
 
         @media (max-width: 768px) { 
-            .content-section h1 { font-size: 2.1rem; } 
-            .product-wrapper { margin: 40px auto; } 
-            .expert-btn { bottom: 20px; left: 20px; padding: 15px 25px; font-size: 0.9rem; } 
+            .expert-btn { bottom: 20px; right: 20px; padding: 15px 25px; font-size: 0.9rem; } 
             .expert-btn span { display: none; } 
-            .cta-box { flex-direction: column; align-items: flex-start; } 
+            .cta-box { flex-direction: column; align-items: stretch; } 
             .add-to-cart-btn { width: 100%; justify-content: center; }
         }
 
-        /* الشريط الزجاجي المرفوع */
-        #smartGlassSlider { position: fixed; bottom: 110px; left: 50%; transform: translate(-50%, 200%); background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 20px; padding: 10px 20px; display: flex; gap: 20px; z-index: 999; transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: max-content; }
+        #smartGlassSlider { position: fixed; bottom: 110px; left: 50%; transform: translate(-50%, 200%); background: rgba(255, 255, 255, 0.65); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 20px; padding: 10px 20px; display: flex; gap: 20px; z-index: 999; transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: max-content; }
         #smartGlassSlider.visible { transform: translate(-50%, 0); }
         .smart-glass-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; transition: 0.3s; }
-        .smart-glass-item:hover { transform: scale(1.05); }
+        .smart-glass-item:hover { transform: translateY(-5px); }
         .smart-glass-item img { width: 50px; height: 50px; object-fit: cover; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .smart-glass-item span { font-size: 0.75rem; color: var(--royal-green); font-weight: 700; margin-top: 5px; }
+        .smart-glass-item span { font-size: 0.75rem; color: var(--royal-green); font-weight: 800; margin-top: 5px; }
     </style>
 </head>
 <body>
-
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NT75WPGT"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="../cart.html" class="cart-float" aria-label="قائمة المقايسة">
         <i class="fas fa-clipboard-list"></i>
         <span class="cart-badge" id="cartCount">0</span>
@@ -102,15 +99,15 @@
     <div class="product-wrapper">
         <div class="image-section">
             <div class="main-display">
-                <img id="p-img" src="" alt="Habib Exclusive Selection" fetchpriority="high" onerror="this.src='../assets/images/marble/marble-galala.jpg'">
+                <img id="p-img" src="" alt="Habib Exclusive Selection" fetchpriority="high">
             </div>
         </div>
 
         <div class="content-section">
-            <span class="brand-tag">Habib Store | Premium Selection</span>
-            <div class="phone-trust"><i class="fas fa-phone-alt"></i> 01016961497</div>
+            <span class="brand-tag">Premium Selection | VIP Edition</span>
+            <div class="phone-trust"><i class="fas fa-phone-alt"></i> 01145393026</div>
             
-            <span class="specs-tag" id="p-specs">جاري التحميل...</span>
+            <span class="specs-tag" id="p-specs">جاري تحميل الفخامة...</span>
             <h1 id="p-name">مقتنيات حبيب ستور</h1>
             <div class="luxury-line"></div>
             
@@ -119,35 +116,35 @@
             </p>
 
             <div class="trust-badge">
-                <h4><i class="fas fa-hard-hat"></i> توريد وتركيب بأيدي خبراء ومهندسين</h4>
-                <p>في Habib Store، يكتمل جمال الرخام والأحجار بدقة التنفيذ. يتم التركيب تحت إشراف هندسي متكامل لضمان <strong>Professional Finish</strong> يعكس قيمة وفخامة اختياراتكم وتدوم لسنوات طوال.</p>
+                <h4><i class="fas fa-hard-hat"></i> التنفيذ والإشراف الملكي</h4>
+                <p>في Habib Boutique، يتم التركيب تحت إشراف هندسي متكامل لضمان <strong>عزل بصري وProfessional Finish</strong> يعكس قيمة وفخامة اختياراتكم وتدوم لسنوات طوال بلا عيوب.</p>
             </div>
             
             <div class="speed-badge">
-                <i class="fas fa-stopwatch"></i> معاينة فورية وتركيب هندسي دقيق في خلال 48 ساعة
+                <i class="fas fa-stopwatch"></i> معاينة VIP وتوريد وتركيب هندسي خلال 48 ساعة
             </div>
 
             <ul class="features-list">
-                <li><i class="fas fa-check-double"></i> انتقاء يدوي من أنقى المحاجر الطبيعية</li>
-                <li><i class="fas fa-check-double"></i> استدامة جمالية تتوارثها الأجيال</li>
-                <li><i class="fas fa-check-double"></i> أبعاد هندسية دقيقة تلبي أرقى المعايير</li>
-                <li><i class="fas fa-check-double"></i> فخامة بصرية تضفي هيبة على المساحات الخاصة</li>
+                <li><i class="fas fa-check-double"></i> تصميمات حصرية تمنح المكان طابعاً معمارياً فريداً</li>
+                <li><i class="fas fa-check-double"></i> استدامة جمالية وصلابة تقاوم عوامل الزمن</li>
+                <li><i class="fas fa-check-double"></i> قص بالليزر وتخطيط هندسي لضمان التناسق البصري</li>
+                <li><i class="fas fa-check-double"></i> فخامة بصرية تضفي هيبة على واجهات القصور</li>
             </ul>
 
             <div class="cta-box">
                 <button id="addToCartBtn" class="add-to-cart-btn">
-                    <i class="fas fa-plus-circle"></i> أضف للمقايسة
+                    <i class="fas fa-plus-circle"></i> أضف للمقايسة الهندسية
                 </button>
 
                 <a href="marble.html" class="back-gallery">
-                    <i class="fas fa-arrow-right"></i> العودة إلى المعرض الملكي
+                    <i class="fas fa-arrow-right"></i> العودة إلى معرض اللوحات الفنية
                 </a>
             </div>
 
             <div class="complements-section">
                 <h3>يكتمل الرقي مع:</h3>
                 <div class="slider-container" id="complementary-slider">
-                </div>
+                    </div>
             </div>
 
         </div>
@@ -155,93 +152,115 @@
     
     <div id="smartGlassSlider">
         <a href="grass-gallery.html" class="smart-glass-item">
-            <img src="../assets/images/nageel/grass-40mm-natural-12.jpeg" alt="معرض النجيل">
+            <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_150,q_auto,f_auto/v1775700146/grass-50mm.jpg_jksw1m.jpg" alt="معرض النجيل" loading="lazy">
             <span>معرض النجيل</span>
         </a>
         <a href="white-marble.html" class="smart-glass-item">
-            <img src="../assets/images/zalat/white-zalat.jpg" alt="معرض الزلط">
+            <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_150,q_auto,f_auto/v1775785655/zalat-mix-colors_pptjvl.jpg" alt="معرض الزلط" loading="lazy">
             <span>معرض الزلط</span>
         </a>
         <a href="trees.html" class="smart-glass-item">
-            <img src="../assets/images/nageel/modern-landscape-design.jpg" alt="معرض الأشجار">
+            <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_150,q_auto,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg" alt="معرض الأشجار" loading="lazy">
             <span>معرض الأشجار</span>
         </a>
     </div>
 
-    <a id="p-whatsapp" href="https://wa.me/201016961497" class="expert-btn" target="_blank" aria-label="تواصل معنا عبر الواتساب للاستشارة والمقايسة">
-        <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i>
-        <span>استشارة هندسية ومقايسة مجانية</span>
+    <a id="p-whatsapp" href="https://wa.me/201145393026" class="expert-btn" target="_blank" aria-label="تواصل معنا للاستشارة">
+        <i class="fab fa-whatsapp" style="font-size: 1.6rem;"></i>
+        <span>استشارة مهندس حبيب للقصور</span>
     </a>
 
+    <script type="application/ld+json" id="productSchema">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "Habib Elite Architectural Design",
+      "description": "جداريات وتصميمات معمارية فاخرة للقصور والفلل من حبيب لاندسكيب بوتيك.",
+      "brand": { "@type": "Brand", "name": "Habib Landscape Boutique" }
+    }
+    </script>
+
     <script>
+        // قاعدة البيانات مربطوة بـ IDs المعرض، مع صياغة VIP تبيع الحلم والتصميم، مدمج بها لوجو العلامة المائية
         const marbleData = {
             "40": { 
-                name: "رخام جلالة | Galala Marble", 
-                img: "marble-galala.jpg", 
-                specs: "عراقة الرخام المصري", 
-                desc: "رخام الجلالة ليس مجرد حجر، بل هو امتداد لتاريخ من الفخامة. تم انتقاؤه من أنقى المحاجر ليمنح قصوركم ومشاريعكم طابعاً كلاسيكياً يتنفس بالأصالة، مع متانة تتحدى الزمن لتظل واجهتكم الأولى دائماً." 
+                name: "جدارية الإمبريال", 
+                img: "https://res.cloudinary.com/dwa0e5sup/image/upload/w_800,q_auto,f_auto,e_contrast:10,e_brightness:5/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,w_150,o_90/fl_layer_apply,g_south_east,x_20,y_20/v1775732441/habib-landscape-boutique-luxury-wall-cladding-villa.jpg_xtxuid.jpg", 
+                specs: "عزل بصري وفخامة معمارية", 
+                desc: "لمسة إمبريالية تُضفي عمقاً وهيبة على واجهات القصور. تصميم هندسي دقيق يخلق لوحة بصرية تعكس الفخامة المطلقة وتتحدى الزمن بصلابتها الاستثنائية." 
             },
             "41": { 
-                name: "رخام كريستال وايت | Crystal White", 
-                img: "marble-crystal-white.jpg", 
-                specs: "نقاء الكريستال الأبيض", 
-                desc: "نقاء استثنائي يحاكي صفاء الكريستال. هذا الرخام مصمم خصيصاً للمساحات التي تتطلب اتساعاً بصرياً وهدوءاً مطلقاً، ليكون اللوحة البيضاء التي تبرز ذوقكم الرفيع ومقتنياتكم الفنية." 
+                name: "تصميم المداخل الملكية", 
+                img: "https://res.cloudinary.com/dwa0e5sup/image/upload/w_800,q_auto,f_auto,e_contrast:10,e_brightness:5/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,w_150,o_90/fl_layer_apply,g_south_east,x_20,y_20/v1775732414/habib-landscape-boutique-royal-villa-entrance-flooring.jpg_mpu58y.jpg", 
+                specs: "هيبة المكان من أول خطوة", 
+                desc: "الانطباع الأول يدوم للأبد. تأسيس هندسي متقن لمداخل الفلل يعكس مدى رقي المساحة الداخلية، مصمم ليكون ترحيباً صامتاً يفيض بالوقار والجمال الكلاسيكي." 
             },
             "42": { 
-                name: "رخام إمبردور | Emperador", 
-                img: "marble-emperador.jpg", 
-                specs: "الدفء الإمبراطوري", 
-                desc: "دفء الألوان الترابية وعمق العروق الطبيعية يجتمعان في رخام الإمبردور الفاخر. خيار النخبة لإضفاء طابع من الهيبة والجاذبية الملكية على قاعاتكم ومساحاتكم الخاصة." 
+                name: "جدارية الأوت دور", 
+                img: "https://res.cloudinary.com/dwa0e5sup/image/upload/w_800,q_auto,f_auto,e_contrast:10,e_brightness:5/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,w_150,o_90/fl_layer_apply,g_south_east,x_20,y_20/v1775732694/habib-landscape-boutique-decorative-outdoor-walls.jpg_cwwqq8.jpg", 
+                specs: "تناغم مثالي مع اللاندسكيب", 
+                desc: "تكسية جدارية راقية تخلق انسجاماً بصرياً رائعاً مع المساحات الخضراء والمسابح، لتكمل اللوحة الفنية للحديقة الخاصة بك بأسلوب هندسي مدروس يبرز جمال محيطك." 
             },
             "43": { 
-                name: "رخام أسود إسباني | Spanish Black", 
-                img: "marble-spanish-black.jpg", 
-                specs: "هيبة الأسود الملكي", 
-                desc: "للفخامة لغة، والأسود الإسباني هو أبلغ كلماتها. حضور معماري واثق وتناقض لوني جريء يجسد القوة والغموض الراقي في أبهى صوره الهندسية." 
+                name: "جدارية روبي الدافئة", 
+                img: "https://res.cloudinary.com/dwa0e5sup/image/upload/w_800,q_auto,f_auto,e_contrast:10,e_brightness:5/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,w_150,o_90/fl_layer_apply,g_south_east,x_20,y_20/v1775732416/habib-boutique-red-mica-stone-wall-cladding.jpg_kr4uuk.jpg", 
+                specs: "دفء الألوان الطبيعية", 
+                desc: "نبض الطبيعة المتجسد في التصميم. درجات الألوان الدافئة تصنع واجهات وجلسات تنبض بالحياة والفخامة، خيار النخبة لإضفاء طابع من الجاذبية المريحة في مساحات الترفيه." 
             },
             "44": { 
-                name: "رخام كارارا ملي براون | Carrara Milli Brown", 
-                img: "marble-carrara-milli-brown.jpg", 
-                specs: "الفن الإيطالي الأصيل", 
-                desc: "حين تلتقي الفنون الإيطالية بعظمة الطبيعة. تداخل فريد بين العروق الناعمة والدرجات البنية، يصنع تفاصيل بصرية لا تتكرر، لتكون كل قطعة بمثابة عمل فني مستقل يليق بمكانتكم." 
-            },
-            "45": { 
-                name: "كارارا أحمر وأسود إسباني | Exotic Fusion", 
-                img: "marble-red-carrara-spanish-black.jpg", 
-                specs: "مزيج النخبة الحصري", 
-                desc: "مزيج حصري ونادر لأصحاب الذوق الجريء. تناغم لوني غير مسبوق يعكس شخصية استثنائية للمكان، مصمم ليكون محور الحديث والاهتمام في أي مساحة معمارية راقية." 
+                name: "مسارات اللاندسكيب", 
+                img: "https://res.cloudinary.com/dwa0e5sup/image/upload/w_800,q_auto,f_auto,e_contrast:10,e_brightness:5/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,w_150,o_90/fl_layer_apply,g_south_east,x_20,y_20/v1775732444/habib-landscape-boutique-luxury-outdoor-pathway.jpg_tg3aho.jpg", 
+                specs: "انسيابية وصلابة هندسية", 
+                desc: "تكسية ممرات فاخرة تربط بين أجزاء حديقتك بانسيابية بصرية مذهلة. مقصوصة بعناية هندسية لضمان تناسق المسافات وإبراز جمال المساحات الخضراء المحيطة بها." 
             },
             "46": { 
-                name: "حجر ساند ستون | Sandstone", 
-                img: "marble-sandstone.jpg", 
-                specs: "سحر الطبيعة الهادئ", 
-                desc: "العودة إلى سحر الطبيعة الهادئ. الحجر الرملي بلمسته الدافئة يوفر انسجاماً بصرياً يريح العين ويهدئ الحواس، ليكون الملاذ الأمثل في مساحاتكم الخارجية وحدائقكم الخاصة." 
+                name: "الأرضيات الهندسية المفتوحة", 
+                img: "https://res.cloudinary.com/dwa0e5sup/image/upload/w_800,q_auto,f_auto,e_contrast:10,e_brightness:5/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,w_150,o_90/fl_layer_apply,g_south_east,x_20,y_20/v1775732443/habib-landscape-boutique-seamless-outdoor-flooring.jpg_nlerds.jpg", 
+                specs: "تنفيذ دقيق بلا فواصل", 
+                desc: "الحل الأمثل لمساحات الاستقبال المفتوحة والجلسات الكبرى. تنفيذ دقيق يضمن لك تصميم أرضي يعطي اتساعاً وإحساساً مضاعفاً بالرفاهية والنظافة المطلقة." 
             },
             "51": { 
-                name: "حجر مايكا رمادي | Mica Grey", 
-                img: "stone-mica-grey.jpg", 
-                specs: "رقي الواجهات العصرية", 
-                desc: "عراقة الماضي برؤية المستقبل. المايكا الرمادي يمنح الواجهات صموداً هندسياً ولمسة حداثة هادئة، ليعكس رقي اختياركم من النظرة الأولى ويعطي طابعاً متزناً للواجهات." 
+                name: "السلالم الديكورية الفاخرة", 
+                img: "https://res.cloudinary.com/dwa0e5sup/image/upload/w_800,q_auto,f_auto,e_contrast:10,e_brightness:5/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,w_150,o_90/fl_layer_apply,g_south_east,x_20,y_20/v1775732445/habib-boutique-elegant-garden-stairs-stone.jpg_okvykf.jpg", 
+                specs: "تشكيل المستويات بأمان وفخامة", 
+                desc: "دمج احترافي للتصميم المعماري لتكوين درجات وسلالم حديقتك. نضمن لك التصميم الآمن المتين مع الشكل الجمالي الكلاسيكي الذي يضيف بعداً عميقاً للاندسكيب." 
             },
             "52": { 
-                name: "حجر مايكا أحمر | Mica Red", 
-                img: "stone-mica-red.jpg", 
-                specs: "الدفء الهندسي", 
-                desc: "نبض الطبيعة المتجسد في الحجر. درجات الأحمر الدافئة في المايكا تصنع واجهات تنبض بالحياة والفخامة، مع الحفاظ على طابع هندسي متزن ووقور يكمل جمال المعمار." 
+                name: "واجهات البريميوم الكلاسيكية", 
+                img: "https://res.cloudinary.com/dwa0e5sup/image/upload/w_800,q_auto,f_auto,e_contrast:10,e_brightness:5/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,w_150,o_90/fl_layer_apply,g_south_east,x_20,y_20/v1775732688/habib-boutique-premium-stone-facade-design.jpg_uw9isg.jpg", 
+                specs: "هيبة التصميم الخارجي", 
+                desc: "صُنعت لتكون واجهة لأرقى القصور. تصميم واجهات مهيب يوفر عزل حراري قوي ومظهراً معمارياً يعكس الثقل والثراء، ليترك بصمة لا تُنسى في كل زاوية." 
             },
             "53": { 
-                name: "حجر بازلت أسود | Black Basalt", 
-                img: "stone-basalt-black.jpg", 
-                specs: "صلابة الحجر البركاني", 
-                desc: "صلابة بركانية وقوة حضور لا تُضاهى. البازلت الأسود هو الخيار الأمثل للمساحات التي تتطلب مزيجاً من المتانة المطلقة والجمال الهندسي الصارم، استثمار معماري يعيش للأبد." 
+                name: "جدارية المودرن العصرية", 
+                img: "https://res.cloudinary.com/dwa0e5sup/image/upload/w_800,q_auto,f_auto,e_contrast:10,e_brightness:5/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,w_150,o_90/fl_layer_apply,g_south_east,x_20,y_20/v1775732689/habib-landscape-boutique-modern-exterior-wall-stone.jpg_gxrsvd.jpg", 
+                specs: "خطوط هندسية حادة وأنيقة", 
+                desc: "لعشاق التصميمات الحديثة والمينيماليست. ألوان هادئة وخطوط مستقيمة متناسقة تناسب واجهات الفلل المودرن وتوفر بيئة بصرية في قمة الأناقة والهدوء." 
+            },
+            "54": { 
+                name: "جدارية التيكستشر الديكورية", 
+                img: "https://res.cloudinary.com/dwa0e5sup/image/upload/w_800,q_auto,f_auto,e_contrast:10,e_brightness:5/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,w_150,o_90/fl_layer_apply,g_south_east,x_20,y_20/v1775732690/habib-boutique-sophisticated-stone-wall-texture.jpg_llbui2.jpg", 
+                specs: "ملمس بارز وطابع ريفي فخم", 
+                desc: "استمتع بالطابع الريفي الفاخر في مساحتك الخاصة. ملمس بارز وتفاصيل دقيقة يجعله مثالياً لجلسات الشواء والأفران الخارجية لتكوين خلفية بصرية ساحرة." 
+            },
+            "55": { 
+                name: "التصميم الهندسي للمسارات", 
+                img: "https://res.cloudinary.com/dwa0e5sup/image/upload/w_800,q_auto,f_auto,e_contrast:10,e_brightness:5/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,w_150,o_90/fl_layer_apply,g_south_east,x_20,y_20/v1775732695/habib-boutique-premium-stone-walkway-design.jpg_kxa78c.jpg", 
+                specs: "فصل المساحات الخضراء بدقة", 
+                desc: "مشايات وخطوط أرضية منفذة بأحدث التقنيات لرسم مسارات أنيقة تحمي النجيل وتضيف إطاراً هندسياً يبرز نظافة وترتيب حديقتك بكل خطوة." 
+            },
+            "56": { 
+                name: "الأعمدة والعناصر المعمارية", 
+                img: "https://res.cloudinary.com/dwa0e5sup/image/upload/w_800,q_auto,f_auto,e_contrast:10,e_brightness:5/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,w_150,o_90/fl_layer_apply,g_south_east,x_20,y_20/v1775732694/habib-boutique-architectural-stone-elements.jpg_ejc9bd.jpg", 
+                specs: "تحويل الكتل الخرسانية لتحف فنية", 
+                desc: "تكسية مخصصة هندسياً للأعمدة والأسوار والكتل الخرسانية البارزة، لتحويلها من مجرد هيكل بناء إلى عنصر ديكوري فخم يرفع من القيمة العقارية للمبنى بأكمله." 
             }
         };
 
-        // تم تعديل المصفوفة دي عشان تبقى بوابات للمعارض التانية
         const complements = [
-            { link: "grass-gallery.html", name: "معرض النجيل الفاخر", img: "modern-landscape-design.jpg", folder: "nageel" },
-            { link: "white-marble.html", name: "معرض الزلط والأحجار", img: "white-zalat.jpg", folder: "zalat" },
-            { link: "trees.html", name: "معرض الأشجار والنباتات", img: "Areca Palm.jpeg", folder: "Greenery" }
+            { link: "grass-gallery.html", name: "معرض النجيل الملكي", img: "https://res.cloudinary.com/dwa0e5sup/image/upload/w_400,q_auto,f_auto/v1775700146/grass-50mm.jpg_jksw1m.jpg" },
+            { link: "white-marble.html", name: "أحجار الديكور والزلط", img: "https://res.cloudinary.com/dwa0e5sup/image/upload/w_400,q_auto,f_auto/v1775785655/zalat-mix-colors_pptjvl.jpg" },
+            { link: "trees.html", name: "تنسيق الأشجار", img: "https://res.cloudinary.com/dwa0e5sup/image/upload/w_400,q_auto,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg" }
         ];
 
         const urlParams = new URLSearchParams(window.location.search);
@@ -249,39 +268,50 @@
         const product = marbleData[productId];
 
         if (product) {
+            // حقن البيانات في الصفحة
             document.getElementById('p-name').innerHTML = product.name;
-            document.getElementById('p-img').src = "../assets/images/marble/" + product.img;
-            document.getElementById('p-specs').innerText = product.specs;
-            document.getElementById('p-desc').innerText = product.desc;
+            document.getElementById('p-img').src = product.img;
+            document.getElementById('p-specs').innerHTML = `<i class="fas fa-gem"></i> ${product.specs}`;
+            document.getElementById('p-desc').innerHTML = `<strong>التميز المعماري:</strong> ${product.desc}`;
             
-            const whatsappMsg = encodeURIComponent("تحياتي، مهتم بمعرفة تفاصيل المقايسة لمقتنيات " + product.name);
-            document.getElementById('p-whatsapp').href = "https://wa.me/201016961497?text=" + whatsappMsg;
+            // رسالة الواتساب المخصصة
+            const whatsappMsg = encodeURIComponent("تحياتي، مهتم بمعرفة تفاصيل المعاينة والمقايسة لتنفيذ تصميم " + product.name);
+            document.getElementById('p-whatsapp').href = "https://wa.me/201145393026?text=" + whatsappMsg;
 
+            // تحميل المنتجات التكميلية بصور من Cloudinary
             let sliderHTML = '';
-            // تم تعديل الرابط هنا عشان يقرأ link مباشرة من غير id
             complements.forEach(item => {
                 sliderHTML += `
                     <a href="${item.link}" class="insta-card">
-                        <img src="../assets/images/${item.folder}/${item.img}" alt="${item.name}" loading="lazy">
+                        <img src="${item.img}" alt="${item.name}" loading="lazy">
                         <div class="insta-card-info">
                             <h4>${item.name}</h4>
                         </div>
                     </a>`;
             });
             document.getElementById('complementary-slider').innerHTML = sliderHTML;
+            
+            // تحديث السكيميا (SEO)
+            const schema = document.getElementById('productSchema');
+            let schemaJson = JSON.parse(schema.innerHTML);
+            schemaJson.name = product.name;
+            schemaJson.description = product.desc;
+            schemaJson.image = product.img;
+            schema.innerHTML = JSON.stringify(schemaJson);
+            
         } else {
-            document.getElementById('p-name').innerText = "مقتنيات حبيب ستور الخاصة";
-            document.getElementById('p-specs').innerText = "تواصل معنا للمزيد";
+            document.getElementById('p-name').innerText = "التصميمات المعمارية الفاخرة";
+            document.getElementById('p-specs').innerText = "تواصل معنا للاستشارة الهندسية";
+            document.getElementById('p-desc').innerText = "برجاء اختيار اللوحة الفنية من المعرض لعرض تفاصيلها الهندسية.";
         }
 
+        // نظام سلة المقايسة
         function updateCartCount() {
             try {
                 let cart = JSON.parse(localStorage.getItem('cart')) || [];
                 let count = cart.reduce((total, item) => total + (item.quantity || 1), 0);
                 document.getElementById('cartCount').textContent = count;
-            } catch(e) {
-                console.log("Cart empty or error reading it.");
-            }
+            } catch(e) {}
         }
         updateCartCount();
         window.addEventListener('storage', updateCartCount);
@@ -290,7 +320,6 @@
             if(!product) return;
             
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            
             let existingItem = cart.find(item => item.id === productId && item.category === 'marble');
             
             if(existingItem) {
@@ -298,8 +327,8 @@
             } else {
                 cart.push({
                     id: productId,
-                    title: product.name.split(' |')[0],
-                    img: '../assets/images/marble/' + product.img,
+                    title: product.name,
+                    img: product.img,
                     category: 'marble',
                     quantity: 1,
                     price: 0
@@ -307,11 +336,7 @@
             }
             
             localStorage.setItem('cart', JSON.stringify(cart));
-            
             updateCartCount();
-            if (typeof updateGlobalCartCount === "function") {
-                updateGlobalCartCount();
-            }
             
             let btn = this;
             let originalText = btn.innerHTML;
