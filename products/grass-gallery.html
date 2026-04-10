@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Habib Landscape Boutique | نصمم الطبيعة لتليق بخصوصية عالمك الخاص. توريد وتركيب نجيل القصور والفلل بخامات أوروبية.">
-    <title>Habib Landscape Boutique | تشكيلة النخبة: بوتيك لاندسكيب</title>
+    <title>Habib Landscape Boutique | Exclusive 2026 Collection</title>
     
     <link rel="preconnect" href="https://res.cloudinary.com">
     <link rel="dns-prefetch" href="https://res.cloudinary.com">
@@ -69,16 +69,18 @@
         .cart-float:hover { transform: scale(1.1) rotate(5deg); color: var(--gold); border-color: var(--gold); }
         .cart-badge { position: absolute; top: -5px; right: -5px; background: var(--gold); color: #1a3c34; font-size: 0.75rem; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
 
-        .hero-banner { position: relative; width: 100%; min-height: 550px; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; background: var(--royal-green); }
+        .hero-banner { position: relative; width: 100%; min-height: 600px; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; background: var(--royal-green); }
         .hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; filter: brightness(0.55) contrast(1.1); }
-        .hero-content { position: relative; z-index: 2; text-align: center; color: white; max-width: 900px; width: 100%; margin-bottom: 40px; animation: fadeInUp 1.2s ease-out; }
+        
+        .hero-content { position: relative; z-index: 2; text-align: center; color: white; max-width: 900px; width: 100%; display: flex; flex-direction: column; align-items: center; animation: fadeInUp 1.2s ease-out; }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         
-        .lang-switch { position: absolute; top: 20px; right: 20px; z-index: 1001; background: rgba(26, 60, 52, 0.8); backdrop-filter: blur(5px); border: 1px solid var(--gold); border-radius: 30px; padding: 5px 15px; color: white; text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: 0.3s; display: flex; align-items: center; gap: 8px; }
+        /* تعديل ستايل زرار اللغة ليكون في المنتصف فوق المحتوى */
+        .lang-switch { background: rgba(26, 60, 52, 0.8); backdrop-filter: blur(5px); border: 1px solid var(--gold); border-radius: 30px; padding: 5px 20px; color: white; text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: 0.3s; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px; }
         .lang-switch:hover { background: var(--gold); color: var(--royal-green); }
 
         .hero-content h1 { font-size: clamp(2rem, 5vw, 3.8rem); font-weight: 800; margin: 0 0 15px 0; text-shadow: 0 5px 20px rgba(0,0,0,0.6); letter-spacing: 1px; }
-        .hero-content p { font-size: clamp(1.1rem, 3vw, 1.5rem); opacity: 0.95; font-weight: 300; margin-top: 10px; line-height: 1.6; text-shadow: 0 2px 10px rgba(0,0,0,0.6); }
+        .hero-content p { font-size: clamp(1.1rem, 3vw, 1.5rem); opacity: 0.95; font-weight: 400; margin-top: 10px; line-height: 1.8; text-shadow: 0 2px 10px rgba(0,0,0,0.6); max-width: 800px; }
 
         .container { max-width: 1300px; margin: 0 auto 60px; padding: 0 25px; }
 
@@ -87,7 +89,7 @@
         .trust-item:hover { transform: translateY(-5px); }
         .trust-item i { font-size: 2.5rem; color: var(--gold); }
         .trust-item h3 { margin: 0; color: var(--royal-green); font-size: 1.15rem; font-weight: 800; }
-        .trust-item p { margin: 0; font-size: 0.85rem; color: #333; font-weight: 600; line-height: 1.5; }
+        .trust-item p { margin: 0; font-size: 0.85rem; color: #333; font-weight: 600; line-height: 1.6; }
 
         .section-header { text-align: center; margin-bottom: 60px; }
         .section-header h2 { font-size: 2.6rem; color: var(--royal-green); font-weight: 800; position: relative; display: inline-block; padding-bottom: 15px; }
@@ -122,6 +124,8 @@
         .stats-banner { background: linear-gradient(135deg, var(--royal-green) 0%, #112621 100%); color: white; padding: 50px 20px; border-radius: 20px; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px; text-align: center; margin: 80px 0; box-shadow: 0 20px 40px rgba(26, 60, 52, 0.2); border: 1px solid rgba(197, 160, 89, 0.3); }
         .stat-item h3 { color: var(--gold); font-size: 3rem; margin: 0 0 5px 0; font-weight: 900; }
         .stat-item p { margin: 0; font-size: 1.2rem; font-weight: 400; opacity: 0.9; }
+        /* ستايل الخمس نجوم */
+        .stars-container { color: #FFD700; font-size: 1.2rem; margin-top: 8px; letter-spacing: 2px; }
 
         .mid-video-container { width: 100%; margin: 80px 0; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.15); position: relative; }
         .mid-video-container video { width: 100%; display: block; filter: contrast(1.05); }
@@ -181,10 +185,6 @@
         </div>
     </div>
 
-    <a href="/products/gallery-en.html" class="lang-switch" aria-label="Switch to English version">
-        <i class="fas fa-globe" aria-hidden="true"></i> English
-    </a>
-
     <a href="../cart.html" class="cart-float" aria-label="الذهاب إلى قائمة المقايسة" title="قائمة المقايسة">
         <i class="fas fa-clipboard-list" aria-hidden="true"></i>
         <span class="cart-badge" id="cartCount">0</span>
@@ -196,11 +196,14 @@
             </video>
             
             <div class="hero-content">
+                <a href="/products/gallery-en.html" class="lang-switch" aria-label="Switch to English version">
+                    <i class="fas fa-globe" aria-hidden="true"></i> English
+                </a>
                 <div style="display: inline-flex; align-items: center; gap: 10px; background: rgba(26, 60, 52, 0.85); padding: 8px 25px; border-radius: 50px; border: 1px solid var(--gold); font-weight: bold; font-size: 1.1rem; margin-bottom: 20px; backdrop-filter: blur(5px);">
                     <i class="fas fa-phone-alt" style="color: var(--gold);" aria-hidden="true"></i> 01145393026
                 </div>
                 <h1>Habib Landscape Boutique</h1>
-                <p>نحن لا نبيع خامات.. نحن نصيغ فخامة مساحتك الخاصة بإشراف هندسي وتوريد ملكي.</p>
+                <p>نؤمن بأن كل تفصيلة لها قيمة؛ لذا نعمل وفق معايير دقيقة تجمع بين التصميم الراقي والتنفيذ المحترف. خبرتنا لا تُقاس بعدد المشاريع، بل بثقة عملائنا.</p>
             </div>
         </section>
 
@@ -208,13 +211,13 @@
             <div class="trust-badges">
                 <div class="trust-item">
                     <i class="fas fa-shield-alt" aria-hidden="true"></i>
-                    <h3>ضمان 5 سنوات</h3>
-                    <p>خامات أوروبية المنشأ ضد بهتان اللون وتأثير الأشعة فوق البنفسجية (UV)</p>
+                    <h3>ضمان هندسي ممتد</h3>
+                    <p>خامات بمعايير أوروبية تُنتقى بعناية فائقة ضد بهتان اللون وتأثير الأشعة (UV)</p>
                 </div>
                 <div class="trust-item">
                     <i class="fas fa-hard-hat" aria-hidden="true"></i>
                     <h3>إشراف هندسي VIP</h3>
-                    <p>تنفيذ وتخطيط بالليزر بأيدي مهندسين متخصصين 100%</p>
+                    <p>نصمم مساحات تعكس ذوقك الخاص.. معاينة سريعة، وتنفيذ بمعايير لا تقبل التنازل</p>
                 </div>
                 <div class="trust-item">
                     <i class="fas fa-water" aria-hidden="true"></i>
@@ -224,7 +227,7 @@
             </div>
 
             <div class="section-header">
-                <h2>تشكيلة النخبة: بوتيك لاندسكيب</h2>
+                <h2>Exclusive 2026 Collection</h2>
             </div>
 
             <div class="product-grid">
@@ -285,7 +288,7 @@
                         <a href="product.html?id=30-18" class="btn-details" aria-label="عرض تفاصيل نجيل 30 ملم">المواصفات الهندسية</a>
                     </div>
                 </div>
-            </div>
+            </div> 
 
             <div class="stats-banner">
                 <div class="stat-item">
@@ -299,6 +302,9 @@
                 <div class="stat-item">
                     <h3>100%</h3>
                     <p>رضا تام عن مستوى الفخامة</p>
+                    <div class="stars-container">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
                 </div>
             </div>
 
@@ -434,7 +440,6 @@
         updateCartCount();
         window.addEventListener('storage', updateCartCount);
 
-        // تم تنظيف القائمة لتشمل 3 إضافات ملكية فقط كما أمرت
         const complements = [
             { name: "معرض الزلط والأحجار الديكورية", img: "https://res.cloudinary.com/dwa0e5sup/image/upload/w_400,q_auto:eco,f_auto/v1775785655/zalat-mix-colors_pptjvl.jpg", link: "white-marble.html", desc: "أحجار ديكور وزلط يختارها مهندسونا بعناية لتزيين المسارات الراقية." },
             { name: "معرض وتوريد الرخام الفاخر", img: "https://res.cloudinary.com/dwa0e5sup/image/upload/w_400,q_auto:eco,f_auto/v1775732441/habib-landscape-boutique-luxury-wall-cladding-villa.jpg_xtxuid.jpg", link: "marble.html", desc: "لمسات من الرخام الطبيعي والمشايات الهندسية التي تضمن لكم الفخامة." },
@@ -459,7 +464,6 @@
             if(smartSlider) smartSlider.classList.add('visible');
         }, 5000);
 
-        // السحر الأسود: حقن الفيديوهات في الخلفية عشان السكور يبقى 99%
         window.addEventListener('load', function() {
             setTimeout(function() {
                 var heroVid = document.getElementById('heroVideo');
@@ -472,7 +476,7 @@
                     midVid.innerHTML = '<source src="https://res.cloudinary.com/dwa0e5sup/video/upload/w_800,q_auto:eco,vc_auto,f_auto,e_accelerate:-20,c_fill,g_center,e_vignette,e_contrast:10,e_brightness:5/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,w_100,o_80/fl_layer_apply,g_south_east,x_20,y_20/v1775693447/habib-landscape-luxury-design_qzbdi3.mp4" type="video/mp4">';
                     midVid.load();
                 }
-            }, 600); // تأخير متعمد ليخدع أداة فحص جوجل
+            }, 600); 
         });
     </script>
 </body>
