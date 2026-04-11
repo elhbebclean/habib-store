@@ -148,6 +148,29 @@
         <i class="fas fa-globe" aria-hidden="true"></i> English
     </a>
 
+    <header>
+        <a href="https://habib-landscape-boutique.com/index.html" class="logo">HABIB STORE</a>
+        <div class="header-actions">
+            <div class="header-premium-text">Premium Selection</div>
+        </div>
+    </header>
+
+    <button class="menu-toggle" onclick="toggleMobileMenu()" aria-label="فتح القائمة" type="button">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+    </button>
+
+    <div id="mobileMenuOverlay" class="mobile-menu-overlay" aria-hidden="true">
+        <button class="close-menu-btn" onclick="toggleMobileMenu()" aria-label="إغلاق القائمة" type="button">&times;</button>
+        <nav class="mobile-menu-content" aria-label="القائمة الرئيسية">
+            <a href="https://habib-landscape-boutique.com/index.html"><i class="fas fa-home" aria-hidden="true"></i> الصفحة الرئيسية</a>
+            <a href="https://habib-landscape-boutique.com/products/grass-gallery.html"><i class="fas fa-leaf" aria-hidden="true"></i> معرض النجيل</a>
+            <a href="https://habib-landscape-boutique.com/products/marble.html"><i class="fas fa-cubes" aria-hidden="true"></i> معرض الرخام</a>
+            <a href="https://habib-landscape-boutique.com/products/white-marble.html"><i class="fas fa-gem" aria-hidden="true"></i> معرض الزلط</a>
+            <a href="https://habib-landscape-boutique.com/products/trees.html"><i class="fas fa-tree" aria-hidden="true"></i> معرض الأشجار</a>
+            <a href="https://habib-landscape-boutique.com/contact.html" class="mobile-menu-contact-link"><i class="fas fa-envelope" aria-hidden="true"></i> اتصل بنا</a>
+        </nav>
+    </div>
+
     <a href="../cart.html" class="cart-float" aria-label="الذهاب إلى قائمة المقايسة" title="قائمة المقايسة">
         <i class="fas fa-clipboard-list" aria-hidden="true"></i>
         <span class="cart-badge" id="cartCount">0</span>
@@ -496,7 +519,7 @@
         <i class="fas fa-camera" aria-hidden="true"></i> شاهد لوحاتنا الفنية
     </div>
 
-    <a href="https://wa.me/201145393026" class="expert-btn" aria-label="تواصل معنا عبر الواتساب للاستشارة والمقايسة">
+    <a href="https://wa.me/201145393026" target="_blank" rel="noopener" class="expert-btn" aria-label="تواصل معنا عبر الواتساب للاستشارة والمقايسة">
         <i class="fab fa-whatsapp" style="font-size: 1.6rem;" aria-hidden="true"></i>
         <span>استشارة هندسية ومقايسة مجانية</span>
     </a>
@@ -513,9 +536,26 @@
         </button>
     </div>
 
-    <footer style="text-align: center; padding: 60px 20px 80px; color: #333; font-size: 0.9rem; background: #fff; margin-top: 40px; border-top: 1px solid #eee;">
-        <p style="font-weight: 600; color: #333;">&copy; 2026 Habib Landscape Boutique | Premium Selection</p>
-        <p style="font-size: 0.8rem; margin-top: 5px; color: #555;">توريد وتركيب بأيدي خبراء ومهندسين متخصصين - المعادي، القاهرة</p>
+    <footer>
+        <p class="footer-brand">HABIB LANDSCAPE BOUTIQUE</p>
+
+        <div class="footer-grid">
+            <div class="footer-group">
+                <h4>تواصل معنا</h4>
+                <a href="https://habib-landscape-boutique.com/contact.html">اتصل بنا</a>
+                <a href="https://habib-landscape-boutique.com/privacy.html">سياسة الخصوصية</a>
+            </div>
+
+            <div class="footer-group">
+                <h4>السياسات</h4>
+                <a href="https://habib-landscape-boutique.com/terms.html">الشروط والأحكام</a>
+                <a href="https://habib-landscape-boutique.com/refund.html">سياسة الاسترجاع والاستبدال</a>
+                <a href="https://habib-landscape-boutique.com/policy.html">وثيقة الالتزام وسياسة المعاينة</a>
+            </div>
+        </div>
+
+        <p>&copy; 2026 جميع الحقوق محفوظة لشركة الحبيب</p>
+        <p class="footer-note">ENGINEERED FOR HIGH-END LANDSCAPE PROJECTS</p>
     </footer>
 
     <script>
