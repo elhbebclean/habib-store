@@ -6,6 +6,12 @@
     <meta name="description" content="معرض الأشجار ونباتات الزينة الفاخرة من حبيب ستور. مقتنيات حصرية من نخيل الأريكا، الموز الاستوائي، وأشجار الديكور.">
     <title>معرض الأشجار الفاخرة | Habib Store | توريد وتركيب هندسي</title>
     
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NT75WPGT');</script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
     <script src="../main.js" defer></script>
@@ -14,41 +20,45 @@
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--soft-bg); margin: 0; padding: 0; color: #333; scroll-behavior: smooth; overflow-x: hidden; }
         
         /* أيقونة المقايسة العائمة */
-        .cart-float { position: fixed; top: 20px; left: 20px; background: white; color: var(--royal-green); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-decoration: none; z-index: 1000; font-size: 1.2rem; transition: 0.3s; border: 1px solid rgba(197, 160, 89, 0.3); }
-        .cart-badge { position: absolute; top: -5px; right: -5px; background: var(--gold); color: white; font-size: 0.75rem; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+        .cart-float { position: fixed; top: 70px; left: 20px; background: white; color: var(--royal-green); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.15); text-decoration: none; z-index: 1000; font-size: 1.2rem; transition: 0.3s; border: 1px solid rgba(197, 160, 89, 0.5); }
+        .cart-float:hover { transform: scale(1.1) rotate(5deg); color: var(--gold); border-color: var(--gold); }
+        .cart-badge { position: absolute; top: -5px; right: -5px; background: var(--gold); color: #1a3c34; font-size: 0.75rem; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
 
         /* Hero Section */
-        .hero-banner { position: relative; width: 100%; min-height: 550px; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; }
-        .hero-banner img { position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 1; filter: brightness(0.55); }
-        .hero-content { position: relative; z-index: 2; text-align: center; color: white; max-width: 900px; }
-        .hero-content h1 { font-size: 3.2rem; font-weight: 700; margin-bottom: 15px; text-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        .hero-banner { position: relative; width: 100%; min-height: 550px; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; background: var(--royal-green); }
+        .hero-banner img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; filter: brightness(0.55); }
+        .hero-content { position: relative; z-index: 2; text-align: center; color: white; max-width: 900px; animation: fadeInUp 1.2s ease-out; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .hero-content h1 { font-size: clamp(2rem, 5vw, 3.8rem); font-weight: 800; margin-bottom: 15px; text-shadow: 0 5px 20px rgba(0,0,0,0.6); }
+        .hero-content p { font-size: clamp(1.1rem, 3vw, 1.5rem); opacity: 0.95; font-weight: 300; margin-top: 10px; line-height: 1.6; text-shadow: 0 2px 10px rgba(0,0,0,0.6); }
 
         .container { max-width: 1400px; margin: 60px auto; padding: 0 15px; }
         .section-header { text-align: center; margin-bottom: 40px; }
-        .section-header h2 { font-size: 2.5rem; color: var(--royal-green); position: relative; padding-bottom: 15px; }
-        .section-header h2::after { content: ''; position: absolute; bottom: 0; left: 30%; width: 40%; height: 2px; background: var(--gold); }
+        .section-header h2 { font-size: 2.5rem; color: var(--royal-green); font-weight: 800; position: relative; display: inline-block; padding-bottom: 15px; }
+        .section-header h2::after { content: ''; position: absolute; bottom: 0; left: 25%; width: 50%; height: 3px; background: var(--gold); border-radius: 10px; }
 
         /* Grid */
         .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 80px; }
         @media (min-width: 992px) { .product-grid { grid-template-columns: repeat(4, 1fr); gap: 30px; } }
 
-        .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s; border: 1px solid rgba(0,0,0,0.02); display: flex; flex-direction: column; position: relative; }
-        .card:hover { transform: translateY(-10px); border-color: var(--gold); }
+        .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.04); transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 1px solid rgba(0,0,0,0.03); display: flex; flex-direction: column; position: relative; }
+        .card:hover { transform: translateY(-12px); border-color: var(--gold); box-shadow: 0 30px 60px rgba(0,0,0,0.1); z-index: 2; }
 
         .img-wrapper { width: 100%; aspect-ratio: 1/1; overflow: hidden; background: #fff; padding: 15px; box-sizing: border-box; }
         .img-wrapper img { width: 100%; height: 100%; object-fit: contain; transition: 0.8s; }
+        .card:hover .img-wrapper img { transform: scale(1.08); }
         
-        .card-body { padding: 15px; text-align: center; flex-grow: 1; display: flex; flex-direction: column; }
-        .card-body span { color: var(--gold); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 5px; display: block; }
-        .card-body h3 { margin: 0 0 10px 0; font-size: 1.1rem; color: var(--royal-green); font-weight: 700; }
-        .price-note { font-size: 0.75rem; color: #888; font-style: italic; margin-bottom: 15px; }
+        .card-body { padding: 18px; text-align: center; flex-grow: 1; display: flex; flex-direction: column; }
+        .card-body span { color: var(--gold); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin-bottom: 8px; display: block; letter-spacing: 1px; }
+        .card-body h3 { margin: 0 0 10px 0; font-size: 1.1rem; color: var(--royal-green); font-weight: 800; line-height: 1.4; }
+        .price-note { font-size: 0.8rem; color: #777; font-style: italic; margin-bottom: 15px; font-weight: 400; }
 
-        .add-to-cart-btn { background: var(--royal-green); color: white; border: none; padding: 12px; border-radius: 10px; font-weight: 600; cursor: pointer; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; margin-top: auto; }
-        .add-to-cart-btn:hover { background: var(--gold); }
+        .add-to-cart-btn { background: var(--royal-green); color: white; border: none; padding: 14px; border-radius: 12px; font-weight: 700; cursor: pointer; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; margin-top: auto; font-family: inherit; font-size: 0.95rem; }
+        .add-to-cart-btn:hover { background: var(--gold); color: var(--royal-green); transform: translateY(-2px); }
 
         /* ستايل زرار سابقة الأعمال */
-        .catalog-float-btn { position: fixed; bottom: 120px; right: 40px; background: var(--royal-green); color: white; padding: 15px 30px; border-radius: 50px; cursor: pointer; z-index: 999; display: flex; align-items: center; gap: 10px; font-weight: 600; box-shadow: 0 10px 25px rgba(0,0,0,0.2); transition: 0.3s; border: 1px solid var(--gold); }
-        .catalog-float-btn:hover { background: var(--gold); transform: translateY(-5px); }
+        .catalog-float-btn { position: fixed; bottom: 105px; right: 40px; background: var(--royal-green); color: white; padding: 12px 25px; border-radius: 50px; cursor: pointer; z-index: 1000; font-weight: 800; display: flex; align-items: center; gap: 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.25); border: 1px solid var(--gold); transition: 0.3s; }
+        .catalog-float-btn:hover { background: #fff; color: var(--royal-green); border-color: var(--royal-green); transform: translateY(-5px); }
 
         /* Lightbox Portfolio */
         .catalog-lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 3000; display: none; align-items: center; justify-content: center; flex-direction: column; backdrop-filter: blur(5px); }
@@ -56,34 +66,70 @@
         .slider-container { position: relative; width: 90%; max-width: 800px; text-align: center; }
         .slider-container img { max-width: 100%; max-height: 75vh; border-radius: 15px; border: 2px solid var(--gold); box-shadow: 0 0 30px rgba(0,0,0,0.5); }
         .close-btn { position: absolute; top: -50px; right: 0; color: white; font-size: 2.5rem; background: none; border: none; cursor: pointer; }
-        .nav-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.2); color: white; border: none; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; }
+        .nav-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.2); color: white; border: none; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; transition: 0.3s; }
+        .nav-arrow:hover { background: var(--gold); color: var(--royal-green); }
         .nav-left { left: -70px; } .nav-right { right: -70px; }
-        .order-design-btn { margin-top: 25px; background: #25d366; color: white; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; display: flex; align-items: center; gap: 10px; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2); }
+        .order-design-btn { margin-top: 25px; background: #25d366; color: white; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; display: flex; align-items: center; gap: 10px; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2); transition: 0.3s; }
+        .order-design-btn:hover { background: #1ebe57; transform: translateY(-3px); }
 
         /* Expert Button */
-        .expert-btn { position: fixed; bottom: 40px; right: 40px; background: #25d366; color: white; padding: 18px 35px; border-radius: 60px; text-decoration: none; box-shadow: 0 15px 35px rgba(37, 211, 102, 0.3); z-index: 1000; font-weight: 600; display: flex; align-items: center; gap: 15px; transition: 0.4s; }
-        @media (max-width: 768px) { .expert-btn span { display: none; } .expert-btn { bottom: 20px; right: 20px; padding: 15px; } .catalog-float-btn { bottom: 85px; right: 20px; padding: 12px 20px; font-size: 0.9rem; } }
+        .expert-btn { position: fixed; bottom: 40px; right: 40px; background: #25d366; color: white; padding: 18px 35px; border-radius: 60px; text-decoration: none; box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4); z-index: 1000; font-weight: 700; display: flex; align-items: center; gap: 15px; transition: 0.4s; animation: pulseBtn 2s infinite; }
+        @keyframes pulseBtn { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+        .expert-btn:hover { transform: scale(1.05); background: #1ebe57; animation: none; }
+        
+        @media (max-width: 768px) { 
+            .expert-btn { bottom: 20px; right: 20px; padding: 15px 25px; animation: pulseBtnMobile 2s infinite; } 
+            @keyframes pulseBtnMobile { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+            .expert-btn span { display: none; } 
+            .catalog-float-btn { bottom: 75px !important; right: 20px !important; } 
+        }
 
         /* الشريط الزجاجي */
-        #smartGlassSlider { position: fixed; bottom: 110px; left: 50%; transform: translate(-50%, 200%); background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 20px; padding: 10px 20px; display: flex; gap: 20px; z-index: 999; transition: 1s; box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: max-content; }
+        #smartGlassSlider { position: fixed; bottom: 110px; left: 50%; transform: translate(-50%, 200%); background: rgba(255, 255, 255, 0.65); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 20px; padding: 10px 20px; display: flex; gap: 20px; z-index: 999; transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 15px 35px rgba(0,0,0,0.15); width: max-content; }
         #smartGlassSlider.visible { transform: translate(-50%, 0); }
-        .smart-glass-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; }
-        .smart-glass-item img { width: 50px; height: 50px; object-fit: cover; border-radius: 50%; border: 2px solid #fff; }
-        .smart-glass-item span { font-size: 0.75rem; color: var(--royal-green); font-weight: 700; margin-top: 5px; }
+        .smart-glass-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; transition: 0.3s; }
+        .smart-glass-item:hover { transform: translateY(-5px); }
+        .smart-glass-item img { width: 50px; height: 50px; object-fit: cover; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .smart-glass-item span { font-size: 0.75rem; color: var(--royal-green); font-weight: 800; margin-top: 5px; }
     </style>
 </head>
 <body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NT75WPGT"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <a href="../cart.html" class="cart-float">
-        <i class="fas fa-clipboard-list"></i>
+    <header>
+        <a href="https://habib-landscape-boutique.com/index.html" class="logo">HABIB STORE</a>
+        <div class="header-actions">
+            <div class="header-premium-text">Premium Selection</div>
+        </div>
+    </header>
+
+    <button class="menu-toggle" onclick="toggleMobileMenu()" aria-label="فتح القائمة" type="button">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+    </button>
+
+    <div id="mobileMenuOverlay" class="mobile-menu-overlay" aria-hidden="true">
+        <button class="close-menu-btn" onclick="toggleMobileMenu()" aria-label="إغلاق القائمة" type="button">&times;</button>
+        <nav class="mobile-menu-content" aria-label="القائمة الرئيسية">
+            <a href="https://habib-landscape-boutique.com/index.html"><i class="fas fa-home" aria-hidden="true"></i> الصفحة الرئيسية</a>
+            <a href="https://habib-landscape-boutique.com/products/grass-gallery.html"><i class="fas fa-leaf" aria-hidden="true"></i> معرض النجيل</a>
+            <a href="https://habib-landscape-boutique.com/products/marble.html"><i class="fas fa-cubes" aria-hidden="true"></i> معرض الرخام</a>
+            <a href="https://habib-landscape-boutique.com/products/white-marble.html"><i class="fas fa-gem" aria-hidden="true"></i> معرض الزلط</a>
+            <a href="https://habib-landscape-boutique.com/products/trees.html"><i class="fas fa-tree" aria-hidden="true"></i> معرض الأشجار</a>
+            <a href="https://habib-landscape-boutique.com/contact.html" class="mobile-menu-contact-link"><i class="fas fa-envelope" aria-hidden="true"></i> اتصل بنا</a>
+        </nav>
+    </div>
+
+    <a href="../cart.html" class="cart-float" aria-label="قائمة المقايسة">
+        <i class="fas fa-clipboard-list" aria-hidden="true"></i>
         <span class="cart-badge" id="cartCount">0</span>
     </a>
 
     <section class="hero-banner">
         <img src="../assets/images/Greenery/Tropical Bliss.jpeg" alt="أشجار حبيب ستور الفاخرة" fetchpriority="high">
         <div class="hero-content">
-            <div style="display: inline-flex; align-items: center; gap: 10px; background: rgba(26, 60, 52, 0.8); padding: 8px 25px; border-radius: 50px; border: 1px solid var(--gold); font-weight: bold; font-size: 1.3rem; margin-bottom: 20px;">
-                <i class="fas fa-phone-alt" style="color: var(--gold);"></i> 01016961497
+            <div style="display: inline-flex; align-items: center; gap: 10px; background: rgba(26, 60, 52, 0.85); padding: 8px 25px; border-radius: 50px; border: 1px solid var(--gold); font-weight: bold; font-size: 1.1rem; margin-bottom: 20px; backdrop-filter: blur(5px);">
+                <i class="fas fa-phone-alt" style="color: var(--gold);" aria-hidden="true"></i> 01145393026
             </div>
             <h1>مقتنيات حبيب ستور من الأشجار النادرة</h1>
             <p>توريد وتركيب أشجار الزينة والنخيل بإشراف هندسي متكامل خلال 48 ساعة</p>
@@ -98,29 +144,59 @@
     </div>
 
     <div id="smartGlassSlider">
-        <a href="grass-gallery.html" class="smart-glass-item"><img src="../assets/images/nageel/grass-40mm-natural-12.jpeg" alt="النجيل"><span>معرض النجيل</span></a>
-        <a href="white-marble.html" class="smart-glass-item"><img src="../assets/images/zalat/white-zalat.jpg" alt="الزلط"><span>معرض الزلط</span></a>
-        <a href="marble.html" class="smart-glass-item"><img src="../assets/images/marble/marble-galala.jpg" alt="الرخام"><span>معرض الرخام</span></a>
+        <a href="grass-gallery.html" class="smart-glass-item">
+            <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_150,q_auto,f_auto/v1775700146/grass-50mm.jpg_jksw1m.jpg" alt="معرض النجيل" width="50" height="50" loading="lazy">
+            <span>معرض النجيل</span>
+        </a>
+        <a href="white-marble.html" class="smart-glass-item">
+            <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_150,q_auto,f_auto/v1775785655/zalat-mix-colors_pptjvl.jpg" alt="معرض الزلط" width="50" height="50" loading="lazy">
+            <span>معرض الزلط</span>
+        </a>
+        <a href="marble.html" class="smart-glass-item">
+            <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_150,q_auto:eco,f_auto/v1775732441/habib-landscape-boutique-luxury-wall-cladding-villa.jpg_xtxuid.jpg" alt="معرض الرخام" width="50" height="50" loading="lazy">
+            <span>معرض الرخام</span>
+        </a>
     </div>
 
     <div class="catalog-float-btn" onclick="openTreesCatalog()">
-        <i class="fas fa-camera"></i> شاهد تنفيذاتنا الحية
+        <i class="fas fa-camera" aria-hidden="true"></i> شاهد تنفيذاتنا الحية
     </div>
 
     <div id="treesLightbox" class="catalog-lightbox">
-        <button class="close-btn" onclick="closeTreesCatalog()">&times;</button>
+        <button class="close-btn" onclick="closeTreesCatalog()" aria-label="إغلاق المعرض">&times;</button>
         <div class="slider-container">
-            <button class="nav-arrow nav-left" onclick="prevTreeImg()"><i class="fas fa-chevron-left"></i></button>
-            <img id="treeMainImage" src="" alt="تنفيذ لاندسكيب حبيب ستور">
-            <button class="nav-arrow nav-right" onclick="nextTreeImg()"><i class="fas fa-chevron-right"></i></button>
+            <button class="nav-arrow nav-left" onclick="prevTreeImg()" aria-label="السابق"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+            <img id="treeMainImage" src="" alt="تنفيذ لاندسكيب حبيب ستور" loading="lazy">
+            <button class="nav-arrow nav-right" onclick="nextTreeImg()" aria-label="التالي"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
         </div>
-        <a id="orderTreeBtn" href="#" class="order-design-btn" target="_blank">أريد تنسيق حديقتي بهذا الستايل <i class="fab fa-whatsapp"></i></a>
+        <a id="orderTreeBtn" href="#" class="order-design-btn" target="_blank" rel="noopener">أريد تنسيق حديقتي بهذا الستايل <i class="fab fa-whatsapp" style="font-size: 1.3rem;" aria-hidden="true"></i></a>
     </div>
 
-    <a href="https://wa.me/201016961497" class="expert-btn"><i class="fab fa-whatsapp"></i><span>استشارة ومعاينة مجانية</span></a>
+    <a href="https://wa.me/201145393026" class="expert-btn" target="_blank" rel="noopener" aria-label="تواصل عبر الواتساب للاستشارة والمقايسة">
+        <i class="fab fa-whatsapp" style="font-size: 1.6rem;" aria-hidden="true"></i>
+        <span>استشارة ومعاينة مجانية</span>
+    </a>
 
-    <footer style="text-align: center; padding: 60px 20px; color: #aaa; background: #fff; border-top: 1px solid #f1f1f1; margin-top: 80px;">
-        <p>&copy; 2026 Habib Store - Premium Greenery</p>
+    <footer>
+        <p class="footer-brand">HABIB LANDSCAPE BOUTIQUE</p>
+
+        <div class="footer-grid">
+            <div class="footer-group">
+                <h4>تواصل معنا</h4>
+                <a href="https://habib-landscape-boutique.com/contact.html">اتصل بنا</a>
+                <a href="https://habib-landscape-boutique.com/privacy.html">سياسة الخصوصية</a>
+            </div>
+
+            <div class="footer-group">
+                <h4>السياسات</h4>
+                <a href="https://habib-landscape-boutique.com/terms.html">الشروط والأحكام</a>
+                <a href="https://habib-landscape-boutique.com/refund.html">سياسة الاسترجاع والاستبدال</a>
+                <a href="https://habib-landscape-boutique.com/policy.html">وثيقة الالتزام وسياسة المعاينة</a>
+            </div>
+        </div>
+
+        <p>&copy; 2026 جميع الحقوق محفوظة لشركة الحبيب</p>
+        <p class="footer-note">ENGINEERED FOR HIGH-END LANDSCAPE PROJECTS</p>
     </footer>
 
     <script>
@@ -150,7 +226,7 @@
                         <h3>${treeTitle}</h3>
                         <p class="price-note">المعايير الهندسية تحدد عند المعاينة</p>
                         <button class="add-to-cart-btn" onclick="quickAddTree('${tree.id}', '${treeTitle}', '${tree.file}')">
-                            <i class="fas fa-plus-circle"></i> أضف للمقايسة
+                            <i class="fas fa-plus-circle" aria-hidden="true"></i> أضف للمقايسة
                         </button>
                     </div>
                 </div>`;
@@ -170,9 +246,11 @@
 
         function updateCartCount() {
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            document.getElementById('cartCount').innerText = cart.reduce((t, i) => t + (i.quantity || 1), 0);
+            const badge = document.getElementById('cartCount');
+            if(badge) badge.innerText = cart.reduce((t, i) => t + (i.quantity || 1), 0);
         }
         updateCartCount();
+        window.addEventListener('storage', updateCartCount);
 
         // سكريبت سابقة الأعمال (الصور تبدأ بـ t في فولدر portfolio)
         const treePortfolio = ['t1.jpeg', 't2.jpeg', 't3.jpeg']; 
@@ -190,14 +268,17 @@
             const imgName = treePortfolio[currentTIndex];
             document.getElementById('treeMainImage').src = `../assets/images/portfolio/${imgName}`;
             const msg = encodeURIComponent(`تحياتي، أعجبني تنسيق الأشجار في هذا التصميم (صورة ${imgName}) وأريد الاستفسار عن مقايسة مشابهة.`);
-            document.getElementById('orderTreeBtn').href = `https://wa.me/201016961497?text=${msg}`;
+            document.getElementById('orderTreeBtn').href = `https://wa.me/201145393026?text=${msg}`;
         }
 
         function nextTreeImg() { currentTIndex = (currentTIndex + 1) % treePortfolio.length; updateTreeLightbox(); }
         function prevTreeImg() { currentTIndex = (currentTIndex - 1 + treePortfolio.length) % treePortfolio.length; updateTreeLightbox(); }
 
         window.onclick = function(e) { if (e.target.id === 'treesLightbox') closeTreesCatalog(); }
-        setTimeout(() => { document.getElementById('smartGlassSlider').classList.add('visible'); }, 5000);
+        setTimeout(() => { 
+            const glassSlider = document.getElementById('smartGlassSlider');
+            if(glassSlider) glassSlider.classList.add('visible'); 
+        }, 5000);
     </script>
 </body>
 </html>
