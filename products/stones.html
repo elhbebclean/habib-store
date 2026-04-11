@@ -11,8 +11,23 @@
     <meta name="description" content="تفاصيل ومواصفات اللوحات الفنية الديكورية والتصميمات المعمارية الفاخرة للقصور والفلل من حبيب لاندسكيب بوتيك. تنفيذ وإشراف هندسي متكامل.">
     <title>تفاصيل اللوحة الفنية | Habib Landscape Boutique</title>
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://res.cloudinary.com">
+    <link rel="dns-prefetch" href="https://res.cloudinary.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <link rel="canonical" href="https://habib-landscape-boutique.com/products/stones.html">
+    <link rel="alternate" hreflang="ar-EG" href="https://habib-landscape-boutique.com/products/stones.html">
+    <link rel="alternate" hreflang="x-default" href="https://habib-landscape-boutique.com/products/stones.html">
+
+    <meta property="og:title" content="تفاصيل اللوحة الفنية | Habib Landscape Boutique">
+    <meta property="og:description" content="لوحة فنية تنبض بالحياة على جدرانك، مصممة بعناية هندسية لتخطف الأنظار من النظرة الأولى.">
+    <meta property="og:image" content="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,w_600/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+    
     <link rel="stylesheet" href="../style.css">
+    <script src="../main.js" defer></script>
     
     <style>
         :root { --royal-green: #1a3c34; --gold: #c5a059; --soft-gray: #f8fafa; }
@@ -93,7 +108,7 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <header>
-        <a href="https://habib-landscape-boutique.com/index.html" class="logo">HABIB STORE</a>
+        <a href="https://habib-landscape-boutique.com/index.html" class="logo">HABIB LANDSCAPE BOUTIQUE</a>
         <div class="header-actions">
             <div class="header-premium-text">Premium Selection</div>
         </div>
@@ -115,7 +130,7 @@
         </nav>
     </div>
 
-    <a href="../cart.html" class="cart-float" aria-label="قائمة المقايسة">
+    <a href="https://habib-landscape-boutique.com/cart.html" class="cart-float" aria-label="قائمة المقايسة">
         <i class="fas fa-clipboard-list"></i>
         <span class="cart-badge" id="cartCount">0</span>
     </a>
@@ -299,7 +314,8 @@
                 if(addToCartBtn) {
                     addToCartBtn.onclick = function() {
                         if(typeof quickAddToCart === 'function') {
-                            quickAddToCart(productId, product.name);
+                            // التعديل هنا لتمرير رابط الصورة للسلة بنجاح
+                            quickAddToCart(productId, product.name, 'marble', product.img);
                         } else {
                             alert('تمت الإضافة للمقايسة بنجاح');
                         }
