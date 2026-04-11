@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="تفاصيل الأحجار الفاخرة والزلط للديكور واللاندسكيب من حبيب ستور. جودة احترافية وإشراف هندسي. أضف المنتج لمعاينة السعر والمقايسة.">
-    <title>تفاصيل الأحجار الفاخرة | Habib Store | مقايسة وتنسيق حدائق</title>
+    <meta name="description" content="تفاصيل الأحجار الفاخرة والزلط للديكور واللاندسكيب من حبيب لاندسكيب بوتيك. جودة احترافية وإشراف هندسي. أضف المنتج لمعاينة السعر والمقايسة.">
+    <title>تفاصيل الأحجار الفاخرة | Habib Landscape Boutique | مقايسة وتنسيق حدائق</title>
+
+    <link rel="canonical" href="https://habib-landscape-boutique.com/products/zalat.html">
+    <link rel="alternate" hreflang="ar-EG" href="https://habib-landscape-boutique.com/products/zalat.html">
+    <link rel="alternate" hreflang="x-default" href="https://habib-landscape-boutique.com/products/zalat.html">
     
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -106,7 +110,7 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NT75WPGT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <header>
-        <a href="https://habib-landscape-boutique.com/index.html" class="logo">HABIB STORE</a>
+        <a href="https://habib-landscape-boutique.com/index.html" class="logo">HABIB LANDSCAPE BOUTIQUE</a>
         <div class="header-actions">
             <div class="header-premium-text">Premium Selection</div>
         </div>
@@ -128,7 +132,7 @@
         </nav>
     </div>
 
-    <a href="../cart.html" class="cart-float" aria-label="قائمة المقايسة">
+    <a href="https://habib-landscape-boutique.com/cart.html" class="cart-float" aria-label="قائمة المقايسة">
         <i class="fas fa-clipboard-list" aria-hidden="true"></i>
         <span class="cart-badge" id="cartCount">0</span>
     </a>
@@ -141,14 +145,14 @@
         </div>
 
         <div class="content-section">
-            <span class="brand-tag">Habib Store | Premium Selection</span>
+            <span class="brand-tag">Habib Landscape Boutique | Premium Selection</span>
             <div class="phone-trust"><i class="fas fa-phone-alt" aria-hidden="true"></i> 01145393026</div>
 
             <h1 id="productTitle">جاري تحميل التفاصيل...</h1>
             <div class="luxury-line"></div>
             
             <p class="description-text" id="productDescription">
-                لأننا في "حبيب ستور" ندرك أن التفاصيل الدقيقة هي ما يصنع الفارق في المشاريع الفاخرة، نقدم لكم هذا التكوين الطبيعي النادر. تم اختيار هذه الأحجار بعناية فائقة لتتكامل مع رؤيتكم الهندسية، مانحةً مساراتكم وواجهاتكم لمسة من الـ <strong>Modern Luxury</strong> والهدوء البصري الذي يليق بمكانتكم.
+                لأننا في "حبيب لاندسكيب بوتيك" ندرك أن التفاصيل الدقيقة هي ما يصنع الفارق في المشاريع الفاخرة، نقدم لكم هذا التكوين الطبيعي النادر. تم اختيار هذه الأحجار بعناية فائقة لتتكامل مع رؤيتكم الهندسية، مانحةً مساراتكم وواجهاتكم لمسة من الـ <strong>Modern Luxury</strong> والهدوء البصري الذي يليق بمكانتكم.
             </p>
 
             <div class="trust-badge">
@@ -244,7 +248,6 @@
             'mica-red': { title: 'Habib Stone Mica Red', img: 'stone-mica-red.jpeg' }
         };
 
-        // تم التعديل لتكون بوابات للمعارض الرئيسية
         const complements = [
             { link: "grass-gallery.html", name: "معرض النجيل الفاخر", img: "modern-landscape-design.jpg", folder: "nageel" },
             { link: "marble.html", name: "معرض الرخام", img: "marble-galala.jpg", folder: "marble" },
@@ -264,7 +267,6 @@
             displayTitle.innerText = product.title;
             displayImg.src = '../assets/images/zalat/' + product.img;
 
-            // تخصيص رسالة الواتساب الفاخرة
             const whatsappMsg = encodeURIComponent("تحياتي، مهتم بمعرفة تفاصيل المقايسة لـ " + product.title);
             document.getElementById('p-whatsapp').href = "https://wa.me/201145393026?text=" + whatsappMsg;
         } else {
@@ -272,7 +274,6 @@
             displayImg.src = fallbackImg;
         }
 
-        // بناء المنتجات التكميلية (Cross-Selling) بناءً على الرابط المباشر
         let sliderHTML = '';
         complements.forEach(item => {
             sliderHTML += `
@@ -285,7 +286,6 @@
         });
         document.getElementById('complementary-slider').innerHTML = sliderHTML;
 
-        // تحديث رقم السلة
         function updateCartCount() {
             try {
                 let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -299,35 +299,15 @@
         updateCartCount();
         window.addEventListener('storage', updateCartCount);
 
-        // وظيفة الإضافة للمقايسة
+        // وظيفة الإضافة للمقايسة باستخدام الدالة الموحدة
         document.getElementById('addToCartBtn').addEventListener('click', function() {
             if(!product) return;
             
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            
-            let existingItem = cart.find(item => item.id === productId && item.category === 'zalat');
-            
-            if(existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                cart.push({
-                    id: productId,
-                    title: product.title,
-                    img: '../assets/images/zalat/' + product.img,
-                    category: 'zalat',
-                    quantity: 1,
-                    price: 0
-                });
+            // استخدام الدالة الموحدة وتمرير المسار الكامل للصورة
+            if (typeof quickAddToCart === 'function') {
+                quickAddToCart(productId, product.title, 'zalat', '../assets/images/zalat/' + product.img);
             }
             
-            localStorage.setItem('cart', JSON.stringify(cart));
-            
-            updateCartCount();
-            if (typeof updateGlobalCartCount === "function") {
-                updateGlobalCartCount();
-            }
-            
-            // تأثير تأكيد الإضافة
             let btn = this;
             let originalText = btn.innerHTML;
             btn.innerHTML = '<i class="fas fa-check-circle" aria-hidden="true"></i> تمت الإضافة للمقايسة بنجاح';
@@ -342,7 +322,6 @@
             }, 2500);
         });
 
-        // تشغيل الشريط الزجاجي المرفوع بعد 5 ثواني
         setTimeout(() => {
             const glassSlider = document.getElementById('smartGlassSlider');
             if(glassSlider) glassSlider.classList.add('visible');
