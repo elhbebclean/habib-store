@@ -99,6 +99,8 @@ function quickAddToCart(productId, productName, category = 'general') {
     let imgPath = `assets/images/${category}/${productId}.jpg`;
     if (category === 'zalat') {
         imgPath = `assets/images/zalat/${productId}.jpg`;
+    } else if (category === 'trees') {
+        imgPath = `assets/images/Greenery/${productId}`;
     }
 
     const existingItem = cart.find(item => item.id === productId);
@@ -125,11 +127,12 @@ function quickAddToCart(productId, productName, category = 'general') {
 let catalogImages = [];
 let currentImageIndex = 0;
 let currentCategoryName = 'سابقة أعمالنا';
+let catalogHistoryPushed = false;
 
 const brandLogoUrl =
     'https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png';
 
-// سابقة أعمال موحدة تظهر في كل المعارض
+// سابقة أعمال موحدة
 const signaturePortfolioData = {
     nameAr: 'سابقة أعمالنا',
     media: [
@@ -157,17 +160,11 @@ const signaturePortfolioData = {
 };
 
 function getCatalogLightbox() {
-    return (
-        document.getElementById('catalogLightbox') ||
-        document.getElementById('zalatLightbox')
-    );
+    return document.getElementById('catalogLightbox');
 }
 
 function getCatalogMainImage() {
-    return (
-        document.getElementById('catalogMainImage') ||
-        document.getElementById('zalatMainImage')
-    );
+    return document.getElementById('catalogMainImage');
 }
 
 function ensureCatalogBrandMark(parent) {
@@ -179,24 +176,12 @@ function ensureCatalogBrandMark(parent) {
         logoEl = document.createElement('img');
         logoEl.id = 'catalogBrandMark';
         logoEl.alt = 'Habib Landscape Boutique';
-        logoEl.loading = 'eager';
-        logoEl.decoding = 'async';
         logoEl.style.position = 'absolute';
         logoEl.style.top = '18px';
         logoEl.style.left = '18px';
         logoEl.style.width = '120px';
-        logoEl.style.maxWidth = '28vw';
-        logoEl.style.height = 'auto';
         logoEl.style.zIndex = '6';
         logoEl.style.pointerEvents = 'none';
-        logoEl.style.opacity = '0.92';
-        logoEl.style.filter = 'drop-shadow(0 4px 16px rgba(0,0,0,0.35))';
-
-        const computedPosition = window.getComputedStyle(parent).position;
-        if (!computedPosition || computedPosition === 'static') {
-            parent.style.position = 'relative';
-        }
-
         parent.appendChild(logoEl);
     }
 
@@ -210,25 +195,26 @@ function cleanupCatalogMedia() {
             existingVideo.pause();
             existingVideo.removeAttribute('src');
             existingVideo.load();
-        } catch (error) {
-            console.warn('Video cleanup warning:', error);
-        }
+        } catch (error) {}
         existingVideo.remove();
     }
 }
 
-function openCatalog(category) {
+function openCatalog() {
     const lightbox = getCatalogLightbox();
     if (!lightbox) return;
 
-    // بغض النظر عن الصفحة أو المعرض، نظهر نفس سابقة الأعمال
-    currentCategoryName = signaturePortfolioData.nameAr;
     catalogImages = signaturePortfolioData.media;
     currentImageIndex = 0;
 
     lightbox.style.display = 'flex';
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
+
+    if (!catalogHistoryPushed) {
+        history.pushState({ catalogOpen: true }, '');
+        catalogHistoryPushed = true;
+    }
 
     updateCatalogView();
 }
@@ -237,119 +223,89 @@ function updateCatalogView() {
     const mainImg = getCatalogMainImage();
     const descElement = document.getElementById('catalogDescription');
 
-    if (!mainImg || catalogImages.length === 0) return;
+    if (!mainImg) return;
 
     const currentItem = catalogImages[currentImageIndex];
-    const mediaUrl = currentItem.url;
-    const mediaDesc = currentItem.desc || '';
-    const isVideo = mediaUrl.includes('.mp4') || mediaUrl.includes('/video/');
+    const isVideo = currentItem.url.includes('.mp4');
     const parent = mainImg.parentElement;
 
-    if (!parent) return;
-
     ensureCatalogBrandMark(parent);
+    cleanupCatalogMedia();
 
     if (descElement) {
-        descElement.innerText = mediaDesc;
-        descElement.style.display = mediaDesc ? 'block' : 'block';
+        descElement.innerText = currentItem.desc;
     }
-
-    cleanupCatalogMedia();
 
     if (isVideo) {
         mainImg.style.display = 'none';
 
-        const videoEl = document.createElement('video');
-        videoEl.id = 'catalogMainVideo';
-        videoEl.src = mediaUrl;
-        videoEl.autoplay = true;
-        videoEl.loop = true;
-        videoEl.muted = true;
-        videoEl.controls = true;
-        videoEl.preload = 'metadata';
-        videoEl.playsInline = true;
-        videoEl.setAttribute('playsinline', 'true');
-        videoEl.setAttribute('webkit-playsinline', 'true');
-        videoEl.style.width = '100%';
-        videoEl.style.maxHeight = '80vh';
-        videoEl.style.objectFit = 'contain';
-        videoEl.style.borderRadius = '12px';
-        videoEl.style.background = '#000';
+        const video = document.createElement('video');
+        video.id = 'catalogMainVideo';
+        video.src = currentItem.url;
+        video.autoplay = true;
+        video.loop = true;
+        video.muted = true;
+        video.controls = true;
+        video.style.width = '100%';
 
-        parent.insertBefore(videoEl, mainImg);
+        parent.insertBefore(video, mainImg);
     } else {
         mainImg.style.display = 'block';
-        mainImg.loading = 'lazy';
-        mainImg.decoding = 'async';
-        mainImg.src = mediaUrl;
-        mainImg.alt = mediaDesc || currentCategoryName;
+        mainImg.src = currentItem.url;
     }
 }
 
 function nextCatalogImage() {
-    if (catalogImages.length === 0) return;
     currentImageIndex = (currentImageIndex + 1) % catalogImages.length;
     updateCatalogView();
 }
 
 function prevCatalogImage() {
-    if (catalogImages.length === 0) return;
     currentImageIndex = (currentImageIndex - 1 + catalogImages.length) % catalogImages.length;
     updateCatalogView();
 }
 
-function closeCatalog(event) {
+function closeCatalog(event, fromPopState = false) {
     const lightbox = getCatalogLightbox();
     if (!lightbox) return;
 
-    const clickedCloseButton =
-        event && event.target && event.target.classList.contains('close-btn');
-    const clickedOverlay = event && event.target === lightbox;
+    const isOverlay = event && event.target === lightbox;
+    const isBtn = event && event.target.classList.contains('close-btn');
 
-    if (!event || clickedOverlay || clickedCloseButton) {
-        // إخفاء فوري لتخفيف الإحساس بالثقل
+    if (!event || isOverlay || isBtn || fromPopState) {
         lightbox.classList.remove('active');
         lightbox.style.display = 'none';
         document.body.style.overflow = '';
 
-        const mainImg = getCatalogMainImage();
-        if (mainImg) {
-            mainImg.removeAttribute('src');
-            mainImg.style.display = 'block';
-        }
+        cleanupCatalogMedia();
 
-        // تنظيف الفيديو بعد الإخفاء مباشرة
-        setTimeout(() => {
-            cleanupCatalogMedia();
-        }, 0);
+        if (catalogHistoryPushed && !fromPopState) {
+            catalogHistoryPushed = false;
+            history.back();
+        } else {
+            catalogHistoryPushed = false;
+        }
     }
 }
 
-// إغلاق الكتالوج بزر Escape
-document.addEventListener('keydown', function (event) {
+// رجوع الموبايل
+window.addEventListener('popstate', function () {
     const lightbox = getCatalogLightbox();
-    if (!lightbox || !lightbox.classList.contains('active')) return;
+    if (lightbox && lightbox.classList.contains('active')) {
+        closeCatalog(null, true);
+    }
+});
 
-    if (event.key === 'Escape') {
+// Escape
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
         closeCatalog();
     }
 });
 
-// 7. طلب تنفيذ تصميم محدد
+// واتساب
 function orderCurrentDesign() {
-    if (catalogImages.length === 0) return;
-
-    const mediaUrl = catalogImages[currentImageIndex].url;
-    const fileNameWithParams = mediaUrl.split('/').pop() || '';
-    const imageName = fileNameWithParams.split('.')[0] || 'signature-project';
-
-    const message =
-        `*طلب تنفيذ تصميم محدد - Habib Landscape Boutique* 🦈\n` +
-        `--------------------------------\n` +
-        `مرحباً، أعجبني هذا التصميم من ${currentCategoryName}.\n` +
-        `(كود الملف: ${imageName})\n\n` +
-        `أرغب في الاستفسار عن تفاصيل التنفيذ والمعاينة.`; 
-
-    const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/201145393026?text=${encodedMessage}`, '_blank', 'noopener');
+    const item = catalogImages[currentImageIndex];
+    const msg = encodeURIComponent("عايز التصميم ده");
+    window.open(`https://wa.me/201145393026?text=${msg}`, '_blank');
 }
