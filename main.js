@@ -1,5 +1,5 @@
 /* =========================================
-   Habib Store | Premium Selection
+   Habib Landscape Boutique | Premium Selection
    Main Core Logic - Optimized Version
    ========================================= */
 
@@ -92,17 +92,10 @@ document.addEventListener('DOMContentLoaded', () => {
    محرك المبيعات والكتالوج الذكي
    ========================================= */
 
-// 5. الإضافة السريعة للمقايسة
-function quickAddToCart(productId, productName, category = 'general') {
+// 5. الإضافة السريعة للمقايسة (تم التحديث ليدعم Cloudinary)
+// أضفنا imgUrl كمتغير رابع لاستقبال رابط الصورة مباشرة
+function quickAddToCart(productId, productName, category = 'general', imgUrl = 'assets/images/placeholder.jpg') {
     const cart = safeGetCart();
-
-    let imgPath = `assets/images/${category}/${productId}.jpg`;
-    if (category === 'zalat') {
-        imgPath = `assets/images/zalat/${productId}.jpg`;
-    } else if (category === 'trees') {
-        imgPath = `assets/images/Greenery/${productId}`;
-    }
-
     const existingItem = cart.find(item => item.id === productId);
 
     if (existingItem) {
@@ -111,7 +104,7 @@ function quickAddToCart(productId, productName, category = 'general') {
         cart.push({
             id: productId,
             title: productName,
-            img: imgPath,
+            img: imgUrl, // تخزين رابط Cloudinary مباشرة
             category: category,
             quantity: 1
         });
