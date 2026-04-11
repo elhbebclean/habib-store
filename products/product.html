@@ -12,8 +12,13 @@
     <title>المواصفات الهندسية | Habib Landscape Boutique</title>
     
     <link rel="canonical" href="https://habib-landscape-boutique.com/products/product.html">
+    <link rel="alternate" hreflang="ar-EG" href="https://habib-landscape-boutique.com/products/product.html">
+    <link rel="alternate" hreflang="x-default" href="https://habib-landscape-boutique.com/products/product.html">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
+    
+    <script src="../main.js" defer></script>
 
     <script type="application/ld+json" id="productSchema">
     {
@@ -109,7 +114,7 @@
         </div>
 
         <div class="content-section">
-            <span class="brand-tag">Premium Selection | VIP Edition</span>
+            <span class="brand-tag">Habib Landscape Boutique | Premium Selection</span>
             <div class="phone-trust"><i class="fas fa-phone-alt"></i> 01145393026</div>
             
             <h1 id="productTitle">جاري تحميل الفخامة...</h1>
@@ -306,47 +311,34 @@
             element.classList.add('active');
         }
 
-        function updateCartCount() {
-            try {
-                let cart = JSON.parse(localStorage.getItem('cart')) || [];
-                let count = cart.reduce((total, item) => total + (item.quantity || 1), 0);
-                document.getElementById('cartCount').textContent = count;
-            } catch(e) {}
-        }
-        updateCartCount();
-
         document.getElementById('addToCartBtn').addEventListener('click', function() {
             if(!product) return;
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            let existingItem = cart.find(item => item.id === productId && item.category === 'nageel');
             
-            if(existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                cart.push({
-                    id: productId,
-                    title: product.title,
-                    img: product.images[0], 
-                    category: 'nageel',
-                    quantity: 1,
-                    price: 0
-                });
+            // استخدام الدالة المركزية للإضافة للسلة وتمرير الصورة للظهور في صفحة السلة
+            if (typeof quickAddToCart === 'function') {
+                quickAddToCart(productId, product.title, 'nageel', product.images[0]);
             }
-            
-            localStorage.setItem('cart', JSON.stringify(cart));
-            updateCartCount();
             
             let btn = this;
             let originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fas fa-check-circle"></i> تمت الإضافة بنجاح للمقايسة';
+            btn.innerHTML = '<i class="fas fa-check-circle"></i> تمت الإضافة للمقايسة الهندسية';
             btn.style.background = '#25d366';
             btn.style.color = 'white';
+            btn.style.boxShadow = '0 10px 20px rgba(37, 211, 102, 0.3)';
             
             setTimeout(() => {
                 btn.innerHTML = originalText;
                 btn.style.background = '';
                 btn.style.color = '';
+                btn.style.boxShadow = '';
             }, 2500);
+        });
+
+        // تحديث العداد من main.js
+        window.addEventListener('load', function() {
+            if(typeof updateGlobalCartCount === 'function') {
+                updateGlobalCartCount();
+            }
         });
     </script>
 </body>
