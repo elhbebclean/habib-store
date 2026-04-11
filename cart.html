@@ -3,9 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مراجعة طلب المعاينة | Habib Store | Premium Selection</title>
+    <meta name="description" content="راجع قائمة المقايسة الخاصة بك في Habib Landscape Boutique. حدد المنتجات وارسل طلب معاينة فنية مجانية لمشروعك.">
+    <title>مراجعة طلب المعاينة | Habib Landscape Boutique</title>
+    
+    <link rel="canonical" href="https://habib-landscape-boutique.com/cart.html">
+    <meta property="og:title" content="مراجعة طلب المعاينة | Habib Landscape Boutique">
+    <meta property="og:description" content="راجع قائمة المقايسة وارسل طلب معاينة فنية لتنسيق الحدائق.">
+    <meta property="og:url" content="https://habib-landscape-boutique.com/cart.html">
+    <meta property="og:image" content="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto:eco,f_auto,w_1200/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png">
+    
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
         /* دمج ألوان البراند المعتمدة */
         :root { --royal-green: #1a3c34; --gold: #c5a059; --black: #0a0a0a; --gray: #f8fafa; }
@@ -14,7 +23,7 @@
         
         /* الهيدر الموحد */
         .branding-header { background: #fff; padding: 40px 20px; text-align: center; border-bottom: 3px solid var(--royal-green); margin-bottom: 40px; }
-        .branding-header h1 { font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 2.8rem; color: var(--royal-green); margin: 0; font-weight: 300; letter-spacing: 2px; }
+        .branding-header h1 { font-family: 'Amiri', serif; font-size: 2.8rem; color: var(--royal-green); margin: 0; font-weight: 700; letter-spacing: 2px; }
         .branding-header p { color: var(--gold); font-size: 0.9rem; margin-top: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
 
         .container { max-width: 1200px; margin: auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; padding: 0 5% 50px; }
@@ -82,7 +91,7 @@
 <body>
 
 <header class="branding-header">
-    <h1>Habib Store</h1>
+    <h1>Habib Landscape Boutique</h1>
     <p>Premium Selection | توريد وتركيب بأيدي خبراء ومهندسين</p>
 </header>
 
@@ -123,7 +132,7 @@
         </div>
 
         <button class="btn-confirm" onclick="sendOrder()">إرسال الطلب للمعايَنة <i class="fab fa-whatsapp" style="font-size: 1.4rem;"></i></button>
-        <p style="font-size: 0.8rem; color: #999; text-align: center; margin-top: 20px; font-weight: 600;">Habib Store | Premium Selection 🦈</p>
+        <p style="font-size: 0.8rem; color: #999; text-align: center; margin-top: 20px; font-weight: 600;">Habib Landscape Boutique | Premium Selection 🦈</p>
     </div>
 </div>
 
@@ -131,11 +140,11 @@
     <i class="fas fa-clipboard-list"></i>
     <h3>قائمة المقايسة خالية</h3>
     <p style="color: #888; font-size: 1.1rem;">لم تقم بإضافة أي خامات أو منتجات لطلب المعاينة بعد.</p>
-    <a href="index.html" class="back-btn">تصفح المعارض واختر خاماتك ➜</a>
+    <a href="https://habib-landscape-boutique.com/index.html" class="back-btn">تصفح المعارض واختر خاماتك ➜</a>
 </div>
 
 <footer style="text-align: center; padding: 40px 20px; color: #aaa; font-size: 0.85rem; background: #fff; border-top: 1px solid #f1f1f1; margin-top: 40px;">
-    <p>&copy; 2026 Habib Store | Premium Selection - توريد وتركيب بأيدي خبراء ومهندسين</p>
+    <p>&copy; 2026 Habib Landscape Boutique | Premium Selection - توريد وتركيب بأيدي خبراء ومهندسين</p>
 </footer>
 
 <script>
@@ -161,15 +170,15 @@
         let totalItems = 0;
 
         cart.forEach((item, index) => {
-            // المعالجة الدقيقة لمسار الصورة (إزالة أي ../ لضمان قراءة الصورة من الجذر الأساسي للموقع)
-            let imgSrc = item.img ? item.img.replace(/\.\.\//g, '') : 'assets/images/placeholder.jpg';
+            // استخدام رابط Cloudinary المخزن مباشرة
+            let imgSrc = item.img ? item.img : 'https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto:eco,f_auto,w_150/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png';
             
             totalItems += item.quantity || 1;
 
             listDiv.innerHTML += `
                 <div class="item-row">
                     <div class="item-content">
-                        <img src="${imgSrc}" class="item-image" alt="${item.title}" onerror="this.src='assets/images/placeholder.jpg'">
+                        <img src="${imgSrc}" class="item-image" alt="${item.title}" onerror="this.src='https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto:eco,f_auto,w_150/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png'">
                         <div class="item-info">
                             <h4>${item.title}</h4>
                             <div class="quantity-controls">
@@ -223,8 +232,8 @@
             return; 
         }
 
-        // بناء الرسالة بشكل احترافي بالاسم الجديد
-        let message = `*طلب معاينة فنية جديد - Habib Store | Premium Selection* 🦈\n`;
+        // تحديث رسالة الواتساب باسم البراند الجديد
+        let message = `*طلب معاينة فنية جديد - Habib Landscape Boutique* 🦈\n`;
         message += `--------------------------------\n`;
         message += `👤 *العميل:* ${name}\n`;
         message += `📍 *الموقع:* ${loc}\n`;
@@ -240,7 +249,7 @@
         message += `--------------------------------\n`;
         message += `🚀 *برجاء التواصل لتحديد موعد المعاينة.*`;
 
-        const waNumber = "201016961497"; 
+        const waNumber = "201016961497"; // يمكنك تغيير هذا الرقم لاحقاً للرقم الأساسي لو أردت توحيده
         const url = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
         
         window.open(url, '_blank');
