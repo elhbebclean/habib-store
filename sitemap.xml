@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://habib-landscape-boutique.com/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto:eco,f_auto,w_1200/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png</image:loc>
+      <image:title>Habib Landscape Boutique | Luxury Landscape Design</image:title>
+      <image:caption>Premium artificial grass, marble, pebbles, and trees for luxury villas and private outdoor spaces in Cairo.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://habib-landscape-boutique.com/products/grass-gallery.html</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,w_900,h_900,c_fill/v1775826555/modern-landscape-design.jpg_kvxxze.jpg</image:loc>
+      <image:title>Luxury Artificial Grass Gallery | Habib Landscape Boutique</image:title>
+      <image:caption>Premium artificial grass for villas, rooftops, gardens, and exclusive private landscapes.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://habib-landscape-boutique.com/products/gallery-en.html</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,w_900,h_900,c_fill/v1775826555/modern-landscape-design.jpg_kvxxze.jpg</image:loc>
+      <image:title>Luxury Artificial Grass in Cairo | Habib Landscape Boutique</image:title>
+      <image:caption>European-grade artificial grass supply and installation for villas and estates in Cairo.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://habib-landscape-boutique.com/products/marble.html</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.93</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,w_900,h_900,c_fill/v1775732414/habib-landscape-boutique-royal-villa-entrance-flooring.jpg_mpu58y.jpg</image:loc>
+      <image:title>Luxury Marble and Mica Gallery | Habib Landscape Boutique</image:title>
+      <image:caption>Refined marble finishes, mica walls, and premium architectural surfaces for villa entrances and facades.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://habib-landscape-boutique.com/products/white-marble.html</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.91</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,w_900,h_900,c_fill/v1775826818/zalat-garden-ideas-luxury.jpg_rbg5wh.jpg</image:loc>
+      <image:title>Decorative Pebble and Stone Gallery | Habib Landscape Boutique</image:title>
+      <image:caption>Luxury decorative pebbles, pathway stones, and premium outdoor finishes for elegant landscape composition.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://habib-landscape-boutique.com/products/trees.html</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,w_900,h_900,c_fill/v1775785894/Banana_Palmo_idrc9m.jpg</image:loc>
+      <image:title>Luxury Trees and Palms Gallery | Habib Landscape Boutique</image:title>
+      <image:caption>Premium palms, tropical trees, and decorative greenery curated for upscale landscape projects.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://habib-landscape-boutique.com/contact.html</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://habib-landscape-boutique.com/privacy.html</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
+  </url>
+
+  <url>
+    <loc>https://habib-landscape-boutique.com/terms.html</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
+  </url>
+
+  <url>
+    <loc>https://habib-landscape-boutique.com/refund.html</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.25</priority>
+  </url>
+
+  <url>
+    <loc>https://habib-landscape-boutique.com/policy.html</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.25</priority>
+  </url>
+
+</urlset>
