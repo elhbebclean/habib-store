@@ -80,7 +80,8 @@ header {
 .menu-toggle {
     position: fixed;
     top: 20px;
-    right: 20px;
+    left: 20px; /* تم تعديل الموقع لليسار لمنع التداخل */
+    right: auto;
     background: var(--gold);
     color: var(--royal-green);
     width: 45px;
