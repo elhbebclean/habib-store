@@ -18,7 +18,7 @@
         :root { --royal-green: #1a3c34; --gold: #c5a059; --soft-gray: #f8fafa; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--soft-gray); margin: 0; color: #333; line-height: 1.8; overflow-x: hidden; }
         
-        .cart-float { position: fixed; top: 20px; left: 20px; background: white; color: var(--royal-green); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-decoration: none; z-index: 1000; font-size: 1.2rem; transition: 0.3s; border: 1px solid rgba(197, 160, 89, 0.3); }
+        .cart-float { position: fixed; top: 70px; left: 20px; background: white; color: var(--royal-green); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-decoration: none; z-index: 1000; font-size: 1.2rem; transition: 0.3s; border: 1px solid rgba(197, 160, 89, 0.3); }
         .cart-float:hover { transform: scale(1.1); color: var(--gold); border-color: var(--gold); }
         .cart-badge { position: absolute; top: -5px; right: -5px; background: var(--gold); color: white; font-size: 0.75rem; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
 
@@ -91,6 +91,30 @@
 <body>
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NT75WPGT"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header>
+        <a href="https://habib-landscape-boutique.com/index.html" class="logo">HABIB STORE</a>
+        <div class="header-actions">
+            <div class="header-premium-text">Premium Selection</div>
+        </div>
+    </header>
+
+    <button class="menu-toggle" onclick="toggleMobileMenu()" aria-label="فتح القائمة" type="button">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+    </button>
+
+    <div id="mobileMenuOverlay" class="mobile-menu-overlay" aria-hidden="true">
+        <button class="close-menu-btn" onclick="toggleMobileMenu()" aria-label="إغلاق القائمة" type="button">&times;</button>
+        <nav class="mobile-menu-content" aria-label="القائمة الرئيسية">
+            <a href="https://habib-landscape-boutique.com/index.html"><i class="fas fa-home" aria-hidden="true"></i> الصفحة الرئيسية</a>
+            <a href="https://habib-landscape-boutique.com/products/grass-gallery.html"><i class="fas fa-leaf" aria-hidden="true"></i> معرض النجيل</a>
+            <a href="https://habib-landscape-boutique.com/products/marble.html"><i class="fas fa-cubes" aria-hidden="true"></i> معرض الرخام</a>
+            <a href="https://habib-landscape-boutique.com/products/white-marble.html"><i class="fas fa-gem" aria-hidden="true"></i> معرض الزلط</a>
+            <a href="https://habib-landscape-boutique.com/products/trees.html"><i class="fas fa-tree" aria-hidden="true"></i> معرض الأشجار</a>
+            <a href="https://habib-landscape-boutique.com/contact.html" class="mobile-menu-contact-link"><i class="fas fa-envelope" aria-hidden="true"></i> اتصل بنا</a>
+        </nav>
+    </div>
+
     <a href="../cart.html" class="cart-float" aria-label="قائمة المقايسة">
         <i class="fas fa-clipboard-list"></i>
         <span class="cart-badge" id="cartCount">0</span>
@@ -105,7 +129,7 @@
 
         <div class="content-section">
             <span class="brand-tag">Premium Selection | VIP Edition</span>
-            <div class="phone-trust"><i class="fas fa-phone-alt"></i> 01016961497</div>
+            <div class="phone-trust"><i class="fas fa-phone-alt"></i> 01145393026</div>
             
             <span class="specs-tag" id="p-specs">جاري تحميل الفخامة...</span>
             <h1 id="p-name">التصميمات المعمارية الفاخرة</h1>
@@ -165,7 +189,7 @@
         </a>
     </div>
 
-    <a id="p-whatsapp" href="https://wa.me/201016961497" class="expert-btn" target="_blank" aria-label="تواصل معنا للاستشارة">
+    <a id="p-whatsapp" href="https://wa.me/201145393026" class="expert-btn" target="_blank" aria-label="تواصل معنا للاستشارة">
         <i class="fab fa-whatsapp" style="font-size: 1.6rem;"></i>
         <span>استشارة مهندس حبيب للقصور</span>
     </a>
@@ -181,7 +205,6 @@
     </script>
 
     <script>
-        // قاعدة البيانات مربطوة بـ IDs المعرض، مع صياغة VIP تبيع الحلم والتصميم
         const marbleData = {
             "40": { 
                 name: "جدارية الإمبريال الكلاسيكية", 
@@ -253,104 +276,95 @@
                 name: "الأعمدة والعناصر المعمارية", 
                 img: "https://res.cloudinary.com/dwa0e5sup/image/upload/w_800,q_auto,f_auto,e_contrast:10,e_brightness:5/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,w_150,o_90/fl_layer_apply,g_south_east,x_20,y_20/v1775732694/habib-boutique-architectural-stone-elements.jpg_ejc9bd.jpg", 
                 specs: "تحويل الكتل الخرسانية لتحف فنية", 
-                desc: "تكسية مخصصة هندسياً للأعمدة والأسوار والكتل الخرسانية البارزة، لتحويلها من مجرد هيكل بناء إلى عنصر ديكوري فخم يرفع من القيمة العقارية للمبنى بأكمله." 
+                desc: "تكسية مخصصة هندسياً للأعمدة والأسوار والكتل الخرسانية البارزة، لتحويلها إلى تحف فنية ديكورية فخمة ترفع من القيمة الجمالية للمبنى وتخطف الأنظار." 
             }
         };
 
-        const complements = [
-            { link: "grass-gallery.html", name: "معرض النجيل الملكي", img: "https://res.cloudinary.com/dwa0e5sup/image/upload/w_400,q_auto,f_auto/v1775700146/grass-50mm.jpg_jksw1m.jpg" },
-            { link: "white-marble.html", name: "أحجار الديكور والزلط", img: "https://res.cloudinary.com/dwa0e5sup/image/upload/w_400,q_auto,f_auto/v1775785655/zalat-mix-colors_pptjvl.jpg" },
-            { link: "trees.html", name: "تنسيق الأشجار", img: "https://res.cloudinary.com/dwa0e5sup/image/upload/w_400,q_auto,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg" }
-        ];
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id') || "40";
+            const product = marbleData[productId];
 
-        const urlParams = new URLSearchParams(window.location.search);
-        const productId = urlParams.get('id');
-        const product = marbleData[productId];
+            if(product) {
+                document.getElementById('p-name').textContent = product.name;
+                document.getElementById('p-img').src = product.img;
+                document.getElementById('p-img').alt = product.name;
+                document.getElementById('p-specs').textContent = product.specs;
+                document.getElementById('p-desc').textContent = product.desc;
+                
+                const waBtn = document.getElementById('p-whatsapp');
+                waBtn.href = `https://wa.me/201145393026?text=مرحباً، أريد حجز معاينة وتفاصيل أكثر عن: (${product.name})`;
 
-        if (product) {
-            document.getElementById('p-name').innerHTML = product.name;
-            document.getElementById('p-img').src = product.img;
-            document.getElementById('p-specs').innerHTML = `<i class="fas fa-gem"></i> ${product.specs}`;
-            document.getElementById('p-desc').innerHTML = `<strong>التميز المعماري:</strong> ${product.desc}`;
-            
-            const whatsappMsg = encodeURIComponent("تحياتي، مهتم بمعرفة تفاصيل المعاينة والمقايسة لتنفيذ تصميم " + product.name);
-            document.getElementById('p-whatsapp').href = "https://wa.me/201016961497?text=" + whatsappMsg;
+                const addToCartBtn = document.getElementById('addToCartBtn');
+                if(addToCartBtn) {
+                    addToCartBtn.onclick = function() {
+                        if(typeof quickAddToCart === 'function') {
+                            quickAddToCart(productId, product.name);
+                        } else {
+                            alert('تمت الإضافة للمقايسة بنجاح');
+                        }
+                    };
+                }
+            }
 
-            let sliderHTML = '';
-            complements.forEach(item => {
-                sliderHTML += `
-                    <a href="${item.link}" class="insta-card">
-                        <img src="${item.img}" alt="${item.name}" loading="lazy">
-                        <div class="insta-card-info">
-                            <h4>${item.name}</h4>
-                        </div>
-                    </a>`;
-            });
-            document.getElementById('complementary-slider').innerHTML = sliderHTML;
+            const complements = [
+                { name: "معرض وتوريد النجيل الملكي", img: "https://res.cloudinary.com/dwa0e5sup/image/upload/w_400,q_auto,f_auto/v1775700336/grass-40mm.jpg_bokwik.jpg", link: "grass-gallery.html" },
+                { name: "معرض الزلط والأحجار الديكورية", img: "https://res.cloudinary.com/dwa0e5sup/image/upload/w_400,q_auto,f_auto/v1775785655/zalat-mix-colors_pptjvl.jpg", link: "white-marble.html" },
+                { name: "معرض وتنسيق الأشجار", img: "https://res.cloudinary.com/dwa0e5sup/image/upload/w_400,q_auto,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg", link: "trees.html" }
+            ];
+
+            const slider = document.getElementById('complementary-slider');
+            if(slider) {
+                complements.forEach(item => {
+                    slider.innerHTML += `
+                        <a href="${item.link}" class="insta-card" aria-label="رابط إلى ${item.name}">
+                            <img src="${item.img}" alt="${item.name}" loading="lazy">
+                            <div class="insta-card-info">
+                                <h4>${item.name}</h4>
+                            </div>
+                        </a>
+                    `;
+                });
+            }
             
-            const schema = document.getElementById('productSchema');
-            let schemaJson = JSON.parse(schema.innerHTML);
-            schemaJson.name = product.name;
-            schemaJson.description = product.desc;
-            schemaJson.image = product.img;
-            schema.innerHTML = JSON.stringify(schemaJson);
-            
-        } else {
-            document.getElementById('p-name').innerText = "التصميمات المعمارية الفاخرة";
-            document.getElementById('p-specs').innerText = "تواصل معنا للاستشارة الهندسية";
-            document.getElementById('p-desc').innerText = "برجاء اختيار اللوحة الفنية من المعرض لعرض تفاصيلها الهندسية.";
-        }
+            setTimeout(() => {
+                const smartSlider = document.getElementById('smartGlassSlider');
+                if(smartSlider) smartSlider.classList.add('visible');
+            }, 5000);
+        });
 
         function updateCartCount() {
             try {
                 let cart = JSON.parse(localStorage.getItem('cart')) || [];
                 let count = cart.reduce((total, item) => total + (item.quantity || 1), 0);
-                document.getElementById('cartCount').textContent = count;
-            } catch(e) {}
+                const badge = document.getElementById('cartCount');
+                if(badge) badge.textContent = count;
+            } catch(e) { console.error("Cart Error", e); }
         }
         updateCartCount();
         window.addEventListener('storage', updateCartCount);
-
-        document.getElementById('addToCartBtn').addEventListener('click', function() {
-            if(!product) return;
-            
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            let existingItem = cart.find(item => item.id === productId && item.category === 'marble');
-            
-            if(existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                cart.push({
-                    id: productId,
-                    title: product.name,
-                    img: product.img,
-                    category: 'marble',
-                    quantity: 1,
-                    price: 0
-                });
-            }
-            
-            localStorage.setItem('cart', JSON.stringify(cart));
-            updateCartCount();
-            
-            let btn = this;
-            let originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fas fa-check-circle"></i> تمت الإضافة للمقايسة بنجاح';
-            btn.style.background = '#25d366';
-            btn.style.color = 'white';
-            btn.style.boxShadow = '0 10px 20px rgba(37, 211, 102, 0.3)';
-            
-            setTimeout(() => {
-                btn.innerHTML = originalText;
-                btn.style.background = '';
-                btn.style.boxShadow = '';
-            }, 2500);
-        });
-
-        setTimeout(() => {
-            const glassSlider = document.getElementById('smartGlassSlider');
-            if(glassSlider) glassSlider.classList.add('visible');
-        }, 5000);
     </script>
+
+    <footer>
+        <p class="footer-brand">HABIB LANDSCAPE BOUTIQUE</p>
+
+        <div class="footer-grid">
+            <div class="footer-group">
+                <h4>تواصل معنا</h4>
+                <a href="https://habib-landscape-boutique.com/contact.html">اتصل بنا</a>
+                <a href="https://habib-landscape-boutique.com/privacy.html">سياسة الخصوصية</a>
+            </div>
+
+            <div class="footer-group">
+                <h4>السياسات</h4>
+                <a href="https://habib-landscape-boutique.com/terms.html">الشروط والأحكام</a>
+                <a href="https://habib-landscape-boutique.com/refund.html">سياسة الاسترجاع والاستبدال</a>
+                <a href="https://habib-landscape-boutique.com/policy.html">وثيقة الالتزام وسياسة المعاينة</a>
+            </div>
+        </div>
+
+        <p>&copy; 2026 جميع الحقوق محفوظة لشركة الحبيب</p>
+        <p class="footer-note">ENGINEERED FOR HIGH-END LANDSCAPE PROJECTS</p>
+    </footer>
 </body>
 </html>
