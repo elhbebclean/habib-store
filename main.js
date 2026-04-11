@@ -121,72 +121,110 @@ function quickAddToCart(productId, productName, category = 'general') {
     console.log(`✅ تم إضافة ${productName} لقائمة المقايسة`);
 }
 
-// 6. محرك الكتالوج
+// 6. محرك سابقة الأعمال الموحد
 let catalogImages = [];
 let currentImageIndex = 0;
-let currentCategoryName = '';
+let currentCategoryName = 'سابقة أعمالنا';
 
-const portfolioData = {
-    nageel: {
-        nameAr: 'النجيل الصناعي',
-        media: [
-            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828245/Habib_Emerald_fzsejd.jpg", desc: "نجيل حبيب الزمرد (Emerald) - فخامة ملكية ولمسة حريرية" },
-            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828246/nageel-11mm_c4lq7h.jpg", desc: "النجيل الصناعي 11 ملم (Contract Pro) - قوة تحمل فائقة للممرات" },
-            { url: "https://res.cloudinary.com/dwa0e5sup/video/upload/q_auto/f_auto/v1775693479/habib-boutique-real-projects_mebxrx.mp4", desc: "نظرة عامة على مشاريع Habib Boutique الحقيقية" },
-            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775822184/Habib_Bosphorus_Green_50mm_vp0f4p.jpg", desc: "قصر البوسفور بنجيل 50 ملم - كثافة وعزل ممتاز" },
-            { url: "https://res.cloudinary.com/dwa0e5sup/video/upload/q_auto/f_auto/v1775693494/premium-artificial-grass-shimmer_yvcktl.mp4", desc: "استمتع بلمعان النجيل الفاخر (Premium Shimmer)" },
-            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828246/Pure_Meadow_fsfkqc.jpg", desc: "مروج Pure Meadow - تداخل طبيعي ساحر" },
-            { url: "https://res.cloudinary.com/dwa0e5sup/video/upload/q_auto/f_auto/v1775686076/videoplayback_4_v5j6ev.mp4", desc: "استعراض سينمائي لجودة ومرونة النجيل الصناعي" },
-            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828245/Estimasi_Pembuatan_Lapangan_Mini_Soccer_2022_ac4xcw.jpg", desc: "تجهيز ملاعب ميني سوكر (Mini Soccer) باحترافية" },
-            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828245/EverGreen_Pro_p71o91.jpg", desc: "إيفر جرين برو (EverGreen Pro) - ديمومة وجمال مستمر" },
-            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828245/%D8%AA%D8%B5%D9%85%D9%8A%D9%85_%D9%88%D8%AA%D9%86%D9%81%D9%8A%D8%B0_%D8%AD%D8%AF%D8%A7%D8%A6%D9%82_%D9%85%D9%86%D8%B2%D9%84%D9%8A%D9%87_yeopv0.jpg", desc: "تصميم وتنفيذ حدائق منزلية بمستوى القصور" }
-        ]
-    },
-    marble: {
-        nameAr: 'الرخام والميكا',
-        media: [
-            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828656/marble-sandstone_x2lwm2.jpg", desc: "أناقة الساند ستون (Marble Sandstone) - لمسة كلاسيكية" },
-            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828657/stone-mica-grey_ydczzj.jpg", desc: "سحر الميكا الرمادي (Mica Grey) - وقار وعصرية" },
-            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828657/marble-spanish-black_qotril.jpg", desc: "الأسود الإسباني (Spanish Black) - ملك الأناقة" },
-            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828655/marble-galala_bfrlgm.jpg", desc: "رخام الجلالة (Galala) - أصالة مصرية بمقاييس عالمية" },
-            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828656/marble-emperador_mjteik.jpg", desc: "إمبرادور (Emperador) - فخامة بنية عميقة" },
-            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828654/marble-crystal-white_pgwl6u.jpg", desc: "كريستال وايت (Crystal White) - قمة النقاء" },
-            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828656/marble-milli-brown_gm9oah.jpg", desc: "ميلي براون (Milli Brown) - روح دافئة وترابية" },
-            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828657/marble-red-carrara-spanish-black_yssppd.jpg", desc: "دمج الكاريرا الأحمر مع الأسود الإسباني - جرأة وتميز" },
-            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828655/marble-carrara-milli-brown0_h8uli6.jpg", desc: "توازن راقي بين الكاريرا والميلي براون" },
-            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828653/marble-carrara-milli-brown_jil1x2.jpg", desc: "تصميم هندسي متكامل بالرخام الطبيعي" },
-            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828652/m5_zfxydn.jpg", desc: "جداريات رخامية بتصميم VIP (نموذج M5)" },
-            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828646/m4_ayob4d.jpg", desc: "تشكيل حجري فاخر للواجهات (نموذج M4)" },
-            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828646/m3_i7gt04.jpg", desc: "تداخل فني بين الرخام والمحيط (نموذج M3)" },
-            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828645/m1_zoyqwm.jpg", desc: "قوة وجمال الرخام في أبسط أشكاله (نموذج M1)" }
-        ]
-    },
-    zalat: {
-        nameAr: 'الزلط والأحجار',
-        media: [
-            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828577/zalat-mix-colors__visent.jpg", desc: "الزلط الملون - يضفي حيوية وروح للاندسكيب" },
-            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828696/z2_ixj65v.jpg", desc: "تنسيق ممرات الزلط بتصميمات هندسية راقية" },
-            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828713/z3_vbfoc3.jpg", desc: "دمج الزلط مع المساحات الخضراء للحدائق" },
-            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828713/z5_tkiavv.jpg", desc: "تشكيلات حجرية وزلط أبيض لمداخل الفلل" },
-            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828246/Pure_Meadow_fsfkqc.jpg", desc: "مروج Pure Meadow مع لمسات الزلط" },
-            { url: "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775828245/%D8%AA%D8%B5%D9%85%D9%8A%D9%85_%D9%88%D8%AA%D9%86%D9%81%D9%8A%D8%B0_%D8%AD%D8%AF%D8%A7%D8%A6%D9%82_%D9%85%D9%86%D8%B2%D9%84%D9%8A%D9%87_yeopv0.jpg", desc: "تصميم وتنفيذ متكامل شامل الأحجار الديكورية" }
-        ]
-    }
+const brandLogoUrl =
+    'https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto/f_auto/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png';
+
+// سابقة أعمال موحدة تظهر في كل المعارض
+const signaturePortfolioData = {
+    nameAr: 'سابقة أعمالنا',
+    media: [
+        {
+            url: 'https://res.cloudinary.com/dwa0e5sup/video/upload/q_auto/f_auto/v1775693488/premium-grass-texture-view_jr9iru.mp4',
+            desc: 'تفاصيل خامة النجيل الفاخر بلمسة راقية'
+        },
+        {
+            url: 'https://res.cloudinary.com/dwa0e5sup/video/upload/q_auto/f_auto/v1775693481/habib-outdoor-luxury-vibes_grcz5f.mp4',
+            desc: 'أجواء لاند سكيب فاخرة بمستوى Luxury Villa'
+        },
+        {
+            url: 'https://res.cloudinary.com/dwa0e5sup/video/upload/q_auto/f_auto/v1775693447/habib-landscape-luxury-design_qzbdi3.mp4',
+            desc: 'تنسيق خارجي راقٍ يعكس هوية Habib Landscape Boutique'
+        },
+        {
+            url: 'https://res.cloudinary.com/dwa0e5sup/video/upload/q_auto/f_auto/v1775693440/decorative-white-pebbles-finish_nc4acd.mp4',
+            desc: 'تشطيبات زلط ديكوري أبيض بإحساس عصري فاخر'
+        },
+        {
+            url: 'https://res.cloudinary.com/dwa0e5sup/video/upload/q_auto/f_auto/v1775686076/videoplayback_4_v5j6ev.mp4',
+            desc: 'لقطات حقيقية من تنفيذاتنا الراقية في المساحات الخارجية'
+        }
+    ]
 };
 
-function openCatalog(category) {
-    const data = portfolioData[category];
-    if (!data || !Array.isArray(data.media) || data.media.length === 0) return;
-
-    currentCategoryName = data.nameAr;
-    catalogImages = data.media;
-    currentImageIndex = 0;
-
-    const lightbox =
+function getCatalogLightbox() {
+    return (
         document.getElementById('catalogLightbox') ||
-        document.getElementById('zalatLightbox');
+        document.getElementById('zalatLightbox')
+    );
+}
 
+function getCatalogMainImage() {
+    return (
+        document.getElementById('catalogMainImage') ||
+        document.getElementById('zalatMainImage')
+    );
+}
+
+function ensureCatalogBrandMark(parent) {
+    if (!parent) return;
+
+    let logoEl = document.getElementById('catalogBrandMark');
+
+    if (!logoEl) {
+        logoEl = document.createElement('img');
+        logoEl.id = 'catalogBrandMark';
+        logoEl.alt = 'Habib Landscape Boutique';
+        logoEl.loading = 'eager';
+        logoEl.decoding = 'async';
+        logoEl.style.position = 'absolute';
+        logoEl.style.top = '18px';
+        logoEl.style.left = '18px';
+        logoEl.style.width = '120px';
+        logoEl.style.maxWidth = '28vw';
+        logoEl.style.height = 'auto';
+        logoEl.style.zIndex = '6';
+        logoEl.style.pointerEvents = 'none';
+        logoEl.style.opacity = '0.92';
+        logoEl.style.filter = 'drop-shadow(0 4px 16px rgba(0,0,0,0.35))';
+
+        const computedPosition = window.getComputedStyle(parent).position;
+        if (!computedPosition || computedPosition === 'static') {
+            parent.style.position = 'relative';
+        }
+
+        parent.appendChild(logoEl);
+    }
+
+    logoEl.src = brandLogoUrl;
+}
+
+function cleanupCatalogMedia() {
+    const existingVideo = document.getElementById('catalogMainVideo');
+    if (existingVideo) {
+        try {
+            existingVideo.pause();
+            existingVideo.removeAttribute('src');
+            existingVideo.load();
+        } catch (error) {
+            console.warn('Video cleanup warning:', error);
+        }
+        existingVideo.remove();
+    }
+}
+
+function openCatalog(category) {
+    const lightbox = getCatalogLightbox();
     if (!lightbox) return;
+
+    // بغض النظر عن الصفحة أو المعرض، نظهر نفس سابقة الأعمال
+    currentCategoryName = signaturePortfolioData.nameAr;
+    catalogImages = signaturePortfolioData.media;
+    currentImageIndex = 0;
 
     lightbox.style.display = 'flex';
     lightbox.classList.add('active');
@@ -196,10 +234,7 @@ function openCatalog(category) {
 }
 
 function updateCatalogView() {
-    const mainImg =
-        document.getElementById('catalogMainImage') ||
-        document.getElementById('zalatMainImage');
-
+    const mainImg = getCatalogMainImage();
     const descElement = document.getElementById('catalogDescription');
 
     if (!mainImg || catalogImages.length === 0) return;
@@ -207,20 +242,19 @@ function updateCatalogView() {
     const currentItem = catalogImages[currentImageIndex];
     const mediaUrl = currentItem.url;
     const mediaDesc = currentItem.desc || '';
-
     const isVideo = mediaUrl.includes('.mp4') || mediaUrl.includes('/video/');
     const parent = mainImg.parentElement;
 
+    if (!parent) return;
+
+    ensureCatalogBrandMark(parent);
+
     if (descElement) {
         descElement.innerText = mediaDesc;
-        descElement.style.display = mediaDesc ? 'block' : 'none';
+        descElement.style.display = mediaDesc ? 'block' : 'block';
     }
 
-    const existingVideo = document.getElementById('catalogMainVideo');
-    if (existingVideo) {
-        existingVideo.pause();
-        existingVideo.remove();
-    }
+    cleanupCatalogMedia();
 
     if (isVideo) {
         mainImg.style.display = 'none';
@@ -232,12 +266,15 @@ function updateCatalogView() {
         videoEl.loop = true;
         videoEl.muted = true;
         videoEl.controls = true;
-        videoEl.preload = 'none';
+        videoEl.preload = 'metadata';
         videoEl.playsInline = true;
+        videoEl.setAttribute('playsinline', 'true');
+        videoEl.setAttribute('webkit-playsinline', 'true');
         videoEl.style.width = '100%';
         videoEl.style.maxHeight = '80vh';
         videoEl.style.objectFit = 'contain';
         videoEl.style.borderRadius = '12px';
+        videoEl.style.background = '#000';
 
         parent.insertBefore(videoEl, mainImg);
     } else {
@@ -262,34 +299,35 @@ function prevCatalogImage() {
 }
 
 function closeCatalog(event) {
-    const lightbox =
-        document.getElementById('catalogLightbox') ||
-        document.getElementById('zalatLightbox');
-
+    const lightbox = getCatalogLightbox();
     if (!lightbox) return;
 
-    const clickedCloseButton = event && event.target && event.target.classList.contains('close-btn');
+    const clickedCloseButton =
+        event && event.target && event.target.classList.contains('close-btn');
     const clickedOverlay = event && event.target === lightbox;
 
     if (!event || clickedOverlay || clickedCloseButton) {
-        const existingVideo = document.getElementById('catalogMainVideo');
-        if (existingVideo) {
-            existingVideo.pause();
-            existingVideo.remove();
-        }
-
+        // إخفاء فوري لتخفيف الإحساس بالثقل
         lightbox.classList.remove('active');
         lightbox.style.display = 'none';
         document.body.style.overflow = '';
+
+        const mainImg = getCatalogMainImage();
+        if (mainImg) {
+            mainImg.removeAttribute('src');
+            mainImg.style.display = 'block';
+        }
+
+        // تنظيف الفيديو بعد الإخفاء مباشرة
+        setTimeout(() => {
+            cleanupCatalogMedia();
+        }, 0);
     }
 }
 
 // إغلاق الكتالوج بزر Escape
 document.addEventListener('keydown', function (event) {
-    const lightbox =
-        document.getElementById('catalogLightbox') ||
-        document.getElementById('zalatLightbox');
-
+    const lightbox = getCatalogLightbox();
     if (!lightbox || !lightbox.classList.contains('active')) return;
 
     if (event.key === 'Escape') {
@@ -302,14 +340,15 @@ function orderCurrentDesign() {
     if (catalogImages.length === 0) return;
 
     const mediaUrl = catalogImages[currentImageIndex].url;
-    const imageName = mediaUrl.split('/').pop().split('.')[0];
+    const fileNameWithParams = mediaUrl.split('/').pop() || '';
+    const imageName = fileNameWithParams.split('.')[0] || 'signature-project';
 
     const message =
-        `*طلب تنفيذ تصميم محدد - Habib Store* 🦈\n` +
+        `*طلب تنفيذ تصميم محدد - Habib Landscape Boutique* 🦈\n` +
         `--------------------------------\n` +
-        `مرحباً، أعجبني هذا التصميم من سابقة أعمال ${currentCategoryName}.\n` +
-        `(كود الصورة: ${imageName})\n\n` +
-        `أريد الاستفسار عن تفاصيل تنفيذه ومقايسته.`;
+        `مرحباً، أعجبني هذا التصميم من ${currentCategoryName}.\n` +
+        `(كود الملف: ${imageName})\n\n` +
+        `أرغب في الاستفسار عن تفاصيل التنفيذ والمعاينة.`; 
 
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/201145393026?text=${encodedMessage}`, '_blank', 'noopener');
