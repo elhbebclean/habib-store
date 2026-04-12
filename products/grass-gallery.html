@@ -17,7 +17,7 @@
         ['scroll', 'mousemove', 'touchstart', 'click'].forEach(function(event) {
             window.addEventListener(event, loadGTM, {once: true});
         });
-        setTimeout(loadGTM, 3500);
+        setTimeout(loadGTM, 5500);
     });
     </script>
 
@@ -30,6 +30,8 @@
     <link rel="dns-prefetch" href="https://res.cloudinary.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+    <link rel="preload" as="image" href="https://res.cloudinary.com/dwa0e5sup/video/upload/w_1200,q_auto:eco,f_auto,e_accelerate:-25,e_brightness:5,e_contrast:10/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,w_100,o_80/fl_layer_apply,g_north_east,x_20,y_20/v1775693440/decorative-white-pebbles-finish_nc4acd.jpg" fetchpriority="high">
 
     <link rel="canonical" href="https://habib-landscape-boutique.com/products/grass-gallery.html">
     <link rel="alternate" hreflang="ar-EG" href="https://habib-landscape-boutique.com/products/grass-gallery.html">
@@ -104,6 +106,32 @@
         img,
         video {
             max-width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .lang-switch {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            padding: 5px 12px;
+            border-radius: 20px;
+            transition: 0.3s;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .lang-switch:hover {
+            background: var(--gold);
+            color: var(--royal-green);
         }
 
         .urgency-bar {
@@ -737,21 +765,12 @@
             display: flex;
             align-items: center;
             gap: 15px;
-            transition: 0.4s;
-            animation: pulseBtn 2s infinite;
-            will-change: transform, box-shadow;
-        }
-
-        @keyframes pulseBtn {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+            transition: transform 0.25s ease, background 0.25s ease;
         }
 
         .expert-btn:hover {
             transform: scale(1.05);
             background: #1ebe57;
-            animation: none;
         }
 
         #smartGlassSlider {
@@ -806,17 +825,40 @@
         }
 
         @media (max-width: 768px) {
+            .hero-banner {
+                min-height: 480px;
+                padding: 18px 14px;
+            }
+
+            .hero-btn-secondary,
+            .stats-banner,
+            #smartGlassSlider {
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+            }
+
+            .hero-btn-secondary {
+                background: rgba(255,255,255,0.12);
+            }
+
+            #smartGlassSlider {
+                background: rgba(255,255,255,0.92);
+            }
+
+            .card:hover,
+            .step-card:hover,
+            .glass-product-card:hover,
+            .card:hover .img-wrapper img,
+            .smart-glass-item:hover {
+                transform: none !important;
+                box-shadow: inherit !important;
+            }
+
             .expert-btn {
                 bottom: 20px;
                 right: 20px;
-                padding: 15px 25px;
-                animation: pulseBtnMobile 2s infinite;
-            }
-
-            @keyframes pulseBtnMobile {
-                0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-                70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
-                100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+                padding: 15px 20px;
+                animation: none;
             }
 
             .expert-btn span { display: none; }
@@ -869,6 +911,9 @@
     <header>
         <a href="https://habib-landscape-boutique.com/index.html" class="logo">HABIB LANDSCAPE BOUTIQUE</a>
         <div class="header-actions">
+            <a href="gallery-en.html" class="lang-switch" aria-label="Switch to English page" title="English">
+                <i class="fas fa-globe"></i> EN
+            </a>
             <div class="header-premium-text">Premium Selection</div>
         </div>
     </header>
@@ -903,7 +948,6 @@
                 loop
                 playsinline
                 preload="none"
-                fetchpriority="high"
                 poster="https://res.cloudinary.com/dwa0e5sup/video/upload/w_1200,q_auto:eco,f_auto,e_accelerate:-25,e_brightness:5,e_contrast:10/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,w_100,o_80/fl_layer_apply,g_north_east,x_20,y_20/v1775693440/decorative-white-pebbles-finish_nc4acd.jpg"
                 aria-label="فيديو عرض نجيل صناعي قبل وبعد التنفيذ"
                 aria-hidden="true">
@@ -963,8 +1007,7 @@
                             alt="فيلا فاخرة تستخدم نجيل صناعي كثافة 50 ملم من حبيب بوتيك"
                             width="400"
                             height="400"
-                            loading="eager"
-                            fetchpriority="high"
+                            loading="lazy"
                             decoding="async">
                     </div>
                     <div class="card-body">
@@ -992,8 +1035,7 @@
                             alt="تنسيق حدائق القصور بنجيل حبيب بسفوروس 40 ملم"
                             width="400"
                             height="400"
-                            loading="eager"
-                            fetchpriority="high"
+                            loading="lazy"
                             decoding="async">
                     </div>
                     <div class="card-body">
@@ -1136,7 +1178,7 @@
                         <a href="#" onclick="quickAddToCart('grass-20', 'Habib Turkish Premium (20mm)', 'grass', 'https://res.cloudinary.com/dwa0e5sup/image/upload/w_270,q_auto:eco,f_auto/v1775849160/nagel_habib_turky_lsx54o.jpg'); return false;" class="btn-add-cart" aria-label="أضف نجيل 20 ملم للمقايسة">
                             <i class="fas fa-cart-plus" aria-hidden="true"></i> أضف لقائمة المقايسة
                         </a>
-                        <a href="product.html?id=6" class="btn-details" aria-label="عرض تفاصيل نجيل 20 ملم">المواصفات الهندسية</a>
+                        <a href="product.html?id=20" class="btn-details" aria-label="عرض تفاصيل نجيل 20 ملم">المواصفات الهندسية</a>
                     </div>
                 </div>
             </div>
@@ -1310,8 +1352,13 @@
             if (smartSlider) smartSlider.classList.add('visible');
         }
 
+        // تعديل تأخير ظهور السلايدر الزجاجي
         window.addEventListener('load', function () {
-            setTimeout(revealSmartSlider, 5000);
+            if (window.innerWidth <= 768) {
+                setTimeout(revealSmartSlider, 8000);
+            } else {
+                setTimeout(revealSmartSlider, 4000);
+            }
         });
 
         function loadVideoSource(videoElement, sourceUrl) {
