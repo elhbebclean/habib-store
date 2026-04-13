@@ -1283,3 +1283,14 @@ footer {
         align-items: center;
     }
 }
+
+/* =========================
+   Hide Top Urgency Bar
+   ========================= */
+.urgency-bar {
+    display: none !important;
+}
+
+.cart-float {
+    top: 20px !important;
+}
