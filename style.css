@@ -1,5 +1,5 @@
 /* =========================================
-   Habib Store | Premium Selection Styles
+   Elhabib Store | Premium Selection Styles
    ========================================= */
 
 :root {
@@ -84,15 +84,15 @@ header {
     right: auto;
     background: var(--gold);
     color: var(--royal-green);
-    width: 48px; /* توحيد الحجم */
-    height: 48px; /* توحيد الحجم */
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
     cursor: pointer;
-    z-index: 1010; /* تأكيد ظهوره فوق العناصر */
+    z-index: 1010;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     transition: transform 0.25s ease;
     border: none;
@@ -832,21 +832,24 @@ footer {
     line-height: 1.4;
 }
 
+/* =========================
+   Cart Float (Base)
+   ========================= */
 .cart-float {
     position: fixed;
     top: 20px;
-    left: 85px; /* إبعاد زر السلة عن زر القائمة بمسافة احترافية */
+    left: 85px; 
     background: white;
     color: var(--royal-green);
-    width: 48px; /* توحيد الحجم مع زر القائمة */
-    height: 48px; /* توحيد الحجم مع زر القائمة */
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     text-decoration: none;
-    z-index: 1010; /* نفس مستوى الظهور */
+    z-index: 1010;
     font-size: 1.2rem;
     transition: 0.25s ease;
     border: 1px solid rgba(197, 160, 89, 0.3);
@@ -1172,20 +1175,20 @@ footer {
    ========================= */
 @media (max-width: 768px) {
     .hero {
-        height: 78vh;
+        height: 85vh; /* تظبيط حجم الهيرو عشان مايبقاش مقصوص */
     }
 
     .hero-content-minimal {
-        padding-top: 50px;
+        padding-top: 80px; /* نزلنا الكلام لتحت شوية عشان الهيدر مايغطيش عليه */
     }
 
     .hero-content-minimal h1 {
-        font-size: clamp(30px, 9vw, 42px);
+        font-size: clamp(28px, 8vw, 38px); /* تصغير العنوان سنة ليناسب الموبايل */
     }
 
     .hero-subheading {
-        font-size: 13px;
-        letter-spacing: 2px;
+        font-size: 12px;
+        letter-spacing: 1px;
     }
 
     .sub-text {
@@ -1202,18 +1205,38 @@ footer {
         padding: 7px 11px;
     }
 
-    .grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-    }
-
     .logo {
-        font-size: 24px;
+        font-size: 20px; /* تصغير اللوجو سنة بسيطة في الموبايل عشان يدي براح للهيدر */
     }
 
     .header-premium-text {
-        margin-left: 40px;
-        font-size: 10px;
+        position: absolute;
+        top: 75px; 
+        left: 15px;
+        margin-left: 0;
+        font-size: 10px; /* إبعاد كلمة PREMIUM SELECTION عن الزراير */
+    }
+
+    /* فصل الزرارين عن بعض بشكل نهائي واحترافي */
+    .menu-toggle {
+        top: 20px;
+        left: 15px; 
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+
+    .cart-float {
+        top: 20px !important;
+        left: 75px !important; /* مسافة 60 بيكسل عن زرار القائمة تمنع التداخل تماماً */
+        width: 45px !important;
+        height: 45px !important;
+        font-size: 1.2rem !important;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
     }
 
     .cart-trigger {
@@ -1227,7 +1250,7 @@ footer {
     .expert-btn {
         bottom: 20px;
         right: 20px;
-        padding: 15px 25px;
+        padding: 12px 20px; /* تم تصغيره ليتناسب مع الموبايل */
     }
 
     .expert-btn span {
@@ -1289,9 +1312,4 @@ footer {
    ========================= */
 .urgency-bar {
     display: none !important;
-}
-
-.cart-float {
-    top: 20px !important;
-    left: 85px !important; /* تأكيد إبعاد الزر هنا كمان */
 }
