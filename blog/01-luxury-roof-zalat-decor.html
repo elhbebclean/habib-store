@@ -64,7 +64,7 @@
     <link rel="stylesheet" href="../style.css">
     <script src="../main.js" defer></script>
 
-    <!-- Advanced Schemas: Article + Breadcrumb + VideoObject + Product + HowTo + Speakable + FAQ -->
+    <!-- Advanced Schemas -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -215,30 +215,22 @@
     </script>
 
     <style>
-        /* ألوان الهوية الأصلية الخاصة بك (أخضر ملكي وذهبي فخم) */
         :root { --royal-green: #1a3c34; --gold: #c5a059; --soft-bg: #f9fbfb; --dark-text: #222; }
-        
         body { font-family: 'Cairo', sans-serif; background-color: var(--soft-bg); margin: 0; color: var(--dark-text); line-height: 2.1; overflow-x: hidden; }
         #progress-bar { position: fixed; top: 0; left: 0; height: 4px; background: var(--gold); width: 0%; z-index: 9999; transition: width 0.1s ease; }
-        
         header { background: #fff; padding: 15px 20px; text-align: center; border-bottom: 3px solid var(--royal-green); position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
         .logo-img { max-height: 65px; width: auto; display: inline-block; }
-        
         .article-wrapper { max-width: 960px; margin: 40px auto; padding: 0 20px; }
         .article-container { background: #fff; padding: 50px; border-radius: 25px; box-shadow: 0 20px 50px rgba(0,0,0,0.05); border: 1px solid rgba(197, 160, 89, 0.2); }
-        
         .breadcrumb { font-size: 0.9rem; color: #777; margin-bottom: 20px; }
         .breadcrumb a { color: var(--royal-green); text-decoration: none; }
-        
         .article-category { color: var(--gold); font-weight: 800; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; display: inline-block; background: rgba(197, 160, 89, 0.1); padding: 5px 15px; border-radius: 15px; }
-        
         h1 { color: var(--royal-green); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; margin-bottom: 20px; line-height: 1.3; }
         .meta-info { color: #666; font-weight: 600; margin-bottom: 30px; font-size: 0.95rem; border-bottom: 2px solid #f1f1f1; padding-bottom: 15px; display: flex; flex-wrap: wrap; gap: 20px; }
         p { font-size: 1.15rem; color: #444; margin-bottom: 25px; text-align: justify; }
         h2 { color: var(--royal-green); font-size: 1.8rem; font-weight: 800; margin-top: 50px; margin-bottom: 20px; padding-right: 15px; border-right: 5px solid var(--gold); }
         h3 { color: var(--royal-green); font-size: 1.4rem; font-weight: 700; margin-top: 35px; margin-bottom: 15px; }
         
-        /* Table of Contents */
         .toc-box { background: #fdfdfa; border: 1px solid rgba(197,160,89,0.3); border-radius: 15px; padding: 25px; margin: 30px 0; }
         .toc-box h3 { margin-top: 0; color: var(--royal-green); font-size: 1.2rem; }
         .toc-box ul { margin: 0; padding-right: 20px; }
@@ -246,21 +238,23 @@
         .toc-box a { color: var(--royal-green); text-decoration: none; }
         .toc-box a:hover { color: var(--gold); }
 
-        /* Comparison Table Styles */
         .comparison-table { width: 100%; border-collapse: collapse; margin: 35px 0; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
         .comparison-table th, .comparison-table td { padding: 15px 20px; text-align: right; border-bottom: 1px solid #eee; font-size: 1.05rem; }
         .comparison-table th { background: var(--royal-green); color: #fff; font-weight: 800; }
         .comparison-table tr:hover { background: #f8fafa; }
 
-        /* Media Elements */
         figure { margin: 35px 0; text-align: center; }
         figure img { width: 100%; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.06); }
         figcaption { font-size: 0.9rem; color: #666; margin-top: 10px; font-weight: 600; }
-        .cinematic-video-box { width: 100%; border-radius: 20px; overflow: hidden; margin: 40px 0; background: #000; border: 2px solid var(--gold); }
-        .cinematic-video-box video { width: 100%; max-height: 500px; object-fit: cover; display: block; }
+        
+        /* تصميم صندوق الفيديو الخارق للسرعة (Click-to-Play) */
+        .video-placeholder { position: relative; width: 100%; border-radius: 20px; overflow: hidden; margin: 40px 0; background: #000; border: 2px solid var(--gold); cursor: pointer; aspect-ratio: 16/9; }
+        .video-placeholder img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; transition: 0.3s; }
+        .video-placeholder:hover img { opacity: 1; }
+        .play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--royal-green); color: var(--gold); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; border: 2px solid var(--gold); box-shadow: 0 10px 25px rgba(0,0,0,0.4); transition: 0.3s; }
+        .video-placeholder:hover .play-btn { transform: translate(-50%, -50%) scale(1.1); background: var(--gold); color: var(--royal-green); }
         .video-caption { text-align: center; color: #555; font-size: 0.95rem; margin-top: 10px; font-weight: 700; background: #fff; padding: 8px; }
 
-        /* CTA & Elements */
         .cta-box { background: linear-gradient(135deg, rgba(26,60,52,0.05), rgba(197,160,89,0.1)); border: 1px solid var(--gold); padding: 30px; border-radius: 20px; text-align: center; margin: 40px 0; }
         .btn-buy { background: #25d366; color: white; padding: 16px 35px; border-radius: 40px; text-decoration: none; font-weight: 900; display: inline-flex; align-items: center; gap: 12px; font-size: 1.1rem; box-shadow: 0 10px 25px rgba(37,211,102,0.3); transition: 0.3s; }
         .btn-buy:hover { background: #1ebe57; transform: translateY(-3px); }
@@ -276,7 +270,6 @@
         .cluster-links a { color: var(--royal-green); text-decoration: none; }
         .cluster-links a:hover { color: var(--gold); }
 
-        /* الأزرار العائمة (واتساب + اتصال مباشر) */
         .floating-buttons { position: fixed; bottom: 25px; left: 25px; z-index: 9999; display: flex; flex-direction: column; gap: 12px; }
         .float-btn { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.5rem; box-shadow: 0 6px 20px rgba(0,0,0,0.25); text-decoration: none; transition: transform 0.3s ease; }
         .float-btn:hover { transform: scale(1.1); }
@@ -290,7 +283,7 @@
 
     <div id="progress-bar"></div>
 
-    <!-- الأزرار العائمة (واتساب واتصال) -->
+    <!-- الأزرار العائمة -->
     <div class="floating-buttons">
         <a href="https://wa.me/201505543649?text=مرحباً%20Habib%20Store،%20أريد%20الاستفسار%20عن%20منتجاتكم." target="_blank" class="float-btn float-whatsapp" aria-label="تواصل عبر واتساب">
             <i class="fab fa-whatsapp"></i>
@@ -309,7 +302,6 @@
     <div class="article-wrapper">
         <main class="article-container" id="article-main">
             
-            <!-- Breadcrumbs -->
             <nav class="breadcrumb" aria-label="مسار التنقل">
                 <a href="../index.html">الرئيسية</a> &larr; <a href="./">المدونة</a> &larr; تنسيق الرووف والحدائق بالزلط الديكوري
             </nav>
@@ -318,7 +310,6 @@
             <h1>فن تحويل الرووف والحدائق المنزلية إلى واحة إسترخاء بالزلط الديكوري الفاخر</h1>
             
             <script>
-                // حساب وقت القراءة حصرياً من محتوى الـ main
                 document.addEventListener("DOMContentLoaded", function() {
                     const mainElement = document.getElementById("article-main");
                     if(mainElement) {
@@ -328,6 +319,12 @@
                         document.getElementById("reading-time").innerText = readingTime + " دقائق";
                     }
                 });
+
+                // دالة تشغيل الفيديوهات فور الضغط عليها لرفع الـ PageSpeed للقصوى
+                function loadVideo(containerId, videoUrl) {
+                    const container = document.getElementById(containerId);
+                    container.innerHTML = `<video controls autoplay preload="auto" style="width:100%; max-height:500px; object-fit:cover; display:block;"><source src="${videoUrl}" type="video/mp4">متصفحك لا يدعم عرض الفيديو.</video>`;
+                }
             </script>
 
             <div class="meta-info">
@@ -356,7 +353,6 @@
 
             <p id="intro">عندما تبحث عن اللمسة التي تمنح بيتك، قصرك، أو شقتك ذلك الشعور بالتميز والترتيب الأوروبي، فإن التفاصيل الصغيرة هي وحدها من يصنع الفارق. الكثير منا يمتلك مساحات خارجية غير مستغلة بالشكل الأمثل—سواء كان ذلك رووفاً واسعاً، أو بلكونة تطل على الشارع، أو ركناً صغيراً في حديقة الفيلا. السر الحقيقي في إعادة إحياء هذه المساحات يكمن في دمج الطبيعة بأرقى صورها من خلال <strong>الزلط الديكوري وأحجار الزينة الفاخرة</strong>، والتي تمنح المكان طابعاً جمالياً لا يذبل مع مرور الزمن.</p>
 
-            <!-- CTA 1 بعد أول 30% -->
             <div class="cta-box">
                 <p style="font-weight: 800; color: var(--royal-green); margin-bottom: 15px;">ترغب في تجديد مساحتك الخارجية فوراً وبأقل مجهود؟</p>
                 <a href="https://wa.me/201505543649?text=مرحباً%20Habib%20Store،%20أريد%20طلب%20شكاير%20الزلط%20الديكوري%20لمنزلي." target="_blank" class="btn-buy">
@@ -374,26 +370,22 @@
 
             <p>من أبرز هذه الأنواع: الزلط الأبيض الناصع الذي يضفي إشراقة بصرية فريدة، والزلط الأسيوطي المتين الذي يتحمل ضغط المشي، بالإضافة إلى مكس الألوان المتناسق الذي يمنح الحدائق مظهراً استوائياً ساحراً.</p>
 
-            <!-- فيديو 1: تشطيب الزلط الأبيض -->
-            <div class="cinematic-video-box">
-                <video controls preload="metadata" loading="lazy">
-                    <source src="https://res.cloudinary.com/dwa0e5sup/video/upload/v1775693440/decorative-white-pebbles-finish_nc4acd.mp4" type="video/mp4">
-                    متصفحك لا يدعم عرض الفيديو.
-                </video>
-                <div class="video-caption">فيديو توضيحي: المعالجة الهندسية والتشطيب الفاخر للزلط الديكوري النقي</div>
+            <!-- فيديو 1 -->
+            <div class="video-placeholder" id="vid-1" onclick="loadVideo('vid-1', 'https://res.cloudinary.com/dwa0e5sup/video/upload/v1775693440/decorative-white-pebbles-finish_nc4acd.mp4')">
+                <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_900,q_auto:eco,f_auto/v1775785655/zalat-mix-colors_pptjvl.jpg" alt="تشطيب الزلط الأبيض" loading="lazy">
+                <div class="play-btn"><i class="fas fa-play"></i></div>
             </div>
+            <div class="video-caption">فيديو توضيحي: المعالجة الهندسية والتشطيب الفاخر للزلط الديكوري النقي</div>
 
             <h2 id="prices-section">أسعار الزلط الديكوري بالشكاير والطن</h2>
             <p>تسعى إدارة Habib Store دائماً لتوفير المرونة لعملائنا في القصور والفلل والشقق. لا تقتصر خدمتنا على التوريد بكميات ضخمة للمقاولين فقط، بل نوفر الزلط مفرداً <strong>بالشكاير المقطعة</strong> لتناسب أصحاب الأسطح والبلكونات الصغيرة، مع توفير سيارات النقل المباشر لتوريد الطن للمشاريع الكبيرة.</p>
 
-            <!-- فيديو 2: مشاريع حقيقية -->
-            <div class="cinematic-video-box">
-                <video controls preload="metadata" loading="lazy">
-                    <source src="https://res.cloudinary.com/dwa0e5sup/video/upload/v1775693479/habib-boutique-real-projects_mebxrx.mp4" type="video/mp4">
-                    متصفحك لا يدعم عرض الفيديو.
-                </video>
-                <div class="video-caption">جولة حصرية في مشاريع Habib Store الواقعية</div>
+            <!-- فيديو 2 -->
+            <div class="video-placeholder" id="vid-2" onclick="loadVideo('vid-2', 'https://res.cloudinary.com/dwa0e5sup/video/upload/v1775693479/habib-boutique-real-projects_mebxrx.mp4')">
+                <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_900,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg" alt="مشاريع حقيقية" loading="lazy">
+                <div class="play-btn"><i class="fas fa-play"></i></div>
             </div>
+            <div class="video-caption">جولة حصرية في مشاريع Habib Store الواقعية</div>
 
             <figure>
                 <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_900,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg" alt="تنسيق أشجار وزلط ديكوري للمنازل" width="900" height="450" loading="lazy" decoding="async">
@@ -403,14 +395,12 @@
             <h2 id="how-to-choose">كيفية اختيار مقاس الزلط المناسب للحدائق</h2>
             <p>اختيار المقاس يعتمد على طبيعة الاستخدام؛ فالأحجار الصغيرة (الناعمة) مريحة لمسارات المشي وحول النباتات، بينما الأحجار الكبيرة والمتوسطة تستخدم لتحديد الحدود الديكورية وأحواض الزرع الكبيرة.</p>
 
-            <!-- فيديو 3: لقطات إضافية -->
-            <div class="cinematic-video-box">
-                <video controls preload="metadata" loading="lazy">
-                    <source src="https://res.cloudinary.com/dwa0e5sup/video/upload/v1775693481/videoplayback_4_dnvane.mp4" type="video/mp4">
-                    متصفحك لا يدعم عرض الفيديو.
-                </video>
-                <div class="video-caption">تفاصيل استثنائية لأحجار وزلط الزينة الفاخرة</div>
+            <!-- فيديو 3 -->
+            <div class="video-placeholder" id="vid-3" onclick="loadVideo('vid-3', 'https://res.cloudinary.com/dwa0e5sup/video/upload/v1775693481/videoplayback_4_dnvane.mp4')">
+                <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_900,q_auto:eco,f_auto/v1775785655/zalat-mix-colors_pptjvl.jpg" alt="تفاصيل الأحجار" loading="lazy">
+                <div class="play-btn"><i class="fas fa-play"></i></div>
             </div>
+            <div class="video-caption">تفاصيل استثنائية لأحجار وزلط الزينة الفاخرة</div>
 
             <h2 id="installation-steps">طريقة فرش الزلط الديكوري خطوة بخطوة</h2>
             <p>لضمان الحصول على مظهر احترافي يدوم لسنوات، يمكن اتباع الخطوات البسيطة التالية:</p>
@@ -421,14 +411,12 @@
                 <li>غسل الزلط بالماء العذب بعد الفرش لتظهر ألوانه الحقيقية البراقة.</li>
             </ul>
 
-            <!-- فيديو 4: أجواء خارجية فاخرة -->
-            <div class="cinematic-video-box">
-                <video controls preload="metadata" loading="lazy">
-                    <source src="https://res.cloudinary.com/dwa0e5sup/video/upload/v1775693481/habib-outdoor-luxury-vibes_grcz5f.mp4" type="video/mp4">
-                    متصفحك لا يدعم عرض الفيديو.
-                </video>
-                <div class="video-caption">أجواء خارجية ساحرة لتنسيق الحدائق العصرية</div>
+            <!-- فيديو 4 -->
+            <div class="video-placeholder" id="vid-4" onclick="loadVideo('vid-4', 'https://res.cloudinary.com/dwa0e5sup/video/upload/v1775693481/habib-outdoor-luxury-vibes_grcz5f.mp4')">
+                <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_900,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg" alt="أجواء خارجية" loading="lazy">
+                <div class="play-btn"><i class="fas fa-play"></i></div>
             </div>
+            <div class="video-caption">أجواء خارجية ساحرة لتنسيق الحدائق العصرية</div>
 
             <h2 id="comparison">جدول مقارنة الأنواع واستخداماتها</h2>
             <table class="comparison-table">
@@ -458,7 +446,6 @@
                 </tbody>
             </table>
 
-            <!-- CTA 2 بعد 60% -->
             <div class="cta-box">
                 <p style="font-weight: 800; color: var(--royal-green); margin-bottom: 15px;">هل تحتاج مساعدة في حساب الكميات المناسبة لمساحتك؟</p>
                 <a href="https://wa.me/201505543649?text=مرحباً%20Habib%20Store،%20أحتاج%20مساعدة%20لحساب%20كمية%20الزلط%20لمساحة%20منزلي." target="_blank" class="btn-buy">
@@ -476,14 +463,12 @@
                 <li>تجنب المشي المباشر بحذاء خشن على طبقة رقيقة جداً من الأحجار الناعمة.</li>
             </ul>
 
-            <!-- فيديو 5: النجيل الصناعي وملمسه الفاخر -->
-            <div class="cinematic-video-box">
-                <video controls preload="metadata" loading="lazy">
-                    <source src="https://res.cloudinary.com/dwa0e5sup/video/upload/v1775693494/premium-artificial-grass-shimmer_yvcktl.mp4" type="video/mp4">
-                    متصفحك لا يدعم عرض الفيديو.
-                </video>
-                <div class="video-caption">شاهد روعة الملمس والتناغم بين النجيل الصناعي والزلط الديكوري</div>
+            <!-- فيديو 5 -->
+            <div class="video-placeholder" id="vid-5" onclick="loadVideo('vid-5', 'https://res.cloudinary.com/dwa0e5sup/video/upload/v1775693494/premium-artificial-grass-shimmer_yvcktl.mp4')">
+                <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_900,q_auto:eco,f_auto/v1775785655/zalat-mix-colors_pptjvl.jpg" alt="نجيل صناعي" loading="lazy">
+                <div class="play-btn"><i class="fas fa-play"></i></div>
             </div>
+            <div class="video-caption">شاهد روعة الملمس والتناغم بين النجيل الصناعي والزلط الديكوري</div>
 
             <h2 id="common-mistakes">أخطاء شائعة يجب تجنبها</h2>
             <p>عند الشروع في تزيين منزلك بالزلط، احذر من الوقوع في هذه الأخطاء الفادحة:</p>
@@ -493,14 +478,12 @@
                 <li>إهمال تنظيف الأرضية وتسويتها قبل بدء عملية الفرش المباشر.</li>
             </ul>
 
-            <!-- فيديو 6: مظهر وملمس النجيل الطبيعي/الصناعي الفاخر -->
-            <div class="cinematic-video-box">
-                <video controls preload="metadata" loading="lazy">
-                    <source src="https://res.cloudinary.com/dwa0e5sup/video/upload/v1775693488/premium-grass-texture-view_jr9iru.mp4" type="video/mp4">
-                    متصفحك لا يدعم عرض الفيديو.
-                </video>
-                <div class="video-caption">تفاصيل نسيج ومظهر اللاندسكيب الفاخر</div>
+            <!-- فيديو 6 -->
+            <div class="video-placeholder" id="vid-6" onclick="loadVideo('vid-6', 'https://res.cloudinary.com/dwa0e5sup/video/upload/v1775693488/premium-grass-texture-view_jr9iru.mp4')">
+                <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_900,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg" alt="لاندسكيب فاخر" loading="lazy">
+                <div class="play-btn"><i class="fas fa-play"></i></div>
             </div>
+            <div class="video-caption">تفاصيل نسيج ومظهر اللاندسكيب الفاخر</div>
 
             <h2 id="faqs">الأسئلة الشائعة</h2>
             <div class="faq-section">
@@ -525,7 +508,6 @@
             <h2 id="conclusion">الخاتمة</h2>
             <p>الاستثمار في جمال بيتك يعكس ذوقك الرفيع ويمنحك راحة نفسية لا توصف. ابدأ اليوم وحول مساحتك إلى واحة أحلامك مع منتجات Habib Store المضمونة والمختارة بعناية لتناسب أناقة منزلك.</p>
 
-            <!-- Topic Cluster & Verified Active Internal Links Only -->
             <div class="cluster-links">
                 <h4><i class="fas fa-network-wired" style="color: var(--gold);"></i> شبكة منتجات وأقسام Habib Store المرتبطة:</h4>
                 <ul>
@@ -538,7 +520,6 @@
                 </ul>
             </div>
 
-            <!-- CTA 3 في نهاية المقال -->
             <div class="cta-box">
                 <p style="font-weight: 800; color: var(--royal-green); margin-bottom: 15px;">جاهز لإحداث النقلة الجمالية في منزلك؟</p>
                 <a href="https://wa.me/201505543649?text=مرحباً%20Habib%20Store،%20جاهز%20لطلب%20منتجاتكم%20الآن." target="_blank" class="btn-buy">
