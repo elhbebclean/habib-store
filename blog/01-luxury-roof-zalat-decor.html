@@ -64,7 +64,7 @@
     <link rel="stylesheet" href="../style.css">
     <script src="../main.js" defer></script>
 
-    <!-- Advanced Schemas (Article + Breadcrumb + FAQ) -->
+    <!-- Advanced Schemas (Article + Breadcrumb + VideoObject + FAQ) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -119,6 +119,22 @@
               "item": "https://habib-landscape-boutique.com/blog/01-luxury-roof-zalat-decor.html"
             }
           ]
+        },
+        {
+          "@type": "VideoObject",
+          "name": "طريقة تنسيق وتوزيع الزلط الديكوري الفاخر للرووف والحدائق",
+          "description": "فيديو يوضح المعالجة الهندسية والتشطيب الفاخر لتوزيع الزلط الديكوري النقي في المشاريع السكنية.",
+          "thumbnailUrl": "https://res.cloudinary.com/dwa0e5sup/video/upload/w_1200,q_auto:eco,f_auto/v1775693440/decorative-white-pebbles-finish_nc4acd.jpg",
+          "uploadDate": "2026-03-01T08:00:00+02:00",
+          "contentUrl": "https://res.cloudinary.com/dwa0e5sup/video/upload/w_1200,q_auto:eco,vc_auto,f_auto/v1775693440/decorative-white-pebbles-finish_nc4acd.mp4",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Habib Store",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto:eco,f_auto,w_600/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png"
+            }
+          }
         },
         {
           "@type": "FAQPage",
@@ -218,7 +234,7 @@
         .faq-item { margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
         .faq-question { font-weight: 800; color: var(--royal-green); font-size: 1.1rem; margin-bottom: 5px; }
         
-        /* Topic Cluster Links (10-20 Links) */
+        /* Topic Cluster Links (Verified Active Links Only) */
         .cluster-links { background: #fff; padding: 30px; border-radius: 20px; border: 2px dashed var(--gold); margin: 40px 0; }
         .cluster-links h4 { color: var(--royal-green); margin-top: 0; font-size: 1.2rem; }
         .cluster-links ul { padding-right: 20px; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; }
@@ -238,7 +254,7 @@
     </header>
 
     <div class="article-wrapper">
-        <main class="article-container">
+        <main class="article-container" id="article-main">
             
             <!-- Breadcrumbs -->
             <nav class="breadcrumb" aria-label="مسار التنقل">
@@ -249,17 +265,21 @@
             <h1>فن تحويل الرووف والحدائق المنزلية إلى واحة إسترخاء بالزلط الديكوري الفاخر</h1>
             
             <script>
-                // حساب وقت القراءة تلقائياً بناءً على عدد الكلمات
+                // تحسين حساب وقت القراءة حصرياً من محتوى الـ main
                 document.addEventListener("DOMContentLoaded", function() {
-                    const text = document.body.innerText;
-                    const wordCount = text.trim().split(/\s+/).length;
-                    const readingTime = Math.ceil(wordCount / 200);
-                    document.getElementById("reading-time").innerText = readingTime + " دقائق";
+                    const mainElement = document.getElementById("article-main");
+                    if(mainElement) {
+                        const text = mainElement.innerText;
+                        const wordCount = text.trim().split(/\s+/).length;
+                        const readingTime = Math.ceil(wordCount / 200);
+                        document.getElementById("reading-time").innerText = readingTime + " دقائق";
+                    }
                 });
             </script>
 
             <div class="meta-info">
-                <span><i class="fas fa-calendar-alt" style="color: var(--gold);"></i> النشر: 1 مارس 2026 | التحديث: 3 أغسطس 2026</span>
+                <span><i class="fas fa-calendar-alt" style="color: var(--gold);"></i> النشر: 1 مارس 2026</span>
+                <span><i class="fas fa-sync-alt" style="color: var(--gold);"></i> آخر تحديث: 3 أغسطس 2026</span>
                 <span><i class="fas fa-clock" style="color: var(--gold);"></i> وقت القراءة: <span id="reading-time">جاري الحساب...</span></span>
                 <span><i class="fas fa-user" style="color: var(--gold);"></i> فريق خبراء الديكور في Habib Store</span>
             </div>
@@ -301,9 +321,9 @@
             <h2 id="uses">الاستخدامات العصرية في الرووف والحدائق</h2>
             <p>يستخدم الزلط لتحديد مسارات المشي، وتغطية التربة حول النباتات، وخلق زوايا بصرية مذهلة تضفي طابعًا ملكيًا على المكان دون الحاجة لأعمال بناء معقدة.</p>
 
-            <!-- Video Optimised -->
+            <!-- Video Optimised (Lazy loading for below fold / metadata preload) -->
             <div class="cinematic-video-box">
-                <video controls preload="metadata" poster="https://res.cloudinary.com/dwa0e5sup/video/upload/w_1200,q_auto:eco,f_auto/v1775693440/decorative-white-pebbles-finish_nc4acd.jpg">
+                <video controls preload="metadata" loading="lazy" poster="https://res.cloudinary.com/dwa0e5sup/video/upload/w_1200,q_auto:eco,f_auto/v1775693440/decorative-white-pebbles-finish_nc4acd.jpg">
                     <source src="https://res.cloudinary.com/dwa0e5sup/video/upload/w_1200,q_auto:eco,vc_auto,f_auto/v1775693440/decorative-white-pebbles-finish_nc4acd.mp4" type="video/mp4">
                     متصفحك لا يدعم عرض الفيديو.
                 </video>
@@ -360,20 +380,14 @@
             <h2 id="conclusion">الخاتمة</h2>
             <p>الاستثمار في جمال بيتك يعكس ذوقك الرفيع. ابدأ اليوم وحول مساحتك إلى واحة أحلامك مع منتجات Habib Store المضمونة.</p>
 
-            <!-- Topic Cluster & Internal Links (10-20 Links) -->
+            <!-- Topic Cluster & Verified Active Internal Links Only -->
             <div class="cluster-links">
-                <h4><i class="fas fa-network-wired" style="color: var(--gold);"></i> شبكة مقالات وخدمات Habib Store المرتبطة:</h4>
+                <h4><i class="fas fa-network-wired" style="color: var(--gold);"></i> شبكة منتجات وأقسام Habib Store المرتبطة:</h4>
                 <ul>
-                    <li><a href="./02-white-zalat-prices-egypt.html">&larr; المقال السابق: أسعار الزلط الأبيض</a></li>
-                    <li><a href="./03-zalat-balcony-decoration.html">المقال التالي: تنسيق البلكونات بالزلط &rarr;</a></li>
-                    <li><a href="../products/white-marble.html">معرض الزلط والأحجار الديكورية</a></li>
+                    <li><a href="../products/white-marble.html">&larr; معرض الزلط والأحجار الديكورية</a></li>
                     <li><a href="../products/marble.html">معرض الرخام وواجهات الفلل</a></li>
                     <li><a href="../products/trees.html">معرض أشجار الزينة والنخيل</a></li>
                     <li><a href="../products/grass-gallery.html">معرض النجيل الصناعي</a></li>
-                    <li><a href="./04-asyuti-zalat-home-gardens.html">مميزات الزلط الأسيوطي</a></li>
-                    <li><a href="./41-kitchen-marble-selection-guide.html">دليل اختيار رخام المطابخ</a></li>
-                    <li><a href="./42-mica-stone-home-facades.html">ديكورات حجر المايكا للواجهات</a></li>
-                    <li><a href="./81-home-waterfalls-design.html">تصميم الشلالات والنوافير المنزلية</a></li>
                     <li><a href="../contact.html">تواصل مع خدمة العملاء</a></li>
                     <li><a href="../privacy.html">سياسة الخصوصية والاسترجاع</a></li>
                 </ul>
