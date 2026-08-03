@@ -39,10 +39,13 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="اتصل بـ Habib Landscape Boutique لحجز معاينة فنية أو الاستفسار عن النجيل الصناعي والرخام والزلط وتنسيق الحدائق.">
-    <title>اتصل بنا | Habib Landscape Boutique</title>
+    <meta name="description" content="اتصل بـ Habib Store لحجز معاينة فنية، معرفة أسعار النجيل الصناعي، الزلط الديكوري، الرخام، وتنسيق الحدائق والفلل في مصر.">
+    <meta name="robots" content="index, follow">
+    <title>اتصل بنا وحجز معاينة | حبيب ستور للاندسكيب والرخام</title>
 
     <link rel="canonical" href="https://habib-landscape-boutique.com/contact.html">
+    <link rel="alternate" hreflang="ar-EG" href="https://habib-landscape-boutique.com/contact.html">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -55,7 +58,7 @@
             --soft-bg: #f8f9fa;
             --white: #ffffff;
             --text: #222;
-            --muted: #666;
+            --muted: #555;
         }
 
         * {
@@ -89,8 +92,9 @@
             text-decoration: none;
             color: var(--royal-green);
             font-family: 'Amiri', serif;
-            font-size: 30px;
+            font-size: 26px;
             font-weight: bold;
+            letter-spacing: 1px;
         }
 
         .back-link {
@@ -98,7 +102,7 @@
             color: var(--royal-green);
             font-weight: 700;
             border: 1px solid rgba(197,160,89,0.4);
-            padding: 10px 16px;
+            padding: 8px 16px;
             border-radius: 999px;
             transition: 0.3s;
         }
@@ -110,11 +114,11 @@
 
         .hero {
             background:
-                linear-gradient(rgba(26,60,52,0.72), rgba(26,60,52,0.72)),
+                linear-gradient(rgba(26,60,52,0.78), rgba(26,60,52,0.78)),
                 url('https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,w_1600/v1775826555/modern-landscape-design.jpg_kvxxze.jpg') center/cover no-repeat;
             color: white;
             text-align: center;
-            padding: 90px 20px 70px;
+            padding: 80px 20px 60px;
         }
 
         .hero .tag {
@@ -122,28 +126,28 @@
             font-weight: 800;
             letter-spacing: 3px;
             text-transform: uppercase;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
             font-size: 14px;
         }
 
         .hero h1 {
             font-family: 'Amiri', serif;
-            font-size: clamp(34px, 6vw, 62px);
-            margin-bottom: 18px;
+            font-size: clamp(32px, 5.5vw, 56px);
+            margin-bottom: 15px;
             line-height: 1.2;
         }
 
         .hero p {
-            max-width: 850px;
+            max-width: 800px;
             margin: auto;
-            font-size: 18px;
-            opacity: 0.98;
+            font-size: 17px;
+            opacity: 0.95;
         }
 
         .container {
             max-width: 1250px;
             margin: auto;
-            padding: 60px 5%;
+            padding: 50px 5%;
         }
 
         .contact-grid {
@@ -155,58 +159,58 @@
 
         .card {
             background: var(--white);
-            border-radius: 24px;
-            padding: 32px;
-            box-shadow: 0 12px 35px rgba(0,0,0,0.06);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             border: 1px solid rgba(0,0,0,0.04);
         }
 
         .card h2 {
             font-family: 'Amiri', serif;
             color: var(--royal-green);
-            font-size: 32px;
-            margin-bottom: 18px;
+            font-size: 28px;
+            margin-bottom: 15px;
         }
 
         .card p.lead {
             color: var(--muted);
-            margin-bottom: 28px;
-            font-size: 16px;
+            margin-bottom: 25px;
+            font-size: 15px;
         }
 
         .contact-list {
             display: grid;
-            gap: 16px;
+            gap: 15px;
         }
 
         .contact-item {
             display: flex;
             align-items: flex-start;
             gap: 14px;
-            padding: 16px;
-            border-radius: 16px;
+            padding: 15px;
+            border-radius: 14px;
             background: #fafafa;
             border: 1px solid rgba(0,0,0,0.04);
         }
 
         .contact-item i {
-            width: 46px;
-            height: 46px;
-            min-width: 46px;
+            width: 44px;
+            height: 44px;
+            min-width: 44px;
             border-radius: 50%;
             background: rgba(197,160,89,0.12);
             color: var(--gold);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
+            font-size: 17px;
             margin-top: 2px;
         }
 
         .contact-item h3 {
             color: var(--royal-green);
-            font-size: 18px;
-            margin-bottom: 4px;
+            font-size: 17px;
+            margin-bottom: 3px;
         }
 
         .contact-item p,
@@ -214,6 +218,13 @@
             color: var(--muted);
             text-decoration: none;
             font-size: 15px;
+            direction: ltr;
+            text-align: right;
+            display: inline-block;
+        }
+        
+        .contact-item p.ar-text {
+            direction: rtl;
         }
 
         .contact-item a:hover {
@@ -223,8 +234,8 @@
         .cta-box {
             background: linear-gradient(135deg, var(--royal-green), #244d42);
             color: white;
-            border-radius: 24px;
-            padding: 32px;
+            border-radius: 20px;
+            padding: 30px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -233,32 +244,34 @@
 
         .cta-box h2 {
             font-family: 'Amiri', serif;
-            font-size: 34px;
+            font-size: 30px;
             margin-bottom: 12px;
         }
 
         .cta-box p {
             color: rgba(255,255,255,0.92);
-            margin-bottom: 24px;
+            margin-bottom: 20px;
+            font-size: 15px;
         }
 
         .cta-list {
             display: grid;
-            gap: 12px;
-            margin-bottom: 28px;
+            gap: 10px;
+            margin-bottom: 25px;
         }
 
         .cta-list div {
             background: rgba(255,255,255,0.08);
             border: 1px solid rgba(255,255,255,0.12);
-            border-radius: 16px;
-            padding: 14px 16px;
+            border-radius: 12px;
+            padding: 12px 15px;
             font-weight: 700;
+            font-size: 14px;
         }
 
         .cta-buttons {
             display: grid;
-            gap: 14px;
+            gap: 12px;
         }
 
         .btn {
@@ -267,10 +280,11 @@
             justify-content: center;
             gap: 10px;
             text-decoration: none;
-            border-radius: 16px;
-            padding: 16px 20px;
+            border-radius: 14px;
+            padding: 15px 20px;
             font-weight: 800;
             transition: 0.3s;
+            font-size: 16px;
         }
 
         .btn-primary {
@@ -294,7 +308,7 @@
         }
 
         .bottom-note {
-            margin-top: 35px;
+            margin-top: 30px;
             text-align: center;
             color: var(--muted);
             font-size: 14px;
@@ -311,16 +325,17 @@
         .footer-brand {
             font-weight: 800;
             color: var(--royal-green);
-            margin-bottom: 16px;
-            font-size: 20px;
+            margin-bottom: 15px;
+            font-size: 18px;
+            letter-spacing: 1px;
         }
 
         .policy-links {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 14px 20px;
-            margin-bottom: 16px;
+            gap: 12px 20px;
+            margin-bottom: 15px;
         }
 
         .policy-link {
@@ -347,20 +362,12 @@
             }
 
             .hero {
-                padding: 70px 20px 55px;
-            }
-
-            .hero p {
-                font-size: 16px;
+                padding: 60px 20px 45px;
             }
 
             .card,
             .cta-box {
-                padding: 24px;
-            }
-
-            .logo {
-                font-size: 24px;
+                padding: 22px;
             }
         }
     </style>
@@ -379,37 +386,36 @@
 </header>
 
 <section class="hero">
-    <div class="tag">Habib Landscape Boutique</div>
-    <h1>اتصل بنا</h1>
+    <div class="tag">Habib Store</div>
+    <h1>اتصل بنا وحجز المعاينة الفورية</h1>
     <p>
-        لحجز معاينة فنية، أو الاستفسار عن النجيل الصناعي، الرخام، الزلط الديكوري، أو تنسيق الحدائق،
-        تواصل معنا مباشرة وسنساعدك في اختيار الحل الأنسب لمساحتك.
+        تواصل معنا الآن للحصول على أفضل أسعار توريد وتركيب النجيل الصناعي، الزلط الديكوري، الرخام، وتنسيق الحدائق في القاهرة وكل محافظات مصر.
     </p>
 </section>
 
 <div class="container">
     <div class="contact-grid">
         <div class="card">
-            <h2>بيانات التواصل</h2>
+            <h2>بيانات التواصل المباشر</h2>
             <p class="lead">
-                نسعد بتواصلكم معنا بخصوص المعاينات، المقايسات، والاستفسارات الفنية الخاصة بالمشروعات السكنية والفلل والحدائق الخاصة.
+                نستقبل طلباتكم واستفساراتكم الفنية وتوريدات المشروعات السكنية، الفيلات، والقصور طوال أيام الأسبوع.
             </p>
 
             <div class="contact-list">
                 <div class="contact-item">
                     <i class="fas fa-phone-alt"></i>
                     <div>
-                        <h3>الهاتف</h3>
-                        <a href="tel:+201145393026">01145393026</a>
+                        <h3>الهاتف المباشر</h3>
+                        <a href="tel:+201505543649">+20 150 554 3649</a>
                     </div>
                 </div>
 
                 <div class="contact-item">
                     <i class="fab fa-whatsapp"></i>
                     <div>
-                        <h3>واتساب</h3>
-                        <a href="https://wa.me/201145393026?text=مرحباً، أريد الاستفسار بخصوص خدمات Habib Landscape Boutique." target="_blank" rel="noopener">
-                            تواصل مباشرة عبر واتساب
+                        <h3>خدمة العملاء والواتساب</h3>
+                        <a href="https://wa.me/201505543649?text=مرحباً، أريد الاستفسار عن أسعار وخدمات توريد النجيل والزلط والرخام من Habib Store." target="_blank" rel="noopener">
+                            +20 150 554 3649 (اضغط للمراسلة الفورية)
                         </a>
                     </div>
                 </div>
@@ -417,24 +423,24 @@
                 <div class="contact-item">
                     <i class="fas fa-map-marker-alt"></i>
                     <div>
-                        <h3>الموقع</h3>
-                        <p>المعادي، القاهرة، مصر</p>
+                        <h3>مقر الإدارة والمستودع</h3>
+                        <p class="ar-text">شارع 105، المعادي، القاهرة، مصر</p>
                     </div>
                 </div>
 
                 <div class="contact-item">
                     <i class="fas fa-clock"></i>
                     <div>
-                        <h3>مواعيد التواصل</h3>
-                        <p>يوميًا من 10 صباحًا إلى 10 مساءً</p>
+                        <h3>مواعيد العمل</h3>
+                        <p class="ar-text">يوميًا من 10 صباحًا حتى 10 مساءً</p>
                     </div>
                 </div>
 
                 <div class="contact-item">
-                    <i class="fas fa-briefcase"></i>
+                    <i class="fas fa-shipping-fast"></i>
                     <div>
-                        <h3>نوع الخدمة</h3>
-                        <p>توريد وتركيب نجيل صناعي، زلط ديكوري، رخام، وتنسيق حدائق بإشراف هندسي</p>
+                        <h3>نطاق التوريد والتركيب</h3>
+                        <p class="ar-text">القاهرة، الجيزة، التجمع، الشيخ زايد، الساحل الشمالي، وكافة محافظات مصر</p>
                     </div>
                 </div>
             </div>
@@ -442,41 +448,40 @@
 
         <div class="cta-box">
             <div>
-                <h2>احجز معاينتك الآن</h2>
+                <h2>اطلب معاينتك الفورية الآن</h2>
                 <p>
-                    إذا كنت تبحث عن تنفيذ راقٍ بمستوى احترافي، يمكنك البدء الآن بخطوة بسيطة:
-                    تواصل معنا وسنرتب معك المعاينة والمقايسة الفنية.
+                    لا توجل تطوير حديقتك أو مشروعك.. احجز معاينتك الهندسية الآن ودعنا نصلك بأجود الخامات وأفضل الأسعار في مصر.
                 </p>
 
                 <div class="cta-list">
-                    <div>✔ معاينة فنية دقيقة بالموقع</div>
-                    <div>✔ ترشيح الخامات المناسبة حسب الاستخدام</div>
-                    <div>✔ مقايسة واضحة قبل التنفيذ</div>
-                    <div>✔ تنفيذ بمعايير احترافية وسرعة في التسليم</div>
+                    <div>✔ توريد مباشر من المستودع لأفضل خامات النجيل والزلط والرخام</div>
+                    <div>✔ معاينة فنية دقيقة بالموقع وإشراف هندسي متكامل</div>
+                    <div>✔ تسعير عادل ومقايسة واضحة شفافة قبل التنفيذ</div>
+                    <div>✔ سرعة في التوريد والتركيب خلال 48 ساعة</div>
                 </div>
             </div>
 
             <div class="cta-buttons">
-                <a class="btn btn-primary" href="https://wa.me/201145393026?text=مرحباً، أريد حجز معاينة فنية لمشروعي." target="_blank" rel="noopener">
+                <a class="btn btn-primary" href="https://wa.me/201505543649?text=مرحباً، أريد حجز معاينة فنية فورية وتوريد خامات لمشروعي." target="_blank" rel="noopener">
                     <i class="fab fa-whatsapp"></i>
-                    احجز عبر واتساب
+                    احجز معاينة عبر واتساب
                 </a>
 
-                <a class="btn btn-secondary" href="tel:+201145393026">
+                <a class="btn btn-secondary" href="tel:+201505543649">
                     <i class="fas fa-phone-alt"></i>
-                    اتصل الآن
+                    اتصل هاتفياً الآن
                 </a>
             </div>
         </div>
     </div>
 
     <p class="bottom-note">
-        Habib Landscape Boutique — Premium Selection
+        Habib Store — Engineered for High-End Landscape Projects
     </p>
 </div>
 
 <footer>
-    <div class="footer-brand">HABIB LANDSCAPE BOUTIQUE</div>
+    <div class="footer-brand">HABIB STORE</div>
 
     <div class="policy-links">
         <a href="contact.html" class="policy-link">اتصل بنا</a>
@@ -486,7 +491,7 @@
         <a href="refund.html" class="policy-link">سياسة الاسترجاع والاستبدال</a>
     </div>
 
-    <p>© 2026 جميع الحقوق محفوظة لشركة الحبيب</p>
+    <p>© 2026 Habib Store. جميع الحقوق محفوظة.</p>
 </footer>
 
 </body>
