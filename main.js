@@ -1,5 +1,5 @@
 /* =========================================
-   Habib Landscape Boutique | Premium Selection
+   Habib Store | Premium Selection Styles & Logic
    Main Core Logic - Optimized Version
    ========================================= */
 
@@ -93,7 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
    ========================================= */
 
 // 5. الإضافة السريعة للمقايسة (تم التحديث ليدعم Cloudinary)
-// أضفنا imgUrl كمتغير رابع لاستقبال رابط الصورة مباشرة
 function quickAddToCart(productId, productName, category = 'general', imgUrl = 'assets/images/placeholder.jpg') {
     const cart = safeGetCart();
     const existingItem = cart.find(item => item.id === productId);
@@ -104,7 +103,7 @@ function quickAddToCart(productId, productName, category = 'general', imgUrl = '
         cart.push({
             id: productId,
             title: productName,
-            img: imgUrl, // تخزين رابط Cloudinary مباشرة
+            img: imgUrl,
             category: category,
             quantity: 1
         });
@@ -139,7 +138,7 @@ const signaturePortfolioData = {
         },
         {
             url: 'https://res.cloudinary.com/dwa0e5sup/video/upload/q_auto/f_auto/v1775693447/habib-landscape-luxury-design_qzbdi3.mp4',
-            desc: 'تنسيق خارجي راقٍ يعكس هوية Habib Landscape Boutique'
+            desc: 'تنسيق خارجي راقٍ يعكس هوية Habib Store'
         },
         {
             url: 'https://res.cloudinary.com/dwa0e5sup/video/upload/q_auto/f_auto/v1775693440/decorative-white-pebbles-finish_nc4acd.mp4',
@@ -168,7 +167,7 @@ function ensureCatalogBrandMark(parent) {
     if (!logoEl) {
         logoEl = document.createElement('img');
         logoEl.id = 'catalogBrandMark';
-        logoEl.alt = 'Habib Landscape Boutique';
+        logoEl.alt = 'Habib Store';
         logoEl.style.position = 'absolute';
         logoEl.style.top = '18px';
         logoEl.style.left = '18px';
@@ -283,7 +282,7 @@ function closeCatalog(event, fromPopState = false) {
 
 // رجوع الموبايل
 window.addEventListener('popstate', function () {
-    const lightbox = getCatalogLightbox();
+    const lightbox = document.getElementById('catalogLightbox');
     if (lightbox && lightbox.classList.contains('active')) {
         closeCatalog(null, true);
     }
@@ -296,9 +295,9 @@ document.addEventListener('keydown', function (e) {
     }
 });
 
-// واتساب
+// واتساب (تم تحديث الرقم إلى الرقم الجديد الموحد)
 function orderCurrentDesign() {
     const item = catalogImages[currentImageIndex];
-    const msg = encodeURIComponent("عايز التصميم ده");
-    window.open(`https://wa.me/201145393026?text=${msg}`, '_blank');
+    const msg = encodeURIComponent("مرحباً، أريد الاستفسار أو طلب هذا التصميم من سابقة أعمال Habib Store.");
+    window.open(`https://wa.me/201505543649?text=${msg}`, '_blank');
 }
