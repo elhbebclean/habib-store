@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <!-- Microsoft Clarity -->
+    <!-- Microsoft Clarity (Heatmaps & User Behavior) -->
     <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -10,11 +10,11 @@
     })(window, document, "clarity", "script", "wbchze8rtj");
     </script>
 
-    <!-- Google Tag Manager Lazy Load -->
+    <!-- Google Tag Manager Lazy Load (Ultimate CRO & Speed) -->
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         var gtmLoaded = false;
-        function loadGTM() {
+        function loadGTV() {
             if(gtmLoaded) return;
             gtmLoaded = true;
             (function(w,d,s,l,i){
@@ -28,199 +28,643 @@
             })(window,document,'script','dataLayer','GTM-NT75WPGT');
         }
         ['scroll', 'mousemove', 'touchstart', 'click'].forEach(function(event) {
-            window.addEventListener(event, loadGTM, { once: true, passive: true });
+            window.addEventListener(event, loadGTV, { once: true, passive: true });
         });
-        setTimeout(loadGTM, 2000);
+        setTimeout(loadGTV, 2000);
     });
     </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Habib Store | المدونة المرئية لتوريد وتركيب الرخام، الزلط الديكوري، وميكا الواجهات. شاهد بالفيديو وصور Cloudinary أعمال تنسيق الحدائق والفلل في مصر.">
-    <meta name="robots" content="index, follow">
-    <title>مدونة الرخام والزلط ولاندسكيب الفلل | Habib Store</title>
+    <meta name="description" content="المدونة الهندسية الشاملة لـ Elhabib Store: أرشيف يضم 35 مقالاً احترافياً لتوريد وتركيب الرخام، الحجر الهاشمي، الزلط، واللاندسكيب في جميع محافظات مصر 2026.">
+    <meta name="author" content="Elhabib Store">
+    <meta name="theme-color" content="#112822">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <title>مدونة اللاندسكيب والرخام: أرشيف الـ 35 مقالاً الشامل | Elhabib Store</title>
 
     <link rel="canonical" href="https://habib-landscape-boutique.com/blog/">
-    <link rel="alternate" hreflang="ar-EG" href="https://habib-landscape-boutique.com/blog/">
-    <link rel="alternate" hreflang="x-default" href="https://habib-landscape-boutique.com/blog/">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+
+    <!-- Preload & Google Fonts Optimized -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- OpenGraph Meta Tags -->
-    <meta property="og:title" content="مدونة Habib Store للرخام والزلط واللاندسكيب">
-    <meta property="og:description" content="فيديوهات وصور حصرية لأعمال توريد وتركيب الرخام والزلط الديكوري في القصور والفلل بمصر.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_EG">
+    <meta property="og:site_name" content="Elhabib Store">
+    <meta property="og:title" content="مدونة Elhabib Store الهندسية - 35 مقالاً متكاملاً">
+    <meta property="og:description" content="الأرشيف الشامل لكل مقالات وخدمات توريد وتركيب الرخام، الحجر، واللاندسكيب في مصر.">
     <meta property="og:url" content="https://habib-landscape-boutique.com/blog/">
     <meta property="og:image" content="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto:eco,f_auto,w_1200/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
-    <!-- مسارات محدثة للخروج من فولدر blog وإيجاد الستايل والسكربت الأساسي -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="مدونة Elhabib Store الهندسية - 35 مقالاً متكاملاً">
+    <meta name="twitter:description" content="الأرشيف الشامل لكل مقالات وخدمات توريد وتركيب الرخام، الحجر، واللاندسكيب في مصر.">
+    <meta name="twitter:image" content="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto:eco,f_auto,w_1200/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png">
+    <meta name="twitter:image:alt" content="شعار وخامات Elhabib Store لتوريد اللاندسكيب والرخام">
+
+    <!-- CSS & JS Stylesheets -->
     <link rel="stylesheet" href="../style.css">
     <script src="../main.js" defer></script>
 
-    <!-- Schema Structured Data for Video & Image Indexing -->
+    <!-- God-Mode JSON-LD: CollectionPage, BreadcrumbList, ItemList, LocalBusiness, Service, OfferCatalog, Speakable, FAQPage -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Blog",
-      "name": "Habib Store Landscape & Marble Blog",
-      "description": "معرض مرئي شامل بالصور والفيديوهات لأعمال توريد وتركيب الرخام، الزلط الديكوري، وميكا الواجهات في مصر.",
-      "url": "https://habib-landscape-boutique.com/blog/",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Habib Store",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto:eco,f_auto,w_600/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png"
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://habib-landscape-boutique.com/#website",
+          "url": "https://habib-landscape-boutique.com/",
+          "name": "Elhabib Store",
+          "description": "الأرشيف الهندسي الشامل لخدمات اللاندسكيب والتشطيبات في مصر.",
+          "publisher": {"@id": "https://habib-landscape-boutique.com/#organization"},
+          "inLanguage": "ar-EG"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://habib-landscape-boutique.com/#organization",
+          "name": "Elhabib Store",
+          "url": "https://habib-landscape-boutique.com/",
+          "sameAs": ["https://www.facebook.com/61559076547205/"],
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto:eco,f_auto,w_600/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+201505543649",
+            "contactType": "sales",
+            "areaServed": "EG",
+            "availableLanguage": ["Arabic"]
+          }
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://habib-landscape-boutique.com/#localbusiness",
+          "name": "Elhabib Store - المقر الرئيسي والمحاجر",
+          "image": "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto:eco,f_auto,w_600/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png",
+          "telephone": "01505543649",
+          "url": "https://habib-landscape-boutique.com/",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "المعادي",
+            "addressLocality": "القاهرة",
+            "addressRegion": "محافظة القاهرة",
+            "addressCountry": "EG"
+          },
+          "areaServed": {"@type": "Country", "name": "Egypt"},
+          "priceRange": "$$"
+        },
+        {
+          "@type": "CollectionPage",
+          "@id": "https://habib-landscape-boutique.com/blog/#webpage",
+          "url": "https://habib-landscape-boutique.com/blog/",
+          "name": "مدونة اللاندسكيب والرخام: أرشيف الـ 35 مقالاً الشامل | Elhabib Store",
+          "description": "أرشيف يضم 35 مقالاً تفصيلياً لتوريد وتركيب الرخام، الحجر الهاشمي، واللاندسكيب في مصر.",
+          "isPartOf": {"@id": "https://habib-landscape-boutique.com/#website"},
+          "breadcrumb": {"@id": "https://habib-landscape-boutique.com/blog/#breadcrumb"},
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".blog-hero h1", ".blog-hero p"]
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://habib-landscape-boutique.com/blog/#breadcrumb",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://habib-landscape-boutique.com/index.html"},
+            {"@type": "ListItem", "position": 2, "name": "المدونة", "item": "https://habib-landscape-boutique.com/blog/"}
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "url": "https://habib-landscape-boutique.com/blog/01-luxury-roof-zalat-decor.html", "name": "دليل تجهيز وتنسيق أسطح المنازل والرووف بالزلط"},
+            {"@type": "ListItem", "position": 2, "url": "https://habib-landscape-boutique.com/blog/02-artificial-grass-installation-guide.html", "name": "دليل تركيب النجيل الصناعي للحدائق والرووف"},
+            {"@type": "ListItem", "position": 3, "url": "https://habib-landscape-boutique.com/blog/03-ornamental-trees-palms-guide.html", "name": "دليل تنسيق الأشجار والنخيل الاستوائي في الفلل"},
+            {"@type": "ListItem", "position": 4, "url": "https://habib-landscape-boutique.com/blog/04-marble-natural-stone-facades-guide.html", "name": "دليل تشطيب واجهات الحجر الطبيعي والرخام"},
+            {"@type": "ListItem", "position": 5, "url": "https://habib-landscape-boutique.com/blog/05-modern-garden-walkways-landscape-design.html", "name": "تصميم ممرات الحدائق العصرية بالخامات الطبيعية"},
+            {"@type": "ListItem", "position": 6, "url": "https://habib-landscape-boutique.com/blog/06-hashmi-stone-facades-prices-egypt.html", "name": "أسعار ومواصفات واجهات الحجر الهاشمي في مصر"},
+            {"@type": "ListItem", "position": 7, "url": "https://habib-landscape-boutique.com/blog/07-waterfalls-indoor-stone-decor-marble.html", "name": "تصميم الشلالات والنوافير المنزلية الداخلية والخارجية"},
+            {"@type": "ListItem", "position": 8, "url": "https://habib-landscape-boutique.com/blog/08-villa-walls-entrances-stone-marble-cladding.html", "name": "تجليد أسوار ومداخل الفلل بالحجر والرخام"},
+            {"@type": "ListItem", "position": 9, "url": "https://habib-landscape-boutique.com/blog/09-stone-marble-zalat-supply-regions-egypt.html", "name": "مناطق توريد الحجر والرخام والزلط في مصر"},
+            {"@type": "ListItem", "position": 10, "url": "https://habib-landscape-boutique.com/blog/10-hashmi-stone-vs-marble-facades-comparison.html", "name": "مقارنة شاملة: الحجر الهاشمي أم الرخام للواجهات؟"},
+            {"@type": "ListItem", "position": 11, "url": "https://habib-landscape-boutique.com/blog/11-sahel-north-coast-landscape-marble-stone.html", "name": "لاندسكيب الساحل الشمالي: تحديات الرطوبة والحلول"},
+            {"@type": "ListItem", "position": 12, "url": "https://habib-landscape-boutique.com/blog/12-colored-pebbles-landscaping-guide.html", "name": "دليل استخدام الزلط الملون والديكوري للحدائق"},
+            {"@type": "ListItem", "position": 13, "url": "https://habib-landscape-boutique.com/blog/13-landscape-contractor-egypt-guide.html", "name": "دليل اختيار مقاول اللاندسكيب والتشطيبات في مصر"},
+            {"@type": "ListItem", "position": 14, "url": "https://habib-landscape-boutique.com/blog/14-facade-moisture-problems-solutions.html", "name": "علاج مشاكل الرطوبة وتمليح الواجهات الحجرية"},
+            {"@type": "ListItem", "position": 15, "url": "https://habib-landscape-boutique.com/blog/15-hashmi-pharaonic-mica-stones-price-guide.html", "name": "دليل أسعار الحجر الفرعوني والمايكا في مصر"},
+            {"@type": "ListItem", "position": 16, "url": "https://habib-landscape-boutique.com/blog/16-landscape-facade-lighting-guide.html", "name": "أسرار إضاءة اللاندسكيب والواجهات الليلية"},
+            {"@type": "ListItem", "position": 17, "url": "https://habib-landscape-boutique.com/blog/17-small-gardens-roof-landscaping-ideas.html", "name": "أفكار عبقرية لتنسيق الحدائق الصغيرة والرووف"},
+            {"@type": "ListItem", "position": 18, "url": "https://habib-landscape-boutique.com/blog/18-granite-vs-marble-floors-entrances.html", "name": "الجرانيت أم الرخام للأرضيات والمداخل الكبرى؟"},
+            {"@type": "ListItem", "position": 19, "url": "https://habib-landscape-boutique.com/blog/19-small-budget-home-decor-stones-pebbles.html", "name": "تنسيق الديكورات المنزلية بأقل ميزانية باستخدام الزلط"},
+            {"@type": "ListItem", "position": 20, "url": "https://habib-landscape-boutique.com/blog/20-habib-store-ultimate-landscaping-stone-leader.html", "name": "ريادة Habib Store في توريد وتركيب خامات اللاندسكيب"},
+            {"@type": "ListItem", "position": 21, "url": "https://habib-landscape-boutique.com/blog/21-best-landscape-natural-stones-prices-egypt.html", "name": "دليل أفضل أحجار اللاندسكيب والتشطيبات الخارجية"},
+            {"@type": "ListItem", "position": 22, "url": "https://habib-landscape-boutique.com/blog/22-complete-supply-installation-landscape-stones-egypt.html", "name": "خدمة التوريد والتركيب الشامل في كل شيء"},
+            {"@type": "ListItem", "position": 23, "url": "https://habib-landscape-boutique.com/blog/23-villa-facades-stone-installation-egypt.html", "name": "تشطيب واجهات الفلل والقصور بالحجر الطبيعي والهاشمي"},
+            {"@type": "ListItem", "position": 24, "url": "https://habib-landscape-boutique.com/blog/24-artificial-grass-pebbles-landscaping-egypt.html", "name": "تنسيق الحدائق والأسطح بالنجيل الصناعي والزلط"},
+            {"@type": "ListItem", "position": 25, "url": "https://habib-landscape-boutique.com/blog/25-waterfalls-fountains-design-installation-egypt.html", "name": "تصميم وتنفيذ الشلالات والنوافير للفلل والحدائق"},
+            {"@type": "ListItem", "position": 26, "url": "https://habib-landscape-boutique.com/blog/26-rooftop-landscape-design-installation-egypt.html", "name": "تنسيق أسطح المنازل والفلل (الرووف)"},
+            {"@type": "ListItem", "position": 27, "url": "https://habib-landscape-boutique.com/blog/27-complete-landscape-turnkey-solutions-egypt.html", "name": "الدليل الشامل للتوريد والتركيب للاندسكيب والواجهات"},
+            {"@type": "ListItem", "position": 28, "url": "https://habib-landscape-boutique.com/blog/28-landscape-stones-marble-turnkey-egypt.html", "name": "التوريد والتركيب الشامل للرخام والحجر واللاندسكيب"},
+            {"@type": "ListItem", "position": 29, "url": "https://habib-landscape-boutique.com/blog/29-landscape-and-facades-expert-guide-egypt.html", "name": "الدليل الاحترافي لتنسيق الحدائق والواجهات في مصر"},
+            {"@type": "ListItem", "position": 30, "url": "https://habib-landscape-boutique.com/blog/30-habib-store-master-hub-network-egypt.html", "name": "خريطة الشبكة العنكبوتية وخدمات Habib Store"},
+            {"@type": "ListItem", "position": 31, "url": "https://habib-landscape-boutique.com/blog/31-new-cairo-landscape-stones-master-network.html", "name": "توريد وتركيب لاندسكيب وحجر في التجمع الخامس"},
+            {"@type": "ListItem", "position": 32, "url": "https://habib-landscape-boutique.com/blog/32-zayed-october-villa-landscape-design.html", "name": "تنسيق حدائق وروف الفلل في الشيخ زايد وأكتوبر"},
+            {"@type": "ListItem", "position": 33, "url": "https://habib-landscape-boutique.com/blog/33-maadi-katameya-villas-stone-facades.html", "name": "تجديد واجهات الفلل في المعادي وقطامية"},
+            {"@type": "ListItem", "position": 34, "url": "https://habib-landscape-boutique.com/blog/34-egypt-nationwide-landscape-marble-stones-supply.html", "name": "البيع لكل مصر: توريد الزلط والرخام والشلالات"},
+            {"@type": "ListItem", "position": 35, "url": "https://habib-landscape-boutique.com/blog/35-pebbles-marble-scrap-waterfalls-egypt.html", "name": "حرق أسعار: الزلط الديكوري وخردة الرخام والشلالات"}
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "ما هي خدمات Elhabib Store الرئيسية في مصر؟",
+              "acceptedAnswer": {"@type": "Answer", "text": "نتخصص في التوريد والتركيب الشامل للرخام، الحجر الهاشمي، الزلط الديكوري، والشلالات بضمان معتمد لجميع محافظات مصر."}
+            },
+            {
+              "@type": "Question",
+              "name": "كيف يمكنني طلب معاينة أو تسعير لمشروعي؟",
+              "acceptedAnswer": {"@type": "Answer", "text": "يمكنك التواصل المباشر عبر رقم الواتساب 01505543649 للحصول على معاينة وتسعير فوري."}
+            }
+          ]
         }
-      }
+      ]
     }
     </script>
 
     <style>
-        :root { --royal-green: #1a3c34; --gold: #c5a059; --soft-bg: #f8fafa; }
-        body { font-family: 'Cairo', sans-serif; background-color: var(--soft-bg); margin: 0; padding: 0; color: #333; line-height: 1.8; overflow-x: hidden; }
+        :root { --royal-green: #112822; --gold: #e67e22; --soft-bg: #f4f7f6; --dark-text: #1a1a1a; --danger-red: #e74c3c; --action-blue: #1abc9c; }
+        body { font-family: 'Cairo', sans-serif; background-color: var(--soft-bg); margin: 0; padding: 0; color: var(--dark-text); line-height: 1.8; overflow-x: hidden; scroll-behavior: smooth; }
 
-        header { background: #fff; padding: 25px 20px; text-align: center; border-bottom: 3px solid var(--royal-green); }
-        .logo { font-size: 2.2rem; color: var(--royal-green); text-decoration: none; font-weight: 800; letter-spacing: 1px; }
+        header { background: #fff; padding: 15px 20px; text-align: center; border-bottom: 4px solid var(--gold); position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .logo { font-size: 2.2rem; color: var(--royal-green); text-decoration: none; font-weight: 900; letter-spacing: 1px; }
         
-        .blog-hero { background: var(--royal-green); color: white; text-align: center; padding: 70px 20px; position: relative; }
-        .blog-hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 15px; color: #fff; }
-        .blog-hero p { color: var(--gold); font-size: 1.2rem; font-weight: 600; max-width: 800px; margin: 0 auto; }
+        .blog-hero { background: var(--royal-green); color: white; text-align: center; padding: 70px 20px; position: relative; border-bottom: 5px solid var(--gold); }
+        .blog-hero h1 { font-size: clamp(2.2rem, 4.5vw, 3.2rem); font-weight: 900; margin-bottom: 15px; color: #fff; }
+        .blog-hero p { color: var(--gold); font-size: 1.3rem; font-weight: 700; max-width: 800px; margin: 0 auto; }
 
         .container { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
         
-        .blog-post-card { background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.05); margin-bottom: 50px; border: 1px solid rgba(0,0,0,0.05); transition: 0.3s; }
-        .blog-post-card:hover { box-shadow: 0 25px 50px rgba(0,0,0,0.08); }
+        /* Featured Articles Section */
+        .featured-section { background: linear-gradient(135deg, rgba(230,126,34,0.08), rgba(17,40,34,0.08)); border: 3px solid var(--gold); border-radius: 20px; padding: 35px; margin-bottom: 50px; }
+        .featured-section h2 { color: var(--royal-green); margin-top: 0; font-size: 1.8rem; font-weight: 900; border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-bottom: 20px; }
+        .featured-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .featured-item { background: #fff; border-radius: 12px; padding: 20px; border: 1px solid rgba(230,126,34,0.3); transition: 0.3s; }
+        .featured-item:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .featured-item a { color: var(--royal-green); text-decoration: none; font-weight: 900; font-size: 1.1rem; display: block; }
+        .featured-item a:hover { color: var(--gold); }
 
-        .media-container { width: 100%; max-height: 500px; background: #000; overflow: hidden; position: relative; }
-        .media-container video, .media-container img { width: 100%; height: 100%; object-fit: cover; display: block; max-height: 500px; }
+        .articles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin: 40px 0; }
+        .article-card { background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 2px solid #eee; transition: 0.3s; display: flex; flex-direction: column; justify-content: space-between; content-visibility: auto; contain-intrinsic-size: 350px; }
+        .article-card:hover { border-color: var(--gold); transform: translateY(-5px); box-shadow: 0 15px 35px rgba(230, 126, 34, 0.15); }
+        
+        .article-thumb { width: 100%; height: 200px; object-fit: cover; background: #e0e0e0; display: block; }
+        .article-card-body { padding: 25px; }
+        .article-card h3 { font-size: 1.35rem; color: var(--royal-green); font-weight: 900; margin-top: 0; margin-bottom: 15px; line-height: 1.4; }
+        .article-card p { color: #555; font-size: 1.05rem; margin-bottom: 20px; font-weight: 600; }
+        .read-more-btn { display: inline-block; background: var(--royal-green); color: #fff; padding: 10px 22px; border-radius: 30px; font-weight: 800; text-decoration: none; transition: 0.3s; }
+        .read-more-btn:hover { background: var(--gold); }
 
-        .post-content { padding: 35px; }
-        .post-meta { display: flex; gap: 15px; align-items: center; color: var(--gold); font-size: 0.9rem; font-weight: 700; margin-bottom: 12px; }
-        .post-content h2 { font-size: 1.8rem; color: var(--royal-green); font-weight: 800; margin-bottom: 18px; line-height: 1.4; }
-        .post-content p { color: #555; font-size: 1.05rem; margin-bottom: 25px; font-weight: 500; }
-
-        .buy-cta-box { display: flex; gap: 15px; flex-wrap: wrap; align-items: center; justify-content: space-between; padding-top: 20px; border-top: 1px solid #f1f1f1; }
-        .btn-whatsapp-buy { background: #25d366; color: white; padding: 14px 28px; border-radius: 30px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; box-shadow: 0 8px 20px rgba(37,211,102,0.25); }
-        .btn-whatsapp-buy:hover { background: #1ebe57; transform: translateY(-2px); }
-        .btn-browse-cat { color: var(--royal-green); border: 2px solid var(--royal-green); padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: 700; transition: 0.3s; }
-        .btn-browse-cat:hover { background: var(--royal-green); color: white; }
-
-        .expert-btn { position: fixed; bottom: 40px; right: 40px; background: #25d366; color: white; padding: 18px 35px; border-radius: 60px; text-decoration: none; box-shadow: 0 15px 35px rgba(37, 211, 102, 0.3); z-index: 1000; font-weight: 800; display: flex; align-items: center; gap: 15px; transition: 0.4s; }
-        .expert-btn:hover { transform: scale(1.05); }
+        /* Floating 015 Buttons with SVG Icons */
+        .floating-buttons { position: fixed; bottom: 30px; left: 30px; z-index: 9999; display: flex; flex-direction: column; gap: 15px; }
+        .float-btn { width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-decoration: none; transition: transform 0.3s ease; animation: pulse-float 2s infinite; }
+        .float-whatsapp { background-color: #25d366; border: 2px solid #fff; }
+        .float-call { background-color: var(--danger-red); border: 2px solid #fff; animation-delay: 1s; }
+        @keyframes pulse-float { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
 
         @media(max-width: 768px) {
-            .expert-btn { bottom: 20px; right: 20px; padding: 15px 20px; }
-            .expert-btn span { display: none; }
-            .post-content { padding: 20px; }
+            .floating-buttons { bottom: 20px; left: 20px; }
+            .float-btn { width: 60px; height: 60px; }
         }
     </style>
 </head>
-<body>
+<body itemscope itemtype="https://schema.org/WebPage">
 
-    <header>
-        <a href="../index.html" class="logo">HABIB STORE</a>
-    </header>
-
-    <section class="blog-hero">
-        <h1>المدونة المرئية لتوريد الرخام والزلط 💎</h1>
-        <p>شاهد أرشيف فيديوهات وصور Cloudinary الحصرية لأعمال توريد وتركيب الرخام، جداريات النخبة، والزلط الديكوري للقصور والفلل في مصر.</p>
-    </section>
-
-    <div class="container">
-
-        <!-- مقال / فيديو 1: توريد وتركيب الزلط الديكوري -->
-        <article class="blog-post-card">
-            <div class="media-container">
-                <video controls autoplay muted loop playsinline preload="none" poster="https://res.cloudinary.com/dwa0e5sup/video/upload/w_1200,q_auto:eco,f_auto/v1775693440/decorative-white-pebbles-finish_nc4acd.jpg">
-                    <source src="https://res.cloudinary.com/dwa0e5sup/video/upload/w_1200,q_auto:eco,vc_auto,f_auto/v1775693440/decorative-white-pebbles-finish_nc4acd.mp4" type="video/mp4">
-                    متصفحك لا يدعم عرض الفيديو.
-                </video>
-            </div>
-            <div class="post-content">
-                <div class="post-meta">
-                    <span><i class="fas fa-calendar-alt"></i> 2026</span>
-                    <span><i class="fas fa-tag"></i> زلط ديكوري وأحجار حدائق</span>
-                </div>
-                <h2>توريد وتركيب الزلط الأبيض والأسيوطي والبركاني للفلل والقصور في مصر</h2>
-                <p>تعرف بالفيديو على التشطيب الهندسي الاحترافي لتوزيع الزلط الديكوري (أبيض، أسيوطي، بركاني، ومكس ألوان) في مسارات الحدائق واللاندسكيب. نضمن لك توريد مباشر من المخازن بأفضل سعر متر في مصر مع إشراف هندسي كامل.</p>
-                <div class="buy-cta-box">
-                    <a href="https://wa.me/201505543649?text=مرحباً%20Habib%20Store،%20أريد%20طلب%20توريد%20وتركيب%20زلط%20ديكوري%20لمشروعي." target="_blank" rel="noopener" class="btn-whatsapp-buy">
-                        <i class="fab fa-whatsapp" style="font-size: 1.3rem;"></i> اطلب كميات الزلط الآن عبر واتساب
-                    </a>
-                    <a href="../products/white-marble.html" class="btn-browse-cat">تصفح معرض الزلط بالكامل ➜</a>
-                </div>
-            </div>
-        </article>
-
-        <!-- مقال / فيديو 2: توريد وتركيب الرخام وواجهات المايكا -->
-        <article class="blog-post-card">
-            <div class="media-container">
-                <video controls autoplay muted loop playsinline preload="none" poster="https://res.cloudinary.com/dwa0e5sup/video/upload/w_1200,q_auto:eco,f_auto/v1775693447/habib-landscape-luxury-design_qzbdi3.jpg">
-                    <source src="https://res.cloudinary.com/dwa0e5sup/video/upload/w_1200,q_auto:eco,vc_auto,f_auto/v1775693447/habib-landscape-luxury-design_qzbdi3.mp4" type="video/mp4">
-                    متصفحك لا يدعم عرض الفيديو.
-                </video>
-            </div>
-            <div class="post-content">
-                <div class="post-meta">
-                    <span><i class="fas fa-calendar-alt"></i> 2026</span>
-                    <span><i class="fas fa-tag"></i> رخام وواجهات قلاع وفلل</span>
-                </div>
-                <h2>أفضل أسعار توريد الرخام وواجهات ميكا الحجر للقصور في التجمع والشيخ زايد</h2>
-                <p>شاهد جداريات النخبة الديكورية وواجهات البريميوم الكلاسيكية والمودرن المنفذة بأعلى معايير الجودة الهندسية. نعمل على توريد وتركيب الرخام الطبيعي وحجر المايكا للواجهات الخارجية والسلالم والمداخل الملكية.</p>
-                <div class="buy-cta-box">
-                    <a href="https://wa.me/201505543649?text=مرحباً%20Habib%20Store،%20أريد%20الاستعلام%20عن%20توريد%20رخام%20وواجهات%20لمشروعي." target="_blank" rel="noopener" class="btn-whatsapp-buy">
-                        <i class="fab fa-whatsapp" style="font-size: 1.3rem;"></i> اطلب معاينة ومقايسة رخام وزلط الآن
-                    </a>
-                    <a href="../products/marble.html" class="btn-browse-cat">تصفح معرض الرخام بالكامل ➜</a>
-                </div>
-            </div>
-        </article>
-
-        <!-- معرض الصور المرئي لفهرسة Google Images -->
-        <div style="margin-top: 60px;">
-            <div style="text-align: center; margin-bottom: 30px;">
-                <h2 style="color: var(--royal-green); font-size: 2rem; font-weight: 800;">معرض الصور الحصرية (مرشفة لمحركات البحث)</h2>
-                <p style="color: #666;">اضغط على أي زر طلب لشراء المنتج المفضل لديك فوراً.</p>
-            </div>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-                
-                <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_400,q_auto:eco,f_auto/v1775785655/zalat-mix-colors_pptjvl.jpg" alt="زلط مكس ألوان ديكوري من Habib Store" loading="lazy" decoding="async" style="width: 100%; height: 200px; object-fit: cover;">
-                    <div style="padding: 20px; text-align: center;">
-                        <h4 style="color: var(--royal-green); margin-bottom: 10px;">زلط مكس ألوان ديكوري</h4>
-                        <a href="https://wa.me/201505543649?text=أريد%20طلب%20شراء%20زلط%20مكس%20ألوان." target="_blank" class="btn-whatsapp-buy" style="padding: 8px 16px; font-size: 0.9rem; justify-content: center; width: 100%;">اطلب شراء الآن</a>
-                    </div>
-                </div>
-
-                <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_400,q_auto:eco,f_auto/v1775732441/habib-landscape-boutique-luxury-wall-cladding-villa.jpg_xtxuid.jpg" alt="واجهات رخام وجداريات فلل من Habib Store" loading="lazy" decoding="async" style="width: 100%; height: 200px; object-fit: cover;">
-                    <div style="padding: 20px; text-align: center;">
-                        <h4 style="color: var(--royal-green); margin-bottom: 10px;">واجهات رخام وجداريات فلل</h4>
-                        <a href="https://wa.me/201505543649?text=أريد%20طلب%20شراء%20رخام%20وجداريات%20واجهات." target="_blank" class="btn-whatsapp-buy" style="padding: 8px 16px; font-size: 0.9rem; justify-content: center; width: 100%;">اطلب شراء الآن</a>
-                    </div>
-                </div>
-
-                <div style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_400,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg" alt="تنسيق أشجار ونخيل استوائي من Habib Store" loading="lazy" decoding="async" style="width: 100%; height: 200px; object-fit: cover;">
-                    <div style="padding: 20px; text-align: center;">
-                        <h4 style="color: var(--royal-green); margin-bottom: 10px;">أشجار ونخيل استوائي</h4>
-                        <a href="https://wa.me/201505543649?text=أريد%20طلب%20تنسيق%20وتوريد%20أشجار." target="_blank" class="btn-whatsapp-buy" style="padding: 8px 16px; font-size: 0.9rem; justify-content: center; width: 100%;">اطلب شراء الآن</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
+    <!-- أزرار الواتساب والاتصال الهاتفي كلاهما يبدأ بـ 01505543649 مع أيقونات SVG -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/201505543649?text=مرحباً%20Elhabib%20Store،%20تواصلت%20من%20خلال%20أرشيف%20المدونة%20وأريد%20الاستفسار." target="_blank" rel="noopener noreferrer" class="float-btn float-whatsapp" aria-label="تواصل عبر واتساب 015">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="#fff"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        </a>
+        <a href="tel:01505543649" class="float-btn float-call" aria-label="اتصال هاتفي مباشر 015">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="#fff"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.59l2.2-2.21c.28-.27.36-.66.25-1.01C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1zM5.03 5h1.5c.07.88.22 1.75.45 2.58l-1.06 1.06c-.32-1.15-.7-2.31-.89-3.64zm13.94 13.94c-1.33-.19-2.49-.57-3.64-.89l1.06-1.06c.83.23 1.7.38 2.58.45v1.5z"/></svg>
+        </a>
     </div>
 
-    <a href="https://wa.me/201505543649" target="_blank" rel="noopener" class="expert-btn" aria-label="تواصل عبر الواتساب للمقايسة الشاملة">
-        <i class="fab fa-whatsapp" style="font-size: 1.6rem;"></i>
-        <span>اطلب مقايسة رخام وزلط فورية</span>
-    </a>
+    <header role="banner">
+        <a href="../index.html" class="logo" title="Elhabib Store الصفحة الرئيسية">HABIB STORE</a>
+    </header>
 
-    <footer>
-        <p class="footer-brand" style="text-align:center; font-weight:bold; color: var(--royal-green); margin-top:50px;">HABIB STORE</p>
-        <p style="text-align: center; color: #888; font-size: 0.85rem; padding-bottom: 30px;">&copy; 2026 Habib Store. جميع الحقوق محفوظة.</p>
+    <main role="main">
+        <section class="blog-hero">
+            <h1>المدونة الهندسية المركزية (أرشيف الـ 35 مقالاً) 📚</h1>
+            <p>تصفح جميع مقالاتنا الـ 35 المتخصصة في توريد وتركيب <a href="28-landscape-stones-marble-turnkey-egypt.html" style="color: var(--gold); text-decoration: underline;" title="توريد الرخام">الرخام</a>، <a href="06-hashmi-stone-facades-prices-egypt.html" style="color: var(--gold); text-decoration: underline;" title="الحجر الهاشمي">الحجر الهاشمي</a>، <a href="12-colored-pebbles-landscaping-guide.html" style="color: var(--gold); text-decoration: underline;" title="الزلط الديكوري">الزلط</a>، <a href="02-artificial-grass-installation-guide.html" style="color: var(--gold); text-decoration: underline;" title="النجيل الصناعي">النجيل الصناعي</a>، و<a href="07-waterfalls-indoor-stone-decor-marble.html" style="color: var(--gold); text-decoration: underline;" title="الشلالات والنوافير">الشلالات</a> في جميع محافظات مصر.</p>
+        </section>
+
+        <div class="container">
+
+            <!-- Featured Articles Section (وزن أكبر لمحركات البحث) -->
+            <section class="featured-section">
+                <h2>⭐ المقالات والأدلة البارزة (Featured Articles)</h2>
+                <div class="featured-grid">
+                    <div class="featured-item">
+                        <a href="22-complete-supply-installation-landscape-stones-egypt.html" title="دليل خدمة التوريد والتركيب الشامل">خدمة التوريد والتركيب الشامل في كل شيء (دليل الشركاء) ➜</a>
+                    </div>
+                    <div class="featured-item">
+                        <a href="27-complete-landscape-turnkey-solutions-egypt.html" title="الدليل الشامل للحلول المتكاملة">الدليل الشامل للتوريد والتركيب للاندسكيب والواجهات ➜</a>
+                    </div>
+                    <div class="featured-item">
+                        <a href="30-habib-store-master-hub-network-egypt.html" title="خريطة الموقع المركزية والشبكة العنكبوتية">خريطة الشبكة العنكبوتية وخدمات Habib Store المركزية ➜</a>
+                    </div>
+                </div>
+            </section>
+
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h2 style="color: var(--royal-green); font-size: 2.2rem; font-weight: 900;">قائمة المقالات الهندسية والخدمية (35 مقالاً معتمداً)</h2>
+                <p style="color: #666; font-weight: 700;">اضغط على أي مقال لاستعراض تفاصيله الكاملة وطلب التوريد والتركيب المباشر.</p>
+            </div>
+
+            <div class="articles-grid">
+                
+                <!-- المقال 1 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg" alt="تنسيق أسطح المنازل والرووف بالزلط" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>01. دليل تجهيز وتنسيق أسطح المنازل والرووف بالزلط</h3>
+                        <p>أفضل أفكار استغلال الأسطح وتحويلها لجلسات خضراء باستخدام الزلط الديكوري.</p>
+                        <a href="01-luxury-roof-zalat-decor.html" class="read-more-btn" title="دليل تجهيز وتنسيق أسطح المنازل">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 2 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775785655/zalat-mix-colors_pptjvl.jpg" alt="دليل تركيب النجيل الصناعي للحدائق والرووف" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>02. دليل تركيب النجيل الصناعي للحدائق والرووف</h3>
+                        <p>طريقة التأسيس الهندسي وفرد النجيل الصناعي المقاوم لأشعة الشمس.</p>
+                        <a href="02-artificial-grass-installation-guide.html" class="read-more-btn" title="دليل تركيب النجيل الصناعي">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 3 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775732441/habib-landscape-boutique-luxury-wall-cladding-villa.jpg_xtxuid.jpg" alt="دليل تنسيق الأشجار والنخيل الاستوائي في الفلل" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>03. دليل تنسيق الأشجار والنخيل الاستوائي في الفلل</h3>
+                        <p>كيف تختار الأشجار المناسبة لمساحة حديقتك وكيفية العناية بها.</p>
+                        <a href="03-ornamental-trees-palms-guide.html" class="read-more-btn" title="دليل تنسيق الأشجار والنخيل">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 4 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg" alt="دليل تشطيب واجهات الحجر الطبيعي والرخام" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>04. دليل تشطيب واجهات الحجر الطبيعي والرخام</h3>
+                        <p>أسس اختيار الرخام والحجر الطبيعي للواجهات الكلاسيكية والمودرن.</p>
+                        <a href="04-marble-natural-stone-facades-guide.html" class="read-more-btn" title="دليل تشطيب واجهات الحجر الطبيعي">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 5 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775785655/zalat-mix-colors_pptjvl.jpg" alt="تصميم ممرات الحدائق العصرية بالخامات الطبيعية" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>05. تصميم ممرات الحدائق العصرية بالخامات الطبيعية</h3>
+                        <p>أفكار مبتكرة لتصميم ممرات الحدائق الخارجية باستخدام الأحجار والزلط.</p>
+                        <a href="05-modern-garden-walkways-landscape-design.html" class="read-more-btn" title="تصميم ممرات الحدائق العصرية">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 6 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775732441/habib-landscape-boutique-luxury-wall-cladding-villa.jpg_xtxuid.jpg" alt="أسعار ومواصفات واجهات الحجر الهاشمي في مصر" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>06. أسعار ومواصفات واجهات الحجر الهاشمي في مصر</h3>
+                        <p>دليل شامل لأسعار توريد وتركيب الحجر الهاشمي الهيصم والفرعوني.</p>
+                        <a href="06-hashmi-stone-facades-prices-egypt.html" class="read-more-btn" title="أسعار ومواصفات واجهات الحجر الهاشمي">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 7 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg" alt="تصميم الشلالات والنوافير المنزلية" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>07. تصميم الشلالات والنوافير المنزلية الداخلية والخارجية</h3>
+                        <p>كيف تضيف لمسة سحرية لحديقتك أو منزلك بشلال مائي معزول هندسياً.</p>
+                        <a href="07-waterfalls-indoor-stone-decor-marble.html" class="read-more-btn" title="تصميم الشلالات والنوافير المنزلية">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 8 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775732441/habib-landscape-boutique-luxury-wall-cladding-villa.jpg_xtxuid.jpg" alt="تجليد أسوار ومداخل الفلل بالحجر والرخام" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>08. تجليد أسوار ومداخل الفلل بالحجر والرخام</h3>
+                        <p>أحدث صيحات تجليد الأسوار الخارجية ومداخل القصور بأفخم الخامات.</p>
+                        <a href="08-villa-walls-entrances-stone-marble-cladding.html" class="read-more-btn" title="تجليد أسوار ومداخل الفلل">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 9 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775785655/zalat-mix-colors_pptjvl.jpg" alt="مناطق توريد الحجر والرخام والزلط في مصر" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>09. مناطق توريد الحجر والرخام والزلط في مصر</h3>
+                        <p>خريطة توزيع محاجر وخدمات التوريد لجميع محافظات الجمهورية.</p>
+                        <a href="09-stone-marble-zalat-supply-regions-egypt.html" class="read-more-btn" title="مناطق توريد الحجر والرخام والزلط">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 10 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775732441/habib-landscape-boutique-luxury-wall-cladding-villa.jpg_xtxuid.jpg" alt="مقارنة شاملة الحجر الهاشمي أم الرخام" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>10. مقارنة شاملة: الحجر الهاشمي أم الرخام للواجهات؟</h3>
+                        <p>أيهما أفضل لواجهة فلتك من حيث المتانة، السعر، ومقاومة العوامل الجوية.</p>
+                        <a href="10-hashmi-stone-vs-marble-facades-comparison.html" class="read-more-btn" title="مقارنة شاملة الحجر الهاشمي أم الرخام">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 11 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg" alt="لاندسكيب الساحل الشمالي" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>11. لاندسكيب الساحل الشمالي: تحديات الرطوبة والحلول</h3>
+                        <p>أفضل خامات الأحجار والرخام المقاومة لأجواء البحر والملوحة.</p>
+                        <a href="11-sahel-north-coast-landscape-marble-stone.html" class="read-more-btn" title="لاندسكيب الساحل الشمالي">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 12 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775785655/zalat-mix-colors_pptjvl.jpg" alt="دليل استخدام الزلط الملون والديكوري" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>12. دليل استخدام الزلط الملون والديكوري للحدائق</h3>
+                        <p>كيف توزع الألوان والدرجات المختلفة لإبراز جمال المساحات الخضراء.</p>
+                        <a href="12-colored-pebbles-landscaping-guide.html" class="read-more-btn" title="دليل استخدام الزلط الملون والديكوري">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 13 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg" alt="دليل اختيار مقاول اللاندسكيب" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>13. دليل اختيار مقاول اللاندسكيب والتشطيبات في مصر</h3>
+                        <p>كيف تختار الشركة أو المقاول المعتمد لتنفيذ مشروعك بدون مشاكل.</p>
+                        <a href="13-landscape-contractor-egypt-guide.html" class="read-more-btn" title="دليل اختيار مقاول اللاندسكيب والتشطيبات">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 14 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775732441/habib-landscape-boutique-luxury-wall-cladding-villa.jpg_xtxuid.jpg" alt="علاج مشاكل الرطوبة وتمليح الواجهات" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>14. علاج مشاكل الرطوبة وتمليح الواجهات الحجرية</h3>
+                        <p>الأسباب الجذرية لتمليح الحجر وكيفية معالجتها وعزلها نهائياً.</p>
+                        <a href="14-facade-moisture-problems-solutions.html" class="read-more-btn" title="علاج مشاكل الرطوبة وتمليح الواجهات">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 15 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775732441/habib-landscape-boutique-luxury-wall-cladding-villa.jpg_xtxuid.jpg" alt="دليل أسعار الحجر الفرعوني والمايكا" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>15. دليل أسعار الحجر الفرعوني والمايكا في مصر</h3>
+                        <p>استعراض شامل لأسعار حجر المايكا والفرعوني لتطعيم الواجهات.</p>
+                        <a href="15-hashmi-pharaonic-mica-stones-price-guide.html" class="read-more-btn" title="دليل أسعار الحجر الفرعوني والمايكا">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 16 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg" alt="أسرار إضاءة اللاندسكيب والواجهات" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>16. أسرار إضاءة اللاندسكيب والواجهات الليلية</h3>
+                        <p>كيف توزع كشافات الإضاءة لإبراز تفاصيل الأحجار والحدائق ليلاً.</p>
+                        <a href="16-landscape-facade-lighting-guide.html" class="read-more-btn" title="أسرار إضاءة اللاندسكيب والواجهات">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 17 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg" alt="أفكار عبقرية لتنسيق الحدائق الصغيرة" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>17. أفكار عبقرية لتنسيق الحدائق الصغيرة والرووف</h3>
+                        <p>كيف تستغل المساحات الضيقة وتحولها إلى جنة خضراء متكاملة.</p>
+                        <a href="17-small-gardens-roof-landscaping-ideas.html" class="read-more-btn" title="أفكار عبقرية لتنسيق الحدائق الصغيرة">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 18 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775732441/habib-landscape-boutique-luxury-wall-cladding-villa.jpg_xtxuid.jpg" alt="الجرانيت أم الرخام للأرضيات" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>18. الجرانيت أم الرخام للأرضيات والمداخل الكبرى؟</h3>
+                        <p>مقارنة هندسية بين صلابة الجرانيت وفخامة الرخام في الاستخدام السكني.</p>
+                        <a href="18-granite-vs-marble-floors-entrances.html" class="read-more-btn" title="الجرانيت أم الرخام للأرضيات">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 19 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775785655/zalat-mix-colors_pptjvl.jpg" alt="تنسيق الديكورات المنزلية بالزلط" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>19. تنسيق الديكورات المنزلية بأقل ميزانية باستخدام الزلط</h3>
+                        <p>أفكار اقتصادية مذهلة لتغيير شكل منزلك وحديقتك بأقل التكاليف.</p>
+                        <a href="19-small-budget-home-decor-stones-pebbles.html" class="read-more-btn" title="تنسيق الديكورات المنزلية بالزلط">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 20 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg" alt="ريادة Habib Store في توريد اللاندسكيب" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>20. ريادة Habib Store في توريد وتركيب خامات اللاندسكيب</h3>
+                        <p>لماذا تصدرت شركتنا سوق المقاولات والتوريدات المباشرة في مصر.</p>
+                        <a href="20-habib-store-ultimate-landscaping-stone-leader.html" class="read-more-btn" title="ريادة Habib Store في توريد اللاندسكيب">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 21 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg" alt="دليل أفضل أحجار اللاندسكيب" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>21. دليل أفضل أحجار اللاندسكيب والتشطيبات الخارجية</h3>
+                        <p>استكشف أنواع أحجار اللاندسكيب ومواصفات التوريد المباشر.</p>
+                        <a href="21-best-landscape-natural-stones-prices-egypt.html" class="read-more-btn" title="دليل أفضل أحجار اللاندسكيب">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 22 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg" alt="خدمة التوريد والتركيب الشامل" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>22. خدمة التوريد والتركيب الشامل في كل شيء</h3>
+                        <p>الحل النهائي لمشاريع اللاندسكيب والتشطيبات بدون عناء البحث عن صنايعية.</p>
+                        <a href="22-complete-supply-installation-landscape-stones-egypt.html" class="read-more-btn" title="خدمة التوريد والتركيب الشامل">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 23 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775732441/habib-landscape-boutique-luxury-wall-cladding-villa.jpg_xtxuid.jpg" alt="تشطيب واجهات الفلل والقصور بالحجر" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>23. تشطيب واجهات الفلل والقصور بالحجر الطبيعي والهاشمي</h3>
+                        <p>دليل هندسي متكامل لتجديد واجهات القصور والفلل الفاخرة.</p>
+                        <a href="23-villa-facades-stone-installation-egypt.html" class="read-more-btn" title="تشطيب واجهات الفلل والقصور بالحجر">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 24 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg" alt="تنسيق الحدائق والأسطح بالنجيل والزلط" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>24. تنسيق الحدائق والأسطح بالنجيل الصناعي والزلط</h3>
+                        <p>ثنائية الفخامة والراحة لتنسيق الحدائق وأسطح المنازل.</p>
+                        <a href="24-artificial-grass-pebbles-landscaping-egypt.html" class="read-more-btn" title="تنسيق الحدائق والأسطح بالنجيل والزلط">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 25 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg" alt="تصميم وتنفيذ الشلالات والنوافير" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>25. تصميم وتنفيذ الشلالات والنوافير للفلل والحدائق</h3>
+                        <p>العزل المائي والتنفيذ الهندسي للعناصر المائية بضمان معتمد.</p>
+                        <a href="25-waterfalls-fountains-design-installation-egypt.html" class="read-more-btn" title="تصميم وتنفيذ الشلالات والنوافير">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 26 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg" alt="تنسيق أسطح المنازل والفلل (الرووف)" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>26. تنسيق أسطح المنازل والفلل (الرووف)</h3>
+                        <p>كيف تحول سطح منزلك المهدر إلى واحة خضراء سامقة وجلسة عائلية.</p>
+                        <a href="26-rooftop-landscape-design-installation-egypt.html" class="read-more-btn" title="تنسيق أسطح المنازل والفلل (الرووف)">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 27 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg" alt="الدليل الشامل للتوريد والتركيب" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>27. الدليل الشامل للتوريد والتركيب للاندسكيب والواجهات</h3>
+                        <p>الحل الهندسي المتكامل (Turnkey Solution) لتسليم مشروعك على مفتاح.</p>
+                        <a href="27-complete-landscape-turnkey-solutions-egypt.html" class="read-more-btn" title="الدليل الشامل للتوريد والتركيب">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 28 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775732441/habib-landscape-boutique-luxury-wall-cladding-villa.jpg_xtxuid.jpg" alt="التوريد والتركيب الشامل للرخام والحجر" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>28. التوريد والتركيب الشامل للرخام والحجر واللاندسكيب</h3>
+                        <p>لماذا أصبح التعاقد الموحد هو الخيار الأمثل للمقاولين وأصحاب الفلل.</p>
+                        <a href="28-landscape-stones-marble-turnkey-egypt.html" class="read-more-btn" title="التوريد والتركيب الشامل للرخام والحجر">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 29 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg" alt="الدليل الاحترافي لتنسيق الحدائق" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>29. الدليل الاحترافي لتنسيق الحدائق والواجهات في مصر</h3>
+                        <p>معايير الجودة والإشراف الهندسي المباشر في تشطيب القصور.</p>
+                        <a href="29-landscape-and-facades-expert-guide-egypt.html" class="read-more-btn" title="الدليل الاحترافي لتنسيق الحدائق">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 30 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg" alt="خريطة الشبكة العنكبوتية Habib Store" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>30. خريطة الشبكة العنكبوتية وخدمات Habib Store</h3>
+                        <p>الدليل المركزي الشامل لربط كل أقسام وصفحات الموقع الإلكتروني.</p>
+                        <a href="30-habib-store-master-hub-network-egypt.html" class="read-more-btn" title="خريطة الشبكة العنكبوتية">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 31 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg" alt="توريد وتركيب لاندسكيب في التجمع الخامس" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>31. توريد وتركيب لاندسكيب وحجر في التجمع الخامس</h3>
+                        <p>خدماتنا الهندسية المخصصة للقاهرة الجديدة، مدينتي، والحي المتميز.</p>
+                        <a href="31-new-cairo-landscape-stones-master-network.html" class="read-more-btn" title="توريد وتركيب لاندسكيب في التجمع الخامس">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 32 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg" alt="تنسيق حدائق وروف الفلل في الشيخ زايد" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>32. تنسيق حدائق وروف الفلل في الشيخ زايد وأكتوبر</h3>
+                        <p>دليل التوسع الجغرافي والتشطيب الفاخر لمشروعات غرب القاهرة.</p>
+                        <a href="32-zayed-october-villa-landscape-design.html" class="read-more-btn" title="تنسيق حدائق وروف الفلل في الشيخ زايد">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 33 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775732441/habib-landscape-boutique-luxury-wall-cladding-villa.jpg_xtxuid.jpg" alt="تجديد واجهات الفلل في المعادي" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>33. تجديد واجهات الفلل في المعادي وقطامية</h3>
+                        <p>حلول تجديد الواجهات الحجرية والرخام للفلل العريقة والحديثة.</p>
+                        <a href="33-maadi-katameya-villas-stone-facades.html" class="read-more-btn" title="تجديد واجهات الفلل في المعادي">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 34 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775785655/zalat-mix-colors_pptjvl.jpg" alt="البيع لكل مصر: توريد الزلط والرخام" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>34. البيع لكل مصر: توريد الزلط والرخام والشلالات</h3>
+                        <p>التوريد المباشر من المحاجر وبأسعار الجملة لجميع المحافظات.</p>
+                        <a href="34-egypt-nationwide-landscape-marble-stones-supply.html" class="read-more-btn" title="البيع لكل مصر: توريد الزلط والرخام">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+                <!-- المقال 35 -->
+                <article class="article-card">
+                    <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_600,q_auto:eco,f_auto/v1775785655/zalat-mix-colors_pptjvl.jpg" alt="حرق أسعار: الزلط الديكوري وخردة الرخام" class="article-thumb" width="600" height="200" loading="lazy" decoding="async">
+                    <div class="article-card-body">
+                        <h3>35. حرق أسعار: الزلط الديكوري وخردة الرخام والشلالات</h3>
+                        <p>الحل الاقتصادي الأذكى لتنسيق المساحات الكبرى بأقل تكلفة.</p>
+                        <a href="35-pebbles-marble-scrap-waterfalls-egypt.html" class="read-more-btn" title="حرق أسعار: الزلط الديكوري وخردة الرخام">قراءة المقال ➜</a>
+                    </div>
+                </article>
+
+            </div>
+
+        </div>
+    </main>
+
+    <footer role="contentinfo" style="text-align:center; padding:50px 20px; color:#777; font-size:0.95rem; background: #fff; margin-top: 60px; border-top: 3px solid var(--gold);">
+        <p style="font-weight: 900; color: var(--royal-green); font-size: 1.5rem; margin-bottom: 15px;">HABIB STORE</p>
+        <p>الشركة الأولى في مصر لتوريد وتركيب الرخام، الحجر الطبيعي، الزلط الديكوري، والشلالات بضمان معتمد.</p>
+        
+        <div style="margin: 20px 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; font-weight: 700;">
+            <a href="../index.html" style="color: var(--royal-green); text-decoration: none;">الرئيسية</a> |
+            <a href="./index.html" style="color: var(--royal-green); text-decoration: none;">المدونة الهندسية</a> |
+            <a href="30-habib-store-master-hub-network-egypt.html" style="color: var(--royal-green); text-decoration: none;">خريطة الشبكة المركزية</a> |
+            <a href="../contact.html" style="color: var(--royal-green); text-decoration: none;">اتصل بنا</a> |
+            <a href="../privacy.html" style="color: var(--royal-green); text-decoration: none;">سياسة الخصوصية</a>
+        </div>
+
+        <p>&copy; 2026 Habib Store. جميع الحقوق محفوظة.</p>
     </footer>
 
 </body>
