@@ -39,26 +39,53 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="اتصل بـ Habib Store لحجز معاينة فنية، معرفة أسعار النجيل الصناعي، الزلط الديكوري، الرخام، وتنسيق الحدائق والفلل في مصر.">
+    <meta name="description" content="اتصل بـ Habib Store لحجز معاينة فنية، معرفة أسعار النجيل الصناعي، الزلط الديكوري، الرخام، وتنسيق الحدائق والفلل في مصر 2026.">
     <meta name="robots" content="index, follow">
     <title>اتصل بنا وحجز معاينة | حبيب ستور للاندسكيب والرخام</title>
 
     <link rel="canonical" href="https://habib-landscape-boutique.com/contact.html">
     <link rel="alternate" hreflang="ar-EG" href="https://habib-landscape-boutique.com/contact.html">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
+    <!-- ContactPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "اتصل بنا - Habib Store",
+      "url": "https://habib-landscape-boutique.com/contact.html",
+      "description": "تواصل مع فريق المبيعات والهندسة لشركة Habib Store لحجز المعاينات وتوريد خامات اللاندسكيب والرخام في مصر.",
+      "mainEntity": {
+        "@type": "HomeAndConstructionBusiness",
+        "name": "Habib Store",
+        "telephone": "+201505543649",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "شارع 105",
+          "addressLocality": "المعادي",
+          "addressRegion": "القاهرة",
+          "postalCode": "11728",
+          "addressCountry": "EG"
+        }
+      }
+    }
+    </script>
+
     <style>
         :root {
-            --royal-green: #1a3c34;
-            --gold: #c5a059;
-            --soft-bg: #f8f9fa;
+            --royal-green: #112822;
+            --gold: #e67e22;
+            --soft-bg: #f4f7f6;
             --white: #ffffff;
-            --text: #222;
+            --text: #1a1a1a;
             --muted: #555;
+            --danger-red: #e74c3c;
         }
 
         * {
@@ -101,7 +128,7 @@
             text-decoration: none;
             color: var(--royal-green);
             font-weight: 700;
-            border: 1px solid rgba(197,160,89,0.4);
+            border: 1px solid rgba(230,126,34,0.4);
             padding: 8px 16px;
             border-radius: 999px;
             transition: 0.3s;
@@ -109,12 +136,12 @@
 
         .back-link:hover {
             background: var(--gold);
-            color: var(--royal-green);
+            color: var(--white);
         }
 
         .hero {
             background:
-                linear-gradient(rgba(26,60,52,0.78), rgba(26,60,52,0.78)),
+                linear-gradient(rgba(17,40,34,0.82), rgba(17,40,34,0.82)),
                 url('https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,w_1600/v1775826555/modern-landscape-design.jpg_kvxxze.jpg') center/cover no-repeat;
             color: white;
             text-align: center;
@@ -198,7 +225,7 @@
             height: 44px;
             min-width: 44px;
             border-radius: 50%;
-            background: rgba(197,160,89,0.12);
+            background: rgba(230,126,34,0.12);
             color: var(--gold);
             display: flex;
             align-items: center;
@@ -221,6 +248,7 @@
             direction: ltr;
             text-align: right;
             display: inline-block;
+            font-weight: 700;
         }
         
         .contact-item p.ar-text {
@@ -232,7 +260,7 @@
         }
 
         .cta-box {
-            background: linear-gradient(135deg, var(--royal-green), #244d42);
+            background: linear-gradient(135deg, var(--royal-green), #112822);
             color: white;
             border-radius: 20px;
             padding: 30px;
@@ -240,6 +268,7 @@
             flex-direction: column;
             justify-content: space-between;
             min-height: 100%;
+            border: 2px solid var(--gold);
         }
 
         .cta-box h2 {
@@ -288,13 +317,13 @@
         }
 
         .btn-primary {
-            background: var(--gold);
-            color: var(--royal-green);
+            background: #25d366;
+            color: white;
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            opacity: 0.95;
+            background: #1ebe57;
         }
 
         .btn-secondary {
@@ -323,10 +352,10 @@
         }
 
         .footer-brand {
-            font-weight: 800;
+            font-weight: 900;
             color: var(--royal-green);
             margin-bottom: 15px;
-            font-size: 18px;
+            font-size: 20px;
             letter-spacing: 1px;
         }
 
@@ -360,19 +389,16 @@
             .contact-grid {
                 grid-template-columns: 1fr;
             }
-
             .hero {
                 padding: 60px 20px 45px;
             }
-
-            .card,
-            .cta-box {
+            .card, .cta-box {
                 padding: 22px;
             }
         }
     </style>
 </head>
-<body>
+<body itemscope itemtype="https://schema.org/ContactPage">
     <!-- Google Tag Manager (noscript) -->
     <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NT75WPGT"
@@ -380,111 +406,114 @@
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-<header>
+<header role="banner">
     <a href="index.html" class="logo">HABIB STORE</a>
     <a href="index.html" class="back-link">العودة للرئيسية</a>
 </header>
 
-<section class="hero">
-    <div class="tag">Habib Store</div>
-    <h1>اتصل بنا وحجز المعاينة الفورية</h1>
-    <p>
-        تواصل معنا الآن للحصول على أفضل أسعار توريد وتركيب النجيل الصناعي، الزلط الديكوري، الرخام، وتنسيق الحدائق في القاهرة وكل محافظات مصر.
-    </p>
-</section>
+<main role="main">
+    <section class="hero">
+        <div class="tag">Habib Store</div>
+        <h1>اتصل بنا وحجز المعاينة الفورية</h1>
+        <p>
+            تواصل معنا الآن للحصول على أفضل أسعار توريد وتركيب النجيل الصناعي، الزلط الديكوري، الرخام، وتنسيق الحدائق في القاهرة وكل محافظات مصر.
+        </p>
+    </section>
 
-<div class="container">
-    <div class="contact-grid">
-        <div class="card">
-            <h2>بيانات التواصل المباشر</h2>
-            <p class="lead">
-                نستقبل طلباتكم واستفساراتكم الفنية وتوريدات المشروعات السكنية، الفيلات، والقصور طوال أيام الأسبوع.
-            </p>
-
-            <div class="contact-list">
-                <div class="contact-item">
-                    <i class="fas fa-phone-alt"></i>
-                    <div>
-                        <h3>الهاتف المباشر</h3>
-                        <a href="tel:+201505543649">+20 150 554 3649</a>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <i class="fab fa-whatsapp"></i>
-                    <div>
-                        <h3>خدمة العملاء والواتساب</h3>
-                        <a href="https://wa.me/201505543649?text=مرحباً، أريد الاستفسار عن أسعار وخدمات توريد النجيل والزلط والرخام من Habib Store." target="_blank" rel="noopener">
-                            +20 150 554 3649 (اضغط للمراسلة الفورية)
-                        </a>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                        <h3>مقر الإدارة والمستودع</h3>
-                        <p class="ar-text">شارع 105، المعادي، القاهرة، مصر</p>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <i class="fas fa-clock"></i>
-                    <div>
-                        <h3>مواعيد العمل</h3>
-                        <p class="ar-text">يوميًا من 10 صباحًا حتى 10 مساءً</p>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <i class="fas fa-shipping-fast"></i>
-                    <div>
-                        <h3>نطاق التوريد والتركيب</h3>
-                        <p class="ar-text">القاهرة، الجيزة، التجمع، الشيخ زايد، الساحل الشمالي، وكافة محافظات مصر</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="cta-box">
-            <div>
-                <h2>اطلب معاينتك الفورية الآن</h2>
-                <p>
-                    لا توجل تطوير حديقتك أو مشروعك.. احجز معاينتك الهندسية الآن ودعنا نصلك بأجود الخامات وأفضل الأسعار في مصر.
+    <div class="container">
+        <div class="contact-grid">
+            <div class="card">
+                <h2>بيانات التواصل المباشر</h2>
+                <p class="lead">
+                    نستقبل طلباتكم واستفساراتكم الفنية وتوريدات المشروعات السكنية، الفيلات، والقصور طوال أيام الأسبوع.
                 </p>
 
-                <div class="cta-list">
-                    <div>✔ توريد مباشر من المستودع لأفضل خامات النجيل والزلط والرخام</div>
-                    <div>✔ معاينة فنية دقيقة بالموقع وإشراف هندسي متكامل</div>
-                    <div>✔ تسعير عادل ومقايسة واضحة شفافة قبل التنفيذ</div>
-                    <div>✔ سرعة في التوريد والتركيب خلال 48 ساعة</div>
+                <div class="contact-list">
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h3>الهاتف المباشر</h3>
+                            <a href="tel:+201505543649">+20 150 554 3649</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h3>خدمة العملاء والواتساب</h3>
+                            <a href="https://wa.me/201505543649?text=مرحباً، أريد الاستفسار عن أسعار وخدمات توريد النجيل والزلط والرخام من Habib Store." target="_blank" rel="noopener">
+                                +20 150 554 3649 (اضغط للمراسلة الفورية)
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>مقر الإدارة والمستودع</h3>
+                            <p class="ar-text">شارع 105، المعادي، القاهرة، مصر</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>مواعيد العمل</h3>
+                            <p class="ar-text">يوميًا من 10 صباحًا حتى 10 مساءً</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-shipping-fast"></i>
+                        <div>
+                            <h3>نطاق التوريد والتركيب</h3>
+                            <p class="ar-text">القاهرة، الجيزة، التجمع، الشيخ زايد، الساحل الشمالي، وكافة محافظات مصر</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="cta-buttons">
-                <a class="btn btn-primary" href="https://wa.me/201505543649?text=مرحباً، أريد حجز معاينة فنية فورية وتوريد خامات لمشروعي." target="_blank" rel="noopener">
-                    <i class="fab fa-whatsapp"></i>
-                    احجز معاينة عبر واتساب
-                </a>
+            <div class="cta-box">
+                <div>
+                    <h2>اطلب معاينتك الفورية الآن</h2>
+                    <p>
+                        لا تؤجل تطوير حديقتك أو مشروعك.. احجز معاينتك الهندسية الآن ودعنا نصلك بأجود الخامات وأفضل الأسعار في مصر.
+                    </p>
 
-                <a class="btn btn-secondary" href="tel:+201505543649">
-                    <i class="fas fa-phone-alt"></i>
-                    اتصل هاتفياً الآن
-                </a>
+                    <div class="cta-list">
+                        <div>✔ توريد مباشر من المستودع لأفضل خامات النجيل والزلط والرخام</div>
+                        <div>✔ معاينة فنية دقيقة بالموقع وإشراف هندسي متكامل</div>
+                        <div>✔ تسعير عادل ومقايسة واضحة شفافة قبل التنفيذ</div>
+                        <div>✔ سرعة في التوريد والتركيب خلال 48 ساعة</div>
+                    </div>
+                </div>
+
+                <div class="cta-buttons">
+                    <a class="btn btn-primary" href="https://wa.me/201505543649?text=مرحباً، أريد حجز معاينة فنية فورية وتوريد خامات لمشروعي." target="_blank" rel="noopener">
+                        <i class="fab fa-whatsapp"></i>
+                        احجز معاينة عبر واتساب
+                    </a>
+
+                    <a class="btn btn-secondary" href="tel:+201505543649">
+                        <i class="fas fa-phone-alt"></i>
+                        اتصل هاتفياً الآن
+                    </a>
+                </div>
             </div>
         </div>
+
+        <p class="bottom-note">
+            Habib Store — Engineered for High-End Landscape Projects
+        </p>
     </div>
+</main>
 
-    <p class="bottom-note">
-        Habib Store — Engineered for High-End Landscape Projects
-    </p>
-</div>
-
-<footer>
+<footer role="contentinfo">
     <div class="footer-brand">HABIB STORE</div>
 
     <div class="policy-links">
         <a href="contact.html" class="policy-link">اتصل بنا</a>
+        <a href="blog/index.html" class="policy-link">المدونة الهندسية (35 مقالاً)</a>
         <a href="policy.html" class="policy-link">وثيقة الالتزام وسياسة المعاينة</a>
         <a href="privacy.html" class="policy-link">سياسة الخصوصية</a>
         <a href="terms.html" class="policy-link">الشروط والأحكام</a>
