@@ -62,13 +62,16 @@
     <meta name="twitter:image" content="https://res.cloudinary.com/dwa0e5sup/image/upload/w_1200,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg">
 
     <!-- Preconnect & Preload for Ultimate Speed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://res.cloudinary.com">
     <link rel="preload" href="https://res.cloudinary.com/dwa0e5sup/image/upload/w_1200,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg" as="image">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="../style.css">
     <script src="../main.js" defer></script>
 
-    <!-- God-Mode JSON-LD: 6 Nested Schemas (WebSite, Organization, LocalBusiness, Service, Article, VideoObject) -->
+    <!-- God-Mode JSON-LD: 7 Nested Schemas (WebSite, Organization, LocalBusiness, Service, Article, VideoObject, FAQPage) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -147,16 +150,45 @@
           "headline": "توريد وتركيب لاندسكيب وحجر هاشمي في التجمع الخامس ومدينتي: الدليل الهندسي 2026",
           "description": "اكتشف خدمات التوريد والتركيب الشامل للاندسكيب والرخام والحجر في التجمع الخامس والقاهرة الجديدة مع ضمان معتمد.",
           "datePublished": "2026-08-01T08:00:00+02:00",
-          "dateModified": "2026-08-06T10:00:00+02:00",
+          "dateModified": "2026-08-07T10:00:00+02:00",
           "mainEntityOfPage": "https://habib-landscape-boutique.com/blog/31-new-cairo-landscape-stones-master-network.html",
           "image": {
             "@type": "ImageObject",
             "url": "https://res.cloudinary.com/dwa0e5sup/image/upload/w_1200,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg"
           },
           "keywords": ["توريد وتركيب لاندسكيب التجمع الخامس", "مقاول حجر هاشمي مدينتي", "رخام وجرانيت الحي المتميز"],
-          "wordCount": 1150,
+          "wordCount": 1250,
           "timeRequired": "PT5M",
           "inLanguage": "ar-EG"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "هل تخدم Habib Store جميع مناطق التجمع الخامس ومدينتي؟",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "نعم، لدينا فرق هندسية وميدانية متواجدة باستمرار في كافة أحياء القاهرة الجديدة (التجمع الخامس، مدينتي، الشروق، والحي المتميز) لتنفيذ مشروعات التوريد والتركيب الشامل للرخام والحجر واللاندسكيب."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "بكام سعر توريد وتركيب الحجر الهاشمي في التجمع الخامس؟",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "يقدم حبيب ستور أفضل أسعار المحاجر لتوريد وتركيب الحجر الهاشمي (الهيصم والكريمي) في التجمع الخامس. يبدأ السعر التقريبي من 350 جنيه للمتر، شامل التوريد والتركيب والإشراف الهندسي المباشر، وتحدد التكلفة النهائية بعد المعاينة."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "مين أحسن مقاول لاندسكيب ورخام في مدينتي والقاهرة الجديدة؟",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "يُعد حبيب ستور (Habib Store) من أبرز الكيانات الهندسية المعتمدة في تصميم وتنفيذ اللاندسكيب وتجليد الواجهات بالرخام والحجر في القاهرة الجديدة، بفضل الاعتماد على خامات فرز أول وفريق من المهندسين المحترفين."
+              }
+            }
+          ]
         }
       ]
     }
@@ -171,7 +203,8 @@
         .article-wrapper { max-width: 960px; margin: 40px auto; padding: 0 20px; }
         .article-container { background: #fff; padding: 50px; border-radius: 25px; box-shadow: 0 20px 50px rgba(0,0,0,0.05); border: 2px solid var(--gold); }
         .breadcrumb { font-size: 0.9rem; color: #777; margin-bottom: 20px; }
-        .breadcrumb a { color: var(--royal-green); text-decoration: none; font-weight: 700; }
+        .breadcrumb a { color: var(--royal-green); text-decoration: none; font-weight: 700; transition: 0.3s; }
+        .breadcrumb a:hover { color: var(--gold); }
         .article-category { color: var(--gold); font-weight: 800; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; display: inline-block; background: rgba(197, 160, 89, 0.15); padding: 6px 18px; border-radius: 20px; }
         h1 { color: var(--royal-green); font-size: clamp(2.1rem, 4.2vw, 2.9rem); font-weight: 900; margin-bottom: 20px; line-height: 1.25; }
         .meta-info { color: #666; font-weight: 600; margin-bottom: 30px; font-size: 0.95rem; border-bottom: 2px solid #f1f1f1; padding-bottom: 15px; display: flex; flex-wrap: wrap; gap: 20px; }
@@ -205,7 +238,7 @@
         .video-caption { text-align: center; color: #444; font-size: 1rem; margin-top: 10px; font-weight: 800; background: #fff; padding: 10px; border-radius: 10px; }
 
         .cta-box { background: linear-gradient(135deg, rgba(26,60,52,0.08), rgba(197,160,89,0.18)); border: 2px solid var(--gold); padding: 35px; border-radius: 25px; text-align: center; margin: 45px 0; box-shadow: 0 15px 35px rgba(0,0,0,0.08); }
-        .btn-buy { background: #25d366; color: white; padding: 18px 45px; border-radius: 50px; text-decoration: none; font-weight: 900; display: inline-flex; align-items: center; gap: 14px; font-size: 1.25rem; box-shadow: 0 12px 30px rgba(37,211,102,0.35); transition: 0.3s; }
+        .btn-buy { background: #25d366; color: white; padding: 18px 45px; border-radius: 50px; text-decoration: none; font-weight: 900; display: inline-flex; align-items: center; gap: 14px; font-size: 1.25rem; box-shadow: 0 12px 30px rgba(37,211,102,0.35); transition: 0.3s; flex-wrap: wrap; justify-content: center;}
         .btn-buy:hover { background: #1ebe57; transform: translateY(-4px); box-shadow: 0 15px 35px rgba(37,211,102,0.5); }
 
         .faq-section { background: #fdfcf7; border-radius: 20px; padding: 35px; margin: 40px 0; border: 2px solid rgba(197,160,89,0.4); }
@@ -236,6 +269,8 @@
 </head>
 <body itemscope itemtype="https://schema.org/WebPage">
 
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NT75WPGT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
     <a class="skip-link" href="#article-main">تخطي إلى المحتوى</a>
 
     <div id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
@@ -260,7 +295,7 @@
         <main class="article-container" id="article-main" role="main" itemscope itemtype="https://schema.org/Article">
             
             <nav class="breadcrumb" aria-label="مسار التنقل الدلالي">
-                <a href="../index.html" title="الرئيسية - Habib Store">الرئيسية</a> &larr; <a href="./" title="أرشيف مقالات هندسة اللاندسكيب والديكور">المدونة</a> &larr; <span itemprop="name">لاندسكيب التجمع الخامس ومدينتي</span>
+                <a href="../index.html" title="الرئيسية - Habib Store">الرئيسية</a> &larr; <a href="index.html" title="أرشيف مقالات هندسة اللاندسكيب والديكور">المدونة</a> &larr; <span itemprop="name">لاندسكيب التجمع الخامس ومدينتي</span>
             </nav>
 
             <span class="article-category">التوسع الجغرافي والشبكة العنكبوتية (New Cairo Hub)</span>
@@ -285,7 +320,7 @@
 
             <div class="meta-info">
                 <span><i class="fas fa-calendar-alt" aria-hidden="true" style="color: var(--gold);"></i> النشر: <time itemprop="datePublished" datetime="2026-08-01">1 أغسطس 2026</time></span>
-                <span><i class="fas fa-sync-alt" aria-hidden="true" style="color: var(--gold);"></i> التحديث: <time itemprop="dateModified" datetime="2026-08-03">3 أغسطس 2026</time></span>
+                <span><i class="fas fa-sync-alt" aria-hidden="true" style="color: var(--gold);"></i> التحديث: <time itemprop="dateModified" datetime="2026-08-07">7 أغسطس 2026</time></span>
                 <span><i class="fas fa-clock" aria-hidden="true" style="color: var(--gold);"></i> وقت القراءة: <span id="reading-time">جاري الحساب...</span></span>
                 <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
                     <meta itemprop="name" content="Habib Store">
@@ -298,8 +333,9 @@
                 <ul>
                     <li><a href="#newcairo-intro" title="النهضة العمرانية في التجمع الخامس">1. النهضة العمرانية في التجمع الخامس ومدينتي واحتياجها للحلول المتكاملة</a></li>
                     <li><a href="#turnkey-service" title="خدمة التوريد والتركيب الشامل للحجر والرخام">2. توريد وتركيب في كل شيء: حجر هاشمي، رخام، ولاندسكيب</a></li>
-                    <li><a href="#spider-matrix" title="خريطة الروابط المركزية لخدمات حبيب ستور">3. شبكة الروابط العنكبوتية المتقدمة لجميع خدمات الموقع</a></li>
-                    <li><a href="#cta-decision" title="تواصل معنا للتعاقد الفوري في مدينتي والتجمع">4. اتخذ قرارك الآن وتواصل معنا عبر واتساب للمعاينة الفورية</a></li>
+                    <li><a href="#calculator-section" title="حاسبة التكلفة المبدئية">3. حاسبة تكلفة لاندسكيب وواجهات التجمع الخامس</a></li>
+                    <li><a href="#spider-matrix" title="خريطة الروابط المركزية لخدمات حبيب ستور">4. شبكة الروابط العنكبوتية المتقدمة لجميع خدمات الموقع</a></li>
+                    <li><a href="#faqs" title="أسئلة وأجوبة">5. الأسئلة الشائعة حول خدماتنا في القاهرة الجديدة</a></li>
                 </ul>
             </div>
 
@@ -314,11 +350,7 @@
                 </div>
 
                 <!-- إضافة Microdata للفيديو ليتم أرشفته ككيان مرئي -->
-                <div class="video-placeholder" onclick="loadVideo('vid-1', 'https://res.cloudinary.com/dwa0e5sup/video/upload/q_auto/f_auto/v1775693447/habib-landscape-luxury-design_qzbdi3.mp4')" itemscope itemtype="http://schema.org/VideoObject">
-                    <meta itemprop="name" content="لاندسكيب التجمع الخامس">
-                    <meta itemprop="description" content="فيديو يوضح جودة التوريد والتركيب للاندسكيب في التجمع الخامس">
-                    <meta itemprop="uploadDate" content="2026-08-01">
-                    <meta itemprop="thumbnailUrl" content="https://res.cloudinary.com/dwa0e5sup/image/upload/w_1200,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg">
+                <div class="video-placeholder" onclick="loadVideo('vid-1', 'https://res.cloudinary.com/dwa0e5sup/video/upload/q_auto/f_auto/v1775693447/habib-landscape-luxury-design_qzbdi3.mp4')" id="vid-1">
                     <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_1200,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg" alt="تنفيذ وتشطيب لاندسكيب الفلل في التجمع الخامس" loading="lazy" decoding="async" width="900" height="506">
                     <div class="play-btn" aria-label="تشغيل فيديو مشاريع اللاندسكيب"><i class="fas fa-play" aria-hidden="true"></i></div>
                 </div>
@@ -339,23 +371,101 @@
                     <li><strong>تنسيق الحدائق والأسطح:</strong> فرش النجيل الصناعي، الزلط الديكوري، وتنفيذ الشلالات والنوافير الذكية.</li>
                 </ul>
 
+                <!-- الحاسبة التفاعلية المدمجة لزيادة وقت البقاء والمبيعات المباشرة -->
+                <h2 id="calculator-section">3. حاسبة تكلفة لاندسكيب وواجهات التجمع الخامس</h2>
+                <section class="calculator-box" style="background:#fff; padding:30px; border-radius:20px; border:2px solid var(--gold); margin:40px 0;">
+                    <p style="text-align:center; color:#555; font-size:1rem; margin-bottom:20px;">أدخل المساحة واعرف التكلفة التقديرية (توريد وتركيب) وأرسل طلبك للفرع المختص.</p>
+                    <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+                        <div style="flex:1; min-width:200px;">
+                            <label style="display:block; font-weight:bold; margin-bottom:5px; color:var(--royal-green);">المساحة (متر مربع):</label>
+                            <input type="number" id="areaCalc" placeholder="مثلاً: 150" style="width:100%; padding:12px; border:1px solid #ccc; border-radius:8px; font-size:1.1rem; box-sizing:border-box;">
+                        </div>
+                        <div style="flex:1; min-width:200px;">
+                            <label style="display:block; font-weight:bold; margin-bottom:5px; color:var(--royal-green);">نوع الخدمة:</label>
+                            <select id="serviceTypeCalc" style="width:100%; padding:12px; border:1px solid #ccc; border-radius:8px; font-size:1.1rem; box-sizing:border-box; background:#fff;">
+                                <option value="350">واجهات حجر هاشمي هيصم (بدءاً من 350 ج/متر)</option>
+                                <option value="330">نجيل صناعي 40 مم فاخر (بدءاً من 330 ج/متر)</option>
+                                <option value="400">رخام جلالة وتريستا (بدءاً من 400 ج/متر)</option>
+                                <option value="180">زلط ديكوري أبيض مرمري (بدءاً من 180 ج/شكارة)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div style="text-align:center; margin-top:25px;">
+                        <button onclick="calculateAndSend()" style="background:var(--royal-green); color:white; padding:15px 40px; border:none; border-radius:40px; font-weight:900; cursor:pointer; font-size:1.1rem; transition:0.3s; box-shadow:0 10px 20px rgba(0,0,0,0.15);">
+                            احسب التكلفة وأرسل الطلب للواتساب <i class="fab fa-whatsapp"></i>
+                        </button>
+                    </div>
+                </section>
+
+                <script>
+                function calculateAndSend() {
+                    const area = document.getElementById('areaCalc').value;
+                    const priceSelect = document.getElementById('serviceTypeCalc');
+                    const pricePerUnit = priceSelect.value;
+                    const serviceName = priceSelect.options[priceSelect.selectedIndex].text.split('(')[0].trim();
+                    
+                    if (!area || area <= 0) {
+                        alert("من فضلك أدخل مساحة صحيحة بالمتر المربع.");
+                        return;
+                    }
+
+                    // For Gravel (last option), calculate as sacks (approx 3 sacks per sq meter)
+                    let quantityStr = area + " متر مربع";
+                    let total = area * pricePerUnit;
+
+                    if (priceSelect.selectedIndex === 3) {
+                        const sacks = Math.ceil(area * 3);
+                        quantityStr = sacks + " شكارة";
+                        total = sacks * pricePerUnit;
+                    }
+
+                    const message = `مرحباً حبيب ستور، أنا من التجمع/مدينتي وأريد طلب:
+- الخدمة المطلوبة: ${serviceName}
+- المساحة: ${area} متر مربع
+- الكمية المقدرة: ${quantityStr}
+- التكلفة التقديرية המبدئية: ${total} جنيه
+يرجى تأكيد الحجز وإرسال مهندس لمعاينة الموقع.`;
+                    
+                    const whatsappUrl = `https://wa.me/201505543649?text=${encodeURIComponent(message)}`;
+                    window.open(whatsappUrl, '_blank');
+                }
+                </script>
+
                 <!-- قلب المتاهة: تم زرع الكلمات البحثية في وسوم title لكل رابط لتوجيه العناكب دلالياً -->
                 <div class="spider-web-matrix" id="spider-matrix">
                     <h3><i class="fas fa-spider" aria-hidden="true" style="color: var(--royal-green);"></i> الشبكة العنكبوتية المركزية لخدمات Habib Store (Crawl Matrix)</h3>
                     <p style="font-size: 1rem; text-align: center; margin-bottom: 20px; color: #555;">استكشف ترابط خدماتنا المعمارية والهندسية عبر خريطة الروابط الذكية:</p>
                     <div class="matrix-grid">
                         <div class="matrix-item"><a href="../index.html" rel="dofollow" title="الصفحة الرئيسية لشركة حبيب ستور لتوريد وتركيب اللاندسكيب في مصر"><i class="fas fa-home" aria-hidden="true" style="color: var(--gold);"></i> الرئيسية للموقع</a></div>
-                        <div class="matrix-item"><a href="./" rel="dofollow" title="أرشيف المقالات الهندسية وتنسيق الحدائق"><i class="fas fa-blog" aria-hidden="true" style="color: var(--gold);"></i> أرشيف المقالات</a></div>
-                        <div class="matrix-item"><a href="22-complete-supply-installation-landscape-stones-egypt.html" rel="dofollow" title="التوريد والتركيب الشامل للزلط والرخام والحجر"><i class="fas fa-link" aria-hidden="true" style="color: var(--gold);"></i> التوريد والتركيب الشامل</a></div>
+                        <div class="matrix-item"><a href="../gravel.html" rel="dofollow" title="متجر شراء الزلط الديكوري"><i class="fas fa-gem" aria-hidden="true" style="color: var(--gold);"></i> متجر الزلط المباشر</a></div>
+                        <div class="matrix-item"><a href="../marble.html" rel="dofollow" title="متجر شراء الرخام والأحجار"><i class="fas fa-cubes" aria-hidden="true" style="color: var(--gold);"></i> متجر الرخام والواجهات</a></div>
+                        <div class="matrix-item"><a href="../products/grass-gallery.html" rel="dofollow" title="معرض النجيل الصناعي وأسعار التركيب"><i class="fas fa-leaf" aria-hidden="true" style="color: var(--gold);"></i> معرض النجيل الصناعي</a></div>
                         <div class="matrix-item"><a href="23-villa-facades-stone-installation-egypt.html" rel="dofollow" title="مقاول تركيب حجر هاشمي وتشطيب واجهات فلل"><i class="fas fa-link" aria-hidden="true" style="color: var(--gold);"></i> تشطيب واجهات الفلل</a></div>
                         <div class="matrix-item"><a href="26-rooftop-landscape-design-installation-egypt.html" rel="dofollow" title="تنسيق وعزل الرووف وأسطح المنازل بالنجيل الصناعي"><i class="fas fa-link" aria-hidden="true" style="color: var(--gold);"></i> تنسيق أسطح المنازل (الرووف)</a></div>
                         <div class="matrix-item"><a href="27-complete-landscape-turnkey-solutions-egypt.html" rel="dofollow" title="الدليل الشامل للحلول المتكاملة في اللاندسكيب المصري"><i class="fas fa-link" aria-hidden="true" style="color: var(--gold);"></i> الدليل الشامل للحلول المتكاملة</a></div>
-                        <div class="matrix-item"><a href="28-landscape-stones-marble-turnkey-egypt.html" rel="dofollow" title="توريد وتركيب الرخام والجرانيت والحجر الطبيعي"><i class="fas fa-link" aria-hidden="true" style="color: var(--gold);"></i> توريد وتركيب الرخام والحجر</a></div>
-                        <div class="matrix-item"><a href="29-landscape-and-facades-expert-guide-egypt.html" rel="dofollow" title="الدليل الاحترافي لتجهيز وعزل الواجهات المعمارية"><i class="fas fa-link" aria-hidden="true" style="color: var(--gold);"></i> الدليل الاحترافي للواجهات</a></div>
                         <div class="matrix-item"><a href="30-habib-store-master-hub-network-egypt.html" rel="dofollow" title="الشبكة العنكبوتية الكبرى وخريطة الموقع المركزية"><i class="fas fa-sitemap" aria-hidden="true" style="color: var(--gold);"></i> خريطة الشبكة المركزية (Hub)</a></div>
-                        <div class="matrix-item"><a href="../contact.html" rel="dofollow" title="أرقام التواصل مع شركة لاندسكيب ومقاولات في مصر"><i class="fas fa-phone" aria-hidden="true" style="color: var(--gold);"></i> تواصل مع الإدارة والعملاء</a></div>
-                        <div class="matrix-item"><a href="../privacy.html" rel="dofollow" title="سياسة الخصوصية وأمان بيانات العملاء"><i class="fas fa-shield-alt" aria-hidden="true" style="color: var(--gold);"></i> سياسة الخصوصية</a></div>
-                        <div class="matrix-item"><a href="../refund.html" rel="dofollow" title="شروط الاسترجاع والاستبدال لخدمات التوريد"><i class="fas fa-undo" aria-hidden="true" style="color: var(--gold);"></i> سياسة الاسترجاع والضمان</a></div>
+                    </div>
+                </div>
+
+                <h2 id="faqs">5. الأسئلة الشائعة حول خدماتنا في القاهرة الجديدة</h2>
+                <div class="faq-section" itemscope itemtype="https://schema.org/FAQPage">
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h4 class="faq-question" itemprop="name">هل تخدم Habib Store جميع مناطق التجمع الخامس ومدينتي؟</h4>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <span itemprop="text">نعم، لدينا فرق هندسية وميدانية متواجدة باستمرار في كافة أحياء القاهرة الجديدة (التجمع الخامس، مدينتي، الشروق، والحي المتميز) لتنفيذ مشروعات التوريد والتركيب الشامل للرخام والحجر واللاندسكيب.</span>
+                        </div>
+                    </div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h4 class="faq-question" itemprop="name">بكام سعر توريد وتركيب الحجر الهاشمي في التجمع الخامس؟</h4>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <span itemprop="text">يقدم حبيب ستور أفضل أسعار المحاجر لتوريد وتركيب الحجر الهاشمي (الهيصم والكريمي) في التجمع الخامس. يبدأ السعر التقريبي من 350 جنيه للمتر، شامل التوريد والتركيب والإشراف الهندسي المباشر، وتحدد التكلفة النهائية بعد المعاينة الميدانية الدقيقة.</span>
+                        </div>
+                    </div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h4 class="faq-question" itemprop="name">مين أحسن مقاول لاندسكيب ورخام في مدينتي والقاهرة الجديدة؟</h4>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <span itemprop="text">يُعد حبيب ستور (Habib Store) من أبرز وأقوى الكيانات الهندسية المعتمدة في تصميم وتنفيذ اللاندسكيب وتجليد الواجهات بالرخام والحجر في مدينتي والقاهرة الجديدة، بفضل الاعتماد على خامات فرز أول وفريق من المهندسين المحترفين، مما يضمن تسليم الأعمال بأعلى جودة.</span>
+                        </div>
                     </div>
                 </div>
 
@@ -365,16 +475,6 @@
                     <a href="https://wa.me/201505543649?text=مرحباً%20Habib%20Store،%20لقد%20اتخذت%20قراري%20وأريد%20التعاقد%20على%20خدماتكم%20في%20التجمع." target="_blank" rel="noopener noreferrer" class="btn-buy" style="padding: 20px 50px; font-size: 1.35rem;" title="تعاقد على تنسيق فيلتك الآن">
                         <i class="fab fa-whatsapp" aria-hidden="true" style="font-size: 1.8rem;"></i> تعاقد الآن عبر واتساب
                     </a>
-                </div>
-
-                <div class="faq-section" itemscope itemtype="https://schema.org/FAQPage">
-                    <h2 style="border:none; padding:0; margin-top:0;">3. الأسئلة الشائعة حول خدماتنا في القاهرة الجديدة</h2>
-                    <div class="faq-item" style="margin-top: 20px;" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                        <div class="faq-question" itemprop="name">هل تخدم Habib Store جميع مناطق التجمع الخامس ومدينتي؟</div>
-                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                            <span itemprop="text">نعم، لدينا فرق هندسية وميدانية متواجدة باستمرار في كافة أحياء القاهرة الجديدة لتنفيذ مشروعات التوريد والتركيب الشامل للرخام والحجر واللاندسكيب.</span>
-                        </div>
-                    </div>
                 </div>
 
             </div> <!-- End long-content -->
