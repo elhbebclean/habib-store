@@ -597,13 +597,58 @@
                     </div>
                 </div>
 
-                <div class="cta-box" style="background: linear-gradient(135deg, rgba(230,126,34,0.1), rgba(17,40,34,0.1)); border: 2px solid var(--royal-green);">
-                    <h3 style="color: var(--royal-green); margin-top: 0; border: none; padding: 0;">حان الوقت لتحويل حلمك إلى واقع!</h3>
-                    <p style="font-size: 1.1rem; margin-bottom: 20px;">الاستثمار في جمال بيتك يعكس ذوقك الرفيع ويمنحك راحة نفسية لا توصف. ابدأ اليوم وحول مساحتك إلى واحة أحلامك مع منتجات Habib Store المضمونة والمختارة بعناية لتناسب أناقة منزلك.</p>
-                    <a href="https://wa.me/201505543649?text=مرحباً%20Habib%20Store،%20قرأت%20المقال%20وأنا%20جاهز%20لشراء%20شكاير%20الزلط%20الديكوري%20وتأكيد%20الأوردر." target="_blank" rel="noopener noreferrer" class="btn-buy" style="padding: 18px 45px; font-size: 1.25rem;">
-                        <i class="fab fa-whatsapp" aria-hidden="true" style="font-size: 1.6rem;"></i> اطلب الزلط الآن وتواصل مع قسم المبيعات
-                    </a>
-                </div>
+                <!-- حاسبة الزلط الديكوري الفورية -->
+                <section class="calculator-box" style="background:#fff; padding:30px; border-radius:20px; border:2px solid var(--gold); margin:40px 0;">
+                    <h3 style="color:var(--royal-green); text-align:center; margin-top:0;">حاسبة الزلط الديكوري الفورية</h3>
+                    <p style="text-align:center; color:#555; font-size:1rem; margin-bottom:20px;">أدخل المساحة واعرف التكلفة التقديرية وأرسل طلبك مباشرة.</p>
+                    <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+                        <div style="flex:1; min-width:200px;">
+                            <label style="display:block; font-weight:bold; margin-bottom:5px; color:var(--royal-green);">المساحة (متر مربع):</label>
+                            <input type="number" id="area" placeholder="مثلاً: 20" style="width:100%; padding:12px; border:1px solid #ccc; border-radius:8px; font-size:1.1rem; box-sizing:border-box;">
+                        </div>
+                        <div style="flex:1; min-width:200px;">
+                            <label style="display:block; font-weight:bold; margin-bottom:5px; color:var(--royal-green);">نوع الزلط:</label>
+                            <select id="zalatType" style="width:100%; padding:12px; border:1px solid #ccc; border-radius:8px; font-size:1.1rem; box-sizing:border-box; background:#fff;">
+                                <option value="180">أبيض مرمري (180 ج / شكارة)</option>
+                                <option value="150">أسيوطي صلب (150 ج / شكارة)</option>
+                                <option value="200">مكس ألوان (200 ج / شكارة)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div style="text-align:center; margin-top:25px;">
+                        <button onclick="calculateAndSend()" style="background:var(--royal-green); color:white; padding:15px 40px; border:none; border-radius:40px; font-weight:900; cursor:pointer; font-size:1.1rem; transition:0.3s; box-shadow:0 10px 20px rgba(0,0,0,0.15);">
+                            احسب التكلفة وأرسل الطلب للواتساب <i class="fab fa-whatsapp"></i>
+                        </button>
+                    </div>
+                </section>
+
+                <script>
+                function calculateAndSend() {
+                    const area = document.getElementById('area').value;
+                    const priceSelect = document.getElementById('zalatType');
+                    const pricePerUnit = priceSelect.value;
+                    const zalatName = priceSelect.options[priceSelect.selectedIndex].text.split('(')[0].trim();
+                    
+                    if (!area || area <= 0) {
+                        alert("من فضلك أدخل مساحة صحيحة بالمتر المربع.");
+                        return;
+                    }
+
+                    // معادلة هندسية: المتر المربع (بسمك 4 سم) يحتاج حوالي 3 شكاير
+                    const quantity = Math.ceil(area * 3); 
+                    const total = quantity * pricePerUnit;
+
+                    const message = `مرحباً حبيب ستور، لقد استخدمت الحاسبة الذكية من المقال وأريد طلب زلط ديكوري:
+- نوع الزلط: ${zalatName}
+- المساحة: ${area} متر مربع
+- الكمية المطلوبة: ${quantity} شكارة تقريباً
+- التكلفة التقديرية للمواد: ${total} جنيه
+يرجى التواصل معي لتأكيد الطلب وتحديد موعد وتكلفة التوريد.`;
+                    
+                    const whatsappUrl = `https://wa.me/201505543649?text=${encodeURIComponent(message)}`;
+                    window.open(whatsappUrl, '_blank');
+                }
+                </script>
 
             </div> <!-- End long-content -->
 
