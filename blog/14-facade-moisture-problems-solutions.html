@@ -1,39 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <!-- Microsoft Clarity -->
-    <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "wbchze8rtj");
-    </script>
-
-    <!-- Google Tag Manager Lazy Load (CRO Performance) -->
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var gtmLoaded = false;
-        function loadGTV() {
-            if(gtmLoaded) return;
-            gtmLoaded = true;
-            (function(w,d,s,l,i){
-                w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
-                var f=d.getElementsByTagName(s)[0],
-                    j=d.createElement(s),
-                    dl=l!='dataLayer'?'&l='+l:'';
-                j.async = true;
-                j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-                f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-NT75WPGT');
-        }
-        ['scroll', 'mousemove', 'touchstart', 'click'].forEach(function(event) {
-            window.addEventListener(event, loadGTV, { once: true, passive: true });
-        });
-        setTimeout(loadGTV, 2000);
-    });
-    </script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="علاج مشاكل رطوبة واجهات الفلل والملوحة وتسرب المياه نهائياً. دليل هندسي لتجليد الحجر والرخام واستخدام العوازل الفعالة في جميع محافظات مصر 2026.">
@@ -69,7 +36,38 @@
     <link rel="stylesheet" href="../style.css">
     <script src="../main.js" defer></script>
 
-    <!-- Advanced Multi-Schemas -->
+    <!-- Microsoft Clarity and GTM Optimized -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const loadExternalScripts = () => {
+            // Load Microsoft Clarity
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "wbchze8rtj");
+
+            // Load Google Tag Manager
+            (function(w,d,s,l,i){
+                w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+                var f=d.getElementsByTagName(s)[0],
+                    j=d.createElement(s),
+                    dl=l!='dataLayer'?'&l='+l:'';
+                j.async = true;
+                j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-NT75WPGT');
+        };
+
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadExternalScripts);
+        } else {
+            setTimeout(loadExternalScripts, 2000);
+        }
+    });
+    </script>
+
+    <!-- Advanced Multi-Schemas (God-Mode JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -79,7 +77,7 @@
           "@id": "https://habib-landscape-boutique.com/#website",
           "url": "https://habib-landscape-boutique.com/",
           "name": "Habib Store",
-          "description": "المتجر الأول في مصر لحلول علاج الرطوبة وتوريد وتركيب الحجر والرخام للواجهات.",
+          "description": "المتجر والمقاول الأول في مصر لحلول علاج الرطوبة وتوريد وتركيب الحجر والرخام للواجهات.",
           "publisher": {
             "@id": "https://habib-landscape-boutique.com/#organization"
           },
@@ -99,8 +97,8 @@
           },
           "contactPoint": {
             "@type": "ContactPoint",
-            "telephone": "+201505543649",
-            "contactType": "customer service",
+            "telephone": "+201016961497",
+            "contactType": "sales",
             "areaServed": "EG",
             "availableLanguage": ["Arabic", "English"]
           }
@@ -110,11 +108,11 @@
           "@id": "https://habib-landscape-boutique.com/#localbusiness",
           "name": "Habib Store - حلول الواجهات وعلاج الرطوبة",
           "image": "https://res.cloudinary.com/dwa0e5sup/image/upload/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png",
-          "telephone": "01505543649",
+          "telephone": "01016961497",
           "url": "https://habib-landscape-boutique.com/",
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "المعادي",
+            "streetAddress": "المركز الرئيسي لإدارة المشاريع",
             "addressLocality": "القاهرة",
             "addressRegion": "محافظة القاهرة",
             "addressCountry": "EG"
@@ -137,6 +135,14 @@
           }
         },
         {
+          "@type": "Service",
+          "name": "علاج رطوبة الواجهات وتجليدها",
+          "provider": {"@id": "https://habib-landscape-boutique.com/#organization"},
+          "description": "حلول هندسية لعلاج التمليح والرطوبة باستخدام الحجر الهاشمي، الرخام الميكانيكي، وعوازل السيلر.",
+          "serviceType": "Facade Restoration & Waterproofing",
+          "areaServed": {"@type": "Country", "name": "Egypt"}
+        },
+        {
           "@type": "Article",
           "@id": "https://habib-landscape-boutique.com/blog/14-facade-moisture-problems-solutions.html#article",
           "isPartOf": {
@@ -146,17 +152,17 @@
             "@id": "https://habib-landscape-boutique.com/#organization"
           },
           "headline": "مشاكل رطوبة واجهات الفلل وكيف تتفاداها وتعالجها نهائياً بالخامات الطبيعية",
-          "description": "دليل هندسي شامل حول أسباب تمليح ورطوبة الواجهات في جميع محافظات مصر وطرق علاجها بتجليد الحجر والرخام والعزل الميكانيكي.",
+          "description": "دليل هندسي شامل حول أسباب تمليح ورطوبة الواجهات في جميع محافظات مصر وطرق علاجها بتجليد الحجر والرخام والعزل الميكانيكي من Habib Store.",
           "datePublished": "2026-05-05T08:00:00+02:00",
-          "dateModified": "2026-08-06T10:00:00+02:00",
+          "dateModified": "2026-08-07T10:00:00+02:00",
           "mainEntityOfPage": "https://habib-landscape-boutique.com/blog/14-facade-moisture-problems-solutions.html",
           "image": {
             "@type": "ImageObject",
             "url": "https://res.cloudinary.com/dwa0e5sup/image/upload/w_1200,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg"
           },
-          "keywords": ["رطوبة الواجهات", "علاج تمليح الحجر", "تشطيب واجهات مقاومة للرطوبة", "حجر هاشمي ضد الرطوبة", "توريد جميع المحافظات"],
-          "wordCount": 1100,
-          "timeRequired": "PT5M",
+          "keywords": ["رطوبة الواجهات", "علاج تمليح الحجر", "تشطيب واجهات مقاومة للرطوبة", "حجر هاشمي ضد الرطوبة", "توريد جميع المحافظات", "Habib Store"],
+          "wordCount": 1350,
+          "timeRequired": "PT6M",
           "inLanguage": "ar-EG",
           "publisher": {
             "@id": "https://habib-landscape-boutique.com/#organization"
@@ -202,7 +208,7 @@
               "name": "كيف يقضي تجليد الحجر والرخام بالتركيب الميكانيكي على الرطوبة؟",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "التركيب الميكانيكي يخلق مسافة هواء (فراغ تهوية) بين الحجر والجدار الأساسي، مما يمنع انتقال الرطوبة ويحمي الواجهة نهائياً."
+                "text": "التركيب الميكانيكي يخلق مسافة هواء (فراغ تهوية) بين الحجر والجدار الأساسي، مما يمنع انتقال الرطوبة لداخل المنزل ويحمي الواجهة نهائياً من التمليح."
               }
             }
           ]
@@ -220,8 +226,8 @@
     </script>
 
     <style>
-        :root { --royal-green: #1a3c34; --gold: #c5a059; --soft-bg: #f9fbfb; --dark-text: #222; }
-        body { font-family: 'Cairo', sans-serif; background-color: var(--soft-bg); margin: 0; color: var(--dark-text); line-height: 2.1; overflow-x: hidden; }
+        :root { --royal-green: #112822; --gold: #f39c12; --soft-bg: #f4f7f6; --dark-text: #1a1a1a; --danger-red: #e74c3c; --action-blue: #2980b9; }
+        body { font-family: 'Cairo', sans-serif; background-color: var(--soft-bg); margin: 0; color: var(--dark-text); line-height: 2.1; overflow-x: hidden; scroll-behavior: smooth; }
         
         @media (prefers-reduced-motion: reduce) {
             * {
@@ -232,117 +238,108 @@
             }
         }
 
-        #progress-bar { position: fixed; top: 0; left: 0; height: 4px; background: var(--gold); width: 0%; z-index: 9999; }
+        #progress-bar { position: fixed; top: 0; left: 0; height: 5px; background: linear-gradient(90deg, var(--gold), var(--danger-red)); width: 0%; z-index: 9999; transition: width 0.1s ease; }
         
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: var(--gold);
-            color: var(--royal-green);
-            padding: 8px;
-            z-index: 10000;
-            transition: top 0.3s;
-            text-decoration: none;
-            font-weight: bold;
-        }
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--gold); color: var(--royal-green); padding: 8px; z-index: 10000; transition: top 0.3s; text-decoration: none; font-weight: bold; }
         .skip-link:focus { top: 0; }
 
-        header { background: #fff; padding: 15px 20px; text-align: center; border-bottom: 3px solid var(--royal-green); position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
-        .logo-img { max-height: 65px; width: auto; display: inline-block; }
-        .article-wrapper { max-width: 960px; margin: 40px auto; padding: 0 20px; }
+        header { background: #fff; padding: 15px 20px; text-align: center; border-bottom: 4px solid var(--gold); position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .logo-img { max-height: 70px; width: auto; display: inline-block; }
+        .article-wrapper { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
         
-        .long-content {
-            content-visibility: auto;
-            contain-intrinsic-size: 1000px;
-        }
+        .long-content { content-visibility: auto; contain-intrinsic-size: 1000px; }
 
-        .article-container { background: #fff; padding: 50px; border-radius: 25px; box-shadow: 0 20px 50px rgba(0,0,0,0.05); border: 1px solid rgba(197, 160, 89, 0.2); }
-        .breadcrumb { font-size: 0.9rem; color: #777; margin-bottom: 20px; }
-        .breadcrumb a { color: var(--royal-green); text-decoration: none; }
-        .article-category { color: var(--gold); font-weight: 800; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; display: inline-block; background: rgba(197, 160, 89, 0.1); padding: 5px 15px; border-radius: 15px; }
+        .article-container { background: #fff; padding: 50px; border-radius: 20px; box-shadow: 0 25px 60px rgba(0,0,0,0.08); border-top: 6px solid var(--danger-red); }
+        .breadcrumb { font-size: 0.95rem; color: #555; margin-bottom: 25px; font-weight: 700; }
+        .breadcrumb a { color: var(--action-blue); text-decoration: none; transition: 0.3s; }
+        .breadcrumb a:hover { color: var(--gold); }
+        .article-category { background: linear-gradient(45deg, var(--danger-red), #c0392b); color: #fff; font-weight: 900; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; display: inline-block; padding: 10px 25px; border-radius: 50px; box-shadow: 0 8px 20px rgba(231, 76, 60, 0.4); }
         
         h1, h2, h3 { scroll-margin-top: 100px; }
-        h1 { color: var(--royal-green); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; margin-bottom: 20px; line-height: 1.3; }
-        .meta-info { color: #666; font-weight: 600; margin-bottom: 30px; font-size: 0.95rem; border-bottom: 2px solid #f1f1f1; padding-bottom: 15px; display: flex; flex-wrap: wrap; gap: 20px; }
-        p { font-size: 1.15rem; color: #444; margin-bottom: 25px; text-align: justify; }
-        h2 { color: var(--royal-green); font-size: 1.8rem; font-weight: 800; margin-top: 50px; margin-bottom: 20px; padding-right: 15px; border-right: 5px solid var(--gold); }
-        h3 { color: var(--royal-green); font-size: 1.4rem; font-weight: 700; margin-top: 35px; margin-bottom: 15px; }
+        h1 { color: var(--royal-green); font-size: clamp(2.3rem, 4.5vw, 3.2rem); font-weight: 900; margin-bottom: 25px; line-height: 1.3; text-shadow: 1px 1px 2px rgba(0,0,0,0.05); }
+        .meta-info { color: #666; font-weight: 800; margin-bottom: 35px; font-size: 1rem; border-bottom: 2px dashed #ddd; padding-bottom: 20px; display: flex; flex-wrap: wrap; gap: 20px; }
+        p { font-size: 1.25rem; color: #333; margin-bottom: 25px; text-align: justify; }
+        h2 { color: var(--royal-green); font-size: 2.1rem; font-weight: 900; margin-top: 55px; margin-bottom: 25px; padding-right: 20px; border-right: 8px solid var(--gold); background: rgba(243, 156, 18, 0.05); padding-block: 10px; }
+        h3 { color: var(--action-blue); font-size: 1.6rem; font-weight: 900; margin-top: 35px; margin-bottom: 15px; }
         
-        .toc-box { background: #fdfdfa; border: 1px solid rgba(197,160,89,0.3); border-radius: 15px; padding: 25px; margin: 30px 0; }
-        .toc-box h3 { margin-top: 0; color: var(--royal-green); font-size: 1.2rem; }
+        .toc-box { background: #fdfdfa; border: 2px solid var(--action-blue); border-radius: 15px; padding: 30px; margin: 40px 0; box-shadow: inset 0 0 15px rgba(41, 128, 185, 0.05); }
+        .toc-box h2 { border: none; background: transparent; padding: 0; margin-top: 0; font-size: 1.5rem; color: var(--action-blue); }
         .toc-box ul { margin: 0; padding-right: 20px; }
-        .toc-box li { margin-bottom: 8px; font-weight: 700; }
-        .toc-box a { color: var(--royal-green); text-decoration: none; }
-        .toc-box a:hover { color: var(--gold); }
+        .toc-box li { margin-bottom: 10px; font-weight: 700; font-size: 1.1rem; }
+        .toc-box a { color: var(--royal-green); text-decoration: none; transition: 0.3s; }
+        .toc-box a:hover { color: var(--danger-red); padding-right: 5px; }
 
-        figure { margin: 35px 0; text-align: center; }
-        figure img { width: 100%; max-width: 900px; height: auto; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.06); }
-        figcaption { font-size: 0.9rem; color: #666; margin-top: 10px; font-weight: 600; }
+        .video-placeholder { position: relative; width: 100%; border-radius: 20px; overflow: hidden; margin: 40px 0; background: #000; border: 4px solid var(--gold); cursor: pointer; aspect-ratio: 16/9; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .video-placeholder img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: 0.5s; }
+        .video-placeholder:hover img { opacity: 1; transform: scale(1.05); }
+        .play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--gold); color: #fff; width: 90px; height: 90px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; border: 4px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.6); transition: 0.3s; z-index: 2; animation: pulse-play 1.5s infinite; }
+        @keyframes pulse-play { 0% { box-shadow: 0 0 0 0 rgba(243, 156, 18, 0.8); } 70% { box-shadow: 0 0 0 25px rgba(243, 156, 18, 0); } 100% { box-shadow: 0 0 0 0 rgba(243, 156, 18, 0); } }
+        .video-caption { text-align: center; color: #555; font-size: 1rem; margin-top: 15px; font-weight: 800; }
+
+        .cta-box { background: linear-gradient(135deg, var(--danger-red), #900C3F); border: 4px dashed #fff; padding: 40px 30px; border-radius: 25px; text-align: center; margin: 50px 0; box-shadow: 0 20px 40px rgba(144, 12, 63, 0.3); }
+        .cta-box h3 { color: #fff; margin-top: 0; font-size: 2rem; font-weight: 900; line-height: 1.3; border: none; background: transparent; padding: 0; }
+        .cta-box p { color: #fdfdfd; font-size: 1.25rem; margin-bottom: 30px; font-weight: 700; }
+        .btn-buy { background: #25d366; color: #fff; padding: 18px 45px; border-radius: 50px; text-decoration: none; font-weight: 900; display: inline-flex; align-items: center; justify-content: center; gap: 15px; font-size: 1.4rem; box-shadow: 0 15px 30px rgba(37,211,102,0.4); transition: 0.3s; border: 3px solid #fff; flex-wrap: wrap; }
+        .btn-buy:hover { background: #1ebe57; transform: translateY(-5px) scale(1.03); box-shadow: 0 20px 40px rgba(37,211,102,0.6); }
+
+        .faq-section { background: #fdfcf7; border-radius: 20px; padding: 35px; margin: 50px 0; border: 2px solid rgba(243, 156, 18, 0.3); }
+        .faq-item { margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+        .faq-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .faq-question { font-weight: 900; color: var(--action-blue); font-size: 1.3rem; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .faq-question::before { content: '\f059'; font-family: "Font Awesome 6 Free"; font-weight: 900; color: var(--gold); }
+        .faq-answer { font-size: 1.15rem; color: #444; line-height: 1.9; padding-right: 30px; }
         
-        .video-placeholder { position: relative; width: 100%; max-width: 900px; margin: 40px auto; border-radius: 20px; overflow: hidden; background: #000; border: 2px solid var(--gold); cursor: pointer; aspect-ratio: 16/9; }
-        .video-placeholder img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; transition: 0.3s; }
-        .video-placeholder:hover img { opacity: 1; }
-        .play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--royal-green); color: var(--gold); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; border: 2px solid var(--gold); box-shadow: 0 10px 25px rgba(0,0,0,0.4); transition: 0.3s; }
-        .video-placeholder:hover .play-btn { transform: translate(-50%, -50%) scale(1.1); background: var(--gold); color: var(--royal-green); }
-        .video-caption { text-align: center; color: #555; font-size: 0.95rem; margin-top: 10px; font-weight: 700; background: #fff; padding: 8px; border-radius: 10px; }
+        .spider-web-matrix { background: #fff; border: 3px solid var(--action-blue); border-radius: 20px; padding: 35px; margin: 50px 0; box-shadow: inset 0 0 20px rgba(41, 128, 185, 0.05); }
+        .spider-web-matrix h3 { color: var(--action-blue); margin-top: 0; font-size: 1.6rem; text-align: center; margin-bottom: 20px; font-weight: 900; }
+        .matrix-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 15px; }
+        .matrix-item { background: #f9fbfd; border: 1px solid rgba(41, 128, 185, 0.2); padding: 18px; border-radius: 12px; transition: 0.3s; }
+        .matrix-item:hover { background: var(--action-blue); transform: scale(1.03); }
+        .matrix-item a { color: var(--royal-green); text-decoration: none; font-weight: 800; font-size: 1.1rem; display: flex; align-items: center; gap: 10px; width: 100%; }
+        .matrix-item:hover a { color: #fff; }
 
-        .cta-box { background: linear-gradient(135deg, rgba(26,60,52,0.05), rgba(197,160,89,0.1)); border: 1px solid var(--gold); padding: 30px; border-radius: 20px; text-align: center; margin: 40px 0; }
-        .btn-buy { background: #25d366; color: white; padding: 16px 35px; border-radius: 40px; text-decoration: none; font-weight: 900; display: inline-flex; align-items: center; gap: 12px; font-size: 1.1rem; box-shadow: 0 10px 25px rgba(37,211,102,0.3); transition: 0.3s; }
-        .btn-buy:hover { background: #1ebe57; transform: translateY(-3px); }
-
-        .faq-section { background: #fdfcf7; border-radius: 20px; padding: 30px; margin: 40px 0; border: 1px solid rgba(197,160,89,0.3); }
-        .faq-item { margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
-        .faq-question { font-weight: 800; color: var(--royal-green); font-size: 1.1rem; margin-bottom: 5px; }
-        .faq-answer { font-size: 1.05rem; color: #444; }
-        
-        .cluster-links { background: #fff; padding: 30px; border-radius: 20px; border: 2px dashed var(--gold); margin: 40px 0; }
-        .cluster-links h3 { color: var(--royal-green); margin-top: 0; font-size: 1.2rem; border: none; padding: 0;}
-        .cluster-links ul { padding-right: 20px; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; }
-        .cluster-links li { margin-bottom: 8px; font-weight: 700; font-size: 0.95rem; }
-        .cluster-links a { color: var(--royal-green); text-decoration: none; }
-        .cluster-links a:hover { color: var(--gold); }
-
-        .floating-buttons { position: fixed; bottom: 25px; left: 25px; z-index: 9999; display: flex; flex-direction: column; gap: 12px; }
-        .float-btn { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.5rem; box-shadow: 0 6px 20px rgba(0,0,0,0.25); text-decoration: none; transition: transform 0.3s ease; }
-        .float-btn:hover { transform: scale(1.1); }
+        .floating-buttons { position: fixed; bottom: 30px; left: 30px; z-index: 9999; display: flex; flex-direction: column; gap: 15px; }
+        .float-btn { width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.8rem; box-shadow: 0 10px 25px rgba(0,0,0,0.4); text-decoration: none; transition: transform 0.3s ease; border: 2px solid #fff; animation: pulse-float 2s infinite; }
         .float-whatsapp { background-color: #25d366; }
-        .float-call { background-color: var(--royal-green); border: 2px solid var(--gold); }
+        .float-call { background-color: var(--action-blue); animation-delay: 1s; }
+        @keyframes pulse-float { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
 
-        .highlight-box { background-color: rgba(197, 160, 89, 0.05); border-right: 4px solid var(--gold); padding: 20px; margin: 25px 0; font-style: italic; color: #333; }
+        .highlight-box { background-color: rgba(243, 156, 18, 0.1); border-right: 8px solid var(--gold); padding: 25px; margin: 35px 0; font-style: italic; color: var(--royal-green); font-size: 1.3rem; font-weight: 900; border-radius: 10px; }
         ul.custom-list { padding-right: 20px; }
-        ul.custom-list li { margin-bottom: 12px; position: relative; padding-right: 25px; list-style: none; font-size: 1.1rem;}
-        ul.custom-list li::before { content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; right: 0; color: var(--gold); }
+        ul.custom-list li { margin-bottom: 15px; position: relative; padding-right: 30px; list-style: none; font-size: 1.2rem; font-weight: 600;}
+        ul.custom-list li::before { content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; right: 0; color: var(--danger-red); font-size: 1.1rem; top: 5px;}
 
-        .eeat-box { background: #fff; border: 2px solid var(--royal-green); border-radius: 15px; padding: 30px; margin: 50px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .eeat-box h3 { margin-top: 0; color: var(--royal-green); text-align: center; border-bottom: 2px solid var(--gold); padding-bottom: 15px; margin-bottom: 20px;}
-        .eeat-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-        .eeat-list li { text-align: center; }
-        .eeat-list i { font-size: 2rem; color: var(--gold); margin-bottom: 10px; display: block; }
-        .eeat-list strong { display: block; color: var(--royal-green); font-size: 1.1rem; margin-bottom: 5px; }
+        .eeat-box { background: #fff; border: 3px solid var(--royal-green); border-radius: 20px; padding: 35px; margin: 60px 0; box-shadow: 0 15px 40px rgba(0,0,0,0.06); }
+        .eeat-box h3 { margin-top: 0; color: var(--royal-green); text-align: center; border-bottom: 3px dashed var(--gold); padding-bottom: 20px; margin-bottom: 30px;}
+        .eeat-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
+        .eeat-list li { text-align: center; background: #fdfdfa; padding: 20px; border-radius: 15px; border: 1px solid #eee; }
+        .eeat-list i { font-size: 2.5rem; color: var(--action-blue); margin-bottom: 15px; display: block; }
+        .eeat-list strong { display: block; color: var(--royal-green); font-size: 1.2rem; margin-bottom: 8px; font-weight: 900;}
 
-        @media(max-width: 768px) { .article-container { padding: 20px; } }
+        @media(max-width: 768px) { .article-container { padding: 25px; } .cta-box h3 { font-size: 1.6rem; } .btn-buy { font-size: 1.2rem; width: 100%; box-sizing: border-box; justify-content: center; } }
     </style>
 </head>
 <body>
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NT75WPGT" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
 
     <a class="skip-link" href="#article-main">تخطي إلى المحتوى</a>
 
     <div id="progress-bar"></div>
 
-    <!-- الأزرار العائمة (CRO) -->
+    <!-- الأزرار العائمة للتحويل السريع -->
     <div class="floating-buttons">
-        <a href="https://wa.me/201505543649?text=مرحباً%20Habib%20Store،%20لدي%20مشكلة%20رطوبة/تمليح%20في%20واجهة%20فيلا/عقار%20وأريد%20حلاً." target="_blank" rel="noopener noreferrer" class="float-btn float-whatsapp" aria-label="تواصل عبر واتساب">
+        <a href="https://wa.me/201016961497?text=مرحباً%20Habib%20Store،%20لدي%20مشكلة%20رطوبة/تمليح%20في%20الواجهة%20وأريد%20معاينة%20هندسية." target="_blank" rel="noopener noreferrer" class="float-btn float-whatsapp" aria-label="تواصل عبر واتساب لعلاج الرطوبة">
             <i class="fab fa-whatsapp" aria-hidden="true"></i>
         </a>
-        <a href="tel:01505543649" class="float-btn float-call" aria-label="اتصال هاتفي مباشر">
+        <a href="tel:01016961497" class="float-btn float-call" aria-label="اتصل هاتفياً بقسم الاستشارات">
             <i class="fas fa-phone-alt" aria-hidden="true"></i>
         </a>
     </div>
 
     <header>
-        <a href="https://habib-landscape-boutique.com/index.html">
-            <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png" alt="Habib Store Logo" class="logo-img" width="150" height="65">
+        <a href="../index.html">
+            <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png" alt="Habib Store Logo - علاج الواجهات" class="logo-img" width="150" height="65">
         </a>
     </header>
 
@@ -350,19 +347,19 @@
         <main class="article-container" id="article-main">
             
             <nav class="breadcrumb" aria-label="مسار التنقل">
-                <a href="https://habib-landscape-boutique.com/index.html">الرئيسية</a> &larr; 
-                <a href="https://habib-landscape-boutique.com/blog/">المدونة</a> &larr; 
-                <a href="https://habib-landscape-boutique.com/blog/14-facade-moisture-problems-solutions.html">علاج رطوبة الواجهات</a>
+                <a href="../index.html">الرئيسية</a> &larr; 
+                <a href="../blog/">المدونة والمقالات</a> &larr; 
+                <a href="14-facade-moisture-problems-solutions.html">علاج رطوبة الواجهات</a>
             </nav>
 
-            <span class="article-category">حلول هندسية متقدمة</span>
+            <span class="article-category">حلول هندسية متقدمة (ترميم وتجليد)</span>
             <h1>مشاكل رطوبة واجهات الفلل وكيف تتفاداها وتعالجها نهائياً بالخامات الطبيعية</h1>
             
             <div class="meta-info">
-                <span><i class="fas fa-calendar-alt" aria-hidden="true" style="color: var(--gold);"></i> النشر: 5 مايو 2026</span>
-                <span><i class="fas fa-sync-alt" aria-hidden="true" style="color: var(--gold);"></i> آخر تحديث: 3 أغسطس 2026</span>
+                <span><i class="fas fa-calendar-alt" aria-hidden="true" style="color: var(--action-blue);"></i> النشر: 5 مايو 2026</span>
+                <span><i class="fas fa-sync-alt" aria-hidden="true" style="color: var(--danger-red);"></i> آخر تحديث: 7 أغسطس 2026</span>
                 <span><i class="fas fa-clock" aria-hidden="true" style="color: var(--gold);"></i> وقت القراءة: 5 دقائق</span>
-                <span><i class="fas fa-user" aria-hidden="true" style="color: var(--gold);"></i> فريق المعالجة الفنية - Habib Store</span>
+                <span><i class="fas fa-hard-hat" aria-hidden="true" style="color: var(--royal-green);"></i> فريق المعالجة الفنية - Habib Store</span>
             </div>
 
             <div class="toc-box">
@@ -373,18 +370,19 @@
                     <li><a href="#solution-stone">3. الحل الهندسي الفعّال: تجليد الواجهات بالحجر الطبيعي والهاشمي</a></li>
                     <li><a href="#mechanical">4. التركيب الميكانيكي: الفاصل الهوائي القاتل للرطوبة</a></li>
                     <li><a href="#products-tie">5. التكامل مع منتجاتنا الأخرى (رخام، زلط، وشلالات بدون تسريب)</a></li>
-                    <li><a href="#faqs">6. الأسئلة الشائعة حول علاج رطوبة الواجهات</a></li>
+                    <li><a href="#calculator">6. حاسبة تكلفة علاج وتجليد الواجهات (لعملائنا فقط)</a></li>
+                    <li><a href="#faqs">7. الأسئلة الشائعة حول علاج رطوبة الواجهات</a></li>
                 </ul>
             </div>
 
             <div class="long-content">
                 <h2 id="intro">1. كابوس الرطوبة والتمليح: لماذا تفشل الدهانات الحديثة في حماية الواجهات؟</h2>
-                <p>يستثمر الكثير من أصحاب الفلل والقصور أموالاً طائلة في دهانات واجهات خارجية فاخرة، ليصطدموا بعد أول شتاء أو مواسم رطوبة بتساقط الدهانات، ظهور بقع صفراء، وتمليح الجدران (Efflorescence). الدهانات الخارجية التقليدية لا تقاوم الضغط المستمر للرطوبة والأملاح، مما يجعل الحل الحقيقي يكمن في استخدام مواد طبيعية غير قابلة للتآكل في <strong>جميع محافظات مصر</strong>.</p>
+                <p>يستثمر الكثير من أصحاب الفلل والقصور أموالاً طائلة في دهانات واجهات خارجية فاخرة، ليصطدموا بعد أول شتاء أو مواسم رطوبة بتساقط الدهانات، ظهور بقع صفراء، وتمليح الجدران (Efflorescence). الدهانات الخارجية التقليدية لا تقاوم الضغط المستمر للرطوبة والأملاح، مما يجعل الحل الحقيقي يكمن في استخدام مواد طبيعية صلبة في <strong>جميع محافظات مصر</strong>.</p>
                 
-                <p>في <strong>Habib Store</strong>، نحن لا نكتفي بتوريد الحجر والرخام، بل نقدم حلولاً هندسية متكاملة تقضي على جذور مشكلة الرطوبة في واجهات الفلل والقصور.</p>
+                <p>في <strong>Habib Store</strong>، نحن لا نكتفي بتوريد الحجر والرخام، بل نقدم حلولاً هندسية متكاملة كمقاول عام، لتقضي على جذور مشكلة الرطوبة في واجهات الفلل والقصور للأبد.</p>
 
                 <div class="highlight-box">
-                    "الرطوبة عدو خفي يدمر المباني من الداخل، وعلاجها من البداية باستخدام الحجر المعالج يوفر عليك أضعاف مصاريف الصيانة المتكررة."
+                    "الرطوبة عدو خفي يدمر المباني من الداخل، وعلاجها من البداية باستخدام الحجر المعالج يوفر عليك أضعاف مصاريف الصيانة المتكررة للدهانات."
                 </div>
 
                 <!-- فيديو توضيحي -->
@@ -394,25 +392,26 @@
                         <div class="play-btn" aria-label="تشغيل الفيديو"><i class="fas fa-play" aria-hidden="true"></i></div>
                     </div>
                 </div>
-                <div class="video-caption">طرق معالجة وتجليد الواجهات المعرضة للرطوبة بأعلى معايير الجودة</div>
+                <div class="video-caption">طرق معالجة وتجليد الواجهات المعرضة للرطوبة بأعلى معايير الجودة من Habib Store</div>
 
                 <div class="cta-box">
-                    <p style="font-weight: 800; color: var(--royal-green); margin-bottom: 15px;">هل تواجه مشاكل رطوبة أو تمليح في واجهة فيلتك أو عقارك؟ نصلك أينما كنت!</p>
-                    <a href="https://wa.me/201505543649?text=مرحباً%20Habib%20Store،%20لدي%20مشكلة%20رطوبة%20في%20الواجهة%20وأريد%20استشارة%20وهندسة%20الحل." target="_blank" rel="noopener noreferrer" class="btn-buy">
-                        <i class="fab fa-whatsapp" aria-hidden="true" style="font-size: 1.4rem;"></i> تواصل معنا عبر واتساب لفحص المشكلة وتقديم الحل الهندسي
+                    <h3>هل تواجه مشاكل رطوبة أو تمليح في واجهة فيلتك أو عقارك؟</h3>
+                    <p>فريقنا الهندسي جاهز للانتقال لفحص المشكلة وتقديم المقايسة والعلاج الفوري.</p>
+                    <a href="https://wa.me/201016961497?text=مرحباً%20Habib%20Store،%20لدي%20مشكلة%20رطوبة%20في%20الواجهة%20وأريد%20استشارة%20وهندسة%20الحل." target="_blank" rel="noopener noreferrer" class="btn-buy">
+                        <i class="fab fa-whatsapp" aria-hidden="true" style="font-size: 1.8rem;"></i> اطلب استشارة هندسية لمعاينة الواجهة
                     </a>
                 </div>
 
                 <h2 id="causes">2. الأسباب الرئيسية لتسرب المياه ورطوبة جدران الفلل</h2>
-                <p>قبل الشروع في أي علاج، يجب معرفة مصدر المشكلة بدقة. تشمل الأسباب الرئيسية:</p>
+                <p>قبل الشروع في أي علاج أو تجليد، يجب علينا في Habib Store معرفة مصدر المشكلة بدقة. تشمل الأسباب الرئيسية:</p>
                 <ul class="custom-list">
-                    <li><strong>سوء عزل الأسطح:</strong> تسرب مياه الأمطار من سطح الفيلا ونزولها عبر الجدران الخارجية والداخلية.</li>
+                    <li><strong>سوء عزل الأسطح:</strong> تسرب مياه الأمطار من سطح الفيلا ونزولها عبر الجدران الخارجية.</li>
                     <li><strong>أخطاء السباكة الخارجية:</strong> تلف مواسير الصرف أو تغذية المياه المدفونة في الحوائط أو بالقرب من سور الفيلا.</li>
-                    <li><strong>الخاصية الشعرية للتربة:</strong> امتصاص جدران الدور الأرضي للمياه الجوفية أو رطوبة التربة المحيطة بالحديقة.</li>
+                    <li><strong>الخاصية الشعرية للتربة:</strong> امتصاص جدران الدور الأرضي للمياه الجوفية أو رطوبة التربة الزراعية المحيطة بالحديقة.</li>
                 </ul>
 
                 <h2 id="solution-stone">3. الحل الهندسي الفعّال: تجليد الواجهات بالحجر الطبيعي والهاشمي</h2>
-                <p>يُعد استخدام <a href="https://habib-landscape-boutique.com/blog/04-marble-natural-stone-facades-guide.html" style="color: var(--royal-green); font-weight: bold;">الحجر الهاشمي الهيصم أو الحجر الطبيعي</a> المعالج بـ "السيلر العازل" هو السلاح الأقوى ضد الرطوبة؛ فالأحجار الطبيعية تمتاز بمسامية مدروسة ومقاومة تامة لتفاعل الأملاح مقارنة باللياسة والدهانات التي تتبخر وتحتفظ بالمياه داخل الجدار.</p>
+                <p>يُعد استخدام <a href="04-marble-natural-stone-facades-guide.html" style="color: var(--action-blue); font-weight: bold;">الحجر الهاشمي الهيصم أو الحجر الطبيعي</a> المعالج بـ "السيلر العازل" هو السلاح الأقوى ضد الرطوبة. فالأحجار الطبيعية التي نوردها من محاجرنا تمتاز بمسامية مدروسة ومقاومة تامة لتفاعل الأملاح، مقارنة باللياسة والدهانات التي تتبخر وتحتفظ بالمياه داخل الجدار.</p>
 
                 <h2 id="mechanical">4. التركيب الميكانيكي: الفاصل الهوائي القاتل للرطوبة</h2>
                 <p>في مشاريع الفلل الكبرى والقصور، نصرّ في <strong>Habib Store</strong> على تنفيذ <strong>التركيب الميكانيكي بالكانات الستانلس ستيل</strong>. هذا النظام لا يضمن فقط عدم سقوط الحجر أو الرخام، بل يخلق "فراغاً هواءياً" (Air Cavity) بين الجدار والحجر، مما يسمح بتهوية الحائط باستمرار ويمنع انتقال الرطوبة نهائياً إلى داخل غرف الفيلا.</p>
@@ -420,66 +419,142 @@
                 <h2 id="products-tie">5. التكامل مع منتجاتنا الأخرى (رخام، زلط، وشلالات بدون تسريب)</h2>
                 <p>لضمان حماية متكاملة لمنزلك، فإننا نربط معالجة الواجهات بتنظيم حديقتك:</p>
                 <ul class="custom-list">
-                    <li>استخدام <a href="https://habib-landscape-boutique.com/products/white-marble.html" style="color: var(--royal-green); font-weight: bold;">الزلط الديكوري والأبيض المرمري</a> فوق عزل الأرضيات لمنع تجمع مياه الري بجوار جدران الفيلا.</li>
-                    <li>تصميم وتنفيذ <a href="https://habib-landscape-boutique.com/blog/07-waterfalls-indoor-stone-decor-marble.html" style="color: var(--royal-green); font-weight: bold;">الشلالات والنوافير</a> بعزل مائي هندسي ثلاثي الطبقات يمنع تماماً أي تسريب مائي قد يؤثر على أساسات الجدران المجاورة.</li>
+                    <li>استخدام <a href="12-colored-pebbles-landscaping-guide.html" style="color: var(--action-blue); font-weight: bold;">الزلط الديكوري والأبيض المرمري</a> فوق عزل الأرضيات لمنع تجمع مياه الري المباشر بجوار جدران الفيلا.</li>
+                    <li>تصميم وتنفيذ <a href="07-waterfalls-indoor-stone-decor-marble.html" style="color: var(--action-blue); font-weight: bold;">الشلالات والنوافير</a> بعزل مائي هندسي ثلاثي الطبقات يمنع تماماً أي تسريب مائي قد يؤثر على أساسات الجدران المجاورة.</li>
                 </ul>
 
-                <div class="cta-box" style="background: linear-gradient(135deg, rgba(197,160,89,0.1), rgba(26,60,52,0.1)); border: 2px solid var(--royal-green);">
-                    <h3 style="color: var(--royal-green); margin-top: 0; border: none; padding: 0;">احمِ استثمارك وعقارك من أضرار الرطوبة والملوحة</h3>
-                    <p style="font-size: 1.1rem; margin-bottom: 20px;">احصل على استشارة هندسية لتوريد وتركيب أحجار الواجهات والعوازل المقاومة للماء بأعلى جودة في جميع محافظات مصر.</p>
-                    <a href="https://wa.me/201505543649?text=مرحباً%20Habib%20Store،%20أريد%20توريد%20حجر%20وعوازل%20لعلاج%20الرطوبة." target="_blank" rel="noopener noreferrer" class="btn-buy" style="padding: 18px 45px; font-size: 1.25rem;">
-                        <i class="fab fa-whatsapp" aria-hidden="true" style="font-size: 1.6rem;"></i> تواصل الآن مع قسم الاستشارات الهندسية عبر واتساب
-                    </a>
-                </div>
+                <!-- Facade Treatment Estimator -->
+                <h2 id="calculator">6. حاسبة تكلفة معالجة وتجليد الواجهات (تقديرية)</h2>
+                <section class="calculator-box" style="background:#fff; padding:35px; border-radius:20px; border:3px solid var(--action-blue); margin:50px 0; box-shadow: 0 10px 30px rgba(41, 128, 185, 0.1);">
+                    <p style="text-align:center; color:#555; font-size:1.1rem; margin-bottom:25px; font-weight:bold;">أدخل مساحة الواجهة المتضررة بالرطوبة لاحتساب الميزانية المبدئية للعلاج والتجليد بخامات Habib Store الصلبة.</p>
+                    
+                    <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin-bottom:25px;">
+                        <div style="flex:1; min-width:200px;">
+                            <label style="display:block; font-weight:900; margin-bottom:8px; color:var(--royal-green);">مساحة الواجهة المتضررة (بالمتر المربع):</label>
+                            <input type="number" id="facadeArea" placeholder="مثال: 100" style="width:100%; padding:15px; border:2px solid #ddd; border-radius:10px; font-size:1.2rem; box-sizing:border-box;">
+                        </div>
+                        <div style="flex:1; min-width:200px;">
+                            <label style="display:block; font-weight:900; margin-bottom:8px; color:var(--royal-green);">نوع المعالجة والتجليد:</label>
+                            <select id="facadeTreatment" style="width:100%; padding:15px; border:2px solid #ddd; border-radius:10px; font-size:1.2rem; background:#fff;">
+                                <option value="350">تجليد حجر فرعوني + عزل مائي (متوسط 350 ج/م)</option>
+                                <option value="400" selected>تجليد حجر هاشمي هيصم صلب + سيلر عازل (متوسط 400 ج/م)</option>
+                                <option value="700">تجليد رخام بتركيب ميكانيكي (أقصى حماية - متوسط 700 ج/م)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div id="treatmentCalcResult" style="display:none; text-align:center; padding:25px; background:rgba(41, 128, 185, 0.05); border-radius:15px; border:2px dashed var(--action-blue); margin-bottom:25px;">
+                        <h4 style="color:var(--action-blue); margin-top:0; font-size: 1.5rem;">تكلفة التجليد والمعالجة التقديرية:</h4>
+                        <span id="treatmentTotal" style="font-size:2.8rem; font-weight:900; color:var(--danger-red); display:block; margin:15px 0;">0 ج.م</span>
+                        <p style="font-size:0.95rem; color:#777; font-weight:bold;">* هذا الرقم استرشادي يشمل (الخامات والمصنعية). السعر الدقيق يحدد بعد المعاينة الهندسية لحجم تضرر الجدار.</p>
+                    </div>
 
-                <h2 id="faqs">6. الأسئلة الشائعة حول علاج رطوبة الواجهات</h2>
+                    <div style="text-align:center;" id="treatmentBtnContainer">
+                        <button onclick="calculateTreatmentCost()" style="background:var(--action-blue); color:white; padding:15px 45px; border:none; border-radius:50px; font-weight:900; cursor:pointer; font-size:1.3rem; transition:0.3s; box-shadow: 0 10px 20px rgba(41, 128, 185, 0.3);">
+                            احسب تكلفة العلاج الآن <i class="fas fa-calculator"></i>
+                        </button>
+                    </div>
+                    
+                    <div style="text-align:center;">
+                        <button id="treatmentWaBtn" onclick="sendTreatmentToWhatsApp()" style="display:none; background:#25d366; color:white; padding:15px 40px; border:none; border-radius:50px; font-weight:900; cursor:pointer; font-size:1.3rem; transition:0.3s; width:100%; margin-top:15px; box-shadow: 0 10px 25px rgba(37,211,102,0.4);">
+                            <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i> أرسل النتيجة لطلب معاينة فورية للواجهة
+                        </button>
+                    </div>
+                </section>
+
+                <script>
+                    function calculateTreatmentCost() {
+                        const area = document.getElementById('facadeArea').value;
+                        if(!area || area <= 0) { 
+                            alert('برجاء إدخال المساحة بشكل صحيح'); 
+                            return; 
+                        }
+                        const pricePerMeter = document.getElementById('facadeTreatment').value;
+                        
+                        // حساب إجمالي تقريبي
+                        const totalCost = area * pricePerMeter;
+                        
+                        document.getElementById('treatmentTotal').innerText = totalCost.toLocaleString('en-US') + " ج.م";
+                        
+                        document.getElementById('treatmentCalcResult').style.display = 'block';
+                        document.getElementById('treatmentBtnContainer').style.display = 'none';
+                        document.getElementById('treatmentWaBtn').style.display = 'inline-block';
+                    }
+
+                    function sendTreatmentToWhatsApp() {
+                        const area = document.getElementById('facadeArea').value;
+                        const treatSelect = document.getElementById('facadeTreatment');
+                        const treatText = treatSelect.options[treatSelect.selectedIndex].text;
+                        const totalCost = document.getElementById('treatmentTotal').innerText;
+                        
+                        const msg = `مرحباً مهندس الديكور في Habib Store، أعاني من رطوبة بالواجهة وقمت بحساب تكلفة العلاج عبر موقعكم:\n- المساحة المتضررة: ${area} متر\n- نوع التجليد المختار: ${treatText}\n- التكلفة التقريبية المحسوبة: ${totalCost}\n\nأرغب في تحديد موعد لمعاينة الواجهة وتأكيد المقايسة لسرعة التنفيذ.`;
+                        window.open(`https://wa.me/201016961497?text=${encodeURIComponent(msg)}`, '_blank');
+                    }
+                </script>
+
+                <h2 id="faqs">7. الأسئلة الشائعة حول علاج رطوبة الواجهات</h2>
                 <div class="faq-section">
                     <div class="faq-item">
-                        <div class="faq-question">هل يظهر التمليح مرة أخرى بعد تركيب الحجر الهاشمي؟</div>
-                        <div class="faq-answer">إذا تم تركيب الحجر بالطريقة الميكانيكية الصحيحة وتم دهانه بطبقة "سيلر" عازلة أصلية، فلن يظهر أي تمليح نهائياً.</div>
+                        <div class="faq-question">ما هي الأسباب الرئيسية لرطوبة وتقشر واجهات الفلل؟</div>
+                        <div class="faq-answer">تعود الأسباب عادة لتسرب المياه من مواسير الصرف، غياب العزل المائي للأسطح، أو تفاعل الأملاح مع الدهانات الرديئة والمونة التقليدية التي تحتفظ بالمياه بدلاً من طردها.</div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question">هل تغطون جميع محافظات مصر بأعمال التوريد والتركيب؟</div>
-                        <div class="faq-answer">نعم، نقدم خدماتنا في القاهرة الكبرى، التجمع الخامس، الشيخ زايد، الساحل الشمالي، الدلتا، وبني سويف والفيوم.</div>
+                        <div class="faq-question">كيف يقضي تجليد الحجر والرخام بالتركيب الميكانيكي على الرطوبة؟</div>
+                        <div class="faq-answer">التركيب الميكانيكي يخلق مسافة هواء (فراغ تهوية) بين الحجر والجدار الأساسي، مما يمنع انتقال الرطوبة لداخل المنزل ويحمي الواجهة نهائياً من التمليح والتأثر بالرطوبة الخارجية.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">هل يظهر التمليح مرة أخرى بعد تركيب الحجر الهاشمي؟</div>
+                        <div class="faq-answer">إذا تم تركيب الحجر بالطريقة الصحيحة وتم دهانه بطبقة "سيلر" عازلة أصلية، فلن يظهر أي تمليح نهائياً، وهذا ما نضمنه في Habib Store.</div>
                     </div>
                 </div>
 
-                <div class="cluster-links">
-                    <h3><i class="fas fa-network-wired" aria-hidden="true" style="color: var(--gold);"></i> استكشف المزيد من خدمات ومنتجات Habib Store:</h3>
-                    <ul>
-                        <li><a href="https://habib-landscape-boutique.com/blog/04-marble-natural-stone-facades-guide.html">الدليل الشامل لواجهات الرخام والحجر &rarr;</a></li>
-                        <li><a href="https://habib-landscape-boutique.com/blog/13-landscape-contractor-egypt-guide.html">دليل اختيار مقاول اللاندسكيب والتشطيبات &rarr;</a></li>
-                        <li><a href="https://habib-landscape-boutique.com/blog/11-sahel-north-coast-landscape-marble-stone.html">تشطيب وفلل الساحل الشمالي ضد الرطوبة &rarr;</a></li>
-                        <li><a href="https://habib-landscape-boutique.com/contact.html">تواصل مع خدمة العملاء والمبيعات</a></li>
-                    </ul>
+                <div class="cta-box" style="background: linear-gradient(135deg, var(--danger-red), #900C3F); border: 4px dashed #fff;">
+                    <h3 style="color: #fff; margin-top: 0; border: none; padding: 0;">احمِ استثمارك وعقارك من أضرار الرطوبة والملوحة للأبد</h3>
+                    <p style="font-size: 1.25rem; margin-bottom: 25px; color: #fdfdfd;">احصل على استشارة هندسية لتوريد وتركيب أحجار الواجهات والعوازل المقاومة للماء بأعلى جودة في جميع محافظات مصر.</p>
+                    <a href="https://wa.me/201016961497?text=مرحباً%20Habib%20Store،%20أريد%20توريد%20حجر%20وعوازل%20لعلاج%20رطوبة%20واجهتي." target="_blank" rel="noopener noreferrer" class="btn-buy" style="border: 3px solid #fff;">
+                        <i class="fab fa-whatsapp" aria-hidden="true" style="font-size: 1.8rem;"></i> تواصل الآن مع قسم الاستشارات الهندسية
+                    </a>
                 </div>
 
             </div> <!-- End long-content -->
 
+            <!-- E-E-A-T Trust Box -->
             <div class="eeat-box">
-                <h3>لماذا تثق في Habib Store؟</h3>
+                <h3>لماذا Habib Store هو الحل الأكيد لمشاكل واجهتك؟</h3>
                 <ul class="eeat-list">
                     <li>
                         <i class="fas fa-medal" aria-hidden="true"></i>
-                        <strong>جودة المنتجات</strong>
-                        أفضل الخامات والمواد المستخرجة من الطبيعة والمطابقة للمواصفات العالمية.
+                        <strong>خامات حجرية فرز أول</strong>
+                        نستخرج ونورد أنقى أنواع الحجر الهاشمي الهيصم الأقل مسامية والأكثر مقاومة للرطوبة.
                     </li>
                     <li>
-                        <i class="fas fa-truck" aria-hidden="true"></i>
-                        <strong>التوريد</strong>
-                        خدمة توريد موثوقة وسريعة لتغطية جميع محافظات الجمهورية بكل أمان.
+                        <i class="fas fa-hard-hat" aria-hidden="true"></i>
+                        <strong>تركيب ميكانيكي وعزل</strong>
+                        لا نعتمد على المونة التقليدية فقط، بل نوفر التركيب الميكانيكي وعوازل السيلر المائية.
                     </li>
                     <li>
-                        <i class="fas fa-headset" aria-hidden="true"></i>
-                        <strong>دعم العملاء</strong>
-                        فريق من المهندسين لتقديم الاستشارات المجانية والرد على استفساراتكم.
+                        <i class="fas fa-calendar-check" aria-hidden="true"></i>
+                        <strong>سرعة في التنفيذ</strong>
+                        بمجرد المعاينة، نرسل الخامات من المحجر ونبدأ العلاج والتركيب الفوري للواجهة.
                     </li>
                     <li>
-                        <i class="fas fa-users-cog" aria-hidden="true"></i>
-                        <strong>سنوات الخبرة</strong>
-                        تاريخ حافل بتنفيذ مشاريع اللاندسكيب لأرقى الفلل والقصور.
+                        <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                        <strong>ضمان هندسي حقيقي</strong>
+                        لأننا مقاول متكامل، نضمن لك عدم عودة الرطوبة أو تساقط الحجر بمرور السنين.
                     </li>
                 </ul>
+            </div>
+
+            <!-- God-Mode Contextual SEO Web Matrix -->
+            <div class="spider-web-matrix" id="spider-matrix">
+                <h3><i class="fas fa-sitemap" style="color: var(--action-blue);"></i> استكشف حلول وخدمات Habib Store الشاملة:</h3>
+                <div class="matrix-grid">
+                    <div class="matrix-item"><a href="04-marble-natural-stone-facades-guide.html" rel="dofollow" title="دليل الرخام والحجر"><i class="fas fa-building" style="color: var(--gold);"></i> الدليل الشامل لتجليد واجهات الرخام والحجر</a></div>
+                    <div class="matrix-item"><a href="13-landscape-contractor-egypt-guide.html" rel="dofollow" title="دليل المقاولات"><i class="fas fa-tools" style="color: var(--gold);"></i> دليل مقاول اللاندسكيب والتشطيبات الكبرى</a></div>
+                    <div class="matrix-item"><a href="11-sahel-north-coast-landscape-marble-stone.html" rel="dofollow" title="تشطيب الساحل الشمالي"><i class="fas fa-umbrella-beach" style="color: var(--gold);"></i> حلول الرطوبة والأملاح لفلل الساحل الشمالي</a></div>
+                    <div class="matrix-item"><a href="06-hashmi-stone-facades-prices-egypt.html" rel="dofollow" title="أسعار الحجر"><i class="fas fa-tags" style="color: var(--gold);"></i> دليل أسعار توريد الحجر الهاشمي في مصر</a></div>
+                    <div class="matrix-item"><a href="../contact.html" rel="dofollow" title="اتصل بقطاع المقاولات"><i class="fas fa-headset" style="color: var(--danger-red);"></i> تواصل مع قطاع المقاولات لمعاينة مشروعك</a></div>
+                </div>
             </div>
 
         </main>
@@ -494,6 +569,7 @@
                     let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
                     let scrolled = (winScroll / height) * 100;
                     document.getElementById("progress-bar").style.width = scrolled + "%";
+                    document.getElementById("progress-bar").setAttribute("aria-valuenow", Math.round(scrolled));
                     isScrolling = false;
                 });
                 isScrolling = true;
@@ -502,13 +578,15 @@
 
         function loadVideo(containerId, videoUrl) {
             const container = document.getElementById(containerId);
-            container.innerHTML = `<video controls autoplay preload="none" style="width:100%; max-height:500px; object-fit:cover; display:block;"><source src="${videoUrl}" type="video/mp4">متصفحك لا يدعم عرض الفيديو.</video>`;
+            if(container) {
+                container.innerHTML = `<video controls autoplay preload="metadata" style="width:100%; max-height:500px; object-fit:cover; display:block; border-radius: 20px; border: 4px solid var(--gold);"><source src="${videoUrl}" type="video/mp4">متصفحك لا يدعم عرض الفيديو.</video>`;
+            }
         }
     </script>
 
-    <footer style="text-align:center; padding:50px 20px; color:#777; font-size:0.95rem; background: #fff; margin-top: 60px; border-top: 3px solid var(--gold);">
-        <p style="font-weight: 900; color: var(--royal-green); font-size: 1.4rem; margin-bottom: 15px; letter-spacing: 1px;">HABIB STORE</p>
-        <p>المتجر الأول في مصر لتوريد وحلول علاج رطوبة الواجهات، الحجر الطبيعي، الرخام، والزلط الديكوري.</p>
+    <footer role="contentinfo" style="text-align:center; padding:60px 20px; color:#fff; font-size:1rem; background: var(--royal-green); margin-top: 60px; border-top: 5px solid var(--gold);">
+        <p style="font-weight: 900; color: var(--gold); font-size: 1.8rem; margin-bottom: 15px; letter-spacing: 2px;">HABIB STORE</p>
+        <p>المقاول والمتجر الأول في مصر لحلول الواجهات، علاج الرطوبة، وتوريد الخامات الطبيعية.</p>
         <p>&copy; 2026 Habib Store. جميع الحقوق محفوظة.</p>
     </footer>
 
