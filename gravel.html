@@ -29,12 +29,31 @@
         .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
         h1 { font-family: 'Amiri', serif; color: var(--green); text-align: center; margin-bottom: 40px; }
 
-        /* Grid System */
         .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
 
         .product-card { background: white; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s; border: 1px solid #eee; }
         .product-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
-        .product-card img { width: 100%; height: 220px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; }
+        
+        /* حاوية الصورة بخلفية بيضاء نقية وتوسيط احترافي */
+        .img-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #f0f0f0;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #ffffff;
+        }
+
         .product-card h3 { color: var(--green); margin: 10px 0; }
         .price { color: var(--gold); font-size: 20px; font-weight: bold; margin: 10px 0; }
         .btn-order { display: block; background: var(--green); color: white; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold; margin-top: 15px; transition: 0.3s; }
@@ -59,9 +78,11 @@
     
     <div class="product-grid">
         
-   <!-- منتج 1: زلط أبيض -->
+        <!-- منتج 1: زلط أبيض -->
         <div class="product-card">
-            <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/v1786071660/white-zalat_jym2bh.jpg" alt="زلط أبيض ديكوري">
+            <div class="img-container">
+                <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/b_white,f_jpg/v1786071660/white-zalat_jym2bh.jpg" alt="زلط أبيض ديكوري" loading="lazy">
+            </div>
             <h3>زلط أبيض ديكوري</h3>
             <p>زلط طبيعي نقي للحدائق والمسطحات وديكورات اللاندسكيب.</p>
             <div class="price">450 EGP / طن</div>
@@ -70,7 +91,9 @@
 
         <!-- منتج 2: زلط أحمر -->
         <div class="product-card">
-            <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/v1786071661/red-zalat_fugrr9.jpg" alt="زلط أحمر طبيعي">
+            <div class="img-container">
+                <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/b_white,f_jpg/v1786071661/red-zalat_fugrr9.jpg" alt="زلط أحمر طبيعي" loading="lazy">
+            </div>
             <h3>زلط أحمر طبيعي</h3>
             <p>يتميز بلونه المميز لإبراز جمال وتنسيق أحواض الزرع.</p>
             <div class="price">500 EGP / طن</div>
@@ -79,7 +102,9 @@
 
         <!-- منتج 3: زلط رخام أبيض -->
         <div class="product-card">
-            <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/v1775828587/zalat-white-marble-v2_gkrtut.jpg" alt="زلط رخام أبيض">
+            <div class="img-container">
+                <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/b_white,f_jpg/v1775828587/zalat-white-marble-v2_gkrtut.jpg" alt="زلط رخام أبيض" loading="lazy">
+            </div>
             <h3>زلط رخام أبيض فاخر</h3>
             <p>كسر رخام وزلط أبيض فائق النقاء لمظهر راقي وفخم.</p>
             <div class="price">550 EGP / طن</div>
