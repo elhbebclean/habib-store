@@ -34,7 +34,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Habib Store | أفضل أسعار متر النجيل الصناعي في مصر. توريد وتركيب نجيل صناعي فاخر للقصور والفلل في القاهرة والتجمع والشيخ زايد بخامات أوروبية وتصميم هندسي.">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <title>أسعار وتوريد النجيل الصناعي في مصر | Habib Store</title>
 
     <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
@@ -53,6 +53,7 @@
     <meta property="og:description" content="توريد وتركيب حدائق وفيلات بأعلى جودة وأفضل سعر للمتر. نصمم الطبيعة لتليق بخصوصية عالمك الخاص.">
     <meta property="og:image" content="https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto:eco,f_auto,w_600/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png">
     <meta property="og:url" content="https://habib-landscape-boutique.com/products/grass-gallery.html">
+    <meta property="og:type" content="website">
 
     <link rel="preload" href="../style.css" as="style">
     <link rel="stylesheet" href="../style.css">
@@ -65,27 +66,59 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "HomeAndConstructionBusiness",
-      "name": "Habib Store",
-      "image": "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto:eco,f_auto,w_600/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png",
-      "@id": "https://habib-landscape-boutique.com/",
-      "url": "https://habib-landscape-boutique.com/",
-      "telephone": "+201505543649",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "شارع 105",
-        "addressLocality": "المعادي",
-        "addressRegion": "القاهرة",
-        "postalCode": "11728",
-        "addressCountry": "EG"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 29.9628,
-        "longitude": 31.2590
-      },
-      "description": "نجيل صناعي فاخر للقصور والفلل في القاهرة. توريد وتركيب بإشراف هندسي وأفضل سعر للمتر.",
-      "priceRange": "$$$$"
+      "@graph": [
+        {
+          "@type": "HomeAndConstructionBusiness",
+          "name": "Habib Store",
+          "image": "https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto:eco,f_auto,w_600/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png",
+          "@id": "https://habib-landscape-boutique.com/",
+          "url": "https://habib-landscape-boutique.com/",
+          "telephone": "+201505543649",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "شارع 105",
+            "addressLocality": "المعادي",
+            "addressRegion": "القاهرة",
+            "postalCode": "11728",
+            "addressCountry": "EG"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 29.9628,
+            "longitude": 31.2590
+          },
+          "description": "نجيل صناعي فاخر للقصور والفلل في القاهرة. توريد وتركيب بإشراف هندسي وأفضل سعر للمتر.",
+          "priceRange": "$$$$"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://habib-landscape-boutique.com/index.html" },
+            { "@type": "ListItem", "position": 2, "name": "معرض النجيل الصناعي", "item": "https://habib-landscape-boutique.com/products/grass-gallery.html" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "ما هو أفضل نوع نجيل صناعي للرووف في مصر؟",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "يعتبر النجيل الصناعي التركي بكثافة 30 مم إلى 40 مم هو الأفضل للرووف، حيث يوفر التوازن المثالي بين النعومة وقوة التحمل وسهولة التنظيف. نوفره في حبيب ستور بأفضل الأسعار مع ضمان التركيب الهندسي المانع لتسرب المياه."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "كم يستغرق تركيب النجيل الصناعي للحدائق؟",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "نقوم في حبيب ستور بتوريد وتركيب النجيل الصناعي لمعظم الحدائق المنزلية والفلل خلال 48 ساعة فقط بعد إتمام المعاينة الهندسية الدقيقة للموقع."
+              }
+            }
+          ]
+        }
+      ]
     }
     </script>
 
@@ -688,6 +721,17 @@
             font-weight: 600;
         }
 
+        /* Conversational FAQ & Spider Web Sections */
+        .faq-section { background: #fff; padding: 40px; border-radius: 20px; margin: 60px 0; box-shadow: 0 5px 20px rgba(0,0,0,0.04); border-right: 4px solid var(--gold); }
+        .faq-section h2 { color: var(--royal-green); margin-bottom: 25px; font-size: 1.8rem; font-family: 'Amiri', serif;}
+        .faq-item { margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #f0f0f0; }
+        .faq-item h4 { color: var(--royal-green); font-size: 1.2rem; margin-bottom: 10px; font-weight: 700; }
+        .faq-item p { color: #555; line-height: 1.6; margin: 0; }
+
+        .spider-web-links { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin: 50px 0; }
+        .spider-btn { background: #fff; border: 2px solid var(--gold); color: var(--royal-green); padding: 12px 25px; border-radius: 30px; font-weight: bold; text-decoration: none; transition: 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+        .spider-btn:hover { background: var(--gold); color: #fff; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(197, 160, 89, 0.3); }
+
         .related-section {
             margin-top: 80px;
             padding-top: 50px;
@@ -941,6 +985,7 @@
             <a href="https://habib-landscape-boutique.com/products/marble.html"><i class="fas fa-cubes" aria-hidden="true"></i> معرض الرخام</a>
             <a href="https://habib-landscape-boutique.com/products/white-marble.html"><i class="fas fa-gem" aria-hidden="true"></i> معرض الزلط</a>
             <a href="https://habib-landscape-boutique.com/products/trees.html"><i class="fas fa-tree" aria-hidden="true"></i> معرض الأشجار</a>
+            <a href="https://habib-landscape-boutique.com/blog/index.html"><i class="fas fa-book-open" aria-hidden="true"></i> المدونة الهندسية</a>
             <a href="https://habib-landscape-boutique.com/contact.html" class="mobile-menu-contact-link"><i class="fas fa-envelope" aria-hidden="true"></i> اتصل بنا</a>
         </nav>
     </div>
@@ -1010,6 +1055,7 @@
             </div>
 
             <div class="product-grid">
+                <!-- Product 1 -->
                 <div class="card">
                     <div class="img-wrapper">
                         <div class="badge" style="background: var(--royal-green); color: white;">ENGINEER'S CHOICE</div>
@@ -1038,6 +1084,7 @@
                     </div>
                 </div>
 
+                <!-- Product 2 -->
                 <div class="card">
                     <div class="img-wrapper">
                         <div class="badge">BEST SELLER</div>
@@ -1066,6 +1113,7 @@
                     </div>
                 </div>
 
+                <!-- Product 3 -->
                 <div class="card">
                     <div class="img-wrapper">
                         <div class="badge">LUXURY</div>
@@ -1109,6 +1157,7 @@
             </div>
 
             <div class="product-grid">
+                <!-- Product 4 -->
                 <div class="card">
                     <div class="img-wrapper">
                         <div class="badge">PRACTICAL</div>
@@ -1137,6 +1186,7 @@
                     </div>
                 </div>
 
+                <!-- Product 5 -->
                 <div class="card">
                     <div class="img-wrapper">
                         <div class="badge">SMART</div>
@@ -1165,6 +1215,7 @@
                     </div>
                 </div>
 
+                <!-- Product 6 -->
                 <div class="card">
                     <div class="img-wrapper">
                         <div class="badge">BEST VALUE</div>
@@ -1193,6 +1244,32 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Conversational FAQ Section for AI Search Grounding -->
+            <section class="faq-section">
+                <h2>أسئلة يطرحها عملاؤنا عن توريد النجيل الصناعي</h2>
+                <div class="faq-item">
+                    <h4>ما هو أفضل نوع نجيل صناعي للرووف في مصر؟</h4>
+                    <p>يعتبر النجيل الصناعي التركي بكثافة 30 مم إلى 40 مم هو الأفضل للرووف، حيث يوفر التوازن المثالي بين النعومة وقوة التحمل وسهولة التنظيف. نوفره في حبيب ستور بأفضل الأسعار مع ضمان التركيب الهندسي المانع لتسرب المياه.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>كم يستغرق تركيب النجيل الصناعي للحدائق؟</h4>
+                    <p>نقوم في حبيب ستور بتوريد وتركيب النجيل الصناعي لمعظم الحدائق المنزلية والفلل خلال 48 ساعة فقط بعد إتمام المعاينة الهندسية الدقيقة للموقع وتحديد الكميات المطلوبة.</p>
+                </div>
+            </section>
+
+            <!-- Spider Web Section: Internal Linking to Hub Content -->
+            <section class="spider-web-links">
+                <a href="../blog/02-artificial-grass-installation-guide.html" class="spider-btn">
+                    <i class="fas fa-book-open"></i> دليلك الشامل لخطوات تركيب النجيل الصناعي
+                </a>
+                <a href="../gravel.html" class="spider-btn">
+                    <i class="fas fa-gem"></i> متجر الزلط الديكوري للاندسكيب
+                </a>
+                <a href="../blog/01-luxury-roof-zalat-decor.html" class="spider-btn">
+                    <i class="fas fa-layer-group"></i> أفكار دمج النجيل مع الزلط الديكوري
+                </a>
+            </section>
 
             <div class="how-it-works">
                 <div class="section-header">
