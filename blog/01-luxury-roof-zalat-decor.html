@@ -35,6 +35,37 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="../style.css">
 
+    <script src="../main.js" defer></script>
+
+    <!-- Microsoft Clarity and GTM Optimized -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const loadExternalScripts = () => {
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "wbchze8rtj");
+
+            (function(w,d,s,l,i){
+                w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+                var f=d.getElementsByTagName(s)[0],
+                    j=d.createElement(s),
+                    dl=l!='dataLayer'?'&l='+l:'';
+                j.async = true;
+                j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-NT75WPGT');
+        };
+
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadExternalScripts);
+        } else {
+            setTimeout(loadExternalScripts, 2000);
+        }
+    });
+    </script>
+
     <!-- Advanced Multi-Schemas & Google Merchant Center Integration -->
     <script type="application/ld+json">
     {
@@ -161,7 +192,7 @@
             "description": "فيديو يوضح المعالجة الهندسية والتشطيب الفاخر للزلط الأبيض النقي",
             "thumbnailUrl": "https://res.cloudinary.com/dwa0e5sup/image/upload/w_900,q_auto:eco,f_auto/v1775828587/zalat-white-marble-v2_gkrtut.jpg",
             "uploadDate": "2026-03-01T08:00:00+02:00",
-            "contentUrl": "https://res.cloudinary.com/dwa0e5sup/video/upload/v1775693440/decorative-white-pebbles-finish_nc4acd.mp4"
+            "contentUrl": "https://res.cloudinary.com/dwa0e5sup/video/upload/q_auto:eco/v1775693440/decorative-white-pebbles-finish_nc4acd.mp4"
         },
         {
             "@type": "VideoObject",
@@ -169,7 +200,7 @@
             "description": "جولة حصرية في مشاريع Habib Store وطرق التنفيذ الاحترافية للزلط الديكوري",
             "thumbnailUrl": "https://res.cloudinary.com/dwa0e5sup/image/upload/w_900,q_auto:eco,f_auto/v1775732695/habib-boutique-premium-stone-walkway-design.jpg_kxa78c.jpg",
             "uploadDate": "2026-03-01T08:00:00+02:00",
-            "contentUrl": "https://res.cloudinary.com/dwa0e5sup/video/upload/v1775693479/habib-boutique-real-projects_mebxrx.mp4"
+            "contentUrl": "https://res.cloudinary.com/dwa0e5sup/video/upload/q_auto:eco/v1775693479/habib-boutique-real-projects_mebxrx.mp4"
         }
       ]
     }
@@ -242,11 +273,9 @@
         figure img { width: 100%; max-width: 900px; height: auto; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.06); }
         figcaption { font-size: 0.9rem; color: #666; margin-top: 10px; font-weight: 600; }
         
-        .video-placeholder { position: relative; width: 100%; max-width: 900px; margin: 40px auto; border-radius: 20px; overflow: hidden; background: #000; border: 2px solid var(--gold); cursor: pointer; aspect-ratio: 16/9; }
-        .video-placeholder img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; transition: 0.3s; }
-        .video-placeholder:hover img { opacity: 1; }
-        .play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--royal-green); color: var(--gold); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; border: 2px solid var(--gold); box-shadow: 0 10px 25px rgba(0,0,0,0.4); transition: 0.3s; }
-        .video-placeholder:hover .play-btn { transform: translate(-50%, -50%) scale(1.1); background: var(--gold); color: var(--royal-green); }
+        /* Shorts Video Styling */
+        .shorts-container { position: relative; width: 100%; max-width: 350px; margin: 40px auto; border-radius: 20px; overflow: hidden; background: #000; border: 4px solid var(--gold); box-shadow: 0 15px 35px rgba(0,0,0,0.2); aspect-ratio: 9 / 16; }
+        .shorts-container video { width: 100%; height: 100%; object-fit: cover; }
         .video-caption { text-align: center; color: #555; font-size: 0.95rem; margin-top: 10px; font-weight: 700; background: #fff; padding: 8px; border-radius: 10px; }
 
         .cta-box { background: linear-gradient(135deg, rgba(17,40,34,0.05), rgba(230,126,34,0.1)); border: 1px solid var(--gold); padding: 30px; border-radius: 20px; text-align: center; margin: 40px 0; }
@@ -374,12 +403,9 @@
                     <li><strong>الاستخدام الأمثل:</strong> تحديد مسارات المشي، حول حمامات السباحة، وفي واجهات الفلل الحديثة.</li>
                 </ul>
 
-                <!-- فيديو 1 -->
-                <div class="video-placeholder" onclick="loadVideo('vid-1', 'https://res.cloudinary.com/dwa0e5sup/video/upload/v1775693440/decorative-white-pebbles-finish_nc4acd.mp4')">
-                    <div id="vid-1" style="width: 100%; height: 100%;">
-                        <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/v1775828587/zalat-white-marble-v2_gkrtut.jpg" alt="تشطيب الزلط الأبيض" loading="lazy" width="900" height="506">
-                        <div class="play-btn" aria-label="تشغيل الفيديو"><i class="fas fa-play" aria-hidden="true"></i></div>
-                    </div>
+                <!-- فيديو 1: شورتس يعمل تلقائياً عند التمرير -->
+                <div class="shorts-container">
+                    <video class="lazy-video" loop muted playsinline data-src="https://res.cloudinary.com/dwa0e5sup/video/upload/q_auto:eco/v1775693440/decorative-white-pebbles-finish_nc4acd.mp4" poster="https://res.cloudinary.com/dwa0e5sup/image/upload/v1775828587/zalat-white-marble-v2_gkrtut.jpg"></video>
                 </div>
                 <div class="video-caption">فيديو توضيحي: المعالجة الهندسية والتشطيب الفاخر للزلط الأبيض النقي</div>
 
@@ -403,12 +429,9 @@
                     <li><strong>المقاس الكبير والأحجار الضخمة (الطفطف) - 8 سم وأكبر:</strong> يُستخدم حصرياً كحدود ديكورية (Borders) للفصل بين أحواض الزرع والممرات، أو لتصميم شلالات المياه الصناعية والنوافير.</li>
                 </ul>
 
-                <!-- فيديو 2 -->
-                <div class="video-placeholder" onclick="loadVideo('vid-2', 'https://res.cloudinary.com/dwa0e5sup/video/upload/v1775693481/videoplayback_4_dnvane.mp4')">
-                    <div id="vid-2" style="width: 100%; height: 100%;">
-                        <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_900,q_auto:eco,f_auto/v1775732695/habib-boutique-premium-stone-walkway-design.jpg_kxa78c.jpg" alt="تفاصيل مقاسات الأحجار" loading="lazy" width="900" height="506">
-                        <div class="play-btn" aria-label="تشغيل الفيديو"><i class="fas fa-play" aria-hidden="true"></i></div>
-                    </div>
+                <!-- فيديو 2: شورتس يعمل تلقائياً -->
+                <div class="shorts-container">
+                    <video class="lazy-video" loop muted playsinline data-src="https://res.cloudinary.com/dwa0e5sup/video/upload/q_auto:eco/v1775693481/videoplayback_4_dnvane.mp4" poster="https://res.cloudinary.com/dwa0e5sup/image/upload/w_900,q_auto:eco,f_auto/v1775732695/habib-boutique-premium-stone-walkway-design.jpg_kxa78c.jpg"></video>
                 </div>
                 <div class="video-caption">تفاصيل استثنائية لأحجار وزلط الزينة الفاخرة بأحجام مختلفة</div>
 
@@ -449,12 +472,9 @@
                     <li><strong>الخطوة الخامسة: الغسيل النهائي.</strong> الزلط الطبيعي يأتي دائماً محاطاً ببودرة ناعمة من ناتج المحاجر. بعد الفرش، قم برش المساحة بخرطوم مياه لإزالة البودرة لتظهر ألوان الزلط الحقيقية اللامعة.</li>
                 </ul>
 
-                <!-- فيديو 3 -->
-                <div class="video-placeholder" onclick="loadVideo('vid-3', 'https://res.cloudinary.com/dwa0e5sup/image/upload/v1775693479/habib-boutique-real-projects_mebxrx.mp4')">
-                    <div id="vid-3" style="width: 100%; height: 100%;">
-                        <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/v1775732694/habib-landscape-boutique-decorative-outdoor-walls.jpg_cwwqq8.jpg" alt="مشاريع حقيقية لتنفيذ الزلط" loading="lazy" width="900" height="506">
-                        <div class="play-btn" aria-label="تشغيل الفيديو"><i class="fas fa-play" aria-hidden="true"></i></div>
-                    </div>
+                <!-- فيديو 3: شورتس يعمل تلقائياً -->
+                <div class="shorts-container">
+                    <video class="lazy-video" loop muted playsinline data-src="https://res.cloudinary.com/dwa0e5sup/video/upload/q_auto:eco/v1775693479/habib-boutique-real-projects_mebxrx.mp4" poster="https://res.cloudinary.com/dwa0e5sup/image/upload/v1775732694/habib-landscape-boutique-decorative-outdoor-walls.jpg_cwwqq8.jpg"></video>
                 </div>
                 <div class="video-caption">جولة حصرية في مشاريع Habib Store الواقعية وطرق التنفيذ الاحترافية</div>
 
@@ -464,12 +484,9 @@
                 <h3>التباين الساحر: الزلط الأبيض مع الممرات الحجرية</h3>
                 <p>لا شيء يبرز جمال الحجر الطبيعي مثل إطار ناصع البياض من الزلط المرمري. يمكنك عمل خطوط هندسية متداخلة، أو ترك مساحة مركزية للممرات وإحاطتها بالزلط، مما يعطي مظهراً مودرن ونظيفاً للغاية للرووف.</p>
 
-                <!-- فيديو 4 -->
-                <div class="video-placeholder" onclick="loadVideo('vid-4', 'https://res.cloudinary.com/dwa0e5sup/image/upload/v1775693494/premium-artificial-grass-shimmer_yvcktl.mp4')">
-                    <div id="vid-4" style="width: 100%; height: 100%;">
-                        <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/v1775828587/zalat-white-marble-v2_gkrtut.jpg" alt="تناغم الممرات مع الزلط" loading="lazy" width="900" height="506">
-                        <div class="play-btn" aria-label="تشغيل الفيديو"><i class="fas fa-play" aria-hidden="true"></i></div>
-                    </div>
+                <!-- فيديو 4: شورتس يعمل تلقائياً -->
+                <div class="shorts-container">
+                    <video class="lazy-video" loop muted playsinline data-src="https://res.cloudinary.com/dwa0e5sup/video/upload/q_auto:eco/v1775693494/premium-artificial-grass-shimmer_yvcktl.mp4" poster="https://res.cloudinary.com/dwa0e5sup/image/upload/v1775828587/zalat-white-marble-v2_gkrtut.jpg"></video>
                 </div>
                 <div class="video-caption">شاهد روعة الملمس والتناغم بين الأحجار الفاخرة والزلط الديكوري</div>
 
@@ -488,12 +505,9 @@
                     <li><strong>تجديد السطح:</strong> بعد عدة سنوات، يمكنك شراء بضع شكاير إضافية من <strong>Habib Store</strong> لنثرها على الوجه وتجديد المظهر بالكامل بتكلفة زهيدة.</li>
                 </ul>
 
-                <!-- فيديو 5 -->
-                <div class="video-placeholder" onclick="loadVideo('vid-5', 'https://res.cloudinary.com/dwa0e5sup/image/upload/v1775693488/premium-grass-texture-view_jr9iru.mp4')">
-                    <div id="vid-5" style="width: 100%; height: 100%;">
-                        <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/v1775732690/habib-boutique-sophisticated-stone-wall-texture.jpg_llbui2.jpg" alt="لاندسكيب فاخر متكامل" loading="lazy" width="900" height="506">
-                        <div class="play-btn" aria-label="تشغيل الفيديو"><i class="fas fa-play" aria-hidden="true"></i></div>
-                    </div>
+                <!-- فيديو 5: شورتس يعمل تلقائياً -->
+                <div class="shorts-container">
+                    <video class="lazy-video" loop muted playsinline data-src="https://res.cloudinary.com/dwa0e5sup/video/upload/q_auto:eco/v1775693488/premium-grass-texture-view_jr9iru.mp4" poster="https://res.cloudinary.com/dwa0e5sup/image/upload/v1775732690/habib-boutique-sophisticated-stone-wall-texture.jpg_llbui2.jpg"></video>
                 </div>
                 <div class="video-caption">تفاصيل نسيج ومظهر اللاندسكيب الفاخر المتكامل بالزلط والعناصر الحجرية</div>
 
@@ -552,12 +566,9 @@
                     <li><strong>خلط ألوان غير متجانسة:</strong> خلط الزلط الأبيض مع الأسود عشوائياً يفسد المظهر. استخدم تصميماً هندسياً مدروساً يتماشى مع <a href="https://habib-landscape-boutique.com/products/marble.html" style="color: var(--royal-green); font-weight: bold;">الرخام الطبيعي</a> المحيط.</li>
                 </ul>
 
-                <!-- فيديو 6 -->
-                <div class="video-placeholder" onclick="loadVideo('vid-6', 'https://res.cloudinary.com/dwa0e5sup/image/upload/v1775693481/habib-outdoor-luxury-vibes_grcz5f.mp4')">
-                    <div id="vid-6" style="width: 100%; height: 100%;">
-                        <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/v1775732690/habib-boutique-sophisticated-stone-wall-texture.jpg_llbui2.jpg" alt="أجواء خارجية ساحرة" loading="lazy" width="900" height="506">
-                        <div class="play-btn" aria-label="تشغيل الفيديو"><i class="fas fa-play" aria-hidden="true"></i></div>
-                    </div>
+                <!-- فيديو 6: شورتس يعمل تلقائياً -->
+                <div class="shorts-container">
+                    <video class="lazy-video" loop muted playsinline data-src="https://res.cloudinary.com/dwa0e5sup/video/upload/q_auto:eco/v1775693481/habib-outdoor-luxury-vibes_grcz5f.mp4" poster="https://res.cloudinary.com/dwa0e5sup/image/upload/v1775732690/habib-boutique-sophisticated-stone-wall-texture.jpg_llbui2.jpg"></video>
                 </div>
                 <div class="video-caption">أجواء خارجية ساحرة لتنسيق الحدائق العصرية من Habib Store</div>
 
@@ -635,25 +646,41 @@
         </main>
     </div>
 
+    <!-- كود تشغيل الفيديوهات تلقائياً (Lazy Load) لضمان أقصى سرعة للموقع -->
     <script>
-        let isScrolling = false;
-        window.onscroll = function() {
-            if (!isScrolling) {
-                window.requestAnimationFrame(function() {
-                    let winScroll = document.documentElement.scrollTop || document.body.scrollTop;
-                    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                    let scrolled = (winScroll / height) * 100;
-                    document.getElementById("progress-bar").style.width = scrolled + "%";
-                    isScrolling = false;
-                });
-                isScrolling = true;
-            }
-        };
+        document.addEventListener("DOMContentLoaded", function() {
+            let isScrolling = false;
+            window.onscroll = function() {
+                if (!isScrolling) {
+                    window.requestAnimationFrame(function() {
+                        let winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+                        let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                        let scrolled = (winScroll / height) * 100;
+                        document.getElementById("progress-bar").style.width = scrolled + "%";
+                        isScrolling = false;
+                    });
+                    isScrolling = true;
+                }
+            };
 
-        function loadVideo(containerId, videoUrl) {
-            const container = document.getElementById(containerId);
-            container.innerHTML = `<video controls autoplay preload="none" style="width:100%; max-height:500px; object-fit:cover; display:block;"><source src="${videoUrl}" type="video/mp4">متصفحك لا يدعم عرض الفيديو.</video>`;
-        }
+            if ("IntersectionObserver" in window) {
+                let lazyVideos = document.querySelectorAll("video.lazy-video");
+                let videoObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(video) {
+                        if (video.isIntersecting) {
+                            video.target.src = video.target.getAttribute("data-src");
+                            video.target.load();
+                            video.target.play().catch(function(e) { console.log("Autoplay prevented:", e); });
+                            videoObserver.unobserve(video.target);
+                        }
+                    });
+                }, { rootMargin: "0px 0px 300px 0px" });
+
+                lazyVideos.forEach(function(v) {
+                    videoObserver.observe(v);
+                });
+            }
+        });
     </script>
 
     <footer style="text-align:center; padding:50px 20px; color:#777; font-size:0.95rem; background: #fff; margin-top: 60px; border-top: 3px solid var(--gold);">
