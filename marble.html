@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="كتالوج الرخام الطبيعي لاندسكيب وديكورات - حبيب ستور. تشكيلة واسعة من أجود أنواع الرخام المصري بأسعار تنافسية.">
+    <meta name="description" content="كتالوج الرخام الطبيعي وكسر الرخام - حبيب ستور. تشكيلة واسعة من أجود أنواع الرخام المصري بأسعار تنافسية للواجهات والأرضيات.">
     <title>معرض الرخام الطبيعي | حبيب ستور للاندسكيب</title>
 
     <link rel="canonical" href="https://habib-landscape-boutique.com/marble.html">
@@ -33,7 +33,26 @@
 
         .product-card { background: white; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s; border: 1px solid #eee; }
         .product-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
-        .product-card img { width: 100%; height: 220px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; }
+        
+        .img-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #f0f0f0;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #ffffff;
+        }
+
         .product-card h3 { color: var(--green); margin: 10px 0; }
         .price { color: var(--gold); font-size: 20px; font-weight: bold; margin: 10px 0; }
         .btn-order { display: block; background: var(--green); color: white; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold; margin-top: 15px; transition: 0.3s; }
@@ -54,33 +73,39 @@
 </header>
 
 <div class="container">
-    <h1>كتالوج الرخام الطبيعي</h1>
+    <h1>كتالوج الرخام الطبيعي وكسر الرخام</h1>
     
     <div class="product-grid">
         
-        <!-- منتج 1 -->
+        <!-- منتج 1: رخام تريستا -->
         <div class="product-card">
-            <img src="https://via.placeholder.com/400x300?text=صورة+الرخام" alt="رخام تريستا">
+            <div class="img-container">
+                <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/b_white,f_jpg/v1775732414/habib-landscape-boutique-royal-villa-entrance-flooring.jpg_mpu58y.jpg" alt="رخام تريستا" loading="lazy">
+            </div>
             <h3>رخام تريستا</h3>
-            <p>رخام مصري يتميز بصلابته ومقاومته للعوامل الجوية، مثالي للواجهات.</p>
+            <p>صلابة عالية ومقاومة ممتازة للعوامل الجوية، مثالي للواجهات.</p>
             <div class="price">250 EGP / متر</div>
             <a href="https://wa.me/201505543649?text=أرغب%20في%20طلب%20رخام%20تريستا" class="btn-order">طلب عبر واتساب</a>
         </div>
 
-        <!-- منتج 2 -->
+        <!-- منتج 2: رخام جلالة -->
         <div class="product-card">
-            <img src="https://via.placeholder.com/400x300?text=صورة+الرخام" alt="رخام جلالة">
+            <div class="img-container">
+                <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/b_white,f_jpg/v1775732414/habib-landscape-boutique-royal-villa-entrance-flooring.jpg_mpu58y.jpg" alt="رخام جلالة" loading="lazy">
+            </div>
             <h3>رخام جلالة</h3>
-            <p>أكثر الأنواع شيوعاً، لمسة جمالية كلاسيكية للمداخل والأرضيات.</p>
+            <p>لمسة جمالية كلاسيكية للمداخل والأرضيات، الأكثر مبيعاً.</p>
             <div class="price">280 EGP / متر</div>
             <a href="https://wa.me/201505543649?text=أرغب%20في%20طلب%20رخام%20جلالة" class="btn-order">طلب عبر واتساب</a>
         </div>
 
-        <!-- منتج 3 -->
+        <!-- منتج 3: رخام جراي -->
         <div class="product-card">
-            <img src="https://via.placeholder.com/400x300?text=صورة+الرخام" alt="رخام جراي">
+            <div class="img-container">
+                <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/b_white,f_jpg/v1775732414/habib-landscape-boutique-royal-villa-entrance-flooring.jpg_mpu58y.jpg" alt="رخام جراي" loading="lazy">
+            </div>
             <h3>رخام جراي (رمادي)</h3>
-            <p>مظهر عصري ومودرن يتناسب مع التصميمات الحديثة للاندسكيب.</p>
+            <p>مظهر عصري ومودرن يتناسب مع التصميمات الحديثة.</p>
             <div class="price">320 EGP / متر</div>
             <a href="https://wa.me/201505543649?text=أرغب%20في%20طلب%20رخام%20جراي" class="btn-order">طلب عبر واتساب</a>
         </div>
