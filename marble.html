@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="كتالوج الرخام الطبيعي وكسر الرخام - حبيب ستور. تشكيلة واسعة من أجود أنواع الرخام المصري بأسعار تنافسية للواجهات والأرضيات.">
-    <title>معرض الرخام الطبيعي | حبيب ستور للاندسكيب</title>
+    <meta name="description" content="كتالوج الرخام الطبيعي والأحجار الديكورية لاندسكيب - حبيب ستور. رخام جلالة للمشايات، حجر مايكا وأحجار واجهات فاخرة بأسعار المحاجر في مصر.">
+    <title>معرض الرخام والأحجار الديكورية | حبيب ستور للاندسكيب</title>
 
     <link rel="canonical" href="https://habib-landscape-boutique.com/marble.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,7 +31,7 @@
 
         .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
 
-        .product-card { background: white; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s; border: 1px solid #eee; }
+        .product-card { background: white; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s; border: 1px solid #eee; scroll-margin-top: 100px; }
         .product-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
         
         .img-container {
@@ -58,6 +58,13 @@
         .btn-order { display: block; background: var(--green); color: white; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold; margin-top: 15px; transition: 0.3s; }
         .btn-order:hover { background: var(--gold); }
 
+        .faq-section { max-width: 900px; margin: 60px auto 0; background: white; padding: 30px; border-radius: 12px; border: 1px solid #eee; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .faq-section h2 { font-family: 'Amiri', serif; color: var(--green); text-align: center; margin-bottom: 25px; }
+        .faq-item { margin-bottom: 20px; border-bottom: 1px solid #f0f0f0; padding-bottom: 15px; }
+        .faq-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .faq-item h4 { color: var(--green); margin-bottom: 8px; font-size: 18px; }
+        .faq-item p { margin: 0; color: #555; font-size: 15px; }
+
         footer { text-align: center; padding: 40px; border-top: 1px solid #eee; margin-top: 50px; background: white; }
     </style>
 </head>
@@ -73,44 +80,83 @@
 </header>
 
 <div class="container">
-    <h1>كتالوج الرخام الطبيعي وكسر الرخام</h1>
+    <h1>معرض الرخام الطبيعي والأحجار الديكورية</h1>
     
     <div class="product-grid">
         
-        <!-- منتج 1: رخام تريستا -->
-        <div class="product-card">
+        <!-- منتج 1: رخام جلالة للمشايات -->
+        <div class="product-card" id="galala-marble">
             <div class="img-container">
-                <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/b_white,f_jpg/v1775732414/habib-landscape-boutique-royal-villa-entrance-flooring.jpg_mpu58y.jpg" alt="رخام تريستا" loading="lazy">
+                <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/b_white,f_jpg/v1775732442/habib-landscape-boutique-galala-marble-pathways.jpg_2_xwmyr7.jpg" alt="رخام جلالة طبيعي للمشايات" loading="lazy">
             </div>
-            <h3>رخام تريستا</h3>
-            <p>صلابة عالية ومقاومة ممتازة للعوامل الجوية، مثالي للواجهات.</p>
-            <div class="price">250 EGP / متر</div>
-            <a href="https://wa.me/201505543649?text=أرغب%20في%20طلب%20رخام%20تريستا" class="btn-order">طلب عبر واتساب</a>
+            <h3>رخام جلالة طبيعي للمشايات</h3>
+            <p>رخام جلالة فخم لتصميم ممرات ومشاية الحدائق بظهر صلب وتشطيب عالي الجودة.</p>
+            <div class="price">350 EGP / متر</div>
+            <a href="https://wa.me/201505543649?text=أرغب%20في%20طلب%20رخام%20جلالة%20للمشايات" class="btn-order">طلب عبر واتساب</a>
         </div>
 
-        <!-- منتج 2: رخام جلالة -->
-        <div class="product-card">
+        <!-- منتج 2: حجر مايكا أحمر -->
+        <div class="product-card" id="mica-stone">
             <div class="img-container">
-                <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/b_white,f_jpg/v1775732414/habib-landscape-boutique-royal-villa-entrance-flooring.jpg_mpu58y.jpg" alt="رخام جلالة" loading="lazy">
+                <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/b_white,f_jpg/v1775732416/habib-boutique-red-mica-stone-wall-cladding.jpg_kr4uuk.jpg" alt="حجر مايكا أحمر لتكسية الجدران" loading="lazy">
             </div>
-            <h3>رخام جلالة</h3>
-            <p>لمسة جمالية كلاسيكية للمداخل والأرضيات، الأكثر مبيعاً.</p>
-            <div class="price">280 EGP / متر</div>
-            <a href="https://wa.me/201505543649?text=أرغب%20في%20طلب%20رخام%20جلالة" class="btn-order">طلب عبر واتساب</a>
+            <h3>حجر مايكا أحمر لتكسية الجدران</h3>
+            <p>حجر مايكا طبيعي باللون الأحمر المميز لتكسية الواجهات والديكورات الخارجية.</p>
+            <div class="price">350 EGP / م²</div>
+            <a href="https://wa.me/201505543649?text=أرغب%20في%20طلب%20حجر%20مايكا%20أحمر" class="btn-order">طلب عبر واتساب</a>
         </div>
 
-        <!-- منتج 3: رخام جراي -->
-        <div class="product-card">
+        <!-- منتج 3: حجر ديكوري للواجهات -->
+        <div class="product-card" id="decorative-stone">
             <div class="img-container">
-                <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/b_white,f_jpg/v1775732414/habib-landscape-boutique-royal-villa-entrance-flooring.jpg_mpu58y.jpg" alt="رخام جراي" loading="lazy">
+                <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/b_white,f_jpg/v1775732694/habib-landscape-boutique-decorative-outdoor-walls.jpg_cwwqq8.jpg" alt="حجر ديكوري للواجهات الخارجية" loading="lazy">
             </div>
-            <h3>رخام جراي (رمادي)</h3>
-            <p>مظهر عصري ومودرن يتناسب مع التصميمات الحديثة.</p>
-            <div class="price">320 EGP / متر</div>
-            <a href="https://wa.me/201505543649?text=أرغب%20في%20طلب%20رخام%20جراي" class="btn-order">طلب عبر واتساب</a>
+            <h3>حجر ديكوري للواجهات الخارجية</h3>
+            <p>أحجار ديكورية طبيعية متينة للأسوار والواجهات الخارجية لتحمل العوامل الجوية.</p>
+            <div class="price">350 EGP / م²</div>
+            <a href="https://wa.me/201505543649?text=أرغب%20في%20طلب%20حجر%20ديكوري%20للواجهات" class="btn-order">طلب عبر واتساب</a>
+        </div>
+
+        <!-- منتج 4: حجر طبيعي للممرات الفاخرة -->
+        <div class="product-card" id="luxury-pathway">
+            <div class="img-container">
+                <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/b_white,f_jpg/v1775732444/habib-landscape-boutique-luxury-outdoor-pathway.jpg_tg3aho.jpg" alt="حجر طبيعي للممرات الفاخرة" loading="lazy">
+            </div>
+            <h3>حجر طبيعي للممرات الفاخرة</h3>
+            <p>قطع حجر طبيعي مختارة بعناية لتنفيذ ممرات حدائق عصرية وفخمة بلمسة طبيعية.</p>
+            <div class="price">400 EGP / متر</div>
+            <a href="https://wa.me/201505543649?text=أرغب%20في%20طلب%20حجر%20طبيعي%20للممرات%20الفاخرة" class="btn-order">طلب عبر واتساب</a>
+        </div>
+
+        <!-- منتج 5: حجر ديكوري ناعم الملمس -->
+        <div class="product-card" id="soft-wall-stone">
+            <div class="img-container">
+                <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/b_white,f_jpg/v1775732690/habib-boutique-sophisticated-stone-wall-texture.jpg_llbui2.jpg" alt="حجر ديكوري ناعم الملمس" loading="lazy">
+            </div>
+            <h3>حجر ديكوري ناعم الملمس</h3>
+            <p>أحجار ديكور بجودة عالية لزينة الحوائط الداخلية والخارجية بلمسة فنية ناعمة.</p>
+            <div class="price">450 EGP / م²</div>
+            <a href="https://wa.me/201505543649?text=أرغب%20في%20طلب%20حجر%20ديكوري%20ناعم%20الملمس" class="btn-order">طلب عبر واتساب</a>
         </div>
 
     </div>
+
+    <!-- قسم الأسئلة الشائعة للـ SEO -->
+    <section class="faq-section">
+        <h2>أسئلة شائعة حول الرخام والأحجار الطبيعية للاندسكيب</h2>
+        <div class="faq-item">
+            <h4>ما هو أفضل نوع رخام لمشايات الحدائق؟</h4>
+            <p>يُعد رخام جلالة من أفضل الخيارات لتميزه بالصلابة العالية ومقاومته للتغيرات المناخية، بالإضافة إلى مظهره الراقي.</p>
+        </div>
+        <div class="faq-item">
+            <h4>هل حجر المايكا مناسب للواجهات الخارجية؟</h4>
+            <p>نعم، حجر المايكا الطبيعي مصمم خصيصاً لتحمل العوامل الجوية القاسية، ويضيف فخامة مميزة للواجهات والأسوار والديكورات الخارجية.</p>
+        </div>
+        <div class="faq-item">
+            <h4>كيف يتم تأكيد طلب الرخام أو الأحجار من حبيب ستور؟</h4>
+            <p>يمكنك تصفح الكتالوج واختيار المنتج المناسب، ثم الضغط على زر "طلب عبر واتساب" للتواصل المباشر وتحديد الكميات والمقاسات المطلوبة.</p>
+        </div>
+    </section>
 </div>
 
 <footer>
