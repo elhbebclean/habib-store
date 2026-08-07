@@ -6,7 +6,7 @@
   <!-- الصفحة الرئيسية -->
   <url>
     <loc>https://habib-landscape-boutique.com/</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -16,31 +16,59 @@
     </image:image>
   </url>
 
-  <!-- معرض النجيل الصناعي -->
+  <!-- متاجر المبيعات المباشرة (Direct Stores) -->
   <url>
-    <loc>https://habib-landscape-boutique.com/products/grass-gallery.html</loc>
-    <lastmod>2026-08-06</lastmod>
+    <loc>https://habib-landscape-boutique.com/gravel.html</loc>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dwa0e5sup/image/upload/c_pad,w_800,h_800,b_white,f_jpg,q_auto/v1786071660/white-zalat_jym2bh.jpg</image:loc>
+      <image:title>متجر الزلط الديكوري</image:title>
+    </image:image>
   </url>
 
-  <!-- معرض النجيل (إنجليزي) -->
+  <url>
+    <loc>https://habib-landscape-boutique.com/marble.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dwa0e5sup/image/upload/c_pad,w_800,h_800,b_white,f_jpg,q_auto/v1775732442/habib-landscape-boutique-galala-marble-pathways.jpg_2_xwmyr7.jpg</image:loc>
+      <image:title>متجر الرخام الطبيعي والأحجار</image:title>
+    </image:image>
+  </url>
+
+  <!-- معارض الإلهام البصري (Galleries) -->
+  <url>
+    <loc>https://habib-landscape-boutique.com/products/grass-gallery.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dwa0e5sup/image/upload/w_1200,q_auto:eco,f_auto/v1775849160/nagel_habib_turky_lsx54o.jpg</image:loc>
+      <image:title>معرض النجيل الصناعي التركي</image:title>
+    </image:image>
+  </url>
+
   <url>
     <loc>https://habib-landscape-boutique.com/products/gallery-en.html</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
 
-  <!-- معرض الرخام والواجهات -->
   <url>
     <loc>https://habib-landscape-boutique.com/products/marble.html</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.93</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dwa0e5sup/image/upload/w_1200,q_auto:eco,f_auto/v1775732441/habib-landscape-boutique-luxury-wall-cladding-villa.jpg_xtxuid.jpg</image:loc>
+      <image:title>جداريات النخبة ومعرض الرخام</image:title>
+    </image:image>
   </url>
 
-  <!-- معرض الزلط الديكوري والأحجار -->
   <url>
     <loc>https://habib-landscape-boutique.com/products/white-marble.html</loc>
     <lastmod>2026-08-06</lastmod>
@@ -48,7 +76,6 @@
     <priority>0.91</priority>
   </url>
 
-  <!-- معرض الأشجار والنخيل -->
   <url>
     <loc>https://habib-landscape-boutique.com/products/trees.html</loc>
     <lastmod>2026-08-06</lastmod>
@@ -59,22 +86,69 @@
   <!-- صفحة المدونة الرئيسية (Hub) -->
   <url>
     <loc>https://habib-landscape-boutique.com/blog/</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
   </url>
 
-  <!-- مقالات المدونة الـ 35 -->
-  <url><loc>https://habib-landscape-boutique.com/blog/01-luxury-roof-zalat-decor.html</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://habib-landscape-boutique.com/blog/02-artificial-grass-installation-guide.html</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <!-- مقالات المدونة الـ 35 المحدثة -->
+  <url>
+    <loc>https://habib-landscape-boutique.com/blog/01-luxury-roof-zalat-decor.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dwa0e5sup/image/upload/w_1200,q_auto:eco,f_auto/v1775828587/zalat-white-marble-v2_gkrtut.jpg</image:loc>
+      <image:title>تنسيق الرووف بالزلط الديكوري الفاخر</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://habib-landscape-boutique.com/blog/02-artificial-grass-installation-guide.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dwa0e5sup/image/upload/w_1200,q_auto:eco,f_auto/v1775849160/nagel_habib_turky_lsx54o.jpg</image:loc>
+      <image:title>طريقة تركيب النجيل الصناعي للفلل</image:title>
+    </image:image>
+  </url>
+  
   <url><loc>https://habib-landscape-boutique.com/blog/03-ornamental-trees-palms-guide.html</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
   <url><loc>https://habib-landscape-boutique.com/blog/04-marble-natural-stone-facades-guide.html</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
   <url><loc>https://habib-landscape-boutique.com/blog/05-modern-garden-walkways-landscape-design.html</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
   <url><loc>https://habib-landscape-boutique.com/blog/06-hashmi-stone-facades-prices-egypt.html</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://habib-landscape-boutique.com/blog/07-waterfalls-indoor-stone-decor-marble.html</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://habib-landscape-boutique.com/blog/08-villa-walls-entrances-stone-marble-cladding.html</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  
+  <url>
+    <loc>https://habib-landscape-boutique.com/blog/07-waterfalls-indoor-stone-decor-marble.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  
+  <url>
+    <loc>https://habib-landscape-boutique.com/blog/08-villa-walls-entrances-stone-marble-cladding.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dwa0e5sup/image/upload/w_1200,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg</image:loc>
+      <image:title>تجليد أسوار الفلل والمداخل بالرخام والحجر</image:title>
+    </image:image>
+  </url>
+  
   <url><loc>https://habib-landscape-boutique.com/blog/09-stone-marble-zalat-supply-regions-egypt.html</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://habib-landscape-boutique.com/blog/10-hashmi-stone-vs-marble-facades-comparison.html</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url>
+    <loc>https://habib-landscape-boutique.com/blog/10-hashmi-stone-vs-marble-facades-comparison.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dwa0e5sup/image/upload/w_1200,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg</image:loc>
+      <image:title>الحجر الهاشمي أم الرخام للواجهات؟</image:title>
+    </image:image>
+  </url>
+  
   <url><loc>https://habib-landscape-boutique.com/blog/11-sahel-north-coast-landscape-marble-stone.html</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
   <url><loc>https://habib-landscape-boutique.com/blog/12-colored-pebbles-landscaping-guide.html</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
   <url><loc>https://habib-landscape-boutique.com/blog/13-landscape-contractor-egypt-guide.html</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
@@ -95,7 +169,18 @@
   <url><loc>https://habib-landscape-boutique.com/blog/28-landscape-stones-marble-turnkey-egypt.html</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://habib-landscape-boutique.com/blog/29-landscape-and-facades-expert-guide-egypt.html</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
   <url><loc>https://habib-landscape-boutique.com/blog/30-habib-store-master-hub-network-egypt.html</loc><lastmod>2026-08-06</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
-  <url><loc>https://habib-landscape-boutique.com/blog/31-new-cairo-landscape-stones-master-network.html</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  
+  <url>
+    <loc>https://habib-landscape-boutique.com/blog/31-new-cairo-landscape-stones-master-network.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dwa0e5sup/image/upload/w_1200,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg</image:loc>
+      <image:title>لاندسكيب התجمع الخامس ومدينتي</image:title>
+    </image:image>
+  </url>
+  
   <url><loc>https://habib-landscape-boutique.com/blog/32-zayed-october-villa-landscape-design.html</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://habib-landscape-boutique.com/blog/33-maadi-katameya-villas-stone-facades.html</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://habib-landscape-boutique.com/blog/34-egypt-nationwide-landscape-marble-stones-supply.html</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
