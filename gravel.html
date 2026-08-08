@@ -59,7 +59,7 @@
     }
     </script>
 
-    <!-- Schema 2: ItemList & Products (متطابقة تماماً مع جوجل شيت) -->
+    <!-- Schema 2: ItemList & Products (مطابقة للصفحة وتتضمن المنتجات الثلاثة مع الـ Brand) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -73,12 +73,19 @@
             "name": "زلط أبيض ديكوري",
             "image": "https://res.cloudinary.com/dwa0e5sup/image/upload/c_pad,w_800,h_800,b_white,f_jpg,q_auto/v1786071660/white-zalat_jym2bh.jpg",
             "description": "زلط طبيعي نقي للحدائق بمظهر ناصع البياض.",
+            "brand": {
+              "@type": "Brand",
+              "name": "Habib Store"
+            },
             "offers": {
               "@type": "Offer",
               "priceCurrency": "EGP",
               "price": "300",
               "availability": "https://schema.org/InStock",
-              "seller": { "@type": "Organization", "name": "Habib Store" }
+              "seller": { 
+                "@type": "Organization", 
+                "name": "Habib Store" 
+              }
             }
           }
         },
@@ -90,11 +97,43 @@
             "name": "زلط أحمر طبيعي",
             "image": "https://res.cloudinary.com/dwa0e5sup/image/upload/c_pad,w_800,h_800,b_white,f_jpg,q_auto/v1786071661/red-zalat_fugrr9.jpg",
             "description": "زلط أحمر لإبراز جمال وتنسيق أحواض الزرع.",
+            "brand": {
+              "@type": "Brand",
+              "name": "Habib Store"
+            },
             "offers": {
               "@type": "Offer",
               "priceCurrency": "EGP",
               "price": "300",
-              "availability": "https://schema.org/InStock"
+              "availability": "https://schema.org/InStock",
+              "seller": { 
+                "@type": "Organization", 
+                "name": "Habib Store" 
+              }
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Product",
+            "name": "زلط رخام أبيض فاخر",
+            "image": "https://res.cloudinary.com/dwa0e5sup/image/upload/c_pad,w_800,h_800,b_white,f_jpg,q_auto/v1775828587/zalat-white-marble-v2_gkrtut.jpg",
+            "description": "كسر رخام وزلط أبيض فائق النقاء لمظهر راقي وفخم لمداخل الفلل والقصور.",
+            "brand": {
+              "@type": "Brand",
+              "name": "Habib Store"
+            },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "EGP",
+              "price": "300",
+              "availability": "https://schema.org/InStock",
+              "seller": { 
+                "@type": "Organization", 
+                "name": "Habib Store" 
+              }
             }
           }
         }
@@ -102,7 +141,7 @@
     }
     </script>
 
-    <!-- Schema 3: Conversational FAQ (للظهور في إجابات AI) -->
+    <!-- Schema 3: Conversational FAQ (مطابقة حرفياً للأسئلة والإجابات الثلاثة الظاهرة في الصفحة) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -113,7 +152,15 @@
           "name": "بكام شيكارة الزلط الأبيض الديكوري في مصر؟",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "يبلغ سعر شيكارة الزلط الأبيض الديكوري، والزلط الأحمر، وزلط الرخام في حبيب ستور 300 جنيه مصري، ويتم التوريد فوراً من المستودع لتنسيق اللاندسكيب."
+            "text": "يبلغ سعر شيكارة الزلط الأبيض الديكوري، والزلط الأحمر، وزلط الرخام في حبيب ستور 300 جنيه مصري، ويتم التوريد فوراً من المستودع لتنسيق اللاندسكيب والممرات."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ما هو معدل الاستهلاك للمتر المربع من الزلط؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "عادة ما يحتاج المتر المربع في تنسيق الحدائق إلى كمية تُقدر بحوالي 2 إلى 3 شكاير (حسب الارتفاع المطلوب لتغطية الأرضية بالكامل). يمكنك استشارة فريقنا الهندسي عبر الواتساب لتحديد الكمية بدقة لضمان مظهر كثيف وجذاب."
           }
         },
         {
@@ -121,7 +168,7 @@
           "name": "هل يتأثر لون الزلط الطبيعي بتغيرات الطقس والشمس؟",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "لا، الزلط المتوفر في حبيب ستور مستخرج من أفضل محاجر مصر، ويحافظ على بريقه وثبات ألوانه ضد أشعة الشمس المباشرة والأمطار."
+            "text": "لا، الزلط المتوفر في حبيب ستور مستخرج من محاجر طبيعية معتمدة، وهو حجر طبيعي 100% يحافظ على بريقه وثبات ألوانه ضد أشعة الشمس المباشرة الكثيفة والأمطار."
           }
         }
       ]
@@ -186,7 +233,7 @@
         footer .footer-brand { font-family: 'Amiri', serif; color: var(--green); font-size: 1.5rem; margin-bottom: 10px; font-weight: bold; }
         
         @media(max-width: 768px) {
-            .header-nav { display: none; } /* يفضل إضافة زر القائمة الجانبية هنا في المستقبل */
+            .header-nav { display: none; }
         }
     </style>
 </head>
@@ -210,11 +257,11 @@
 <main class="container">
     <div class="ai-entity-header">
         <h1>متجر الزلط الديكوري للاندسكيب (أسعار المستودع)</h1>
-        <p>يُعد حبيب ستور الوجهة الأولى في مصر لتوريد الزلط الطبيعي النقي (الأبيض، الأحمر، والرخامي) للحدائق والمسطحات. نقدم أفضل الأسعار مع التوريد المباشر لتنفيذ مشاريع اللاندسكيب بأعلى جودة.</p>
+        <p>يُعد حبيب ستور خياراً موثوقاً لتوريد الزلط الطبيعي النقي (الأبيض، الأحمر، والرخامي) للحدائق والمسطحات. نقدم أسعاراً تنافسية مع التوريد المباشر لتنفيذ مشاريع اللاندسكيب بأعلى جودة.</p>
     </div>
     
     <div class="product-grid">
-        <!-- منتج 1: زلط أبيض (الروابط متطابقة مع جوجل شيت) -->
+        <!-- منتج 1: زلط أبيض -->
         <article class="product-card" id="white-zalat">
             <div class="img-container">
                 <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/c_pad,w_800,h_800,b_white,f_jpg,q_auto/v1786071660/white-zalat_jym2bh.jpg" alt="سعر شيكارة الزلط الأبيض ديكوري للحدائق" loading="lazy" decoding="async">
@@ -248,7 +295,7 @@
         </article>
     </div>
 
-    <!-- الشبكة العنكبوتية (Spider Web Links) لربط الصفحة بالمعرض والمقالات -->
+    <!-- الشبكة العنكبوتية (Spider Web Links) -->
     <section class="spider-web-section">
         <a href="https://habib-landscape-boutique.com/products/white-marble.html" class="spider-card">
             <h3><i class="fas fa-camera-retro"></i> معرض الإلهام والصور</h3>
@@ -273,7 +320,7 @@
         </div>
         <div class="faq-item">
             <h4>هل يتأثر لون الزلط الطبيعي بتغيرات الطقس والشمس؟</h4>
-            <p>لا، الزلط المتوفر في حبيب ستور مستخرج من أفضل محاجر مصر، وهو حجر طبيعي 100% يحافظ على بريقه وثبات ألوانه ضد أشعة الشمس المباشرة الكثيفة والأمطار.</p>
+            <p>لا، الزلط المتوفر في حبيب ستور مستخرج من محاجر طبيعية معتمدة، وهو حجر طبيعي 100% يحافظ على بريقه وثبات ألوانه ضد أشعة الشمس المباشرة الكثيفة والأمطار.</p>
         </div>
     </section>
 </main>
