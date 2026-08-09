@@ -1,20 +1,38 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <!-- Google Tag Manager -->
-    <script>
-    (function(w,d,s,l,i){
-        w[l]=w[l]||[];
-        w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
-        var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),
-            dl=l!='dataLayer' ? '&l='+l : '';
-        j.async=true;
-        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-        f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-NT75WPGT');
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wbchze8rtj");
     </script>
-    <!-- End Google Tag Manager -->
+
+    <!-- Google Tag Manager Lazy Load -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var gtmLoaded = false;
+        function loadGTV() {
+            if(gtmLoaded) return;
+            gtmLoaded = true;
+            (function(w,d,s,l,i){
+                w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+                var f=d.getElementsByTagName(s)[0],
+                    j=d.createElement(s),
+                    dl=l!='dataLayer'?'&l='+l:'';
+                j.async = true;
+                j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-NT75WPGT');
+        }
+        ['scroll', 'mousemove', 'touchstart', 'click'].forEach(function(event) {
+            window.addEventListener(event, loadGTV, { once: true, passive: true });
+        });
+        setTimeout(loadGTV, 2000);
+    });
+    </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,6 +50,11 @@
     <title>أسعار متجر الرخام والأحجار الديكورية | حبيب ستور للاندسكيب</title>
 
     <link rel="canonical" href="https://habib-landscape-boutique.com/marble.html">
+    
+    <!-- Favicon from Cloudinary -->
+    <link rel="icon" href="https://res.cloudinary.com/dwa0e5sup/image/upload/c_pad,w_192,h_192,f_auto/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="https://res.cloudinary.com/dwa0e5sup/image/upload/c_pad,w_192,h_192,f_auto/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -316,8 +339,8 @@
     <a href="https://habib-landscape-boutique.com/" class="logo">HABIB STORE</a>
     <nav class="header-nav" aria-label="القائمة الرئيسية">
         <a href="https://habib-landscape-boutique.com/"><i class="fas fa-home"></i> الرئيسية</a>
-        <a href="https://habib-landscape-boutique.com/gravel.html"><i class="fas fa-gem"></i> متجر الزلط</a>
-        <a href="https://habib-landscape-boutique.com/products/marble.html"><i class="fas fa-images"></i> معرض صور الرخام</a>
+        <a href="https://habib-landscape-boutique.com/marble.html"><i class="fas fa-cubes"></i> متجر الرخام</a>
+        <a href="https://habib-landscape-boutique.com/products/white-marble.html"><i class="fas fa-images"></i> معرض صور الزلط</a>
         <a href="https://habib-landscape-boutique.com/blog/index.html"><i class="fas fa-blog"></i> المدونة</a>
     </nav>
 </header>
