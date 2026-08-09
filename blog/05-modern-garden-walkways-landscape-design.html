@@ -42,7 +42,10 @@
 
     <link rel="canonical" href="https://habib-landscape-boutique.com/blog/05-modern-garden-walkways-landscape-design.html">
     <link rel="manifest" href="../manifest.json">
-    <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
+    
+    <!-- Updated Favicon from Cloudinary -->
+    <link rel="icon" href="https://res.cloudinary.com/dwa0e5sup/image/upload/c_pad,w_192,h_192,f_auto/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="https://res.cloudinary.com/dwa0e5sup/image/upload/c_pad,w_192,h_192,f_auto/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png">
 
     <!-- Google Fonts Optimized -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -103,6 +106,28 @@
           }
         },
         {
+          "@type": "LocalBusiness",
+          "@id": "https://habib-landscape-boutique.com/#localbusiness",
+          "name": "Habib Landscape Boutique - لاندسكيب وديكور",
+          "image": "https://res.cloudinary.com/dwa0e5sup/image/upload/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png",
+          "telephone": "01505543649",
+          "url": "https://habib-landscape-boutique.com/",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "المعادي",
+            "addressLocality": "القاهرة",
+            "addressRegion": "محافظة القاهرة",
+            "addressCountry": "EG"
+          },
+          "priceRange": "$$",
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+            "opens": "09:00",
+            "closes": "22:00"
+          }
+        },
+        {
           "@type": "Product",
           "name": "خامات توريد مسارات اللاندسكيب (زلط ورخام)",
           "image": "https://res.cloudinary.com/dwa0e5sup/image/upload/v1775828645/m1_zoyqwm.jpg",
@@ -125,7 +150,7 @@
           "headline": "الدليل الهندسي: تصميم وتوريد مسارات اللاندسكيب (Walkways) بالرخام والزلط المرمري",
           "description": "مرجع هندسي لتحليل المواصفات المادية وتخطيط مسارات المشاة المدمجة (الرخام والزلط) في مشاريع اللاندسكيب السكنية.",
           "datePublished": "2026-03-20T08:00:00+02:00",
-          "dateModified": "2026-08-08T10:00:00+02:00",
+          "dateModified": "2026-08-09T10:00:00+02:00",
           "mainEntityOfPage": "https://habib-landscape-boutique.com/blog/05-modern-garden-walkways-landscape-design.html",
           "keywords": ["ممرات فلل", "لاندسكيب زلط ورخام", "مسارات مشاة", "تصميم حدائق", "Stepping Stones", "توريد زلط", "Habib Landscape Boutique"],
           "publisher": { "@id": "https://habib-landscape-boutique.com/#organization" },
@@ -204,7 +229,7 @@
         .video-caption { text-align: center; color: #555; font-size: 1rem; margin-top: 10px; font-weight: 800; }
 
         .cta-box { background: linear-gradient(135deg, rgba(17,40,34,0.06), rgba(230,126,34,0.12)); border: 2px solid var(--gold); padding: 35px; border-radius: 20px; text-align: center; margin: 40px 0; }
-        .btn-buy { background: #25d366; color: white; padding: 16px 35px; border-radius: 40px; text-decoration: none; font-weight: 900; display: inline-flex; align-items: center; gap: 12px; font-size: 1.15rem; box-shadow: 0 10px 25px rgba(37,211,102,0.3); transition: 0.3s; }
+        .btn-buy { background: #25d366; color: white; padding: 16px 35px; border-radius: 40px; text-decoration: none; font-weight: 900; display: inline-flex; align-items: center; justify-content: center; gap: 12px; font-size: 1.15rem; box-shadow: 0 10px 25px rgba(37,211,102,0.3); transition: 0.3s; }
         .btn-buy:hover { background: #1ebe57; transform: translateY(-3px); }
 
         .faq-section { background: #fdfcf7; border-radius: 20px; padding: 30px; margin: 40px 0; border: 1px solid rgba(230,126,34,0.3); }
@@ -213,7 +238,7 @@
         .faq-answer { font-size: 1.05rem; color: #444; }
 
         ul.custom-list { padding-right: 20px; }
-        ul.custom-list li { margin-bottom: 12px; position: relative; padding-right: 25px; list-style: none; }
+        ul.custom-list li { margin-bottom: 12px; position: relative; padding-right: 25px; list-style: none; font-weight: 600; }
         ul.custom-list li::before { content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; right: 0; color: var(--gold); }
         
         .cluster-links { background: #fff; padding: 30px; border-radius: 20px; border: 2px dashed var(--gold); margin: 40px 0; }
@@ -229,10 +254,19 @@
         .float-whatsapp { background-color: #25d366; }
         .float-call { background-color: var(--royal-green); border: 2px solid var(--gold); }
 
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 35px 0; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .comparison-table th, .comparison-table td { padding: 15px 20px; text-align: right; border-bottom: 1px solid #eee; font-size: 1.05rem; }
+        .comparison-table th { background: var(--royal-green); color: #fff; font-weight: 800; }
+        .comparison-table tr:hover { background: #f8fafa; }
+
         @media(max-width: 768px) { .article-container { padding: 20px; } }
     </style>
 </head>
-<body>
+<body itemscope itemtype="https://schema.org/WebPage">
+
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NT75WPGT" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
 
     <a class="skip-link" href="#article-main">تخطي إلى المحتوى</a>
     <div id="progress-bar"></div>
@@ -247,7 +281,7 @@
     </div>
 
     <header>
-        <a href="https://habib-landscape-boutique.com/index.html">
+        <a href="../index.html">
             <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png" alt="Habib Landscape Boutique Logo" class="logo-img" width="150" height="65">
         </a>
     </header>
@@ -256,8 +290,8 @@
         <main class="article-container" id="article-main">
             
             <nav class="breadcrumb" aria-label="مسار التنقل">
-                <a href="https://habib-landscape-boutique.com/index.html">الرئيسية</a> &larr; 
-                <a href="https://habib-landscape-boutique.com/blog/">المكتبة الفنية</a> &larr; 
+                <a href="../index.html">الرئيسية</a> &larr; 
+                <a href="../blog/">المكتبة الفنية</a> &larr; 
                 <span>هندسة ممرات اللاندسكيب</span>
             </nav>
 
@@ -266,13 +300,13 @@
             
             <div class="meta-info">
                 <span><i class="fas fa-calendar-alt" aria-hidden="true" style="color: var(--gold);"></i> النشر: 20 مارس 2026</span>
-                <span><i class="fas fa-sync-alt" aria-hidden="true" style="color: var(--gold);"></i> آخر تحديث: 8 أغسطس 2026</span>
+                <span><i class="fas fa-sync-alt" aria-hidden="true" style="color: var(--gold);"></i> آخر تحديث: 9 أغسطس 2026</span>
                 <span><i class="fas fa-pen-nib" aria-hidden="true" style="color: var(--gold);"></i> المراجعة الفنية: فريق مهندسي Habib Landscape Boutique</span>
             </div>
 
             <div class="long-content">
                 <h2 id="intro">1. الأبعاد الوظيفية والمعمارية لمسارات الحركة في اللاندسكيب</h2>
-                <p>في التخطيط الهندسي للفراغات الخارجية، تُعد مسارات الحركة (Pathways) المحور الديناميكي الذي ينظم التدفق الحركي والبصري داخل الموقع. إن الاعتماد على حلول التغطية المصمتة (كالبلاطات الخرسانية المتصلة) يحد من النفاذية الهيدرولوجية للتربة، مما يفرض تحديات في إدارة التصريف السطحي. بالمقابل، يمثل التحول نحو النظم المدمجة (Hybrid Systems) باستخدام <a href="https://habib-landscape-boutique.com/products/white-marble.html" style="color: var(--royal-green); font-weight: bold;">الركام الديكوري السائب</a> ووحدات <a href="https://habib-landscape-boutique.com/products/marble.html" style="color: var(--royal-green); font-weight: bold;">الرخام المستقلة</a> منهجية هندسية مستدامة تعزز من كفاءة الموقع.</p>
+                <p>في التخطيط الهندسي للفراغات الخارجية، تُعد مسارات الحركة (Pathways) المحور الديناميكي الذي ينظم التدفق الحركي والبصري داخل الموقع. إن الاعتماد على حلول التغطية المصمتة (كالبلاطات الخرسانية المتصلة) يحد من النفاذية الهيدرولوجية للتربة، مما يفرض تحديات في إدارة التصريف السطحي. بالمقابل، يمثل التحول نحو النظم المدمجة (Hybrid Systems) باستخدام <a href="../products/white-marble.html" style="color: var(--royal-green); font-weight: bold;">الركام الديكوري السائب</a> ووحدات <a href="../products/marble.html" style="color: var(--royal-green); font-weight: bold;">الرخام المستقلة</a> منهجية هندسية مستدامة تعزز من كفاءة الموقع.</p>
                 
                 <p>في <strong>Habib Landscape Boutique</strong>، نوفر متطلبات هذه النظم الهجينة، محققين التوازن بين القدرة التحميلية المطلوبة لمرور المشاة والمرونة الميكانيكية التي يوفرها الحشو الحصوي (Gravel Infill)، لتطبيقها في المشاريع السكنية الراقية.</p>
 
@@ -412,22 +446,30 @@
                 <div class="video-caption">تحقيق التكامل الوظيفي: الانسجام بين المواد الصلبة واللاندسكيب المحيط</div>
 
                 <h2 id="faqs">9. الاستشارات الهندسية (FAQ)</h2>
-                <div class="faq-section">
-                    <div class="faq-item">
-                        <div class="faq-question">ما هي المبررات الهندسية لدمج الركام السائب مع الألواح الصلبة في المسارات؟</div>
-                        <div class="faq-answer">يوفر هذا الدمج مرونة هيكلية تستوعب التغيرات الطفيفة في التربة دون تشقق، ويزيد من مساحة الصرف السطحي (Permeability)، بالإضافة لتقليل الكسب الحراري للأسطح (Heat Island Effect) مقارنة بالخرسانة المصمتة.</div>
+                <div class="faq-section" itemscope itemtype="https://schema.org/FAQPage">
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <div class="faq-question" itemprop="name">ما هي المبررات الهندسية لدمج الركام السائب مع الألواح الصلبة في المسارات؟</div>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <span itemprop="text">يوفر هذا الدمج مرونة هيكلية تستوعب التغيرات الطفيفة في التربة دون تشقق، ويزيد من مساحة الصرف السطحي (Permeability)، بالإضافة لتقليل الكسب الحراري للأسطح (Heat Island Effect) مقارنة بالخرسانة المصمتة.</span>
+                        </div>
                     </div>
-                    <div class="faq-item">
-                        <div class="faq-question">هل يمكن تنفيذ مسار كامل بالركام السائب دون اللوحات الارتكازية؟</div>
-                        <div class="faq-answer">ممكن هندسياً (Gravel Path)، ويُشترط استخدام تدرج حصوي دقيق إلى متوسط مع دمج نسب معينة من السن المكسر (Crushed Stone) لتحقيق التشابك الميكانيكي ومنع إزاحة القدم. كما يتطلب حواجز تطويق صلبة إجبارية.</div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <div class="faq-question" itemprop="name">هل يمكن تنفيذ مسار كامل بالركام السائب دون اللوحات الارتكازية؟</div>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <span itemprop="text">ممكن هندسياً (Gravel Path)، ويُشترط استخدام تدرج حصوي دقيق إلى متوسط مع دمج نسب معينة من السن المكسر (Crushed Stone) لتحقيق التشابك الميكانيكي ومنع إزاحة القدم. كما يتطلب حواجز تطويق صلبة إجبارية.</span>
+                        </div>
                     </div>
-                    <div class="faq-item">
-                        <div class="faq-question">كيف يتم حساب التباعد القياسي (Spacing) بين ألواح المشي؟</div>
-                        <div class="faq-answer">هندسياً، تُحسب المسافة من المركز الهندسي للبلاطة الأولى إلى مركز البلاطة التالية، ويُنصح بأن تتراوح بين 55 سم إلى 65 سم، لتتطابق مع الإيقاع الحركي الطبيعي للمشاة.</div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <div class="faq-question" itemprop="name">كيف يتم حساب التباعد القياسي (Spacing) بين ألواح المشي؟</div>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <span itemprop="text">هندسياً، تُحسب المسافة من المركز الهندسي للبلاطة الأولى إلى مركز البلاطة التالية، ويُنصح بأن تتراوح بين 55 سم إلى 65 سم، لتتطابق مع الإيقاع الحركي الطبيعي للمشاة.</span>
+                        </div>
                     </div>
-                    <div class="faq-item">
-                        <div class="faq-question">هل تتأثر الخواص البصرية للزلط المرمري نتيجة الاحتكاك المباشر في الممرات؟</div>
-                        <div class="faq-answer">الزلط المورد لدينا يمتلك مقاومة جيدة للتآكل، ولكن التطبيق الهندسي الصحيح يعتمد على الألواح الرخامية (Stepping Stones) لتحمل أحمال الحركة الرئيسية، بينما يعمل الزلط كعنصر حشو وتصريف ثانوي، مما يحافظ على مظهره مع متطلبات غسيل بسيطة.</div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <div class="faq-question" itemprop="name">هل تتأثر الخواص البصرية للزلط المرمري نتيجة الاحتكاك المباشر في الممرات؟</div>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <span itemprop="text">الزلط المورد لدينا يمتلك مقاومة جيدة للتآكل، ولكن التطبيق الهندسي الصحيح يعتمد على الألواح الرخامية (Stepping Stones) لتحمل أحمال الحركة الرئيسية، بينما يعمل الزلط كعنصر حشو وتصريف ثانوي، مما يحافظ على مظهره مع متطلبات غسيل بسيطة.</span>
+                        </div>
                     </div>
                 </div>
 
@@ -441,40 +483,15 @@
 
             </div> <!-- End long-content -->
 
-            <div class="eeat-box">
-                <h3>معايير الجودة في Habib Landscape Boutique</h3>
-                <ul class="eeat-list">
-                    <li>
-                        <i class="fas fa-certificate" aria-hidden="true"></i>
-                        <strong>مواصفات المواد</strong>
-                        توريد خامات مطابقة للمواصفات الفيزيائية المطلوبة للتحميل السطحي والمقاومة.
-                    </li>
-                    <li>
-                        <i class="fas fa-truck" aria-hidden="true"></i>
-                        <strong>الكفاءة اللوجستية</strong>
-                        شبكة نقل مؤهلة لتلبية متطلبات المشاريع بجميع نطاقاتها الجغرافية.
-                    </li>
-                    <li>
-                        <i class="fas fa-hard-hat" aria-hidden="true"></i>
-                        <strong>المرجعية الهندسية</strong>
-                        الدعم بالتخطيط الهندسي المسبق لتقليل نسب الهدر المادي في التنفيذ.
-                    </li>
-                    <li>
-                        <i class="fas fa-users-cog" aria-hidden="true"></i>
-                        <strong>الاستدامة التشغيلية</strong>
-                        تطبيق النظم المتوافقة مع الإدارة الهيدرولوجية للمواقع وتقليل أثر الجزر الحرارية.
-                    </li>
-                </ul>
-            </div>
-
+            <!-- تطبيق استراتيجية الشبكة العنكبوتية (Spider Web Links) -->
             <div class="cluster-links">
                 <h3><i class="fas fa-network-wired" aria-hidden="true" style="color: var(--gold);"></i> الأقسام الفنية المتصلة:</h3>
                 <ul>
-                    <li><a href="36-direct-supply-pebbles-marble-prices-egypt.html">جداول التوريدات: الأسعار القياسية للخامات &rarr;</a></li>
-                    <li><a href="https://habib-landscape-boutique.com/products/white-marble.html">المكتبة المرئية: تطبيقات الركام المرمري &rarr;</a></li>
-                    <li><a href="https://habib-landscape-boutique.com/products/marble.html">المكتبة المرئية: استخدام الرخام في اللاندسكيب &rarr;</a></li>
-                    <li><a href="https://habib-landscape-boutique.com/blog/01-luxury-roof-zalat-decor.html">المرجع الفني: تصميم وتنسيق الزلط الديكوري &rarr;</a></li>
-                    <li><a href="https://habib-landscape-boutique.com/contact.html">التواصل المباشر مع إدارة العمليات الهندسية</a></li>
+                    <li><a href="../index.html">الواجهة الهندسية الرئيسية &rarr;</a></li>
+                    <li><a href="../products/marble.html">المكتبة المرئية: استخدام الرخام في اللاندسكيب &rarr;</a></li>
+                    <li><a href="../products/white-marble.html">المكتبة المرئية: تطبيقات الركام المرمري &rarr;</a></li>
+                    <li><a href="01-luxury-roof-zalat-decor.html">المرجع الفني: تصميم وتنسيق الزلط الديكوري &rarr;</a></li>
+                    <li><a href="../contact.html">الإدارة الهندسية ودعم المقايسات</a></li>
                 </ul>
             </div>
 
@@ -492,6 +509,7 @@
                         let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
                         let scrolled = (winScroll / height) * 100;
                         document.getElementById("progress-bar").style.width = scrolled + "%";
+                        document.getElementById("progress-bar").setAttribute("aria-valuenow", Math.round(scrolled));
                         isScrolling = false;
                     });
                     isScrolling = true;
@@ -518,9 +536,9 @@
         });
     </script>
 
-    <footer style="text-align:center; padding:50px 20px; color:#777; font-size:0.95rem; background: #fff; margin-top: 60px; border-top: 3px solid var(--gold);">
-        <p style="font-weight: 900; color: var(--royal-green); font-size: 1.4rem; margin-bottom: 15px; letter-spacing: 1px;">HABIB LANDSCAPE BOUTIQUE</p>
-        <p>مؤسسة هندسية متخصصة في توريد وتصميم مسارات اللاندسكيب الفاخرة للمشاريع السكنية.</p>
+    <footer role="contentinfo" style="text-align:center; padding:60px 20px; color:#fff; font-size:1rem; background: var(--royal-green); margin-top: 60px; border-top: 5px solid var(--gold);">
+        <p style="font-weight: 900; color: var(--gold); font-size: 1.4rem; margin-bottom: 15px; letter-spacing: 1px;">HABIB LANDSCAPE BOUTIQUE</p>
+        <p>مؤسسة هندسية متخصصة في التخطيط وتوريد مسارات اللاندسكيب الفاخرة للمشاريع السكنية.</p>
         <p>&copy; 2026 Habib Landscape Boutique. جميع الحقوق محفوظة.</p>
     </footer>
 
