@@ -13,10 +13,7 @@
     <!-- Google Tag Manager Lazy Load -->
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        var gtmLoaded = false;
-        function loadGTV() {
-            if(gtmLoaded) return;
-            gtmLoaded = true;
+        const loadExternalScripts = () => {
             (function(w,d,s,l,i){
                 w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
                 var f=d.getElementsByTagName(s)[0],
@@ -26,11 +23,13 @@
                 j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
                 f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-NT75WPGT');
+        };
+
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadExternalScripts);
+        } else {
+            setTimeout(loadExternalScripts, 2000);
         }
-        ['scroll', 'mousemove', 'touchstart', 'click'].forEach(function(event) {
-            window.addEventListener(event, loadGTV, { once: true, passive: true });
-        });
-        setTimeout(loadGTV, 2000);
     });
     </script>
 
@@ -42,7 +41,10 @@
 
     <link rel="canonical" href="https://habib-landscape-boutique.com/blog/04-marble-natural-stone-facades-guide.html">
     <link rel="manifest" href="../manifest.json">
-    <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
+    
+    <!-- Updated Favicon from Cloudinary -->
+    <link rel="icon" href="https://res.cloudinary.com/dwa0e5sup/image/upload/c_pad,w_192,h_192,f_auto/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="https://res.cloudinary.com/dwa0e5sup/image/upload/c_pad,w_192,h_192,f_auto/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png">
 
     <!-- Google Fonts Optimized -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,7 +52,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:type" content="product">
+    <meta property="og:type" content="article">
     <meta property="og:site_name" content="Habib Landscape Boutique">
     <meta property="og:locale" content="ar_EG">
     <meta property="og:title" content="توريد وتركيب واجهات الرخام والحجر الهاشمي | المواصفات الهندسية | Habib Landscape Boutique">
@@ -103,6 +105,28 @@
           }
         },
         {
+          "@type": "LocalBusiness",
+          "@id": "https://habib-landscape-boutique.com/#localbusiness",
+          "name": "Habib Landscape Boutique - واجهات ولاندسكيب",
+          "image": "https://res.cloudinary.com/dwa0e5sup/image/upload/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png",
+          "telephone": "01505543649",
+          "url": "https://habib-landscape-boutique.com/",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "المعادي",
+            "addressLocality": "القاهرة",
+            "addressRegion": "محافظة القاهرة",
+            "addressCountry": "EG"
+          },
+          "priceRange": "$$",
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+            "opens": "09:00",
+            "closes": "22:00"
+          }
+        },
+        {
           "@type": "Product",
           "name": "توريد كسوات رخام وحجر طبيعي للواجهات",
           "image": "https://res.cloudinary.com/dwa0e5sup/image/upload/v1775828645/m1_zoyqwm.jpg",
@@ -125,7 +149,7 @@
           "headline": "الدليل الهندسي: المواصفات الفنية للكسوات الحجرية والرخامية لواجهات المشاريع السكنية",
           "description": "مرجع فني حول المعايير الهندسية لاختيار وتثبيت الرخام والحجر الهاشمي للواجهات، يشمل تقنيات التثبيت الميكانيكي وتحليل المواصفات المادية.",
           "datePublished": "2026-03-15T08:00:00+02:00",
-          "dateModified": "2026-08-08T10:00:00+02:00",
+          "dateModified": "2026-08-09T10:00:00+02:00",
           "mainEntityOfPage": "https://habib-landscape-boutique.com/blog/04-marble-natural-stone-facades-guide.html",
           "keywords": ["مواصفات الحجر الهاشمي", "تركيب ميكانيكي للرخام", "واجهات فلل", "توريد رخام", "حجر هيصم", "تجليد واجهات", "Habib Landscape Boutique"],
           "publisher": { "@id": "https://habib-landscape-boutique.com/#organization" },
@@ -204,23 +228,19 @@
         .video-caption { text-align: center; color: #555; font-size: 1rem; margin-top: 10px; font-weight: 800; }
 
         .cta-box { background: linear-gradient(135deg, rgba(17,40,34,0.06), rgba(230,126,34,0.12)); border: 2px solid var(--gold); padding: 35px; border-radius: 20px; text-align: center; margin: 40px 0; }
-        .btn-buy { background: #25d366; color: white; padding: 16px 35px; border-radius: 40px; text-decoration: none; font-weight: 900; display: inline-flex; align-items: center; gap: 12px; font-size: 1.15rem; box-shadow: 0 10px 25px rgba(37,211,102,0.3); transition: 0.3s; }
+        .btn-buy { background: #25d366; color: white; padding: 16px 35px; border-radius: 40px; text-decoration: none; font-weight: 900; display: inline-flex; align-items: center; justify-content: center; gap: 12px; font-size: 1.15rem; box-shadow: 0 10px 25px rgba(37,211,102,0.3); transition: 0.3s; }
         .btn-buy:hover { background: #1ebe57; transform: translateY(-3px); }
 
-        .faq-section { background: #fdfcf7; border-radius: 20px; padding: 30px; margin: 40px 0; border: 1px solid rgba(230,126,34,0.3); }
+        .faq-section { background: #fdfcf7; border-radius: 20px; padding: 30px; margin: 40px 0; border: 1px solid rgba(197,160,89,0.3); }
         .faq-item { margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
         .faq-question { font-weight: 800; color: var(--royal-green); font-size: 1.1rem; margin-bottom: 5px; }
         .faq-answer { font-size: 1.05rem; color: #444; }
-
-        ul.custom-list { padding-right: 20px; }
-        ul.custom-list li { margin-bottom: 12px; position: relative; padding-right: 25px; list-style: none; }
-        ul.custom-list li::before { content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; right: 0; color: var(--gold); }
         
         .cluster-links { background: #fff; padding: 30px; border-radius: 20px; border: 2px dashed var(--gold); margin: 40px 0; }
         .cluster-links h3 { color: var(--royal-green); margin-top: 0; font-size: 1.2rem; border: none; padding: 0;}
         .cluster-links ul { padding-right: 20px; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; }
         .cluster-links li { margin-bottom: 8px; font-weight: 700; font-size: 0.95rem; }
-        .cluster-links a { color: var(--royal-green); text-decoration: none; }
+        .cluster-links a { color: var(--royal-green); text-decoration: none; transition: 0.3s;}
         .cluster-links a:hover { color: var(--gold); }
 
         .floating-buttons { position: fixed; bottom: 25px; left: 25px; z-index: 9999; display: flex; flex-direction: column; gap: 12px; }
@@ -229,10 +249,25 @@
         .float-whatsapp { background-color: #25d366; }
         .float-call { background-color: var(--royal-green); border: 2px solid var(--gold); }
 
+        ul.custom-list { padding-right: 20px; }
+        ul.custom-list li { margin-bottom: 12px; position: relative; padding-right: 25px; list-style: none; font-weight: 600; }
+        ul.custom-list li::before { content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; right: 0; color: var(--gold); }
+
+        .eeat-box { background: #fff; border: 2px solid var(--royal-green); border-radius: 15px; padding: 30px; margin: 50px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .eeat-box h3 { margin-top: 0; color: var(--royal-green); text-align: center; border-bottom: 2px solid var(--gold); padding-bottom: 15px; margin-bottom: 20px;}
+        .eeat-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .eeat-list li { text-align: center; }
+        .eeat-list i { font-size: 2rem; color: var(--gold); margin-bottom: 10px; display: block; }
+        .eeat-list strong { display: block; color: var(--royal-green); font-size: 1.1rem; margin-bottom: 5px; }
+
         @media(max-width: 768px) { .article-container { padding: 20px; } }
     </style>
 </head>
 <body>
+
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NT75WPGT" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
 
     <a class="skip-link" href="#article-main">تخطي إلى المحتوى</a>
     <div id="progress-bar"></div>
@@ -247,7 +282,7 @@
     </div>
 
     <header>
-        <a href="https://habib-landscape-boutique.com/index.html">
+        <a href="../index.html">
             <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png" alt="Habib Landscape Boutique Logo" class="logo-img" width="150" height="65">
         </a>
     </header>
@@ -256,8 +291,8 @@
         <main class="article-container" id="article-main">
             
             <nav class="breadcrumb" aria-label="مسار التنقل">
-                <a href="https://habib-landscape-boutique.com/index.html">الرئيسية</a> &larr; 
-                <a href="https://habib-landscape-boutique.com/blog/">المكتبة الفنية</a> &larr; 
+                <a href="../index.html">الرئيسية</a> &larr; 
+                <a href="../blog/">المكتبة الفنية</a> &larr; 
                 <span>المواصفات الفنية للواجهات</span>
             </nav>
 
@@ -266,13 +301,13 @@
             
             <div class="meta-info">
                 <span><i class="fas fa-calendar-alt" aria-hidden="true" style="color: var(--gold);"></i> النشر: 15 مارس 2026</span>
-                <span><i class="fas fa-sync-alt" aria-hidden="true" style="color: var(--gold);"></i> آخر تحديث: 8 أغسطس 2026</span>
+                <span><i class="fas fa-sync-alt" aria-hidden="true" style="color: var(--gold);"></i> آخر تحديث: 9 أغسطس 2026</span>
                 <span><i class="fas fa-pen-nib" aria-hidden="true" style="color: var(--gold);"></i> المراجعة الفنية: فريق مهندسي Habib Landscape Boutique</span>
             </div>
 
             <div class="long-content">
                 <h2 id="intro">1. الأبعاد الوظيفية والمعمارية لتطبيق الكسوات الطبيعية للواجهات</h2>
-                <p>تُمثل الواجهات المعمارية خط الدفاع الأول للمبنى ضد الإجهادات البيئية والمناخية، وتلعب دوراً محورياً في تحديد الكفاءة الحرارية والعمر الافتراضي للمنشأة. إن تجاوز الحلول التقليدية (كدهانات الأكريليك) والاتجاه نحو تطبيق الكسوات الصلبة باستخدام <a href="https://habib-landscape-boutique.com/products/marble.html" style="color: var(--royal-green); font-weight: bold;">الرخام الطبيعي والحجر الهاشمي</a>، يُعد قراراً هندسياً يضمن استقرار الواجهة ويخفض من متطلبات الصيانة الدورية في <strong>كافة البيئات المناخية المصرية</strong>.</p>
+                <p>تُمثل الواجهات المعمارية خط الدفاع الأول للمبنى ضد الإجهادات البيئية والمناخية، وتلعب دوراً محورياً في تحديد الكفاءة الحرارية والعمر الافتراضي للمنشأة. إن تجاوز الحلول التقليدية (كدهانات الأكريليك) والاتجاه نحو تطبيق الكسوات الصلبة باستخدام <a href="../products/marble.html" style="color: var(--royal-green); font-weight: bold;">الرخام الطبيعي والحجر الهاشمي</a>، يُعد قراراً هندسياً يضمن استقرار الواجهة ويخفض من متطلبات الصيانة الدورية في <strong>كافة البيئات المناخية المصرية</strong>.</p>
                 
                 <p>في <strong>Habib Landscape Boutique</strong>، نُطبق معايير صارمة في انتقاء وتوريد المواد الطبيعية. لا تقتصر وظيفة هذه المواد على إبراز النسق المعماري، بل تعمل كطبقة حماية هيكلية تمتلك خواص عزل حراري (Thermal Mass)، مما يساهم بشكل مباشر في تحسين كفاءة استهلاك الطاقة داخل المشاريع السكنية الراقية.</p>
 
@@ -294,7 +329,7 @@
                 <ul class="custom-list">
                     <li><strong>الحجر الهاشمي الهيصم (Heysham Stone):</strong> يمثل الخيار الإنشائي الأقوى. يتميز بارتفاع الكثافة النوعية وانخفاض معدلات امتصاص المياه (Water Absorption)، مما يمنحه مقاومة استثنائية للتجوية (Weathering) في البيئات القاسية. لونه أصفر جملي متدرج.</li>
                     <li><strong>الحجر الهاشمي الكريمي (Creamy Hashmi):</strong> خامة ذات مسامية أعلى نسبياً ونسيج أنعم. يُفضل استخدامه في التفاصيل المعمارية الدقيقة (Architectural Detailing) والمناطق الأقل تعرضاً للرطوبة المستمرة. لونه أوف وايت/كريمي.</li>
-                    <li><strong>الحجر الفرعوني (Pharaonic Stone):</strong> חجر جيري (Limestone) ذو لون فاتح، قابلية عالية للتشكيل والنحت (Carvability)، يُستخدم غالباً كعنصر تباين في الواجهات الكلاسيكية ولتطعيم الأسوار الخارجية.</li>
+                    <li><strong>الحجر الفرعوني (Pharaonic Stone):</strong> حجر جيري (Limestone) ذو لون فاتح، قابلية عالية للتشكيل والنحت (Carvability)، يُستخدم غالباً كعنصر تباين في الواجهات الكلاسيكية ولتطعيم الأسوار الخارجية.</li>
                 </ul>
 
                 <figure>
@@ -370,7 +405,7 @@
                 <p>لتحقيق لغة معمارية متناسقة، يجب دمج خطوط الواجهة مع عناصر اللاندسكيب المحيطة. في التطبيقات الميدانية، يتم تصميم مناطق انتقالية (Transition Zones):</p>
 
                 <h3>نطاقات الفصل الحصوية (Gravel Buffer Strips)</h3>
-                <p>تنفيذ مسار محيطي قاعدي (Perimeter Base) للواجهة مملوء بـ <a href="https://habib-landscape-boutique.com/products/white-marble.html" style="color: var(--royal-green); font-weight: bold;">الزلط الديكوري المرمري</a>. يعمل هذا النطاق كعنصر حماية وظيفي لمنع تناثر طين الري على الحجر السفلي، ويوفر مساراً مثالياً لتصريف المياه السطحية، متكاملاً بصرياً مع المسطحات الخضراء أو النجيل الصناعي المجاور.</p>
+                <p>تنفيذ مسار محيطي قاعدي (Perimeter Base) للواجهة مملوء بـ <a href="../products/white-marble.html" style="color: var(--royal-green); font-weight: bold;">الزلط الديكوري المرمري</a>. يعمل هذا النطاق كعنصر حماية وظيفي لمنع تناثر طين الري على الحجر السفلي، ويوفر مساراً مثالياً لتصريف المياه السطحية، متكاملاً بصرياً مع المسطحات الخضراء أو النجيل الصناعي المجاور.</p>
 
                 <figure>
                     <img src="https://res.cloudinary.com/dwa0e5sup/image/upload/v1775732444/habib-landscape-boutique-luxury-outdoor-pathway.jpg_tg3aho.jpg" alt="التكامل المادي بين الواجهات ومسارات اللاندسكيب" class="product-img" loading="lazy" decoding="async">
@@ -486,7 +521,7 @@
                     <li>
                         <i class="fas fa-project-diagram" aria-hidden="true"></i>
                         <strong>التكامل المعماري</strong>
-                        ضمان التجانس البصري והوظيفي بين واجهات المبنى ومحيط اللاندسكيب.
+                        ضمان التجانس البصري والوظيفي بين واجهات المبنى ومحيط اللاندسكيب.
                     </li>
                 </ul>
             </div>
@@ -495,9 +530,9 @@
                 <h3><i class="fas fa-network-wired" aria-hidden="true" style="color: var(--gold);"></i> الأقسام الفنية المتصلة:</h3>
                 <ul>
                     <li><a href="36-direct-supply-pebbles-marble-prices-egypt.html">جداول التوريدات: الأسعار القياسية للخامات &rarr;</a></li>
-                    <li><a href="https://habib-landscape-boutique.com/products/marble.html">المكتبة المرئية: تطبيقات الرخام والحجر للواجهات &rarr;</a></li>
-                    <li><a href="https://habib-landscape-boutique.com/blog/01-luxury-roof-zalat-decor.html">المرجع الفني: تصميم وتنسيق الزلط الديكوري &rarr;</a></li>
-                    <li><a href="https://habib-landscape-boutique.com/contact.html">تواصل مع الدعم الفني للإدارة الهندسية</a></li>
+                    <li><a href="../products/marble.html">المكتبة المرئية: تطبيقات الرخام والحجر للواجهات &rarr;</a></li>
+                    <li><a href="01-luxury-roof-zalat-decor.html">المرجع الفني: تصميم وتنسيق الزلط الديكوري &rarr;</a></li>
+                    <li><a href="../contact.html">تواصل مع الدعم الفني للإدارة الهندسية</a></li>
                 </ul>
             </div>
 
@@ -515,6 +550,7 @@
                         let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
                         let scrolled = (winScroll / height) * 100;
                         document.getElementById("progress-bar").style.width = scrolled + "%";
+                        document.getElementById("progress-bar").setAttribute("aria-valuenow", Math.round(scrolled));
                         isScrolling = false;
                     });
                     isScrolling = true;
@@ -541,8 +577,8 @@
         });
     </script>
 
-    <footer style="text-align:center; padding:50px 20px; color:#777; font-size:0.95rem; background: #fff; margin-top: 60px; border-top: 3px solid var(--gold);">
-        <p style="font-weight: 900; color: var(--royal-green); font-size: 1.4rem; margin-bottom: 15px; letter-spacing: 1px;">HABIB LANDSCAPE BOUTIQUE</p>
+    <footer role="contentinfo" style="text-align:center; padding:60px 20px; color:#fff; font-size:1rem; background: var(--royal-green); margin-top: 60px; border-top: 5px solid var(--gold);">
+        <p style="font-weight: 900; color: var(--gold); font-size: 1.4rem; margin-bottom: 15px; letter-spacing: 1px;">HABIB LANDSCAPE BOUTIQUE</p>
         <p>مؤسسة هندسية متخصصة في التوريد والتنفيذ للواجهات الحجرية والرخامية للمشاريع السكنية الراقية.</p>
         <p>&copy; 2026 Habib Landscape Boutique. جميع الحقوق محفوظة.</p>
     </footer>
