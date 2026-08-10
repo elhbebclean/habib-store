@@ -37,6 +37,10 @@
     <meta name="robots" content="index, follow">
     <title>Luxury Artificial Grass in Cairo | Habib Store</title>
 
+    <!-- Updated Favicon from Cloudinary -->
+    <link rel="icon" href="https://res.cloudinary.com/dwa0e5sup/image/upload/c_pad,w_192,h_192,f_auto/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="https://res.cloudinary.com/dwa0e5sup/image/upload/c_pad,w_192,h_192,f_auto/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png">
+
     <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
     <link rel="dns-prefetch" href="https://res.cloudinary.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
@@ -1169,7 +1173,7 @@
                     <div class="img-wrapper">
                         <div class="badge">BEST VALUE</div>
                         <img
-                            src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_270,q_auto:eco,f_auto/v1775849160/nagel_habib_turky_lsx54o.jpg"
+                            src="https://res.cloudinary.com/dwa0e5sup/image/upload/w_270,q_auto:eco,f_auto,e_contrast:10,e_brightness:5/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,w_80,o_90/fl_layer_apply,g_south_east,x_15,y_15/v1775849160/nagel_habib_turky_lsx54o.jpg"
                             alt="Premium Turkish 20mm turf from Habib Store"
                             width="400"
                             height="400"
@@ -1186,7 +1190,7 @@
                         </div>
                     </div>
                     <div class="card-actions">
-                        <a href="#" onclick="quickAddToCart('grass-20', 'Habib Turkish Premium (20mm)', 'grass', 'https://res.cloudinary.com/dwa0e5sup/image/upload/w_270,q_auto:eco,f_auto/v1775849160/nagel_habib_turky_lsx54o.jpg'); return false;" class="btn-add-cart" aria-label="Add 20mm grass to quotation list">
+                        <a href="#" onclick="quickAddToCart('grass-20', 'Habib Turkish Premium (20mm)', 'grass', 'https://res.cloudinary.com/dwa0e5sup/image/upload/w_270,q_auto:eco,f_auto,e_contrast:10,e_brightness:5/l_My%20Brand:Habib_Landscape_Boutique_lfd7am,w_80,o_90/fl_layer_apply,g_south_east,x_15,y_15/v1775849160/nagel_habib_turky_lsx54o.jpg'); return false;" class="btn-add-cart" aria-label="Add 20mm grass to quotation list">
                             <i class="fas fa-cart-plus" aria-hidden="true"></i> Add to Quotation List
                         </a>
                         <a href="product.html?id=20" class="btn-details" aria-label="View 20mm grass details">Engineering Specifications</a>
@@ -1302,6 +1306,7 @@
                 <h4>Policies</h4>
                 <a href="https://habib-landscape-boutique.com/terms.html">Terms & Conditions</a>
                 <a href="https://habib-landscape-boutique.com/refund.html">Return & Exchange Policy</a>
+                <a href="https://habib-landscape-boutique.com/policy.html">Commitment Document & Inspection Policy</a>
                 <a href="https://habib-landscape-boutique.com/policy.html">Commitment Document & Inspection Policy</a>
             </div>
         </div>
@@ -1428,9 +1433,9 @@
             }
         });
 
-        window.addEventListener('pageshow', function () {
+        window.pageshow = function () {
             updateCartCount();
-        });
+        };
     </script>
 </body>
 </html>
