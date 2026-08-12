@@ -166,304 +166,245 @@
 
 
 
-    <!-- Schema 2: ItemList & Products (مطابقة لـ Google Merchant Center) -->
-
+    <!-- Schema 2: ItemList & Products (محدثة بتفاصيل الشحن والتركيب) -->
     <script type="application/ld+json">
-
     {
-
       "@context": "https://schema.org",
-
       "@type": "ItemList",
-
       "itemListElement": [
-
         {
-
           "@type": "ListItem",
-
           "position": 1,
-
           "item": {
-
             "@type": "Product",
-
             "name": "رخام جلالة طبيعي",
-
             "image": "https://res.cloudinary.com/dwa0e5sup/image/upload/c_pad,w_800,h_800,b_white,f_jpg,q_auto/v1775732442/habib-landscape-boutique-galala-marble-pathways.jpg_2_xwmyr7.jpg",
-
-            "description": "رخام جلالة فخم لتصميم ممرات ومشاية الحدائق بظهر صلب وتشطيب عالي الجودة.",
-
+            "description": "توريد وتركيب احترافي في القاهرة والجيزة. رخام جلالة فخم لتصميم ممرات ومشاية الحدائق بظهر صلب وتشطيب عالي الجودة.",
             "brand": {
-
               "@type": "Brand",
-
               "name": "Habib Store"
-
             },
-
             "identifier_exists": false,
-
             "offers": { 
-
               "@type": "Offer", 
-
               "priceCurrency": "EGP", 
-
               "price": "350", 
-
               "availability": "https://schema.org/InStock", 
-
               "seller": { "@type": "Organization", "name": "Habib Store" },
-
               "hasMerchantReturnPolicy": {
-
                 "@type": "MerchantReturnPolicy",
-
                 "applicableCountry": "EG",
-
                 "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-
                 "merchantReturnDays": 14
-
+              },
+              "shippingDetails": {
+                "@type": "OfferShippingDetails",
+                "shippingRate": {
+                  "@type": "MonetaryAmount",
+                  "value": 100,
+                  "currency": "EGP"
+                },
+                "shippingDestination": {
+                  "@type": "DefinedRegion",
+                  "addressCountry": "EG",
+                  "addressRegion": ["Cairo", "Giza"]
+                },
+                "deliveryTime": {
+                  "@type": "ShippingDeliveryTime",
+                  "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 1, "unitCode": "DAY" },
+                  "transitTime": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 2, "unitCode": "DAY" }
+                }
               }
-
             }
-
           }
-
         },
-
         {
-
           "@type": "ListItem",
-
           "position": 2,
-
           "item": {
-
             "@type": "Product",
-
             "name": "حجر مايكا أحمر",
-
             "image": "https://res.cloudinary.com/dwa0e5sup/image/upload/c_pad,w_800,h_800,b_white,f_jpg,q_auto/v1775732416/habib-boutique-red-mica-stone-wall-cladding.jpg_kr4uuk.jpg",
-
-            "description": "حجر مايكا طبيعي باللون الأحمر المميز لتكسية الواجهات والديكورات الخارجية.",
-
+            "description": "توريد وتركيب احترافي في القاهرة والجيزة. حجر مايكا طبيعي باللون الأحمر المميز لتكسية الواجهات والديكورات الخارجية.",
             "brand": {
-
               "@type": "Brand",
-
               "name": "Habib Store"
-
             },
-
             "identifier_exists": false,
-
             "offers": { 
-
               "@type": "Offer", 
-
               "priceCurrency": "EGP", 
-
               "price": "350", 
-
               "availability": "https://schema.org/InStock",
-
               "seller": { "@type": "Organization", "name": "Habib Store" },
-
               "hasMerchantReturnPolicy": {
-
                 "@type": "MerchantReturnPolicy",
-
                 "applicableCountry": "EG",
-
                 "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-
                 "merchantReturnDays": 14
-
+              },
+              "shippingDetails": {
+                "@type": "OfferShippingDetails",
+                "shippingRate": {
+                  "@type": "MonetaryAmount",
+                  "value": 100,
+                  "currency": "EGP"
+                },
+                "shippingDestination": {
+                  "@type": "DefinedRegion",
+                  "addressCountry": "EG",
+                  "addressRegion": ["Cairo", "Giza"]
+                },
+                "deliveryTime": {
+                  "@type": "ShippingDeliveryTime",
+                  "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 1, "unitCode": "DAY" },
+                  "transitTime": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 2, "unitCode": "DAY" }
+                }
               }
-
             }
-
           }
-
         },
-
         {
-
           "@type": "ListItem",
-
           "position": 3,
-
           "item": {
-
             "@type": "Product",
-
             "name": "حجر ديكوري للواجهات",
-
             "image": "https://res.cloudinary.com/dwa0e5sup/image/upload/c_pad,w_800,h_800,b_white,f_jpg,q_auto/v1775732694/habib-landscape-boutique-decorative-outdoor-walls.jpg_cwwqq8.jpg",
-
-            "description": "أحجار ديكورية طبيعية متينة للأسوار والواجهات الخارجية لتحمل العوامل الجوية.",
-
+            "description": "توريد وتركيب احترافي في القاهرة والجيزة. أحجار ديكورية طبيعية متينة للأسوار والواجهات الخارجية لتحمل العوامل الجوية.",
             "brand": {
-
               "@type": "Brand",
-
               "name": "Habib Store"
-
             },
-
             "identifier_exists": false,
-
             "offers": { 
-
               "@type": "Offer", 
-
               "priceCurrency": "EGP", 
-
               "price": "350", 
-
               "availability": "https://schema.org/InStock",
-
               "seller": { "@type": "Organization", "name": "Habib Store" },
-
               "hasMerchantReturnPolicy": {
-
                 "@type": "MerchantReturnPolicy",
-
                 "applicableCountry": "EG",
-
                 "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-
                 "merchantReturnDays": 14
-
+              },
+              "shippingDetails": {
+                "@type": "OfferShippingDetails",
+                "shippingRate": {
+                  "@type": "MonetaryAmount",
+                  "value": 100,
+                  "currency": "EGP"
+                },
+                "shippingDestination": {
+                  "@type": "DefinedRegion",
+                  "addressCountry": "EG",
+                  "addressRegion": ["Cairo", "Giza"]
+                },
+                "deliveryTime": {
+                  "@type": "ShippingDeliveryTime",
+                  "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 1, "unitCode": "DAY" },
+                  "transitTime": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 2, "unitCode": "DAY" }
+                }
               }
-
             }
-
           }
-
         },
-
         {
-
           "@type": "ListItem",
-
           "position": 4,
-
           "item": {
-
             "@type": "Product",
-
             "name": "حجر ممرات فاخر",
-
             "image": "https://res.cloudinary.com/dwa0e5sup/image/upload/c_pad,w_800,h_800,b_white,f_jpg,q_auto/v1775732444/habib-landscape-boutique-luxury-outdoor-pathway.jpg_tg3aho.jpg",
-
-            "description": "قطع حجر طبيعي مختارة بعناية لتنفيذ ممرات حدائق عصرية وفخمة.",
-
+            "description": "توريد وتركيب احترافي في القاهرة والجيزة. قطع حجر طبيعي مختارة بعناية لتنفيذ ممرات حدائق عصرية وفخمة.",
             "brand": {
-
               "@type": "Brand",
-
               "name": "Habib Store"
-
             },
-
             "identifier_exists": false,
-
             "offers": { 
-
               "@type": "Offer", 
-
               "priceCurrency": "EGP", 
-
               "price": "400", 
-
               "availability": "https://schema.org/InStock",
-
               "seller": { "@type": "Organization", "name": "Habib Store" },
-
               "hasMerchantReturnPolicy": {
-
                 "@type": "MerchantReturnPolicy",
-
                 "applicableCountry": "EG",
-
                 "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-
                 "merchantReturnDays": 14
-
+              },
+              "shippingDetails": {
+                "@type": "OfferShippingDetails",
+                "shippingRate": {
+                  "@type": "MonetaryAmount",
+                  "value": 100,
+                  "currency": "EGP"
+                },
+                "shippingDestination": {
+                  "@type": "DefinedRegion",
+                  "addressCountry": "EG",
+                  "addressRegion": ["Cairo", "Giza"]
+                },
+                "deliveryTime": {
+                  "@type": "ShippingDeliveryTime",
+                  "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 1, "unitCode": "DAY" },
+                  "transitTime": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 2, "unitCode": "DAY" }
+                }
               }
-
             }
-
           }
-
         },
-
         {
-
           "@type": "ListItem",
-
           "position": 5,
-
           "item": {
-
             "@type": "Product",
-
             "name": "حجر ديكوري ناعم",
-
             "image": "https://res.cloudinary.com/dwa0e5sup/image/upload/c_pad,w_800,h_800,b_white,f_jpg,q_auto/v1775732690/habib-boutique-sophisticated-stone-wall-texture.jpg_llbui2.jpg",
-
-            "description": "أحجار ديكور بجودة عالية لزينة الحوائط الداخلية والخارجية بلمسة فنية ناعمة.",
-
+            "description": "توريد وتركيب احترافي في القاهرة والجيزة. أحجار ديكور بجودة عالية لزينة الحوائط الداخلية والخارجية بلمسة فنية ناعمة.",
             "brand": {
-
               "@type": "Brand",
-
               "name": "Habib Store"
-
             },
-
             "identifier_exists": false,
-
             "offers": { 
-
               "@type": "Offer", 
-
               "priceCurrency": "EGP", 
-
               "price": "450", 
-
               "availability": "https://schema.org/InStock",
-
               "seller": { "@type": "Organization", "name": "Habib Store" },
-
               "hasMerchantReturnPolicy": {
-
                 "@type": "MerchantReturnPolicy",
-
                 "applicableCountry": "EG",
-
                 "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-
                 "merchantReturnDays": 14
-
+              },
+              "shippingDetails": {
+                "@type": "OfferShippingDetails",
+                "shippingRate": {
+                  "@type": "MonetaryAmount",
+                  "value": 100,
+                  "currency": "EGP"
+                },
+                "shippingDestination": {
+                  "@type": "DefinedRegion",
+                  "addressCountry": "EG",
+                  "addressRegion": ["Cairo", "Giza"]
+                },
+                "deliveryTime": {
+                  "@type": "ShippingDeliveryTime",
+                  "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 1, "unitCode": "DAY" },
+                  "transitTime": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 2, "unitCode": "DAY" }
+                }
               }
-
             }
-
           }
-
         }
-
       ]
-
     }
-
     </script>
-
 
 
     <!-- Schema 3: Conversational FAQ -->
