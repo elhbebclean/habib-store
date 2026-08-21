@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium short-term rental property management and turnover cleaning in Cairo, Egypt. Your reliable local partner.">
+    <title>Premium Property Management in Cairo | Elhabib Clean</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables for Premium Look */
+        :root {
+            --primary: #0F2027; /* Deep Trust Blue */
+            --secondary: #203A43;
+            --accent: #D4AF37; /* Luxury Gold */
+            --text-light: #f8f9fa;
+            --text-dark: #333;
+            --bg-light: #f4f7f6;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; color: var(--text-dark); background: var(--bg-light); line-height: 1.6; }
+        a { text-decoration: none; }
+
+        /* Floating WhatsApp Button */
+        .float-wa {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        .float-wa:hover { transform: scale(1.1); }
+        .float-wa svg { width: 35px; height: 35px; fill: white; }
+
+        /* Navigation */
+        nav { background: #fff; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 24px; font-weight: 700; color: var(--primary); }
+        .nav-btn { background: var(--primary); color: white; padding: 10px 25px; border-radius: 5px; font-weight: 600; transition: 0.3s; }
+        .nav-btn:hover { background: var(--accent); color: var(--primary); }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(15, 32, 39, 0.85), rgba(32, 58, 67, 0.85)), url('https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+        .hero h1 { font-size: 3.5rem; max-width: 900px; margin-bottom: 20px; line-height: 1.2; animation: fadeInDown 1s ease; }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin-bottom: 40px; font-weight: 300; animation: fadeInUp 1s ease 0.5s both; }
+        .cta-btn { background: var(--accent); color: var(--primary); padding: 18px 40px; font-size: 1.2rem; font-weight: 700; border-radius: 50px; text-transform: uppercase; transition: 0.3s; animation: fadeInUp 1s ease 0.8s both; }
+        .cta-btn:hover { background: #fff; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+
+        /* Trust Bar */
+        .trust-bar { background: var(--primary); color: var(--accent); display: flex; justify-content: space-around; padding: 30px 20px; flex-wrap: wrap; text-align: center; }
+        .trust-item { flex: 1; min-width: 200px; margin: 10px; }
+        .trust-item h3 { font-size: 2rem; margin-bottom: 5px; }
+        .trust-item p { color: white; font-size: 0.9rem; font-weight: 300; }
+
+        /* Video Section */
+        .video-section { padding: 80px 5%; text-align: center; background: #fff; }
+        .video-section h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; }
+        .video-section p { max-width: 700px; margin: 0 auto 40px; color: #666; }
+        .video-container { max-width: 900px; margin: auto; position: relative; padding-bottom: 56.25%; height: 0; box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-radius: 15px; overflow: hidden; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+        /* Pricing Section */
+        .pricing { padding: 80px 5%; background: var(--bg-light); text-align: center; }
+        .pricing h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 50px; }
+        .pricing-grid { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; max-width: 1000px; margin: auto; }
+        .price-card { background: #fff; padding: 50px 40px; border-radius: 15px; width: 100%; max-width: 400px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; border-top: 5px solid var(--primary); }
+        .price-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .price-card.premium { border-top: 5px solid var(--accent); transform: scale(1.05); position: relative; }
+        .price-card.premium .badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent); color: var(--primary); padding: 5px 15px; border-radius: 20px; font-weight: 700; font-size: 0.8rem; }
+        .price-card h3 { font-size: 1.5rem; margin-bottom: 15px; }
+        .price { font-size: 2.5rem; font-weight: 700; color: var(--primary); margin-bottom: 20px; }
+        .price span { font-size: 1rem; color: #777; font-weight: 400; }
+        .price-features { list-style: none; margin-bottom: 30px; text-align: left; }
+        .price-features li { margin-bottom: 12px; font-size: 0.95rem; color: #555; display: flex; align-items: center; }
+        .price-features li::before { content: "✓"; color: var(--accent); font-weight: bold; margin-right: 10px; }
+        .card-btn { display: block; background: var(--primary); color: white; padding: 12px; border-radius: 5px; font-weight: 600; transition: 0.3s; }
+        .card-btn:hover { background: var(--accent); color: var(--primary); }
+
+        /* Founder / Transparency Section */
+        .founder { background: #fff; padding: 80px 5%; display: flex; align-items: center; justify-content: center; gap: 50px; flex-wrap: wrap; }
+        .founder-text { max-width: 600px; }
+        .founder-text h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; }
+        .founder-text p { margin-bottom: 15px; color: #555; }
+        .social-links a { display: inline-block; margin-top: 15px; color: var(--primary); font-weight: 600; border-bottom: 2px solid var(--accent); margin-right: 20px; }
+
+        /* Footer */
+        footer { background: var(--primary); color: #ccc; padding: 50px 5% 20px; text-align: center; font-size: 0.9rem; }
+        footer a { color: var(--accent); }
+        .disclaimer { margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.75rem; color: #888; }
+
+        /* Animations */
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media(max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .price-card.premium { transform: scale(1); }
+            .trust-bar { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/201505543649?text=Hi%20Mahmoud,%20I'm%20interested%20in%20your%20Airbnb%20management%20services." class="float-wa" target="_blank" title="Chat with us on WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+    </a>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Elhabib Management</div>
+        <a href="https://wa.me/201505543649" class="nav-btn" target="_blank">Contact Us</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Maximize Your Rental Income. Minimize Your Stress.</h1>
+        <p>Your reliable on-the-ground partner in Cairo. We handle 5-star turnover cleaning, guest relations, and 24/7 maintenance with absolute transparency.</p>
+        <a href="https://wa.me/201505543649" class="cta-btn" target="_blank">Get a Free Trial Run</a>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <div class="trust-item">
+            <h3>24/7</h3>
+            <p>Guest Support & Maintenance</p>
+        </div>
+        <div class="trust-item">
+            <h3>100%</h3>
+            <p>Transparent Billing (Zero Markups)</p>
+        </div>
+        <div class="trust-item">
+            <h3>5-Star</h3>
+            <p>Quality Guarantee on Cleanings</p>
+        </div>
+    </section>
+
+    <!-- YouTube Video Section -->
+    <section class="video-section">
+        <h2>See Our Quality in Action</h2>
+        <p>Don't just take our word for it. Watch our professional crew deliver the meticulous standards required for top-rated short-term rentals.</p>
+        <div class="video-container">
+            <!-- REPLACE THE LINK BELOW WITH YOUR ACTUAL YOUTUBE VIDEO LINK -->
+            <iframe src="https://www.youtube.com/embed/n3H5kR9kngE?si=B3m10HwK7hJg0n7m" title="Elhabib Clean Quality Standards" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <h2>Straightforward Pricing Plans</h2>
+        <div class="pricing-grid">
+            
+            <!-- Plan 1: Turnover -->
+            <div class="price-card">
+                <h3>5-Star Turnover</h3>
+                <div class="price">3,500 <span>EGP / stay</span></div>
+                <ul class="price-features">
+                    <li>Professional deep cleaning</li>
+                    <li>Restocking essential supplies</li>
+                    <li>Sanitization to hotel standards</li>
+                    <li>Quality check & photo reports</li>
+                </ul>
+                <a href="https://wa.me/201505543649" class="card-btn" target="_blank">Book a Cleaning</a>
+            </div>
+
+            <!-- Plan 2: Full Management (Premium) -->
+            <div class="price-card premium">
+                <div class="badge">Most Popular for Investors</div>
+                <h3>Complete Management</h3>
+                <div class="price">10,000 <span>EGP / month</span></div>
+                <ul class="price-features">
+                    <li>Dedicated local crew management</li>
+                    <li>Fast guest communication & check-ins</li>
+                    <li>Emergency 24/7 maintenance support</li>
+                    <li>Zero markups on repair bills</li>
+                    <li>Protection of your host ratings</li>
+                </ul>
+                <a href="https://wa.me/201505543649" class="card-btn" style="background: var(--accent); color: var(--primary);" target="_blank">Partner With Us</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Founder & Transparency -->
+    <section class="founder">
+        <div class="founder-text">
+            <h2>Built on Absolute Transparency</h2>
+            <p>"At Elhabib Clean, our core principle is trust. As property investors yourselves, you need to know exactly who is handling your assets. I personally guarantee the quality of our work, and I ensure that you remain the ultimate decision-maker at all times."</p>
+            <p><strong>- Mahmoud Elsayed, Founder</strong></p>
+            
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/18j2YZWxXW/" target="_blank">My Personal Facebook</a>
+                <a href="https://habib-clean.com/contact.html" target="_blank">Official Company Page</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Elhabib Clean & Management Services</strong></p>
+        <p>Hadayek El Maadi, Cairo, Egypt</p>
+        <p>Email: <a href="mailto:mahmoued.sayed@habib-clean.com">mahmoued.sayed@habib-clean.com</a></p>
+        <p>Phone: +20 150 554 3649</p>
+        
+        <div class="disclaimer">
+            <p>Disclaimer: We are an independent local property management and cleaning service company. We are not affiliated with, sponsored by, or endorsed by Airbnb, Inc. All trademarks are the property of their respective owners.</p>
+            <p>&copy; 2026 Elhabib Services. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
