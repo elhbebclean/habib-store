@@ -11,7 +11,7 @@
     </script>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     
     <!-- SEO & Metadata -->
     <title>Short-Term Rental & Property Management in Cairo | Elhabib Management</title>
@@ -120,6 +120,7 @@
     </script>
 
     <style>
+        /* Core Variables */
         :root {
             --color-primary: #1a3c34;
             --color-accent: #c5a059;
@@ -127,86 +128,170 @@
             --color-light: #f9fafb;
             --color-white: #ffffff;
             --color-border: #e5e7eb;
+            --color-error: #ef4444;
             --font-heading: 'Montserrat', sans-serif;
             --font-body: system-ui, -apple-system, sans-serif;
-            --transition: all 0.3s ease;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-sm: 0 4px 6px -1px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 25px -3px rgba(0,0,0,0.1);
         }
 
+        /* Resets & Base */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: var(--font-body); color: var(--color-dark); background-color: var(--color-light); line-height: 1.6; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); color: var(--color-dark); background-color: var(--color-light); line-height: 1.6; -webkit-font-smoothing: antialiased; }
         h1, h2, h3, h4, .brand-text { font-family: var(--font-heading); font-weight: 700; line-height: 1.2; }
         a { text-decoration: none; color: inherit; transition: var(--transition); }
         ul { list-style: none; }
-        img { max-width: 100%; height: auto; display: block; }
+        img { max-width: 100%; height: auto; display: block; border-radius: 8px; }
 
+        /* Typography & Icons */
         .icon { width: 24px; height: 24px; fill: currentColor; display: inline-block; vertical-align: middle; }
-        .icon-large { width: 48px; height: 48px; color: var(--color-accent); margin-bottom: 16px; }
+        .icon-large { width: 48px; height: 48px; color: var(--color-accent); margin-bottom: 20px; }
 
+        /* Layout & Containers */
         .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-        .section { padding: 80px 0; }
+        .section { padding: 96px 0; }
         .section-white { background-color: var(--color-white); }
         .section-primary { background-color: var(--color-primary); color: var(--color-white); }
         
-        .section-header { text-align: center; max-width: 800px; margin: 0 auto 48px; }
+        .section-header { text-align: center; max-width: 800px; margin: 0 auto 56px; }
         .section-header h2 { font-size: 2.5rem; margin-bottom: 16px; color: var(--color-primary); }
         .section-primary .section-header h2 { color: var(--color-accent); }
         .section-header p { font-size: 1.125rem; color: #4b5563; }
         .section-primary .section-header p { color: #d1d5db; }
 
-        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 28px; border-radius: 4px; font-family: var(--font-heading); font-weight: 600; font-size: 1rem; cursor: pointer; border: 2px solid transparent; text-align: center; }
+        /* Mobile-Optimized Buttons */
+        .btn { 
+            display: inline-flex; align-items: center; justify-content: center; gap: 10px; 
+            padding: 16px 32px; border-radius: 8px; font-family: var(--font-heading); 
+            font-weight: 600; font-size: 1rem; cursor: pointer; border: 2px solid transparent; 
+            text-align: center; transition: var(--transition); min-height: 52px;
+        }
         .btn-primary { background-color: var(--color-primary); color: var(--color-white); }
-        .btn-primary:hover { background-color: var(--color-accent); color: var(--color-dark); }
+        .btn-primary:hover { background-color: var(--color-accent); color: var(--color-dark); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
         .btn-accent { background-color: var(--color-accent); color: var(--color-dark); }
-        .btn-accent:hover { background-color: var(--color-white); }
-        .btn-outline { border-color: var(--color-border); color: var(--color-dark); background: transparent; }
-        .btn-outline:hover { border-color: var(--color-primary); color: var(--color-primary); }
+        .btn-accent:hover { background-color: var(--color-white); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+        .btn-outline { border-color: var(--color-white); color: var(--color-white); background: transparent; }
+        .btn-outline:hover { background: var(--color-white); color: var(--color-primary); }
 
-        .site-header { background: var(--color-white); border-bottom: 1px solid var(--color-border); position: sticky; top: 0; z-index: 1000; }
+        /* Header & Mobile Navigation */
+        .site-header { background: var(--color-white); border-bottom: 1px solid var(--color-border); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.03); }
         .nav-container { display: flex; justify-content: space-between; align-items: center; height: 80px; }
-        .brand-text { font-size: 1.25rem; color: var(--color-primary); letter-spacing: 0.5px; text-transform: uppercase; }
+        .brand-text { font-size: 1.25rem; color: var(--color-primary); letter-spacing: 0.5px; text-transform: uppercase; z-index: 1002; position: relative; }
+        
+        .nav-content { display: flex; align-items: center; gap: 32px; }
         .nav-links { display: flex; gap: 32px; }
-        .nav-links a { font-weight: 500; font-size: 0.95rem; }
+        .nav-links a { font-weight: 600; font-size: 0.95rem; color: #4b5563; }
         .nav-links a:hover { color: var(--color-accent); }
+        .nav-actions { display: flex; gap: 16px; align-items: center; }
 
-        .hero { background: linear-gradient(rgba(26, 60, 52, 0.85), rgba(26, 60, 52, 0.95)), url('https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; color: var(--color-white); padding: 100px 0; }
-        .hero-content { max-width: 800px; }
-        .hero h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); color: var(--color-accent); margin-bottom: 24px; }
-        .hero p { font-size: 1.25rem; margin-bottom: 40px; color: #e5e7eb; max-width: 650px; }
+        /* Hamburger Button (Mobile Only) */
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 8px; z-index: 1002; position: relative; }
+        .mobile-menu-btn span { display: block; width: 26px; height: 2px; background: var(--color-primary); margin: 6px 0; transition: var(--transition); border-radius: 2px; }
+
+        /* Hero Section */
+        .hero { background: linear-gradient(rgba(26, 60, 52, 0.88), rgba(26, 60, 52, 0.95)), url('https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; color: var(--color-white); padding: 120px 0; }
+        .hero-content { max-width: 850px; }
+        .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); color: var(--color-accent); margin-bottom: 24px; letter-spacing: -0.02em; }
+        .hero p { font-size: 1.25rem; margin-bottom: 48px; color: #e5e7eb; max-width: 700px; line-height: 1.7; }
         .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
 
-        .audience-bar { background-color: var(--color-accent); color: var(--color-dark); padding: 16px 0; font-weight: 600; text-align: center; font-size: 0.95rem; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; }
-        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 48px; align-items: center; }
-        .card { background: var(--color-white); padding: 40px 32px; border-radius: 8px; border: 1px solid var(--color-border); height: 100%; }
-        .card h3 { font-size: 1.25rem; margin-bottom: 16px; color: var(--color-primary); }
+        /* Audience Bar */
+        .audience-bar { background-color: var(--color-accent); color: var(--color-dark); padding: 16px 24px; font-weight: 700; text-align: center; font-size: 1rem; letter-spacing: 0.5px; }
+        
+        /* Grids & Cards */
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; }
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 64px; align-items: center; }
+        .card { background: var(--color-white); padding: 48px 32px; border-radius: 12px; border: 1px solid var(--color-border); box-shadow: var(--shadow-sm); height: 100%; transition: var(--transition); }
+        .card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: var(--color-accent); }
+        .card h3 { font-size: 1.35rem; margin-bottom: 16px; color: var(--color-primary); }
         .card p { color: #4b5563; }
         
-        .founder-box { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 48px; display: flex; gap: 40px; align-items: center; }
-        .founder-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid var(--color-light); box-shadow: 0 4px 15px rgba(0,0,0,0.1); flex-shrink: 0; }
-        .founder-info h3 { font-size: 1.75rem; margin-bottom: 4px; }
-        .founder-info .role { color: var(--color-accent); font-weight: 600; display: block; margin-bottom: 16px; }
+        /* Founder Section */
+        .founder-box { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 12px; padding: 56px; display: flex; gap: 48px; align-items: center; box-shadow: var(--shadow-md); }
+        .founder-img { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 6px solid var(--color-light); box-shadow: 0 8px 20px rgba(0,0,0,0.1); flex-shrink: 0; }
+        .founder-info h3 { font-size: 2rem; margin-bottom: 4px; color: var(--color-primary); }
+        .founder-info .role { color: var(--color-accent); font-weight: 700; display: block; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.5px; font-size: 0.9rem; }
 
-        .lead-form { background: var(--color-white); padding: 48px; border-radius: 8px; border: 1px solid var(--color-border); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+        /* Mobile-First CRO Form */
+        .lead-form { background: var(--color-white); padding: 56px; border-radius: 12px; border: 1px solid var(--color-border); box-shadow: var(--shadow-md); }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
         .form-group { display: flex; flex-direction: column; gap: 8px; }
         .form-group.full { grid-column: 1 / -1; }
-        .form-group label { font-weight: 600; font-size: 0.9rem; color: var(--color-dark); }
-        .form-control { padding: 12px 16px; border: 1px solid var(--color-border); border-radius: 4px; font-family: inherit; font-size: 1rem; background: var(--color-light); }
-        .form-control:focus { outline: none; border-color: var(--color-primary); background: var(--color-white); }
-        .privacy-note { font-size: 0.8rem; color: #6b7280; margin-top: 16px; text-align: center; }
+        .form-group label { font-weight: 700; font-size: 0.95rem; color: var(--color-primary); }
+        /* Font-size 16px prevents iOS Auto-Zoom */
+        .form-control { padding: 16px; border: 2px solid var(--color-border); border-radius: 8px; font-family: inherit; font-size: 16px; background: var(--color-light); transition: var(--transition); min-height: 52px; color: var(--color-dark); width: 100%; appearance: none; -webkit-appearance: none; }
+        select.form-control { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/200.svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%231f2937' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; background-size: 16px; }
+        .form-control:focus { outline: none; border-color: var(--color-primary); background: var(--color-white); box-shadow: 0 0 0 4px rgba(26, 60, 52, 0.1); }
+        .privacy-note { font-size: 0.85rem; color: #6b7280; margin-top: 20px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 6px; }
+        .form-error-msg { background: #fee2e2; color: #991b1b; padding: 16px; border-radius: 8px; margin-bottom: 24px; font-weight: 600; display: none; border: 1px solid #f87171; }
 
-        .faq-item { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 4px; margin-bottom: 16px; }
-        .faq-item summary { padding: 24px; font-family: var(--font-heading); font-weight: 600; font-size: 1.1rem; cursor: pointer; list-style: none; position: relative; color: var(--color-primary); }
+        /* FAQ */
+        .faq-item { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; margin-bottom: 16px; overflow: hidden; transition: var(--transition); }
+        .faq-item:hover { border-color: var(--color-accent); }
+        .faq-item summary { padding: 24px; font-family: var(--font-heading); font-weight: 700; font-size: 1.1rem; cursor: pointer; list-style: none; position: relative; color: var(--color-primary); }
         .faq-item summary::-webkit-details-marker { display: none; }
-        .faq-item summary::after { content: "+"; position: absolute; right: 24px; font-size: 1.5rem; color: var(--color-accent); }
-        .faq-item[open] summary::after { content: "-"; }
-        .faq-content { padding: 0 24px 24px; color: #4b5563; }
+        .faq-item summary::after { content: "+"; position: absolute; right: 24px; font-size: 1.5rem; color: var(--color-accent); font-weight: 400; transition: var(--transition); }
+        .faq-item[open] summary::after { content: "-"; transform: rotate(180deg); }
+        .faq-content { padding: 0 24px 24px; color: #4b5563; line-height: 1.8; }
 
-        .site-footer { background: var(--color-dark); color: #9ca3af; padding: 64px 0 24px; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 48px; }
-        .footer-col h4 { color: var(--color-white); margin-bottom: 24px; font-size: 1.125rem; }
-        .footer-links li { margin-bottom: 12px; }
-        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; font-size: 0.85rem; text-align: center; }
+        /* Footer */
+        .site-footer { background: var(--color-dark); color: #9ca3af; padding: 80px 0 24px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 48px; margin-bottom: 64px; }
+        .footer-col h4 { color: var(--color-white); margin-bottom: 24px; font-size: 1.2rem; }
+        .footer-links li { margin-bottom: 16px; }
+        .footer-links a:hover { color: var(--color-white); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 32px; font-size: 0.9rem; text-align: center; }
+
+        /* =========================================
+           CRITICAL MOBILE RESPONSIVE FIXES
+           ========================================= */
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 2.75rem; }
+            .section { padding: 64px 0; }
+            .grid-2 { gap: 40px; }
+            .founder-box { flex-direction: column; text-align: center; padding: 40px 24px; }
+        }
+
+        @media (max-width: 768px) {
+            /* Header & Hamburger Overrides */
+            .mobile-menu-btn { display: block; }
+            .nav-content {
+                position: fixed; top: 80px; left: -100%; width: 100%; height: calc(100vh - 80px);
+                background: var(--color-white); flex-direction: column; align-items: flex-start;
+                padding: 40px 24px; transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: 0 10px 15px rgba(0,0,0,0.05); overflow-y: auto;
+            }
+            .nav-content.active { left: 0; }
+            .nav-links { flex-direction: column; gap: 24px; width: 100%; margin-bottom: 32px; }
+            .nav-links a { display: block; width: 100%; padding: 12px 0; font-size: 1.25rem; border-bottom: 1px solid var(--color-light); }
+            .nav-actions { width: 100%; flex-direction: column; }
+            .nav-actions .btn { width: 100%; justify-content: center; }
+            
+            /* Hamburger Animation */
+            .mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 5px); }
+            .mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
+            .mobile-menu-btn.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
+            /* Mobile Spacing & Layout */
+            .section { padding: 56px 0; }
+            .section-header h2 { font-size: 2rem; }
+            .hero { padding: 80px 0; text-align: center; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.1rem; }
+            .hero-actions { flex-direction: column; width: 100%; }
+            .hero-actions .btn { width: 100%; }
+            
+            .grid-2, .grid-3 { grid-template-columns: 1fr; gap: 24px; }
+            .card { padding: 32px 24px; }
+            
+            .lead-form { padding: 32px 20px; }
+            .form-grid { grid-template-columns: 1fr; gap: 20px; }
+            
+            .founder-img { width: 160px; height: 160px; }
+            .faq-item summary { padding: 20px; font-size: 1.05rem; padding-right: 48px; }
+        }
     </style>
 </head>
 <body>
@@ -214,32 +299,40 @@
     <!-- Header Navigation -->
     <header class="site-header">
         <div class="container nav-container">
-            <a href="/property-management-egypt.html" class="brand-text">ELHABIB MANAGEMENT</a>
-            <nav class="nav-links">
-                <a href="#services">Services</a>
-                <a href="#international">Overseas Owners</a>
-                <a href="#faq">FAQ</a>
-            </nav>
-            <div style="display: flex; gap: 16px; align-items: center;">
-                <a href="#assessment" class="btn btn-primary" data-event="management_assessment_nav_click">Request Assessment</a>
+            <a href="/property-management-egypt.html" class="brand-text">ELHABIB MGT</a>
+            
+            <!-- Mobile Toggle -->
+            <button class="mobile-menu-btn" aria-label="Toggle Navigation">
+                <span></span><span></span><span></span>
+            </button>
+
+            <!-- Navigation Links -->
+            <div class="nav-content">
+                <nav class="nav-links">
+                    <a href="#services">Our Operations</a>
+                    <a href="#international">Overseas Owners</a>
+                    <a href="#faq">FAQ</a>
+                </nav>
+                <div class="nav-actions">
+                    <a href="#assessment" class="btn btn-primary" data-event="management_assessment_nav_click">Request Audit</a>
+                </div>
             </div>
         </div>
     </header>
 
     <main>
-        
         <!-- Hero Section -->
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1>Short-Term Rental & Property Management in Cairo</h1>
-                    <p>Your local operational partner on the ground in Egypt. We provide reliable property supervision, guest operations, housekeeping, and maintenance coordination for overseas owners and local investors.</p>
+                    <h1>Operational Asset Management for Short-Term Rentals in Cairo</h1>
+                    <p>Your dedicated in-house execution partner. We are not brokers; we are high-end operators providing rigorous on-ground supervision, operational audits, and integrated housekeeping for overseas owners and real estate investors.</p>
                     <div class="hero-actions">
-                        <a href="#assessment" class="btn btn-accent" data-event="management_assessment_start">Request a Property Assessment</a>
-                        <a href="https://wa.me/201505473940?text=Hello%20Elhabib%20Management,%20I%20own%20a%20property%20in%20Cairo%20and%20need%20operational%20support." class="btn btn-outline" style="border-color: white; color: white;" target="_blank" rel="noopener noreferrer" data-event="management_whatsapp_click">
+                        <a href="#assessment" class="btn btn-accent" data-event="management_assessment_start">Request a Property Audit</a>
+                        <a href="https://wa.me/201505473940?text=Hello%20Elhabib%20Management,%20I%20own%20a%20property%20in%20Cairo%20and%20require%20high-end%20operational%20support." class="btn btn-outline" target="_blank" rel="noopener noreferrer" data-event="management_whatsapp_click">
                             <!-- WhatsApp Icon -->
                             <svg class="icon" viewBox="0 0 24 24"><path d="M12.031 0C5.385 0 .003 5.378.003 12.02c0 2.126.554 4.2 1.609 6.026L.01 24l6.113-1.605a11.96 11.96 0 0 0 5.908 1.564h.005c6.643 0 12.029-5.377 12.03-12.023 0-3.218-1.254-6.246-3.53-8.525A11.977 11.977 0 0 0 12.031 0Zm6.828 17.202c-.279.79-1.605 1.493-2.242 1.584-.636.09-1.503.267-4.843-1.12-4.032-1.674-6.666-5.836-6.87-6.108-.205-.272-1.642-2.186-1.642-4.17 0-1.984 1.026-2.96 1.39-3.35.365-.39.789-.488 1.05-.488.261 0 .522.003.743.013.232.01.543-.09.848.647.305.74 1.043 2.54 1.134 2.735.091.196.153.424.016.697-.138.272-.209.44-.418.685-.209.245-.443.518-.626.697-.205.197-.425.414-.191.815.233.402 1.037 1.713 2.227 2.775 1.54 1.376 2.822 1.8 3.224 1.996.402.196.637.164.876-.11.238-.273 1.026-1.196 1.3-1.606.274-.41.548-.342.913-.207.365.136 2.308 1.087 2.7 1.282.392.196.653.294.747.457.094.164.094.947-.185 1.737Z"/></svg>
-                            Chat on WhatsApp
+                            Consult via WhatsApp
                         </a>
                     </div>
                 </div>
@@ -248,37 +341,37 @@
 
         <!-- Audience Targeting Bar -->
         <div class="audience-bar">
-            Designed for real estate investors, Egyptian expats, and overseas property owners holding assets in Greater Cairo.
+            Engineered exclusively for premium real estate investors, Egyptian expats, and overseas property owners.
         </div>
 
         <!-- Services Section -->
         <section id="services" class="section section-white">
             <div class="container">
                 <header class="section-header">
-                    <h2>Operational Services We Provide</h2>
-                    <p>We handle the daily physical and logistical realities of running a short-term rental or furnished apartment in Cairo.</p>
+                    <h2>Precision On-Ground Operations</h2>
+                    <p>We transcend basic coordination. We handle the strict physical, logistical, and hygienic realities of operating a high-yield asset in Cairo.</p>
                 </header>
                 
                 <div class="grid-3">
                     <article class="card">
-                        <!-- Key SVG -->
-                        <svg class="icon-large" viewBox="0 0 24 24"><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
-                        <h3>Guest Operations & Check-in</h3>
-                        <p>Coordination of guest arrivals, key handovers, on-ground assistance, and managing physical check-out procedures to ensure a seamless experience.</p>
+                        <!-- Audit/Supervision SVG -->
+                        <svg class="icon-large" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6zm4-3.99V13h-2V9.01h2z"/></svg>
+                        <h3>Transparent Supervision & Audits</h3>
+                        <p>We do more than hand over keys. We conduct thorough operational audits, meticulously manage guest check-ins, verify property condition pre/post stays, and enforce strict house rules.</p>
                     </article>
 
                     <article class="card">
                         <!-- Clean SVG -->
                         <svg class="icon-large" viewBox="0 0 24 24"><path d="M19.36 2.72L20.78 4.14L15.06 9.85C16.13 11.39 16.28 13.24 15.38 14.44L9.06 8.12C10.26 7.22 12.11 7.37 13.65 8.44L19.36 2.72ZM5.93 17.57C3.92 15.56 2.69 13.16 2.35 10.92L7.23 15.8L5.93 17.57ZM11.64 19.35L14.45 22.16L12.33 24.28L9.5 21.45L11.64 19.35ZM14.9 18.06C12.89 20.07 10.49 21.3 8.25 21.64L13.13 16.76L14.9 18.06Z"/></svg>
-                        <h3>Turnover Cleaning</h3>
-                        <p>Executed by our in-house division, <strong>Elhabib Clean</strong>. We provide hotel-standard deep cleaning, fresh linen setup, and essential supply restocking between stays.</p>
+                        <h3>Integrated Housekeeping (Elhabib Clean)</h3>
+                        <p>We do not outsource to unverified freelancers. All hotel-standard deep cleaning, fresh linen rotation, and essential restocking are executed flawlessly by our in-house division, <strong>Elhabib Clean</strong>.</p>
                     </article>
 
                     <article class="card">
-                        <!-- Maintenance SVG -->
+                        <!-- Maintenance/Asset SVG -->
                         <svg class="icon-large" viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.5 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.4-2.4c.4-.4.4-1 0-1.3z"/></svg>
-                        <h3>Maintenance Coordination</h3>
-                        <p>Rapid response to property issues. We coordinate emergency repairs, conduct routine property inspections, and handle local tradesmen securely.</p>
+                        <h3>Asset Protection & Maintenance</h3>
+                        <p>Immediate response protocols for property issues. We coordinate emergency HVAC/plumbing repairs, conduct preventative maintenance inspections, and safeguard your investment's value.</p>
                     </article>
                 </div>
             </div>
@@ -288,30 +381,30 @@
         <section id="international" class="section">
             <div class="container grid-2">
                 <div>
-                    <h2 style="font-size: 2rem; margin-bottom: 24px; color: var(--color-primary);">Own Property in Egypt but Live Abroad?</h2>
-                    <p style="margin-bottom: 16px;">Managing a short-term rental from thousands of miles away is stressful. Time zone differences, coordinating with local cleaners, managing emergency maintenance, and ensuring guests check in smoothly can quickly turn an investment into a burden.</p>
-                    <p style="margin-bottom: 24px;"><strong>Elhabib Management</strong> bridges the geographical gap. As your dedicated operational partner on the ground in Cairo, we handle the physical logistics so you don't have to.</p>
+                    <h2 style="font-size: 2.25rem; margin-bottom: 24px; color: var(--color-primary);">You Are The Owner.<br>We Are Your Operators.</h2>
+                    <p style="margin-bottom: 16px; font-size: 1.1rem;">Managing a high-value asset from thousands of miles away is inherently risky. Middleman brokers often lack operational control, leading to hygiene failures, damaged property, and stressed guests.</p>
+                    <p style="margin-bottom: 24px; font-size: 1.1rem;"><strong>Elhabib Management</strong> is not a broker. We are an in-house execution hub. We bridge the geographical gap by acting as your direct, accountable partner on the ground.</p>
                     
-                    <ul style="margin-bottom: 32px;">
-                        <li style="display: flex; gap: 12px; margin-bottom: 12px; align-items: flex-start;">
-                            <svg class="icon" style="color: var(--color-accent); flex-shrink: 0;" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            <span>No more waking up to urgent guest calls regarding lost keys or AC issues.</span>
+                    <ul style="margin-bottom: 40px;">
+                        <li style="display: flex; gap: 16px; margin-bottom: 16px; align-items: flex-start;">
+                            <svg class="icon" style="color: var(--color-accent); flex-shrink: 0; margin-top: 2px;" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            <span style="font-weight: 500;">Zero reliance on fragmented third-party cleaners.</span>
                         </li>
-                        <li style="display: flex; gap: 12px; margin-bottom: 12px; align-items: flex-start;">
-                            <svg class="icon" style="color: var(--color-accent); flex-shrink: 0;" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            <span>Consistent, high-quality cleaning executed by our own trained staff.</span>
+                        <li style="display: flex; gap: 16px; margin-bottom: 16px; align-items: flex-start;">
+                            <svg class="icon" style="color: var(--color-accent); flex-shrink: 0; margin-top: 2px;" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            <span style="font-weight: 500;">Transparent financial reporting on all local maintenance.</span>
                         </li>
-                        <li style="display: flex; gap: 12px; margin-bottom: 12px; align-items: flex-start;">
-                            <svg class="icon" style="color: var(--color-accent); flex-shrink: 0;" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            <span>Transparent reporting on property conditions and maintenance expenses.</span>
+                        <li style="display: flex; gap: 16px; margin-bottom: 16px; align-items: flex-start;">
+                            <svg class="icon" style="color: var(--color-accent); flex-shrink: 0; margin-top: 2px;" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            <span style="font-weight: 500;">Rigorous pre-arrival audits ensuring five-star readiness.</span>
                         </li>
                     </ul>
-                    <a href="#assessment" class="btn btn-primary" data-event="management_assessment_mid_click">Get a Local Partner</a>
+                    <a href="#assessment" class="btn btn-primary" data-event="management_assessment_mid_click">Hire Your Local Operators</a>
                 </div>
                 <div>
-                    <!-- صورة تشغيلية (Placeholder until you change it) -->
-                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80" alt="Elhabib Management team inspecting a Cairo apartment" style="width: 100%; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);" loading="lazy">
-                    <p style="font-size: 0.875rem; color: #6b7280; text-align: center; margin-top: 12px;">Routine property inspection and quality control in Cairo.</p>
+                    <!-- صورة تشغيلية -->
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80" alt="Elhabib Management team inspecting a Cairo apartment" style="width: 100%; border-radius: 12px; box-shadow: var(--shadow-md);" loading="lazy">
+                    <p style="font-size: 0.875rem; color: #6b7280; text-align: center; margin-top: 16px; font-weight: 600;">Routine property inspection and quality control in Cairo.</p>
                 </div>
             </div>
         </section>
@@ -320,15 +413,15 @@
         <section class="section section-white">
             <div class="container">
                 <article class="founder-box">
-                    <!-- Founder Photo (Placeholder until you upload to Cloudinary) -->
-                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=256&q=80" alt="Mahmoud Elsayed - Founder of Elhabib Management" class="founder-img" loading="lazy">
+                    <!-- Founder Photo -->
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&q=80" alt="Mahmoud Elsayed - Founder of Elhabib Management" class="founder-img" loading="lazy">
                     <div class="founder-info">
                         <h3>Mahmoud Elsayed</h3>
-                        <span class="role">Founder & Operations Director</span>
-                        <p style="margin-bottom: 16px;">As the founder of Elhabib Management, I believe that true property management is built on genuine trust, transparent communication, and cross-cultural respect. My goal is to provide foreign owners and international investors with a deeply reliable, stress-free partnership rooted in high ethical standards and professional dedication.</p>
+                        <span class="role">Founder & Director of Operations</span>
+                        <p style="margin-bottom: 20px; font-size: 1.05rem; color: #4b5563;">"Real estate is a high-stakes investment. As the founder of Elhabib Management, my mandate is simple: protect your asset and optimize its operational performance. We provide foreign owners and international investors with a deeply reliable, stress-free partnership rooted in high ethical standards, operational transparency, and rigorous cross-cultural respect."</p>
                         
                         <!-- Facebook Link -->
-                        <a href="https://www.facebook.com/share/196NA21Dag/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; font-weight: 600; color: #1877f2;">
+                        <a href="https://www.facebook.com/share/196NA21Dag/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 10px; font-weight: 700; color: #1877f2; background: #ebf5ff; padding: 12px 24px; border-radius: 8px; transition: var(--transition);">
                             <svg class="icon" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                             Connect on Facebook
                         </a>
@@ -337,16 +430,22 @@
             </div>
         </section>
 
-        <!-- Qualification Lead Form (Sends to WhatsApp) -->
+        <!-- Qualification Lead Form -->
         <section id="assessment" class="section">
             <div class="container">
                 <header class="section-header">
-                    <h2>Request a Property Assessment</h2>
-                    <p>Provide details about your property in Cairo to receive a customized operational plan and management proposal.</p>
+                    <h2>Request an Operational Audit</h2>
+                    <p>Provide details about your Cairo asset to receive a customized operational strategy and direct management proposal.</p>
                 </header>
                 
                 <div class="lead-form">
-                    <form id="managementLeadForm">
+                    <form id="managementLeadForm" novalidate>
+                        
+                        <!-- Custom Error Message Container -->
+                        <div id="formError" class="form-error-msg">
+                            Please complete all required fields before submitting.
+                        </div>
+
                         <div class="form-grid">
                             <div class="form-group">
                                 <label for="fullName">Full Name</label>
@@ -357,31 +456,38 @@
                                 <input type="text" id="country" class="form-control" required placeholder="e.g. United Kingdom">
                             </div>
                             <div class="form-group">
-                                <label for="propertyLocation">Property Location in Cairo</label>
+                                <label for="propertyLocation">Asset Location in Cairo</label>
                                 <input type="text" id="propertyLocation" class="form-control" required placeholder="e.g. Maadi, New Cairo">
                             </div>
                             <div class="form-group">
-                                <label for="propertyType">Property Type</label>
+                                <label for="propertyType">Asset Type</label>
                                 <select id="propertyType" class="form-control" required>
                                     <option value="" disabled selected>Select property type...</option>
                                     <option value="Apartment">Apartment</option>
                                     <option value="Villa">Villa</option>
                                     <option value="Serviced Apartment">Serviced Apartment</option>
+                                    <option value="Multi-Unit Building">Multi-Unit Building</option>
                                 </select>
                             </div>
                             <div class="form-group full">
-                                <label for="requiredService">Primary Required Service</label>
+                                <label for="requiredService">Primary Operational Requirement</label>
                                 <select id="requiredService" class="form-control" required>
-                                    <option value="" disabled selected>Select service...</option>
-                                    <option value="Full Property Management">Full Property Management</option>
-                                    <option value="Turnover Cleaning & Inspection">Turnover Cleaning & Inspection</option>
-                                    <option value="Guest Operations & Check-in">Guest Operations & Check-in</option>
-                                    <option value="Not Sure Yet">Not Sure Yet / Need Consultation</option>
+                                    <option value="" disabled selected>Select operational service...</option>
+                                    <option value="Full Operational Management">Full Operational Management</option>
+                                    <option value="Elhabib Clean (Turnover & Hygiene)">Elhabib Clean (Turnover & Hygiene)</option>
+                                    <option value="Guest Operations & Audit Inspections">Guest Operations & Audit Inspections</option>
+                                    <option value="Consultation Needed">Consultation Needed</option>
                                 </select>
                             </div>
                         </div>
-                        <button type="button" onclick="sendToWhatsApp()" class="btn btn-primary" style="width: 100%; font-size: 1.125rem;" data-event="management_assessment_submit">Submit Request via WhatsApp</button>
-                        <p class="privacy-note">Your information is secure. We use this to evaluate your property requirements.</p>
+                        <button type="button" onclick="submitAssessment()" class="btn btn-primary" style="width: 100%; font-size: 1.125rem;" data-event="management_assessment_submit">
+                            <svg class="icon" viewBox="0 0 24 24" style="fill:none; stroke:currentColor; stroke-width:2; width: 20px; height: 20px;"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Submit securely via WhatsApp
+                        </button>
+                        <p class="privacy-note">
+                            <svg class="icon" viewBox="0 0 24 24" style="width: 16px; height: 16px;"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+                            Your data is strictly confidential and used solely for operational evaluation.
+                        </p>
                     </form>
                 </div>
             </div>
@@ -391,35 +497,35 @@
         <section id="faq" class="section section-white">
             <div class="container">
                 <header class="section-header">
-                    <h2>Frequently Asked Questions</h2>
+                    <h2>Operational FAQ</h2>
                 </header>
                 <div style="max-width: 800px; margin: 0 auto;">
                     
                     <details class="faq-item">
                         <summary>Can you manage my Cairo property if I live abroad?</summary>
                         <div class="faq-content">
-                            <p>Yes. Our services are specifically designed for overseas property owners, expats, and international investors. We act as your local operational partner, handling guest communication, maintenance, and housekeeping with high ethical standards.</p>
+                            <p>Absolutely. Our infrastructure is expressly designed for overseas property owners, expats, and international investors. We act as your local operational partner, handling strict guest communication, maintenance, and housekeeping with high ethical standards.</p>
                         </div>
                     </details>
                     
                     <details class="faq-item">
-                        <summary>Do you provide turnover cleaning services?</summary>
+                        <summary>Do you outsource your turnover cleaning?</summary>
                         <div class="faq-content">
-                            <p>Yes. All turnover and deep cleaning services are executed by our dedicated in-house division, <strong>Elhabib Clean</strong>. This ensures strict quality control and consistent hygiene standards between guest stays, rather than relying on unverified third-party contractors.</p>
+                            <p>No. All turnover and deep cleaning services are executed exclusively by our dedicated in-house division, <strong>Elhabib Clean</strong>. This ensures strict quality control, accountability, and consistent hygiene standards between guest stays, entirely bypassing the unreliability of third-party contractors.</p>
                         </div>
                     </details>
 
                     <details class="faq-item">
-                        <summary>What areas of Cairo do you currently serve?</summary>
+                        <summary>What areas of Cairo do you currently operate in?</summary>
                         <div class="faq-content">
-                            <p>We currently provide on-ground property management and turnover cleaning operations in Maadi, Katameya, Zahraa El Maadi, Nasr City, New Cairo, and Fifth Settlement (Tagamoa).</p>
+                            <p>We currently provide on-ground property management and turnover operations in Maadi, Katameya, Zahraa El Maadi, Nasr City, New Cairo, and Fifth Settlement (Tagamoa).</p>
                         </div>
                     </details>
 
                     <details class="faq-item">
-                        <summary>How do you handle property maintenance?</summary>
+                        <summary>How do you handle property maintenance and asset protection?</summary>
                         <div class="faq-content">
-                            <p>We conduct routine property inspections and coordinate emergency repairs. Minor issues are resolved quickly to ensure guest satisfaction, while major repairs are communicated to you for approval with transparent local cost reporting.</p>
+                            <p>We conduct routine property inspections and immediately coordinate emergency repairs. Minor issues are resolved quickly to protect your reviews, while major repairs are communicated to you for approval alongside transparent local cost reporting, protecting you from inflated prices.</p>
                         </div>
                     </details>
 
@@ -427,21 +533,22 @@
             </div>
         </section>
     </main>
+
     <!-- Semantic Footer -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <div class="brand-text" style="color: var(--color-white); margin-bottom: 16px;">ELHABIB MANAGEMENT</div>
-                    <p style="margin-bottom: 16px;">Professional on-the-ground operations for short-term and vacation rentals in Cairo.</p>
-                    <a href="https://wa.me/201505473940?text=Hello%20Elhabib%20Management,%20I%20have%20an%20inquiry." target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; color: var(--color-accent); font-weight: 600;">
+                    <div class="brand-text" style="color: var(--color-white); margin-bottom: 20px;">ELHABIB MANAGEMENT</div>
+                    <p style="margin-bottom: 24px; line-height: 1.8;">High-end, on-the-ground operational asset management for short-term and vacation rentals in Cairo.</p>
+                    <a href="https://wa.me/201505473940?text=Hello%20Elhabib%20Management,%20I%20have%20an%20operational%20inquiry." target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; color: var(--color-accent); font-weight: 700; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 0.5px;">
                         <!-- WhatsApp Icon -->
                         <svg class="icon" viewBox="0 0 24 24"><path d="M12.031 0C5.385 0 .003 5.378.003 12.02c0 2.126.554 4.2 1.609 6.026L.01 24l6.113-1.605a11.96 11.96 0 0 0 5.908 1.564h.005c6.643 0 12.029-5.377 12.03-12.023 0-3.218-1.254-6.246-3.53-8.525A11.977 11.977 0 0 0 12.031 0Zm6.828 17.202c-.279.79-1.605 1.493-2.242 1.584-.636.09-1.503.267-4.843-1.12-4.032-1.674-6.666-5.836-6.87-6.108-.205-.272-1.642-2.186-1.642-4.17 0-1.984 1.026-2.96 1.39-3.35.365-.39.789-.488 1.05-.488.261 0 .522.003.743.013.232.01.543-.09.848.647.305.74 1.043 2.54 1.134 2.735.091.196.153.424.016.697-.138.272-.209.44-.418.685-.209.245-.443.518-.626.697-.205.197-.425.414-.191.815.233.402 1.037 1.713 2.227 2.775 1.54 1.376 2.822 1.8 3.224 1.996.402.196.637.164.876-.11.238-.273 1.026-1.196 1.3-1.606.274-.41.548-.342.913-.207.365.136 2.308 1.087 2.7 1.282.392.196.653.294.747.457.094.164.094.947-.185 1.737Z"/></svg>
                         WhatsApp Us
                     </a>
                 </div>
                 <div class="footer-col">
-                    <h4>Contact Info</h4>
+                    <h4>Direct Contact</h4>
                     <ul class="footer-links">
                         <li>Location: Cairo, Egypt</li>
                         <li>Phone: <a href="tel:+201505473940">+20 150 547 3940</a></li>
@@ -449,53 +556,50 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Operational Links</h4>
+                    <h4>Operational Hub</h4>
                     <ul class="footer-links">
-                        <li><a href="#services">Management Services</a></li>
+                        <li><a href="#services">Asset Management</a></li>
                         <li><a href="https://habib-clean.com/" target="_blank" rel="noopener noreferrer">Elhabib Clean (Housekeeping)</a></li>
-                        <li><a href="#faq">Owner FAQ</a></li>
+                        <li><a href="#faq">Owner Operations FAQ</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>Disclaimer: Elhabib Management is an independent local property management and operational service provider. We are not affiliated with, sponsored by, or endorsed by Airbnb, Inc., Booking.com, or any other booking platform. All trademarks remain the property of their respective owners.</p>
-                <p style="margin-top: 12px;">&copy; 2026 Elhabib Management. All Rights Reserved.</p>
+                <p>Disclaimer: Elhabib Management is an independent local property management and operational service provider. We are not affiliated with, sponsored by, or endorsed by Airbnb, Inc., Booking.com, or any other platform. All trademarks remain the property of their respective owners.</p>
+                <p style="margin-top: 16px;">&copy; 2026 Elhabib Management. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript for Form-to-WhatsApp and GTM Tracking -->
+    <!-- Core Interactive Scripts -->
     <script>
-        function sendToWhatsApp() {
-            const name = document.getElementById('fullName').value.trim();
-            const country = document.getElementById('country').value.trim();
-            const location = document.getElementById('propertyLocation').value.trim();
-            const type = document.getElementById('propertyType').value;
-            const service = document.getElementById('requiredService').value;
-
-            if (!name || !country || !location || !type || !service) {
-                alert('Please fill in all required fields before submitting.');
-                return;
-            }
-
-            // GTM DataLayer Push for Conversion Tracking
-            if(window.dataLayer) {
-                window.dataLayer.push({
-                    'event': 'management_assessment_submit',
-                    'property_type': type,
-                    'required_service': service
-                });
-            }
-
-            const message = `Hello Elhabib Management,%0A%0A*New Property Assessment Request:*%0A- Name: ${encodeURIComponent(name)}%0A- Country: ${encodeURIComponent(country)}%0A- Location in Cairo: ${encodeURIComponent(location)}%0A- Property Type: ${encodeURIComponent(type)}%0A- Required Service: ${encodeURIComponent(service)}`;
-            
-            const whatsappUrl = `https://wa.me/201505473940?text=${message}`;
-            window.open(whatsappUrl, '_blank');
-        }
-
         document.addEventListener("DOMContentLoaded", function() {
-            // Track CTA Clicks
+            
+            // --- 1. Mobile Hamburger Menu Logic ---
+            const mobileBtn = document.querySelector('.mobile-menu-btn');
+            const navContent = document.querySelector('.nav-content');
+            const navLinks = document.querySelectorAll('.nav-links a, .nav-actions .btn');
+
+            function toggleMenu() {
+                mobileBtn.classList.toggle('active');
+                navContent.classList.toggle('active');
+                // Prevent body scroll when menu is open
+                document.body.style.overflow = navContent.classList.contains('active') ? 'hidden' : '';
+            }
+
+            mobileBtn.addEventListener('click', toggleMenu);
+
+            // Close menu when clicking a link
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if(navContent.classList.contains('active')) {
+                        toggleMenu();
+                    }
+                });
+            });
+
+            // --- 2. GTM Tracking setup ---
             const trackingBtns = document.querySelectorAll('[data-event]');
             trackingBtns.forEach(btn => {
                 btn.addEventListener('click', function() {
@@ -508,6 +612,43 @@
                 });
             });
         });
+
+        // --- 3. Custom Validation & Form to WhatsApp ---
+        function submitAssessment() {
+            const name = document.getElementById('fullName').value.trim();
+            const country = document.getElementById('country').value.trim();
+            const location = document.getElementById('propertyLocation').value.trim();
+            const type = document.getElementById('propertyType').value;
+            const service = document.getElementById('requiredService').value;
+            const errorMsg = document.getElementById('formError');
+
+            // Custom Inline Validation (No Alerts)
+            if (!name || !country || !location || !type || !service) {
+                errorMsg.style.display = 'block';
+                // Scroll slightly up so user sees the error
+                errorMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return;
+            }
+
+            // Hide error if previously shown
+            errorMsg.style.display = 'none';
+
+            // GTM DataLayer Push for Conversion Tracking
+            if(window.dataLayer) {
+                window.dataLayer.push({
+                    'event': 'management_assessment_submit',
+                    'property_type': type,
+                    'required_service': service
+                });
+            }
+
+            // Constructing professional WhatsApp Message
+            const message = `Hello Elhabib Management,%0A%0A*New Operational Audit Request:*%0A- Name: ${encodeURIComponent(name)}%0A- Country: ${encodeURIComponent(country)}%0A- Asset Location: ${encodeURIComponent(location)}%0A- Asset Type: ${encodeURIComponent(type)}%0A- Required Operation: ${encodeURIComponent(service)}%0A%0AWe look forward to discussing the operational strategy.`;
+            
+            const whatsappUrl = `https://wa.me/201505473940?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+        }
     </script>
 </body>
 </html>
+
