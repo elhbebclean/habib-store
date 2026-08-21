@@ -16,6 +16,14 @@
     </image:image>
   </url>
 
+  <!-- صفحة إدارة العقارات والشقق الفندقية (أولوية عالية جداً) -->
+  <url>
+    <loc>https://habib-landscape-boutique.com/property-management-egypt.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.98</priority>
+  </url>
+
   <!-- متاجر المبيعات المباشرة (Direct Stores) -->
   <url>
     <loc>https://habib-landscape-boutique.com/gravel.html</loc>
@@ -177,7 +185,7 @@
     <priority>0.85</priority>
     <image:image>
       <image:loc>https://res.cloudinary.com/dwa0e5sup/image/upload/w_1200,q_auto:eco,f_auto/v1775785894/Banana_Palmo_idrc9m.jpg</image:loc>
-      <image:title>لاندسكيب התجمع الخامس ومدينتي</image:title>
+      <image:title>لاندسكيب التجمع الخامس ومدينتي</image:title>
     </image:image>
   </url>
   
