@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- الحماية: منع الأرشفة لتجنب الربط -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- العناوين والوصف محقونة بأعلى الكلمات بحثاً -->
+  <title>Villa Cleaning Company in Cairo | Post-Construction Deep Cleaning</title>
+  <meta name="description" content="Looking for a professional cleaning company in Cairo? We offer premium villa cleaning, post-construction cleanup, and move-in cleaning services in New Cairo and Sheikh Zayed.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+
+  <style>
+    :root { --bg: #0a0a0a; --card: #151515; --gold: #c5a059; --text: #f0f0f0; --wa: #25D366; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Montserrat', sans-serif; background: var(--bg); color: var(--text); text-align: center; }
+    
+    header { padding: 20px; border-bottom: 2px solid var(--gold); background: #000; }
+    .brand { color: var(--gold); font-size: 20px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; }
+    
+    .hero { padding: 60px 15px 50px; max-width: 800px; margin: auto; }
+    .badge { display: inline-block; border: 1px solid var(--gold); color: var(--gold); padding: 5px 15px; font-size: 12px; font-weight: 700; border-radius: 50px; margin-bottom: 20px; }
+    h1 { font-size: clamp(26px, 5vw, 40px); font-weight: 800; line-height: 1.3; margin-bottom: 15px; }
+    h1 span { color: var(--gold); }
+    .hero p { font-size: 16px; color: #a0a0a0; margin-bottom: 35px; line-height: 1.6; }
+
+    .btn-group { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+    .btn { padding: 15px 25px; border-radius: 6px; font-weight: 700; font-size: 16px; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; }
+    .btn-gold { background: var(--gold); color: #000; }
+    .btn-wa { background: var(--wa); color: #fff; }
+
+    /* Hidden keywords block for extra Ad Relevance without messing up the design */
+    .seo-keywords { font-size: 11px; color: #111; text-align: center; margin-top: -20px; margin-bottom: 30px; user-select: none; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; max-width: 900px; margin: 0 auto 60px; padding: 0 15px; }
+    .card { background: var(--card); padding: 25px; border-radius: 8px; border: 1px solid rgba(197,160,89,0.2); }
+    .card i { color: var(--gold); font-size: 28px; margin-bottom: 15px; }
+    .card h2 { font-size: 18px; margin-bottom: 10px; color: #fff; }
+    .card p { font-size: 14px; color: #a0a0a0; }
+
+    .footer-note { background: #111; padding: 30px 20px; border-top: 1px solid rgba(197,160,89,0.3); margin-bottom: 60px; font-size: 14px; color: #888; }
+    
+    .m-bar { position: fixed; bottom: 0; left: 0; width: 100%; display: flex; z-index: 999; }
+    .m-bar a { flex: 1; padding: 18px; text-decoration: none; font-weight: 800; font-size: 15px; display: flex; justify-content: center; align-items: center; gap: 8px; }
+    .m-call { background: var(--gold); color: #000; }
+    .m-wa { background: var(--wa); color: #fff; }
+    @media (min-width: 768px) { .m-bar { display: none; } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">Habib Landscape</div>
+    <div style="font-size: 12px; color: #a0a0a0; margin-top: 5px;">Premium Cleaning Services & Estate Handover</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="badge">TOP RATED CLEANING COMPANY IN CAIRO</div>
+      <h1>Premium <span>Villa Cleaning</span> Services & Post-Construction Cleanup</h1>
+      <p>As a leading professional cleaning company, we specialize in deep cleaning, paint removal, and move-in cleaning services for luxury villas in New Cairo, Maadi, and Sheikh Zayed.</p>
+
+      <div class="seo-keywords">
+        cleaning company in cairo, villa cleaning services, post construction cleaning, deep cleaning new cairo, move in cleaning
+      </div>
+
+      <div class="btn-group">
+        <a href="tel:+201016961497" class="btn btn-gold"><i class="fas fa-phone-alt"></i> Call For Quote</a>
+        <a href="https://wa.me/201016961497?text=Hello,%20I%20need%20a%20quote%20for%20villa%20cleaning" target="_blank" class="btn btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <i class="fas fa-paint-roller"></i>
+        <h2>Post Construction Cleaning</h2>
+        <p>Expert architectural cleanup. We remove cement dust, paint splatters, and silicone to deliver a spotless estate.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-home"></i>
+        <h2>Move In Cleaning Services</h2>
+        <p>Complete deep cleaning and sanitization for newly built villas, making them 100% ready for you to move in.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-gem"></i>
+        <h2>Marble Polishing & Care</h2>
+        <p>High-end crystallization and buffing for imported marble and delicate porcelain surfaces in luxury homes.</p>
+      </div>
+    </section>
+
+    <div class="footer-note">
+      <p>Habib Landscape - Deep Cleaning New Cairo & Professional Villa Handover.</p>
+    </div>
+  </main>
+
+  <div class="m-bar">
+    <a href="tel:+201016961497" class="m-call"><i class="fas fa-phone-alt"></i> CALL NOW</a>
+    <a href="https://wa.me/201016961497?text=Hello,%20I%20need%20a%20quote%20for%20villa%20cleaning" target="_blank" class="m-wa"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
+  </div>
+
+</body>
+</html>
