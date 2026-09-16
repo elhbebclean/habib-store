@@ -23,12 +23,13 @@
     .brand { color: var(--gold); font-size: 22px; font-weight: 800; text-transform: uppercase; letter-spacing: 3px; }
     .sub-brand { color: #888; font-size: 11px; letter-spacing: 2px; margin-top: 4px; text-transform: uppercase; }
     
-    /* Hero Section with Premium Background */
+    /* Hero Section - Clean Premium Solid Background */
     .hero { 
       position: relative;
-      padding: 80px 20px; 
+      padding: 100px 20px; 
       text-align: center;
-      background: linear-gradient(rgba(10,10,10,0.85), rgba(10,10,10,0.95)), url('https://res.cloudinary.com/dwa0e5sup/image/upload/q_auto,f_auto,w_1200/v1775732414/habib-landscape-boutique-royal-villa-entrance-flooring.jpg_mpu58y.jpg') center/cover;
+      background: #050505; /* Solid dark background without image */
+      border-bottom: 1px solid rgba(197,160,89,0.1);
     }
     .badge { display: inline-block; border: 1px solid var(--gold); color: var(--gold); background: rgba(197,160,89,0.1); padding: 6px 18px; font-size: 12px; font-weight: 600; border-radius: 50px; margin-bottom: 25px; letter-spacing: 1px; }
     h1 { font-size: clamp(28px, 5vw, 46px); font-weight: 800; line-height: 1.2; margin-bottom: 20px; color: #fff; max-width: 900px; margin-inline: auto; }
@@ -41,11 +42,11 @@
     .btn-gold { background: var(--gold); color: #000; box-shadow: 0 4px 15px rgba(197,160,89,0.3); }
     .btn-wa { background: var(--wa); color: #fff; box-shadow: 0 4px 15px rgba(37,211,102,0.3); }
 
-    /* SEO Keywords Hidden from View but visible to Google Bot */
-    .seo-keywords { font-size: 1px; color: transparent; position: absolute; }
+    .urgency-text { font-size: 13px; color: #888; margin-top: 20px; letter-spacing: 1px; }
+    .urgency-text i { color: var(--gold); margin-right: 5px; }
 
     /* Trust Section */
-    .trust-bar { background: #111; padding: 25px 20px; border-bottom: 1px solid rgba(197,160,89,0.1); }
+    .trust-bar { background: #111; padding: 35px 20px; border-bottom: 1px solid rgba(197,160,89,0.1); }
     .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 1000px; margin: auto; text-align: center; }
     .trust-item h4 { color: var(--gold); font-size: 15px; margin-bottom: 5px; }
     .trust-item p { color: #888; font-size: 13px; }
@@ -61,6 +62,7 @@
 
     /* Video Proof Section (Optimized for speed) */
     .proof-section { background: #111; padding: 60px 20px; text-align: center; }
+    .local-authority { color: #666; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; }
     .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1000px; margin: auto; }
     .video-wrapper { position: relative; cursor: pointer; aspect-ratio: 16/9; border: 1px solid rgba(197,160,89,0.3); overflow: hidden; }
     .video-wrapper img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; transition: 0.3s; }
@@ -80,7 +82,7 @@
 <body>
 
   <header>
-    <div class="brand">Habib Landscape</div>
+    <div class="brand">Habib Clean</div>
     <div class="sub-brand">Premium Estate Cleaning & Handover Division</div>
   </header>
 
@@ -90,14 +92,12 @@
       <h1>Premium <span>Villa Cleaning</span> & Post-Construction Cleanup</h1>
       <p>We provide elite deep cleaning, paint extraction, and marble polishing services to ensure your luxury villa is flawlessly ready for handover.</p>
 
-      <div class="seo-keywords">
-        cleaning company in cairo, villa cleaning services, post construction cleaning, deep cleaning new cairo, move in cleaning
-      </div>
-
       <div class="btn-group">
-        <a href="tel:+201016961497" class="btn btn-gold"><i class="fas fa-phone-alt"></i> Request Inspection</a>
+        <a href="tel:+201016961497" class="btn btn-gold"><i class="fas fa-phone-alt"></i> Call: 01016961497</a>
         <a href="https://wa.me/201016961497?text=Hello,%20I%20have%20a%20villa%20and%20need%20a%20quote%20for%20post-construction%20cleaning" target="_blank" class="btn btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
       </div>
+      
+      <p class="urgency-text"><i class="fas fa-bolt"></i> Free Site Inspection within 24 Hours in New Cairo & Zayed</p>
     </section>
 
     <!-- Trust Signals Section -->
@@ -140,6 +140,8 @@
     <!-- Visual Proof Section -->
     <section class="proof-section">
       <h2 class="section-title" style="margin-top: 0;">See Our Standard of Work</h2>
+      <div class="local-authority">Trusted by homeowners in premium compounds (Palm Hills, Mivida, Allegria...)</div>
+      
       <div class="video-grid">
         <!-- Video 1 -->
         <div class="video-wrapper" data-video="B7BJOEUEIqw">
@@ -157,7 +159,7 @@
   </main>
 
   <footer>
-    <div style="color: var(--gold); font-size: 18px; font-weight: 800; letter-spacing: 2px; margin-bottom: 10px;">HABIB LANDSCAPE</div>
+    <div style="color: var(--gold); font-size: 18px; font-weight: 800; letter-spacing: 2px; margin-bottom: 10px;">HABIB CLEAN</div>
     <p>Top Rated Cleaning Company in Cairo & New Cairo.</p>
     <p>© 2026 All Rights Reserved.</p>
   </footer>
