@@ -20,77 +20,125 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
 
-  <title>Premium Villa Cleaning Company in Cairo</title>
+  <title>Premium Villa Cleaning Company in Cairo | Post Construction</title>
   <meta name="description" content="Elite post-construction cleanup and deep cleaning services for luxury villas in New Cairo, Maadi, and Sheikh Zayed.">
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
 
   <style>
-    :root { --bg: #050505; --card: #111; --gold: #c5a059; --text: #f0f0f0; --wa: #25D366; }
+    :root { 
+      --bg: #030303; 
+      --card-bg: #0f0f0f; 
+      --gold: #d4af37; 
+      --gold-hover: #f3c93f;
+      --text: #f5f5f5; 
+      --text-muted: #a0a0a0;
+      --wa: #25D366; 
+      --wa-hover: #1ebd5c;
+    }
+    
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Montserrat', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Montserrat', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
     
-    /* Scarcity Bar */
-    .scarcity-bar { background: #8b0000; color: #fff; text-align: center; padding: 8px 10px; font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+    /* 1. Scarcity & Top Bar */
+    .scarcity-bar { background: linear-gradient(90deg, #5c0000 0%, #8b0000 50%, #5c0000 100%); color: #fff; text-align: center; padding: 10px; font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; }
     
-    header { padding: 20px; border-bottom: 1px solid rgba(197,160,89,0.2); background: #000; text-align: center; }
-    .brand { color: var(--gold); font-size: 24px; font-weight: 800; text-transform: uppercase; letter-spacing: 3px; }
-    .sub-brand { color: #888; font-size: 11px; letter-spacing: 2px; margin-top: 4px; text-transform: uppercase; }
+    header { padding: 25px 20px; background: rgba(0,0,0,0.8); text-align: center; border-bottom: 1px solid rgba(212,175,55,0.15); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
+    .brand { color: var(--gold); font-size: 26px; font-weight: 800; text-transform: uppercase; letter-spacing: 4px; }
+    .sub-brand { color: var(--text-muted); font-size: 11px; letter-spacing: 2.5px; margin-top: 5px; text-transform: uppercase; }
     
-    .hero { padding: 80px 20px 60px; text-align: center; border-bottom: 1px solid rgba(197,160,89,0.1); }
-    .badge { display: inline-block; border: 1px solid var(--gold); color: var(--gold); background: rgba(197,160,89,0.1); padding: 6px 18px; font-size: 12px; font-weight: 600; border-radius: 50px; margin-bottom: 25px; letter-spacing: 1px; }
-    h1 { font-size: clamp(28px, 5vw, 46px); font-weight: 800; line-height: 1.2; margin-bottom: 20px; color: #fff; max-width: 900px; margin-inline: auto; }
-    h1 span { color: var(--gold); }
-    .hero p { font-size: 17px; color: #ccc; margin: 0 auto 35px; max-width: 700px; }
+    /* 2. Hero Section */
+    .hero { 
+      padding: 90px 20px 80px; 
+      text-align: center; 
+      background: radial-gradient(circle at center, #1a1a1a 0%, #030303 100%);
+      border-bottom: 1px solid rgba(212,175,55,0.1); 
+    }
+    .badge { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--gold); color: var(--gold); background: rgba(212,175,55,0.05); padding: 8px 20px; font-size: 12px; font-weight: 600; border-radius: 50px; margin-bottom: 30px; letter-spacing: 1px; }
+    .hero h1 { font-size: clamp(32px, 6vw, 52px); font-weight: 800; line-height: 1.15; margin-bottom: 25px; color: #fff; max-width: 900px; margin-inline: auto; text-transform: capitalize; }
+    .hero h1 span { color: var(--gold); position: relative; }
+    .hero p.lead { font-size: 18px; color: var(--text-muted); margin: 0 auto 40px; max-width: 750px; font-weight: 300; }
 
-    .btn-group { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 20px; }
-    .btn { padding: 16px 28px; border-radius: 4px; font-weight: 700; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; position: relative; }
-    .btn:hover { transform: translateY(-3px); }
-    .btn-gold { background: var(--gold); color: #000; box-shadow: 0 4px 15px rgba(197,160,89,0.3); }
-    .btn-wa { background: var(--wa); color: #fff; box-shadow: 0 4px 15px rgba(37,211,102,0.3); }
+    /* Buttons */
+    .btn-group { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 30px; }
+    .btn { padding: 18px 32px; border-radius: 6px; font-weight: 700; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; position: relative; overflow: hidden; }
+    .btn-gold { background: var(--gold); color: #000; box-shadow: 0 4px 20px rgba(212,175,55,0.3); }
+    .btn-gold:hover { background: var(--gold-hover); transform: translateY(-3px); box-shadow: 0 6px 25px rgba(212,175,55,0.4); }
+    .btn-wa { background: var(--wa); color: #fff; box-shadow: 0 4px 20px rgba(37,211,102,0.2); }
+    .btn-wa:hover { background: var(--wa-hover); transform: translateY(-3px); box-shadow: 0 6px 25px rgba(37,211,102,0.3); }
     
-    /* Pulsing Dot for WhatsApp */
     .pulse-dot { width: 10px; height: 10px; background-color: #fff; border-radius: 50%; display: inline-block; animation: pulse 1.5s infinite; }
-    @keyframes pulse { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); } 70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); } }
+    @keyframes pulse { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); } 70% { transform: scale(1.2); box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); } }
 
-    .urgency-text { font-size: 13px; color: #aaa; letter-spacing: 1px; }
+    .urgency-text { font-size: 14px; color: var(--text); letter-spacing: 1px; font-weight: 600; }
     .urgency-text i { color: var(--gold); margin-right: 5px; }
 
     /* Review Snippet */
-    .hero-review { margin-top: 30px; font-size: 13px; color: #888; display: flex; align-items: center; justify-content: center; gap: 10px; }
-    .stars { color: #f5b50a; font-size: 14px; }
+    .hero-review { margin-top: 40px; font-size: 14px; color: var(--text-muted); display: flex; align-items: center; justify-content: center; gap: 12px; font-style: italic; }
+    .stars { color: #f5b50a; font-size: 16px; display: flex; gap: 2px; }
 
-    .trust-bar { background: #0a0a0a; padding: 35px 20px; border-bottom: 1px solid rgba(197,160,89,0.1); }
-    .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 1000px; margin: auto; text-align: center; }
-    .trust-item h4 { color: var(--gold); font-size: 15px; margin-bottom: 5px; }
-    .trust-item p { color: #888; font-size: 13px; }
+    /* 3. Why Choose Us (Trust Bar) */
+    .trust-bar { background: #080808; padding: 50px 20px; border-bottom: 1px solid rgba(212,175,55,0.1); }
+    .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1100px; margin: auto; }
+    .trust-item { text-align: center; padding: 20px; }
+    .trust-item i { font-size: 36px; color: var(--gold); margin-bottom: 15px; }
+    .trust-item h4 { color: #fff; font-size: 17px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+    .trust-item p { color: var(--text-muted); font-size: 14px; line-height: 1.7; }
 
-    .section-title { text-align: center; margin: 60px 0 30px; font-size: 28px; color: #fff; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto 60px; padding: 0 20px; }
-    .card { background: var(--card); padding: 30px 25px; border-radius: 6px; border-top: 3px solid transparent; transition: 0.3s; text-align: center; }
-    .card:hover { border-top-color: var(--gold); background: #151515; }
-    .card i { color: var(--gold); font-size: 32px; margin-bottom: 20px; }
-    .card h2 { font-size: 20px; margin-bottom: 12px; color: #fff; }
-    .card p { font-size: 14px; color: #aaa; }
+    /* 4. Services Section */
+    .services-section { padding: 80px 20px; }
+    .section-header { text-align: center; margin-bottom: 50px; }
+    .section-title { font-size: 32px; color: #fff; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; }
+    .section-subtitle { color: var(--gold); font-size: 14px; text-transform: uppercase; letter-spacing: 2px; }
 
-    .proof-section { background: #0a0a0a; padding: 60px 20px; text-align: center; }
-    .local-authority { color: #666; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; }
-    .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1000px; margin: auto; }
-    .video-wrapper { position: relative; cursor: pointer; aspect-ratio: 16/9; border: 1px solid rgba(197,160,89,0.3); overflow: hidden; border-radius: 4px; }
-    .video-wrapper img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; transition: 0.3s; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; }
+    .card { background: var(--card-bg); padding: 40px 30px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); transition: all 0.3s ease; position: relative; overflow: hidden; display: flex; flex-direction: column; }
+    .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: var(--gold); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left; }
+    .card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.8); border-color: rgba(212,175,55,0.2); }
+    .card:hover::before { transform: scaleX(1); }
+    .card i { color: var(--gold); font-size: 40px; margin-bottom: 25px; }
+    .card h2 { font-size: 22px; margin-bottom: 15px; color: #fff; font-weight: 700; }
+    .card p { font-size: 15px; color: var(--text-muted); margin-bottom: 25px; flex-grow: 1; }
+    .card-link { color: var(--gold); font-size: 14px; font-weight: 600; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; display: inline-flex; align-items: center; gap: 8px; transition: 0.3s; }
+    .card-link:hover { color: #fff; }
+
+    /* 5. Proof / Videos */
+    .proof-section { background: #080808; padding: 80px 20px; border-top: 1px solid rgba(212,175,55,0.1); }
+    .local-authority { color: var(--text-muted); font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 40px; text-align: center; }
+    .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; max-width: 1000px; margin: auto; }
+    .video-wrapper { position: relative; cursor: pointer; aspect-ratio: 16/9; border: 1px solid rgba(212,175,55,0.3); overflow: hidden; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+    .video-wrapper img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; transition: 0.5s; }
     .video-wrapper:hover img { opacity: 1; transform: scale(1.05); }
-    .play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--gold); color: #000; padding: 12px 24px; font-weight: 700; pointer-events: none; border-radius: 2px; }
+    .play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(212,175,55,0.9); color: #000; padding: 15px 30px; font-weight: 800; font-size: 14px; pointer-events: none; border-radius: 4px; letter-spacing: 1px; display: flex; align-items: center; gap: 10px; transition: 0.3s; }
+    .video-wrapper:hover .play-btn { background: var(--gold); transform: translate(-50%, -50%) scale(1.1); }
 
-    footer { background: #000; padding: 40px 20px 100px; text-align: center; font-size: 13px; color: #666; border-top: 1px solid rgba(197,160,89,0.2); }
+    /* 6. Footer & Floating Elements */
+    footer { background: #000; padding: 60px 20px 120px; text-align: center; border-top: 1px solid rgba(212,175,55,0.2); }
+    .footer-brand { color: var(--gold); font-size: 22px; font-weight: 800; letter-spacing: 3px; margin-bottom: 15px; }
+    footer p { font-size: 14px; color: var(--text-muted); margin-bottom: 5px; }
     
-    .m-bar { position: fixed; bottom: 0; left: 0; width: 100%; display: flex; z-index: 999; box-shadow: 0 -5px 20px rgba(0,0,0,0.9); }
-    .m-bar a { flex: 1; padding: 18px; text-decoration: none; font-weight: 800; font-size: 14px; display: flex; justify-content: center; align-items: center; gap: 8px; }
+    /* Desktop Floating WhatsApp */
+    .floating-wa-desktop { position: fixed; bottom: 30px; right: 30px; background: var(--wa); color: #fff; width: 60px; height: 60px; border-radius: 50%; display: none; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 5px 20px rgba(37,211,102,0.4); z-index: 999; transition: 0.3s; text-decoration: none; }
+    .floating-wa-desktop:hover { transform: scale(1.1); background: var(--wa-hover); }
+
+    /* Mobile Sticky Bar */
+    .m-bar { position: fixed; bottom: 0; left: 0; width: 100%; display: flex; z-index: 1000; box-shadow: 0 -5px 20px rgba(0,0,0,0.9); }
+    .m-bar a { flex: 1; padding: 18px 10px; text-decoration: none; font-weight: 800; font-size: 14px; display: flex; justify-content: center; align-items: center; gap: 8px; text-transform: uppercase; letter-spacing: 1px; }
     .m-call { background: var(--gold); color: #000; }
     .m-wa { background: var(--wa); color: #fff; }
-    @media (min-width: 768px) { .m-bar { display: none; } footer { padding-bottom: 40px; } }
+
+    @media (min-width: 768px) { 
+      .m-bar { display: none; } 
+      footer { padding-bottom: 60px; } 
+      .floating-wa-desktop { display: flex; }
+    }
   </style>
 </head>
 <body>
@@ -113,64 +161,83 @@
 
   <main>
     <section class="hero">
-      <div class="badge">TRUSTED BY VIP ESTATES IN CAIRO</div>
-      <h1>Premium <span>Villa Cleaning</span> & Post-Construction Cleanup</h1>
-      <p>We provide elite deep cleaning, paint extraction, and marble polishing services to ensure your luxury villa is flawlessly ready for handover.</p>
+      <div class="badge"><i class="fas fa-crown"></i> TRUSTED BY VIP ESTATES IN CAIRO</div>
+      <h1>Premium <span>Post-Construction</span> Cleaning In Cairo</h1>
+      <p class="lead">We provide elite deep cleaning, paint extraction, and marble polishing services to ensure your luxury villa is flawlessly ready for handover.</p>
 
       <div class="btn-group">
         <a href="tel:+201016961497" class="btn btn-gold"><i class="fas fa-phone-alt"></i> Call: 01016961497</a>
-        <a href="https://wa.me/201016961497?text=Hello,%20I%20have%20a%20villa%20and%20need%20a%20quote%20for%20post-construction%20cleaning" target="_blank" class="btn btn-wa">
-          <span class="pulse-dot"></span> WhatsApp Us (Online)
+        <a href="https://wa.me/201016961497?text=Hello,%20I%20need%20a%20VIP%20cleaning%20quote%20for%20my%20villa." target="_blank" class="btn btn-wa">
+          <span class="pulse-dot"></span> WhatsApp Us Now
         </a>
       </div>
       
-      <p class="urgency-text"><i class="fas fa-bolt"></i> Free Site Inspection within 24 Hours in New Cairo & Zayed</p>
+      <p class="urgency-text"><i class="fas fa-bolt"></i> Free Site Inspection within 24 Hours (New Cairo & Zayed)</p>
       
       <div class="hero-review">
-        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <div class="stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
         <span>"Exceptional attention to detail. Our villa was spotless." - M. Hassan, Palm Hills</span>
       </div>
     </section>
 
+    <!-- Why Choose Us Grid (Replaces standard Trust Bar for more impact) -->
     <section class="trust-bar">
       <div class="trust-grid">
         <div class="trust-item">
-          <h4><i class="fas fa-user-tie"></i> Supervised Staff</h4>
-          <p>Strictly managed engineering teams, no random laborers.</p>
+          <i class="fas fa-user-shield"></i>
+          <h4>Supervised Staff</h4>
+          <p>Strictly managed engineering teams and cleaning experts. No random laborers in your private estate.</p>
         </div>
         <div class="trust-item">
-          <h4><i class="fas fa-shield-alt"></i> Damage-Free Guarantee</h4>
-          <p>Safe processing for imported marble & delicate glass.</p>
+          <i class="fas fa-gem"></i>
+          <h4>Damage-Free Guarantee</h4>
+          <p>Safe processing and specialized chemicals for imported marble, delicate glass, and high-end fixtures.</p>
         </div>
         <div class="trust-item">
-          <h4><i class="fas fa-clock"></i> On-Time Handover</h4>
-          <p>Rapid execution to meet your move-in deadlines.</p>
+          <i class="fas fa-stopwatch"></i>
+          <h4>On-Time Handover</h4>
+          <p>Rapid and precise execution to meet your exact move-in deadlines without compromising quality.</p>
         </div>
       </div>
     </section>
 
-    <h2 class="section-title">Our Premium Services</h2>
-    <section class="grid">
-      <div class="card">
-        <i class="fas fa-paint-roller"></i>
-        <h2>Post Construction Cleaning</h2>
-        <p>Architectural cleanup. We safely extract cement dust, paint splatters, and silicone to deliver a pristine estate.</p>
+    <!-- Services Grid -->
+    <section class="services-section">
+      <div class="section-header">
+        <div class="section-subtitle">Our Expertise</div>
+        <h2 class="section-title">Premium Services</h2>
       </div>
-      <div class="card">
-        <i class="fas fa-home"></i>
-        <h2>Move In Cleaning Services</h2>
-        <p>Comprehensive deep cleaning and sanitization for newly built villas, making them 100% ready for you to move in.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-gem"></i>
-        <h2>Marble Polishing & Care</h2>
-        <p>High-end crystallization and buffing for Galala, imported marble, and delicate porcelain surfaces.</p>
+      
+      <div class="grid">
+        <div class="card">
+          <i class="fas fa-hard-hat"></i>
+          <h2>Post Construction Cleaning</h2>
+          <p>Architectural cleanup. We safely extract cement dust, heavy paint splatters, and silicone to deliver a pristine estate ready for furnishing.</p>
+          <a href="tel:+201016961497" class="card-link">Request Quote <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="card">
+          <i class="fas fa-sparkles"></i>
+          <h2>Move-In Deep Cleaning</h2>
+          <p>Comprehensive sanitization for newly built villas. We focus on kitchens, bathrooms, and hidden corners to make it 100% ready to live in.</p>
+          <a href="tel:+201016961497" class="card-link">Request Quote <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="card">
+          <i class="fas fa-layer-group"></i>
+          <h2>Marble Polishing & Care</h2>
+          <p>High-end crystallization and buffing for Galala, imported marble, and delicate porcelain surfaces to restore their showroom shine.</p>
+          <a href="tel:+201016961497" class="card-link">Request Quote <i class="fas fa-arrow-right"></i></a>
+        </div>
       </div>
     </section>
 
+    <!-- Social Proof / Videos -->
     <section class="proof-section">
-      <h2 class="section-title" style="margin-top: 0;">See Our Standard of Work</h2>
-      <div class="local-authority">Trusted by homeowners in premium compounds (Palm Hills, Mivida, Allegria...)</div>
+      <div class="section-header">
+        <h2 class="section-title">See Our Standard of Work</h2>
+        <div class="local-authority">Trusted by homeowners in premium compounds (Palm Hills, Mivida, Allegria)</div>
+      </div>
       
       <div class="video-grid">
         <div class="video-wrapper" data-video="B7BJOEUEIqw">
@@ -187,21 +254,28 @@
   </main>
 
   <footer>
-    <div style="color: var(--gold); font-size: 18px; font-weight: 800; letter-spacing: 2px; margin-bottom: 10px;">HABIB CLEAN</div>
-    <p>Top Rated Cleaning Company in Cairo & New Cairo.</p>
+    <div class="footer-brand">HABIB CLEAN</div>
+    <p>Premium Cleaning & Maintenance Services in Cairo & New Cairo.</p>
     <p>© 2026 All Rights Reserved.</p>
   </footer>
 
+  <!-- Floating WhatsApp for Desktop -->
+  <a href="https://wa.me/201016961497?text=Hello,%20I%20need%20a%20VIP%20cleaning%20quote%20for%20my%20villa." target="_blank" class="floating-wa-desktop">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Mobile Sticky Bar -->
   <div class="m-bar">
     <a href="tel:+201016961497" class="m-call"><i class="fas fa-phone-alt"></i> CALL NOW</a>
-    <a href="https://wa.me/201016961497?text=Hello,%20I%20have%20a%20villa%20and%20need%20a%20quote%20for%20post-construction%20cleaning" target="_blank" class="m-wa"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
+    <a href="https://wa.me/201016961497?text=Hello,%20I%20need%20a%20VIP%20cleaning%20quote%20for%20my%20villa." target="_blank" class="m-wa"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
   </div>
 
   <script>
+    // YouTube Video Lazy Load & Autoplay on click
     document.querySelectorAll('.video-wrapper').forEach(box => {
       box.addEventListener('click', function() {
         const videoId = this.getAttribute('data-video');
-        this.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+        this.innerHTML = `<iframe style="width: 100%; height: 100%; border: none;" src="https://www.youtube.com/embed/${videoId}?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
       }, { once: true });
     });
   </script>
