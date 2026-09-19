@@ -20,14 +20,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
 
-  <title>Premium Villa Cleaning Company in Cairo | Post Construction</title>
-  <meta name="description" content="Elite post-construction cleanup and deep cleaning services for luxury villas in New Cairo, Maadi, and Sheikh Zayed.">
+  <title>Premium Villa Cleaning | نظافة فلل وقصور VIP</title>
+  <meta name="description" content="Elite post-construction cleanup and deep cleaning services for luxury villas. خدمات النظافة العميقة للفلل بعد التشطيب.">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Montserrat for English, Cairo for Arabic -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
   
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "wbchze8rtj");
+  </script>
+
   <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
 
@@ -38,7 +47,7 @@
       --gold: #d4af37; 
       --gold-hover: #f3c93f;
       --text: #f5f5f5; 
-      --text-muted: #a0a0a0;
+      --text-muted: #b0b0b0;
       --wa: #25D366; 
       --wa-hover: #1ebd5c;
     }
@@ -47,71 +56,93 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Montserrat', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
     
-    /* 1. Scarcity & Top Bar */
-    .scarcity-bar { background: linear-gradient(90deg, #5c0000 0%, #8b0000 50%, #5c0000 100%); color: #fff; text-align: center; padding: 10px; font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; }
+    /* Typography Classes for Mixed Content */
+    .en-text { font-family: 'Montserrat', sans-serif; }
+    .ar-text { font-family: 'Cairo', sans-serif; direction: rtl; }
     
-    header { padding: 25px 20px; background: rgba(0,0,0,0.8); text-align: center; border-bottom: 1px solid rgba(212,175,55,0.15); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
-    .brand { color: var(--gold); font-size: 26px; font-weight: 800; text-transform: uppercase; letter-spacing: 4px; }
-    .sub-brand { color: var(--text-muted); font-size: 11px; letter-spacing: 2.5px; margin-top: 5px; text-transform: uppercase; }
+    /* 1. Scarcity & Top Bar */
+    .scarcity-bar { background: linear-gradient(90deg, #5c0000 0%, #8b0000 50%, #5c0000 100%); color: #fff; text-align: center; padding: 10px; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .scarcity-bar span.ar { font-family: 'Cairo', sans-serif; font-size: 14px; }
+    
+    header { padding: 20px; background: rgba(0,0,0,0.85); text-align: center; border-bottom: 1px solid rgba(212,175,55,0.15); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
+    .brand { color: var(--gold); font-size: 26px; font-weight: 900; text-transform: uppercase; letter-spacing: 3px; }
+    .sub-brand { color: var(--text-muted); font-size: 12px; letter-spacing: 1px; margin-top: 5px; font-family: 'Cairo', sans-serif; }
     
     /* 2. Hero Section */
     .hero { 
-      padding: 90px 20px 80px; 
+      padding: 80px 20px; 
       text-align: center; 
       background: radial-gradient(circle at center, #1a1a1a 0%, #030303 100%);
       border-bottom: 1px solid rgba(212,175,55,0.1); 
     }
-    .badge { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--gold); color: var(--gold); background: rgba(212,175,55,0.05); padding: 8px 20px; font-size: 12px; font-weight: 600; border-radius: 50px; margin-bottom: 30px; letter-spacing: 1px; }
-    .hero h1 { font-size: clamp(32px, 6vw, 52px); font-weight: 800; line-height: 1.15; margin-bottom: 25px; color: #fff; max-width: 900px; margin-inline: auto; text-transform: capitalize; }
-    .hero h1 span { color: var(--gold); position: relative; }
-    .hero p.lead { font-size: 18px; color: var(--text-muted); margin: 0 auto 40px; max-width: 750px; font-weight: 300; }
+    .badge { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--gold); color: var(--gold); background: rgba(212,175,55,0.05); padding: 8px 20px; font-size: 12px; font-weight: 600; border-radius: 50px; margin-bottom: 25px; letter-spacing: 1px; }
+    .hero h1 { font-size: clamp(30px, 5vw, 48px); font-weight: 900; line-height: 1.2; margin-bottom: 15px; color: #fff; max-width: 900px; margin-inline: auto; text-transform: capitalize; }
+    .hero h1 span { color: var(--gold); }
+    .hero h2.ar-title { font-size: clamp(22px, 4vw, 32px); color: var(--text); margin-bottom: 25px; font-weight: 700; }
+    
+    .hero p.lead { font-size: 18px; color: var(--text-muted); margin: 0 auto 35px; max-width: 750px; font-weight: 400; line-height: 1.8; }
 
     /* Buttons */
     .btn-group { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 30px; }
-    .btn { padding: 18px 32px; border-radius: 6px; font-weight: 700; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; position: relative; overflow: hidden; }
+    .btn { padding: 16px 30px; border-radius: 6px; font-weight: 700; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; flex-direction: column; gap: 5px; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; position: relative; overflow: hidden; min-width: 240px; }
+    .btn span.ar-btn-text { font-family: 'Cairo', sans-serif; font-size: 14px; letter-spacing: 0; text-transform: none; opacity: 0.9; }
+    
     .btn-gold { background: var(--gold); color: #000; box-shadow: 0 4px 20px rgba(212,175,55,0.3); }
     .btn-gold:hover { background: var(--gold-hover); transform: translateY(-3px); box-shadow: 0 6px 25px rgba(212,175,55,0.4); }
     .btn-wa { background: var(--wa); color: #fff; box-shadow: 0 4px 20px rgba(37,211,102,0.2); }
     .btn-wa:hover { background: var(--wa-hover); transform: translateY(-3px); box-shadow: 0 6px 25px rgba(37,211,102,0.3); }
     
-    .pulse-dot { width: 10px; height: 10px; background-color: #fff; border-radius: 50%; display: inline-block; animation: pulse 1.5s infinite; }
-    @keyframes pulse { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); } 70% { transform: scale(1.2); box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); } }
+    .pulse-dot { width: 10px; height: 10px; background-color: #fff; border-radius: 50%; display: inline-block; animation: pulse 1.5s infinite; position: absolute; left: 20px; top: 50%; transform: translateY(-50%); }
+    @keyframes pulse { 0% { transform: scale(0.95) translateY(-50%); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); } 70% { transform: scale(1.2) translateY(-50%); box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); } 100% { transform: scale(0.95) translateY(-50%); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); } }
 
-    .urgency-text { font-size: 14px; color: var(--text); letter-spacing: 1px; font-weight: 600; }
-    .urgency-text i { color: var(--gold); margin-right: 5px; }
-
-    /* Review Snippet */
-    .hero-review { margin-top: 40px; font-size: 14px; color: var(--text-muted); display: flex; align-items: center; justify-content: center; gap: 12px; font-style: italic; }
-    .stars { color: #f5b50a; font-size: 16px; display: flex; gap: 2px; }
+    .urgency-text { font-size: 15px; color: var(--text); font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px; }
+    .urgency-text i { color: var(--gold); }
 
     /* 3. Why Choose Us (Trust Bar) */
     .trust-bar { background: #080808; padding: 50px 20px; border-bottom: 1px solid rgba(212,175,55,0.1); }
-    .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1100px; margin: auto; }
+    .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1100px; margin: auto; }
     .trust-item { text-align: center; padding: 20px; }
     .trust-item i { font-size: 36px; color: var(--gold); margin-bottom: 15px; }
-    .trust-item h4 { color: #fff; font-size: 17px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
-    .trust-item p { color: var(--text-muted); font-size: 14px; line-height: 1.7; }
+    .trust-item h4 { color: #fff; font-size: 18px; margin-bottom: 5px; text-transform: uppercase; font-weight: 800; letter-spacing: 1px; }
+    .trust-item h5.ar-subtitle { color: var(--gold); font-family: 'Cairo', sans-serif; font-size: 16px; margin-bottom: 10px; font-weight: 600; }
+    .trust-item p { color: var(--text-muted); font-size: 15px; line-height: 1.7; }
+
+    /* Trust & Leadership Section (NEW) */
+    .leadership-section { padding: 80px 20px; background: #050505; border-bottom: 1px solid rgba(212,175,55,0.1); }
+    .founder-card { max-width: 900px; margin: 0 auto; background: var(--card-bg); border: 1px solid rgba(212,175,55,0.2); border-radius: 12px; padding: 40px; display: flex; flex-wrap: wrap; align-items: center; gap: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+    .founder-img { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 3px solid var(--gold); box-shadow: 0 5px 20px rgba(212,175,55,0.2); }
+    .founder-info { flex: 1; min-width: 300px; }
+    .founder-info h3 { color: var(--gold); font-size: 24px; margin-bottom: 5px; font-weight: 900; }
+    .founder-info .role { color: #fff; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; display: block; }
+    .founder-info p { color: var(--text-muted); font-size: 15px; font-style: italic; border-left: 3px solid var(--gold); padding-left: 15px; margin-bottom: 10px; }
+    .founder-info p.ar-quote { font-family: 'Cairo', sans-serif; font-style: normal; font-size: 15px; border-left: none; border-right: 3px solid var(--gold); padding-left: 0; padding-right: 15px; direction: rtl; }
+    
+    .real-proof-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 900px; margin: 40px auto 0; }
+    .real-proof-item { border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); position: relative; }
+    .real-proof-item img { width: 100%; height: 220px; object-fit: cover; opacity: 0.85; transition: 0.5s; }
+    .real-proof-item:hover img { opacity: 1; transform: scale(1.05); }
+    .real-proof-caption { position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0,0,0,0.85); padding: 12px; text-align: center; color: var(--gold); font-weight: 800; font-size: 14px; backdrop-filter: blur(5px); letter-spacing: 1px; text-transform: uppercase; }
+    .real-proof-caption span.ar-cap { display: block; font-family: 'Cairo', sans-serif; font-size: 14px; color: #fff; font-weight: 600; letter-spacing: 0; margin-top: 3px; }
 
     /* 4. Services Section */
     .services-section { padding: 80px 20px; }
     .section-header { text-align: center; margin-bottom: 50px; }
-    .section-title { font-size: 32px; color: #fff; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; }
-    .section-subtitle { color: var(--gold); font-size: 14px; text-transform: uppercase; letter-spacing: 2px; }
+    .section-title { font-size: 32px; color: #fff; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px; }
+    .section-subtitle { color: var(--gold); font-size: 20px; font-family: 'Cairo', sans-serif; font-weight: 700; }
 
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; }
-    .card { background: var(--card-bg); padding: 40px 30px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); transition: all 0.3s ease; position: relative; overflow: hidden; display: flex; flex-direction: column; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; }
+    .card { background: var(--card-bg); padding: 40px 30px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); transition: all 0.3s ease; position: relative; overflow: hidden; display: flex; flex-direction: column; text-align: center; }
     .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: var(--gold); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left; }
     .card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.8); border-color: rgba(212,175,55,0.2); }
     .card:hover::before { transform: scaleX(1); }
-    .card i { color: var(--gold); font-size: 40px; margin-bottom: 25px; }
-    .card h2 { font-size: 22px; margin-bottom: 15px; color: #fff; font-weight: 700; }
-    .card p { font-size: 15px; color: var(--text-muted); margin-bottom: 25px; flex-grow: 1; }
-    .card-link { color: var(--gold); font-size: 14px; font-weight: 600; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; display: inline-flex; align-items: center; gap: 8px; transition: 0.3s; }
-    .card-link:hover { color: #fff; }
-
+    .card i { color: var(--gold); font-size: 40px; margin-bottom: 20px; }
+    .card h2 { font-size: 20px; margin-bottom: 5px; color: #fff; font-weight: 800; text-transform: uppercase; }
+    .card h3.ar-title { font-family: 'Cairo', sans-serif; font-size: 18px; color: var(--gold); margin-bottom: 15px; font-weight: 700; }
+    .card p { font-size: 15px; color: var(--text-muted); margin-bottom: 25px; flex-grow: 1; line-height: 1.8; }
+    
     /* 5. Proof / Videos */
-    .proof-section { background: #080808; padding: 80px 20px; border-top: 1px solid rgba(212,175,55,0.1); }
-    .local-authority { color: var(--text-muted); font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 40px; text-align: center; }
+    .proof-section { background: #080808; padding: 80px 20px; border-top: 1px solid rgba(212,175,55,0.1); text-align: center; }
+    .local-authority { color: var(--text-muted); font-size: 16px; font-weight: 600; margin-bottom: 40px; }
     .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; max-width: 1000px; margin: auto; }
     .video-wrapper { position: relative; cursor: pointer; aspect-ratio: 16/9; border: 1px solid rgba(212,175,55,0.3); overflow: hidden; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
     .video-wrapper img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; transition: 0.5s; }
@@ -121,7 +152,7 @@
 
     /* 6. Footer & Floating Elements */
     footer { background: #000; padding: 60px 20px 120px; text-align: center; border-top: 1px solid rgba(212,175,55,0.2); }
-    .footer-brand { color: var(--gold); font-size: 22px; font-weight: 800; letter-spacing: 3px; margin-bottom: 15px; }
+    .footer-brand { color: var(--gold); font-size: 22px; font-weight: 900; letter-spacing: 3px; margin-bottom: 15px; }
     footer p { font-size: 14px; color: var(--text-muted); margin-bottom: 5px; }
     
     /* Desktop Floating WhatsApp */
@@ -130,7 +161,8 @@
 
     /* Mobile Sticky Bar */
     .m-bar { position: fixed; bottom: 0; left: 0; width: 100%; display: flex; z-index: 1000; box-shadow: 0 -5px 20px rgba(0,0,0,0.9); }
-    .m-bar a { flex: 1; padding: 18px 10px; text-decoration: none; font-weight: 800; font-size: 14px; display: flex; justify-content: center; align-items: center; gap: 8px; text-transform: uppercase; letter-spacing: 1px; }
+    .m-bar a { flex: 1; padding: 12px 10px; text-decoration: none; font-weight: 800; font-size: 14px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 4px; text-transform: uppercase; letter-spacing: 1px; }
+    .m-bar a span.ar-m { font-family: 'Cairo', sans-serif; font-size: 12px; letter-spacing: 0; font-weight: 600; opacity: 0.9; }
     .m-call { background: var(--gold); color: #000; }
     .m-wa { background: var(--wa); color: #fff; }
 
@@ -151,54 +183,62 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <div class="scarcity-bar">
-    <i class="fas fa-clock"></i> Only 2 VIP inspection slots available this week
+    <span><i class="fas fa-clock"></i> ONLY 2 VIP SLOTS THIS WEEK</span>
+    <span>|</span>
+    <span class="ar">متبقي موعدين فقط للمعاينة هذا الأسبوع</span>
   </div>
 
   <header>
-    <div class="brand">Habib Clean</div>
-    <div class="sub-brand">Premium Estate Cleaning & Handover Division</div>
+    <div class="brand">Elhabib Clean</div>
+    <div class="sub-brand">Premium Estate Cleaning | القسم المتخصص لنظافة الفلل والقصور</div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="badge"><i class="fas fa-crown"></i> TRUSTED BY VIP ESTATES IN CAIRO</div>
-      <h1>Premium <span>Post-Construction</span> Cleaning In Cairo</h1>
-      <p class="lead">We provide elite deep cleaning, paint extraction, and marble polishing services to ensure your luxury villa is flawlessly ready for handover.</p>
+      <div class="badge"><i class="fas fa-crown"></i> THE #1 CHOICE FOR CAIRO'S VIP ESTATES</div>
+      
+      <h1>Premium <span>Post-Construction</span> Cleaning</h1>
+      <h2 class="ar-title ar-text">نظافة شاملة للفلل وما بعد التشطيب بمستوى VIP</h2>
+      
+      <p class="lead ar-text">نقدم خدمات النظافة العميقة، إزالة بقع الدهانات والأسمنت، وتلميع الرخام لضمان استلام فيلتك خالية من أي عيوب وجاهزة للسكن فوراً.</p>
 
       <div class="btn-group">
-        <a href="tel:+201016961497" class="btn btn-gold"><i class="fas fa-phone-alt"></i> Call: 01016961497</a>
+        <a href="tel:+201016961497" class="btn btn-gold">
+          <div><i class="fas fa-phone-alt"></i> CALL NOW</div>
+          <span class="ar-btn-text">اتصل بنا: 01016961497</span>
+        </a>
         <a href="https://wa.me/201016961497?text=Hello,%20I%20need%20a%20VIP%20cleaning%20quote%20for%20my%20villa." target="_blank" class="btn btn-wa">
-          <span class="pulse-dot"></span> WhatsApp Us Now
+          <span class="pulse-dot"></span>
+          <div>WHATSAPP US</div>
+          <span class="ar-btn-text">تواصل معنا عبر واتساب</span>
         </a>
       </div>
       
-      <p class="urgency-text"><i class="fas fa-bolt"></i> Free Site Inspection within 24 Hours (New Cairo & Zayed)</p>
-      
-      <div class="hero-review">
-        <div class="stars">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-        </div>
-        <span>"Exceptional attention to detail. Our villa was spotless." - M. Hassan, Palm Hills</span>
+      <div class="urgency-text">
+        <i class="fas fa-bolt"></i> <span class="en-text">Free Inspection in 24h</span> <span style="margin: 0 5px;">|</span> <span class="ar-text">معاينة مجانية خلال 24 ساعة</span>
       </div>
     </section>
 
-    <!-- Why Choose Us Grid (Replaces standard Trust Bar for more impact) -->
+    <!-- Trust Bar (Bilingual) -->
     <section class="trust-bar">
       <div class="trust-grid">
         <div class="trust-item">
           <i class="fas fa-user-shield"></i>
           <h4>Supervised Staff</h4>
-          <p>Strictly managed engineering teams and cleaning experts. No random laborers in your private estate.</p>
+          <h5 class="ar-subtitle">إشراف هندسي</h5>
+          <p class="ar-text">فرق عمل مدربة ومتابعة هندسياً. لا نعتمد أبداً على العمالة العشوائية للحفاظ على خصوصية وأمان منزلك.</p>
         </div>
         <div class="trust-item">
           <i class="fas fa-gem"></i>
-          <h4>Damage-Free Guarantee</h4>
-          <p>Safe processing and specialized chemicals for imported marble, delicate glass, and high-end fixtures.</p>
+          <h4>Damage-Free</h4>
+          <h5 class="ar-subtitle">ضمان الأمان التام</h5>
+          <p class="ar-text">نستخدم تقنيات ومواد مخصصة وآمنة تماماً على الرخام المستورد والزجاج والإكسسوارات باهظة الثمن.</p>
         </div>
         <div class="trust-item">
           <i class="fas fa-stopwatch"></i>
           <h4>On-Time Handover</h4>
-          <p>Rapid and precise execution to meet your exact move-in deadlines without compromising quality.</p>
+          <h5 class="ar-subtitle">التسليم في الموعد</h5>
+          <p class="ar-text">سرعة ودقة فائقة في التنفيذ لضمان تسليم الفيلا في موعد نقل العفش المحدد دون أي تأخير.</p>
         </div>
       </div>
     </section>
@@ -206,28 +246,28 @@
     <!-- Services Grid -->
     <section class="services-section">
       <div class="section-header">
-        <div class="section-subtitle">Our Expertise</div>
         <h2 class="section-title">Premium Services</h2>
+        <div class="section-subtitle">خدماتنا المخصصة للفلل والقصور</div>
       </div>
       
       <div class="grid">
         <div class="card">
           <i class="fas fa-hard-hat"></i>
-          <h2>Post Construction Cleaning</h2>
-          <p>Architectural cleanup. We safely extract cement dust, heavy paint splatters, and silicone to deliver a pristine estate ready for furnishing.</p>
-          <a href="tel:+201016961497" class="card-link">Request Quote <i class="fas fa-arrow-right"></i></a>
+          <h2>Post-Construction</h2>
+          <h3 class="ar-title">نظافة ما بعد التشطيب</h3>
+          <p class="ar-text">إزالة تامة لآثار البناء، الأسمنت، الدهانات الثقيلة، والسيليكون لتسليم الفيلا نظيفة تماماً وجاهزة للفرش.</p>
         </div>
         <div class="card">
           <i class="fas fa-sparkles"></i>
-          <h2>Move-In Deep Cleaning</h2>
-          <p>Comprehensive sanitization for newly built villas. We focus on kitchens, bathrooms, and hidden corners to make it 100% ready to live in.</p>
-          <a href="tel:+201016961497" class="card-link">Request Quote <i class="fas fa-arrow-right"></i></a>
+          <h2>Deep Cleaning</h2>
+          <h3 class="ar-title">التنظيف العميق قبل السكن</h3>
+          <p class="ar-text">تعقيم شامل للفلل الجديدة مع التركيز الدقيق على المطابخ، الحمامات، والأركان المخفية لتكون جاهزة للسكن.</p>
         </div>
         <div class="card">
           <i class="fas fa-layer-group"></i>
-          <h2>Marble Polishing & Care</h2>
-          <p>High-end crystallization and buffing for Galala, imported marble, and delicate porcelain surfaces to restore their showroom shine.</p>
-          <a href="tel:+201016961497" class="card-link">Request Quote <i class="fas fa-arrow-right"></i></a>
+          <h2>Marble Polishing</h2>
+          <h3 class="ar-title">جلي وتلميع الرخام</h3>
+          <p class="ar-text">عناية فائقة وتلميع (كريستاليزيشن) للرخام المستورد، الجلالة، والبورسلين لاستعادة لمعان صالات العرض.</p>
         </div>
       </div>
     </section>
@@ -235,8 +275,8 @@
     <!-- Social Proof / Videos -->
     <section class="proof-section">
       <div class="section-header">
-        <h2 class="section-title">See Our Standard of Work</h2>
-        <div class="local-authority">Trusted by homeowners in premium compounds (Palm Hills, Mivida, Allegria)</div>
+        <h2 class="section-title">Standard of Work</h2>
+        <div class="local-authority ar-text">الشركة الموثوقة لدى سكان أرقى الكومباوندات (بالم هيلز، ميفيدا، أليجريا)</div>
       </div>
       
       <div class="video-grid">
@@ -254,9 +294,9 @@
   </main>
 
   <footer>
-    <div class="footer-brand">HABIB CLEAN</div>
-    <p>Premium Cleaning & Maintenance Services in Cairo & New Cairo.</p>
-    <p>© 2026 All Rights Reserved.</p>
+    <div class="footer-brand">ELHABIB CLEAN</div>
+    <p class="ar-text">خدمات النظافة والصيانة المميزة في القاهرة والتجمع الخامس.</p>
+    <p>© 2026 Elhabib Group. All Rights Reserved.</p>
   </footer>
 
   <!-- Floating WhatsApp for Desktop -->
@@ -266,8 +306,14 @@
 
   <!-- Mobile Sticky Bar -->
   <div class="m-bar">
-    <a href="tel:+201016961497" class="m-call"><i class="fas fa-phone-alt"></i> CALL NOW</a>
-    <a href="https://wa.me/201016961497?text=Hello,%20I%20need%20a%20VIP%20cleaning%20quote%20for%20my%20villa." target="_blank" class="m-wa"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
+    <a href="tel:+201016961497" class="m-call">
+      <div><i class="fas fa-phone-alt"></i> CALL</div>
+      <span class="ar-m">اتصل الآن</span>
+    </a>
+    <a href="https://wa.me/201016961497?text=Hello,%20I%20need%20a%20VIP%20cleaning%20quote%20for%20my%20villa." target="_blank" class="m-wa">
+      <div><i class="fab fa-whatsapp"></i> WHATSAPP</div>
+      <span class="ar-m">تواصل معنا</span>
+    </a>
   </div>
 
   <script>
