@@ -187,11 +187,11 @@
       <p class="lead ar-text">نقدم خدمات النظافة العميقة الاحترافية بعد التشطيب، وتأهيل المنازل المغلقة بشهادة متخصصة وتنظيف الأثاث بالماكينات بالبخار لتعود كالجديدة تماماً.</p>
 
       <div class="btn-group">
-        <a href="tel:+201016961497" class="btn btn-gold">
+        <a href="tel:+201016961497" class="btn btn-gold track-call">
           <div><i class="fas fa-phone-alt"></i> CALL NOW</div>
           <span class="ar-btn-text">اتصل بنا: 01016961497</span>
         </a>
-        <a href="https://wa.me/201016961497?text=Hello,%20I%20need%20a%20VIP%20cleaning%20quote%20for%20my%20villa." target="_blank" class="btn btn-wa">
+        <a href="https://wa.me/201016961497?text=Hello,%20I%20need%20a%20VIP%20cleaning%20quote%20for%20my%20villa." target="_blank" class="btn btn-wa track-whatsapp">
           <span class="pulse-dot"></span>
           <div>WHATSAPP US</div>
           <span class="ar-btn-text">تواصل معنا عبر واتساب</span>
@@ -240,8 +240,8 @@
           <h3 class="ar-title">نظافة وتلميع ما بعد التشطيب</h3>
           <p class="ar-text">إزالة آمنة لتراب الأسمنت، بقع الدهانات الثقيلة، والسيليكون. جلي وتلميع الرخام، وتسليم الفيلا خالية من أي شوائب وجاهزة للفرش الفوري.</p>
           <div class="card-actions">
-            <a href="tel:+201016961497" class="btn-card btn-card-gold"><i class="fas fa-phone-alt"></i> Call Now</a>
-            <a href="https://wa.me/201016961497?text=Hello,%20I%20need%20Post-Construction%20Cleaning." target="_blank" class="btn-card btn-card-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="tel:+201016961497" class="btn-card btn-card-gold track-call"><i class="fas fa-phone-alt"></i> Call Now</a>
+            <a href="https://wa.me/201016961497?text=Hello,%20I%20need%20Post-Construction%20Cleaning." target="_blank" class="btn-card btn-card-wa track-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
           </div>
         </div>
 
@@ -252,8 +252,8 @@
           <h3 class="ar-title">تأهيل الفلل والمنازل المغلقة (شامل الأثاث بالماكينات)</h3>
           <p class="ar-text">تنظيف وتطهير شامل للأماكن المغلقة لفترات طويلة. يشمل التنظيف العميق للأثاث والعفش بأحدث الماكينات (بالبخار واستخراج الأتربة)، إزالة الأتربة المتراكمة، والتعقيم الشامل ليعود المنزل جديداً.</p>
           <div class="card-actions">
-            <a href="tel:+201016961497" class="btn-card btn-card-gold"><i class="fas fa-phone-alt"></i> Call Now</a>
-            <a href="https://wa.me/201016961497?text=Hello,%20I%20need%20Deep%20Clean%20for%20Closed%20Homes." target="_blank" class="btn-card btn-card-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="tel:+201016961497" class="btn-card btn-card-gold track-call"><i class="fas fa-phone-alt"></i> Call Now</a>
+            <a href="https://wa.me/201016961497?text=Hello,%20I%20need%20Deep%20Clean%20for%20Closed%20Homes." target="_blank" class="btn-card btn-card-wa track-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
           </div>
         </div>
       </div>
@@ -286,17 +286,17 @@
   </footer>
 
   <!-- Floating WhatsApp for Desktop -->
-  <a href="https://wa.me/201016961497?text=Hello,%20I%20need%20a%20VIP%20cleaning%20quote%20for%20my%20villa." target="_blank" class="floating-wa-desktop">
+  <a href="https://wa.me/201016961497?text=Hello,%20I%20need%20a%20VIP%20cleaning%20quote%20for%20my%20villa." target="_blank" class="floating-wa-desktop track-whatsapp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
   <!-- Mobile Sticky Bar -->
   <div class="m-bar">
-    <a href="tel:+201016961497" class="m-call">
+    <a href="tel:+201016961497" class="m-call track-call">
       <div><i class="fas fa-phone-alt"></i> CALL</div>
       <span class="ar-m">اتصل الآن</span>
     </a>
-    <a href="https://wa.me/201016961497?text=Hello,%20I%20need%20a%20VIP%20cleaning%20quote%20for%20my%20villa." target="_blank" class="m-wa">
+    <a href="https://wa.me/201016961497?text=Hello,%20I%20need%20a%20VIP%20cleaning%20quote%20for%20my%20villa." target="_blank" class="m-wa track-whatsapp">
       <div><i class="fab fa-whatsapp"></i> WHATSAPP</div>
       <span class="ar-m">تواصل معنا</span>
     </a>
@@ -309,6 +309,26 @@
         const videoId = this.getAttribute('data-video');
         this.innerHTML = `<iframe style="width: 100%; height: 100%; border: none;" src="https://www.youtube.com/embed/${videoId}?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
       }, { once: true });
+    });
+
+    // Tracking Script for WhatsApp and Call Events
+    document.addEventListener('click', function (e) {
+        var waLink = e.target.closest('.track-whatsapp');
+        var callLink = e.target.closest('.track-call');
+
+        if (waLink) {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'whatsapp_conversion_event'
+            });
+        }
+
+        if (callLink) {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'call_conversion_event'
+            });
+        }
     });
   </script>
 </body>
