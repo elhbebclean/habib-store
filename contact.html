@@ -39,13 +39,20 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="اتصل بـ Habib Store لحجز معاينة فنية، معرفة أسعار النجيل الصناعي، الزلط الديكوري، الرخام، وتنسيق الحدائق والفلل في مصر 2026.">
+    <meta name="description" content="اتصل بـ Habib Store لحجز معاينة فنية، معرفة أسعار الرخام، جرانيت ارضيات داخلي، اسعار زلط لاند سكيب، وحجر الواجهات لفلل وقصور مصر 2026.">
+    <meta name="keywords" content="اتصل بنا, حبيب ستور, حبيب لاندسكيب, اسعار زلط لاند سكيب, أسعار الرخام, توريد رخام, حجر هاشمي, حجر مايكا, المعادي, القاهرة, مصر">
     <meta name="robots" content="index, follow">
-    <title>اتصل بنا وحجز معاينة | حبيب ستور للاندسكيب والرخام</title>
+    
+    <!-- التوثيق الجغرافي الميكرو (Hyper-Local SEO) -->
+    <meta name="geo.region" content="EG-C">
+    <meta name="geo.placename" content="Maadi, Cairo, New Cairo, North Coast, Sheikh Zayed">
+    <meta name="geo.position" content="29.9628;31.2590">
+    <meta name="ICBM" content="29.9628, 31.2590">
+
+    <title>اتصل بنا وحجز معاينة | حبيب ستور لتوريد الرخام واللاندسكيب</title>
 
     <link rel="canonical" href="https://habib-landscape-boutique.com/contact.html">
     <link rel="alternate" hreflang="ar-EG" href="https://habib-landscape-boutique.com/contact.html">
-    <link rel="manifest" href="manifest.json">
 
     <!-- Favicon -->
     <link rel="icon" href="https://res.cloudinary.com/dwa0e5sup/image/upload/c_pad,w_192,h_192,f_auto/v1775695027/My%20Brand/Habib_Landscape_Boutique_lfd7am.png" type="image/png" sizes="192x192">
@@ -56,27 +63,57 @@
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <!-- ContactPage Schema -->
+    <!-- 🚀 Master Schema: ContactPage + BreadcrumbList + LocalBusiness Link 🚀 -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ContactPage",
-      "name": "اتصل بنا - Habib Store",
-      "url": "https://habib-landscape-boutique.com/contact.html",
-      "description": "تواصل مع فريق المبيعات والهندسة لشركة Habib Store لحجز المعاينات وتوريد خامات اللاندسكيب والرخام في مصر.",
-      "mainEntity": {
-        "@type": "HomeAndConstructionBusiness",
-        "name": "Habib Store",
-        "telephone": "+201505543649",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "شارع 105",
-          "addressLocality": "المعادي",
-          "addressRegion": "القاهرة",
-          "postalCode": "11728",
-          "addressCountry": "EG"
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "الرئيسية (حبيب ستور)",
+              "item": "https://habib-landscape-boutique.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "اتصل بنا",
+              "item": "https://habib-landscape-boutique.com/contact.html"
+            }
+          ]
+        },
+        {
+          "@type": "ContactPage",
+          "@id": "https://habib-landscape-boutique.com/contact.html",
+          "url": "https://habib-landscape-boutique.com/contact.html",
+          "name": "اتصل بنا لحجز معاينة وتوريد الرخام واللاندسكيب - Habib Store",
+          "description": "تواصل مع فريق المبيعات والهندسة لشركة Habib Store لحجز المعاينات وتوريد خامات اللاندسكيب (الرخام، الجرانيت، الزلط، والحجر) بأسعار المحاجر في مصر.",
+          "mainEntity": {
+            "@type": "HomeAndConstructionBusiness",
+            "@id": "https://habib-landscape-boutique.com/#organization",
+            "name": "Habib Store - حبيب لاندسكيب والرخام",
+            "telephone": "+201505543649",
+            "hasMap": "https://share.google/li0astvOC6KsTCHXB",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "شارع 105",
+              "addressLocality": "المعادي",
+              "addressRegion": "القاهرة",
+              "postalCode": "11728",
+              "addressCountry": "EG"
+            },
+            "areaServed": [
+              { "@type": "City", "name": "Cairo" },
+              { "@type": "AdministrativeArea", "name": "North Coast" },
+              { "@type": "City", "name": "New Cairo" },
+              { "@type": "City", "name": "Sheikh Zayed" }
+            ]
+          }
         }
-      }
+      ]
     }
     </script>
 
@@ -125,6 +162,27 @@
             font-size: 26px;
             font-weight: bold;
             letter-spacing: 1px;
+        }
+
+        /* تنسيق مسارات التنقل (Breadcrumbs) المرئية */
+        .breadcrumbs-nav {
+            background: #fff;
+            padding: 12px 5%;
+            border-bottom: 1px solid #eee;
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+        .breadcrumbs-nav a {
+            color: var(--royal-green);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .breadcrumbs-nav a:hover {
+            color: var(--gold);
+        }
+        .breadcrumbs-nav span.separator {
+            margin: 0 8px;
+            color: #ccc;
         }
 
         .back-link {
@@ -322,6 +380,7 @@
         .btn-primary {
             background: #25d366;
             color: white;
+            box-shadow: 0 4px 15px rgba(37,211,102,0.3);
         }
 
         .btn-primary:hover {
@@ -414,12 +473,19 @@
     <a href="index.html" class="back-link">العودة للرئيسية</a>
 </header>
 
+<!-- مسارات التنقل المرئية للعميل -->
+<nav class="breadcrumbs-nav" aria-label="Breadcrumb">
+    <a href="index.html">الرئيسية</a>
+    <span class="separator"><i class="fas fa-chevron-left" style="font-size: 0.8rem;"></i></span>
+    <span style="color: var(--text); font-weight: bold;">اتصل بنا</span>
+</nav>
+
 <main role="main">
     <section class="hero">
-        <div class="tag">Habib Store</div>
+        <div class="tag">Habib Store - المورد الأول في مصر</div>
         <h1>اتصل بنا وحجز المعاينة الفورية</h1>
         <p>
-            تواصل معنا الآن للحصول على أفضل أسعار توريد وتركيب النجيل الصناعي، الزلط الديكوري، الرخام، وتنسيق الحدائق في القاهرة وكل محافظات مصر.
+            تواصل معنا الآن للحصول على أفضل أسعار توريد وتركيب الرخام، جرانيت ارضيات داخلي، اسعار زلط لاند سكيب، وتنسيق حدائق الفلل في القاهرة والساحل الشمالي.
         </p>
     </section>
 
@@ -428,7 +494,7 @@
             <div class="card">
                 <h2>بيانات التواصل المباشر</h2>
                 <p class="lead">
-                    نستقبل طلباتكم واستفساراتكم الفنية وتوريدات المشروعات السكنية، الفيلات، والقصور طوال أيام الأسبوع.
+                    نستقبل طلباتكم واستفساراتكم الفنية وتوريدات المشروعات السكنية، الفيلات، والقصور طوال أيام الأسبوع لتقديم أفضل الخامات بأسعار المحاجر.
                 </p>
 
                 <div class="contact-list">
@@ -444,7 +510,7 @@
                         <i class="fab fa-whatsapp"></i>
                         <div>
                             <h3>خدمة العملاء والواتساب</h3>
-                            <a href="https://wa.me/201505543649?text=مرحباً، أريد الاستفسار عن أسعار وخدمات توريد النجيل والزلط والرخام من Habib Store." target="_blank" rel="noopener">
+                            <a href="https://wa.me/201505543649?text=مرحباً، أريد الاستفسار عن أسعار الرخام، الزلط الديكوري، وتحديد موعد معاينة لمشروعي." target="_blank" rel="noopener">
                                 +20 150 554 3649 (اضغط للمراسلة الفورية)
                             </a>
                         </div>
@@ -480,19 +546,19 @@
                 <div>
                     <h2>اطلب معاينتك الفورية الآن</h2>
                     <p>
-                        لا تؤجل تطوير حديقتك أو مشروعك.. احجز معاينتك الهندسية الآن ودعنا نصلك بأجود الخامات وأفضل الأسعار في مصر.
+                        لا تؤجل تطوير واجهة أو حديقة مشروعك.. احجز معاينتك الهندسية الآن ودعنا نصلك بأجود خامات الرخام واللاندسكيب بأفضل الأسعار في مصر.
                     </p>
 
                     <div class="cta-list">
-                        <div>✔ توريد مباشر من المستودع لأفضل خامات النجيل والزلط والرخام</div>
-                        <div>✔ معاينة فنية دقيقة بالموقع وإشراف هندسي متكامل</div>
-                        <div>✔ تسعير عادل ومقايسة واضحة شفافة قبل التنفيذ</div>
-                        <div>✔ سرعة في التوريد والتركيب خلال 48 ساعة</div>
+                        <div>✔ توريد مباشر من المستودع لأفضل خامات الرخام والزلط والجرانيت</div>
+                        <div>✔ معاينة فنية دقيقة بالموقع وإشراف هندسي متكامل للواجهات</div>
+                        <div>✔ تسعير عادل ومقايسة واضحة شفافة قبل بدء التنفيذ</div>
+                        <div>✔ سرعة استثنائية في التوريد والتركيب خلال 48 ساعة</div>
                     </div>
                 </div>
 
                 <div class="cta-buttons">
-                    <a class="btn btn-primary" href="https://wa.me/201505543649?text=مرحباً، أريد حجز معاينة فنية فورية وتوريد خامات لمشروعي." target="_blank" rel="noopener">
+                    <a class="btn btn-primary" href="https://wa.me/201505543649?text=مرحباً، أريد حجز معاينة فنية فورية وتوريد خامات الرخام واللاندسكيب لمشروعي." target="_blank" rel="noopener">
                         <i class="fab fa-whatsapp"></i>
                         احجز معاينة عبر واتساب
                     </a>
@@ -506,7 +572,7 @@
         </div>
 
         <p class="bottom-note">
-            Habib Store — Engineered for High-End Landscape Projects
+            Habib Store — Engineered for High-End Landscape & Marble Projects in Egypt
         </p>
     </div>
 </main>
@@ -523,7 +589,7 @@
         <a href="refund.html" class="policy-link">سياسة الاسترجاع والاستبدال</a>
     </div>
 
-    <p>© 2026 Habib Store. جميع الحقوق محفوظة.</p>
+    <p>© 2026 Habib Store. جميع الحقوق محفوظة لشركة حبيب لاندسكيب (015)</p>
 </footer>
 
 </body>
