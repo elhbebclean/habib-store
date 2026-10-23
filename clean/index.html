@@ -602,14 +602,14 @@
       }, {once:true});
     });
 
-    // Send actionable click signals to GTM.
+    // Send actionable click signals to GTM with exact names expected by triggers.
     document.addEventListener('click', function(event){
       var target = event.target.closest('a.track-whatsapp, a.track-call');
       if(!target) return;
       window.dataLayer = window.dataLayer || [];
       var isCall = target.classList.contains('track-call');
       window.dataLayer.push({
-        event: isCall ? 'phone_call_click' : 'whatsapp_click',
+        event: isCall ? 'call_conversion_event' : 'whatsapp_conversion_event',
         cta_location: target.getAttribute('data-cta-location') || 'unspecified',
         link_url: target.href
       });
