@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+    <!-- Google Tag Manager -->
+    <script>
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];
+      w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!=='dataLayer'?'&l='+l:'';
+      j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NT75WPGT');
+    </script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="كتالوج وأسعار الرخام الطبيعي والأحجار الديكورية من حبيب ستور. توريد رخام جلالة، حجر مايكا رصاصي، طوب ديكور حوائط، وبلاط حجري للجدران بأسعار المحاجر في مصر.">
@@ -88,7 +100,7 @@
     }
     </script>
 
-    <!-- Schema 3: ItemList & Products (آمن، بدون تقييمات وهمية، ويعالج أخطاء الميرشانت سنتر) -->
+    <!-- Schema 3: ItemList & Products -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -582,7 +594,7 @@
     }
     </script>
 
-    <!-- Schema 4: Conversational FAQ (استهداف مساحات PAA) -->
+    <!-- Schema 4: Conversational FAQ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -686,6 +698,10 @@
     </style>
 </head>
 <body>
+
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NT75WPGT" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
 
 <a class="skip-link" href="#main-content" style="position:absolute; top:-40px; left:0; background:var(--gold); color:var(--green); padding:8px; z-index:10000; text-decoration:none; font-weight:bold; transition:top 0.3s;">تخطي إلى المحتوى</a>
 
@@ -895,12 +911,32 @@
             const materialName = materialSelect.options[materialSelect.selectedIndex].text;
             const total = document.getElementById('totalCost').innerText;
             
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: 'marble_whatsapp_conversion',
+                cta_location: 'calculator',
+                material: materialName,
+                area: area
+            });
+
             const msg = `مرحباً مهندسي حبيب ستور، قمت بعمل تسعير مبدئي للواجهة:\n- المساحة: ${area} م²\n- الخامة: ${materialName}\n- التكلفة التقديرية: ${total}\nأرجو تحديد موعد لعمل معاينة موقعية للتثبيت الميكانيكي.`;
             window.open(`https://wa.me/201505543649?text=${encodeURIComponent(msg)}`, '_blank');
         }
+
+        // تتبع ضغطات أزرار واتساب المنتجات
+        document.addEventListener('click', function(event) {
+            var target = event.target.closest('a.btn-order');
+            if (!target) return;
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: 'marble_whatsapp_conversion',
+                cta_location: 'product_card',
+                link_url: target.href
+            });
+        });
     </script>
 
-    <!-- الشبكة العنكبوتية (Spider Web Links) لربط الصفحة بالمعرض والمقالات -->
+    <!-- الشبكة العنكبوتية (Spider Web Links) -->
     <section class="spider-web-section">
         <a href="https://habib-landscape-boutique.com/products/marble.html" class="spider-card">
             <h3><i class="fas fa-camera-retro"></i> معرض الإلهام البصري للرخام</h3>
@@ -912,7 +948,7 @@
         </a>
     </section>
 
-    <!-- قسم الأسئلة الشائعة الذكية (Conversational AI FAQ - SEO Optimized) -->
+    <!-- قسم الأسئلة الشائعة الذكية -->
     <section class="faq-section">
         <h2>أسئلة يطرحها عملاؤنا عن الرخام والأحجار</h2>
         <div class="faq-item">
